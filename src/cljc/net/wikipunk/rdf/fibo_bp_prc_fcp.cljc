@@ -1,7 +1,7 @@
 (ns net.wikipunk.rdf.fibo-bp-prc-fcp
   {:cmns-av/copyright "Copyright (c) 2013-2023 EDM Council, Inc.",
    :dcat/downloadURL
-   "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/BP/Process/FinancialContextAndProcess/",
+   "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/BP/Process/FinancialContextAndProcess/",
    :dcterms/abstract
    "This ontology defines process concepts in general for refinement and re-use elsewhere in the FIBO business process domain.",
    :dcterms/license {:xsd/anyURI "https://opensource.org/licenses/MIT"},
@@ -22,15 +22,15 @@
     "skos" "http://www.w3.org/2004/02/skos/core#",
     "xsd" "http://www.w3.org/2001/XMLSchema#"},
    :owl/imports
-   #{{:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Utilities/AnnotationVocabulary/"}
-     {:xsd/anyURI "https://www.omg.org/spec/Commons/ContextualDesignators/"}
+   #{{:xsd/anyURI "https://www.omg.org/spec/Commons/ContextualDesignators/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FBC/FinancialInstruments/FinancialInstruments/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Utilities/AnnotationVocabulary/"}
+     {:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FBC/FinancialInstruments/FinancialInstruments/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/AnnotationVocabulary/"}},
    :owl/versionIRI
    {:xsd/anyURI
-    "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/BP/Process/FinancialContextAndProcess/"},
+    "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/BP/Process/FinancialContextAndProcess/"},
    :rdf/type :owl/Ontology,
    :rdfa/prefix "fibo-bp-prc-fcp",
    :rdfa/uri
@@ -402,15 +402,15 @@
    :dcterms/license {:xsd/anyURI "https://opensource.org/licenses/MIT"},
    :fibo-fnd-utl-av/hasMaturityLevel :fibo-fnd-utl-av/Provisional,
    :owl/imports
-   #{{:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Utilities/AnnotationVocabulary/"}
-     {:xsd/anyURI "https://www.omg.org/spec/Commons/ContextualDesignators/"}
+   #{{:xsd/anyURI "https://www.omg.org/spec/Commons/ContextualDesignators/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FBC/FinancialInstruments/FinancialInstruments/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Utilities/AnnotationVocabulary/"}
+     {:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FBC/FinancialInstruments/FinancialInstruments/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/AnnotationVocabulary/"}},
    :owl/versionIRI
    {:xsd/anyURI
-    "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/BP/Process/FinancialContextAndProcess/"},
+    "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/BP/Process/FinancialContextAndProcess/"},
    :rdf/type :owl/Ontology,
    :rdfs/label {:rdf/language "en",
                 :rdf/value    "Financial Context and Process Ontology"},

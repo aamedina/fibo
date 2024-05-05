@@ -1,58 +1,51 @@
 (ns net.wikipunk.rdf.fibo-fnd-org-fm
-  {:cmns-av/copyright #{"Copyright (c) 2013-2023 Object Management Group, Inc."
-                        "Copyright (c) 2013-2023 EDM Council, Inc."},
+  {:cmns-av/copyright
+   #{"Copyright (c) 2013-2024 EDM Council, Inc."
+     "Copyright (c) 2013-2024 Object Management Group, Inc."},
    :dcat/downloadURL
-   "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Organizations/FormalOrganizations/",
+   "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Organizations/FormalOrganizations/",
    :dcterms/abstract
    "This ontology defines the high level concept of a formal organization, which is purposefully underspecified to facilitate mapping to other organization ontologies, such as the W3C organization ontology, or others defined for specific business and financial services standards. It also defines general concepts related to employment by a formal organization.",
    :dcterms/license {:xsd/anyURI "https://opensource.org/licenses/MIT"},
    :fibo-fnd-utl-av/hasMaturityLevel :fibo-fnd-utl-av/Release,
    :namespaces
-   {"cmns-av"  "https://www.omg.org/spec/Commons/AnnotationVocabulary/",
+   {"cmns-av" "https://www.omg.org/spec/Commons/AnnotationVocabulary/",
     "cmns-col" "https://www.omg.org/spec/Commons/Collections/",
-    "dcterms"  "http://purl.org/dc/terms/",
-    "fibo-fnd-aap-agt"
-    "https://spec.edmcouncil.org/fibo/ontology/FND/AgentsAndPeople/Agents/",
+    "cmns-pts" "https://www.omg.org/spec/Commons/PartiesAndSituations/",
+    "cmns-rlcmp" "https://www.omg.org/spec/Commons/RolesAndCompositions/",
+    "dcterms" "http://purl.org/dc/terms/",
     "fibo-fnd-aap-ppl"
     "https://spec.edmcouncil.org/fibo/ontology/FND/AgentsAndPeople/People/",
     "fibo-fnd-org-fm"
     "https://spec.edmcouncil.org/fibo/ontology/FND/Organizations/FormalOrganizations/",
     "fibo-fnd-org-org"
     "https://spec.edmcouncil.org/fibo/ontology/FND/Organizations/Organizations/",
-    "fibo-fnd-pty-pty"
-    "https://spec.edmcouncil.org/fibo/ontology/FND/Parties/Parties/",
-    "fibo-fnd-pty-rl"
-    "https://spec.edmcouncil.org/fibo/ontology/FND/Parties/Roles/",
     "fibo-fnd-utl-av"
     "https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/AnnotationVocabulary/",
-    "lcc-cr"   "https://www.omg.org/spec/LCC/Countries/CountryRepresentation/",
-    "owl"      "http://www.w3.org/2002/07/owl#",
-    "rdf"      "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
-    "rdfs"     "http://www.w3.org/2000/01/rdf-schema#",
-    "skos"     "http://www.w3.org/2004/02/skos/core#",
-    "xsd"      "http://www.w3.org/2001/XMLSchema#"},
+    "lcc-cr" "https://www.omg.org/spec/LCC/Countries/CountryRepresentation/",
+    "owl" "http://www.w3.org/2002/07/owl#",
+    "rdf" "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfs" "http://www.w3.org/2000/01/rdf-schema#",
+    "skos" "http://www.w3.org/2004/02/skos/core#",
+    "xsd" "http://www.w3.org/2001/XMLSchema#"},
    :owl/imports
-   #{{:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/AgentsAndPeople/Agents/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Utilities/AnnotationVocabulary/"}
+   #{{:xsd/anyURI "https://www.omg.org/spec/Commons/RolesAndCompositions/"}
      {:xsd/anyURI
       "https://www.omg.org/spec/LCC/Countries/CountryRepresentation/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Organizations/Organizations/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Organizations/Organizations/"}
+     {:xsd/anyURI "https://www.omg.org/spec/Commons/PartiesAndSituations/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Parties/Parties/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Utilities/AnnotationVocabulary/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/Collections/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/AgentsAndPeople/People/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/AgentsAndPeople/People/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Parties/Roles/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Relations/Relations/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Relations/Relations/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/AnnotationVocabulary/"}},
    :owl/versionIRI
    {:xsd/anyURI
-    "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Organizations/FormalOrganizations/"},
+    "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Organizations/FormalOrganizations/"},
    :rdf/type :owl/Ontology,
    :rdfa/prefix "fibo-fnd-org-fm",
    :rdfa/uri
@@ -63,6 +56,7 @@
      "The https://spec.edmcouncil.org/fibo/ontology/FND/Organizations/FormalOrganizations.rdf version of the ontology was modified to use the Commons Ontology Library (Commons) Annotation Vocabulary rather than the OMG's Specification Metadata vocabulary."
      "The http://www.omg.org/spec/EDMC-FIBO/FND/20141101/Organizations/FormalOrganizations.rdf version of this ontology was modified per the FIBO 2.0 RFC to integrate concepts from LCC."
      "The https://spec.edmcouncil.org/fibo/ontology/FND/Organizations/FormalOrganizations.rdf version of this ontology was revised to address hygiene issues with respect to text formatting."
+     "The https://spec.edmcouncil.org/fibo/ontology/FND/Organizations/FormalOrganizations.rdf version of this ontology was modified to replace content that is now available in the OMG Commons Ontology Library (Commons) v1.1 (FND-380)."
      "The https://spec.edmcouncil.org/fibo/ontology/FND/Organizations/FormalOrganizations.rdf version of this ontology was modified to use the Commons Ontology Library (Commons) rather than the OMG's Languages, Countries and Codes (LCC), eliminating redundancies in FIBO as appropriate."
      "The http://www.omg.org/spec/EDMC-FIBO/FND/20130801/Organizations/FormalOrganizations.rdf version of this ontology was modified per the issue resolutions identified in the FIBO FND 1.0 FTF report and in http://www.omg.org/spec/EDMC-FIBO/FND/1.0/AboutFND-1.0/. It was further revised in the FTF in advance of the Long Beach meeting, resulting in http://www.omg.org/spec/EDMC-FIBO/FND/20141101/Organizations/FormalOrganizations/."
      "The https://spec.edmcouncil.org/fibo/ontology/FND/Organizations/FormalOrganizations.rdf version of this ontology was revised to loosen the constraints on the range of isDomiciledIn, allow for multiple values, update definitions to be ISO 704 compliant, and eliminate duplication with concepts in LCC."
@@ -83,7 +77,7 @@
    :rdfs/subClassOf #{{:owl/onProperty     :fibo-fnd-org-fm/isEmployedIn,
                        :owl/someValuesFrom :fibo-fnd-org-fm/Employment,
                        :rdf/type           :owl/Restriction}
-                      {:owl/onProperty     :fibo-fnd-pty-rl/isPlayedBy,
+                      {:owl/onProperty     :cmns-rlcmp/isPlayedBy,
                        :owl/someValuesFrom :fibo-fnd-aap-ppl/Person,
                        :rdf/type           :owl/Restriction}
                       :fibo-fnd-org-org/OrganizationMember
@@ -159,7 +153,7 @@
     "https://spec.edmcouncil.org/fibo/ontology/FND/Organizations/FormalOrganizations/"},
    :rdfs/label "group",
    :rdfs/subClassOf #{:cmns-col/Collection
-                      {:owl/allValuesFrom :fibo-fnd-aap-agt/AutonomousAgent,
+                      {:owl/allValuesFrom :cmns-pts/Agent,
                        :owl/onProperty    :cmns-col/hasMember,
                        :rdf/type          :owl/Restriction}},
    :skos/definition
@@ -184,7 +178,7 @@
     "https://spec.edmcouncil.org/fibo/ontology/FND/Organizations/FormalOrganizations/"},
    :rdfs/label "employs",
    :rdfs/range :fibo-fnd-aap-ppl/Person,
-   :rdfs/subPropertyOf :fibo-fnd-pty-pty/playsActiveRoleThatDirectlyAffects,
+   :rdfs/subPropertyOf :cmns-pts/playsActiveRoleThatDirectlyAffects,
    :skos/definition "indicates someone that is employed by the legal person"})
 
 (def hasEmployedParty
@@ -210,7 +204,7 @@
     "https://spec.edmcouncil.org/fibo/ontology/FND/Organizations/FormalOrganizations/"},
    :rdfs/label "has employee",
    :rdfs/range :fibo-fnd-org-fm/Employee,
-   :rdfs/subPropertyOf :fibo-fnd-pty-pty/actsOn,
+   :rdfs/subPropertyOf :cmns-pts/actsOn,
    :skos/definition "indicates an employee that is employed by the employer"})
 
 (def hasEmployingParty
@@ -250,7 +244,7 @@
    {:xsd/anyURI
     "https://spec.edmcouncil.org/fibo/ontology/FND/Organizations/FormalOrganizations/"},
    :rdfs/label "is employed by",
-   :rdfs/subPropertyOf :fibo-fnd-pty-pty/experiencesDirectly,
+   :rdfs/subPropertyOf :cmns-pts/experiencesDirectly,
    :skos/definition
    "indicates the party (legal person or formal organization) that employs someone"})
 
@@ -276,7 +270,7 @@
     "https://spec.edmcouncil.org/fibo/ontology/FND/Organizations/FormalOrganizations/"},
    :rdfs/label "is employee of",
    :rdfs/range :fibo-fnd-org-fm/Employer,
-   :rdfs/subPropertyOf :fibo-fnd-pty-pty/isAffectedBy,
+   :rdfs/subPropertyOf :cmns-pts/isAffectedBy,
    :skos/definition
    "identifies the formal organization for which the employee works"})
 
@@ -294,34 +288,31 @@
    "relates a party in the role of employer to the context of employment"})
 
 (def urn:uuid:10efc3a2-c910-5144-913d-ebac3120a279
-  {:cmns-av/copyright #{"Copyright (c) 2013-2023 Object Management Group, Inc."
-                        "Copyright (c) 2013-2023 EDM Council, Inc."},
+  {:cmns-av/copyright
+   #{"Copyright (c) 2013-2024 EDM Council, Inc."
+     "Copyright (c) 2013-2024 Object Management Group, Inc."},
    :dcterms/abstract
    "This ontology defines the high level concept of a formal organization, which is purposefully underspecified to facilitate mapping to other organization ontologies, such as the W3C organization ontology, or others defined for specific business and financial services standards. It also defines general concepts related to employment by a formal organization.",
    :dcterms/license {:xsd/anyURI "https://opensource.org/licenses/MIT"},
    :fibo-fnd-utl-av/hasMaturityLevel :fibo-fnd-utl-av/Release,
    :owl/imports
-   #{{:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/AgentsAndPeople/Agents/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Utilities/AnnotationVocabulary/"}
+   #{{:xsd/anyURI "https://www.omg.org/spec/Commons/RolesAndCompositions/"}
      {:xsd/anyURI
       "https://www.omg.org/spec/LCC/Countries/CountryRepresentation/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Organizations/Organizations/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Organizations/Organizations/"}
+     {:xsd/anyURI "https://www.omg.org/spec/Commons/PartiesAndSituations/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Parties/Parties/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Utilities/AnnotationVocabulary/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/Collections/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/AgentsAndPeople/People/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/AgentsAndPeople/People/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Parties/Roles/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Relations/Relations/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Relations/Relations/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/AnnotationVocabulary/"}},
    :owl/versionIRI
    {:xsd/anyURI
-    "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Organizations/FormalOrganizations/"},
+    "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Organizations/FormalOrganizations/"},
    :rdf/type :owl/Ontology,
    :rdfs/label "Formal Organizations Ontology",
    :skos/changeNote
@@ -329,6 +320,7 @@
      "The https://spec.edmcouncil.org/fibo/ontology/FND/Organizations/FormalOrganizations.rdf version of the ontology was modified to use the Commons Ontology Library (Commons) Annotation Vocabulary rather than the OMG's Specification Metadata vocabulary."
      "The http://www.omg.org/spec/EDMC-FIBO/FND/20141101/Organizations/FormalOrganizations.rdf version of this ontology was modified per the FIBO 2.0 RFC to integrate concepts from LCC."
      "The https://spec.edmcouncil.org/fibo/ontology/FND/Organizations/FormalOrganizations.rdf version of this ontology was revised to address hygiene issues with respect to text formatting."
+     "The https://spec.edmcouncil.org/fibo/ontology/FND/Organizations/FormalOrganizations.rdf version of this ontology was modified to replace content that is now available in the OMG Commons Ontology Library (Commons) v1.1 (FND-380)."
      "The https://spec.edmcouncil.org/fibo/ontology/FND/Organizations/FormalOrganizations.rdf version of this ontology was modified to use the Commons Ontology Library (Commons) rather than the OMG's Languages, Countries and Codes (LCC), eliminating redundancies in FIBO as appropriate."
      "The http://www.omg.org/spec/EDMC-FIBO/FND/20130801/Organizations/FormalOrganizations.rdf version of this ontology was modified per the issue resolutions identified in the FIBO FND 1.0 FTF report and in http://www.omg.org/spec/EDMC-FIBO/FND/1.0/AboutFND-1.0/. It was further revised in the FTF in advance of the Long Beach meeting, resulting in http://www.omg.org/spec/EDMC-FIBO/FND/20141101/Organizations/FormalOrganizations/."
      "The https://spec.edmcouncil.org/fibo/ontology/FND/Organizations/FormalOrganizations.rdf version of this ontology was revised to loosen the constraints on the range of isDomiciledIn, allow for multiple values, update definitions to be ISO 704 compliant, and eliminate duplication with concepts in LCC."

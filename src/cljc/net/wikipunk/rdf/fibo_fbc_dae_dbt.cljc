@@ -1,19 +1,24 @@
 (ns net.wikipunk.rdf.fibo-fbc-dae-dbt
-  {:cmns-av/copyright #{"Copyright (c) 2016-2023 Object Management Group, Inc."
-                        "Copyright (c) 2016-2023 EDM Council, Inc."},
+  {:cmns-av/copyright
+   #{"Copyright (c) 2016-2024 EDM Council, Inc."
+     "Copyright (c) 2016-2024 Object Management Group, Inc."},
    :dcat/downloadURL
-   "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FBC/DebtAndEquities/Debt/",
+   "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FBC/DebtAndEquities/Debt/",
    :dcterms/abstract
    "This ontology defines concepts that are common to all debt instruments, such as debt, borrower, lender, debtor, creditor, interest, principal, and the like. It is designed to be used by various other FIBO specifications, including but not limited to SEC/Debt and LOAN.",
    :dcterms/license {:xsd/anyURI "https://opensource.org/licenses/MIT"},
    :fibo-fnd-utl-av/hasMaturityLevel :fibo-fnd-utl-av/Release,
    :namespaces
    {"cmns-av" "https://www.omg.org/spec/Commons/AnnotationVocabulary/",
+    "cmns-cls" "https://www.omg.org/spec/Commons/Classifiers/",
     "cmns-col" "https://www.omg.org/spec/Commons/Collections/",
     "cmns-cxtdsg" "https://www.omg.org/spec/Commons/ContextualDesignators/",
     "cmns-dsg" "https://www.omg.org/spec/Commons/Designators/",
     "cmns-dt" "https://www.omg.org/spec/Commons/DatesAndTimes/",
     "cmns-id" "https://www.omg.org/spec/Commons/Identifiers/",
+    "cmns-pts" "https://www.omg.org/spec/Commons/PartiesAndSituations/",
+    "cmns-qtu" "https://www.omg.org/spec/Commons/QuantitiesAndUnits/",
+    "cmns-rlcmp" "https://www.omg.org/spec/Commons/RolesAndCompositions/",
     "dcterms" "http://purl.org/dc/terms/",
     "fibo-be-le-lp"
     "https://spec.edmcouncil.org/fibo/ontology/BE/LegalEntities/LegalPersons/",
@@ -35,6 +40,8 @@
     "https://spec.edmcouncil.org/fibo/ontology/FND/DatesAndTimes/BusinessDates/",
     "fibo-fnd-dt-fd"
     "https://spec.edmcouncil.org/fibo/ontology/FND/DatesAndTimes/FinancialDates/",
+    "fibo-fnd-dt-oc"
+    "https://spec.edmcouncil.org/fibo/ontology/FND/DatesAndTimes/Occurrences/",
     "fibo-fnd-oac-own"
     "https://spec.edmcouncil.org/fibo/ontology/FND/OwnershipAndControl/Ownership/",
     "fibo-fnd-pas-pas"
@@ -45,14 +52,8 @@
     "https://spec.edmcouncil.org/fibo/ontology/FND/Places/Locations/",
     "fibo-fnd-pty-pty"
     "https://spec.edmcouncil.org/fibo/ontology/FND/Parties/Parties/",
-    "fibo-fnd-pty-rl"
-    "https://spec.edmcouncil.org/fibo/ontology/FND/Parties/Roles/",
-    "fibo-fnd-qt-qtu"
-    "https://spec.edmcouncil.org/fibo/ontology/FND/Quantities/QuantitiesAndUnits/",
     "fibo-fnd-rel-rel"
     "https://spec.edmcouncil.org/fibo/ontology/FND/Relations/Relations/",
-    "fibo-fnd-utl-alx"
-    "https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/Analytics/",
     "fibo-fnd-utl-av"
     "https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/AnnotationVocabulary/",
     "owl" "http://www.w3.org/2002/07/owl#",
@@ -62,54 +63,54 @@
     "xsd" "http://www.w3.org/2001/XMLSchema#"},
    :owl/imports
    #{{:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Quantities/QuantitiesAndUnits/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/ProductsAndServices/ProductsAndServices/"}
+     {:xsd/anyURI "https://www.omg.org/spec/Commons/RolesAndCompositions/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Utilities/Analytics/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Accounting/CurrencyAmount/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Utilities/AnnotationVocabulary/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Law/LegalCapacity/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/Identifiers/"}
+     {:xsd/anyURI "https://www.omg.org/spec/Commons/PartiesAndSituations/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/ContextualDesignators/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Parties/Parties/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/ProductsAndServices/PaymentsAndSchedules/"}
+     {:xsd/anyURI "https://www.omg.org/spec/Commons/QuantitiesAndUnits/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Accounting/AccountingEquity/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/OwnershipAndControl/Ownership/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Agreements/Agreements/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Places/Locations/"}
+     {:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FBC/ProductsAndServices/FinancialProductsAndServices/"}
+     {:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/BE/LegalEntities/LegalPersons/"}
+     {:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Utilities/AnnotationVocabulary/"}
+     {:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/DatesAndTimes/FinancialDates/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/Collections/"}
+     {:xsd/anyURI "https://www.omg.org/spec/Commons/Classifiers/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/Designators/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Accounting/CurrencyAmount/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/DatesAndTimes/Occurrences/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Places/Locations/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Relations/Relations/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Arrangements/Assessments/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Parties/Parties/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/DatesAndTimes/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/ProductsAndServices/PaymentsAndSchedules/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Agreements/Contracts/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Agreements/Contracts/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/OwnershipAndControl/Ownership/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Parties/Roles/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Law/LegalCapacity/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/DatesAndTimes/BusinessDates/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Relations/Relations/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Accounting/AccountingEquity/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/AnnotationVocabulary/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/BE/LegalEntities/LegalPersons/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Agreements/Agreements/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/DatesAndTimes/FinancialDates/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Arrangements/Assessments/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/ProductsAndServices/ProductsAndServices/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FBC/ProductsAndServices/FinancialProductsAndServices/"}},
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/DatesAndTimes/BusinessDates/"}},
    :owl/versionIRI
    {:xsd/anyURI
-    "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FBC/DebtAndEquities/Debt/"},
+    "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FBC/DebtAndEquities/Debt/"},
    :rdf/type :owl/Ontology,
    :rdfa/prefix "fibo-fbc-dae-dbt",
    :rdfa/uri
@@ -119,10 +120,13 @@
    #{"The https://spec.edmcouncil.org/fibo/ontology/FBC/DebtAndEquities/Debt/ version of this ontology was modified to make redemption provision a child of contractual commitment and move it to financial instruments, as such provisions apply to preferred shares and other instruments in addition to debt."
      "The https://spec.edmcouncil.org/fibo/ontology/FBC/DebtAndEquities/Debt/ version of this ontology was modified to use the generic statistical measures and measurements now in FND."
      "The https://spec.edmcouncil.org/fibo/ontology/FBC/DebtAndEquities/Debt/ version of this ontology was modified to move the concept of an extension provision from Debt to Contracts to support representation of preferred shares and other extendable contracts, eliminate remaining circular definitions, integrate concepts defining credit facilities, and refine the concept of collateral to differentiate collateral that is real property from financial assets such as cash, various accounts, securities, and receivables."
+     "The https://spec.edmcouncil.org/fibo/ontology/FBC/DebtAndEquities/Debt.rdf version of this ontology was modified to incorporate certain general debt schedule terms that were previously in more specific ontologies (FBC-317)."
      "The https://spec.edmcouncil.org/fibo/ontology/FBC/DebtAndEquities/Debt.rdf version of the ontology was modified to use the Commons Ontology Library (Commons) Annotation Vocabulary rather than the OMG's Specification Metadata vocabulary."
      "The https://spec.edmcouncil.org/fibo/ontology/FBC/DebtAndEquities/Debt/ version of this ontology was added to the FBC domain via the FIBO 2.0 RFC in support of several FIBO debt-oriented initiatives."
      "The https://spec.edmcouncil.org/fibo/ontology/FBC/DebtAndEquities/Debt.rdf version of this ontology was extended to incorporate the concept of a lease."
      "The https://spec.edmcouncil.org/fibo/ontology/FBC/DebtAndEquities/Debt.rdf version of this ontology was modified to address a punning issue due to the use of hasMethod as the parent property for hasAccrualBasis that was not detected before the latest Commons ontologies were posted to the OMG site."
+     "The https://spec.edmcouncil.org/fibo/ontology/FBC/DebtAndEquities/Debt.rdf version of this ontology was modified to add the starting point value of some collateral when it was acquired (DER-138) and to replace content that is now available in the OMG Commons Ontology Library (Commons) v1.1 (FND-380)."
+     "The https://spec.edmcouncil.org/fibo/ontology/FBC/DebtAndEquities/Debt.rdf version of this ontology was modified to replace additional content that is now available in the OMG Commons Ontology Library (Commons) v1.1 (FND-380)."
      "The https://spec.edmcouncil.org/fibo/ontology/FBC/DebtAndEquities/Debt/ version of this ontology was modified to add more detailed schedule information to support management of the various kinds of events that can impact a given contract as well as the concept of a revolving line of credit."
      "The https://spec.edmcouncil.org/fibo/ontology/FBC/DebtAndEquities/Debt/ version of this ontology was modified to add several common day count conventions used to calculate the amount of accrued interest or the present value when the next coupon payment is less than a full coupon period away, to support collateral agreements such as deeds of trust, UCC filings and the like, to add the concept of a rate reset time of day, to eliminate duplication of concepts in LCC, to simplify addresses, and to merge countries with locations."
      "The https://spec.edmcouncil.org/fibo/ontology/FBC/DebtAndEquities/Debt/ version of this ontology was modified to (1) add concepts including credit agreement whose principal is repaid at maturity and those whose principal is repaid over the course of the agreement, (2) move properties related to maturity to this ontology from FinancialInstruments and restructure the relationship between these two ontologies, (3) add the concept of a borrower identifier and the related scheme, (4) add the concept of an interest rate cap as a potential provision with respect to interest rate terms, and (5) clarified the definition of promissory note."
@@ -143,8 +147,7 @@
    :rdfs/subClassOf #{{:owl/minQualifiedCardinality 0,
                        :owl/onClass    :fibo-fbc-dae-dbt/Interest,
                        :owl/onProperty :cmns-cxtdsg/appliesTo,
-                       :rdf/type       :owl/Restriction}
-                      :fibo-fnd-pty-rl/ThingInRole},
+                       :rdf/type       :owl/Restriction} :cmns-rlcmp/Role},
    :skos/definition
    "the process of accumulating interest or other income that has been earned but not paid"})
 
@@ -155,7 +158,7 @@
    {:xsd/anyURI
     "https://spec.edmcouncil.org/fibo/ontology/FBC/DebtAndEquities/Debt/"},
    :rdfs/label "amortization",
-   :rdfs/subClassOf #{:fibo-fnd-pty-rl/ThingInRole
+   :rdfs/subClassOf #{:cmns-rlcmp/Role
                       {:owl/minQualifiedCardinality 0,
                        :owl/onClass    :fibo-fbc-dae-dbt/Debt,
                        :owl/onProperty :fibo-fbc-dae-dbt/isAmortizationOf,
@@ -175,6 +178,14 @@
    :rdfs/subClassOf #{{:owl/onProperty     :fibo-fnd-rel-rel/embodies,
                        :owl/someValuesFrom :fibo-fbc-dae-dbt/Amortization,
                        :rdf/type           :owl/Restriction}
+                      {:owl/minQualifiedCardinality 0,
+                       :owl/onClass :fibo-fbc-dae-dbt/PrincipalPaymentSchedule,
+                       :owl/onProperty :cmns-col/comprises,
+                       :rdf/type :owl/Restriction}
+                      {:owl/minQualifiedCardinality 0,
+                       :owl/onClass :fibo-fbc-dae-dbt/InterestPaymentSchedule,
+                       :owl/onProperty :cmns-col/comprises,
+                       :rdf/type :owl/Restriction}
                       :fibo-fnd-pas-psch/PaymentSchedule
                       :fibo-fbc-dae-dbt/ProjectedContractEventSchedule},
    :skos/definition
@@ -192,9 +203,9 @@
                       {:owl/onProperty     :fibo-fbc-dae-dbt/owes,
                        :owl/someValuesFrom :fibo-fbc-dae-dbt/Debt,
                        :rdf/type           :owl/Restriction}
-                      {:owl/onProperty     :fibo-fnd-pty-rl/isPlayedBy,
+                      {:owl/onProperty     :cmns-rlcmp/isPlayedBy,
                        :owl/someValuesFrom {:owl/onProperty
-                                            :fibo-fnd-pty-pty/isAPartyTo,
+                                            :cmns-pts/isAPartyTo,
                                             :owl/someValuesFrom
                                             :fibo-fbc-dae-dbt/CreditAgreement,
                                             :rdf/type :owl/Restriction},
@@ -214,7 +225,7 @@
    :rdfs/seeAlso
    {:xsd/anyURI
     "https://www.fincen.gov/resources/statutes-regulations/guidance/guidance-customer-identification-regulations-financial"},
-   :rdfs/subClassOf :fibo-fnd-pty-pty/PartyInRoleIdentificationScheme,
+   :rdfs/subClassOf :fibo-fnd-pty-pty/PartyRoleIdentificationScheme,
    :skos/definition "system for allocating identifiers to borrowers"})
 
 (def BorrowerIdentifier
@@ -233,7 +244,7 @@
    #{{:owl/onClass    :fibo-fbc-dae-dbt/BorrowerIdentificationScheme,
       :owl/onProperty :cmns-dsg/isDefinedIn,
       :owl/qualifiedCardinality 1,
-      :rdf/type       :owl/Restriction} :fibo-fnd-pty-pty/PartyInRoleIdentifier
+      :rdf/type       :owl/Restriction} :fibo-fnd-pty-pty/PartyRoleIdentifier
      {:owl/onClass    :fibo-fbc-dae-dbt/Borrower,
       :owl/onProperty :cmns-id/identifies,
       :owl/qualifiedCardinality 1,
@@ -284,7 +295,7 @@
    {:xsd/anyURI
     "https://spec.edmcouncil.org/fibo/ontology/FBC/DebtAndEquities/Debt/"},
    :rdfs/label "collateral",
-   :rdfs/subClassOf #{:fibo-fnd-pty-pty/Undergoer
+   :rdfs/subClassOf #{:cmns-pts/Undergoer
                       {:owl/minQualifiedCardinality 0,
                        :owl/onClass    :fibo-fnd-oac-own/TangibleAsset,
                        :owl/onProperty :fibo-fbc-dae-dbt/isCollateralizationOf,
@@ -308,6 +319,23 @@
    "written contract that specifies terms, over and above those specified in a promissory note, loan, or other debt instrument, under which the collateral must be made available to the lender",
    :skos/example
    "Examples include deeds of trust and uniform commercial code (UCC) agreements."})
+
+(def CollateralValueAsOfDate
+  {:db/ident :fibo-fbc-dae-dbt/CollateralValueAsOfDate,
+   :rdf/type :owl/Class,
+   :rdfs/isDefinedBy
+   {:xsd/anyURI
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/DebtAndEquities/Debt/"},
+   :rdfs/label "collateral value as of date",
+   :rdfs/subClassOf #{:fibo-fnd-arr-asmt/AppraisedValue
+                      {:owl/onProperty :fibo-fnd-arr-asmt/hasDateOfAssessment,
+                       :owl/someValuesFrom :cmns-dt/ExplicitDate,
+                       :rdf/type :owl/Restriction}
+                      {:owl/onProperty :fibo-fnd-arr-asmt/isEstimatedValueOf,
+                       :owl/someValuesFrom :fibo-fbc-dae-dbt/Collateral,
+                       :rdf/type :owl/Restriction}},
+   :skos/definition
+   "appraised value of the collateral for an obligation as of a given date"})
 
 (def CommittedCreditFacility
   {:db/ident :fibo-fbc-dae-dbt/CommittedCreditFacility,
@@ -445,13 +473,13 @@
    {:xsd/anyURI
     "https://spec.edmcouncil.org/fibo/ontology/FBC/DebtAndEquities/Debt/"},
    :rdfs/label "creditor",
-   :rdfs/subClassOf #{{:owl/allValuesFrom :fibo-be-le-lp/LegalPerson,
-                       :owl/onProperty    :fibo-fnd-rel-rel/hasIdentity,
-                       :rdf/type          :owl/Restriction}
-                      :fibo-fnd-agr-agr/Obligee
+   :rdfs/subClassOf #{:fibo-fnd-agr-agr/Obligee
                       {:owl/onProperty     :fibo-fbc-dae-dbt/isOwed,
                        :owl/someValuesFrom :fibo-fbc-dae-dbt/Debt,
-                       :rdf/type           :owl/Restriction}},
+                       :rdf/type           :owl/Restriction}
+                      {:owl/allValuesFrom :fibo-be-le-lp/LegalPerson,
+                       :owl/onProperty    :cmns-rlcmp/isPlayedBy,
+                       :rdf/type          :owl/Restriction}},
    :skos/definition
    "a party to whom an obligation, such as an amount of money, or good, or performance of some service exists"})
 
@@ -465,7 +493,7 @@
     "https://spec.edmcouncil.org/fibo/ontology/FBC/DebtAndEquities/Debt/"},
    :rdfs/label "day-count convention",
    :rdfs/subClassOf #{:fibo-fnd-dt-bd/BusinessRecurrenceIntervalConvention
-                      :fibo-fnd-utl-alx/Expression},
+                      :cmns-qtu/Expression},
    :skos/definition
    "a business recurrence interval convention that is used to calculate the number of days in an interest payment, which applies to the amount of accrued interest or the present value for debt instruments"})
 
@@ -605,7 +633,7 @@
                        :rdf/type           :owl/Restriction}
                       :fibo-fnd-agr-agr/Commitment},
    :skos/definition
-   "an obligation to pay something, such as an amount of money, good, service, or instrument"})
+   "obligation to pay something, such as an amount of money, good, service, or instrument"})
 
 (def DebtTerms
   {:cmns-av/explanatoryNote
@@ -627,14 +655,14 @@
    {:xsd/anyURI
     "https://spec.edmcouncil.org/fibo/ontology/FBC/DebtAndEquities/Debt/"},
    :rdfs/label "debtor",
-   :rdfs/subClassOf #{{:owl/allValuesFrom :fibo-be-le-lp/LegalPerson,
-                       :owl/onProperty    :fibo-fnd-rel-rel/hasIdentity,
-                       :rdf/type          :owl/Restriction}
-                      {:owl/minQualifiedCardinality 0,
+   :rdfs/subClassOf #{{:owl/minQualifiedCardinality 0,
                        :owl/onClass    :fibo-fbc-dae-dbt/Debt,
                        :owl/onProperty :fibo-fbc-dae-dbt/owes,
                        :rdf/type       :owl/Restriction}
-                      :fibo-fnd-agr-agr/Obligor},
+                      :fibo-fnd-agr-agr/Obligor
+                      {:owl/allValuesFrom :fibo-be-le-lp/LegalPerson,
+                       :owl/onProperty    :cmns-rlcmp/isPlayedBy,
+                       :rdf/type          :owl/Restriction}},
    :skos/definition
    "a party that owes a debt or other obligation to another party"})
 
@@ -663,7 +691,7 @@
    :rdfs/label "fixed interest rate",
    :rdfs/subClassOf :fibo-fnd-acc-cur/InterestRate,
    :skos/definition
-   "an interest rate that does not fluctuate over the lifetime of a loan or other debt instrument"})
+   "interest rate that does not fluctuate over the lifetime of a loan or other debt instrument"})
 
 (def FloatingInterestRate
   {:cmns-av/explanatoryNote
@@ -679,7 +707,7 @@
     "http://recomparison.com/comparisons/100975/floating-vs-variable-vs-adjustable-interest-rate/"},
    :rdfs/subClassOf :fibo-fbc-dae-dbt/VariableInterestRate,
    :skos/definition
-   "a variable interest rate that is based on a specific index or benchmark rate",
+   "variable interest rate that is based on a specific index or benchmark rate",
    :skos/example
    "Certain revolving credit, such as credit-card related debt, may adjust after a specified period of time to an absolute rate stated in the agreement (variable but not floating) rather than based on a benchmark rate (variable, floating)."})
 
@@ -713,6 +741,69 @@
                        :rdf/type          :owl/Restriction}},
    :skos/definition
    "the cost of using credit, or another's money, expressed as a rate per period of time, payable by a debtor to a creditor in consideration of the credit extended to the debtor"})
+
+(def InterestCalculation
+  {:db/ident :fibo-fbc-dae-dbt/InterestCalculation,
+   :rdf/type :owl/Class,
+   :rdfs/isDefinedBy
+   {:xsd/anyURI
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/DebtAndEquities/Debt/"},
+   :rdfs/label "interest calculation",
+   :rdfs/subClassOf #{:fibo-fbc-pas-fpas/ContractLifecycleEventOccurrence
+                      :fibo-fnd-dt-oc/Calculation
+                      {:owl/onClass    :fibo-fnd-acc-cur/MonetaryAmount,
+                       :owl/onProperty :fibo-fnd-acc-cur/hasMonetaryAmount,
+                       :owl/qualifiedCardinality 1,
+                       :rdf/type       :owl/Restriction}
+                      {:owl/onClass    :fibo-fnd-acc-cur/InterestRate,
+                       :owl/onProperty :fibo-fbc-dae-dbt/hasInterestRate,
+                       :owl/qualifiedCardinality 1,
+                       :rdf/type       :owl/Restriction}},
+   :skos/definition "event reflecting the calculation of interest"})
+
+(def InterestCalculationSchedule
+  {:cmns-av/explanatoryNote
+   "The dates may be fixed, or relative to the corresponding interest payment date. It may be the same as the payment date, in arrears, or forward looking to the next interest payment.",
+   :db/ident :fibo-fbc-dae-dbt/InterestCalculationSchedule,
+   :rdf/type :owl/Class,
+   :rdfs/isDefinedBy
+   {:xsd/anyURI
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/DebtAndEquities/Debt/"},
+   :rdfs/label "interest calculation schedule",
+   :rdfs/subClassOf #{{:owl/onProperty :fibo-fnd-dt-oc/hasOccurrence,
+                       :owl/someValuesFrom
+                       :fibo-fbc-dae-dbt/InterestCalculation,
+                       :rdf/type :owl/Restriction}
+                      :fibo-fbc-dae-dbt/ProjectedContractEventSchedule},
+   :skos/definition
+   "regular, contract-specific schedule including the dates on which interest is calculated"})
+
+(def InterestPayment
+  {:db/ident :fibo-fbc-dae-dbt/InterestPayment,
+   :rdf/type :owl/Class,
+   :rdfs/isDefinedBy
+   {:xsd/anyURI
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/DebtAndEquities/Debt/"},
+   :rdfs/label "interest payment",
+   :rdfs/subClassOf :fibo-fnd-pas-psch/Payment,
+   :skos/definition "event reflecting the actual payment of interest"})
+
+(def InterestPaymentSchedule
+  {:cmns-av/explanatoryNote
+   "The dates may be fixed, or expressed as an offset of the calculation dates. Typically the payment dates are fixed and calculation dates are expressed as an offset, however.",
+   :db/ident :fibo-fbc-dae-dbt/InterestPaymentSchedule,
+   :rdf/type :owl/Class,
+   :rdfs/isDefinedBy
+   {:xsd/anyURI
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/DebtAndEquities/Debt/"},
+   :rdfs/label "interest payment schedule",
+   :rdfs/subClassOf #{{:owl/onProperty     :fibo-fnd-dt-oc/hasOccurrence,
+                       :owl/someValuesFrom :fibo-fbc-dae-dbt/InterestPayment,
+                       :rdf/type           :owl/Restriction}
+                      :fibo-fnd-pas-psch/PaymentSchedule
+                      :fibo-fbc-dae-dbt/ProjectedContractEventSchedule},
+   :skos/definition
+   "regular, contract-specific schedule including the dates on which interest is due to be paid"})
 
 (def InterestPaymentTerms
   {:cmns-av/explanatoryNote
@@ -762,6 +853,44 @@
       :rdf/type       :owl/Restriction}},
    :skos/definition "contract terms for payment of interest on a debt"})
 
+(def InterestRateReset
+  {:cmns-av/explanatoryNote
+   "Note that depending on the contract, a rate reset can occur daily or on some other timetable, and depending on the underlying benchmark, the actual rate may or may not change. Rate resets may be associated with variable interest rate loans, scheduled reset dates for loans and other debt instruments, for example, interest rate swaps, certain kinds of bonds, and the like. The date on which interest is (re)calculated may be an explicit or date relative.",
+   :db/ident :fibo-fbc-dae-dbt/InterestRateReset,
+   :rdf/type :owl/Class,
+   :rdfs/isDefinedBy
+   {:xsd/anyURI
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/DebtAndEquities/Debt/"},
+   :rdfs/label "interest rate reset",
+   :rdfs/subClassOf :fibo-fbc-dae-dbt/InterestCalculation,
+   :skos/definition
+   "event reflecting a potential adjustment to an interest rate, typically corresponding to a change in the underlying benchmark interest rate or index specified in the contract"})
+
+(def InterestRateResetSchedule
+  {:db/ident :fibo-fbc-dae-dbt/InterestRateResetSchedule,
+   :rdf/type :owl/Class,
+   :rdfs/isDefinedBy
+   {:xsd/anyURI
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/DebtAndEquities/Debt/"},
+   :rdfs/label "interest rate reset schedule",
+   :rdfs/subClassOf #{{:owl/onProperty     :fibo-fnd-dt-oc/hasOccurrence,
+                       :owl/someValuesFrom :fibo-fbc-dae-dbt/InterestRateReset,
+                       :rdf/type           :owl/Restriction}
+                      :fibo-fbc-dae-dbt/ProjectedContractEventSchedule},
+   :skos/definition
+   "regular, contract-specific schedule including the dates on which a rate reset, and corresponding actual rate, is recalculated"})
+
+(def InterestRateSettingEvent
+  {:db/ident :fibo-fbc-dae-dbt/InterestRateSettingEvent,
+   :rdf/type :owl/Class,
+   :rdfs/isDefinedBy
+   {:xsd/anyURI
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/DebtAndEquities/Debt/"},
+   :rdfs/label "interest rate setting event",
+   :rdfs/subClassOf :fibo-fbc-dae-dbt/InterestCalculation,
+   :skos/definition
+   "event on which an initial rate for a given contract is set, which may be relative the the occurrence of some other contract lifecycle event, such as the execution date"})
+
 (def Lease
   {:cmns-av/explanatoryNote
    "The lessor is the legal owner of the asset, while the lessee obtains the right to use the asset in return for rental payments. The lessee also agrees to abide by various conditions regarding their use of the property or equipment. For example, a person leasing a car may agree to the condition that the car will only be used for personal use.",
@@ -784,9 +913,9 @@
     "https://spec.edmcouncil.org/fibo/ontology/FBC/DebtAndEquities/Debt/"},
    :rdfs/label "lender",
    :rdfs/subClassOf #{:fibo-fnd-agr-ctr/ContractParty :fibo-fbc-dae-dbt/Creditor
-                      {:owl/onProperty     :fibo-fnd-pty-rl/isPlayedBy,
+                      {:owl/onProperty     :cmns-rlcmp/isPlayedBy,
                        :owl/someValuesFrom {:owl/onProperty
-                                            :fibo-fnd-pty-pty/isAPartyTo,
+                                            :cmns-pts/isAPartyTo,
                                             :owl/someValuesFrom
                                             :fibo-fbc-dae-dbt/CreditAgreement,
                                             :rdf/type :owl/Restriction},
@@ -887,7 +1016,8 @@
     "https://spec.edmcouncil.org/fibo/ontology/FBC/DebtAndEquities/Debt/"},
    :rdfs/label "principal",
    :rdfs/seeAlso {:xsd/anyURI "http://www.finra.org/investors/bond-glossary#p"},
-   :rdfs/subClassOf #{{:owl/onProperty     :fibo-fbc-dae-dbt/isPrincipalOf,
+   :rdfs/subClassOf #{:cmns-cls/Aspect
+                      {:owl/onProperty     :fibo-fbc-dae-dbt/isPrincipalOf,
                        :owl/someValuesFrom :fibo-fbc-dae-dbt/Debt,
                        :rdf/type           :owl/Restriction}
                       {:owl/unionOf [:fibo-fnd-acc-cur/MonetaryAmount
@@ -895,6 +1025,34 @@
                        :rdf/type    :owl/Class}},
    :skos/definition
    "with respect to a debt: the value of an obligation, such as a bond or loan, raised and that must be repaid at maturity; for investments: the original amount of money invested, separate from any associated interest, dividends or capital gains"})
+
+(def PrincipalPayment
+  {:db/ident :fibo-fbc-dae-dbt/PrincipalPayment,
+   :rdf/type :owl/Class,
+   :rdfs/isDefinedBy
+   {:xsd/anyURI
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/DebtAndEquities/Debt/"},
+   :rdfs/label "principal payment",
+   :rdfs/subClassOf :fibo-fnd-pas-psch/Payment,
+   :skos/definition
+   "event reflecting the actual payment of some amount of the principal of a debt"})
+
+(def PrincipalPaymentSchedule
+  {:cmns-av/explanatoryNote
+   "The dates may be fixed, or expressed as an offset of the calculation dates. Typically the payment dates are fixed and calculation dates are expressed as an offset, however.",
+   :db/ident :fibo-fbc-dae-dbt/PrincipalPaymentSchedule,
+   :rdf/type :owl/Class,
+   :rdfs/isDefinedBy
+   {:xsd/anyURI
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/DebtAndEquities/Debt/"},
+   :rdfs/label "principal payment schedule",
+   :rdfs/subClassOf #{{:owl/onProperty     :fibo-fnd-dt-oc/hasOccurrence,
+                       :owl/someValuesFrom :fibo-fbc-dae-dbt/PrincipalPayment,
+                       :rdf/type           :owl/Restriction}
+                      :fibo-fnd-pas-psch/PaymentSchedule
+                      :fibo-fbc-dae-dbt/ProjectedContractEventSchedule},
+   :skos/definition
+   "regular, contract-specific schedule including the dates on which some percentage or all of the principal is due to be (re)paid"})
 
 (def PrincipalRepaymentTerms
   {:db/ident :fibo-fbc-dae-dbt/PrincipalRepaymentTerms,
@@ -933,19 +1091,24 @@
 
 (def ProjectedContractEventSchedule
   {:cmns-av/explanatoryNote
-   "This is a regular schedule that provides a way of documenting the anchor dates and frequency of occurrences, using rules, rather than an explicit list of dates, that are terms of the contract. This method will project future event dates (transaction event dates), based on the frequencies specified and would be adjusted due to calendar restrictions and other rules to deal with holidays, weekends, and so forth.",
+   "A projected schedule is a regular schedule that documents the anchor dates and frequency of occurrences, using rules, rather than providing an explicit list of dates. This method will project future event dates (transaction event dates), based on the frequencies specified and may be adjusted due to calendar restrictions and other rules to deal with holidays, weekends, and so forth in addition to contract-specific events.",
    :db/ident :fibo-fbc-dae-dbt/ProjectedContractEventSchedule,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    {:xsd/anyURI
     "https://spec.edmcouncil.org/fibo/ontology/FBC/DebtAndEquities/Debt/"},
    :rdfs/label "projected contract event schedule",
-   :rdfs/subClassOf #{:fibo-fnd-dt-fd/RegularSchedule
-                      {:owl/onProperty     :cmns-cxtdsg/appliesTo,
-                       :owl/someValuesFrom :fibo-fbc-dae-dbt/CreditAgreement,
-                       :rdf/type           :owl/Restriction}},
+   :rdfs/subClassOf
+   #{{:owl/minQualifiedCardinality 0,
+      :owl/onProperty     :fibo-fbc-dae-dbt/hasAnticipatedNumberOfPayments,
+      :owl/someValuesFrom :xsd/positiveInteger,
+      :rdf/type           :owl/Restriction} :fibo-fnd-dt-fd/RegularSchedule
+     {:owl/minQualifiedCardinality 0,
+      :owl/onClass    :fibo-fbc-dae-dbt/CreditAgreement,
+      :owl/onProperty :cmns-cxtdsg/appliesTo,
+      :rdf/type       :owl/Restriction}},
    :skos/definition
-   "schedule of events, including but not limited to anticipated payment events, rate reset events and others that are expected to occur over the lifetime of the credit agreement"})
+   "schedule of events, including but not limited to anticipated payment events, rate reset events and others that are expected to occur over the lifetime of the contract"})
 
 (def PromissoryNote
   {:cmns-av/explanatoryNote "Promissory notes are generally fully fungible.",
@@ -1106,6 +1269,18 @@
    :skos/definition
    "identifies the convention that defines how interest accrues on something, that is the number of days in a month and days in a year that are counted when performing interest accrual calculations"})
 
+(def hasAnticipatedNumberOfPayments
+  {:db/ident :fibo-fbc-dae-dbt/hasAnticipatedNumberOfPayments,
+   :rdf/type :owl/DatatypeProperty,
+   :rdfs/isDefinedBy
+   {:xsd/anyURI
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/DebtAndEquities/Debt/"},
+   :rdfs/label "has anticipated number of payments",
+   :rdfs/range :xsd/positiveInteger,
+   :rdfs/subPropertyOf :fibo-fnd-dt-fd/hasCount,
+   :skos/definition
+   "specifies the number payments promised per the terms of the contract over the lifetime of the contract assuming all payments are made"})
+
 (def hasAvailableAmount
   {:db/ident :fibo-fbc-dae-dbt/hasAvailableAmount,
    :rdf/type :owl/ObjectProperty,
@@ -1244,7 +1419,7 @@
     "https://spec.edmcouncil.org/fibo/ontology/FBC/DebtAndEquities/Debt/"},
    :rdfs/label "has interest rate",
    :rdfs/range :fibo-fnd-acc-cur/InterestRate,
-   :rdfs/subPropertyOf :fibo-fnd-qt-qtu/hasQuantityValue,
+   :rdfs/subPropertyOf :cmns-qtu/hasQuantityValue,
    :skos/definition
    "relates something, such as an agreement, or debt instrument, to the rate (typically annual) of interest that is to be paid by the debtor to the creditor on the debt"})
 
@@ -1476,72 +1651,76 @@
    :skos/definition "links a party to a debt that they owe"})
 
 (def urn:uuid:df5df600-bb3d-56d0-8eba-f5891bc86484
-  {:cmns-av/copyright #{"Copyright (c) 2016-2023 Object Management Group, Inc."
-                        "Copyright (c) 2016-2023 EDM Council, Inc."},
+  {:cmns-av/copyright
+   #{"Copyright (c) 2016-2024 EDM Council, Inc."
+     "Copyright (c) 2016-2024 Object Management Group, Inc."},
    :dcterms/abstract
    "This ontology defines concepts that are common to all debt instruments, such as debt, borrower, lender, debtor, creditor, interest, principal, and the like. It is designed to be used by various other FIBO specifications, including but not limited to SEC/Debt and LOAN.",
    :dcterms/license {:xsd/anyURI "https://opensource.org/licenses/MIT"},
    :fibo-fnd-utl-av/hasMaturityLevel :fibo-fnd-utl-av/Release,
    :owl/imports
    #{{:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Quantities/QuantitiesAndUnits/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/ProductsAndServices/ProductsAndServices/"}
+     {:xsd/anyURI "https://www.omg.org/spec/Commons/RolesAndCompositions/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Utilities/Analytics/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Accounting/CurrencyAmount/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Utilities/AnnotationVocabulary/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Law/LegalCapacity/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/Identifiers/"}
+     {:xsd/anyURI "https://www.omg.org/spec/Commons/PartiesAndSituations/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/ContextualDesignators/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Parties/Parties/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/ProductsAndServices/PaymentsAndSchedules/"}
+     {:xsd/anyURI "https://www.omg.org/spec/Commons/QuantitiesAndUnits/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Accounting/AccountingEquity/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/OwnershipAndControl/Ownership/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Agreements/Agreements/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Places/Locations/"}
+     {:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FBC/ProductsAndServices/FinancialProductsAndServices/"}
+     {:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/BE/LegalEntities/LegalPersons/"}
+     {:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Utilities/AnnotationVocabulary/"}
+     {:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/DatesAndTimes/FinancialDates/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/Collections/"}
+     {:xsd/anyURI "https://www.omg.org/spec/Commons/Classifiers/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/Designators/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Accounting/CurrencyAmount/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/DatesAndTimes/Occurrences/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Places/Locations/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Relations/Relations/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Arrangements/Assessments/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Parties/Parties/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/DatesAndTimes/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/ProductsAndServices/PaymentsAndSchedules/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Agreements/Contracts/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Agreements/Contracts/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/OwnershipAndControl/Ownership/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Parties/Roles/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Law/LegalCapacity/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/DatesAndTimes/BusinessDates/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Relations/Relations/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Accounting/AccountingEquity/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/AnnotationVocabulary/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/BE/LegalEntities/LegalPersons/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Agreements/Agreements/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/DatesAndTimes/FinancialDates/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Arrangements/Assessments/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/ProductsAndServices/ProductsAndServices/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FBC/ProductsAndServices/FinancialProductsAndServices/"}},
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/DatesAndTimes/BusinessDates/"}},
    :owl/versionIRI
    {:xsd/anyURI
-    "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FBC/DebtAndEquities/Debt/"},
+    "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FBC/DebtAndEquities/Debt/"},
    :rdf/type :owl/Ontology,
    :rdfs/label "Debt Ontology",
    :skos/changeNote
    #{"The https://spec.edmcouncil.org/fibo/ontology/FBC/DebtAndEquities/Debt/ version of this ontology was modified to make redemption provision a child of contractual commitment and move it to financial instruments, as such provisions apply to preferred shares and other instruments in addition to debt."
      "The https://spec.edmcouncil.org/fibo/ontology/FBC/DebtAndEquities/Debt/ version of this ontology was modified to use the generic statistical measures and measurements now in FND."
      "The https://spec.edmcouncil.org/fibo/ontology/FBC/DebtAndEquities/Debt/ version of this ontology was modified to move the concept of an extension provision from Debt to Contracts to support representation of preferred shares and other extendable contracts, eliminate remaining circular definitions, integrate concepts defining credit facilities, and refine the concept of collateral to differentiate collateral that is real property from financial assets such as cash, various accounts, securities, and receivables."
+     "The https://spec.edmcouncil.org/fibo/ontology/FBC/DebtAndEquities/Debt.rdf version of this ontology was modified to incorporate certain general debt schedule terms that were previously in more specific ontologies (FBC-317)."
      "The https://spec.edmcouncil.org/fibo/ontology/FBC/DebtAndEquities/Debt.rdf version of the ontology was modified to use the Commons Ontology Library (Commons) Annotation Vocabulary rather than the OMG's Specification Metadata vocabulary."
      "The https://spec.edmcouncil.org/fibo/ontology/FBC/DebtAndEquities/Debt/ version of this ontology was added to the FBC domain via the FIBO 2.0 RFC in support of several FIBO debt-oriented initiatives."
      "The https://spec.edmcouncil.org/fibo/ontology/FBC/DebtAndEquities/Debt.rdf version of this ontology was extended to incorporate the concept of a lease."
      "The https://spec.edmcouncil.org/fibo/ontology/FBC/DebtAndEquities/Debt.rdf version of this ontology was modified to address a punning issue due to the use of hasMethod as the parent property for hasAccrualBasis that was not detected before the latest Commons ontologies were posted to the OMG site."
+     "The https://spec.edmcouncil.org/fibo/ontology/FBC/DebtAndEquities/Debt.rdf version of this ontology was modified to add the starting point value of some collateral when it was acquired (DER-138) and to replace content that is now available in the OMG Commons Ontology Library (Commons) v1.1 (FND-380)."
+     "The https://spec.edmcouncil.org/fibo/ontology/FBC/DebtAndEquities/Debt.rdf version of this ontology was modified to replace additional content that is now available in the OMG Commons Ontology Library (Commons) v1.1 (FND-380)."
      "The https://spec.edmcouncil.org/fibo/ontology/FBC/DebtAndEquities/Debt/ version of this ontology was modified to add more detailed schedule information to support management of the various kinds of events that can impact a given contract as well as the concept of a revolving line of credit."
      "The https://spec.edmcouncil.org/fibo/ontology/FBC/DebtAndEquities/Debt/ version of this ontology was modified to add several common day count conventions used to calculate the amount of accrued interest or the present value when the next coupon payment is less than a full coupon period away, to support collateral agreements such as deeds of trust, UCC filings and the like, to add the concept of a rate reset time of day, to eliminate duplication of concepts in LCC, to simplify addresses, and to merge countries with locations."
      "The https://spec.edmcouncil.org/fibo/ontology/FBC/DebtAndEquities/Debt/ version of this ontology was modified to (1) add concepts including credit agreement whose principal is repaid at maturity and those whose principal is repaid over the course of the agreement, (2) move properties related to maturity to this ontology from FinancialInstruments and restructure the relationship between these two ontologies, (3) add the concept of a borrower identifier and the related scheme, (4) add the concept of an interest rate cap as a potential provision with respect to interest rate terms, and (5) clarified the definition of promissory note."

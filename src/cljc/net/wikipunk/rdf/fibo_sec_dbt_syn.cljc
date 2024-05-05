@@ -1,13 +1,15 @@
 (ns net.wikipunk.rdf.fibo-sec-dbt-syn
   {:cmns-av/copyright "Copyright (c) 2015-2023 EDM Council, Inc.",
    :dcat/downloadURL
-   "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/SEC/Debt/SyntheticCDOs/",
+   "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/SEC/Debt/SyntheticCDOs/",
    :dcterms/abstract
    "Synthetic collateralized debt obligations are instruments designed to provide the same kind of structure and returns as a CDO, but these are not backed by an actual pool of debt assets.",
-   :dcterms/license {:xsd/anyURI "http://opensource.org/licenses/MIT"},
+   :dcterms/license {:xsd/anyURI "https://opensource.org/licenses/MIT"},
    :fibo-fnd-utl-av/hasMaturityLevel :fibo-fnd-utl-av/Provisional,
    :namespaces
    {"cmns-av" "https://www.omg.org/spec/Commons/AnnotationVocabulary/",
+    "cmns-doc" "https://www.omg.org/spec/Commons/Documents/",
+    "cmns-qtu" "https://www.omg.org/spec/Commons/QuantitiesAndUnits/",
     "dcterms" "http://purl.org/dc/terms/",
     "fibo-be-le-lp"
     "https://spec.edmcouncil.org/fibo/ontology/BE/LegalEntities/LegalPersons/",
@@ -17,10 +19,6 @@
     "https://spec.edmcouncil.org/fibo/ontology/FBC/DebtAndEquities/CreditRatings/",
     "fibo-fnd-acc-aeq"
     "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/AccountingEquity/",
-    "fibo-fnd-rel-rel"
-    "https://spec.edmcouncil.org/fibo/ontology/FND/Relations/Relations/",
-    "fibo-fnd-utl-alx"
-    "https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/Analytics/",
     "fibo-fnd-utl-av"
     "https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/AnnotationVocabulary/",
     "fibo-sec-dbt-cdo"
@@ -37,32 +35,30 @@
     "skos" "http://www.w3.org/2004/02/skos/core#",
     "xsd" "http://www.w3.org/2001/XMLSchema#"},
    :owl/imports
-   #{{:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/DER/CreditDerivatives/CreditDefaultSwaps/"}
+   #{{:xsd/anyURI "https://www.omg.org/spec/Commons/Documents/"}
+     {:xsd/anyURI "https://www.omg.org/spec/Commons/QuantitiesAndUnits/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Utilities/Analytics/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/SEC/Debt/PoolBackedSecurities/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Utilities/AnnotationVocabulary/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/SEC/Securities/Pools/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/SEC/Debt/CollateralizedDebtObligations/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/BE/LegalEntities/LegalPersons/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/SEC/Debt/PoolBackedSecurities/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Utilities/AnnotationVocabulary/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Accounting/AccountingEquity/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FBC/DebtAndEquities/CreditRatings/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/SEC/Funds/Funds/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Accounting/AccountingEquity/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FBC/DebtAndEquities/CreditRatings/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/SEC/Funds/Funds/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Relations/Relations/"}
-     {:xsd/anyURI "https://www.omg.org/spec/Commons/AnnotationVocabulary/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/DER/CreditDerivatives/CreditDefaultSwaps/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/BE/LegalEntities/LegalPersons/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/SEC/Securities/Pools/"}},
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/SEC/Debt/CollateralizedDebtObligations/"}
+     {:xsd/anyURI "https://www.omg.org/spec/Commons/AnnotationVocabulary/"}},
    :owl/versionIRI
    {:xsd/anyURI
-    "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/SEC/Debt/SyntheticCDOs/"},
+    "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/SEC/Debt/SyntheticCDOs/"},
    :rdf/type :owl/Ontology,
    :rdfa/prefix "fibo-sec-dbt-syn",
    :rdfa/uri
@@ -273,10 +269,10 @@
     "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/SyntheticCDOs/"},
    :rdfs/label {:rdf/language "en",
                 :rdf/value    "synthetic structured finance instrument"},
-   :rdfs/subClassOf #{{:owl/onProperty     :fibo-fnd-rel-rel/refersTo,
+   :rdfs/subClassOf #{:fibo-sec-dbt-pbs/StructuredFinanceInstrument
+                      {:owl/onProperty     :cmns-doc/refersTo,
                        :owl/someValuesFrom :fibo-sec-dbt-syn/SyntheticPoolAsset,
-                       :rdf/type           :owl/Restriction}
-                      :fibo-sec-dbt-pbs/StructuredFinanceInstrument}})
+                       :rdf/type           :owl/Restriction}}})
 
 (def assetsManagedBy
   {:db/ident :fibo-sec-dbt-syn/assetsManagedBy,
@@ -405,7 +401,7 @@
     "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/SyntheticCDOs/"},
    :rdfs/label {:rdf/language "en",
                 :rdf/value    "percentage of defaults this tranche"},
-   :rdfs/range :fibo-fnd-utl-alx/Percentage,
+   :rdfs/range :cmns-qtu/Percentage,
    :skos/definition
    {:rdf/language "en",
     :rdf/value
@@ -436,6 +432,16 @@
    :rdfs/label {:rdf/language "en",
                 :rdf/value    "simulates"}})
 
+(def simulates_1
+  {:db/ident :fibo-sec-dbt-syn/simulates.1,
+   :rdf/type :owl/ObjectProperty,
+   :rdfs/domain :fibo-sec-dbt-syn/SyntheticDebtInstrumentPool,
+   :rdfs/isDefinedBy
+   {:xsd/anyURI
+    "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/SyntheticCDOs/"},
+   :rdfs/label {:rdf/language "en",
+                :rdf/value    "simulates"}})
+
 (def trancheType
   {:db/ident :fibo-sec-dbt-syn/trancheType,
    :rdf/type :owl/ObjectProperty,
@@ -447,50 +453,37 @@
                 :rdf/value    "tranche type"},
    :rdfs/range :fibo-sec-dbt-cdo/CDOTrancheSenioritySelection})
 
-(def urn:uuid:9f7c5193-940f-5ed4-9359-4e99868557b6
-  {:rdf/type :owl/ObjectProperty,
-   :rdfs/domain :fibo-sec-dbt-syn/SyntheticDebtInstrumentPool,
-   :rdfs/isDefinedBy
-   {:xsd/anyURI
-    "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/SyntheticCDOs/"},
-   :rdfs/label {:rdf/language "en",
-                :rdf/value    "simulates"},
-   :xsd/anyURI
-   "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/SyntheticCDOs/simulates.1"})
-
 (def urn:uuid:a77515cb-0551-50ad-b3fd-3a369b2b6d36
   {:cmns-av/copyright "Copyright (c) 2015-2023 EDM Council, Inc.",
    :dcterms/abstract
    "Synthetic collateralized debt obligations are instruments designed to provide the same kind of structure and returns as a CDO, but these are not backed by an actual pool of debt assets.",
-   :dcterms/license {:xsd/anyURI "http://opensource.org/licenses/MIT"},
+   :dcterms/license {:xsd/anyURI "https://opensource.org/licenses/MIT"},
    :fibo-fnd-utl-av/hasMaturityLevel :fibo-fnd-utl-av/Provisional,
    :owl/imports
-   #{{:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/DER/CreditDerivatives/CreditDefaultSwaps/"}
+   #{{:xsd/anyURI "https://www.omg.org/spec/Commons/Documents/"}
+     {:xsd/anyURI "https://www.omg.org/spec/Commons/QuantitiesAndUnits/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Utilities/Analytics/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/SEC/Debt/PoolBackedSecurities/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Utilities/AnnotationVocabulary/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/SEC/Securities/Pools/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/SEC/Debt/CollateralizedDebtObligations/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/BE/LegalEntities/LegalPersons/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/SEC/Debt/PoolBackedSecurities/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Utilities/AnnotationVocabulary/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Accounting/AccountingEquity/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FBC/DebtAndEquities/CreditRatings/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/SEC/Funds/Funds/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Accounting/AccountingEquity/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FBC/DebtAndEquities/CreditRatings/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/SEC/Funds/Funds/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Relations/Relations/"}
-     {:xsd/anyURI "https://www.omg.org/spec/Commons/AnnotationVocabulary/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/DER/CreditDerivatives/CreditDefaultSwaps/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/BE/LegalEntities/LegalPersons/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/SEC/Securities/Pools/"}},
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/SEC/Debt/CollateralizedDebtObligations/"}
+     {:xsd/anyURI "https://www.omg.org/spec/Commons/AnnotationVocabulary/"}},
    :owl/versionIRI
    {:xsd/anyURI
-    "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/SEC/Debt/SyntheticCDOs/"},
+    "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/SEC/Debt/SyntheticCDOs/"},
    :rdf/type :owl/Ontology,
    :rdfs/label {:rdf/language "en",
                 :rdf/value    "SyntheticCDOs"},

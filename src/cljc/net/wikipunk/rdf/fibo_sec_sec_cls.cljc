@@ -2,13 +2,14 @@
   {:cmns-av/copyright #{"Copyright (c) 2018-2023 Object Management Group, Inc."
                         "Copyright (c) 2016-2023 EDM Council, Inc."},
    :dcat/downloadURL
-   "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/SEC/Securities/SecuritiesClassification/",
+   "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/SEC/Securities/SecuritiesClassification/",
    :dcterms/abstract
    "This ontology defines the fundamental concepts for classifying financial instruments, particularly securities, including, but not limited to classification schemes developed by government, regulatory agencies, and industry to classify the issuers of such securities as well as the securities themselves.",
    :dcterms/license {:xsd/anyURI "https://opensource.org/licenses/MIT"},
    :fibo-fnd-utl-av/hasMaturityLevel :fibo-fnd-utl-av/Release,
    :namespaces
    {"cmns-av" "https://www.omg.org/spec/Commons/AnnotationVocabulary/",
+    "cmns-cds" "https://www.omg.org/spec/Commons/CodesAndCodeSets/",
     "cmns-cls" "https://www.omg.org/spec/Commons/Classifiers/",
     "cmns-dsg" "https://www.omg.org/spec/Commons/Designators/",
     "dcterms" "http://purl.org/dc/terms/",
@@ -29,19 +30,20 @@
     "xsd" "http://www.w3.org/2001/XMLSchema#"},
    :owl/imports
    #{{:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Arrangements/ClassificationSchemes/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Arrangements/ClassificationSchemes/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Utilities/AnnotationVocabulary/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Utilities/AnnotationVocabulary/"}
+     {:xsd/anyURI "https://www.omg.org/spec/Commons/CodesAndCodeSets/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/Classifiers/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/Designators/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Relations/Relations/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Relations/Relations/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FBC/FinancialInstruments/FinancialInstruments/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FBC/FinancialInstruments/FinancialInstruments/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/AnnotationVocabulary/"}},
    :owl/versionIRI
    {:xsd/anyURI
-    "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/SEC/Securities/SecuritiesClassification/"},
+    "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/SEC/Securities/SecuritiesClassification/"},
    :rdf/type :owl/Ontology,
    :rdfa/prefix "fibo-sec-sec-cls",
    :rdfa/uri
@@ -54,7 +56,8 @@
      "The https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/SecuritiesClassification.rdf version of this ontology was modified to eliminate duplication of concepts in LCC."
      "The https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/SecuritiesClassification.rdf version of this ontology was modified to rename (migrate) the hasDefinition property to isDefinedIn to clarify intent."
      "The https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/SecuritiesClassification.rdf version of this ontology was revised to replace uses of hasTag in Relations with hasTag from LCC, as the more complex union of datatypes in the Relations concept is not needed here."
-     "The https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/SecuritiesClassification.rdf version of this ontology was modified to use the Commons Ontology Library (Commons) rather than the OMG's Languages, Countries and Codes (LCC) and to eliminate redundancies in FIBO as appropriate."},
+     "The https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/SecuritiesClassification.rdf version of this ontology was modified to use the Commons Ontology Library (Commons) rather than the OMG's Languages, Countries and Codes (LCC) and to eliminate redundancies in FIBO as appropriate."
+     "The https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/SecuritiesClassification.rdf version of this ontology was augmented to include additional securities classification schemes that are widely used (SEC-119)."},
    :xsd/anyURI
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/SecuritiesClassification/"})
 
@@ -76,7 +79,7 @@
                        :rdf/type           :owl/Restriction}
                       :fibo-sec-sec-cls/FinancialInstrumentClassifier},
    :skos/definition
-   "a financial instrument classifier for a group of securities that exhibit similar characteristics, behave similarly in the marketplace and are subject to the same laws and regulations"})
+   "financial instrument classifier for a group of securities that exhibit similar characteristics, behave similarly in the marketplace and are subject to the same laws and regulations"})
 
 (def ClassificationOfFinancialInstrumentsCodeScheme
   {:cmns-av/abbreviation "CFI code scheme",
@@ -156,6 +159,39 @@
    :skos/example
    "Examples include equity instrument, debt instrument, option, future, etc. per the the ISO 10962 CFI (Classification of Financial Instruments) standard, as cash instruments or derivative instruments per the Financial Accounting Standards Board (FASB) and International Accounting Standards Board (IASB) accounting standards, and so forth."})
 
+(def GlobalIndustryClassificationStandardsClassifier
+  {:cmns-av/abbreviation #{"GICS code" "GICS classifier"},
+   :db/ident :fibo-sec-sec-cls/GlobalIndustryClassificationStandardsClassifier,
+   :rdf/type :owl/Class,
+   :rdfs/isDefinedBy
+   {:xsd/anyURI
+    "https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/SecuritiesClassification/"},
+   :rdfs/label "Global Industry Classification Standards classifier",
+   :rdfs/subClassOf
+   #{:fibo-fnd-arr-cls/IndustrySectorClassifier :cmns-cds/CodeElement
+     {:owl/hasValue
+      :fibo-sec-sec-cls/GlobalIndustryClassificationStandardsScheme,
+      :owl/onProperty :cmns-dsg/isDefinedIn,
+      :rdf/type :owl/Restriction}},
+   :skos/definition
+   "four-tiered standardized classification or delineation for an organization based on the principal business activity of the organization"})
+
+(def GlobalIndustryClassificationStandardsScheme
+  {:cmns-av/acronym "GICS",
+   :cmns-av/adaptedFrom {:xsd/anyURI
+                         "https://www.msci.com/our-solutions/indexes/gics"},
+   :cmns-av/explanatoryNote
+   "The four tiers are: Sectors, Industry Groups, Industries and Sub-Industries. All definitions are standardized and applied to companies globally. Each company is assigned a single GICS classification in each of the four tiers, according to its principal business activity. Revenue is a key factor in determining a firm's principal business activity. MSCI and S&P Dow Jones Indices developed this classification standard to provide investors with consistent and exhaustive industry definitions.",
+   :db/ident :fibo-sec-sec-cls/GlobalIndustryClassificationStandardsScheme,
+   :rdf/type #{:fibo-fnd-arr-cls/IndustrySectorClassificationScheme
+               :owl/NamedIndividual},
+   :rdfs/isDefinedBy
+   {:xsd/anyURI
+    "https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/SecuritiesClassification/"},
+   :rdfs/label "Global Industry Classification Standards scheme",
+   :skos/definition
+   "classification scheme that is a hierarchical four-level system classifying companies based on the principal business activity of the organization"})
+
 (def ISO10962-201910-CodeScheme
   {:db/ident :fibo-sec-sec-cls/ISO10962-201910-CodeScheme,
    :rdf/type
@@ -168,6 +204,39 @@
    :skos/definition
    "Fourth Edition, 2019-10 version of the ISO 10962 Classification of Financial Instruments (CFI) Code scheme"})
 
+(def IndustryClassificationBenchmarkClassifier
+  {:cmns-av/abbreviation #{"ICB code" "ICB classifier"},
+   :db/ident :fibo-sec-sec-cls/IndustryClassificationBenchmarkClassifier,
+   :rdf/type :owl/Class,
+   :rdfs/isDefinedBy
+   {:xsd/anyURI
+    "https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/SecuritiesClassification/"},
+   :rdfs/label "industry classification benchmark classifier",
+   :rdfs/subClassOf
+   #{{:owl/hasValue   :fibo-sec-sec-cls/IndustryClassificationBenchmarkScheme,
+      :owl/onProperty :cmns-dsg/isDefinedIn,
+      :rdf/type       :owl/Restriction}
+     :fibo-fnd-arr-cls/IndustrySectorClassifier :cmns-cds/CodeElement},
+   :skos/definition
+   "standardized classification or delineation for an organization based on their main source of revenue"})
+
+(def IndustryClassificationBenchmarkScheme
+  {:cmns-av/acronym "ICB",
+   :cmns-av/adaptedFrom
+   {:xsd/anyURI
+    "https://www.ftserussell.com/data/industry-classification-benchmark-icb"},
+   :cmns-av/explanatoryNote
+   "It is operated and managed by FTSE Russell, a subsidiary of London Stock Exchange Group (LSEG). It is currently one of the major classification systems for securities. This system has been in use since its release in 2005. It is globally recognized and used by some of the biggest financial institutions, such as: London Stock Exchange, NYSE Euronext and NASDAQ.",
+   :db/ident :fibo-sec-sec-cls/IndustryClassificationBenchmarkScheme,
+   :rdf/type #{:fibo-fnd-arr-cls/IndustrySectorClassificationScheme
+               :owl/NamedIndividual},
+   :rdfs/isDefinedBy
+   {:xsd/anyURI
+    "https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/SecuritiesClassification/"},
+   :rdfs/label "Industry Classification Benchmark scheme",
+   :skos/definition
+   "classification scheme that is a hierarchical four-level system classifying companies based on their main source of revenue"})
+
 (def urn:uuid:21bc3742-3568-5d9f-b5e9-aac5f1b90623
   {:cmns-av/copyright #{"Copyright (c) 2018-2023 Object Management Group, Inc."
                         "Copyright (c) 2016-2023 EDM Council, Inc."},
@@ -177,19 +246,20 @@
    :fibo-fnd-utl-av/hasMaturityLevel :fibo-fnd-utl-av/Release,
    :owl/imports
    #{{:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Arrangements/ClassificationSchemes/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Arrangements/ClassificationSchemes/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Utilities/AnnotationVocabulary/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Utilities/AnnotationVocabulary/"}
+     {:xsd/anyURI "https://www.omg.org/spec/Commons/CodesAndCodeSets/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/Classifiers/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/Designators/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Relations/Relations/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Relations/Relations/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FBC/FinancialInstruments/FinancialInstruments/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FBC/FinancialInstruments/FinancialInstruments/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/AnnotationVocabulary/"}},
    :owl/versionIRI
    {:xsd/anyURI
-    "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/SEC/Securities/SecuritiesClassification/"},
+    "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/SEC/Securities/SecuritiesClassification/"},
    :rdf/type :owl/Ontology,
    :rdfs/label "Securities Classification Ontology",
    :skos/changeNote
@@ -199,6 +269,7 @@
      "The https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/SecuritiesClassification.rdf version of this ontology was modified to eliminate duplication of concepts in LCC."
      "The https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/SecuritiesClassification.rdf version of this ontology was modified to rename (migrate) the hasDefinition property to isDefinedIn to clarify intent."
      "The https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/SecuritiesClassification.rdf version of this ontology was revised to replace uses of hasTag in Relations with hasTag from LCC, as the more complex union of datatypes in the Relations concept is not needed here."
-     "The https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/SecuritiesClassification.rdf version of this ontology was modified to use the Commons Ontology Library (Commons) rather than the OMG's Languages, Countries and Codes (LCC) and to eliminate redundancies in FIBO as appropriate."},
+     "The https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/SecuritiesClassification.rdf version of this ontology was modified to use the Commons Ontology Library (Commons) rather than the OMG's Languages, Countries and Codes (LCC) and to eliminate redundancies in FIBO as appropriate."
+     "The https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/SecuritiesClassification.rdf version of this ontology was augmented to include additional securities classification schemes that are widely used (SEC-119)."},
    :xsd/anyURI
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/SecuritiesClassification/"})

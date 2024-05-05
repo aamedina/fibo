@@ -1,8 +1,9 @@
 (ns net.wikipunk.rdf.fibo-fnd-arr-rt
-  {:cmns-av/copyright #{"Copyright (c) 2019-2023 Object Management Group, Inc."
-                        "Copyright (c) 2019-2023 EDM Council, Inc."},
+  {:cmns-av/copyright
+   #{"Copyright (c) 2019-2024 EDM Council, Inc."
+     "Copyright (c) 2019-2024 Object Management Group, Inc."},
    :dcat/downloadURL
-   "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Arrangements/Ratings/",
+   "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Arrangements/Ratings/",
    :dcterms/abstract
    "This ontology defines abstract concepts for representation of ratings and rating schemes, particularly for ratings describing aspects of business performance, credit worthiness, and investment quality at a high level.",
    :dcterms/license {:xsd/anyURI "https://opensource.org/licenses/MIT"},
@@ -13,6 +14,8 @@
     "cmns-cls" "https://www.omg.org/spec/Commons/Classifiers/",
     "cmns-dsg" "https://www.omg.org/spec/Commons/Designators/",
     "cmns-dt" "https://www.omg.org/spec/Commons/DatesAndTimes/",
+    "cmns-pts" "https://www.omg.org/spec/Commons/PartiesAndSituations/",
+    "cmns-rlcmp" "https://www.omg.org/spec/Commons/RolesAndCompositions/",
     "dcterms" "http://purl.org/dc/terms/",
     "fibo-fnd-agr-ctr"
     "https://spec.edmcouncil.org/fibo/ontology/FND/Agreements/Contracts/",
@@ -28,8 +31,6 @@
     "https://spec.edmcouncil.org/fibo/ontology/FND/DatesAndTimes/Occurrences/",
     "fibo-fnd-org-fm"
     "https://spec.edmcouncil.org/fibo/ontology/FND/Organizations/FormalOrganizations/",
-    "fibo-fnd-pty-pty"
-    "https://spec.edmcouncil.org/fibo/ontology/FND/Parties/Parties/",
     "fibo-fnd-rel-rel"
     "https://spec.edmcouncil.org/fibo/ontology/FND/Relations/Relations/",
     "fibo-fnd-utl-av"
@@ -40,32 +41,32 @@
     "skos" "http://www.w3.org/2004/02/skos/core#",
     "xsd" "http://www.w3.org/2001/XMLSchema#"},
    :owl/imports
-   #{{:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Utilities/AnnotationVocabulary/"}
+   #{{:xsd/anyURI "https://www.omg.org/spec/Commons/RolesAndCompositions/"}
+     {:xsd/anyURI "https://www.omg.org/spec/Commons/PartiesAndSituations/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Parties/Parties/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Arrangements/Documents/"}
+     {:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Utilities/AnnotationVocabulary/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/CodesAndCodeSets/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/Classifiers/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/Designators/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Arrangements/Assessments/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/DatesAndTimes/Occurrences/"}
+     {:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Relations/Relations/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/DatesAndTimes/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/DatesAndTimes/Occurrences/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Agreements/Contracts/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Agreements/Contracts/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Arrangements/Reporting/"}
+     {:xsd/anyURI "https://www.omg.org/spec/Commons/AnnotationVocabulary/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Relations/Relations/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Arrangements/Assessments/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Arrangements/Reporting/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Arrangements/Documents/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Organizations/FormalOrganizations/"}
-     {:xsd/anyURI "https://www.omg.org/spec/Commons/AnnotationVocabulary/"}},
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Organizations/FormalOrganizations/"}},
    :owl/versionIRI
    {:xsd/anyURI
-    "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Arrangements/Ratings/"},
+    "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Arrangements/Ratings/"},
    :rdf/type :owl/Ontology,
    :rdfa/prefix "fibo-fnd-arr-rt",
    :rdfa/uri
@@ -78,6 +79,7 @@
      "The https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Ratings.rdf version of the ontology was modified to use the Commons Ontology Library (Commons) Annotation Vocabulary rather than the OMG's Specification Metadata vocabulary."
      "The https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Ratings.rdf version of this ontology was revised to replace uses of hasTag in Relations with hasTag from LCC, as the more complex union of datatypes in the Relations concept is not needed here."
      "The https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Ratings.rdf version of this ontology was modified to use the Commons Ontology Library (Commons) rather than the OMG's Languages, Countries and Codes (LCC) and to eliminate redundancies in FIBO as appropriate."
+     "The https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Ratings.rdf version of the ontology was modified to replace content that is now available in the OMG Commons Ontology Library (Commons) v1.1 (FND-380)."
      "The https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Ratings.rdf version of this ontology was revised to eliminate duplication with LCC."
      "The https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Ratings.rdf version of this ontology was revised to replace hasDefinition with isDefinedIn to clarify intent."},
    :xsd/anyURI
@@ -155,10 +157,10 @@
    {:xsd/anyURI
     "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Ratings/"},
    :rdfs/label "rating agency",
-   :rdfs/subClassOf #{{:owl/onProperty     :fibo-fnd-rel-rel/hasIdentity,
+   :rdfs/subClassOf #{:fibo-fnd-arr-rt/RatingIssuer
+                      {:owl/onProperty     :cmns-rlcmp/isPlayedBy,
                        :owl/someValuesFrom :fibo-fnd-org-fm/FormalOrganization,
                        :rdf/type           :owl/Restriction}
-                      :fibo-fnd-arr-rt/RatingIssuer
                       :fibo-fnd-arr-rt/RatingScalePublisher},
    :skos/definition
    "rating issuer that is also a rating scale publisher, frequently but not always an independent rating service"})
@@ -185,7 +187,7 @@
     "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Ratings/"},
    :rdfs/label "rating assessment event",
    :rdfs/subClassOf #{{:owl/onClass :fibo-fnd-arr-rt/RatingAssessmentActivity,
-                       :owl/onProperty :fibo-fnd-dt-oc/exemplifies,
+                       :owl/onProperty :fibo-fnd-rel-rel/exemplifies,
                        :owl/qualifiedCardinality 1,
                        :rdf/type :owl/Restriction}
                       :fibo-fnd-arr-asmt/AssessmentEvent
@@ -211,10 +213,10 @@
    {:xsd/anyURI
     "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Ratings/"},
    :rdfs/label "rating issuer",
-   :rdfs/subClassOf #{{:owl/onProperty     :fibo-fnd-rel-rel/issues,
+   :rdfs/subClassOf #{:cmns-pts/PartyRole
+                      {:owl/onProperty     :fibo-fnd-rel-rel/issues,
                        :owl/someValuesFrom :fibo-fnd-arr-rt/Rating,
-                       :rdf/type           :owl/Restriction}
-                      :fibo-fnd-pty-pty/PartyInRole},
+                       :rdf/type           :owl/Restriction}},
    :skos/definition "party that is responsible for issuing ratings"})
 
 (def RatingParty
@@ -227,7 +229,7 @@
    :rdfs/subClassOf #{{:owl/onProperty     :fibo-fnd-rel-rel/generates,
                        :owl/someValuesFrom :fibo-fnd-arr-rt/Rating,
                        :rdf/type           :owl/Restriction}
-                      :fibo-fnd-pty-pty/PartyInRole},
+                      :cmns-pts/PartyRole},
    :skos/definition
    "person, organization or group that analyzes some aspect of something and develops a rating"})
 
@@ -282,7 +284,7 @@
    :rdfs/subClassOf #{{:owl/onProperty     :fibo-fnd-rel-rel/manages,
                        :owl/someValuesFrom :fibo-fnd-arr-rt/RatingScale,
                        :rdf/type           :owl/Restriction}
-                      :fibo-fnd-pty-pty/PartyInRole},
+                      :cmns-pts/PartyRole},
    :skos/definition
    "party responsible for managing one or more rating schemes and potentially publishing ratings based on those schemes"})
 
@@ -410,39 +412,40 @@
    :skos/definition "rating performer an issuer uses to assess ratings"})
 
 (def urn:uuid:3cabad56-198b-58b1-a60e-9c08b14e53a0
-  {:cmns-av/copyright #{"Copyright (c) 2019-2023 Object Management Group, Inc."
-                        "Copyright (c) 2019-2023 EDM Council, Inc."},
+  {:cmns-av/copyright
+   #{"Copyright (c) 2019-2024 EDM Council, Inc."
+     "Copyright (c) 2019-2024 Object Management Group, Inc."},
    :dcterms/abstract
    "This ontology defines abstract concepts for representation of ratings and rating schemes, particularly for ratings describing aspects of business performance, credit worthiness, and investment quality at a high level.",
    :dcterms/license {:xsd/anyURI "https://opensource.org/licenses/MIT"},
    :fibo-fnd-utl-av/hasMaturityLevel :fibo-fnd-utl-av/Release,
    :owl/imports
-   #{{:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Utilities/AnnotationVocabulary/"}
+   #{{:xsd/anyURI "https://www.omg.org/spec/Commons/RolesAndCompositions/"}
+     {:xsd/anyURI "https://www.omg.org/spec/Commons/PartiesAndSituations/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Parties/Parties/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Arrangements/Documents/"}
+     {:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Utilities/AnnotationVocabulary/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/CodesAndCodeSets/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/Classifiers/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/Designators/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Arrangements/Assessments/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/DatesAndTimes/Occurrences/"}
+     {:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Relations/Relations/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/DatesAndTimes/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/DatesAndTimes/Occurrences/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Agreements/Contracts/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Agreements/Contracts/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Arrangements/Reporting/"}
+     {:xsd/anyURI "https://www.omg.org/spec/Commons/AnnotationVocabulary/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Relations/Relations/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Arrangements/Assessments/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Arrangements/Reporting/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Arrangements/Documents/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Organizations/FormalOrganizations/"}
-     {:xsd/anyURI "https://www.omg.org/spec/Commons/AnnotationVocabulary/"}},
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Organizations/FormalOrganizations/"}},
    :owl/versionIRI
    {:xsd/anyURI
-    "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Arrangements/Ratings/"},
+    "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Arrangements/Ratings/"},
    :rdf/type :owl/Ontology,
    :rdfs/label "Ratings Ontology",
    :skos/changeNote
@@ -452,6 +455,7 @@
      "The https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Ratings.rdf version of the ontology was modified to use the Commons Ontology Library (Commons) Annotation Vocabulary rather than the OMG's Specification Metadata vocabulary."
      "The https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Ratings.rdf version of this ontology was revised to replace uses of hasTag in Relations with hasTag from LCC, as the more complex union of datatypes in the Relations concept is not needed here."
      "The https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Ratings.rdf version of this ontology was modified to use the Commons Ontology Library (Commons) rather than the OMG's Languages, Countries and Codes (LCC) and to eliminate redundancies in FIBO as appropriate."
+     "The https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Ratings.rdf version of the ontology was modified to replace content that is now available in the OMG Commons Ontology Library (Commons) v1.1 (FND-380)."
      "The https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Ratings.rdf version of this ontology was revised to eliminate duplication with LCC."
      "The https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Ratings.rdf version of this ontology was revised to replace hasDefinition with isDefinedIn to clarify intent."},
    :xsd/anyURI

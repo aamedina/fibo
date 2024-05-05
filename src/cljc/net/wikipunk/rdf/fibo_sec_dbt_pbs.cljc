@@ -1,9 +1,8 @@
 (ns net.wikipunk.rdf.fibo-sec-dbt-pbs
-  {:cmns-av/copyright
-   #{"Copyright (c) 2015-2023 EDM Council, Inc."
-     "Copyright (c) 2015-2023 Object Management Group, Inc."},
+  {:cmns-av/copyright #{"Copyright (c) 2015-2024 Object Management Group, Inc."
+                        "Copyright (c) 2015-2024 EDM Council, Inc."},
    :dcat/downloadURL
-   "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/SEC/Debt/PoolBackedSecurities/",
+   "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/SEC/Debt/PoolBackedSecurities/",
    :dcterms/abstract
    "This ontology defines concepts that are common to asset-backed and mortgage-backed securities, including pools, as well as structured finance instruments.",
    :dcterms/license {:xsd/anyURI "https://opensource.org/licenses/MIT"},
@@ -13,14 +12,19 @@
     "cmns-cls" "https://www.omg.org/spec/Commons/Classifiers/",
     "cmns-col" "https://www.omg.org/spec/Commons/Collections/",
     "cmns-cxtdsg" "https://www.omg.org/spec/Commons/ContextualDesignators/",
+    "cmns-doc" "https://www.omg.org/spec/Commons/Documents/",
     "cmns-dt" "https://www.omg.org/spec/Commons/DatesAndTimes/",
+    "cmns-qtu" "https://www.omg.org/spec/Commons/QuantitiesAndUnits/",
+    "cmns-rlcmp" "https://www.omg.org/spec/Commons/RolesAndCompositions/",
     "dcterms" "http://purl.org/dc/terms/",
     "fibo-be-le-lp"
     "https://spec.edmcouncil.org/fibo/ontology/BE/LegalEntities/LegalPersons/",
     "fibo-fbc-dae-dbt"
     "https://spec.edmcouncil.org/fibo/ontology/FBC/DebtAndEquities/Debt/",
-    "fibo-fnd-pty-rl"
-    "https://spec.edmcouncil.org/fibo/ontology/FND/Parties/Roles/",
+    "fibo-fnd-acc-cur"
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/CurrencyAmount/",
+    "fibo-fnd-arr-asmt"
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Assessments/",
     "fibo-fnd-rel-rel"
     "https://spec.edmcouncil.org/fibo/ontology/FND/Relations/Relations/",
     "fibo-fnd-utl-alx"
@@ -39,30 +43,35 @@
     "skos" "http://www.w3.org/2004/02/skos/core#",
     "xsd" "http://www.w3.org/2001/XMLSchema#"},
    :owl/imports
-   #{{:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Utilities/Analytics/"}
+   #{{:xsd/anyURI "https://www.omg.org/spec/Commons/RolesAndCompositions/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Utilities/AnnotationVocabulary/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Accounting/CurrencyAmount/"}
+     {:xsd/anyURI "https://www.omg.org/spec/Commons/Documents/"}
+     {:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FBC/DebtAndEquities/Debt/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/ContextualDesignators/"}
+     {:xsd/anyURI "https://www.omg.org/spec/Commons/QuantitiesAndUnits/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FBC/DebtAndEquities/Debt/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/SEC/Securities/Pools/"}
+     {:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/BE/LegalEntities/LegalPersons/"}
+     {:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Utilities/AnnotationVocabulary/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/Collections/"}
+     {:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Utilities/Analytics/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/Classifiers/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/SEC/Debt/DebtInstruments/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Relations/Relations/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/DatesAndTimes/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Parties/Roles/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Relations/Relations/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/SEC/Debt/DebtInstruments/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/AnnotationVocabulary/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/BE/LegalEntities/LegalPersons/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/SEC/Securities/Pools/"}},
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Arrangements/Assessments/"}},
    :owl/versionIRI
    {:xsd/anyURI
-    "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/SEC/Debt/PoolBackedSecurities/"},
+    "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/SEC/Debt/PoolBackedSecurities/"},
    :rdf/type :owl/Ontology,
    :rdfa/prefix "fibo-sec-dbt-pbs",
    :rdfa/uri
@@ -70,9 +79,12 @@
    :rdfs/label {:rdf/language "en",
                 :rdf/value    "Pool-backed Securities Ontology"},
    :skos/changeNote
-   #{"The https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/PoolBackedSecurities.rdf version of this ontology was modified to use the Commons Ontology Library (Commons) rather than the OMG's Languages, Countries and Codes (LCC), eliminating redundancies in FIBO as appropriate, and added an explanatory note to ABS."
+   #{"The https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/PoolBackedSecurities.rdf version of this ontology was modified to replace additional content that is now available in the OMG Commons Ontology Library (Commons) v1.1 (FND-380)."
+     "The https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/PoolBackedSecurities.rdf version of this ontology was modified to use the Commons Ontology Library (Commons) rather than the OMG's Languages, Countries and Codes (LCC), eliminating redundancies in FIBO as appropriate, and added an explanatory note to ABS."
      "The https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/PoolBackedSecurities.rdf version of the ontology was modified to use the Commons Ontology Library (Commons) Annotation Vocabulary rather than the OMG's Specification Metadata vocabulary."
-     "The https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/PoolBackedSecurities.rdf version of this ontology was modified add a number of commonly used pool-backed security related statistical measures."},
+     "The https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/PoolBackedSecurities.rdf version of this ontology was modified to replace content that is now available in the OMG Commons Ontology Library (Commons) v1.1 (FND-380)."
+     "The https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/PoolBackedSecurities.rdf version of this ontology was modified to add a number of commonly used pool-backed security related statistical measures."
+     "The https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/PoolBackedSecurities.rdf version of this ontology was modified to add the starting point value of the total collateral of a given tranche at the time it was created (DER-138)."},
    :xsd/anyURI
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/PoolBackedSecurities/"})
 
@@ -125,6 +137,37 @@
     :rdf/value
     "debt instrument backed by receivables other than those arising out of real estate loans or mortgages"}})
 
+(def AttachmentPoint
+  {:cmns-av/adaptedFrom
+   #{{:rdf/language "en",
+      :rdf/value    "https://fincyclopedia.net/finance/"}
+     {:rdf/language "en",
+      :rdf/value
+      "Alexander Veremyev, Peter Tsyurmasto, and Stan Uryasev. \"Optimal Structuring of CDO contracts: Optimization Approach\". https://www.ise.ufl.edu/uryasev/files/2012/10/structuring_CDO_JCR_oct12.pdf"}},
+   :cmns-av/explanatoryNote
+   #{{:rdf/language "en",
+      :rdf/value
+      "A CDO tranche becomes liable for losses when the total amount of defaults or losses in the underlying debt pool exceeds a certain threshold, called the attachment point. The attachment point is expressed as a percentage of the total value of the debt pool. In other words, the attachment point is the level of subordination above which a given tranche stands. Note that the notion of 'liability for loss' is in a financial or econonmic sense rather than a legal sense."}
+     {:rdf/language "en",
+      :rdf/value
+      "The higher the attachment point, the lower the risk and the return for the tranche. The lower the attachment point, the higher the risk and the return for the tranche. The most senior tranches have the highest attachment points and are paid first from the cash flows of the debt pool. The most junior tranches have the lowest attachment points and are paid last from the cash flows of the debt pool. The junior tranches also bear the first losses when defaults occur in the debt pool."}},
+   :db/ident :fibo-sec-dbt-pbs/AttachmentPoint,
+   :rdf/type :owl/Class,
+   :rdfs/isDefinedBy
+   {:xsd/anyURI
+    "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/PoolBackedSecurities/"},
+   :rdfs/label {:rdf/language "en",
+                :rdf/value    "attachment point"},
+   :rdfs/subClassOf #{:fibo-fnd-acc-cur/PercentageMonetaryAmount
+                      {:owl/minQualifiedCardinality 0,
+                       :owl/onClass :fibo-fbc-dae-dbt/CollateralValueAsOfDate,
+                       :owl/onProperty :fibo-fnd-arr-asmt/isEstimatedValueOf,
+                       :rdf/type :owl/Restriction}},
+   :skos/definition
+   {:rdf/language "en",
+    :rdf/value
+    "lower tranche boundary of a tranche defined as a percentage of the value of the total pool of collateral, either at issuance or as of some point in time"}})
+
 (def DebtPoolStatisticalMeasure
   {:db/ident :fibo-sec-dbt-pbs/DebtPoolStatisticalMeasure,
    :rdf/type :owl/Class,
@@ -133,14 +176,14 @@
     "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/PoolBackedSecurities/"},
    :rdfs/label {:rdf/language "en",
                 :rdf/value    "debt pool statistical measure"},
-   :rdfs/subClassOf
-   #{{:owl/onProperty     :cmns-cxtdsg/appliesTo,
-      :owl/someValuesFrom :fibo-sec-sec-pls/DebtPool,
-      :rdf/type           :owl/Restriction} :fibo-fnd-utl-alx/QualifiedMeasure
-     {:owl/minQualifiedCardinality 0,
-      :owl/onClass    :cmns-dt/DatePeriod,
-      :owl/onProperty :fibo-fnd-utl-alx/hasApplicableDatePeriod,
-      :rdf/type       :owl/Restriction}},
+   :rdfs/subClassOf #{{:owl/onProperty     :cmns-cxtdsg/appliesTo,
+                       :owl/someValuesFrom :fibo-sec-sec-pls/DebtPool,
+                       :rdf/type           :owl/Restriction}
+                      :fibo-fnd-utl-alx/QualifiedMeasure
+                      {:owl/minQualifiedCardinality 0,
+                       :owl/onClass    :cmns-dt/DatePeriod,
+                       :owl/onProperty :cmns-cxtdsg/hasApplicablePeriod,
+                       :rdf/type       :owl/Restriction}},
    :skos/definition
    {:rdf/language "en",
     :rdf/value
@@ -154,12 +197,40 @@
     "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/PoolBackedSecurities/"},
    :rdfs/label {:rdf/language "en",
                 :rdf/value    "default rate"},
-   :rdfs/subClassOf #{:fibo-fnd-utl-alx/Ratio
+   :rdfs/subClassOf #{:cmns-qtu/Ratio
                       :fibo-sec-dbt-pbs/DebtPoolStatisticalMeasure},
    :skos/definition
    {:rdf/language "en",
     :rdf/value
     "qualified measure of the rate at which holders of the debt instruments in the pool default on those instruments"}})
+
+(def DetachmentPoint
+  {:cmns-av/adaptedFrom
+   #{{:rdf/language "en",
+      :rdf/value    "https://fincyclopedia.net/finance/"}
+     {:rdf/language "en",
+      :rdf/value
+      "Alexander Veremyev, Peter Tsyurmasto, and Stan Uryasev. \"Optimal Structuring of CDO contracts: Optimization Approach\". https://www.ise.ufl.edu/uryasev/files/2012/10/structuring_CDO_JCR_oct12.pdf"}},
+   :cmns-av/explanatoryNote
+   {:rdf/language "en",
+    :rdf/value
+    "The CDO tranche loss arises when the cumulative collateral loss exceeds the tranche's attachment point. The detachment point corresponds to the amount of pool losses that will completely wipe out the respective tranche. The detachment point is the maximum of pool-level losses at which a given tranche becomes liable for losses."},
+   :db/ident :fibo-sec-dbt-pbs/DetachmentPoint,
+   :rdf/type :owl/Class,
+   :rdfs/isDefinedBy
+   {:xsd/anyURI
+    "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/PoolBackedSecurities/"},
+   :rdfs/label {:rdf/language "en",
+                :rdf/value    "detachment point"},
+   :rdfs/subClassOf #{:fibo-fnd-acc-cur/PercentageMonetaryAmount
+                      {:owl/minQualifiedCardinality 0,
+                       :owl/onClass :fibo-fbc-dae-dbt/CollateralValueAsOfDate,
+                       :owl/onProperty :fibo-fnd-arr-asmt/isEstimatedValueOf,
+                       :rdf/type :owl/Restriction}},
+   :skos/definition
+   {:rdf/language "en",
+    :rdf/value
+    "upper tranche boundary of a tranche defined as a percentage of the value of the total pool of collateral, either at issuance or as of some point in time"}})
 
 (def PoolBackedSecurity
   {:cmns-av/explanatoryNote
@@ -173,19 +244,24 @@
     "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/PoolBackedSecurities/"},
    :rdfs/label {:rdf/language "en",
                 :rdf/value    "pool-backed security"},
-   :rdfs/subClassOf #{:fibo-sec-dbt-dbti/TradableDebtInstrument
-                      {:owl/onProperty     :fibo-fbc-dae-dbt/isBasedOn,
-                       :owl/someValuesFrom :fibo-sec-sec-pls/InstrumentPool,
-                       :rdf/type           :owl/Restriction}
-                      {:owl/onDataRange :xsd/boolean,
-                       :owl/onProperty  :fibo-sec-dbt-pbs/isPassThrough,
-                       :owl/qualifiedCardinality 1,
-                       :rdf/type        :owl/Restriction}
-                      {:owl/minQualifiedCardinality 0,
-                       :owl/onClass
-                       :fibo-sec-dbt-pbs/DebtPoolStatisticalMeasure,
-                       :owl/onProperty :cmns-cls/isCharacterizedBy,
-                       :rdf/type :owl/Restriction}},
+   :rdfs/subClassOf
+   #{:fibo-sec-dbt-dbti/TradableDebtInstrument
+     {:owl/onProperty     :fibo-fbc-dae-dbt/isBasedOn,
+      :owl/someValuesFrom :fibo-sec-sec-pls/InstrumentPool,
+      :rdf/type           :owl/Restriction}
+     {:owl/onDataRange :xsd/boolean,
+      :owl/onProperty  :fibo-sec-dbt-pbs/isPassThrough,
+      :owl/qualifiedCardinality 1,
+      :rdf/type        :owl/Restriction}
+     {:owl/minQualifiedCardinality 0,
+      :owl/onClass :fibo-fbc-dae-dbt/CollateralValueAsOfDate,
+      :owl/onProperty
+      :fibo-sec-dbt-pbs/hasEstimatedTotalCollateralValueAtIssuance,
+      :rdf/type :owl/Restriction}
+     {:owl/minQualifiedCardinality 0,
+      :owl/onClass    :fibo-sec-dbt-pbs/DebtPoolStatisticalMeasure,
+      :owl/onProperty :cmns-cls/isCharacterizedBy,
+      :rdf/type       :owl/Restriction}},
    :skos/definition
    {:rdf/language "en",
     :rdf/value
@@ -246,7 +322,7 @@
     "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/PoolBackedSecurities/"},
    :rdfs/label {:rdf/language "en",
                 :rdf/value    "single monthly mortality"},
-   :rdfs/subClassOf #{:fibo-fnd-utl-alx/Percentage
+   :rdfs/subClassOf #{:cmns-qtu/Percentage
                       :fibo-sec-dbt-pbs/DebtPoolStatisticalMeasure},
    :skos/definition
    {:rdf/language "en",
@@ -268,14 +344,14 @@
    :rdfs/label {:rdf/language "en",
                 :rdf/value    "structured finance instrument"},
    :rdfs/seeAlso {:xsd/anyURI "https://www.bis.org/publ/cgfs23mitchell.pdf"},
-   :rdfs/subClassOf #{:fibo-sec-dbt-pbs/PoolBackedSecurity
-                      {:owl/onProperty :fibo-fnd-rel-rel/isIssuedBy,
+   :rdfs/subClassOf #{{:owl/onProperty :fibo-fnd-rel-rel/isIssuedBy,
                        :owl/someValuesFrom
-                       {:owl/onProperty :fibo-fnd-pty-rl/isPlayedBy,
+                       {:owl/onProperty :cmns-rlcmp/isPlayedBy,
                         :owl/someValuesFrom
                         :fibo-be-le-lp/SpecialPurposeVehicle,
                         :rdf/type :owl/Restriction},
-                       :rdf/type :owl/Restriction}},
+                       :rdf/type :owl/Restriction}
+                      :fibo-sec-dbt-pbs/PoolBackedSecurity},
    :skos/definition
    {:rdf/language "en",
     :rdf/value
@@ -323,7 +399,19 @@
    :rdfs/label {:rdf/language "en",
                 :rdf/value    "tranche"},
    :rdfs/subClassOf
-   #{:fibo-sec-dbt-pbs/StructuredFinanceInstrument
+   #{{:owl/minQualifiedCardinality 0,
+      :owl/onClass    :fibo-sec-dbt-pbs/AttachmentPoint,
+      :owl/onProperty :fibo-sec-dbt-pbs/hasAttachmentPoint,
+      :rdf/type       :owl/Restriction}
+     {:owl/minQualifiedCardinality 0,
+      :owl/onClass :fibo-fbc-dae-dbt/CollateralValueAsOfDate,
+      :owl/onProperty
+      :fibo-sec-dbt-pbs/hasEstimatedTotalCollateralValueAtIssuance,
+      :rdf/type :owl/Restriction} :fibo-sec-dbt-pbs/StructuredFinanceInstrument
+     {:owl/minQualifiedCardinality 0,
+      :owl/onClass    :fibo-sec-dbt-pbs/DetachmentPoint,
+      :owl/onProperty :fibo-sec-dbt-pbs/hasDetachmentPoint,
+      :rdf/type       :owl/Restriction}
      {:owl/onProperty     :cmns-col/comprises,
       :owl/someValuesFrom {:owl/onClass    :fibo-sec-sec-pls/InstrumentPool,
                            :owl/onProperty :cmns-col/isConstituentOf,
@@ -381,11 +469,11 @@
     "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/PoolBackedSecurities/"},
    :rdfs/label {:rdf/language "en",
                 :rdf/value    "weighted average life"},
-   :rdfs/subClassOf #{{:owl/minQualifiedCardinality 0,
+   :rdfs/subClassOf #{:fibo-fnd-utl-alx/ArithmeticMean
+                      {:owl/minQualifiedCardinality 0,
                        :owl/onClass    :fibo-sec-dbt-pbs/PrepaymentSpeed,
-                       :owl/onProperty :fibo-fnd-rel-rel/refersTo,
+                       :owl/onProperty :cmns-doc/refersTo,
                        :rdf/type       :owl/Restriction}
-                      :fibo-fnd-utl-alx/ArithmeticMean
                       :fibo-sec-dbt-pbs/DebtPoolStatisticalMeasure},
    :skos/definition
    {:rdf/language "en",
@@ -463,6 +551,50 @@
     :rdf/value
     "weighted average time to maturity of a portfolio of asset-backed securities (ABS) or mortgage-backed (MBS) securities"}})
 
+(def hasAttachmentPoint
+  {:cmns-av/explanatoryNote
+   {:rdf/language "en",
+    :rdf/value
+    "When it is said that a tranche becomes 'liable for losses,' it means that the tranche starts to absorb or incur financial losses due to defaults or impairments in the underlying assets. This is based on the contractual agreements and the structuring of the CDO, which dictate the order in which losses are allocated to different tranches. Note that the notion of 'liability for loss' is in a financial or econonmic sense rather than a legal sense."},
+   :db/ident :fibo-sec-dbt-pbs/hasAttachmentPoint,
+   :rdf/type :owl/ObjectProperty,
+   :rdfs/isDefinedBy
+   {:xsd/anyURI
+    "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/PoolBackedSecurities/"},
+   :rdfs/label "has attachment point",
+   :rdfs/range :fibo-sec-dbt-pbs/AttachmentPoint,
+   :rdfs/subPropertyOf :cmns-qtu/hasQuantityValue,
+   :skos/definition
+   "indicates the minimum (lower boundary) of the total value of the underlying collateral, either at issuance or as of some point in time, at which point a given tranche becomes liable for losses"})
+
+(def hasDetachmentPoint
+  {:cmns-av/explanatoryNote
+   {:rdf/language "en",
+    :rdf/value
+    "When it is said that a tranche becomes 'liable for losses,' it means that the tranche starts to absorb or incur financial losses due to defaults or impairments in the underlying assets. This is based on the contractual agreements and the structuring of the CDO, which dictate the order in which losses are allocated to different tranches. Note that the notion of 'liability for loss' is in a financial or econonmic sense rather than a legal sense."},
+   :db/ident :fibo-sec-dbt-pbs/hasDetachmentPoint,
+   :rdf/type :owl/ObjectProperty,
+   :rdfs/isDefinedBy
+   {:xsd/anyURI
+    "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/PoolBackedSecurities/"},
+   :rdfs/label "has detachment point",
+   :rdfs/range :fibo-sec-dbt-pbs/DetachmentPoint,
+   :rdfs/subPropertyOf :cmns-qtu/hasQuantityValue,
+   :skos/definition
+   "indicates the maximum (upper boundary) of the total value of the underlying collateral, either at issuance or as of some point in time, at which point the value of given tranche is wiped out"})
+
+(def hasEstimatedTotalCollateralValueAtIssuance
+  {:db/ident :fibo-sec-dbt-pbs/hasEstimatedTotalCollateralValueAtIssuance,
+   :rdf/type :owl/ObjectProperty,
+   :rdfs/isDefinedBy
+   {:xsd/anyURI
+    "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/PoolBackedSecurities/"},
+   :rdfs/label "is estimated value of",
+   :rdfs/range :fibo-fbc-dae-dbt/CollateralValueAsOfDate,
+   :rdfs/subPropertyOf :fibo-fnd-arr-asmt/isEstimatedValueOf,
+   :skos/definition
+   "indicates the estimated value of the combined underlying collateral for a given tranche at the time the instrument was issued"})
+
 (def isPassThrough
   {:db/ident :fibo-sec-dbt-pbs/isPassThrough,
    :rdf/type :owl/DatatypeProperty,
@@ -479,44 +611,51 @@
     "indicates whether the cash flows from the underlying asset pool are passed through to the investor by way of redemption payments"}})
 
 (def urn:uuid:1eac53e9-7ce0-53ed-9b2c-55e8593fcbbc
-  {:cmns-av/copyright
-   #{"Copyright (c) 2015-2023 EDM Council, Inc."
-     "Copyright (c) 2015-2023 Object Management Group, Inc."},
+  {:cmns-av/copyright #{"Copyright (c) 2015-2024 Object Management Group, Inc."
+                        "Copyright (c) 2015-2024 EDM Council, Inc."},
    :dcterms/abstract
    "This ontology defines concepts that are common to asset-backed and mortgage-backed securities, including pools, as well as structured finance instruments.",
    :dcterms/license {:xsd/anyURI "https://opensource.org/licenses/MIT"},
    :fibo-fnd-utl-av/hasMaturityLevel :fibo-fnd-utl-av/Release,
    :owl/imports
-   #{{:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Utilities/Analytics/"}
+   #{{:xsd/anyURI "https://www.omg.org/spec/Commons/RolesAndCompositions/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Utilities/AnnotationVocabulary/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Accounting/CurrencyAmount/"}
+     {:xsd/anyURI "https://www.omg.org/spec/Commons/Documents/"}
+     {:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FBC/DebtAndEquities/Debt/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/ContextualDesignators/"}
+     {:xsd/anyURI "https://www.omg.org/spec/Commons/QuantitiesAndUnits/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FBC/DebtAndEquities/Debt/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/SEC/Securities/Pools/"}
+     {:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/BE/LegalEntities/LegalPersons/"}
+     {:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Utilities/AnnotationVocabulary/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/Collections/"}
+     {:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Utilities/Analytics/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/Classifiers/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/SEC/Debt/DebtInstruments/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Relations/Relations/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/DatesAndTimes/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Parties/Roles/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Relations/Relations/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/SEC/Debt/DebtInstruments/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/AnnotationVocabulary/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/BE/LegalEntities/LegalPersons/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/SEC/Securities/Pools/"}},
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Arrangements/Assessments/"}},
    :owl/versionIRI
    {:xsd/anyURI
-    "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/SEC/Debt/PoolBackedSecurities/"},
+    "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/SEC/Debt/PoolBackedSecurities/"},
    :rdf/type :owl/Ontology,
    :rdfs/label {:rdf/language "en",
                 :rdf/value    "Pool-backed Securities Ontology"},
    :skos/changeNote
-   #{"The https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/PoolBackedSecurities.rdf version of this ontology was modified to use the Commons Ontology Library (Commons) rather than the OMG's Languages, Countries and Codes (LCC), eliminating redundancies in FIBO as appropriate, and added an explanatory note to ABS."
+   #{"The https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/PoolBackedSecurities.rdf version of this ontology was modified to replace additional content that is now available in the OMG Commons Ontology Library (Commons) v1.1 (FND-380)."
+     "The https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/PoolBackedSecurities.rdf version of this ontology was modified to use the Commons Ontology Library (Commons) rather than the OMG's Languages, Countries and Codes (LCC), eliminating redundancies in FIBO as appropriate, and added an explanatory note to ABS."
      "The https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/PoolBackedSecurities.rdf version of the ontology was modified to use the Commons Ontology Library (Commons) Annotation Vocabulary rather than the OMG's Specification Metadata vocabulary."
-     "The https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/PoolBackedSecurities.rdf version of this ontology was modified add a number of commonly used pool-backed security related statistical measures."},
+     "The https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/PoolBackedSecurities.rdf version of this ontology was modified to replace content that is now available in the OMG Commons Ontology Library (Commons) v1.1 (FND-380)."
+     "The https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/PoolBackedSecurities.rdf version of this ontology was modified to add a number of commonly used pool-backed security related statistical measures."
+     "The https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/PoolBackedSecurities.rdf version of this ontology was modified to add the starting point value of the total collateral of a given tranche at the time it was created (DER-138)."},
    :xsd/anyURI
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/PoolBackedSecurities/"})

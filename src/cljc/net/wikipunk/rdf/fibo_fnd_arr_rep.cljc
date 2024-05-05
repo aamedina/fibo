@@ -1,15 +1,18 @@
 (ns net.wikipunk.rdf.fibo-fnd-arr-rep
-  {:cmns-av/copyright #{"Copyright (c) 2018-2023 Object Management Group, Inc."
-                        "Copyright (c) 2018-2023 EDM Council, Inc."},
+  {:cmns-av/copyright
+   #{"Copyright (c) 2018-2024 EDM Council, Inc."
+     "Copyright (c) 2018-2024 Object Management Group, Inc."},
    :dcat/downloadURL
-   "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Arrangements/Reporting/",
+   "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Arrangements/Reporting/",
    :dcterms/abstract
    "This ontology defines the notion of a Report and related party concepts.",
    :dcterms/license {:xsd/anyURI "https://opensource.org/licenses/MIT"},
    :fibo-fnd-utl-av/hasMaturityLevel :fibo-fnd-utl-av/Release,
    :namespaces
    {"cmns-av" "https://www.omg.org/spec/Commons/AnnotationVocabulary/",
+    "cmns-doc" "https://www.omg.org/spec/Commons/Documents/",
     "cmns-dt" "https://www.omg.org/spec/Commons/DatesAndTimes/",
+    "cmns-pts" "https://www.omg.org/spec/Commons/PartiesAndSituations/",
     "dcterms" "http://purl.org/dc/terms/",
     "fibo-fnd-arr-doc"
     "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Documents/",
@@ -17,8 +20,6 @@
     "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Reporting/",
     "fibo-fnd-dt-oc"
     "https://spec.edmcouncil.org/fibo/ontology/FND/DatesAndTimes/Occurrences/",
-    "fibo-fnd-pty-pty"
-    "https://spec.edmcouncil.org/fibo/ontology/FND/Parties/Parties/",
     "fibo-fnd-rel-rel"
     "https://spec.edmcouncil.org/fibo/ontology/FND/Relations/Relations/",
     "fibo-fnd-utl-av"
@@ -29,21 +30,21 @@
     "skos" "http://www.w3.org/2004/02/skos/core#",
     "xsd" "http://www.w3.org/2001/XMLSchema#"},
    :owl/imports
-   #{{:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Utilities/AnnotationVocabulary/"}
+   #{{:xsd/anyURI "https://www.omg.org/spec/Commons/Documents/"}
+     {:xsd/anyURI "https://www.omg.org/spec/Commons/PartiesAndSituations/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Parties/Parties/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Arrangements/Documents/"}
+     {:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Utilities/AnnotationVocabulary/"}
+     {:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/DatesAndTimes/Occurrences/"}
+     {:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Relations/Relations/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/DatesAndTimes/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/DatesAndTimes/Occurrences/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Relations/Relations/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Arrangements/Documents/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/AnnotationVocabulary/"}},
    :owl/versionIRI
    {:xsd/anyURI
-    "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Arrangements/Reporting/"},
+    "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Arrangements/Reporting/"},
    :rdf/type :owl/Ontology,
    :rdfa/prefix "fibo-fnd-arr-rep",
    :rdfa/uri
@@ -53,7 +54,9 @@
    #{"The https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Reporting.rdf version of this ontology was modified to eliminate references to deprecated elements and to external dictionary sites that no longer resolve, and to integrate concepts related to making a request for something."
      "The https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Reporting.rdf version of this ontology was modified to incorporate evaluates and isEvaluatedBy."
      "The https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Reporting.rdf version of the ontology was modified to use the Commons Ontology Library (Commons) Annotation Vocabulary rather than the OMG's Specification Metadata vocabulary."
-     "The https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Reporting.rdf version of this ontology was modified to use the Commons Ontology Library (Commons) rather than the OMG's Languages, Countries and Codes (LCC), eliminating redundancies in FIBO as appropriate."},
+     "The https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Reporting.rdf version of this ontology was modified to use the Commons Ontology Library (Commons) rather than the OMG's Languages, Countries and Codes (LCC), eliminating redundancies in FIBO as appropriate."
+     "The https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Reporting.rdf version of the ontology was modified to replace additional concepts from several FIBO FND ontologies with their counterparts added to the Commons Ontology Library (Commons) v1.1."
+     "The https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Reporting.rdf version of the ontology was modified to replace concepts from several FIBO FND ontologies with their counterparts added to the Commons Ontology Library (Commons) v1.1."},
    :xsd/anyURI
    "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Reporting/"})
 
@@ -66,22 +69,21 @@
    {:xsd/anyURI
     "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Reporting/"},
    :rdfs/label "report",
-   :rdfs/subClassOf #{:fibo-fnd-arr-doc/Document
-                      {:owl/onProperty     :fibo-fnd-arr-rep/isReportedTo,
-                       :owl/someValuesFrom :fibo-fnd-pty-pty/PartyInRole,
-                       :rdf/type           :owl/Restriction}
+   :rdfs/subClassOf #{{:owl/minQualifiedCardinality 0,
+                       :owl/onClass    :cmns-pts/PartyRole,
+                       :owl/onProperty :fibo-fnd-arr-rep/isSubmittedTo,
+                       :rdf/type       :owl/Restriction}
                       {:owl/minQualifiedCardinality 0,
                        :owl/onClass    :cmns-dt/ExplicitDate,
                        :owl/onProperty :fibo-fnd-arr-rep/hasReportDate,
                        :rdf/type       :owl/Restriction}
                       {:owl/minQualifiedCardinality 0,
-                       :owl/onClass    :fibo-fnd-pty-pty/PartyInRole,
-                       :owl/onProperty :fibo-fnd-arr-rep/isSubmittedTo,
-                       :rdf/type       :owl/Restriction}
-                      {:owl/minQualifiedCardinality 0,
                        :owl/onClass    :cmns-dt/DateTime,
                        :owl/onProperty :fibo-fnd-arr-rep/hasReportDateTime,
                        :rdf/type       :owl/Restriction}
+                      {:owl/onProperty     :fibo-fnd-arr-rep/isReportedTo,
+                       :owl/someValuesFrom :cmns-pts/PartyRole,
+                       :rdf/type           :owl/Restriction}
                       {:owl/onProperty     :fibo-fnd-rel-rel/isProvidedBy,
                        :owl/someValuesFrom :fibo-fnd-arr-rep/ReportingParty,
                        :rdf/type           :owl/Restriction}
@@ -92,7 +94,7 @@
                       {:owl/minQualifiedCardinality 0,
                        :owl/onClass    :fibo-fnd-arr-rep/Submitter,
                        :owl/onProperty :fibo-fnd-arr-rep/isSubmittedBy,
-                       :rdf/type       :owl/Restriction}},
+                       :rdf/type       :owl/Restriction} :cmns-doc/Document},
    :skos/definition
    "document that provides a structured description of something, prepared on ad hoc, periodic, recurring, regular, or as required basis"})
 
@@ -106,7 +108,7 @@
    :rdfs/subClassOf #{{:owl/onProperty     :fibo-fnd-rel-rel/provides,
                        :owl/someValuesFrom :fibo-fnd-arr-rep/Report,
                        :rdf/type           :owl/Restriction}
-                      :fibo-fnd-pty-pty/PartyInRole},
+                      :cmns-pts/PartyRole},
    :skos/definition
    "party providing a report, typically in response to some contractual, legal, regulatory or other business requirement"})
 
@@ -121,17 +123,17 @@
                        :owl/onClass    :cmns-dt/DateTime,
                        :owl/onProperty :fibo-fnd-arr-rep/hasRequestDateTime,
                        :rdf/type       :owl/Restriction}
-                      :fibo-fnd-dt-oc/Occurrence
-                      {:owl/onProperty     :fibo-fnd-dt-oc/exemplifies,
+                      {:owl/onProperty     :fibo-fnd-rel-rel/exemplifies,
                        :owl/someValuesFrom :fibo-fnd-arr-rep/RequestActivity,
+                       :rdf/type           :owl/Restriction}
+                      :fibo-fnd-dt-oc/Occurrence
+                      {:owl/onProperty     :fibo-fnd-arr-rep/isRequestedOf,
+                       :owl/someValuesFrom :cmns-pts/PartyRole,
                        :rdf/type           :owl/Restriction}
                       {:owl/minQualifiedCardinality 0,
                        :owl/onClass    :cmns-dt/ExplicitDate,
                        :owl/onProperty :fibo-fnd-arr-rep/hasRequestDate,
                        :rdf/type       :owl/Restriction}
-                      {:owl/onProperty     :fibo-fnd-arr-rep/isRequestedOf,
-                       :owl/someValuesFrom :fibo-fnd-pty-pty/PartyInRole,
-                       :rdf/type           :owl/Restriction}
                       {:owl/onProperty     :fibo-fnd-arr-rep/isRequestedBy,
                        :owl/someValuesFrom :fibo-fnd-arr-rep/Requester,
                        :rdf/type           :owl/Restriction}},
@@ -160,7 +162,7 @@
     "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Reporting/"},
    :rdfs/label {:rdf/language "en",
                 :rdf/value    "requester"},
-   :rdfs/subClassOf :fibo-fnd-pty-pty/PartyInRole,
+   :rdfs/subClassOf :cmns-pts/PartyRole,
    :skos/definition {:rdf/language "en",
                      :rdf/value    "party that asks for something"}})
 
@@ -174,7 +176,7 @@
    :rdfs/subClassOf #{{:owl/onProperty     :fibo-fnd-arr-rep/submits,
                        :owl/someValuesFrom :fibo-fnd-arr-rep/Report,
                        :rdf/type           :owl/Restriction}
-                      :fibo-fnd-pty-pty/PartyInRole},
+                      :cmns-pts/PartyRole},
    :skos/definition "party presenting something, such as a regulatory report"})
 
 (def hasReportDate
@@ -237,8 +239,8 @@
    {:xsd/anyURI
     "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Reporting/"},
    :rdfs/label "is reported to",
-   :rdfs/range :fibo-fnd-pty-pty/PartyInRole,
-   :rdfs/subPropertyOf :fibo-fnd-pty-pty/hasPartyInRole,
+   :rdfs/range :cmns-pts/PartyRole,
+   :rdfs/subPropertyOf :cmns-pts/hasPartyRole,
    :skos/definition "indicates the party to which something is reported"})
 
 (def isRequestedBy
@@ -249,7 +251,7 @@
     "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Reporting/"},
    :rdfs/label "is requested by",
    :rdfs/range :fibo-fnd-arr-rep/Requester,
-   :rdfs/subPropertyOf :fibo-fnd-pty-pty/hasPartyInRole,
+   :rdfs/subPropertyOf :cmns-pts/hasPartyRole,
    :skos/definition "indicates the party that asks for something"})
 
 (def isRequestedOf
@@ -259,8 +261,8 @@
    {:xsd/anyURI
     "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Reporting/"},
    :rdfs/label "is requested of",
-   :rdfs/range :fibo-fnd-pty-pty/PartyInRole,
-   :rdfs/subPropertyOf :fibo-fnd-pty-pty/hasPartyInRole,
+   :rdfs/range :cmns-pts/PartyRole,
+   :rdfs/subPropertyOf :cmns-pts/hasPartyRole,
    :skos/definition "indicates the party that is asked for something"})
 
 (def isSubmittedBy
@@ -282,8 +284,8 @@
    {:xsd/anyURI
     "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Reporting/"},
    :rdfs/label "is submitted to",
-   :rdfs/range :fibo-fnd-pty-pty/PartyInRole,
-   :rdfs/subPropertyOf :fibo-fnd-pty-pty/hasPartyInRole,
+   :rdfs/range :cmns-pts/PartyRole,
+   :rdfs/subPropertyOf :cmns-pts/hasPartyRole,
    :skos/definition "indicates the party to which something is submitted"})
 
 (def reportsOn
@@ -294,7 +296,7 @@
    {:xsd/anyURI
     "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Reporting/"},
    :rdfs/label "reports on",
-   :rdfs/subPropertyOf :fibo-fnd-arr-doc/isAbout,
+   :rdfs/subPropertyOf :cmns-doc/isAbout,
    :skos/definition
    "indicates a subject matter, observation(s), assessment(s), focus or other topic of a report"})
 
@@ -305,7 +307,7 @@
    {:xsd/anyURI
     "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Reporting/"},
    :rdfs/label "requests",
-   :rdfs/subPropertyOf :fibo-fnd-arr-doc/isAbout,
+   :rdfs/subPropertyOf :cmns-doc/isAbout,
    :skos/definition "asks for something"})
 
 (def submits
@@ -321,34 +323,37 @@
    "presents something (a proposal, application, report, or other document) for consideration or review"})
 
 (def urn:uuid:6b54709a-dde6-5a0e-b0bc-e2d0f8077a0c
-  {:cmns-av/copyright #{"Copyright (c) 2018-2023 Object Management Group, Inc."
-                        "Copyright (c) 2018-2023 EDM Council, Inc."},
+  {:cmns-av/copyright
+   #{"Copyright (c) 2018-2024 EDM Council, Inc."
+     "Copyright (c) 2018-2024 Object Management Group, Inc."},
    :dcterms/abstract
    "This ontology defines the notion of a Report and related party concepts.",
    :dcterms/license {:xsd/anyURI "https://opensource.org/licenses/MIT"},
    :fibo-fnd-utl-av/hasMaturityLevel :fibo-fnd-utl-av/Release,
    :owl/imports
-   #{{:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Utilities/AnnotationVocabulary/"}
+   #{{:xsd/anyURI "https://www.omg.org/spec/Commons/Documents/"}
+     {:xsd/anyURI "https://www.omg.org/spec/Commons/PartiesAndSituations/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Parties/Parties/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Arrangements/Documents/"}
+     {:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Utilities/AnnotationVocabulary/"}
+     {:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/DatesAndTimes/Occurrences/"}
+     {:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Relations/Relations/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/DatesAndTimes/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/DatesAndTimes/Occurrences/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Relations/Relations/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Arrangements/Documents/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/AnnotationVocabulary/"}},
    :owl/versionIRI
    {:xsd/anyURI
-    "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Arrangements/Reporting/"},
+    "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Arrangements/Reporting/"},
    :rdf/type :owl/Ontology,
    :rdfs/label "Reporting Ontology",
    :skos/changeNote
    #{"The https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Reporting.rdf version of this ontology was modified to eliminate references to deprecated elements and to external dictionary sites that no longer resolve, and to integrate concepts related to making a request for something."
      "The https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Reporting.rdf version of this ontology was modified to incorporate evaluates and isEvaluatedBy."
      "The https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Reporting.rdf version of the ontology was modified to use the Commons Ontology Library (Commons) Annotation Vocabulary rather than the OMG's Specification Metadata vocabulary."
-     "The https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Reporting.rdf version of this ontology was modified to use the Commons Ontology Library (Commons) rather than the OMG's Languages, Countries and Codes (LCC), eliminating redundancies in FIBO as appropriate."},
+     "The https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Reporting.rdf version of this ontology was modified to use the Commons Ontology Library (Commons) rather than the OMG's Languages, Countries and Codes (LCC), eliminating redundancies in FIBO as appropriate."
+     "The https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Reporting.rdf version of the ontology was modified to replace additional concepts from several FIBO FND ontologies with their counterparts added to the Commons Ontology Library (Commons) v1.1."
+     "The https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Reporting.rdf version of the ontology was modified to replace concepts from several FIBO FND ontologies with their counterparts added to the Commons Ontology Library (Commons) v1.1."},
    :xsd/anyURI
    "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Reporting/"})

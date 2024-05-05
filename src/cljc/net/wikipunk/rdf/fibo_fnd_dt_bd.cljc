@@ -1,8 +1,9 @@
 (ns net.wikipunk.rdf.fibo-fnd-dt-bd
-  {:cmns-av/copyright #{"Copyright (c) 2014-2023 Object Management Group, Inc."
-                        "Copyright (c) 2014-2023 EDM Council, Inc."},
+  {:cmns-av/copyright
+   #{"Copyright (c) 2014-2024 EDM Council, Inc."
+     "Copyright (c) 2014-2024 Object Management Group, Inc."},
    :dcat/downloadURL
-   "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/DatesAndTimes/BusinessDates/",
+   "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/DatesAndTimes/BusinessDates/",
    :dcterms/abstract
    "This ontology extends definitions of date and schedule concepts from the FinancialDates ontology with concepts defining dates that may be adjusted when they fall on weekends or holidays as defined in a given business center, for use in other FIBO ontologies.",
    :dcterms/license {:xsd/anyURI "https://opensource.org/licenses/MIT"},
@@ -10,6 +11,7 @@
    :namespaces
    {"cmns-av" "https://www.omg.org/spec/Commons/AnnotationVocabulary/",
     "cmns-dt" "https://www.omg.org/spec/Commons/DatesAndTimes/",
+    "cmns-pts" "https://www.omg.org/spec/Commons/PartiesAndSituations/",
     "dcterms" "http://purl.org/dc/terms/",
     "fibo-fnd-dt-bd"
     "https://spec.edmcouncil.org/fibo/ontology/FND/DatesAndTimes/BusinessDates/",
@@ -25,19 +27,20 @@
     "skos" "http://www.w3.org/2004/02/skos/core#",
     "xsd" "http://www.w3.org/2001/XMLSchema#"},
    :owl/imports
-   #{{:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Utilities/AnnotationVocabulary/"}
+   #{{:xsd/anyURI "https://www.omg.org/spec/Commons/PartiesAndSituations/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Places/Locations/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Places/Locations/"}
+     {:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Utilities/AnnotationVocabulary/"}
+     {:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/DatesAndTimes/FinancialDates/"}
+     {:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Relations/Relations/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/DatesAndTimes/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Relations/Relations/"}
-     {:xsd/anyURI "https://www.omg.org/spec/Commons/AnnotationVocabulary/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/DatesAndTimes/FinancialDates/"}},
+     {:xsd/anyURI "https://www.omg.org/spec/Commons/AnnotationVocabulary/"}},
    :owl/versionIRI
    {:xsd/anyURI
-    "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/DatesAndTimes/BusinessDates/"},
+    "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/DatesAndTimes/BusinessDates/"},
    :rdf/type :owl/Ontology,
    :rdfa/prefix "fibo-fnd-dt-bd",
    :rdfa/uri
@@ -47,6 +50,7 @@
    #{"The https://spec.edmcouncil.org/fibo/ontology/FND/DatesAndTimes/BusinessDates.rdf version of this ontology was modified to use the Commons Ontology Library (Commons) rather than the OMG's Languages, Countries and Codes (LCC), eliminating redundancies in FIBO as appropriate."
      "The https://spec.edmcouncil.org/fibo/ontology/FND/DatesAndTimes/BusinessDates/ version of this ontology was revised by the FIBO FND 1.2 RTF in order to add definitions for business recurrence intervals such as the day of the month and week, and to revise the representation of the end of the month to correspond to the way that the other intervals are represented for use in parametric schedules."
      "The https://spec.edmcouncil.org/fibo/ontology/FND/DatesAndTimes/BusinessDates/ version of this ontology was revised to address hygiene issues with respect to text processing."
+     "The https://spec.edmcouncil.org/fibo/ontology/FND/DatesAndTimes/BusinessDates.rdf version of this ontology was modified to replace content that is now available in the OMG Commons Ontology Library (Commons) v1.1 (FND-380)."
      "The https://spec.edmcouncil.org/fibo/ontology/FND/DatesAndTimes/BusinessDates/ version of this ontology was revised to loosen domains on properties related to business day and day count (recurrence interval) conventions, eliminate a duplicate individual, normalize definitions to be ISO 704 compliant, eliminate duplication of concepts in LCC, move hasBusinessCenter to locations, where the class BusinessCenter is defined and merge countries with locations."
      "The https://spec.edmcouncil.org/fibo/ontology/FND/DatesAndTimes/BusinessDates/ version of this ontology was revised to eliminate a remaining circular definition."
      "The https://spec.edmcouncil.org/fibo/ontology/FND/DatesAndTimes/BusinessDates/ version of this ontology was revised to better support definitions related to business day adjustments."
@@ -263,42 +267,43 @@
 
 (def holdsDuring
   {:db/ident :fibo-fnd-dt-bd/holdsDuring,
+   :owl/deprecated true,
+   :owl/equivalentProperty :cmns-pts/holdsDuring,
    :rdf/type :owl/ObjectProperty,
    :rdfs/isDefinedBy
    {:xsd/anyURI
-    "https://spec.edmcouncil.org/fibo/ontology/FND/DatesAndTimes/BusinessDates/"},
-   :rdfs/label "holds during",
-   :rdfs/subPropertyOf :cmns-dt/hasDatePeriod,
-   :skos/definition
-   "specifies that some condition or state is true (holds) during a specified date period"})
+    "https://spec.edmcouncil.org/fibo/ontology/FND/DatesAndTimes/BusinessDates/"}})
 
 (def urn:uuid:7b7e496e-3e52-5c32-8954-31463de86257
-  {:cmns-av/copyright #{"Copyright (c) 2014-2023 Object Management Group, Inc."
-                        "Copyright (c) 2014-2023 EDM Council, Inc."},
+  {:cmns-av/copyright
+   #{"Copyright (c) 2014-2024 EDM Council, Inc."
+     "Copyright (c) 2014-2024 Object Management Group, Inc."},
    :dcterms/abstract
    "This ontology extends definitions of date and schedule concepts from the FinancialDates ontology with concepts defining dates that may be adjusted when they fall on weekends or holidays as defined in a given business center, for use in other FIBO ontologies.",
    :dcterms/license {:xsd/anyURI "https://opensource.org/licenses/MIT"},
    :fibo-fnd-utl-av/hasMaturityLevel :fibo-fnd-utl-av/Release,
    :owl/imports
-   #{{:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Utilities/AnnotationVocabulary/"}
+   #{{:xsd/anyURI "https://www.omg.org/spec/Commons/PartiesAndSituations/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Places/Locations/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Places/Locations/"}
+     {:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Utilities/AnnotationVocabulary/"}
+     {:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/DatesAndTimes/FinancialDates/"}
+     {:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Relations/Relations/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/DatesAndTimes/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Relations/Relations/"}
-     {:xsd/anyURI "https://www.omg.org/spec/Commons/AnnotationVocabulary/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/DatesAndTimes/FinancialDates/"}},
+     {:xsd/anyURI "https://www.omg.org/spec/Commons/AnnotationVocabulary/"}},
    :owl/versionIRI
    {:xsd/anyURI
-    "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/DatesAndTimes/BusinessDates/"},
+    "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/DatesAndTimes/BusinessDates/"},
    :rdf/type :owl/Ontology,
    :rdfs/label "Business Dates Ontology",
    :skos/changeNote
    #{"The https://spec.edmcouncil.org/fibo/ontology/FND/DatesAndTimes/BusinessDates.rdf version of this ontology was modified to use the Commons Ontology Library (Commons) rather than the OMG's Languages, Countries and Codes (LCC), eliminating redundancies in FIBO as appropriate."
      "The https://spec.edmcouncil.org/fibo/ontology/FND/DatesAndTimes/BusinessDates/ version of this ontology was revised by the FIBO FND 1.2 RTF in order to add definitions for business recurrence intervals such as the day of the month and week, and to revise the representation of the end of the month to correspond to the way that the other intervals are represented for use in parametric schedules."
      "The https://spec.edmcouncil.org/fibo/ontology/FND/DatesAndTimes/BusinessDates/ version of this ontology was revised to address hygiene issues with respect to text processing."
+     "The https://spec.edmcouncil.org/fibo/ontology/FND/DatesAndTimes/BusinessDates.rdf version of this ontology was modified to replace content that is now available in the OMG Commons Ontology Library (Commons) v1.1 (FND-380)."
      "The https://spec.edmcouncil.org/fibo/ontology/FND/DatesAndTimes/BusinessDates/ version of this ontology was revised to loosen domains on properties related to business day and day count (recurrence interval) conventions, eliminate a duplicate individual, normalize definitions to be ISO 704 compliant, eliminate duplication of concepts in LCC, move hasBusinessCenter to locations, where the class BusinessCenter is defined and merge countries with locations."
      "The https://spec.edmcouncil.org/fibo/ontology/FND/DatesAndTimes/BusinessDates/ version of this ontology was revised to eliminate a remaining circular definition."
      "The https://spec.edmcouncil.org/fibo/ontology/FND/DatesAndTimes/BusinessDates/ version of this ontology was revised to better support definitions related to business day adjustments."

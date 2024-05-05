@@ -1,7 +1,7 @@
 (ns net.wikipunk.rdf.fibo-bp-mod
   {:cmns-av/copyright "Copyright (c) 2013-2023 EDM Council, Inc.",
    :dcat/downloadURL
-   "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/BP/MetadataBP/BPDomain",
+   "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/BP/MetadataBP/BPDomain",
    :dcterms/abstract
    "The Business Process (BP) domain includes ontologies that define financial process flows such as securities issuance and transaction workflows. In the case of securities issuance process models, these are provided in order to be able to represent reference data concepts that are dependent on the process by which a security was issued. Transaction process semantics provide the basis for the temporal dimension of securities and derivatives transactions.  These are process models represented using basic semantic primitive concepts of events, activities and control flows.",
    :dcterms/issued #inst "2018-03-01T18:00:00.000-00:00",
@@ -23,15 +23,15 @@
     "xsd"         "http://www.w3.org/2001/XMLSchema#"},
    :owl/imports
    #{{:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/BP/Process/MetadataBPProcess/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/BP/Process/MetadataBPProcess/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Utilities/AnnotationVocabulary/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Utilities/AnnotationVocabulary/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/BP/SecuritiesIssuance/MetadataBPSecuritiesIssuance/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/BP/SecuritiesIssuance/MetadataBPSecuritiesIssuance/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/AnnotationVocabulary/"}},
    :owl/versionIRI
    {:xsd/anyURI
-    "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/BP/MetadataBP/"},
+    "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/BP/MetadataBP/"},
    :rdf/type :owl/Ontology,
    :rdfa/prefix "fibo-bp-mod",
    :rdfa/uri "https://spec.edmcouncil.org/fibo/ontology/BP/MetadataBP/",
@@ -64,15 +64,15 @@
    :dcterms/modified #inst "2023-03-31T18:00:00.000-00:00",
    :owl/imports
    #{{:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/BP/Process/MetadataBPProcess/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/BP/Process/MetadataBPProcess/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Utilities/AnnotationVocabulary/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Utilities/AnnotationVocabulary/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/BP/SecuritiesIssuance/MetadataBPSecuritiesIssuance/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/BP/SecuritiesIssuance/MetadataBPSecuritiesIssuance/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/AnnotationVocabulary/"}},
    :owl/versionIRI
    {:xsd/anyURI
-    "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/BP/MetadataBP/"},
+    "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/BP/MetadataBP/"},
    :rdf/type :owl/Ontology,
    :rdfs/label "Metadata for the EDMC-FIBO Business Process (BP) Domain",
    :xsd/anyURI "https://spec.edmcouncil.org/fibo/ontology/BP/MetadataBP/"})

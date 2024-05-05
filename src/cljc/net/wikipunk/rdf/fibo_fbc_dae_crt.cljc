@@ -1,7 +1,7 @@
 (ns net.wikipunk.rdf.fibo-fbc-dae-crt
-  {:cmns-av/copyright "Copyright (c) 2018-2023 EDM Council, Inc.",
+  {:cmns-av/copyright "Copyright (c) 2018-2024 EDM Council, Inc.",
    :dcat/downloadURL
-   "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FBC/DebtAndEquities/CreditRatings/",
+   "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FBC/DebtAndEquities/CreditRatings/",
    :dcterms/abstract
    "This ontology defines the concept of a credit rating, along with credit watch and outlook qualifying terms. There are credit ratings for individuals, for organizations and for instruments. \n\t\tThese are referenced extensively in the securities models but are also applicable to business entities generally and in the context of lending and account maintenance.",
    :dcterms/license {:xsd/anyURI "https://opensource.org/licenses/MIT"},
@@ -10,8 +10,12 @@
    {"cmns-av" "https://www.omg.org/spec/Commons/AnnotationVocabulary/",
     "cmns-cls" "https://www.omg.org/spec/Commons/Classifiers/",
     "cmns-col" "https://www.omg.org/spec/Commons/Collections/",
+    "cmns-doc" "https://www.omg.org/spec/Commons/Documents/",
     "cmns-dt" "https://www.omg.org/spec/Commons/DatesAndTimes/",
     "cmns-id" "https://www.omg.org/spec/Commons/Identifiers/",
+    "cmns-pts" "https://www.omg.org/spec/Commons/PartiesAndSituations/",
+    "cmns-qtu" "https://www.omg.org/spec/Commons/QuantitiesAndUnits/",
+    "cmns-rlcmp" "https://www.omg.org/spec/Commons/RolesAndCompositions/",
     "dcterms" "http://purl.org/dc/terms/",
     "fibo-fbc-dae-crt"
     "https://spec.edmcouncil.org/fibo/ontology/FBC/DebtAndEquities/CreditRatings/",
@@ -21,8 +25,6 @@
     "https://spec.edmcouncil.org/fibo/ontology/FBC/ProductsAndServices/ClientsAndAccounts/",
     "fibo-fbc-pas-fpas"
     "https://spec.edmcouncil.org/fibo/ontology/FBC/ProductsAndServices/FinancialProductsAndServices/",
-    "fibo-fnd-arr-doc"
-    "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Documents/",
     "fibo-fnd-arr-rep"
     "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Reporting/",
     "fibo-fnd-arr-rt"
@@ -33,16 +35,8 @@
     "https://spec.edmcouncil.org/fibo/ontology/FND/Organizations/FormalOrganizations/",
     "fibo-fnd-pas-pas"
     "https://spec.edmcouncil.org/fibo/ontology/FND/ProductsAndServices/ProductsAndServices/",
-    "fibo-fnd-pty-pty"
-    "https://spec.edmcouncil.org/fibo/ontology/FND/Parties/Parties/",
-    "fibo-fnd-pty-rl"
-    "https://spec.edmcouncil.org/fibo/ontology/FND/Parties/Roles/",
-    "fibo-fnd-qt-qtu"
-    "https://spec.edmcouncil.org/fibo/ontology/FND/Quantities/QuantitiesAndUnits/",
     "fibo-fnd-rel-rel"
     "https://spec.edmcouncil.org/fibo/ontology/FND/Relations/Relations/",
-    "fibo-fnd-utl-alx"
-    "https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/Analytics/",
     "fibo-fnd-utl-av"
     "https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/AnnotationVocabulary/",
     "owl" "http://www.w3.org/2002/07/owl#",
@@ -52,45 +46,37 @@
     "xsd" "http://www.w3.org/2001/XMLSchema#"},
    :owl/imports
    #{{:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Quantities/QuantitiesAndUnits/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/ProductsAndServices/ProductsAndServices/"}
+     {:xsd/anyURI "https://www.omg.org/spec/Commons/RolesAndCompositions/"}
+     {:xsd/anyURI "https://www.omg.org/spec/Commons/Documents/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FBC/ProductsAndServices/ClientsAndAccounts/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Utilities/Analytics/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Utilities/AnnotationVocabulary/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Arrangements/Ratings/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/Identifiers/"}
+     {:xsd/anyURI "https://www.omg.org/spec/Commons/PartiesAndSituations/"}
+     {:xsd/anyURI "https://www.omg.org/spec/Commons/QuantitiesAndUnits/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Parties/Parties/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FBC/ProductsAndServices/FinancialProductsAndServices/"}
+     {:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Utilities/AnnotationVocabulary/"}
+     {:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/DatesAndTimes/FinancialDates/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/Collections/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/Classifiers/"}
+     {:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FBC/ProductsAndServices/ClientsAndAccounts/"}
+     {:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Relations/Relations/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/DatesAndTimes/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/DatesAndTimes/Occurrences/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FBC/FinancialInstruments/FinancialInstruments/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Arrangements/Ratings/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Parties/Roles/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Relations/Relations/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FBC/FinancialInstruments/FinancialInstruments/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Arrangements/Reporting/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Arrangements/Documents/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Organizations/FormalOrganizations/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Arrangements/Reporting/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/AnnotationVocabulary/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/DatesAndTimes/FinancialDates/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/ProductsAndServices/ProductsAndServices/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FBC/ProductsAndServices/FinancialProductsAndServices/"}},
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Organizations/FormalOrganizations/"}},
    :owl/versionIRI
    {:xsd/anyURI
-    "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FBC/DebtAndEquities/CreditRatings/"},
+    "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FBC/DebtAndEquities/CreditRatings/"},
    :rdf/type :owl/Ontology,
    :rdfa/prefix "fibo-fbc-dae-crt",
    :rdfa/uri
@@ -133,11 +119,11 @@
                       {:owl/onProperty     :fibo-fnd-arr-rep/isRequestedOf,
                        :owl/someValuesFrom :fibo-fbc-dae-crt/CreditRatingAgency,
                        :rdf/type           :owl/Restriction}
+                      {:owl/onProperty     :fibo-fbc-dae-crt/concernsParty,
+                       :owl/someValuesFrom :cmns-pts/Party,
+                       :rdf/type           :owl/Restriction}
                       {:owl/onProperty     :cmns-cls/isClassifiedBy,
                        :owl/someValuesFrom :fibo-fbc-dae-crt/CreditInquiryType,
-                       :rdf/type           :owl/Restriction}
-                      {:owl/onProperty     :fibo-fbc-dae-crt/concernsParty,
-                       :owl/someValuesFrom :fibo-fnd-pty-pty/IndependentParty,
                        :rdf/type           :owl/Restriction}},
    :skos/definition
    "request from a lender to a credit repository to obtain information regarding a prospective borrower's creditworthiness"})
@@ -160,7 +146,7 @@
    {:xsd/anyURI
     "https://spec.edmcouncil.org/fibo/ontology/FBC/DebtAndEquities/CreditRatings/"},
    :rdfs/label "credit message",
-   :rdfs/subClassOf #{:fibo-fnd-arr-doc/Notice
+   :rdfs/subClassOf #{:cmns-doc/Notice
                       {:owl/onProperty     :cmns-cls/isClassifiedBy,
                        :owl/someValuesFrom :fibo-fbc-dae-crt/CreditMessageType,
                        :rdf/type           :owl/Restriction}},
@@ -202,7 +188,7 @@
                 :rdf/value    "credit rating"},
    :rdfs/subClassOf #{{:owl/minQualifiedCardinality 0,
                        :owl/onClass    :fibo-fbc-dae-crt/CreditRatingModel,
-                       :owl/onProperty :fibo-fnd-qt-qtu/isDerivedFrom,
+                       :owl/onProperty :cmns-qtu/isDerivedFrom,
                        :rdf/type       :owl/Restriction} :fibo-fnd-arr-rt/Rating
                       {:owl/onProperty     :fibo-fnd-rel-rel/isIssuedBy,
                        :owl/someValuesFrom :fibo-fbc-dae-crt/CreditRatingAgency,
@@ -251,7 +237,7 @@
                       {:owl/onProperty :cmns-cls/isClassifiedBy,
                        :owl/someValuesFrom
                        :fibo-fbc-dae-crt/CreditRatingModelType,
-                       :rdf/type :owl/Restriction} :fibo-fnd-utl-alx/Formula},
+                       :rdf/type :owl/Restriction} :cmns-qtu/Expression},
    :skos/definition "algorithm for computing a credit rating"})
 
 (def CreditRatingModelType
@@ -293,15 +279,25 @@
    :rdfs/label "credit report",
    :rdfs/subClassOf
    #{{:owl/minQualifiedCardinality 0,
+      :owl/onClass    :fibo-fbc-dae-crt/CreditReportCategory,
+      :owl/onProperty :cmns-cls/isClassifiedBy,
+      :rdf/type       :owl/Restriction}
+     {:owl/minQualifiedCardinality 0,
+      :owl/onClass    :cmns-id/Identifier,
+      :owl/onProperty :cmns-id/isIdentifiedBy,
+      :rdf/type       :owl/Restriction}
+     {:owl/minQualifiedCardinality 0,
       :owl/onClass    :fibo-fbc-dae-crt/CreditInquiry,
       :owl/onProperty :cmns-col/comprises,
       :rdf/type       :owl/Restriction}
-     {:owl/onProperty     :fibo-fbc-pas-caa/realizes,
-      :owl/someValuesFrom :fibo-fbc-dae-crt/CreditReportProduct,
-      :rdf/type           :owl/Restriction}
-     {:owl/onProperty     :fibo-fnd-rel-rel/isProducedBy,
-      :owl/someValuesFrom :fibo-fbc-dae-crt/CreditRatingAgency,
-      :rdf/type           :owl/Restriction}
+     {:owl/minQualifiedCardinality 0,
+      :owl/onClass    :fibo-fbc-dae-crt/CreditMessage,
+      :owl/onProperty :cmns-col/comprises,
+      :rdf/type       :owl/Restriction}
+     {:owl/minQualifiedCardinality 0,
+      :owl/onClass    :fibo-fbc-dae-crt/CreditRatingAgency,
+      :owl/onProperty :fibo-fnd-rel-rel/isProducedBy,
+      :rdf/type       :owl/Restriction}
      {:owl/minQualifiedCardinality 0,
       :owl/onClass    :fibo-fbc-dae-crt/CreditTradeline,
       :owl/onProperty :cmns-col/comprises,
@@ -310,30 +306,25 @@
       :owl/onClass    :fibo-fbc-dae-crt/CreditRating,
       :owl/onProperty :cmns-col/comprises,
       :rdf/type       :owl/Restriction} :fibo-fnd-arr-rt/RatingReport
-     {:owl/onProperty     :fibo-fnd-arr-doc/hasDataSource,
-      :owl/someValuesFrom {:owl/onProperty :fibo-fnd-pty-rl/playsRole,
-                           :owl/someValuesFrom
-                           :fibo-fbc-dae-crt/CreditRatingAgency,
-                           :rdf/type :owl/Restriction},
-      :rdf/type           :owl/Restriction}
      {:owl/onProperty     :fibo-fnd-dt-fd/hasAsOfDate,
       :owl/someValuesFrom :cmns-dt/Date,
       :rdf/type           :owl/Restriction}
-     {:owl/onProperty     :cmns-cls/isClassifiedBy,
-      :owl/someValuesFrom :fibo-fbc-dae-crt/CreditReportCategory,
-      :rdf/type           :owl/Restriction}
+     {:owl/minQualifiedCardinality 0,
+      :owl/onClass    :fibo-fbc-dae-crt/CreditReportProduct,
+      :owl/onProperty :fibo-fnd-rel-rel/exemplifies,
+      :rdf/type       :owl/Restriction}
      {:owl/onProperty     :fibo-fbc-dae-crt/hasCoveragePeriod,
       :owl/someValuesFrom :cmns-dt/DatePeriod,
       :rdf/type           :owl/Restriction}
-     {:owl/onProperty     :cmns-col/comprises,
-      :owl/someValuesFrom :fibo-fbc-dae-crt/CreditMessage,
-      :rdf/type           :owl/Restriction}
-     {:owl/onProperty     :cmns-id/isIdentifiedBy,
-      :owl/someValuesFrom :cmns-id/Identifier,
-      :rdf/type           :owl/Restriction}
      {:owl/onProperty     :fibo-fbc-dae-crt/concernsParty,
-      :owl/someValuesFrom :fibo-fnd-pty-pty/IndependentParty,
-      :rdf/type           :owl/Restriction}},
+      :owl/someValuesFrom :cmns-pts/Party,
+      :rdf/type           :owl/Restriction}
+     {:owl/minQualifiedCardinality 0,
+      :owl/onClass    {:owl/onProperty     :cmns-rlcmp/playsRole,
+                       :owl/someValuesFrom :fibo-fbc-dae-crt/CreditRatingAgency,
+                       :rdf/type           :owl/Restriction},
+      :owl/onProperty :cmns-doc/hasDataSource,
+      :rdf/type       :owl/Restriction}},
    :skos/definition
    "report describing the creditworthiness and related credit attributes of a borrower"})
 
@@ -371,13 +362,13 @@
    {:xsd/anyURI
     "https://spec.edmcouncil.org/fibo/ontology/FBC/DebtAndEquities/CreditRatings/"},
    :rdfs/label "credit tradeline",
-   :rdfs/subClassOf #{{:owl/onProperty     :cmns-col/isIncludedIn,
+   :rdfs/subClassOf #{{:owl/onProperty     :cmns-qtu/isDerivedFrom,
+                       :owl/someValuesFrom :fibo-fbc-pas-caa/Account,
+                       :rdf/type           :owl/Restriction}
+                      {:owl/onProperty     :cmns-col/isIncludedIn,
                        :owl/someValuesFrom :fibo-fbc-dae-crt/CreditReport,
                        :rdf/type           :owl/Restriction}
-                      :fibo-fnd-arr-rep/Report
-                      {:owl/onProperty     :fibo-fnd-qt-qtu/isDerivedFrom,
-                       :owl/someValuesFrom :fibo-fbc-pas-caa/Account,
-                       :rdf/type           :owl/Restriction}},
+                      :fibo-fnd-arr-rep/Report},
    :skos/definition
    "report derived from the transaction history of a credit account"})
 
@@ -583,7 +574,7 @@
    {:xsd/anyURI
     "https://spec.edmcouncil.org/fibo/ontology/FBC/DebtAndEquities/CreditRatings/"},
    :rdfs/label "concerns party",
-   :rdfs/subPropertyOf :fibo-fnd-pty-pty/hasParty,
+   :rdfs/subPropertyOf :cmns-pts/hasParty,
    :skos/definition
    "indicates the party for which something is being or has been requested"})
 
@@ -629,52 +620,44 @@
                      "indicates the expected outlook for the rated entity"}})
 
 (def urn:uuid:10042220-82ef-5c27-b85f-84f850ecdd87
-  {:cmns-av/copyright "Copyright (c) 2018-2023 EDM Council, Inc.",
+  {:cmns-av/copyright "Copyright (c) 2018-2024 EDM Council, Inc.",
    :dcterms/abstract
    "This ontology defines the concept of a credit rating, along with credit watch and outlook qualifying terms. There are credit ratings for individuals, for organizations and for instruments. \n\t\tThese are referenced extensively in the securities models but are also applicable to business entities generally and in the context of lending and account maintenance.",
    :dcterms/license {:xsd/anyURI "https://opensource.org/licenses/MIT"},
    :fibo-fnd-utl-av/hasMaturityLevel :fibo-fnd-utl-av/Provisional,
    :owl/imports
    #{{:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Quantities/QuantitiesAndUnits/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/ProductsAndServices/ProductsAndServices/"}
+     {:xsd/anyURI "https://www.omg.org/spec/Commons/RolesAndCompositions/"}
+     {:xsd/anyURI "https://www.omg.org/spec/Commons/Documents/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FBC/ProductsAndServices/ClientsAndAccounts/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Utilities/Analytics/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Utilities/AnnotationVocabulary/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Arrangements/Ratings/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/Identifiers/"}
+     {:xsd/anyURI "https://www.omg.org/spec/Commons/PartiesAndSituations/"}
+     {:xsd/anyURI "https://www.omg.org/spec/Commons/QuantitiesAndUnits/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Parties/Parties/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FBC/ProductsAndServices/FinancialProductsAndServices/"}
+     {:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Utilities/AnnotationVocabulary/"}
+     {:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/DatesAndTimes/FinancialDates/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/Collections/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/Classifiers/"}
+     {:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FBC/ProductsAndServices/ClientsAndAccounts/"}
+     {:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Relations/Relations/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/DatesAndTimes/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/DatesAndTimes/Occurrences/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FBC/FinancialInstruments/FinancialInstruments/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Arrangements/Ratings/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Parties/Roles/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Relations/Relations/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FBC/FinancialInstruments/FinancialInstruments/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Arrangements/Reporting/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Arrangements/Documents/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Organizations/FormalOrganizations/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Arrangements/Reporting/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/AnnotationVocabulary/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/DatesAndTimes/FinancialDates/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/ProductsAndServices/ProductsAndServices/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FBC/ProductsAndServices/FinancialProductsAndServices/"}},
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Organizations/FormalOrganizations/"}},
    :owl/versionIRI
    {:xsd/anyURI
-    "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FBC/DebtAndEquities/CreditRatings/"},
+    "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FBC/DebtAndEquities/CreditRatings/"},
    :rdf/type :owl/Ontology,
    :rdfs/label {:rdf/language "en",
                 :rdf/value    "Credit Ratings Ontology"},

@@ -1,8 +1,8 @@
 (ns net.wikipunk.rdf.fibo-fbc-fct-usfsind
-  {:cmns-av/copyright #{"Copyright (c) 2017-2023 Object Management Group, Inc."
-                        "Copyright (c) 2017-2023 EDM Council, Inc."},
+  {:cmns-av/copyright #{"Copyright (c) 2017-2024 Object Management Group, Inc."
+                        "Copyright (c) 2017-2024 EDM Council, Inc."},
    :dcat/downloadURL
-   "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FBC/FunctionalEntities/NorthAmericanEntities/USFinancialServicesEntitiesIndividuals/",
+   "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FBC/FunctionalEntities/NorthAmericanEntities/USFinancialServicesEntitiesIndividuals/",
    :dcterms/abstract
    "This ontology extends the financial services entities ontology in FBC with individual American entities that provide broad based services required by other FIBO domains, such as market data providers, instrument identifier issuers, organizations that provide exchanges in multiple countries, and so forth.",
    :dcterms/license {:xsd/anyURI "https://opensource.org/licenses/MIT"},
@@ -12,6 +12,7 @@
     "cmns-col" "https://www.omg.org/spec/Commons/Collections/",
     "cmns-dt" "https://www.omg.org/spec/Commons/DatesAndTimes/",
     "cmns-id" "https://www.omg.org/spec/Commons/Identifiers/",
+    "cmns-rlcmp" "https://www.omg.org/spec/Commons/RolesAndCompositions/",
     "dcterms" "http://purl.org/dc/terms/",
     "fibo-be-corp-corp"
     "https://spec.edmcouncil.org/fibo/ontology/BE/Corporations/Corporations/",
@@ -68,72 +69,73 @@
     "xsd" "http://www.w3.org/2001/XMLSchema#"},
    :owl/imports
    #{{:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FBC/FunctionalEntities/Markets/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FBC/FunctionalEntities/Markets/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FBC/FunctionalEntities/RegistrationAuthorities/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/ProductsAndServices/ProductsAndServices/"}
+     {:xsd/anyURI "https://www.omg.org/spec/Commons/RolesAndCompositions/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/BE/GovernmentEntities/GovernmentEntities/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FBC/FunctionalEntities/BusinessCentersIndividuals/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Places/Addresses/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/BE/OwnershipAndControl/CorporateControl/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FBC/FunctionalEntities/BusinessRegistries/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/BE/OwnershipAndControl/ControlParties/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Utilities/AnnotationVocabulary/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/BE/LegalEntities/FormalBusinessOrganizations/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/BE/OwnershipAndControl/OwnershipParties/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/Identifiers/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FBC/FunctionalEntities/NorthAmericanEntities/USFinancialServicesEntities/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/BE/GovernmentEntities/GovernmentEntities/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/BE/LegalEntities/CorporateBodies/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/BE/OwnershipAndControl/CorporateControl/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FBC/FunctionalEntities/RegulatoryAgencies/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FBC/FunctionalEntities/RegistrationAuthorities/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/BE/Corporations/Corporations/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Places/Locations/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FBC/FunctionalEntities/BusinessCentersIndividuals/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/BE/LegalEntities/LEIEntities/"}
+     {:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FBC/ProductsAndServices/FinancialProductsAndServices/"}
+     {:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/BE/LegalEntities/LegalPersons/"}
+     {:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Utilities/AnnotationVocabulary/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/Collections/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FBC/FunctionalEntities/FinancialServicesEntities/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Places/Addresses/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/BE/Partnerships/Partnerships/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FBC/FunctionalEntities/FinancialServicesEntities/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Places/Locations/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/BE/Partnerships/Partnerships/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/BE/OwnershipAndControl/OwnershipParties/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Relations/Relations/"}
+     {:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/BE/OwnershipAndControl/ControlParties/"}
+     {:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/"}
+     {:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/BE/LegalEntities/FormalBusinessOrganizations/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/DatesAndTimes/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/BE/Trusts/Trusts/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FBC/FunctionalEntities/BusinessRegistries/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/BE/LegalEntities/LEIEntities/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Agreements/Contracts/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Agreements/Contracts/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/BE/Corporations/Corporations/"}
+     {:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/BE/LegalEntities/CorporateBodies/"}
      {:xsd/anyURI
       "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-CA/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Relations/Relations/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/BE/GovernmentEntities/NorthAmericanJurisdiction/USGovernmentEntitiesAndJurisdictions/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/BE/GovernmentEntities/NorthAmericanJurisdiction/USGovernmentEntitiesAndJurisdictions/"}
      {:xsd/anyURI
       "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-US/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/AnnotationVocabulary/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/BE/LegalEntities/LegalPersons/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/BE/Trusts/Trusts/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/ProductsAndServices/ProductsAndServices/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FBC/FunctionalEntities/RegulatoryAgencies/"}
      {:xsd/anyURI
-      "https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FBC/FunctionalEntities/NorthAmericanEntities/USFinancialServicesEntities/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FBC/ProductsAndServices/FinancialProductsAndServices/"}},
+      "https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/"}},
    :owl/versionIRI
    {:xsd/anyURI
-    "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FBC/FunctionalEntities/NorthAmericanEntities/USFinancialServicesEntitiesIndividuals/"},
+    "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FBC/FunctionalEntities/NorthAmericanEntities/USFinancialServicesEntitiesIndividuals/"},
    :rdf/type :owl/Ontology,
    :rdfa/prefix "fibo-fbc-fct-usfsind",
    :rdfa/uri
@@ -148,7 +150,8 @@
      "The https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USFinancialServicesEntitiesIndividuals.rdf version of this ontology was added via the FIBO 2.0 RFC."
      "The https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USFinancialServicesEntitiesIndividuals.rdf version of this ontology was modified to normalize a few labels and definitions, revise GLEIF LEI registration data, eliminate duplication of concepts in LCC, simplify addresses, and merge countries with locations in FND."
      "The https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USFinancialServicesEntitiesIndividuals.rdf version of the ontology was modified to use the Commons Ontology Library (Commons) Annotation Vocabulary rather than the OMG's Specification Metadata vocabulary."
-     "The https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USFinancialServicesEntitiesIndividuals.rdf version of this ontology was modified to use the Commons Ontology Library (Commons) rather than the OMG's Languages, Countries and Codes (LCC) and to eliminate redundancies in FIBO as appropriate."},
+     "The https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USFinancialServicesEntitiesIndividuals.rdf version of this ontology was modified to use the Commons Ontology Library (Commons) rather than the OMG's Languages, Countries and Codes (LCC) and to eliminate redundancies in FIBO as appropriate."
+     "The https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USFinancialServicesEntitiesIndividuals.rdf version of this ontology was modified to replace content that is now available in the OMG Commons Ontology Library (Commons) v1.1 (FND-380)."},
    :xsd/anyURI
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USFinancialServicesEntitiesIndividuals/"})
 
@@ -201,8 +204,8 @@
    :skos/definition "date that Bloomberg Finance L.P. was established"})
 
 (def BloombergFinanceLP
-  {:db/ident :fibo-fbc-fct-usfsind/BloombergFinanceLP,
-   :fibo-fnd-rel-rel/hasIdentity :fibo-fbc-fct-usfsind/BloombergFinanceLP-US-DE,
+  {:cmns-rlcmp/isPlayedBy :fibo-fbc-fct-usfsind/BloombergFinanceLP-US-DE,
+   :db/ident :fibo-fbc-fct-usfsind/BloombergFinanceLP,
    :rdf/type #{:fibo-fbc-pas-fpas/FinancialServiceProvider
                :owl/NamedIndividual},
    :rdfs/isDefinedBy
@@ -237,8 +240,8 @@
    "Bloomberg Finance L.P. legal entity that is a Delaware Limited Partnership"})
 
 (def BloombergFinanceLPAsLocalOperatingUnit
-  {:db/ident :fibo-fbc-fct-usfsind/BloombergFinanceLPAsLocalOperatingUnit,
-   :fibo-fnd-rel-rel/hasIdentity :fibo-fbc-fct-usfsind/BloombergFinanceLP-US-DE,
+  {:cmns-rlcmp/isPlayedBy :fibo-fbc-fct-usfsind/BloombergFinanceLP-US-DE,
+   :db/ident :fibo-fbc-fct-usfsind/BloombergFinanceLPAsLocalOperatingUnit,
    :fibo-fnd-rel-rel/manages :fibo-fbc-fct-usfsind/BloombergLEIRegistry,
    :rdf/type #{:fibo-fbc-fct-breg/LocalOperatingUnit :owl/NamedIndividual},
    :rdfs/isDefinedBy
@@ -249,7 +252,8 @@
    "Bloomberg Finance L.P. functional entity that is a legal entity identifier (LEI) local operating unit (LOU) registrar"})
 
 (def BloombergFinanceLPLegalEntityIdentifierRegistryEntry
-  {:cmns-col/comprises :gleif-L1-data/L-5493001KJTIIGC8Y1R12-LEI,
+  {:cmns-col/comprises {:xsd/anyURI
+                        "https://rdf.gleif.org/L1/L-5493001KJTIIGC8Y1R12-LEI"},
    :db/ident
    :fibo-fbc-fct-usfsind/BloombergFinanceLPLegalEntityIdentifierRegistryEntry,
    :fibo-fbc-fct-breg/hasInitialRegistrationDate
@@ -312,8 +316,8 @@
    :skos/definition "Bloomberg LEI registry"})
 
 (def BloombergLP
-  {:db/ident :fibo-fbc-fct-usfsind/BloombergLP,
-   :fibo-fnd-rel-rel/hasIdentity :fibo-fbc-fct-usfsind/BloombergLP-US-DE,
+  {:cmns-rlcmp/isPlayedBy :fibo-fbc-fct-usfsind/BloombergLP-US-DE,
+   :db/ident :fibo-fbc-fct-usfsind/BloombergLP,
    :rdf/type #{:fibo-fbc-fct-ra/RegistrationAuthority
                :fibo-fbc-pas-fpas/FinancialServiceProvider
                :owl/NamedIndividual},
@@ -344,7 +348,8 @@
    "Bloomberg L.P. legal entity that is a Delaware Limited Partnership"})
 
 (def BloombergLPLegalEntityIdentifierRegistryEntry
-  {:cmns-col/comprises :gleif-L1-data/L-549300B56MD0ZC402L06-LEI,
+  {:cmns-col/comprises {:xsd/anyURI
+                        "https://rdf.gleif.org/L1/L-549300B56MD0ZC402L06-LEI"},
    :db/ident
    :fibo-fbc-fct-usfsind/BloombergLPLegalEntityIdentifierRegistryEntry,
    :fibo-fbc-fct-breg/hasInitialRegistrationDate
@@ -381,7 +386,8 @@
    "Federal Reserve RSSD identifier for Bloomberg L.P. as a data processing servicer"})
 
 (def CorporationServiceCompanyEntityIdentifierRegistryEntry
-  {:cmns-col/comprises :gleif-L1-data/L-549300NOPSIMGJNT8J31-LEI,
+  {:cmns-col/comprises {:xsd/anyURI
+                        "https://rdf.gleif.org/L1/L-549300NOPSIMGJNT8J31-LEI"},
    :db/ident
    :fibo-fbc-fct-usfsind/CorporationServiceCompanyEntityIdentifierRegistryEntry,
    :fibo-fbc-fct-breg/hasInitialRegistrationDate
@@ -487,7 +493,8 @@
    "legal address for the The Depository Trust & Clearing Corporation"})
 
 (def DTCCLegalEntityIdentifierRegistryEntry
-  {:cmns-col/comprises :gleif-L1-data/L-MLDY5N6PZ58ZE60QU102-LEI,
+  {:cmns-col/comprises {:xsd/anyURI
+                        "https://rdf.gleif.org/L1/L-MLDY5N6PZ58ZE60QU102-LEI"},
    :db/ident :fibo-fbc-fct-usfsind/DTCCLegalEntityIdentifierRegistryEntry,
    :fibo-fbc-fct-breg/hasInitialRegistrationDate
    #inst "2012-06-06T15:50:00.000-00:00",
@@ -535,7 +542,8 @@
    "headquarters and legal address for The Depository Trust Company"})
 
 (def DTCLegalEntityIdentifierRegistryEntry
-  {:cmns-col/comprises :gleif-L1-data/L-549300HBJLRO8YFMI370-LEI,
+  {:cmns-col/comprises {:xsd/anyURI
+                        "https://rdf.gleif.org/L1/L-549300HBJLRO8YFMI370-LEI"},
    :db/ident :fibo-fbc-fct-usfsind/DTCLegalEntityIdentifierRegistryEntry,
    :fibo-fbc-fct-breg/hasInitialRegistrationDate
    #inst "2017-12-29T15:32:00.000-00:00",
@@ -584,8 +592,8 @@
   {:cmns-av/abbreviation "DTCC",
    :cmns-av/explanatoryNote
    "DTCC is a global financial services organization focused on developing solutions to secure today's marketplace, while shaping the future of our industry, whose mission includes risk mitigation, creation of market efficiencies, and cost reduction. They are a large financial services holding company, developing trade repositories and building global capabilities across the spectrum of asset classes.",
+   :cmns-rlcmp/isPlayedBy :fibo-fbc-fct-usfsind/DTCC-US-DE,
    :db/ident :fibo-fbc-fct-usfsind/DepositoryTrustAndClearingCorporation,
-   :fibo-fnd-rel-rel/hasIdentity :fibo-fbc-fct-usfsind/DTCC-US-DE,
    :rdf/type #{:fibo-fbc-pas-fpas/FinancialServiceProvider
                :owl/NamedIndividual},
    :rdfs/isDefinedBy
@@ -600,12 +608,12 @@
   {:cmns-av/abbreviation "DTC",
    :cmns-av/explanatoryNote
    "DTCC's subsidiary, The Depository Trust Company (DTC), established in 1973, was created to reduce costs and provide clearing and settlement efficiencies by immobilizing securities and making 'book-entry' changes to ownership of the securities.\n\nDTC brings efficiency to the securities industry by retaining custody of more than 3.5 million securities issues valued at US$37.2 trillion, including securities issued in the US and more than 131 countries and territories.",
+   :cmns-rlcmp/isPlayedBy :fibo-fbc-fct-usfsind/DTC-US-NY,
    :db/ident :fibo-fbc-fct-usfsind/DepositoryTrustCompany,
    :fibo-fbc-fct-ra/isRegisteredBy
    :fibo-fbc-fct-usjrga/SecuritiesAndExchangeRegulator,
    :fibo-fbc-fct-usjrga/hasPrimaryFederalRegulator
    :fibo-fbc-fct-usjrga/FederalReserveRegulatoryAgencyAndCentralBank,
-   :fibo-fnd-rel-rel/hasIdentity :fibo-fbc-fct-usfsind/DTC-US-NY,
    :rdf/type #{:fibo-fbc-fct-ra/RegistrationAuthority
                :fibo-fbc-fct-fse/CentralCounterpartyClearingHouse
                :fibo-fbc-fct-fse/CentralSecuritiesDepository
@@ -636,7 +644,8 @@
    "entity ownership context for the Depository Trust Company, a wholly owned subsidiary of the Depository Trust & Clearing Corporation"})
 
 (def FederalReserveBankOfNewYorkLegalEntityIdentifierRegistryEntry
-  {:cmns-col/comprises :gleif-L1-data/L-254900Y8NKGV541U8Q32-LEI,
+  {:cmns-col/comprises {:xsd/anyURI
+                        "https://rdf.gleif.org/L1/L-254900Y8NKGV541U8Q32-LEI"},
    :db/ident
    :fibo-fbc-fct-usfsind/FederalReserveBankOfNewYorkLegalEntityIdentifierRegistryEntry,
    :fibo-fbc-fct-breg/hasInitialRegistrationDate
@@ -699,9 +708,9 @@
 
 (def IntercontinentalExchange
   {:cmns-av/abbreviation "ICE",
-   :db/ident :fibo-fbc-fct-usfsind/IntercontinentalExchange,
-   :fibo-fnd-rel-rel/hasIdentity
+   :cmns-rlcmp/isPlayedBy
    :fibo-fbc-fct-usfsind/IntercontinentalExchangeInc-US-DE,
+   :db/ident :fibo-fbc-fct-usfsind/IntercontinentalExchange,
    :rdf/type #{:fibo-fbc-pas-fpas/FinancialServiceProvider
                :owl/NamedIndividual},
    :rdfs/isDefinedBy
@@ -783,7 +792,8 @@
    "Intercontinental Exchange legal entity that is a Delaware Corporation"})
 
 (def IntercontinentalExchangeLegalEntityIdentifierRegistryEntry
-  {:cmns-col/comprises :gleif-L1-data/L-5493000F4ZO33MV32P92-LEI,
+  {:cmns-col/comprises {:xsd/anyURI
+                        "https://rdf.gleif.org/L1/L-5493000F4ZO33MV32P92-LEI"},
    :db/ident
    :fibo-fbc-fct-usfsind/IntercontinentalExchangeLegalEntityIdentifierRegistryEntry,
    :fibo-fbc-fct-breg/hasInitialRegistrationDate
@@ -805,8 +815,8 @@
    "legal entity identifier registry entry for Intercontinental Exchange"})
 
 (def SPGlobal
-  {:db/ident :fibo-fbc-fct-usfsind/SPGlobal,
-   :fibo-fnd-rel-rel/hasIdentity :fibo-fbc-fct-usfsind/SPGlobalInc-US-NY,
+  {:cmns-rlcmp/isPlayedBy :fibo-fbc-fct-usfsind/SPGlobalInc-US-NY,
+   :db/ident :fibo-fbc-fct-usfsind/SPGlobal,
    :rdf/type #{:fibo-fbc-pas-fpas/FinancialServiceProvider
                :owl/NamedIndividual},
    :rdfs/isDefinedBy
@@ -877,7 +887,8 @@
    "S&P Global legal entity that is a New York Domestic Business Corporation"})
 
 (def SPGlobalLegalEntityIdentifierRegistryEntry
-  {:cmns-col/comprises :gleif-L1-data/L-Y6X4K52KMJMZE7I7MY94-LEI,
+  {:cmns-col/comprises {:xsd/anyURI
+                        "https://rdf.gleif.org/L1/L-Y6X4K52KMJMZE7I7MY94-LEI"},
    :db/ident :fibo-fbc-fct-usfsind/SPGlobalLegalEntityIdentifierRegistryEntry,
    :fibo-fbc-fct-breg/hasInitialRegistrationDate
    #inst "2012-06-06T15:51:00.000-00:00",
@@ -897,9 +908,8 @@
    "legal entity identifier registry entry for S&P Global, Inc."})
 
 (def ThomsonReuters
-  {:db/ident :fibo-fbc-fct-usfsind/ThomsonReuters,
-   :fibo-fnd-rel-rel/hasIdentity
-   :fibo-fbc-fct-usfsind/ThomsonReutersCorporation,
+  {:cmns-rlcmp/isPlayedBy :fibo-fbc-fct-usfsind/ThomsonReutersCorporation,
+   :db/ident :fibo-fbc-fct-usfsind/ThomsonReuters,
    :rdf/type #{:fibo-fbc-pas-fpas/FinancialServiceProvider
                :owl/NamedIndividual},
    :rdfs/isDefinedBy
@@ -992,7 +1002,8 @@
    :skos/definition "Canadian legal domicile address for Thomson Reuters"})
 
 (def ThomsonReutersLegalEntityIdentifierRegistryEntry
-  {:cmns-col/comprises :gleif-L1-data/L-549300561UZND4C7B569-LEI,
+  {:cmns-col/comprises {:xsd/anyURI
+                        "https://rdf.gleif.org/L1/L-549300561UZND4C7B569-LEI"},
    :db/ident
    :fibo-fbc-fct-usfsind/ThomsonReutersLegalEntityIdentifierRegistryEntry,
    :fibo-fbc-fct-breg/hasInitialRegistrationDate
@@ -1013,81 +1024,120 @@
    :skos/definition
    "legal entity identifier registry entry for Thomson Reuters Corporation"})
 
+(def urn:uuid:d4411e0a-4b0d-5322-9ef4-6b58c5ae91ae
+  {:cmns-id/identifies :fibo-fbc-fct-usfsind/DTCC-US-DE,
+   :fibo-fnd-rel-rel/hasTag "MLDY5N6PZ58ZE60QU102",
+   :rdf/type #{:owl/NamedIndividual :fibo-be-le-lei/LegalEntityIdentifier},
+   :rdfs/label
+   "The Depository Trust & Clearing Corporation legal entity identifier",
+   :skos/definition
+   "legal entity identifier for The Depository Trust & Clearing Corporation",
+   :xsd/anyURI "https://rdf.gleif.org/L1/L-MLDY5N6PZ58ZE60QU102-LEI"})
+
+(def urn:uuid:78c6fbe2-1fe1-5882-a0c3-a9b8a4522fce
+  {:cmns-id/identifies :fibo-fbc-fct-usfsind/SPGlobalInc-US-NY,
+   :fibo-fnd-rel-rel/hasTag "Y6X4K52KMJMZE7I7MY94",
+   :rdf/type           #{:owl/NamedIndividual
+                         :fibo-be-le-lei/LegalEntityIdentifier},
+   :rdfs/label         "S&P Global, Inc. legal entity identifier",
+   :skos/definition    "legal entity identifier for S&P Global, Inc.",
+   :xsd/anyURI         "https://rdf.gleif.org/L1/L-Y6X4K52KMJMZE7I7MY94-LEI"})
+
+(def urn:uuid:3ce49d35-2e2e-53f1-8c54-dd17b5abbeb2
+  {:cmns-id/identifies :fibo-fbc-fct-usjrga/FederalReserveBankOfNewYork-US-NY,
+   :fibo-fbc-fct-ra/isRegisteredBy
+   :fibo-fbc-fct-usfsind/BloombergFinanceLPAsLocalOperatingUnit,
+   :fibo-fnd-rel-rel/hasTag "254900Y8NKGV541U8Q32",
+   :rdf/type #{:owl/NamedIndividual :fibo-be-le-lei/LegalEntityIdentifier},
+   :rdfs/label "Federal Reserve Bank of New York legal entity identifier",
+   :skos/definition
+   "legal entity identifier for the Federal Reserve Bank of New York",
+   :xsd/anyURI "https://rdf.gleif.org/L1/L-254900Y8NKGV541U8Q32-LEI"})
+
+(def urn:uuid:5cc0a093-432e-568f-bfac-60669a1fef80
+  {:cmns-id/identifies :fibo-fbc-fct-usfsind/DTC-US-NY,
+   :fibo-fnd-rel-rel/hasTag "MLDY5N6PZ58ZE60QU102",
+   :rdf/type #{:owl/NamedIndividual :fibo-be-le-lei/LegalEntityIdentifier},
+   :rdfs/label "The Depository Trust Company legal entity identifier",
+   :skos/definition "legal entity identifier for The Depository Trust Company",
+   :xsd/anyURI "https://rdf.gleif.org/L1/L-549300HBJLRO8YFMI370-LEI"})
+
 (def urn:uuid:92e935f1-eae2-57b3-8582-90946270b25b
-  {:cmns-av/copyright #{"Copyright (c) 2017-2023 Object Management Group, Inc."
-                        "Copyright (c) 2017-2023 EDM Council, Inc."},
+  {:cmns-av/copyright #{"Copyright (c) 2017-2024 Object Management Group, Inc."
+                        "Copyright (c) 2017-2024 EDM Council, Inc."},
    :dcterms/abstract
    "This ontology extends the financial services entities ontology in FBC with individual American entities that provide broad based services required by other FIBO domains, such as market data providers, instrument identifier issuers, organizations that provide exchanges in multiple countries, and so forth.",
    :dcterms/license {:xsd/anyURI "https://opensource.org/licenses/MIT"},
    :fibo-fnd-utl-av/hasMaturityLevel :fibo-fnd-utl-av/Release,
    :owl/imports
    #{{:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FBC/FunctionalEntities/Markets/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FBC/FunctionalEntities/Markets/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FBC/FunctionalEntities/RegistrationAuthorities/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/ProductsAndServices/ProductsAndServices/"}
+     {:xsd/anyURI "https://www.omg.org/spec/Commons/RolesAndCompositions/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/BE/GovernmentEntities/GovernmentEntities/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FBC/FunctionalEntities/BusinessCentersIndividuals/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Places/Addresses/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/BE/OwnershipAndControl/CorporateControl/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FBC/FunctionalEntities/BusinessRegistries/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/BE/OwnershipAndControl/ControlParties/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Utilities/AnnotationVocabulary/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/BE/LegalEntities/FormalBusinessOrganizations/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/BE/OwnershipAndControl/OwnershipParties/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/Identifiers/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FBC/FunctionalEntities/NorthAmericanEntities/USFinancialServicesEntities/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/BE/GovernmentEntities/GovernmentEntities/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/BE/LegalEntities/CorporateBodies/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/BE/OwnershipAndControl/CorporateControl/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FBC/FunctionalEntities/RegulatoryAgencies/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FBC/FunctionalEntities/RegistrationAuthorities/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/BE/Corporations/Corporations/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Places/Locations/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FBC/FunctionalEntities/BusinessCentersIndividuals/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/BE/LegalEntities/LEIEntities/"}
+     {:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FBC/ProductsAndServices/FinancialProductsAndServices/"}
+     {:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/BE/LegalEntities/LegalPersons/"}
+     {:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Utilities/AnnotationVocabulary/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/Collections/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FBC/FunctionalEntities/FinancialServicesEntities/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Places/Addresses/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/BE/Partnerships/Partnerships/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FBC/FunctionalEntities/FinancialServicesEntities/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Places/Locations/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/BE/Partnerships/Partnerships/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/BE/OwnershipAndControl/OwnershipParties/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Relations/Relations/"}
+     {:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/BE/OwnershipAndControl/ControlParties/"}
+     {:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/"}
+     {:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/BE/LegalEntities/FormalBusinessOrganizations/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/DatesAndTimes/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/BE/Trusts/Trusts/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FBC/FunctionalEntities/BusinessRegistries/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/BE/LegalEntities/LEIEntities/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Agreements/Contracts/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Agreements/Contracts/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/BE/Corporations/Corporations/"}
+     {:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/BE/LegalEntities/CorporateBodies/"}
      {:xsd/anyURI
       "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-CA/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Relations/Relations/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/BE/GovernmentEntities/NorthAmericanJurisdiction/USGovernmentEntitiesAndJurisdictions/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/BE/GovernmentEntities/NorthAmericanJurisdiction/USGovernmentEntitiesAndJurisdictions/"}
      {:xsd/anyURI
       "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-US/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/AnnotationVocabulary/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/BE/LegalEntities/LegalPersons/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/BE/Trusts/Trusts/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/ProductsAndServices/ProductsAndServices/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FBC/FunctionalEntities/RegulatoryAgencies/"}
      {:xsd/anyURI
-      "https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FBC/FunctionalEntities/NorthAmericanEntities/USFinancialServicesEntities/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FBC/ProductsAndServices/FinancialProductsAndServices/"}},
+      "https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/"}},
    :owl/versionIRI
    {:xsd/anyURI
-    "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FBC/FunctionalEntities/NorthAmericanEntities/USFinancialServicesEntitiesIndividuals/"},
+    "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FBC/FunctionalEntities/NorthAmericanEntities/USFinancialServicesEntitiesIndividuals/"},
    :rdf/type :owl/Ontology,
    :rdfs/label "American Financial Services Entities - Individuals Ontology",
    :skos/changeNote
@@ -1099,6 +1149,55 @@
      "The https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USFinancialServicesEntitiesIndividuals.rdf version of this ontology was added via the FIBO 2.0 RFC."
      "The https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USFinancialServicesEntitiesIndividuals.rdf version of this ontology was modified to normalize a few labels and definitions, revise GLEIF LEI registration data, eliminate duplication of concepts in LCC, simplify addresses, and merge countries with locations in FND."
      "The https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USFinancialServicesEntitiesIndividuals.rdf version of the ontology was modified to use the Commons Ontology Library (Commons) Annotation Vocabulary rather than the OMG's Specification Metadata vocabulary."
-     "The https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USFinancialServicesEntitiesIndividuals.rdf version of this ontology was modified to use the Commons Ontology Library (Commons) rather than the OMG's Languages, Countries and Codes (LCC) and to eliminate redundancies in FIBO as appropriate."},
+     "The https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USFinancialServicesEntitiesIndividuals.rdf version of this ontology was modified to use the Commons Ontology Library (Commons) rather than the OMG's Languages, Countries and Codes (LCC) and to eliminate redundancies in FIBO as appropriate."
+     "The https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USFinancialServicesEntitiesIndividuals.rdf version of this ontology was modified to replace content that is now available in the OMG Commons Ontology Library (Commons) v1.1 (FND-380)."},
    :xsd/anyURI
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USFinancialServicesEntitiesIndividuals/"})
+
+(def urn:uuid:33236496-476d-5fc9-bc16-ffe7200df767
+  {:cmns-id/identifies :fibo-fbc-fct-usfsind/BloombergFinanceLP-US-DE,
+   :fibo-fbc-fct-ra/isRegisteredBy
+   :fibo-fbc-fct-usfsind/BloombergFinanceLPAsLocalOperatingUnit,
+   :fibo-fnd-rel-rel/hasTag "5493001KJTIIGC8Y1R12",
+   :rdf/type           #{:owl/NamedIndividual
+                         :fibo-be-le-lei/LegalEntityIdentifier},
+   :rdfs/label         "Bloomberg Finance L.P. legal entity identifier",
+   :skos/definition    "legal entity identifier for Bloomberg Finance L.P.",
+   :xsd/anyURI         "https://rdf.gleif.org/L1/L-5493001KJTIIGC8Y1R12-LEI"})
+
+(def urn:uuid:d692fe9b-e0db-5056-be35-e4666dbd0976
+  {:cmns-id/identifies :fibo-fbc-fct-usfsind/IntercontinentalExchangeInc-US-DE,
+   :fibo-fnd-rel-rel/hasTag "5493000F4ZO33MV32P92",
+   :rdf/type           #{:owl/NamedIndividual
+                         :fibo-be-le-lei/LegalEntityIdentifier},
+   :rdfs/label         "Intercontinental Exchange legal entity identifier",
+   :skos/definition    "legal entity identifier for Intercontinental Exchange",
+   :xsd/anyURI         "https://rdf.gleif.org/L1/L-5493000F4ZO33MV32P92-LEI"})
+
+(def urn:uuid:abf56f69-d5dc-5710-b8dd-b74e4b5ead54
+  {:cmns-id/identifies :fibo-fbc-fct-usfsind/ThomsonReutersCorporation,
+   :fibo-fnd-rel-rel/hasTag "549300561UZND4C7B569",
+   :rdf/type #{:owl/NamedIndividual :fibo-be-le-lei/LegalEntityIdentifier},
+   :rdfs/label "Thomson Reuters Corporation legal entity identifier",
+   :skos/definition "legal entity identifier for Thomson Reuters Corporation",
+   :xsd/anyURI "https://rdf.gleif.org/L1/L-549300561UZND4C7B569-LEI"})
+
+(def urn:uuid:ddfc285d-1781-5f18-9706-4df7940d33be
+  {:cmns-id/identifies :fibo-fbc-fct-usjrga/CorporationServiceCompany-US-DE,
+   :fibo-fnd-rel-rel/hasTag "549300NOPSIMGJNT8J31",
+   :rdf/type #{:owl/NamedIndividual :fibo-be-le-lei/LegalEntityIdentifier},
+   :rdfs/label "Corporation Service Company legal entity identifier",
+   :skos/definition
+   "legal entity identifier for the Corporation Service Company",
+   :xsd/anyURI "https://rdf.gleif.org/L1/L-549300NOPSIMGJNT8J31-LEI"})
+
+(def urn:uuid:40ba344b-fb18-554f-a685-cc6dbbc50921
+  {:cmns-id/identifies :fibo-fbc-fct-usfsind/BloombergLP-US-DE,
+   :fibo-fbc-fct-ra/isRegisteredBy
+   :fibo-fbc-fct-usfsind/BloombergFinanceLPAsLocalOperatingUnit,
+   :fibo-fnd-rel-rel/hasTag "549300B56MD0ZC402L06",
+   :rdf/type           #{:owl/NamedIndividual
+                         :fibo-be-le-lei/LegalEntityIdentifier},
+   :rdfs/label         "Bloomberg L.P. legal entity identifier",
+   :skos/definition    "legal entity identifier for Bloomberg L.P.",
+   :xsd/anyURI         "https://rdf.gleif.org/L1/L-549300B56MD0ZC402L06-LEI"})

@@ -1,18 +1,19 @@
 (ns net.wikipunk.rdf.fibo-fnd-rel-rel
-  {:cmns-av/copyright #{"Copyright (c) 2013-2023 Object Management Group, Inc."
-                        "Copyright (c) 2013-2023 EDM Council, Inc."},
+  {:cmns-av/copyright
+   #{"Copyright (c) 2013-2024 EDM Council, Inc."
+     "Copyright (c) 2013-2024 Object Management Group, Inc."},
    :dcat/downloadURL
-   "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Relations/Relations/",
+   "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Relations/Relations/",
    :dcterms/abstract
    "This ontology defines a set of general purpose relations for use in other FIBO ontology elements. These include a number of properties required for reuse across the foundations and business entities models.",
    :dcterms/license {:xsd/anyURI "https://opensource.org/licenses/MIT"},
    :fibo-fnd-utl-av/hasMaturityLevel :fibo-fnd-utl-av/Release,
    :namespaces
    {"cmns-av" "https://www.omg.org/spec/Commons/AnnotationVocabulary/",
-    "cmns-cls" "https://www.omg.org/spec/Commons/Classifiers/",
-    "cmns-col" "https://www.omg.org/spec/Commons/Collections/",
     "cmns-cxtdsg" "https://www.omg.org/spec/Commons/ContextualDesignators/",
+    "cmns-doc" "https://www.omg.org/spec/Commons/Documents/",
     "cmns-dsg" "https://www.omg.org/spec/Commons/Designators/",
+    "cmns-rlcmp" "https://www.omg.org/spec/Commons/RolesAndCompositions/",
     "cmns-txt" "https://www.omg.org/spec/Commons/TextDatatype/",
     "dcterms" "http://purl.org/dc/terms/",
     "fibo-fnd-rel-rel"
@@ -25,17 +26,17 @@
     "skos" "http://www.w3.org/2004/02/skos/core#",
     "xsd" "http://www.w3.org/2001/XMLSchema#"},
    :owl/imports
-   #{{:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Utilities/AnnotationVocabulary/"}
+   #{{:xsd/anyURI "https://www.omg.org/spec/Commons/RolesAndCompositions/"}
+     {:xsd/anyURI "https://www.omg.org/spec/Commons/Documents/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/ContextualDesignators/"}
-     {:xsd/anyURI "https://www.omg.org/spec/Commons/Collections/"}
-     {:xsd/anyURI "https://www.omg.org/spec/Commons/Classifiers/"}
+     {:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Utilities/AnnotationVocabulary/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/Designators/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/TextDatatype/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/AnnotationVocabulary/"}},
    :owl/versionIRI
    {:xsd/anyURI
-    "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Relations/Relations/"},
+    "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Relations/Relations/"},
    :rdf/type :owl/Ontology,
    :rdfa/prefix "fibo-fnd-rel-rel",
    :rdfa/uri
@@ -48,6 +49,8 @@
      "The https://spec.edmcouncil.org/fibo/ontology/FND/Relations/Relations.rdf version of this ontology was modified to move the property, 'is conferred on' to the Legal Capacity ontology and to use the Commons Ontology Library (Commons) rather than the OMG's Languages, Countries and Codes (LCC), eliminating redundancies in FIBO as appropriate."
      "The https://spec.edmcouncil.org/fibo/ontology/FND/Relations/Relations.rdf version of this ontology was modified to rename (migrate) the hasDefinition property to isDefinedIn."
      "The https://spec.edmcouncil.org/fibo/ontology/FND/Relations/Relations.rdf version of this ontology was modified to incorporate evaluates and isEvaluatedBy, and to loosen constraints on hasName properties to allow multi-lingual names."
+     "The https://spec.edmcouncil.org/fibo/ontology/FND/Relations/Relations.rdf version of the ontology was modified to replace additional content that is now available in the OMG Commons Ontology Library (Commons) v1.1 (FND-380)."
+     "The https://spec.edmcouncil.org/fibo/ontology/FND/Relations/Relations.rdf version of the ontology was modified to eliminate deprecations that are more than 6 months old and to replace content that is now available in the OMG Commons Ontology Library (Commons) v1.1 (FND-380)."
      "The http://www.omg.org/spec/EDMC-FIBO/FND/20170201/Relations/Relations.rdf version of this ontology was modified per the FIBO 2.0 RFC to include additional properties and the linkage to LCC."
      "The https://spec.edmcouncil.org/fibo/ontology/FND/Relations/Relations.rdf version of this ontology was modified per the issue resolutions identified in the FIBO FND 1.0 FTF report and in https://spec.edmcouncil.org/fibo/ontology/FND/1.0/AboutFND-1.0/. It was further revised in FTF 2 resulting in https://spec.edmcouncil.org/fibo/ontology/FND/Relations/Relations/."
      "The https://spec.edmcouncil.org/fibo/ontology/FND/Relations/Relations.rdf version of this ontology was modified to eliminate duplication with concepts in LCC and remove the unused hasDispositionDate property, whose semantics were unclear at best."
@@ -64,16 +67,13 @@
    "https://spec.edmcouncil.org/fibo/ontology/FND/Relations/Relations/"})
 
 (def Reference
-  {:cmns-av/explanatoryNote
-   "In linguistics, a reference characterizes, provides context for, or specifies the relationship of one linguistic expression to another, i.e., provides the information necessary to interpret the dependent expression.",
-   :db/ident :fibo-fnd-rel-rel/Reference,
+  {:db/ident :fibo-fnd-rel-rel/Reference,
+   :owl/deprecated true,
+   :owl/equivalentClass :cmns-doc/Reference,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    {:xsd/anyURI
-    "https://spec.edmcouncil.org/fibo/ontology/FND/Relations/Relations/"},
-   :rdfs/label "reference",
-   :skos/definition
-   "concept that stands in for how something may be interpreted/understood in some context"})
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Relations/Relations/"}})
 
 (def Referent
   {:db/ident :fibo-fnd-rel-rel/Referent,
@@ -85,15 +85,6 @@
    :skos/definition
    "something that another concept stands for, exemplifies, symbolizes, or otherwise mentions"})
 
-(def appliesTo
-  {:db/ident :fibo-fnd-rel-rel/appliesTo,
-   :owl/deprecated true,
-   :owl/equivalentProperty :cmns-cxtdsg/appliesTo,
-   :rdf/type :owl/ObjectProperty,
-   :rdfs/isDefinedBy
-   {:xsd/anyURI
-    "https://spec.edmcouncil.org/fibo/ontology/FND/Relations/Relations/"}})
-
 (def causes
   {:db/ident :fibo-fnd-rel-rel/causes,
    :rdf/type :owl/ObjectProperty,
@@ -103,24 +94,6 @@
    :rdfs/label "causes",
    :skos/definition
    "relationship between an event or set of events or factors (the cause) and a second event, phenomenon, situation, or result (the effect), where the second event or outcome is understood as a consequence of the first"})
-
-(def characterizes
-  {:db/ident :fibo-fnd-rel-rel/characterizes,
-   :owl/deprecated true,
-   :owl/equivalentProperty :cmns-cls/characterizes,
-   :rdf/type :owl/ObjectProperty,
-   :rdfs/isDefinedBy
-   {:xsd/anyURI
-    "https://spec.edmcouncil.org/fibo/ontology/FND/Relations/Relations/"}})
-
-(def comprises
-  {:db/ident :fibo-fnd-rel-rel/comprises,
-   :owl/deprecated true,
-   :owl/equivalentProperty :cmns-col/comprises,
-   :rdf/type :owl/ObjectProperty,
-   :rdfs/isDefinedBy
-   {:xsd/anyURI
-    "https://spec.edmcouncil.org/fibo/ontology/FND/Relations/Relations/"}})
 
 (def confers
   {:cmns-av/explanatoryNote
@@ -142,24 +115,6 @@
     "https://spec.edmcouncil.org/fibo/ontology/FND/Relations/Relations/"},
    :rdfs/label "controls",
    :skos/definition "exercises authority or influence over"})
-
-(def defines
-  {:db/ident :fibo-fnd-rel-rel/defines,
-   :owl/deprecated true,
-   :owl/equivalentProperty :cmns-dsg/defines,
-   :rdf/type :owl/ObjectProperty,
-   :rdfs/isDefinedBy
-   {:xsd/anyURI
-    "https://spec.edmcouncil.org/fibo/ontology/FND/Relations/Relations/"}})
-
-(def describes
-  {:db/ident :fibo-fnd-rel-rel/describes,
-   :owl/deprecated true,
-   :owl/equivalentProperty :cmns-dsg/describes,
-   :rdf/type :owl/ObjectProperty,
-   :rdfs/isDefinedBy
-   {:xsd/anyURI
-    "https://spec.edmcouncil.org/fibo/ontology/FND/Relations/Relations/"}})
 
 (def designates
   {:cmns-av/explanatoryNote
@@ -202,6 +157,17 @@
    :rdfs/label "exchanges",
    :skos/definition "gives something in return something else"})
 
+(def exemplifies
+  {:cmns-av/adaptedFrom {:xsd/anyURI
+                         "http://www.merriam-webster.com/dictionary/exemplify"},
+   :db/ident :fibo-fnd-rel-rel/exemplifies,
+   :rdf/type :owl/ObjectProperty,
+   :rdfs/isDefinedBy
+   {:xsd/anyURI
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Relations/Relations/"},
+   :rdfs/label "exemplifies",
+   :skos/definition "is a concrete realization or example of"})
+
 (def generates
   {:db/ident :fibo-fnd-rel-rel/generates,
    :rdf/type :owl/ObjectProperty,
@@ -243,15 +209,6 @@
    :skos/definition
    "indicates a name by which something is frequently referred, without reference to any formal usage or structure"})
 
-(def hasContext
-  {:db/ident :fibo-fnd-rel-rel/hasContext,
-   :owl/deprecated true,
-   :owl/equivalentProperty :cmns-cxtdsg/isApplicableIn,
-   :rdf/type :owl/ObjectProperty,
-   :rdfs/isDefinedBy
-   {:xsd/anyURI
-    "https://spec.edmcouncil.org/fibo/ontology/FND/Relations/Relations/"}})
-
 (def hasDesignation
   {:db/ident :fibo-fnd-rel-rel/hasDesignation,
    :rdf/type :owl/ObjectProperty,
@@ -274,16 +231,13 @@
    "indicates a name by which something is known for some official purpose or context, or which is structured in some way such as to always follow the same format regardless of usage"})
 
 (def hasIdentity
-  {:cmns-av/explanatoryNote
-   "This property should be read as being a property of some kind of 'relative thing' as defined externality to this ontology. The property is usually but not exclusively framed with reference to some 'independent thing' but may take other forms and so should be regarded as having a target of 'thing'.",
-   :db/ident :fibo-fnd-rel-rel/hasIdentity,
+  {:db/ident :fibo-fnd-rel-rel/hasIdentity,
+   :owl/deprecated true,
+   :owl/equivalentProperty :cmns-rlcmp/isPlayedBy,
    :rdf/type :owl/ObjectProperty,
    :rdfs/isDefinedBy
    {:xsd/anyURI
-    "https://spec.edmcouncil.org/fibo/ontology/FND/Relations/Relations/"},
-   :rdfs/label "has identity",
-   :skos/definition
-   "provides a means for identifying something that fills a particular role"})
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Relations/Relations/"}})
 
 (def hasLegalName
   {:db/ident :fibo-fnd-rel-rel/hasLegalName,
@@ -295,15 +249,6 @@
    :rdfs/subPropertyOf :fibo-fnd-rel-rel/hasFormalName,
    :skos/definition
    "specifies the name used to refer to a party in legal communications"})
-
-(def hasRepresentation
-  {:db/ident :fibo-fnd-rel-rel/hasRepresentation,
-   :owl/deprecated true,
-   :owl/equivalentProperty :cmns-dsg/isSignifiedBy,
-   :rdf/type :owl/ObjectProperty,
-   :rdfs/isDefinedBy
-   {:xsd/anyURI
-    "https://spec.edmcouncil.org/fibo/ontology/FND/Relations/Relations/"}})
 
 (def hasTag
   {:db/ident :fibo-fnd-rel-rel/hasTag,
@@ -363,15 +308,6 @@
    :skos/definition
    "is the relationship between an event (the effect) and a second event (the cause), where the first event is understood as a consequence of the second; also, the relationship between a set of factors (causes) and a phenomenon (the effect)"})
 
-(def isCharacterizedBy
-  {:db/ident :fibo-fnd-rel-rel/isCharacterizedBy,
-   :owl/deprecated true,
-   :owl/equivalentProperty :cmns-cls/isCharacterizedBy,
-   :rdf/type :owl/ObjectProperty,
-   :rdfs/isDefinedBy
-   {:xsd/anyURI
-    "https://spec.edmcouncil.org/fibo/ontology/FND/Relations/Relations/"}})
-
 (def isConferredBy
   {:cmns-av/explanatoryNote
    "This property should be read as describing some legal power or duty, some commitment or some social construct being conferred as a result of some social construct such as an agreement or some legal authority. These concepts, which would describe the kind of thing of which this is a property, and the kinds of thing in terms of which this property is framed, are outside the scope of this model and so are not shown.",
@@ -385,16 +321,6 @@
    :skos/definition
    "a relationship between a right or obligation and the vehicle, such as an agreement or contract, that vests (or confers) said right or obligation"})
 
-(def isConferredOn
-  {:cmns-av/explanatoryNote
-   "This property is now in LegalCapacity, but not equivalenced to avoid circular dependencies.",
-   :db/ident :fibo-fnd-rel-rel/isConferredOn,
-   :owl/deprecated true,
-   :rdf/type :owl/ObjectProperty,
-   :rdfs/isDefinedBy
-   {:xsd/anyURI
-    "https://spec.edmcouncil.org/fibo/ontology/FND/Relations/Relations/"}})
-
 (def isControlledBy
   {:db/ident :fibo-fnd-rel-rel/isControlledBy,
    :owl/inverseOf :fibo-fnd-rel-rel/controls,
@@ -404,24 +330,6 @@
     "https://spec.edmcouncil.org/fibo/ontology/FND/Relations/Relations/"},
    :rdfs/label "is controlled by",
    :skos/definition "is influenced, managed, or directed by"})
-
-(def isDefinedIn
-  {:db/ident :fibo-fnd-rel-rel/isDefinedIn,
-   :owl/deprecated true,
-   :owl/equivalentProperty :cmns-dsg/isDefinedIn,
-   :rdf/type :owl/ObjectProperty,
-   :rdfs/isDefinedBy
-   {:xsd/anyURI
-    "https://spec.edmcouncil.org/fibo/ontology/FND/Relations/Relations/"}})
-
-(def isDescribedBy
-  {:db/ident :fibo-fnd-rel-rel/isDescribedBy,
-   :owl/deprecated true,
-   :owl/equivalentProperty :cmns-dsg/isDescribedBy,
-   :rdf/type :owl/ObjectProperty,
-   :rdfs/isDefinedBy
-   {:xsd/anyURI
-    "https://spec.edmcouncil.org/fibo/ontology/FND/Relations/Relations/"}})
 
 (def isDesignatedBy
   {:db/ident :fibo-fnd-rel-rel/isDesignatedBy,
@@ -443,6 +351,16 @@
     "https://spec.edmcouncil.org/fibo/ontology/FND/Relations/Relations/"},
    :rdfs/label "is evaluated by",
    :skos/definition "is ascertained or determined by"})
+
+(def isExemplifiedBy
+  {:db/ident :fibo-fnd-rel-rel/isExemplifiedBy,
+   :owl/inverseOf :fibo-fnd-rel-rel/exemplifies,
+   :rdf/type :owl/ObjectProperty,
+   :rdfs/isDefinedBy
+   {:xsd/anyURI
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Relations/Relations/"},
+   :rdfs/label "is exemplified by",
+   :skos/definition "is made concrete or is realized by"})
 
 (def isGeneratedBy
   {:db/ident :fibo-fnd-rel-rel/isGeneratedBy,
@@ -478,15 +396,6 @@
    :rdfs/label "is held by",
    :skos/definition
    "indicates the party that possesses and has at least partial control of something, regardless of ownership"})
-
-(def isIncludedIn
-  {:db/ident :fibo-fnd-rel-rel/isIncludedIn,
-   :owl/deprecated true,
-   :owl/equivalentProperty :cmns-col/isIncludedIn,
-   :rdf/type :owl/ObjectProperty,
-   :rdfs/isDefinedBy
-   {:xsd/anyURI
-    "https://spec.edmcouncil.org/fibo/ontology/FND/Relations/Relations/"}})
 
 (def isIssuedBy
   {:db/ident :fibo-fnd-rel-rel/isIssuedBy,
@@ -599,17 +508,8 @@
 
 (def refersTo
   {:db/ident :fibo-fnd-rel-rel/refersTo,
-   :rdf/type :owl/ObjectProperty,
-   :rdfs/isDefinedBy
-   {:xsd/anyURI
-    "https://spec.edmcouncil.org/fibo/ontology/FND/Relations/Relations/"},
-   :rdfs/label "refers to",
-   :skos/definition "classifies, provides context for, or indicates"})
-
-(def represents
-  {:db/ident :fibo-fnd-rel-rel/represents,
    :owl/deprecated true,
-   :owl/equivalentProperty :cmns-dsg/denotes,
+   :owl/equivalentProperty :cmns-doc/refersTo,
    :rdf/type :owl/ObjectProperty,
    :rdfs/isDefinedBy
    {:xsd/anyURI
@@ -627,24 +527,25 @@
    "indicates a name by which something was known in the past"})
 
 (def urn:uuid:6f8d2a35-656a-5948-9bc9-b6579c30e191
-  {:cmns-av/copyright #{"Copyright (c) 2013-2023 Object Management Group, Inc."
-                        "Copyright (c) 2013-2023 EDM Council, Inc."},
+  {:cmns-av/copyright
+   #{"Copyright (c) 2013-2024 EDM Council, Inc."
+     "Copyright (c) 2013-2024 Object Management Group, Inc."},
    :dcterms/abstract
    "This ontology defines a set of general purpose relations for use in other FIBO ontology elements. These include a number of properties required for reuse across the foundations and business entities models.",
    :dcterms/license {:xsd/anyURI "https://opensource.org/licenses/MIT"},
    :fibo-fnd-utl-av/hasMaturityLevel :fibo-fnd-utl-av/Release,
    :owl/imports
-   #{{:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Utilities/AnnotationVocabulary/"}
+   #{{:xsd/anyURI "https://www.omg.org/spec/Commons/RolesAndCompositions/"}
+     {:xsd/anyURI "https://www.omg.org/spec/Commons/Documents/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/ContextualDesignators/"}
-     {:xsd/anyURI "https://www.omg.org/spec/Commons/Collections/"}
-     {:xsd/anyURI "https://www.omg.org/spec/Commons/Classifiers/"}
+     {:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Utilities/AnnotationVocabulary/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/Designators/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/TextDatatype/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/AnnotationVocabulary/"}},
    :owl/versionIRI
    {:xsd/anyURI
-    "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Relations/Relations/"},
+    "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Relations/Relations/"},
    :rdf/type :owl/Ontology,
    :rdfs/label "Relations Ontology",
    :skos/changeNote
@@ -654,6 +555,8 @@
      "The https://spec.edmcouncil.org/fibo/ontology/FND/Relations/Relations.rdf version of this ontology was modified to move the property, 'is conferred on' to the Legal Capacity ontology and to use the Commons Ontology Library (Commons) rather than the OMG's Languages, Countries and Codes (LCC), eliminating redundancies in FIBO as appropriate."
      "The https://spec.edmcouncil.org/fibo/ontology/FND/Relations/Relations.rdf version of this ontology was modified to rename (migrate) the hasDefinition property to isDefinedIn."
      "The https://spec.edmcouncil.org/fibo/ontology/FND/Relations/Relations.rdf version of this ontology was modified to incorporate evaluates and isEvaluatedBy, and to loosen constraints on hasName properties to allow multi-lingual names."
+     "The https://spec.edmcouncil.org/fibo/ontology/FND/Relations/Relations.rdf version of the ontology was modified to replace additional content that is now available in the OMG Commons Ontology Library (Commons) v1.1 (FND-380)."
+     "The https://spec.edmcouncil.org/fibo/ontology/FND/Relations/Relations.rdf version of the ontology was modified to eliminate deprecations that are more than 6 months old and to replace content that is now available in the OMG Commons Ontology Library (Commons) v1.1 (FND-380)."
      "The http://www.omg.org/spec/EDMC-FIBO/FND/20170201/Relations/Relations.rdf version of this ontology was modified per the FIBO 2.0 RFC to include additional properties and the linkage to LCC."
      "The https://spec.edmcouncil.org/fibo/ontology/FND/Relations/Relations.rdf version of this ontology was modified per the issue resolutions identified in the FIBO FND 1.0 FTF report and in https://spec.edmcouncil.org/fibo/ontology/FND/1.0/AboutFND-1.0/. It was further revised in FTF 2 resulting in https://spec.edmcouncil.org/fibo/ontology/FND/Relations/Relations/."
      "The https://spec.edmcouncil.org/fibo/ontology/FND/Relations/Relations.rdf version of this ontology was modified to eliminate duplication with concepts in LCC and remove the unused hasDispositionDate property, whose semantics were unclear at best."

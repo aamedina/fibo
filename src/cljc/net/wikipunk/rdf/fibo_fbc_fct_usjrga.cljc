@@ -1,9 +1,8 @@
 (ns net.wikipunk.rdf.fibo-fbc-fct-usjrga
-  {:cmns-av/copyright
-   #{"Copyright (c) 2015-2023 EDM Council, Inc."
-     "Copyright (c) 2015-2023 Object Management Group, Inc."},
+  {:cmns-av/copyright #{"Copyright (c) 2015-2024 Object Management Group, Inc."
+                        "Copyright (c) 2015-2024 EDM Council, Inc."},
    :dcat/downloadURL
-   "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/",
+   "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/",
    :dcterms/abstract
    "This ontology extends the primary regulatory agencies ontology in FBC with additional regulators that are specific to the United States and augments certain U.S. financial services entities based on who regulates them.",
    :dcterms/license {:xsd/anyURI "https://opensource.org/licenses/MIT"},
@@ -14,6 +13,7 @@
     "cmns-cxtdsg" "https://www.omg.org/spec/Commons/ContextualDesignators/",
     "cmns-dsg" "https://www.omg.org/spec/Commons/Designators/",
     "cmns-id" "https://www.omg.org/spec/Commons/Identifiers/",
+    "cmns-rlcmp" "https://www.omg.org/spec/Commons/RolesAndCompositions/",
     "dcterms" "http://purl.org/dc/terms/",
     "fibo-be-corp-corp"
     "https://spec.edmcouncil.org/fibo/ontology/BE/Corporations/Corporations/",
@@ -57,8 +57,6 @@
     "https://spec.edmcouncil.org/fibo/ontology/FND/Places/VirtualPlaces/",
     "fibo-fnd-pty-pty"
     "https://spec.edmcouncil.org/fibo/ontology/FND/Parties/Parties/",
-    "fibo-fnd-pty-rl"
-    "https://spec.edmcouncil.org/fibo/ontology/FND/Parties/Roles/",
     "fibo-fnd-rel-rel"
     "https://spec.edmcouncil.org/fibo/ontology/FND/Relations/Relations/",
     "fibo-fnd-utl-av"
@@ -75,75 +73,74 @@
     "xsd" "http://www.w3.org/2001/XMLSchema#"},
    :owl/imports
    #{{:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FBC/FunctionalEntities/RegistrationAuthorities/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/ProductsAndServices/ProductsAndServices/"}
+     {:xsd/anyURI "https://www.omg.org/spec/Commons/RolesAndCompositions/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/BE/GovernmentEntities/GovernmentEntities/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Places/Addresses/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FBC/FunctionalEntities/BusinessRegistries/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Utilities/AnnotationVocabulary/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/BE/OwnershipAndControl/Executives/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FBC/FunctionalEntities/BusinessCentersIndividuals/"}
      {:xsd/anyURI
       "https://www.omg.org/spec/LCC/Countries/CountryRepresentation/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/BE/LegalEntities/FormalBusinessOrganizations/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Organizations/Organizations/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Organizations/Organizations/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/Identifiers/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/ContextualDesignators/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FBC/FunctionalEntities/NorthAmericanEntities/USFinancialServicesEntities/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/BE/GovernmentEntities/GovernmentEntities/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/BE/LegalEntities/CorporateBodies/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FBC/FunctionalEntities/RegistrationAuthorities/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Parties/Parties/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Places/Locations/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FBC/FunctionalEntities/RegulatoryAgencies/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Law/Jurisdiction/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/BE/Corporations/Corporations/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/BE/OwnershipAndControl/Executives/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Law/Jurisdiction/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/BE/LegalEntities/LEIEntities/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Places/VirtualPlaces/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FBC/ProductsAndServices/FinancialProductsAndServices/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FBC/FunctionalEntities/BusinessCentersIndividuals/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/BE/LegalEntities/LegalPersons/"}
+     {:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Utilities/AnnotationVocabulary/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/Collections/"}
+     {:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Law/LegalCore/"}
+     {:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Places/Addresses/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/Designators/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FBC/FunctionalEntities/FinancialServicesEntities/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FBC/FunctionalEntities/FinancialServicesEntities/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Places/Locations/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Relations/Relations/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/BE/LegalEntities/LEIEntities/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Parties/Parties/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Agreements/Contracts/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/BE/LegalEntities/FormalBusinessOrganizations/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Parties/Roles/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FBC/FunctionalEntities/BusinessRegistries/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Relations/Relations/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Places/VirtualPlaces/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/BE/GovernmentEntities/NorthAmericanJurisdiction/USGovernmentEntitiesAndJurisdictions/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Agreements/Contracts/"}
+     {:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/BE/Corporations/Corporations/"}
+     {:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/BE/LegalEntities/CorporateBodies/"}
+     {:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/BE/GovernmentEntities/NorthAmericanJurisdiction/USGovernmentEntitiesAndJurisdictions/"}
      {:xsd/anyURI
       "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-US/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Law/LegalCore/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Organizations/FormalOrganizations/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/AnnotationVocabulary/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/BE/LegalEntities/LegalPersons/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Organizations/FormalOrganizations/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/ProductsAndServices/ProductsAndServices/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FBC/FunctionalEntities/RegulatoryAgencies/"}
      {:xsd/anyURI
-      "https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FBC/FunctionalEntities/NorthAmericanEntities/USFinancialServicesEntities/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FBC/ProductsAndServices/FinancialProductsAndServices/"}},
+      "https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/"}},
    :owl/versionIRI
    {:xsd/anyURI
-    "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/"},
+    "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/"},
    :rdf/type :owl/Ontology,
    :rdfa/prefix "fibo-fbc-fct-usjrga",
    :rdfa/uri
@@ -152,12 +149,14 @@
    :skos/changeNote
    #{"The https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/USJurisdiction/USRegulatoryAgencies.rdf version of this ontology was modified per the FIBO 2.0 RFC."
      "The https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies.rdf version of this ontology was revised to add tax identification number, employer identification number, federal government entity and state government entity."
+     "The https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies.rdf version of this ontology was modified to replace content that is now available in the OMG Commons Ontology Library (Commons) v1.1 (FND-380)."
      "The https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/USJurisdiction/USRegulatoryAgencies.rdf version of this ontology was modified to integrate a financial services provider identifier for certain banking identifiers, add a property for secondary federal regulator, add individual registration schemes for state-specific business registries, improve on some definitions, normalize some of the labels, eliminate duplication of concepts in LCC, to simplify addresses, merge countries with locations in FND, eliminte the redundant notion of an InstitutionType, which can be determined using a SPARQL query or classification and results in a very large disjunction, and correct a couple of improperly defined annotations."
      "The https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies.rdf version of this ontology was revised to add a restriction on PrimaryFederalRegulator to say that it must be a government body."
      "The https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies.rdf version of this ontology was revised to eliminate references to external dictionary sites that no longer resolve and clean up circular and ambiguous definitions."
      "The https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies.rdf version of this ontology was revised to replace uses of hasTag in Relations with hasTag from LCC, as the more complex union of datatypes in the Relations concept is not needed here."
      "The https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies.rdf version of the ontology was modified to use the Commons Ontology Library (Commons) Annotation Vocabulary rather than the OMG's Specification Metadata vocabulary and augmented to support better mapping to the NIC repository."
      "The https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies.rdf version of this ontology was modified to use the Commons Ontology Library (Commons) rather than the OMG's Languages, Countries and Codes (LCC), to eliminate redundancies in FIBO, and to augment the number and nature of financial institution entity types to cover more of the National Information Center (NIC) repository managed by the FFIEC."
+     "The https://spec.edmcouncil.org/fibo/ontology/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies.rdf version of the ontology was modified to eliminate deprecations that are more than 6 months old, primarily related to name changes to better map to the legislation that defines the concepts."
      "The https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies.rdf version of this ontology was revised to correct a restriction defining state government entities and to make federal reserve district identifier a subclass of geographic region identifier and fix spelling errors."
      "The https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/USJurisdiction/USRegulatoryAgencies.rdf version of this ontology was modified per the issue resolutions identified in the FIBO FBC 1.0 FTF report."
      "The https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies.rdf version of this ontology was revised to reflect the move of certain organization-specific concepts from BE to FND."
@@ -333,8 +332,8 @@
 
 (def AmericanBankersAssociationRTNRegistrar
   {:cmns-av/abbreviation "ABA RTN Registrar",
+   :cmns-rlcmp/isPlayedBy :fibo-fbc-fct-usjrga/AccuityInc-US-DE,
    :db/ident :fibo-fbc-fct-usjrga/AmericanBankersAssociationRTNRegistrar,
-   :fibo-fnd-rel-rel/hasIdentity :fibo-fbc-fct-usjrga/AccuityInc-US-DE,
    :fibo-fnd-rel-rel/manages :fibo-fbc-fct-usjrga/ABARTNRegistry,
    :rdf/type #{:fibo-fbc-pas-fpas/FinancialServiceProvider :owl/NamedIndividual
                :fibo-fbc-fct-ra/Registrar},
@@ -347,10 +346,9 @@
 
 (def AmericanBankersAssociationRegistrationAuthority
   {:cmns-av/abbreviation "ABA RA",
+   :cmns-rlcmp/isPlayedBy :fibo-fbc-fct-usjrga/AmericanBankersAssociation,
    :db/ident
    :fibo-fbc-fct-usjrga/AmericanBankersAssociationRegistrationAuthority,
-   :fibo-fnd-rel-rel/hasIdentity
-   :fibo-fbc-fct-usjrga/AmericanBankersAssociation,
    :fibo-fnd-rel-rel/manages :fibo-fbc-fct-usjrga/ABAIINRegistry,
    :rdf/type #{:fibo-fbc-fct-ra/RegistrationAuthority
                :fibo-fbc-pas-fpas/FinancialServiceProvider
@@ -367,8 +365,8 @@
                          "http://www.federalreserve.gov/faqs/about_12591.htm"},
    :cmns-col/isPartOf
    :fibo-fbc-fct-usjrga/FederalReserveRegulatoryAgencyAndCentralBank,
+   :cmns-rlcmp/isPlayedBy :fibo-fbc-fct-usjrga/FederalReserveBoard,
    :db/ident :fibo-fbc-fct-usjrga/BoardOfGovernorsOfTheFederalReserveSystem,
-   :fibo-fnd-rel-rel/hasIdentity :fibo-fbc-fct-usjrga/FederalReserveBoard,
    :rdf/type #{:fibo-fbc-fct-ra/RegistrationAuthority :owl/NamedIndividual
                :fibo-fbc-fct-rga/RegulatoryAgency},
    :rdfs/isDefinedBy
@@ -394,9 +392,9 @@
    "CFTC Industry Filings repository, a repository of organizational characteristics and financial data for Designated Contract Markets (DCM), Swap Execution Facilities (SEF), Derivatives Clearing Organizations (DCO), Swap Data Repositories (SDR), and Lists of Foreign Boards of Trade (FBOT) Registered with the Commission"})
 
 (def CaliforniaBankingRegulator
-  {:db/ident :fibo-fbc-fct-usjrga/CaliforniaBankingRegulator,
-   :fibo-fnd-rel-rel/hasIdentity
+  {:cmns-rlcmp/isPlayedBy
    :fibo-fbc-fct-usjrga/CaliforniaDepartmentOfBusinessOversight,
+   :db/ident :fibo-fbc-fct-usjrga/CaliforniaBankingRegulator,
    :rdf/type #{:fibo-fbc-fct-ra/RegistrationAuthority :owl/NamedIndividual
                :fibo-fbc-fct-rga/RegulatoryAgency},
    :rdfs/isDefinedBy
@@ -440,9 +438,9 @@
    "State of California, Secretary of State, Business Programs Division"})
 
 (def CaliforniaBusinessRegistrar
-  {:db/ident :fibo-fbc-fct-usjrga/CaliforniaBusinessRegistrar,
-   :fibo-fnd-rel-rel/hasIdentity
+  {:cmns-rlcmp/isPlayedBy
    :fibo-fbc-fct-usjrga/CaliforniaBusinessProgramsDivision,
+   :db/ident :fibo-fbc-fct-usjrga/CaliforniaBusinessRegistrar,
    :fibo-fnd-rel-rel/manages
    :fibo-fbc-fct-usjrga/CaliforniaBusinessEntitiesRegistry,
    :fibo-fnd-rel-rel/provides
@@ -518,9 +516,9 @@
    "GLEIF Registration Authority List identifier for the California Business Entities Registry"})
 
 (def CommoditiesFuturesAndDerivativesRegulator
-  {:db/ident :fibo-fbc-fct-usjrga/CommoditiesFuturesAndDerivativesRegulator,
-   :fibo-fnd-rel-rel/hasIdentity
+  {:cmns-rlcmp/isPlayedBy
    :fibo-fbc-fct-usjrga/CommodityFuturesTradingCommission,
+   :db/ident :fibo-fbc-fct-usjrga/CommoditiesFuturesAndDerivativesRegulator,
    :fibo-fnd-rel-rel/manages :fibo-fbc-fct-usjrga/CFTCIndustryFilingsRepository,
    :rdf/type #{:fibo-fbc-fct-ra/RegistrationAuthority :owl/NamedIndividual
                :fibo-fbc-fct-rga/RegulatoryAgency},
@@ -549,9 +547,9 @@
 (def ConsumerFinanceRegulator
   {:cmns-av/adaptedFrom {:xsd/anyURI
                          "http://www.consumerfinance.gov/the-bureau/"},
-   :db/ident :fibo-fbc-fct-usjrga/ConsumerFinanceRegulator,
-   :fibo-fnd-rel-rel/hasIdentity
+   :cmns-rlcmp/isPlayedBy
    :fibo-fbc-fct-usjrga/ConsumerFinancialProtectionBureau,
+   :db/ident :fibo-fbc-fct-usjrga/ConsumerFinanceRegulator,
    :rdf/type #{:owl/NamedIndividual :fibo-fbc-fct-rga/RegulatoryAgency},
    :rdfs/isDefinedBy
    {:xsd/anyURI
@@ -577,9 +575,8 @@
    "Consumer Financial Protection Bureau (CFPB), an independent Federal agency that helps consumer finance markets work by making rules more effective, by consistently and fairly enforcing those rules, and by empowering consumers to take more control over their economic lives"})
 
 (def CorporationServiceCompany
-  {:db/ident :fibo-fbc-fct-usjrga/CorporationServiceCompany,
-   :fibo-fnd-rel-rel/hasIdentity
-   :fibo-fbc-fct-usjrga/CorporationServiceCompany-US-DE,
+  {:cmns-rlcmp/isPlayedBy :fibo-fbc-fct-usjrga/CorporationServiceCompany-US-DE,
+   :db/ident :fibo-fbc-fct-usjrga/CorporationServiceCompany,
    :rdf/type #{:fibo-fbc-pas-fpas/ThirdPartyAgent :owl/NamedIndividual
                :fibo-fbc-pas-fpas/AgentForServiceOfProcess},
    :rdfs/isDefinedBy
@@ -643,9 +640,8 @@
    "Delaware Department of Corporations business entity identifier for the Corporation Service Company"})
 
 (def CorporationTrustCompany
-  {:db/ident :fibo-fbc-fct-usjrga/CorporationTrustCompany,
-   :fibo-fnd-rel-rel/hasIdentity
-   :fibo-fbc-fct-usjrga/CorporationTrustCompany-US-DE,
+  {:cmns-rlcmp/isPlayedBy :fibo-fbc-fct-usjrga/CorporationTrustCompany-US-DE,
+   :db/ident :fibo-fbc-fct-usjrga/CorporationTrustCompany,
    :rdf/type #{:fibo-fbc-pas-fpas/ThirdPartyAgent :owl/NamedIndividual
                :fibo-fbc-pas-fpas/AgentForServiceOfProcess},
    :rdfs/isDefinedBy
@@ -749,9 +745,8 @@
    "State of Delaware, Division of Corporations, service for the registration of business entities"})
 
 (def DelawareCorporationsRegulator
-  {:db/ident :fibo-fbc-fct-usjrga/DelawareCorporationsRegulator,
-   :fibo-fnd-rel-rel/hasIdentity
-   :fibo-fbc-fct-usjrga/DelawareDivisionOfCorporations,
+  {:cmns-rlcmp/isPlayedBy :fibo-fbc-fct-usjrga/DelawareDivisionOfCorporations,
+   :db/ident :fibo-fbc-fct-usjrga/DelawareCorporationsRegulator,
    :fibo-fnd-rel-rel/manages
    :fibo-fbc-fct-usjrga/DelawareBusinessEntitiesRegistry,
    :fibo-fnd-rel-rel/provides
@@ -918,34 +913,6 @@
    :skos/definition
    "an entry in the FDIC institution directory, a repository of financial institution characteristics collected by the FDIC related to the institutions they insure"})
 
-(def FRSMemberBank
-  {:db/ident :fibo-fbc-fct-usjrga/FRSMemberBank,
-   :owl/deprecated true,
-   :owl/equivalentClass :fibo-fbc-fct-usjrga/FederalReserveSystemMember,
-   :rdf/type :owl/Class,
-   :rdfs/isDefinedBy
-   {:xsd/anyURI
-    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/"}})
-
-(def FRSNonMemberBank
-  {:db/ident :fibo-fbc-fct-usjrga/FRSNonMemberBank,
-   :owl/deprecated true,
-   :owl/equivalentClass
-   :fibo-fbc-fct-usjrga/FederalReserveSystemNonMemberInstitution,
-   :rdf/type :owl/Class,
-   :rdfs/isDefinedBy
-   {:xsd/anyURI
-    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/"}})
-
-(def FRSStateMemberBank
-  {:db/ident :fibo-fbc-fct-usjrga/FRSStateMemberBank,
-   :owl/deprecated true,
-   :owl/equivalentClass :fibo-fbc-fct-usjrga/StateMemberBank,
-   :rdf/type :owl/Class,
-   :rdfs/isDefinedBy
-   {:xsd/anyURI
-    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/"}})
-
 (def FarmCreditAdministration
   {:cmns-av/abbreviation "FCA",
    :cmns-av/explanatoryNote
@@ -965,8 +932,8 @@
 
 (def FarmCreditRegulator
   {:cmns-av/adaptedFrom {:xsd/anyURI "http://fca.gov/about/fca_in_brief.html"},
+   :cmns-rlcmp/isPlayedBy :fibo-fbc-fct-usjrga/FarmCreditAdministration,
    :db/ident :fibo-fbc-fct-usjrga/FarmCreditRegulator,
-   :fibo-fnd-rel-rel/hasIdentity :fibo-fbc-fct-usjrga/FarmCreditAdministration,
    :rdf/type #{:fibo-fbc-fct-usjrga/PrimaryFederalRegulator
                :fibo-fbc-pas-fpas/FinancialServiceProvider
                :owl/NamedIndividual},
@@ -996,9 +963,9 @@
    "Federal Deposit Insurance Corporation (FDIC), which preserves and promotes public confidence in the U.S. financial system by insuring deposits in banks and thrift institutions for at least $250,000; by identifying, monitoring and addressing risks to the deposit insurance funds; and by limiting the effect on the economy and the financial system when a bank or thrift institution fails."})
 
 (def FederalDepositInsurerAndRegulator
-  {:db/ident :fibo-fbc-fct-usjrga/FederalDepositInsurerAndRegulator,
-   :fibo-fnd-rel-rel/hasIdentity
+  {:cmns-rlcmp/isPlayedBy
    :fibo-fbc-fct-usjrga/FederalDepositInsuranceCorporation,
+   :db/ident :fibo-fbc-fct-usjrga/FederalDepositInsurerAndRegulator,
    :fibo-fnd-rel-rel/manages :fibo-fbc-fct-usjrga/FDICInstitutionDirectory,
    :rdf/type #{:fibo-fbc-fct-ra/RegistrationAuthority
                :fibo-fbc-fct-usjrga/PrimaryFederalRegulator
@@ -1038,10 +1005,10 @@
 
 (def FederalFinancialInstitutionsExaminationRegulator
   {:cmns-av/adaptedFrom {:xsd/anyURI "http://www.ffiec.gov/about.htm"},
+   :cmns-rlcmp/isPlayedBy
+   :fibo-fbc-fct-usjrga/FederalFinancialInstitutionsExaminationCouncil,
    :db/ident
    :fibo-fbc-fct-usjrga/FederalFinancialInstitutionsExaminationRegulator,
-   :fibo-fnd-rel-rel/hasIdentity
-   :fibo-fbc-fct-usjrga/FederalFinancialInstitutionsExaminationCouncil,
    :fibo-fnd-rel-rel/manages
    :fibo-fbc-fct-usjrga/UniformBankPerformanceReportRepository,
    :rdf/type #{:fibo-fbc-fct-ra/RegistrationAuthority :owl/NamedIndividual
@@ -1091,9 +1058,8 @@
 
 (def FederalHousingFinanceRegulator
   {:cmns-av/adaptedFrom {:xsd/anyURI "http://www.fhfa.gov/AboutUs"},
+   :cmns-rlcmp/isPlayedBy :fibo-fbc-fct-usjrga/FederalHousingFinanceAgency,
    :db/ident :fibo-fbc-fct-usjrga/FederalHousingFinanceRegulator,
-   :fibo-fnd-rel-rel/hasIdentity
-   :fibo-fbc-fct-usjrga/FederalHousingFinanceAgency,
    :rdf/type #{:fibo-fbc-fct-ra/RegistrationAuthority
                :fibo-fbc-fct-usjrga/PrimaryFederalRegulator
                :owl/NamedIndividual},
@@ -1203,12 +1169,12 @@
    "Federal Reserve Bank of Minneapolis, whose jurisdiction is the Ninth District of the Federal Reserve"})
 
 (def FederalReserveBankOfNewYork
-  {:db/ident :fibo-fbc-fct-usjrga/FederalReserveBankOfNewYork,
+  {:cmns-rlcmp/isPlayedBy
+   :fibo-fbc-fct-usjrga/FederalReserveBankOfNewYork-US-NY,
+   :db/ident :fibo-fbc-fct-usjrga/FederalReserveBankOfNewYork,
    :fibo-be-ge-ge/hasJurisdiction
    :fibo-fbc-fct-usjrga/FederalReserveSecondDistrict,
    :fibo-fnd-plc-vrt/hasWebsite {:xsd/anyURI "http://www.newyorkfed.org/"},
-   :fibo-fnd-rel-rel/hasIdentity
-   :fibo-fbc-fct-usjrga/FederalReserveBankOfNewYork-US-NY,
    :rdf/type #{:fibo-fbc-fct-usjrga/FederalReserveDistrictBank
                :owl/NamedIndividual},
    :rdfs/isDefinedBy
@@ -1560,8 +1526,8 @@
    "identifier for the ninth district of the Federal Reserve, which represents the district governed by the Federal Reserve Bank of Minneapolis"})
 
 (def FederalReserveRegulatoryAgencyAndCentralBank
-  {:db/ident :fibo-fbc-fct-usjrga/FederalReserveRegulatoryAgencyAndCentralBank,
-   :fibo-fnd-rel-rel/hasIdentity :fibo-fbc-fct-usjrga/FederalReserveSystem,
+  {:cmns-rlcmp/isPlayedBy :fibo-fbc-fct-usjrga/FederalReserveSystem,
+   :db/ident :fibo-fbc-fct-usjrga/FederalReserveRegulatoryAgencyAndCentralBank,
    :fibo-fnd-rel-rel/manages
    :fibo-fbc-fct-usjrga/NationalInformationCenterRepository,
    :rdf/type
@@ -1687,9 +1653,9 @@
    "central banking system of the U.S., comprised of the Federal Reserve Board, the 12 Federal Reserve Banks, the Federal Open Market Committee, and the national and state member banks"})
 
 (def FederalReserveSystemAsMemberBearingOrganization
-  {:db/ident
+  {:cmns-rlcmp/isPlayedBy :fibo-fbc-fct-usjrga/FederalReserveSystem,
+   :db/ident
    :fibo-fbc-fct-usjrga/FederalReserveSystemAsMemberBearingOrganization,
-   :fibo-fnd-rel-rel/hasIdentity :fibo-fbc-fct-usjrga/FederalReserveSystem,
    :rdf/type #{:owl/NamedIndividual
                :fibo-fnd-org-org/MemberBearingOrganization},
    :rdfs/isDefinedBy
@@ -1707,7 +1673,7 @@
    {:xsd/anyURI
     "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/"},
    :rdfs/label "Federal Reserve System member",
-   :rdfs/subClassOf #{{:owl/onProperty :fibo-fnd-pty-rl/isPlayedBy,
+   :rdfs/subClassOf #{{:owl/onProperty :cmns-rlcmp/isPlayedBy,
                        :owl/someValuesFrom
                        {:owl/hasValue :fibo-fbc-fct-usjrga/FederalReserveSystem,
                         :owl/onProperty :cmns-col/isMemberOf,
@@ -1744,7 +1710,10 @@
     "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/"},
    :rdfs/label "Federal Reserve System non-member institution",
    :rdfs/subClassOf #{:fibo-fbc-fct-fse/DepositoryInstitution
-                      {:owl/onProperty :fibo-fnd-pty-rl/isPlayedBy,
+                      {:owl/unionOf [:fibo-fbc-fct-usfse/StateCharteredBank
+                                     :fibo-fbc-fct-usfse/IndustrialBank],
+                       :rdf/type    :owl/Class}
+                      {:owl/onProperty :cmns-rlcmp/isPlayedBy,
                        :owl/someValuesFrom
                        {:owl/intersectionOf
                         [{:owl/hasValue   :lcc-3166-1/UnitedStatesOfAmerica,
@@ -1755,10 +1724,7 @@
                           :owl/onProperty :fibo-be-le-cb/isIncorporatedIn,
                           :rdf/type :owl/Restriction}],
                         :rdf/type :owl/Class},
-                       :rdf/type :owl/Restriction}
-                      {:owl/unionOf [:fibo-fbc-fct-usfse/StateCharteredBank
-                                     :fibo-fbc-fct-usfse/IndustrialBank],
-                       :rdf/type    :owl/Class}},
+                       :rdf/type :owl/Restriction}},
    :skos/definition
    "depository institution that is not member of the Federal Reserve System (FRS)"})
 
@@ -1862,9 +1828,9 @@
 (def FederalStabilityMonitorAndRegulator
   {:cmns-av/adaptedFrom
    {:xsd/anyURI "http://www.treasury.gov/initiatives/fsoc/Pages/home.aspx"},
-   :db/ident :fibo-fbc-fct-usjrga/FederalStabilityMonitorAndRegulator,
-   :fibo-fnd-rel-rel/hasIdentity
+   :cmns-rlcmp/isPlayedBy
    :fibo-fbc-fct-usjrga/FinancialStabilityOversightCouncil,
+   :db/ident :fibo-fbc-fct-usjrga/FederalStabilityMonitorAndRegulator,
    :rdf/type #{:owl/NamedIndividual :fibo-fbc-fct-rga/RegulatoryAgency},
    :rdfs/isDefinedBy
    {:xsd/anyURI
@@ -1875,9 +1841,9 @@
 
 (def FinancialIndustryRegulator
   {:cmns-av/adaptedFrom {:xsd/anyURI "http://www.finra.org/about/what-we-do"},
-   :db/ident :fibo-fbc-fct-usjrga/FinancialIndustryRegulator,
-   :fibo-fnd-rel-rel/hasIdentity
+   :cmns-rlcmp/isPlayedBy
    :fibo-fbc-fct-usjrga/FinancialIndustryRegulatoryAuthority,
+   :db/ident :fibo-fbc-fct-usjrga/FinancialIndustryRegulator,
    :rdf/type #{:owl/NamedIndividual
                :fibo-fbc-fct-fse/SelfRegulatingOrganization},
    :rdfs/isDefinedBy
@@ -1962,9 +1928,9 @@
    "a numbering system that allows a credit, debit, or other card to be identified as having been issued by a particular financial institution"})
 
 (def MassachusettsBusinessRegistrar
-  {:db/ident :fibo-fbc-fct-usjrga/MassachusettsBusinessRegistrar,
-   :fibo-fnd-rel-rel/hasIdentity
+  {:cmns-rlcmp/isPlayedBy
    :fibo-fbc-fct-usjrga/MassachusettsCorporationsDivision,
+   :db/ident :fibo-fbc-fct-usjrga/MassachusettsBusinessRegistrar,
    :fibo-fnd-rel-rel/manages
    :fibo-fbc-fct-usjrga/MassachusettsCorporationRegistry,
    :fibo-fnd-rel-rel/provides
@@ -2081,9 +2047,9 @@
 (def NationalBankingRegulator
   {:cmns-av/adaptedFrom
    {:xsd/anyURI "http://www.occ.gov/about/what-we-do/mission/index-about.html"},
-   :db/ident :fibo-fbc-fct-usjrga/NationalBankingRegulator,
-   :fibo-fnd-rel-rel/hasIdentity
+   :cmns-rlcmp/isPlayedBy
    :fibo-fbc-fct-usjrga/OfficeOfTheComptrollerOfTheCurrency,
+   :db/ident :fibo-fbc-fct-usjrga/NationalBankingRegulator,
    :rdf/type #{:fibo-fbc-fct-ra/RegistrationAuthority
                :fibo-fbc-fct-usjrga/PrimaryFederalRegulator
                :owl/NamedIndividual},
@@ -2116,9 +2082,9 @@
 (def NationalCreditUnionInsurerAndRegulator
   {:cmns-av/adaptedFrom {:xsd/anyURI
                          "http://www.ncua.gov/about/Pages/default.aspx"},
-   :db/ident :fibo-fbc-fct-usjrga/NationalCreditUnionInsurerAndRegulator,
-   :fibo-fnd-rel-rel/hasIdentity
+   :cmns-rlcmp/isPlayedBy
    :fibo-fbc-fct-usjrga/NationalCreditUnionAdministration,
+   :db/ident :fibo-fbc-fct-usjrga/NationalCreditUnionInsurerAndRegulator,
    :rdf/type #{:fibo-fbc-fct-ra/RegistrationAuthority
                :fibo-fbc-fct-usjrga/PrimaryFederalRegulator
                :fibo-fbc-pas-fpas/FinancialServiceProvider
@@ -2194,9 +2160,8 @@
    "New York State (NYS) Department of State, Division of Corporations service for the registration of business entities"})
 
 (def NewYorkCorporationsRegulator
-  {:db/ident :fibo-fbc-fct-usjrga/NewYorkCorporationsRegulator,
-   :fibo-fnd-rel-rel/hasIdentity
-   :fibo-fbc-fct-usjrga/NewYorkDivisionOfCorporations,
+  {:cmns-rlcmp/isPlayedBy :fibo-fbc-fct-usjrga/NewYorkDivisionOfCorporations,
+   :db/ident :fibo-fbc-fct-usjrga/NewYorkCorporationsRegulator,
    :fibo-fnd-rel-rel/manages
    :fibo-fbc-fct-usjrga/NewYorkBusinessEntitiesRegistry,
    :fibo-fnd-rel-rel/provides
@@ -2320,9 +2285,8 @@
    "registry of business entities for businesses that have registered with the Ohio Secretary of State"})
 
 (def OhioBusinessRegistrar
-  {:db/ident :fibo-fbc-fct-usjrga/OhioBusinessRegistrar,
-   :fibo-fnd-rel-rel/hasIdentity
-   :fibo-fbc-fct-usjrga/OhioBusinessServicesDivision,
+  {:cmns-rlcmp/isPlayedBy :fibo-fbc-fct-usjrga/OhioBusinessServicesDivision,
+   :db/ident :fibo-fbc-fct-usjrga/OhioBusinessRegistrar,
    :fibo-fnd-rel-rel/manages :fibo-fbc-fct-usjrga/OhioBusinessFilingPortal,
    :fibo-fnd-rel-rel/provides
    :fibo-fbc-fct-usjrga/OhioBusinessRegistrationService,
@@ -2395,7 +2359,7 @@
                          "http://www.ffiec.gov/nicpubweb/nicweb/NicHome.aspx"},
    :db/ident :fibo-fbc-fct-usjrga/PrimaryFederalRegulator,
    :owl/equivalentClass
-   {:owl/onProperty :fibo-fnd-pty-rl/isPlayedBy,
+   {:owl/onProperty :cmns-rlcmp/isPlayedBy,
     :owl/someValuesFrom
     {:owl/oneOf [:fibo-fbc-fct-usjrga/FarmCreditAdministration
                  :fibo-fbc-fct-usjrga/FederalDepositInsuranceCorporation
@@ -2412,7 +2376,7 @@
     "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/"},
    :rdfs/label "primary federal regulator",
    :rdfs/subClassOf #{{:owl/onClass    :fibo-be-ge-ge/GovernmentBody,
-                       :owl/onProperty :fibo-fnd-rel-rel/hasIdentity,
+                       :owl/onProperty :cmns-rlcmp/isPlayedBy,
                        :owl/qualifiedCardinality 1,
                        :rdf/type       :owl/Restriction}
                       :fibo-fbc-fct-rga/RegulatoryAgency},
@@ -2494,9 +2458,8 @@
 
 (def SecuritiesAndExchangeRegulator
   {:cmns-av/adaptedFrom {:xsd/anyURI "http://www.sec.gov/about/whatwedo.shtml"},
+   :cmns-rlcmp/isPlayedBy :fibo-fbc-fct-usjrga/SecuritiesAndExchangeCommission,
    :db/ident :fibo-fbc-fct-usjrga/SecuritiesAndExchangeRegulator,
-   :fibo-fnd-rel-rel/hasIdentity
-   :fibo-fbc-fct-usjrga/SecuritiesAndExchangeCommission,
    :fibo-fnd-rel-rel/manages :fibo-fbc-fct-usjrga/EDGARRepository,
    :rdf/type #{:fibo-fbc-fct-ra/RegistrationAuthority
                :fibo-fbc-fct-usjrga/PrimaryFederalRegulator
@@ -2564,9 +2527,8 @@
    :skos/definition "State of South Dakota's Corporations Division"})
 
 (def SouthDakotaCorporationsRegulator
-  {:db/ident :fibo-fbc-fct-usjrga/SouthDakotaCorporationsRegulator,
-   :fibo-fnd-rel-rel/hasIdentity
-   :fibo-fbc-fct-usjrga/SouthDakotaCorporationsDivision,
+  {:cmns-rlcmp/isPlayedBy :fibo-fbc-fct-usjrga/SouthDakotaCorporationsDivision,
+   :db/ident :fibo-fbc-fct-usjrga/SouthDakotaCorporationsRegulator,
    :fibo-fnd-rel-rel/manages
    :fibo-fbc-fct-usjrga/SouthDakotaBusinessInformationRegistry,
    :fibo-fnd-rel-rel/provides
@@ -2685,8 +2647,8 @@
 (def ThriftRegulator
   {:cmns-av/adaptedFrom
    {:xsd/anyURI "http://www.occ.gov/about/what-we-do/mission/index-about.html"},
+   :cmns-rlcmp/isPlayedBy :fibo-fbc-fct-usjrga/OfficeOfThriftSupervision,
    :db/ident :fibo-fbc-fct-usjrga/ThriftRegulator,
-   :fibo-fnd-rel-rel/hasIdentity :fibo-fbc-fct-usjrga/OfficeOfThriftSupervision,
    :rdf/type #{:fibo-fbc-fct-usjrga/PrimaryFederalRegulator
                :owl/NamedIndividual},
    :rdfs/isDefinedBy
@@ -2755,95 +2717,95 @@
    "identifies an additional federal regulator, over and above the primary federal regulator, for an institution"})
 
 (def urn:uuid:02f3ab60-a840-52fa-b4c8-2edac6d5d5ab
-  {:cmns-av/copyright
-   #{"Copyright (c) 2015-2023 EDM Council, Inc."
-     "Copyright (c) 2015-2023 Object Management Group, Inc."},
+  {:cmns-av/copyright #{"Copyright (c) 2015-2024 Object Management Group, Inc."
+                        "Copyright (c) 2015-2024 EDM Council, Inc."},
    :dcterms/abstract
    "This ontology extends the primary regulatory agencies ontology in FBC with additional regulators that are specific to the United States and augments certain U.S. financial services entities based on who regulates them.",
    :dcterms/license {:xsd/anyURI "https://opensource.org/licenses/MIT"},
    :fibo-fnd-utl-av/hasMaturityLevel :fibo-fnd-utl-av/Release,
    :owl/imports
    #{{:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FBC/FunctionalEntities/RegistrationAuthorities/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/ProductsAndServices/ProductsAndServices/"}
+     {:xsd/anyURI "https://www.omg.org/spec/Commons/RolesAndCompositions/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/BE/GovernmentEntities/GovernmentEntities/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Places/Addresses/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FBC/FunctionalEntities/BusinessRegistries/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Utilities/AnnotationVocabulary/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/BE/OwnershipAndControl/Executives/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FBC/FunctionalEntities/BusinessCentersIndividuals/"}
      {:xsd/anyURI
       "https://www.omg.org/spec/LCC/Countries/CountryRepresentation/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/BE/LegalEntities/FormalBusinessOrganizations/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Organizations/Organizations/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Organizations/Organizations/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/Identifiers/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/ContextualDesignators/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FBC/FunctionalEntities/NorthAmericanEntities/USFinancialServicesEntities/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/BE/GovernmentEntities/GovernmentEntities/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/BE/LegalEntities/CorporateBodies/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FBC/FunctionalEntities/RegistrationAuthorities/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Parties/Parties/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Places/Locations/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FBC/FunctionalEntities/RegulatoryAgencies/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Law/Jurisdiction/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/BE/Corporations/Corporations/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/BE/OwnershipAndControl/Executives/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Law/Jurisdiction/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/BE/LegalEntities/LEIEntities/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Places/VirtualPlaces/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FBC/ProductsAndServices/FinancialProductsAndServices/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FBC/FunctionalEntities/BusinessCentersIndividuals/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/BE/LegalEntities/LegalPersons/"}
+     {:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Utilities/AnnotationVocabulary/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/Collections/"}
+     {:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Law/LegalCore/"}
+     {:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Places/Addresses/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/Designators/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FBC/FunctionalEntities/FinancialServicesEntities/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FBC/FunctionalEntities/FinancialServicesEntities/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Places/Locations/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Relations/Relations/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/BE/LegalEntities/LEIEntities/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Parties/Parties/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Agreements/Contracts/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/BE/LegalEntities/FormalBusinessOrganizations/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Parties/Roles/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FBC/FunctionalEntities/BusinessRegistries/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Relations/Relations/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Places/VirtualPlaces/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/BE/GovernmentEntities/NorthAmericanJurisdiction/USGovernmentEntitiesAndJurisdictions/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Agreements/Contracts/"}
+     {:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/BE/Corporations/Corporations/"}
+     {:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/BE/LegalEntities/CorporateBodies/"}
+     {:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/BE/GovernmentEntities/NorthAmericanJurisdiction/USGovernmentEntitiesAndJurisdictions/"}
      {:xsd/anyURI
       "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-US/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Law/LegalCore/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Organizations/FormalOrganizations/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/AnnotationVocabulary/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/BE/LegalEntities/LegalPersons/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Organizations/FormalOrganizations/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/ProductsAndServices/ProductsAndServices/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FBC/FunctionalEntities/RegulatoryAgencies/"}
      {:xsd/anyURI
-      "https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FBC/FunctionalEntities/NorthAmericanEntities/USFinancialServicesEntities/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FBC/ProductsAndServices/FinancialProductsAndServices/"}},
+      "https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/"}},
    :owl/versionIRI
    {:xsd/anyURI
-    "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/"},
+    "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/"},
    :rdf/type :owl/Ontology,
    :rdfs/label "US Regulatory Agencies Ontology",
    :skos/changeNote
    #{"The https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/USJurisdiction/USRegulatoryAgencies.rdf version of this ontology was modified per the FIBO 2.0 RFC."
      "The https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies.rdf version of this ontology was revised to add tax identification number, employer identification number, federal government entity and state government entity."
+     "The https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies.rdf version of this ontology was modified to replace content that is now available in the OMG Commons Ontology Library (Commons) v1.1 (FND-380)."
      "The https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/USJurisdiction/USRegulatoryAgencies.rdf version of this ontology was modified to integrate a financial services provider identifier for certain banking identifiers, add a property for secondary federal regulator, add individual registration schemes for state-specific business registries, improve on some definitions, normalize some of the labels, eliminate duplication of concepts in LCC, to simplify addresses, merge countries with locations in FND, eliminte the redundant notion of an InstitutionType, which can be determined using a SPARQL query or classification and results in a very large disjunction, and correct a couple of improperly defined annotations."
      "The https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies.rdf version of this ontology was revised to add a restriction on PrimaryFederalRegulator to say that it must be a government body."
      "The https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies.rdf version of this ontology was revised to eliminate references to external dictionary sites that no longer resolve and clean up circular and ambiguous definitions."
      "The https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies.rdf version of this ontology was revised to replace uses of hasTag in Relations with hasTag from LCC, as the more complex union of datatypes in the Relations concept is not needed here."
      "The https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies.rdf version of the ontology was modified to use the Commons Ontology Library (Commons) Annotation Vocabulary rather than the OMG's Specification Metadata vocabulary and augmented to support better mapping to the NIC repository."
      "The https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies.rdf version of this ontology was modified to use the Commons Ontology Library (Commons) rather than the OMG's Languages, Countries and Codes (LCC), to eliminate redundancies in FIBO, and to augment the number and nature of financial institution entity types to cover more of the National Information Center (NIC) repository managed by the FFIEC."
+     "The https://spec.edmcouncil.org/fibo/ontology/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies.rdf version of the ontology was modified to eliminate deprecations that are more than 6 months old, primarily related to name changes to better map to the legislation that defines the concepts."
      "The https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies.rdf version of this ontology was revised to correct a restriction defining state government entities and to make federal reserve district identifier a subclass of geographic region identifier and fix spelling errors."
      "The https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/USJurisdiction/USRegulatoryAgencies.rdf version of this ontology was modified per the issue resolutions identified in the FIBO FBC 1.0 FTF report."
      "The https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies.rdf version of this ontology was revised to reflect the move of certain organization-specific concepts from BE to FND."

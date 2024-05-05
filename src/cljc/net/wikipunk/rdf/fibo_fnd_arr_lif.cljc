@@ -1,8 +1,8 @@
 (ns net.wikipunk.rdf.fibo-fnd-arr-lif
-  {:cmns-av/copyright #{"Copyright (c) 2017-2023 Object Management Group, Inc."
-                        "Copyright (c) 2017-2023 EDM Council, Inc."},
+  {:cmns-av/copyright #{"Copyright (c) 2017-2024 Object Management Group, Inc."
+                        "Copyright (c) 2017-2024 EDM Council, Inc."},
    :dcat/downloadURL
-   "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Arrangements/Lifecycles/",
+   "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Arrangements/Lifecycles/",
    :dcterms/abstract
    "This ontology defines a set of basic concepts for lifecycles, including the various stages and events that make up a given lifecycle, for use in describing product, trade, instrument, production, and other lifecycles in FIBO.",
    :dcterms/license {:xsd/anyURI "https://opensource.org/licenses/MIT"},
@@ -18,6 +18,8 @@
     "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Lifecycles/",
     "fibo-fnd-dt-oc"
     "https://spec.edmcouncil.org/fibo/ontology/FND/DatesAndTimes/Occurrences/",
+    "fibo-fnd-rel-rel"
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Relations/Relations/",
     "fibo-fnd-utl-av"
     "https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/AnnotationVocabulary/",
     "owl" "http://www.w3.org/2002/07/owl#",
@@ -26,20 +28,20 @@
     "skos" "http://www.w3.org/2004/02/skos/core#",
     "xsd" "http://www.w3.org/2001/XMLSchema#"},
    :owl/imports
-   #{{:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Utilities/AnnotationVocabulary/"}
-     {:xsd/anyURI "https://www.omg.org/spec/Commons/ContextualDesignators/"}
+   #{{:xsd/anyURI "https://www.omg.org/spec/Commons/ContextualDesignators/"}
+     {:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Utilities/AnnotationVocabulary/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/Collections/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/Classifiers/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/Designators/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/DatesAndTimes/Occurrences/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/DatesAndTimes/Occurrences/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Relations/Relations/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Relations/Relations/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/AnnotationVocabulary/"}},
    :owl/versionIRI
    {:xsd/anyURI
-    "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Arrangements/Lifecycles/"},
+    "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Arrangements/Lifecycles/"},
    :rdf/type :owl/Ontology,
    :rdfa/prefix "fibo-fnd-arr-lif",
    :rdfa/uri
@@ -51,7 +53,8 @@
      "The https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Lifecycles.rdf version of this ontology was revised to replace hasDefinition with isDefinedIn to clarify intent."
      "The https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Lifecycles.rdf version of this ontology was revised to define lifecycle status, normalize definitions per ISO 704 and eliminate duplication with concepts in LCC."
      "The https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Lifecycles.rdf version of this ontology was revised to add lifecycle stage as the superclass of maturity level."
-     "The https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Lifecycles.rdf version of the ontology was modified to use the Commons Ontology Library (Commons) Annotation Vocabulary rather than the OMG's Specification Metadata vocabulary."},
+     "The https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Lifecycles.rdf version of the ontology was modified to use the Commons Ontology Library (Commons) Annotation Vocabulary rather than the OMG's Specification Metadata vocabulary."
+     "The https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Lifecycles.rdf version of this ontology was modified to replace content that is now available in the OMG Commons Ontology Library (Commons) v1.1 (FND-380)."},
    :xsd/anyURI
    "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Lifecycles/"})
 
@@ -101,14 +104,14 @@
     "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Lifecycles/"},
    :rdfs/label "lifecycle event occurrence",
    :rdfs/subClassOf #{:fibo-fnd-dt-oc/Occurrence
-                      {:owl/onClass    :fibo-fnd-arr-lif/LifecycleEvent,
-                       :owl/onProperty :fibo-fnd-dt-oc/exemplifies,
-                       :owl/qualifiedCardinality 1,
-                       :rdf/type       :owl/Restriction}
                       {:owl/onProperty :cmns-cxtdsg/appliesTo,
                        :owl/someValuesFrom
                        :fibo-fnd-arr-lif/LifecycleStageOccurrence,
-                       :rdf/type :owl/Restriction}},
+                       :rdf/type :owl/Restriction}
+                      {:owl/onClass    :fibo-fnd-arr-lif/LifecycleEvent,
+                       :owl/onProperty :fibo-fnd-rel-rel/exemplifies,
+                       :owl/qualifiedCardinality 1,
+                       :rdf/type       :owl/Restriction}},
    :skos/definition "realization of an event in a stage of a lifecycle"})
 
 (def LifecycleOccurrence
@@ -124,7 +127,7 @@
                        :fibo-fnd-arr-lif/LifecycleStageOccurrence,
                        :rdf/type :owl/Restriction}
                       {:owl/onClass    :fibo-fnd-arr-lif/Lifecycle,
-                       :owl/onProperty :fibo-fnd-dt-oc/exemplifies,
+                       :owl/onProperty :fibo-fnd-rel-rel/exemplifies,
                        :owl/qualifiedCardinality 1,
                        :rdf/type       :owl/Restriction}},
    :skos/definition "realization of a lifecycle"})
@@ -159,13 +162,13 @@
    :rdfs/label "lifecycle stage occurrence",
    :rdfs/subClassOf
    #{:fibo-fnd-dt-oc/Occurrence
-     {:owl/onClass    :fibo-fnd-arr-lif/LifecycleStage,
-      :owl/onProperty :fibo-fnd-dt-oc/exemplifies,
-      :owl/qualifiedCardinality 1,
-      :rdf/type       :owl/Restriction}
      {:owl/onProperty     :cmns-col/comprises,
       :owl/someValuesFrom :fibo-fnd-arr-lif/LifecycleEventOccurrence,
       :rdf/type           :owl/Restriction}
+     {:owl/onClass    :fibo-fnd-arr-lif/LifecycleStage,
+      :owl/onProperty :fibo-fnd-rel-rel/exemplifies,
+      :owl/qualifiedCardinality 1,
+      :rdf/type       :owl/Restriction}
      {:owl/onProperty     :fibo-fnd-arr-lif/isStageOf,
       :owl/someValuesFrom :fibo-fnd-arr-lif/LifecycleOccurrence,
       :rdf/type           :owl/Restriction}},
@@ -239,27 +242,27 @@
    "relates a stage in a product or trade lifecycle or process to the lifecycle or process that it is a stage of"})
 
 (def urn:uuid:1a917e27-774f-56bc-af52-3c939490095d
-  {:cmns-av/copyright #{"Copyright (c) 2017-2023 Object Management Group, Inc."
-                        "Copyright (c) 2017-2023 EDM Council, Inc."},
+  {:cmns-av/copyright #{"Copyright (c) 2017-2024 Object Management Group, Inc."
+                        "Copyright (c) 2017-2024 EDM Council, Inc."},
    :dcterms/abstract
    "This ontology defines a set of basic concepts for lifecycles, including the various stages and events that make up a given lifecycle, for use in describing product, trade, instrument, production, and other lifecycles in FIBO.",
    :dcterms/license {:xsd/anyURI "https://opensource.org/licenses/MIT"},
    :fibo-fnd-utl-av/hasMaturityLevel :fibo-fnd-utl-av/Release,
    :owl/imports
-   #{{:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Utilities/AnnotationVocabulary/"}
-     {:xsd/anyURI "https://www.omg.org/spec/Commons/ContextualDesignators/"}
+   #{{:xsd/anyURI "https://www.omg.org/spec/Commons/ContextualDesignators/"}
+     {:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Utilities/AnnotationVocabulary/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/Collections/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/Classifiers/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/Designators/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/DatesAndTimes/Occurrences/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/DatesAndTimes/Occurrences/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Relations/Relations/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Relations/Relations/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/AnnotationVocabulary/"}},
    :owl/versionIRI
    {:xsd/anyURI
-    "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Arrangements/Lifecycles/"},
+    "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Arrangements/Lifecycles/"},
    :rdf/type :owl/Ontology,
    :rdfs/label "Lifecycles Ontology",
    :skos/changeNote
@@ -268,6 +271,7 @@
      "The https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Lifecycles.rdf version of this ontology was revised to replace hasDefinition with isDefinedIn to clarify intent."
      "The https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Lifecycles.rdf version of this ontology was revised to define lifecycle status, normalize definitions per ISO 704 and eliminate duplication with concepts in LCC."
      "The https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Lifecycles.rdf version of this ontology was revised to add lifecycle stage as the superclass of maturity level."
-     "The https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Lifecycles.rdf version of the ontology was modified to use the Commons Ontology Library (Commons) Annotation Vocabulary rather than the OMG's Specification Metadata vocabulary."},
+     "The https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Lifecycles.rdf version of the ontology was modified to use the Commons Ontology Library (Commons) Annotation Vocabulary rather than the OMG's Specification Metadata vocabulary."
+     "The https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Lifecycles.rdf version of this ontology was modified to replace content that is now available in the OMG Commons Ontology Library (Commons) v1.1 (FND-380)."},
    :xsd/anyURI
    "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Lifecycles/"})

@@ -1,14 +1,16 @@
 (ns net.wikipunk.rdf.fibo-be-sps-sps
-  {:cmns-av/copyright #{"Copyright (c) 2016-2023 Object Management Group, Inc."
-                        "Copyright (c) 2016-2023 EDM Council, Inc."},
+  {:cmns-av/copyright
+   #{"Copyright (c) 2016-2024 EDM Council, Inc."
+     "Copyright (c) 2016-2024 Object Management Group, Inc."},
    :dcat/downloadURL
-   "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/BE/SoleProprietorships/SoleProprietorships/",
+   "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/BE/SoleProprietorships/SoleProprietorships/",
    :dcterms/abstract
    "This ontology defines the fundamental concepts for representing sole proprietorships -- i.e., organizations that are owned by an individual that is responsible for the liabilities of the organization.",
-   :dcterms/license {:xsd/anyURI "http://opensource.org/licenses/MIT"},
+   :dcterms/license {:xsd/anyURI "https://opensource.org/licenses/MIT"},
    :fibo-fnd-utl-av/hasMaturityLevel :fibo-fnd-utl-av/Release,
    :namespaces
    {"cmns-av" "https://www.omg.org/spec/Commons/AnnotationVocabulary/",
+    "cmns-rlcmp" "https://www.omg.org/spec/Commons/RolesAndCompositions/",
     "dcterms" "http://purl.org/dc/terms/",
     "fibo-be-le-lp"
     "https://spec.edmcouncil.org/fibo/ontology/BE/LegalEntities/LegalPersons/",
@@ -20,10 +22,6 @@
     "https://spec.edmcouncil.org/fibo/ontology/FND/Law/LegalCapacity/",
     "fibo-fnd-oac-oac"
     "https://spec.edmcouncil.org/fibo/ontology/FND/OwnershipAndControl/OwnershipAndControl/",
-    "fibo-fnd-pty-rl"
-    "https://spec.edmcouncil.org/fibo/ontology/FND/Parties/Roles/",
-    "fibo-fnd-rel-rel"
-    "https://spec.edmcouncil.org/fibo/ontology/FND/Relations/Relations/",
     "fibo-fnd-utl-av"
     "https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/AnnotationVocabulary/",
     "owl" "http://www.w3.org/2002/07/owl#",
@@ -32,32 +30,29 @@
     "skos" "http://www.w3.org/2004/02/skos/core#",
     "xsd" "http://www.w3.org/2001/XMLSchema#"},
    :owl/imports
-   #{{:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Utilities/AnnotationVocabulary/"}
+   #{{:xsd/anyURI "https://www.omg.org/spec/Commons/RolesAndCompositions/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Parties/Parties/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Law/LegalCapacity/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/BE/OwnershipAndControl/OwnershipParties/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/BE/OwnershipAndControl/OwnershipParties/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Parties/Roles/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/BE/LegalEntities/LegalPersons/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Law/LegalCapacity/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Utilities/AnnotationVocabulary/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Relations/Relations/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/OwnershipAndControl/OwnershipAndControl/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/BE/LegalEntities/LegalPersons/"}},
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/OwnershipAndControl/OwnershipAndControl/"}
+     {:xsd/anyURI "https://www.omg.org/spec/Commons/AnnotationVocabulary/"}},
    :owl/versionIRI
    {:xsd/anyURI
-    "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/BE/SoleProprietorships/SoleProprietorships/"},
+    "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/BE/SoleProprietorships/SoleProprietorships/"},
    :rdf/type :owl/Ontology,
    :rdfa/prefix "fibo-be-sps-sps",
    :rdfa/uri
    "https://spec.edmcouncil.org/fibo/ontology/BE/SoleProprietorships/SoleProprietorships/",
    :rdfs/label "Sole Proprietorships Ontology",
    :skos/changeNote
-   #{"The https://spec.edmcouncil.org/fibo/ontology/BE/SoleProprietorships/SoleProprietorships.rdf version of this ontology was modified to eliminate unnecessary references to external sources."
+   #{"The https://spec.edmcouncil.org/fibo/ontology/BE/SoleProprietorships/SoleProprietorships.rdf version of the ontology was modified to replace content that is now available in the OMG Commons Ontology Library (Commons) v1.1 (FND-380)."
+     "The https://spec.edmcouncil.org/fibo/ontology/BE/SoleProprietorships/SoleProprietorships.rdf version of this ontology was modified to eliminate unnecessary references to external sources."
      "The https://spec.edmcouncil.org/fibo/ontology/BE/SoleProprietorships/SoleProprietorships.rdf version of this ontology was modified to use natural person rather than legally capable person."
      "The https://spec.edmcouncil.org/fibo/ontology/BE/SoleProprietorships/SoleProprietorships.rdf version of the ontology was modified to use the Commons Ontology Library (Commons) Annotation Vocabulary rather than the OMG's Specification Metadata vocabulary."
      "The https://spec.edmcouncil.org/fibo/ontology/BE/SoleProprietorships/SoleProprietorships.rdf version of this ontology was modified to make sole proprietorship a subclass of legal person."
@@ -78,18 +73,18 @@
    :rdfs/label "sole proprietor",
    :rdfs/subClassOf
    #{{:owl/onClass    :fibo-be-le-lp/LegallyCompetentNaturalPerson,
-      :owl/onProperty :fibo-fnd-rel-rel/hasIdentity,
+      :owl/onProperty :cmns-rlcmp/isPlayedBy,
       :owl/qualifiedCardinality 1,
       :rdf/type       :owl/Restriction}
-     {:owl/onProperty     :fibo-be-oac-opty/hasInvestmentEntity,
-      :owl/someValuesFrom :fibo-be-sps-sps/SoleProprietorship,
-      :rdf/type           :owl/Restriction} :fibo-be-oac-opty/EntityOwner
-     {:owl/onProperty     :fibo-fnd-pty-rl/isPlayedBy,
+     {:owl/onProperty     :cmns-rlcmp/isPlayedBy,
       :owl/someValuesFrom {:owl/onProperty :fibo-fnd-oac-oac/ownsAndControls,
                            :owl/someValuesFrom
                            :fibo-be-sps-sps/SoleProprietorship,
                            :rdf/type :owl/Restriction},
-      :rdf/type           :owl/Restriction}},
+      :rdf/type           :owl/Restriction}
+     {:owl/onProperty     :fibo-be-oac-opty/hasInvestmentEntity,
+      :owl/someValuesFrom :fibo-be-sps-sps/SoleProprietorship,
+      :rdf/type           :owl/Restriction} :fibo-be-oac-opty/EntityOwner},
    :skos/definition
    "party that owns a business, has the rights to all profits from that business and is considered a single entity (unincorporated) together with that business for tax and liability purposes"})
 
@@ -111,36 +106,34 @@
    :skos/definition "unincorporated business owned by a single person"})
 
 (def urn:uuid:6f144ef1-b841-5389-84c6-08af6e85ff05
-  {:cmns-av/copyright #{"Copyright (c) 2016-2023 Object Management Group, Inc."
-                        "Copyright (c) 2016-2023 EDM Council, Inc."},
+  {:cmns-av/copyright
+   #{"Copyright (c) 2016-2024 EDM Council, Inc."
+     "Copyright (c) 2016-2024 Object Management Group, Inc."},
    :dcterms/abstract
    "This ontology defines the fundamental concepts for representing sole proprietorships -- i.e., organizations that are owned by an individual that is responsible for the liabilities of the organization.",
-   :dcterms/license {:xsd/anyURI "http://opensource.org/licenses/MIT"},
+   :dcterms/license {:xsd/anyURI "https://opensource.org/licenses/MIT"},
    :fibo-fnd-utl-av/hasMaturityLevel :fibo-fnd-utl-av/Release,
    :owl/imports
-   #{{:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Utilities/AnnotationVocabulary/"}
+   #{{:xsd/anyURI "https://www.omg.org/spec/Commons/RolesAndCompositions/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Parties/Parties/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Law/LegalCapacity/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/BE/OwnershipAndControl/OwnershipParties/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/BE/OwnershipAndControl/OwnershipParties/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Parties/Roles/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/BE/LegalEntities/LegalPersons/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Law/LegalCapacity/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Utilities/AnnotationVocabulary/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Relations/Relations/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/OwnershipAndControl/OwnershipAndControl/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/BE/LegalEntities/LegalPersons/"}},
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/OwnershipAndControl/OwnershipAndControl/"}
+     {:xsd/anyURI "https://www.omg.org/spec/Commons/AnnotationVocabulary/"}},
    :owl/versionIRI
    {:xsd/anyURI
-    "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/BE/SoleProprietorships/SoleProprietorships/"},
+    "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/BE/SoleProprietorships/SoleProprietorships/"},
    :rdf/type :owl/Ontology,
    :rdfs/label "Sole Proprietorships Ontology",
    :skos/changeNote
-   #{"The https://spec.edmcouncil.org/fibo/ontology/BE/SoleProprietorships/SoleProprietorships.rdf version of this ontology was modified to eliminate unnecessary references to external sources."
+   #{"The https://spec.edmcouncil.org/fibo/ontology/BE/SoleProprietorships/SoleProprietorships.rdf version of the ontology was modified to replace content that is now available in the OMG Commons Ontology Library (Commons) v1.1 (FND-380)."
+     "The https://spec.edmcouncil.org/fibo/ontology/BE/SoleProprietorships/SoleProprietorships.rdf version of this ontology was modified to eliminate unnecessary references to external sources."
      "The https://spec.edmcouncil.org/fibo/ontology/BE/SoleProprietorships/SoleProprietorships.rdf version of this ontology was modified to use natural person rather than legally capable person."
      "The https://spec.edmcouncil.org/fibo/ontology/BE/SoleProprietorships/SoleProprietorships.rdf version of the ontology was modified to use the Commons Ontology Library (Commons) Annotation Vocabulary rather than the OMG's Specification Metadata vocabulary."
      "The https://spec.edmcouncil.org/fibo/ontology/BE/SoleProprietorships/SoleProprietorships.rdf version of this ontology was modified to make sole proprietorship a subclass of legal person."

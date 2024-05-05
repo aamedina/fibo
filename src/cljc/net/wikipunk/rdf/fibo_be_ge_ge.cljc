@@ -1,8 +1,9 @@
 (ns net.wikipunk.rdf.fibo-be-ge-ge
-  {:cmns-av/copyright #{"Copyright (c) 2016-2023 Object Management Group, Inc."
-                        "Copyright (c) 2016-2023 EDM Council, Inc."},
+  {:cmns-av/copyright
+   #{"Copyright (c) 2016-2024 EDM Council, Inc."
+     "Copyright (c) 2016-2024 Object Management Group, Inc."},
    :dcat/downloadURL
-   "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/BE/GovernmentEntities/GovernmentEntities/",
+   "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/BE/GovernmentEntities/GovernmentEntities/",
    :dcterms/abstract
    "This ontology defines the fundamental concepts for representing polities and government entities and their relations.",
    :dcterms/license {:xsd/anyURI "https://opensource.org/licenses/MIT"},
@@ -10,6 +11,7 @@
    :namespaces
    {"cmns-av" "https://www.omg.org/spec/Commons/AnnotationVocabulary/",
     "cmns-col" "https://www.omg.org/spec/Commons/Collections/",
+    "cmns-rlcmp" "https://www.omg.org/spec/Commons/RolesAndCompositions/",
     "dcterms" "http://purl.org/dc/terms/",
     "fibo-be-fct-fct"
     "https://spec.edmcouncil.org/fibo/ontology/BE/FunctionalEntities/FunctionalEntities/",
@@ -31,8 +33,6 @@
     "https://spec.edmcouncil.org/fibo/ontology/FND/Organizations/FormalOrganizations/",
     "fibo-fnd-plc-loc"
     "https://spec.edmcouncil.org/fibo/ontology/FND/Places/Locations/",
-    "fibo-fnd-pty-rl"
-    "https://spec.edmcouncil.org/fibo/ontology/FND/Parties/Roles/",
     "fibo-fnd-rel-rel"
     "https://spec.edmcouncil.org/fibo/ontology/FND/Relations/Relations/",
     "fibo-fnd-utl-av"
@@ -44,39 +44,36 @@
     "skos" "http://www.w3.org/2004/02/skos/core#",
     "xsd" "http://www.w3.org/2001/XMLSchema#"},
    :owl/imports
-   #{{:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Utilities/AnnotationVocabulary/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/GoalsAndObjectives/Objectives/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/BE/OwnershipAndControl/Executives/"}
+   #{{:xsd/anyURI "https://www.omg.org/spec/Commons/RolesAndCompositions/"}
      {:xsd/anyURI
       "https://www.omg.org/spec/LCC/Countries/CountryRepresentation/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Parties/Parties/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Places/Locations/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Law/Jurisdiction/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Law/Jurisdiction/"}
+     {:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/BE/OwnershipAndControl/Executives/"}
+     {:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/BE/LegalEntities/LegalPersons/"}
+     {:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Utilities/AnnotationVocabulary/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/Collections/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Places/Locations/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Law/LegalCore/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/AgentsAndPeople/People/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/GoalsAndObjectives/Objectives/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Parties/Roles/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/AgentsAndPeople/People/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Relations/Relations/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Relations/Relations/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/BE/FunctionalEntities/FunctionalEntities/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Law/LegalCore/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Organizations/FormalOrganizations/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/BE/FunctionalEntities/FunctionalEntities/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/AnnotationVocabulary/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/BE/LegalEntities/LegalPersons/"}},
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Organizations/FormalOrganizations/"}},
    :owl/versionIRI
    {:xsd/anyURI
-    "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/BE/GovernmentEntities/GovernmentEntities/"},
+    "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/BE/GovernmentEntities/GovernmentEntities/"},
    :rdf/type :owl/Ontology,
    :rdfa/prefix "fibo-be-ge-ge",
    :rdfa/uri
@@ -90,6 +87,7 @@
      "The http://www.omg.org/spec/EDMC-FIBO/BE/20160801/GovernmentEntities/GovernmentEntities.rdf version of this ontology was added to Business Entities, per the issue resolutions identified in the FIBO BE 1.1 RTF report."
      "The https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/GovernmentEntities.rdf version of this ontology was modified to replace isAppointedBy with isDesignatedBy due to a name change in Relations, and to add a class for devolved government."
      "The http://www.omg.org/spec/EDMC-FIBO/BE/20170201/GovernmentEntities/GovernmentEntities.rdf version of this ontology was modified per the FIBO 2.0 RFC to integrate LCC."
+     "The https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/GovernmentEntities.rdf version of this ontology was modified to replace content that is now available in the OMG Commons Ontology Library (Commons) v1.1 and loosened restrictions causing reasoning and representational challenges (FND-380)."
      "The https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/GovernmentEntities.rdf version of this ontology was modified to use the Commons Ontology Library (Commons) rather than the OMG's Languages, Countries and Codes (LCC), eliminating redundancies in FIBO as appropriate."
      "The https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/GovernmentEntities.rdf version of this ontology was modified to to rationalize natural person and legally capable person in a new concept, competent natural person, simplify / merge the legal person and formal organization class hierarchies, and revise certain definitions, such as for supranational entity, to correspond to ISO definitions."
      "The https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/GovernmentEntities.rdf version of this ontology was modified to fix spelling errors."
@@ -151,10 +149,9 @@
                          :owl/onClass    :fibo-fnd-plc-loc/FederalCapitalArea,
                          :owl/onProperty :fibo-fnd-rel-rel/governs,
                          :rdf/type       :owl/Restriction}
-                        {:owl/minQualifiedCardinality 2,
-                         :owl/onClass    :fibo-fnd-plc-loc/FederalState,
-                         :owl/onProperty :fibo-fnd-rel-rel/governs,
-                         :rdf/type       :owl/Restriction}],
+                        {:owl/onProperty     :fibo-fnd-rel-rel/governs,
+                         :owl/someValuesFrom :fibo-fnd-plc-loc/FederalState,
+                         :rdf/type           :owl/Restriction}],
                        :rdf/type :owl/Class} :fibo-be-ge-ge/NationalGovernment},
    :skos/definition
    "union of states under a central government distinct from the individual governments of the separate states"})
@@ -168,25 +165,25 @@
    {:xsd/anyURI
     "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/GovernmentEntities/"},
    :rdfs/label "federated sovereignty",
-   :rdfs/subClassOf
-   #{{:owl/intersectionOf
-      [{:owl/onProperty     :fibo-be-ge-ge/hasFullSovereigntyOver,
-        :owl/someValuesFrom :lcc-cr/Country,
-        :rdf/type           :owl/Restriction}
-       {:owl/minQualifiedCardinality 2,
-        :owl/onClass    :fibo-fnd-plc-loc/FederalState,
-        :owl/onProperty :fibo-be-ge-ge/hasSharedSovereigntyOver,
-        :rdf/type       :owl/Restriction}],
-      :rdf/type :owl/Class} :fibo-be-ge-ge/SovereignState
-     {:owl/intersectionOf [{:owl/minQualifiedCardinality 2,
-                            :owl/onClass    :fibo-be-ge-ge/RegionalGovernment,
-                            :owl/onProperty :fibo-be-ge-ge/isRepresentedBy,
-                            :rdf/type       :owl/Restriction}
-                           {:owl/onClass    :fibo-be-ge-ge/FederalGovernment,
-                            :owl/onProperty :fibo-be-ge-ge/isRepresentedBy,
-                            :owl/qualifiedCardinality 1,
-                            :rdf/type       :owl/Restriction}],
-      :rdf/type :owl/Class}},
+   :rdfs/subClassOf #{:fibo-be-ge-ge/SovereignState
+                      {:owl/intersectionOf
+                       [{:owl/onProperty     :fibo-be-ge-ge/isRepresentedBy,
+                         :owl/someValuesFrom :fibo-be-ge-ge/RegionalGovernment,
+                         :rdf/type           :owl/Restriction}
+                        {:owl/onClass    :fibo-be-ge-ge/FederalGovernment,
+                         :owl/onProperty :fibo-be-ge-ge/isRepresentedBy,
+                         :owl/qualifiedCardinality 1,
+                         :rdf/type       :owl/Restriction}],
+                       :rdf/type :owl/Class}
+                      {:owl/intersectionOf
+                       [{:owl/onProperty :fibo-be-ge-ge/hasFullSovereigntyOver,
+                         :owl/someValuesFrom :lcc-cr/Country,
+                         :rdf/type :owl/Restriction}
+                        {:owl/onProperty
+                         :fibo-be-ge-ge/hasSharedSovereigntyOver,
+                         :owl/someValuesFrom :fibo-fnd-plc-loc/FederalState,
+                         :rdf/type :owl/Restriction}],
+                       :rdf/type :owl/Class}},
    :skos/definition
    "polity characterized by a union of partially self-governing states or regions under a central (federal) government"})
 
@@ -200,18 +197,21 @@
    {:xsd/anyURI
     "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/GovernmentEntities/"},
    :rdfs/label "government",
-   :rdfs/subClassOf #{{:owl/onProperty     :cmns-col/hasPart,
-                       :owl/someValuesFrom :fibo-be-ge-ge/GovernmentAgency,
-                       :rdf/type           :owl/Restriction}
-                      {:owl/onProperty     :cmns-col/hasPart,
-                       :owl/someValuesFrom :fibo-be-ge-ge/GovernmentDepartment,
-                       :rdf/type           :owl/Restriction}
-                      {:owl/onProperty     :cmns-col/hasPart,
-                       :owl/someValuesFrom :fibo-be-ge-ge/BranchOfGovernment,
-                       :rdf/type           :owl/Restriction}
+   :rdfs/subClassOf #{{:owl/minQualifiedCardinality 0,
+                       :owl/onClass    :fibo-be-ge-ge/BranchOfGovernment,
+                       :owl/onProperty :cmns-col/hasConstituent,
+                       :rdf/type       :owl/Restriction}
+                      {:owl/minQualifiedCardinality 0,
+                       :owl/onClass    :fibo-be-ge-ge/GovernmentAgency,
+                       :owl/onProperty :cmns-col/hasConstituent,
+                       :rdf/type       :owl/Restriction}
                       {:owl/onProperty     :fibo-fnd-rel-rel/governs,
                        :owl/someValuesFrom :lcc-cr/GeopoliticalEntity,
                        :rdf/type           :owl/Restriction}
+                      {:owl/minQualifiedCardinality 0,
+                       :owl/onClass    :fibo-be-ge-ge/GovernmentDepartment,
+                       :owl/onProperty :cmns-col/hasConstituent,
+                       :rdf/type       :owl/Restriction}
                       :fibo-be-fct-fct/FunctionalEntity},
    :skos/definition "the system by which a state or community is controlled"})
 
@@ -226,9 +226,10 @@
     "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/GovernmentEntities/"},
    :rdfs/label "government agency",
    :rdfs/subClassOf #{:fibo-be-ge-ge/GovernmentBody
-                      {:owl/onProperty     :fibo-fnd-rel-rel/isManagedBy,
-                       :owl/someValuesFrom :fibo-be-ge-ge/GovernmentAppointee,
-                       :rdf/type           :owl/Restriction}},
+                      {:owl/minQualifiedCardinality 0,
+                       :owl/onClass    :fibo-be-ge-ge/GovernmentAppointee,
+                       :owl/onProperty :fibo-fnd-rel-rel/isManagedBy,
+                       :rdf/type       :owl/Restriction}},
    :skos/definition
    "permanent or semi-permanent organization, often an appointed commission, in the machinery of government that is responsible for the oversight and administration of specific functions"})
 
@@ -240,12 +241,14 @@
     "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/GovernmentEntities/"},
    :rdfs/label "government appointee",
    :rdfs/subClassOf
-   #{:fibo-be-oac-exec/Executive :fibo-be-ge-ge/GovernmentOfficial
-     {:owl/onProperty     :fibo-fnd-pty-rl/isPlayedBy,
-      :owl/someValuesFrom {:owl/onProperty     :fibo-fnd-rel-rel/isDesignatedBy,
-                           :owl/someValuesFrom :fibo-be-ge-ge/GovernmentBody,
-                           :rdf/type           :owl/Restriction},
-      :rdf/type           :owl/Restriction}},
+   #{{:owl/minQualifiedCardinality 0,
+      :owl/onClass    {:owl/minQualifiedCardinality 0,
+                       :owl/onClass    :fibo-be-ge-ge/GovernmentBody,
+                       :owl/onProperty :fibo-fnd-rel-rel/isDesignatedBy,
+                       :rdf/type       :owl/Restriction},
+      :owl/onProperty :cmns-rlcmp/isPlayedBy,
+      :rdf/type       :owl/Restriction} :fibo-be-oac-exec/Executive
+     :fibo-be-ge-ge/GovernmentOfficial},
    :skos/definition
    "individual designated by government decree to lead, or participate in some capacity in a government body"})
 
@@ -259,9 +262,10 @@
     "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/GovernmentEntities/"},
    :rdfs/label "government body",
    :rdfs/subClassOf #{:fibo-fnd-org-fm/FormalOrganization
-                      {:owl/onProperty     :fibo-fnd-gao-obj/hasObjective,
-                       :owl/someValuesFrom :fibo-be-le-lp/PublicPurpose,
-                       :rdf/type           :owl/Restriction}},
+                      {:owl/minQualifiedCardinality 0,
+                       :owl/onClass    :fibo-be-le-lp/PublicPurpose,
+                       :owl/onProperty :fibo-fnd-gao-obj/hasObjective,
+                       :rdf/type       :owl/Restriction}},
    :skos/definition
    "formal organization that is an agency, instrumentality, or other body of a supranational, national, federal, state, or local government, including certain multijurisdictional agencies and departments that carry out the business of government"})
 
@@ -272,10 +276,11 @@
    {:xsd/anyURI
     "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/GovernmentEntities/"},
    :rdfs/label "government department",
-   :rdfs/subClassOf #{:fibo-be-ge-ge/GovernmentBody
-                      {:owl/onProperty     :fibo-fnd-rel-rel/isManagedBy,
-                       :owl/someValuesFrom :fibo-be-ge-ge/GovernmentMinister,
-                       :rdf/type           :owl/Restriction}},
+   :rdfs/subClassOf #{{:owl/minQualifiedCardinality 0,
+                       :owl/onClass    :fibo-be-ge-ge/GovernmentMinister,
+                       :owl/onProperty :fibo-fnd-rel-rel/isManagedBy,
+                       :rdf/type       :owl/Restriction}
+                      :fibo-be-ge-ge/GovernmentBody},
    :skos/definition
    "specialized organization responsible for a sector of government public administration"})
 
@@ -302,13 +307,14 @@
    :rdfs/label "government official",
    :rdfs/subClassOf
    #{{:owl/onClass    :fibo-be-le-lp/LegallyCompetentNaturalPerson,
-      :owl/onProperty :fibo-fnd-rel-rel/hasIdentity,
+      :owl/onProperty :cmns-rlcmp/isPlayedBy,
       :owl/qualifiedCardinality 1,
       :rdf/type       :owl/Restriction} :fibo-be-oac-exec/ResponsibleParty
-     {:owl/onProperty     :fibo-fnd-pty-rl/isPlayedBy,
-      :owl/someValuesFrom {:owl/allValuesFrom :fibo-be-ge-ge/GovernmentBody,
-                           :owl/onProperty    :cmns-col/isMemberOf,
-                           :rdf/type          :owl/Restriction},
+     {:owl/onProperty     :cmns-rlcmp/isPlayedBy,
+      :owl/someValuesFrom {:owl/minQualifiedCardinality 0,
+                           :owl/onClass    :fibo-be-ge-ge/GovernmentBody,
+                           :owl/onProperty :cmns-col/isMemberOf,
+                           :rdf/type       :owl/Restriction},
       :rdf/type           :owl/Restriction}},
    :skos/definition
    "person elected or appointed to administer some aspect of a government"})
@@ -323,12 +329,13 @@
     "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/GovernmentEntities/"},
    :rdfs/label "instrumentality",
    :rdfs/subClassOf #{:fibo-be-ge-ge/GovernmentBody :fibo-be-le-lp/LegalEntity
-                      {:owl/onProperty     :fibo-fnd-rel-rel/isMandatedBy,
-                       :owl/someValuesFrom :fibo-fnd-law-jur/StatuteLaw,
-                       :rdf/type           :owl/Restriction}
                       {:owl/onProperty     :fibo-be-ge-ge/isInstrumentOf,
                        :owl/someValuesFrom :fibo-be-ge-ge/Government,
-                       :rdf/type           :owl/Restriction}},
+                       :rdf/type           :owl/Restriction}
+                      {:owl/minQualifiedCardinality 0,
+                       :owl/onClass    :fibo-fnd-law-jur/StatuteLaw,
+                       :owl/onProperty :fibo-fnd-rel-rel/isMandatedBy,
+                       :rdf/type       :owl/Restriction}},
    :skos/definition
    "organization that serves a public purpose and is closely tied to a government, but is not a government agency"})
 
@@ -453,11 +460,11 @@
    :rdfs/label "regional sovereignty",
    :rdfs/subClassOf #{{:owl/onProperty :fibo-be-ge-ge/hasSharedSovereigntyOver,
                        :owl/someValuesFrom :lcc-cr/GeopoliticalEntity,
-                       :rdf/type :owl/Restriction} :fibo-be-ge-ge/Polity
-                      {:owl/onClass    :fibo-be-ge-ge/RegionalGovernment,
-                       :owl/onProperty :fibo-be-ge-ge/isRepresentedBy,
-                       :owl/qualifiedCardinality 1,
-                       :rdf/type       :owl/Restriction}},
+                       :rdf/type :owl/Restriction}
+                      {:owl/onProperty     :fibo-be-ge-ge/isRepresentedBy,
+                       :owl/someValuesFrom :fibo-be-ge-ge/RegionalGovernment,
+                       :rdf/type           :owl/Restriction}
+                      :fibo-be-ge-ge/Polity},
    :skos/definition
    "legal person that corresponds to an administrative division, administrative unit, administrative entity or country subdivision (or, sometimes, geopolitical division or subnational entity), that has the capacity to incur debt, issue contracts, and enter into relations with other similar entities",
    :skos/example
@@ -500,10 +507,9 @@
                        :owl/someValuesFrom :fibo-be-ge-ge/GovernmentBody,
                        :rdf/type           :owl/Restriction}
                       :fibo-be-ge-ge/Polity
-                      {:owl/minQualifiedCardinality 2,
-                       :owl/onClass    :lcc-cr/Country,
-                       :owl/onProperty :fibo-be-ge-ge/hasSharedSovereigntyOver,
-                       :rdf/type       :owl/Restriction}},
+                      {:owl/onProperty :fibo-be-ge-ge/hasSharedSovereigntyOver,
+                       :owl/someValuesFrom :lcc-cr/Country,
+                       :rdf/type :owl/Restriction}},
    :skos/definition
    "governmental or non-governmental entity that is established by international law or treaty or incorporated at an international level"})
 
@@ -644,46 +650,44 @@
    "relates a system of governance to its chosen representatives"})
 
 (def urn:uuid:26a5c4bf-40bc-54a3-8eeb-f9cdc106724a
-  {:cmns-av/copyright #{"Copyright (c) 2016-2023 Object Management Group, Inc."
-                        "Copyright (c) 2016-2023 EDM Council, Inc."},
+  {:cmns-av/copyright
+   #{"Copyright (c) 2016-2024 EDM Council, Inc."
+     "Copyright (c) 2016-2024 Object Management Group, Inc."},
    :dcterms/abstract
    "This ontology defines the fundamental concepts for representing polities and government entities and their relations.",
    :dcterms/license {:xsd/anyURI "https://opensource.org/licenses/MIT"},
    :fibo-fnd-utl-av/hasMaturityLevel :fibo-fnd-utl-av/Release,
    :owl/imports
-   #{{:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Utilities/AnnotationVocabulary/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/GoalsAndObjectives/Objectives/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/BE/OwnershipAndControl/Executives/"}
+   #{{:xsd/anyURI "https://www.omg.org/spec/Commons/RolesAndCompositions/"}
      {:xsd/anyURI
       "https://www.omg.org/spec/LCC/Countries/CountryRepresentation/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Parties/Parties/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Places/Locations/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Law/Jurisdiction/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Law/Jurisdiction/"}
+     {:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/BE/OwnershipAndControl/Executives/"}
+     {:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/BE/LegalEntities/LegalPersons/"}
+     {:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Utilities/AnnotationVocabulary/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/Collections/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Places/Locations/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Law/LegalCore/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/AgentsAndPeople/People/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/GoalsAndObjectives/Objectives/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Parties/Roles/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/AgentsAndPeople/People/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Relations/Relations/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Relations/Relations/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/BE/FunctionalEntities/FunctionalEntities/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Law/LegalCore/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Organizations/FormalOrganizations/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/BE/FunctionalEntities/FunctionalEntities/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/AnnotationVocabulary/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/BE/LegalEntities/LegalPersons/"}},
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Organizations/FormalOrganizations/"}},
    :owl/versionIRI
    {:xsd/anyURI
-    "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/BE/GovernmentEntities/GovernmentEntities/"},
+    "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/BE/GovernmentEntities/GovernmentEntities/"},
    :rdf/type :owl/Ontology,
    :rdfs/label "Government Entities Ontology",
    :skos/changeNote
@@ -694,6 +698,7 @@
      "The http://www.omg.org/spec/EDMC-FIBO/BE/20160801/GovernmentEntities/GovernmentEntities.rdf version of this ontology was added to Business Entities, per the issue resolutions identified in the FIBO BE 1.1 RTF report."
      "The https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/GovernmentEntities.rdf version of this ontology was modified to replace isAppointedBy with isDesignatedBy due to a name change in Relations, and to add a class for devolved government."
      "The http://www.omg.org/spec/EDMC-FIBO/BE/20170201/GovernmentEntities/GovernmentEntities.rdf version of this ontology was modified per the FIBO 2.0 RFC to integrate LCC."
+     "The https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/GovernmentEntities.rdf version of this ontology was modified to replace content that is now available in the OMG Commons Ontology Library (Commons) v1.1 and loosened restrictions causing reasoning and representational challenges (FND-380)."
      "The https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/GovernmentEntities.rdf version of this ontology was modified to use the Commons Ontology Library (Commons) rather than the OMG's Languages, Countries and Codes (LCC), eliminating redundancies in FIBO as appropriate."
      "The https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/GovernmentEntities.rdf version of this ontology was modified to to rationalize natural person and legally capable person in a new concept, competent natural person, simplify / merge the legal person and formal organization class hierarchies, and revise certain definitions, such as for supranational entity, to correspond to ISO definitions."
      "The https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/GovernmentEntities.rdf version of this ontology was modified to fix spelling errors."

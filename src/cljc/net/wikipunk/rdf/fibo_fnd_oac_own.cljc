@@ -2,21 +2,20 @@
   {:cmns-av/copyright #{"Copyright (c) 2013-2023 Object Management Group, Inc."
                         "Copyright (c) 2013-2023 EDM Council, Inc."},
    :dcat/downloadURL
-   "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/OwnershipAndControl/Ownership/",
+   "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/OwnershipAndControl/Ownership/",
    :dcterms/abstract
-   "This ontology defines high-level, ownership-related concepts for use in other FIBO ontology elements. These include the concept of owner, asset and ownership along with relationships between them whereby an asset is some thing owned by some owner.",
+   "This ontology defines high-level, ownership-related concepts, including owner, asset and ownership along with relationships between them.",
    :dcterms/license {:xsd/anyURI "https://opensource.org/licenses/MIT"},
    :fibo-fnd-utl-av/hasMaturityLevel :fibo-fnd-utl-av/Release,
    :namespaces
    {"cmns-av" "https://www.omg.org/spec/Commons/AnnotationVocabulary/",
     "cmns-dt" "https://www.omg.org/spec/Commons/DatesAndTimes/",
+    "cmns-pts" "https://www.omg.org/spec/Commons/PartiesAndSituations/",
     "dcterms" "http://purl.org/dc/terms/",
     "fibo-fnd-dt-fd"
     "https://spec.edmcouncil.org/fibo/ontology/FND/DatesAndTimes/FinancialDates/",
     "fibo-fnd-oac-own"
     "https://spec.edmcouncil.org/fibo/ontology/FND/OwnershipAndControl/Ownership/",
-    "fibo-fnd-pty-pty"
-    "https://spec.edmcouncil.org/fibo/ontology/FND/Parties/Parties/",
     "fibo-fnd-utl-av"
     "https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/AnnotationVocabulary/",
     "owl" "http://www.w3.org/2002/07/owl#",
@@ -25,21 +24,18 @@
     "skos" "http://www.w3.org/2004/02/skos/core#",
     "xsd" "http://www.w3.org/2001/XMLSchema#"},
    :owl/imports
-   #{{:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Utilities/AnnotationVocabulary/"}
+   #{{:xsd/anyURI "https://www.omg.org/spec/Commons/PartiesAndSituations/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Parties/Parties/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Utilities/AnnotationVocabulary/"}
+     {:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/DatesAndTimes/FinancialDates/"}
+     {:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Relations/Relations/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/DatesAndTimes/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Parties/Roles/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Relations/Relations/"}
-     {:xsd/anyURI "https://www.omg.org/spec/Commons/AnnotationVocabulary/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/DatesAndTimes/FinancialDates/"}},
+     {:xsd/anyURI "https://www.omg.org/spec/Commons/AnnotationVocabulary/"}},
    :owl/versionIRI
    {:xsd/anyURI
-    "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/OwnershipAndControl/Ownership/"},
+    "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/OwnershipAndControl/Ownership/"},
    :rdf/type :owl/Ontology,
    :rdfa/prefix "fibo-fnd-oac-own",
    :rdfa/uri
@@ -47,6 +43,7 @@
    :rdfs/label "Ownership Ontology",
    :skos/changeNote
    #{"The https://spec.edmcouncil.org/fibo/ontology/FND/OwnershipAndControl/Ownership.rdf version of this ontology was modified to use the Commons Ontology Library (Commons) rather than the OMG's Languages, Countries and Codes (LCC), eliminating redundancies in FIBO as appropriate."
+     "The https://spec.edmcouncil.org/fibo/ontology/FND/OwnershipAndControl/Ownership.rdf version of this ontology was modified to replace content that is now available in the OMG Commons Ontology Library (Commons) v1.1 (FND-380)."
      "The https://spec.edmcouncil.org/fibo/ontology/FND/OwnershipAndControl/Ownership.rdf version of the ontology was modified to add definitions for tangible and intangible asset, etc., as needed for refinement of the concept of collateral and other loan-specific concepts."
      "The https://spec.edmcouncil.org/fibo/ontology/FND/OwnershipAndControl/Ownership.rdf version of the ontology was modified to integrate the concept of a situation, situational roles, and corresponding relations with the definition of ownership, and eliminate minimum cardinality of 1 in restrictions."
      "The https://spec.edmcouncil.org/fibo/ontology/FND/OwnershipAndControl/Ownership.rdf version of the ontology was modified to better align with revisions to the situation lattice."
@@ -74,12 +71,11 @@
    :rdfs/label "asset",
    :rdfs/subClassOf #{{:owl/onProperty     :fibo-fnd-oac-own/isOwnedAsset,
                        :owl/someValuesFrom :fibo-fnd-oac-own/Ownership,
-                       :rdf/type           :owl/Restriction}
+                       :rdf/type           :owl/Restriction} :cmns-pts/Undergoer
                       {:owl/onDataRange :cmns-dt/CombinedDateTime,
                        :owl/onProperty  :fibo-fnd-dt-fd/hasAcquisitionDate,
                        :owl/qualifiedCardinality 1,
                        :rdf/type        :owl/Restriction}
-                      :fibo-fnd-pty-pty/Undergoer
                       {:owl/onProperty     :fibo-fnd-oac-own/isAssetOf,
                        :owl/someValuesFrom :fibo-fnd-oac-own/Owner,
                        :rdf/type           :owl/Restriction}},
@@ -109,7 +105,7 @@
    {:xsd/anyURI
     "https://spec.edmcouncil.org/fibo/ontology/FND/OwnershipAndControl/Ownership/"},
    :rdfs/label "owner",
-   :rdfs/subClassOf #{:fibo-fnd-pty-pty/Actor
+   :rdfs/subClassOf #{:cmns-pts/Actor
                       {:owl/onProperty     :fibo-fnd-oac-own/ownsAsset,
                        :owl/someValuesFrom :fibo-fnd-oac-own/Asset,
                        :rdf/type           :owl/Restriction}
@@ -133,7 +129,7 @@
                       {:owl/onProperty     :fibo-fnd-oac-own/hasOwningParty,
                        :owl/someValuesFrom :fibo-fnd-oac-own/Owner,
                        :rdf/type           :owl/Restriction}
-                      :fibo-fnd-pty-pty/Situation},
+                      :cmns-pts/Situation},
    :skos/definition
    "situation in which some party holds the legal title to something (explicitly or implicitly) and has the right to transfer that title and/or possession"})
 
@@ -160,7 +156,7 @@
     "https://spec.edmcouncil.org/fibo/ontology/FND/OwnershipAndControl/Ownership/"},
    :rdfs/label "has owned asset",
    :rdfs/range :fibo-fnd-oac-own/Asset,
-   :rdfs/subPropertyOf :fibo-fnd-pty-pty/hasUndergoer,
+   :rdfs/subPropertyOf :cmns-pts/hasUndergoer,
    :skos/definition "indicates the asset in an ownership situation"})
 
 (def hasOwningParty
@@ -173,7 +169,7 @@
     "https://spec.edmcouncil.org/fibo/ontology/FND/OwnershipAndControl/Ownership/"},
    :rdfs/label "has owning party",
    :rdfs/range :fibo-fnd-oac-own/Owner,
-   :rdfs/subPropertyOf :fibo-fnd-pty-pty/hasActor,
+   :rdfs/subPropertyOf :cmns-pts/hasActor,
    :skos/definition
    "identifies the actor that holds title to the asset in an ownership situation"})
 
@@ -186,7 +182,7 @@
     "https://spec.edmcouncil.org/fibo/ontology/FND/OwnershipAndControl/Ownership/"},
    :rdfs/label "is asset of",
    :rdfs/range :fibo-fnd-oac-own/Owner,
-   :rdfs/subPropertyOf :fibo-fnd-pty-pty/isAffectedBy,
+   :rdfs/subPropertyOf :cmns-pts/isAffectedBy,
    :skos/definition "identifies the owner of an asset"})
 
 (def isOwnedAsset
@@ -198,7 +194,7 @@
     "https://spec.edmcouncil.org/fibo/ontology/FND/OwnershipAndControl/Ownership/"},
    :rdfs/label "is owned asset",
    :rdfs/range :fibo-fnd-oac-own/Ownership,
-   :rdfs/subPropertyOf :fibo-fnd-pty-pty/undergoes,
+   :rdfs/subPropertyOf :cmns-pts/undergoes,
    :skos/definition
    "indicates the context of ownership in which something is an asset"})
 
@@ -209,8 +205,8 @@
    {:xsd/anyURI
     "https://spec.edmcouncil.org/fibo/ontology/FND/OwnershipAndControl/Ownership/"},
    :rdfs/label "is owned by",
-   :rdfs/range :fibo-fnd-pty-pty/IndependentParty,
-   :rdfs/subPropertyOf :fibo-fnd-pty-pty/experiencesDirectly,
+   :rdfs/range :cmns-pts/Party,
+   :rdfs/subPropertyOf :cmns-pts/experiencesDirectly,
    :skos/definition "indicates something that someone owns"})
 
 (def isOwningParty
@@ -222,19 +218,19 @@
     "https://spec.edmcouncil.org/fibo/ontology/FND/OwnershipAndControl/Ownership/"},
    :rdfs/label "is owning party",
    :rdfs/range :fibo-fnd-oac-own/Ownership,
-   :rdfs/subPropertyOf :fibo-fnd-pty-pty/actsIn,
+   :rdfs/subPropertyOf :cmns-pts/actsIn,
    :skos/definition
    "indicates the context of ownership in which the party plays the role of owner"})
 
 (def owns
   {:db/ident :fibo-fnd-oac-own/owns,
    :rdf/type :owl/ObjectProperty,
-   :rdfs/domain :fibo-fnd-pty-pty/IndependentParty,
+   :rdfs/domain :cmns-pts/Party,
    :rdfs/isDefinedBy
    {:xsd/anyURI
     "https://spec.edmcouncil.org/fibo/ontology/FND/OwnershipAndControl/Ownership/"},
    :rdfs/label "owns",
-   :rdfs/subPropertyOf :fibo-fnd-pty-pty/playsActiveRoleThatDirectlyAffects,
+   :rdfs/subPropertyOf :cmns-pts/playsActiveRoleThatDirectlyAffects,
    :skos/definition
    "indicates something that a party holds title to and may possess"})
 
@@ -248,36 +244,34 @@
     "https://spec.edmcouncil.org/fibo/ontology/FND/OwnershipAndControl/Ownership/"},
    :rdfs/label "is asset owner",
    :rdfs/range :fibo-fnd-oac-own/Asset,
-   :rdfs/subPropertyOf :fibo-fnd-pty-pty/actsOn,
+   :rdfs/subPropertyOf :cmns-pts/actsOn,
    :skos/definition "identifies an asset that an owner owns"})
 
 (def urn:uuid:6f6c0a85-e042-51bb-891c-1b3dde553be1
   {:cmns-av/copyright #{"Copyright (c) 2013-2023 Object Management Group, Inc."
                         "Copyright (c) 2013-2023 EDM Council, Inc."},
    :dcterms/abstract
-   "This ontology defines high-level, ownership-related concepts for use in other FIBO ontology elements. These include the concept of owner, asset and ownership along with relationships between them whereby an asset is some thing owned by some owner.",
+   "This ontology defines high-level, ownership-related concepts, including owner, asset and ownership along with relationships between them.",
    :dcterms/license {:xsd/anyURI "https://opensource.org/licenses/MIT"},
    :fibo-fnd-utl-av/hasMaturityLevel :fibo-fnd-utl-av/Release,
    :owl/imports
-   #{{:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Utilities/AnnotationVocabulary/"}
+   #{{:xsd/anyURI "https://www.omg.org/spec/Commons/PartiesAndSituations/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Parties/Parties/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Utilities/AnnotationVocabulary/"}
+     {:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/DatesAndTimes/FinancialDates/"}
+     {:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Relations/Relations/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/DatesAndTimes/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Parties/Roles/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Relations/Relations/"}
-     {:xsd/anyURI "https://www.omg.org/spec/Commons/AnnotationVocabulary/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/DatesAndTimes/FinancialDates/"}},
+     {:xsd/anyURI "https://www.omg.org/spec/Commons/AnnotationVocabulary/"}},
    :owl/versionIRI
    {:xsd/anyURI
-    "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/OwnershipAndControl/Ownership/"},
+    "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/OwnershipAndControl/Ownership/"},
    :rdf/type :owl/Ontology,
    :rdfs/label "Ownership Ontology",
    :skos/changeNote
    #{"The https://spec.edmcouncil.org/fibo/ontology/FND/OwnershipAndControl/Ownership.rdf version of this ontology was modified to use the Commons Ontology Library (Commons) rather than the OMG's Languages, Countries and Codes (LCC), eliminating redundancies in FIBO as appropriate."
+     "The https://spec.edmcouncil.org/fibo/ontology/FND/OwnershipAndControl/Ownership.rdf version of this ontology was modified to replace content that is now available in the OMG Commons Ontology Library (Commons) v1.1 (FND-380)."
      "The https://spec.edmcouncil.org/fibo/ontology/FND/OwnershipAndControl/Ownership.rdf version of the ontology was modified to add definitions for tangible and intangible asset, etc., as needed for refinement of the concept of collateral and other loan-specific concepts."
      "The https://spec.edmcouncil.org/fibo/ontology/FND/OwnershipAndControl/Ownership.rdf version of the ontology was modified to integrate the concept of a situation, situational roles, and corresponding relations with the definition of ownership, and eliminate minimum cardinality of 1 in restrictions."
      "The https://spec.edmcouncil.org/fibo/ontology/FND/OwnershipAndControl/Ownership.rdf version of the ontology was modified to better align with revisions to the situation lattice."

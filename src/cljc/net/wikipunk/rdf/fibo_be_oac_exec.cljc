@@ -1,8 +1,9 @@
 (ns net.wikipunk.rdf.fibo-be-oac-exec
-  {:cmns-av/copyright #{"Copyright (c) 2013-2023 Object Management Group, Inc."
-                        "Copyright (c) 2013-2023 EDM Council, Inc."},
+  {:cmns-av/copyright
+   #{"Copyright (c) 2013-2024 EDM Council, Inc."
+     "Copyright (c) 2013-2024 Object Management Group, Inc."},
    :dcat/downloadURL
-   "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/BE/OwnershipAndControl/Executives/",
+   "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/BE/OwnershipAndControl/Executives/",
    :dcterms/abstract
    "This ontology defines concepts relating to executives and their formal capacities. The concepts defined in this ontology cover types of corporate officers, board members and the like, along with the capacities in terms of which those party roles are defined, and the kinds of entity (principally natural persons) that are able to perform in those roles.",
    :dcterms/license {:xsd/anyURI "https://opensource.org/licenses/MIT"},
@@ -10,6 +11,8 @@
    :namespaces
    {"cmns-av" "https://www.omg.org/spec/Commons/AnnotationVocabulary/",
     "cmns-col" "https://www.omg.org/spec/Commons/Collections/",
+    "cmns-pts" "https://www.omg.org/spec/Commons/PartiesAndSituations/",
+    "cmns-rlcmp" "https://www.omg.org/spec/Commons/RolesAndCompositions/",
     "dcterms" "http://purl.org/dc/terms/",
     "fibo-be-corp-corp"
     "https://spec.edmcouncil.org/fibo/ontology/BE/Corporations/Corporations/",
@@ -37,10 +40,6 @@
     "https://spec.edmcouncil.org/fibo/ontology/FND/Organizations/FormalOrganizations/",
     "fibo-fnd-org-org"
     "https://spec.edmcouncil.org/fibo/ontology/FND/Organizations/Organizations/",
-    "fibo-fnd-pty-pty"
-    "https://spec.edmcouncil.org/fibo/ontology/FND/Parties/Parties/",
-    "fibo-fnd-pty-rl"
-    "https://spec.edmcouncil.org/fibo/ontology/FND/Parties/Roles/",
     "fibo-fnd-rel-rel"
     "https://spec.edmcouncil.org/fibo/ontology/FND/Relations/Relations/",
     "fibo-fnd-utl-av"
@@ -51,43 +50,41 @@
     "skos" "http://www.w3.org/2004/02/skos/core#",
     "xsd" "http://www.w3.org/2001/XMLSchema#"},
    :owl/imports
-   #{{:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/OwnershipAndControl/Control/"}
+   #{{:xsd/anyURI "https://www.omg.org/spec/Commons/RolesAndCompositions/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/BE/OwnershipAndControl/CorporateControl/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Law/LegalCapacity/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/BE/OwnershipAndControl/ControlParties/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/BE/OwnershipAndControl/OwnershipParties/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Utilities/AnnotationVocabulary/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Organizations/Organizations/"}
+     {:xsd/anyURI "https://www.omg.org/spec/Commons/PartiesAndSituations/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Organizations/Organizations/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/BE/OwnershipAndControl/CorporateControl/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/BE/LegalEntities/CorporateBodies/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Law/Jurisdiction/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Parties/Parties/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/BE/LegalEntities/LegalPersons/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/BE/Corporations/Corporations/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Law/Jurisdiction/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Utilities/AnnotationVocabulary/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/Collections/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/BE/OwnershipAndControl/OwnershipParties/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Law/LegalCore/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Parties/Roles/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Relations/Relations/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Law/LegalCapacity/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/BE/OwnershipAndControl/ControlParties/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Relations/Relations/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/OwnershipAndControl/Control/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Law/LegalCore/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/BE/Corporations/Corporations/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Organizations/FormalOrganizations/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/BE/LegalEntities/CorporateBodies/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/AnnotationVocabulary/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/BE/LegalEntities/LegalPersons/"}},
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Organizations/FormalOrganizations/"}},
    :owl/versionIRI
    {:xsd/anyURI
-    "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/BE/OwnershipAndControl/Executives/"},
+    "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/BE/OwnershipAndControl/Executives/"},
    :rdf/type :owl/Ontology,
    :rdfa/prefix "fibo-be-oac-exec",
    :rdfa/uri
@@ -104,6 +101,7 @@
      "The https://spec.edmcouncil.org/fibo/ontology/BE/OwnershipAndControl/Executives.rdf version of the ontology was modified to fix spelling errors."
      "The https://spec.edmcouncil.org/fibo/ontology/BE/OwnershipAndControl/Executives.rdf version of this ontology was modified per the issue resolutions identified in the FIBO BE 1.0 FTF report."
      "The https://spec.edmcouncil.org/fibo/ontology/BE/OwnershipAndControl/Executives.rdf version of the ontology was modified to reflect the move of OrganizationMember from Parties to Organizations in FND and to incorporate the latest insights into how control relations should integrate with the control situation."
+     "The https://spec.edmcouncil.org/fibo/ontology/BE/OwnershipAndControl/Executives.rdf version of the ontology was modified to replace content that is now available in the OMG Commons Ontology Library (Commons) v1.1 (FND-380)."
      "The https://spec.edmcouncil.org/fibo/ontology/BE/OwnershipAndControl/Executives.rdf version of this ontology was modified to eliminate references to external dictionary sites that no longer resolve, add the concept of corporate bylaws and restriction on authorized shares (moved from SEC)."
      "The https://spec.edmcouncil.org/fibo/ontology/BE/OwnershipAndControl/Executives.rdf version of the ontology was modified to refine the definition of corporate officer."
      "The https://spec.edmcouncil.org/fibo/ontology/BE/OwnershipAndControl/Executives.rdf version of the ontology was modified to use the Commons Ontology Library (Commons) Annotation Vocabulary rather than the OMG's Specification Metadata vocabulary."
@@ -147,7 +145,7 @@
    :rdfs/label "authorization",
    :rdfs/subClassOf #{{:owl/onProperty :fibo-be-oac-exec/hasAuthorizingParty,
                        :owl/someValuesFrom :fibo-be-oac-exec/AuthorizingParty,
-                       :rdf/type :owl/Restriction} :fibo-fnd-pty-pty/Situation
+                       :rdf/type :owl/Restriction} :cmns-pts/Situation
                       {:owl/onProperty     :fibo-be-oac-exec/hasAuthorizedParty,
                        :owl/someValuesFrom :fibo-be-oac-exec/AuthorizedParty,
                        :rdf/type           :owl/Restriction}},
@@ -163,7 +161,7 @@
    :rdfs/label "authorized party",
    :rdfs/subClassOf
    #{{:owl/onClass    :fibo-be-le-lp/LegallyCompetentNaturalPerson,
-      :owl/onProperty :fibo-fnd-rel-rel/hasIdentity,
+      :owl/onProperty :cmns-rlcmp/isPlayedBy,
       :owl/qualifiedCardinality 1,
       :rdf/type       :owl/Restriction} :fibo-be-oac-exec/ResponsibleParty
      {:owl/onProperty     :fibo-be-oac-exec/isAuthorizedThrough,
@@ -179,11 +177,10 @@
    {:xsd/anyURI
     "https://spec.edmcouncil.org/fibo/ontology/BE/OwnershipAndControl/Executives/"},
    :rdfs/label "authorizing party",
-   :rdfs/subClassOf #{:fibo-fnd-pty-pty/Actor
-                      {:owl/onClass    :fibo-be-le-lp/LegalPerson,
-                       :owl/onProperty :fibo-fnd-rel-rel/hasIdentity,
+   :rdfs/subClassOf #{{:owl/onClass    :fibo-be-le-lp/LegalPerson,
+                       :owl/onProperty :cmns-rlcmp/isPlayedBy,
                        :owl/qualifiedCardinality 1,
-                       :rdf/type       :owl/Restriction}
+                       :rdf/type       :owl/Restriction} :cmns-pts/Actor
                       {:owl/onProperty     :fibo-be-oac-exec/authorizesThrough,
                        :owl/someValuesFrom :fibo-be-oac-exec/Authorization,
                        :rdf/type           :owl/Restriction}},
@@ -202,11 +199,6 @@
       :owl/onClass    :fibo-be-oac-exec/CompanyLaw,
       :owl/onProperty :fibo-fnd-rel-rel/isGovernedBy,
       :rdf/type       :owl/Restriction}
-     {:owl/onProperty     :fibo-fnd-law-lcap/isConferredOn,
-      :owl/someValuesFrom {:owl/onProperty     :fibo-fnd-pty-rl/playsRole,
-                           :owl/someValuesFrom :fibo-be-oac-exec/BoardMember,
-                           :rdf/type           :owl/Restriction},
-      :rdf/type           :owl/Restriction}
      {:owl/onProperty     :fibo-fnd-rel-rel/isConferredBy,
       :owl/someValuesFrom {:owl/unionOf
                            [:fibo-be-le-cb/InstrumentOfIncorporation
@@ -214,7 +206,12 @@
                             :fibo-be-corp-corp/BoardAgreement],
                            :rdf/type :owl/Class},
       :rdf/type           :owl/Restriction}
-     :fibo-fnd-law-lcap/DelegatedLegalAuthority},
+     :fibo-fnd-law-lcap/DelegatedLegalAuthority
+     {:owl/onProperty     :fibo-fnd-law-lcap/isConferredOn,
+      :owl/someValuesFrom {:owl/onProperty     :cmns-rlcmp/playsRole,
+                           :owl/someValuesFrom :fibo-be-oac-exec/BoardMember,
+                           :rdf/type           :owl/Restriction},
+      :rdf/type           :owl/Restriction}},
    :skos/definition
    "authority to act in a fiduciary capacity with respect to the organization, including but not limited to determining and executing corporate policy"})
 
@@ -246,21 +243,21 @@
     "https://spec.edmcouncil.org/fibo/ontology/BE/OwnershipAndControl/Executives/"},
    :rdfs/label "board member",
    :rdfs/subClassOf
-   #{:fibo-be-oac-exec/ResponsibleParty
-     :fibo-be-oac-exec/LegallyDelegatedAuthority
-     {:owl/onProperty     :fibo-fnd-pty-rl/isPlayedBy,
-      :owl/someValuesFrom {:owl/onProperty :fibo-fnd-pty-pty/isAPartyTo,
-                           :owl/someValuesFrom
-                           :fibo-be-corp-corp/BoardAgreement,
-                           :rdf/type :owl/Restriction},
-      :rdf/type           :owl/Restriction} :fibo-fnd-org-org/OrganizationMember
-     {:owl/onProperty     :fibo-fnd-pty-rl/isPlayedBy,
+   #{{:owl/onProperty     :cmns-rlcmp/isPlayedBy,
       :owl/someValuesFrom {:owl/onProperty :cmns-col/isMemberOf,
                            :owl/someValuesFrom
-                           {:owl/onProperty :fibo-fnd-pty-rl/playsRole,
+                           {:owl/onProperty :cmns-rlcmp/playsRole,
                             :owl/someValuesFrom
                             :fibo-be-oac-exec/BoardOfDirectors,
                             :rdf/type :owl/Restriction},
+                           :rdf/type :owl/Restriction},
+      :rdf/type           :owl/Restriction} :fibo-be-oac-exec/ResponsibleParty
+     :fibo-be-oac-exec/LegallyDelegatedAuthority
+     :fibo-fnd-org-org/OrganizationMember
+     {:owl/onProperty     :cmns-rlcmp/isPlayedBy,
+      :owl/someValuesFrom {:owl/onProperty :cmns-pts/isAPartyTo,
+                           :owl/someValuesFrom
+                           :fibo-be-corp-corp/BoardAgreement,
                            :rdf/type :owl/Restriction},
       :rdf/type           :owl/Restriction}},
    :skos/definition
@@ -293,16 +290,16 @@
     "https://spec.edmcouncil.org/fibo/ontology/BE/OwnershipAndControl/Executives/"},
    :rdfs/label "board of directors",
    :rdfs/subClassOf
-   #{{:owl/onProperty     :fibo-fnd-pty-rl/isPlayedBy,
+   #{{:owl/onProperty     :cmns-rlcmp/isPlayedBy,
       :owl/someValuesFrom {:owl/onProperty     :cmns-col/hasMember,
                            :owl/someValuesFrom {:owl/onProperty
-                                                :fibo-fnd-pty-rl/playsRole,
+                                                :cmns-rlcmp/playsRole,
                                                 :owl/someValuesFrom
                                                 :fibo-be-oac-exec/BoardMember,
                                                 :rdf/type :owl/Restriction},
                            :rdf/type           :owl/Restriction},
       :rdf/type           :owl/Restriction}
-     {:owl/onProperty     :fibo-fnd-pty-rl/isPlayedBy,
+     {:owl/onProperty     :cmns-rlcmp/isPlayedBy,
       :owl/someValuesFrom {:owl/onProperty     :fibo-fnd-law-lcap/hasCapacity,
                            :owl/someValuesFrom :fibo-be-oac-exec/BoardCapacity,
                            :rdf/type           :owl/Restriction},
@@ -337,16 +334,15 @@
     "https://spec.edmcouncil.org/fibo/ontology/BE/OwnershipAndControl/Executives/"},
    :rdfs/label "chief executive officer",
    :rdfs/subClassOf
-   #{:fibo-be-oac-exec/ExecutiveBoardMember
-     {:owl/onProperty     :fibo-fnd-pty-rl/isPlayedBy,
+   #{:fibo-be-oac-exec/ExecutiveBoardMember :fibo-be-oac-exec/CorporateOfficer
+     {:owl/onProperty     :cmns-rlcmp/isPlayedBy,
       :owl/someValuesFrom {:owl/onProperty :fibo-fnd-rel-rel/manages,
                            :owl/someValuesFrom
                            {:owl/unionOf [:fibo-be-le-lp/LegalEntity
                                           :fibo-fnd-org-fm/FormalOrganization],
                             :rdf/type    :owl/Class},
                            :rdf/type :owl/Restriction},
-      :rdf/type           :owl/Restriction} :fibo-be-oac-exec/CorporateOfficer
-     :fibo-be-oac-exec/PrincipalParty},
+      :rdf/type           :owl/Restriction} :fibo-be-oac-exec/PrincipalParty},
    :skos/definition
    "top corporate officer responsible for an organization's overall operations and performance"})
 
@@ -433,7 +429,7 @@
    :rdfs/label "executive",
    :rdfs/subClassOf #{{:owl/onClass
                        :fibo-be-le-lp/LegallyCompetentNaturalPerson,
-                       :owl/onProperty :fibo-fnd-rel-rel/hasIdentity,
+                       :owl/onProperty :cmns-rlcmp/isPlayedBy,
                        :owl/qualifiedCardinality 1,
                        :rdf/type :owl/Restriction}
                       :fibo-be-oac-exec/LegallyDelegatedAuthority},
@@ -459,10 +455,10 @@
    {:xsd/anyURI
     "https://spec.edmcouncil.org/fibo/ontology/BE/OwnershipAndControl/Executives/"},
    :rdfs/label "legally delegated authority",
-   :rdfs/subClassOf #{{:owl/allValuesFrom :fibo-be-le-lp/LegalPerson,
-                       :owl/onProperty    :fibo-fnd-rel-rel/hasIdentity,
-                       :rdf/type          :owl/Restriction}
-                      :fibo-fnd-oac-ctl/ControllingParty},
+   :rdfs/subClassOf #{:fibo-fnd-oac-ctl/ControllingParty
+                      {:owl/allValuesFrom :fibo-be-le-lp/LegalPerson,
+                       :owl/onProperty    :cmns-rlcmp/isPlayedBy,
+                       :rdf/type          :owl/Restriction}},
    :skos/definition
    "party empowered with some level of legal control and corresponding responsibility"})
 
@@ -499,14 +495,14 @@
     "https://spec.edmcouncil.org/fibo/ontology/BE/OwnershipAndControl/Executives/"},
    :rdfs/label "responsible party",
    :rdfs/subClassOf
-   #{:fibo-fnd-pty-pty/PartyInRole
-     {:owl/onProperty     :fibo-fnd-pty-rl/isPlayedBy,
+   #{:cmns-pts/PartyRole
+     {:owl/onProperty     :cmns-rlcmp/isPlayedBy,
       :owl/someValuesFrom {:owl/allValuesFrom :fibo-fnd-law-lcap/Duty,
                            :owl/onProperty :fibo-be-oac-exec/hasResponsibility,
                            :rdf/type :owl/Restriction},
       :rdf/type           :owl/Restriction}
      {:owl/allValuesFrom :fibo-be-le-lp/LegallyCompetentNaturalPerson,
-      :owl/onProperty    :fibo-fnd-rel-rel/hasIdentity,
+      :owl/onProperty    :cmns-rlcmp/isPlayedBy,
       :rdf/type          :owl/Restriction}},
    :skos/definition
    "person acting in a role that has some formal responsibility, such as a fiduciary responsibility, a signatory, an examiner or registrar, etc."})
@@ -519,14 +515,14 @@
     "https://spec.edmcouncil.org/fibo/ontology/BE/OwnershipAndControl/Executives/"},
    :rdfs/label "signatory",
    :rdfs/subClassOf #{:fibo-be-oac-exec/AuthorizedParty
-                      :fibo-be-oac-exec/LegallyDelegatedAuthority
-                      {:owl/onProperty :fibo-fnd-pty-rl/isPlayedBy,
+                      {:owl/onProperty :cmns-rlcmp/isPlayedBy,
                        :owl/someValuesFrom
                        {:owl/onProperty :fibo-fnd-law-lcap/hasCapacity,
                         :owl/someValuesFrom
                         :fibo-fnd-law-lcap/SignatoryCapacity,
                         :rdf/type :owl/Restriction},
-                       :rdf/type :owl/Restriction}},
+                       :rdf/type :owl/Restriction}
+                      :fibo-be-oac-exec/LegallyDelegatedAuthority},
    :skos/definition
    "responsible party authorized to sign agreements on behalf of themselves, another person, or an organization"})
 
@@ -540,7 +536,7 @@
     "https://spec.edmcouncil.org/fibo/ontology/BE/OwnershipAndControl/Executives/"},
    :rdfs/label "authorizes",
    :rdfs/range :fibo-be-oac-exec/AuthorizedParty,
-   :rdfs/subPropertyOf :fibo-fnd-pty-pty/actsOn,
+   :rdfs/subPropertyOf :cmns-pts/actsOn,
    :skos/definition "endorses, enables, empowers, or gives permission to"})
 
 (def authorizesThrough
@@ -553,7 +549,7 @@
     "https://spec.edmcouncil.org/fibo/ontology/BE/OwnershipAndControl/Executives/"},
    :rdfs/label "authorizes through",
    :rdfs/range :fibo-be-oac-exec/Authorization,
-   :rdfs/subPropertyOf :fibo-fnd-pty-pty/actsIn,
+   :rdfs/subPropertyOf :cmns-pts/actsIn,
    :skos/definition
    "indicates the situation that facilitates designation of an authorized party by the authorizing party for some purpose"})
 
@@ -586,12 +582,12 @@
 (def elects
   {:db/ident :fibo-be-oac-exec/elects,
    :rdf/type :owl/ObjectProperty,
-   :rdfs/domain :fibo-fnd-pty-pty/PartyInRole,
+   :rdfs/domain :cmns-pts/PartyRole,
    :rdfs/isDefinedBy
    {:xsd/anyURI
     "https://spec.edmcouncil.org/fibo/ontology/BE/OwnershipAndControl/Executives/"},
    :rdfs/label "elects",
-   :rdfs/range :fibo-fnd-pty-pty/PartyInRole,
+   :rdfs/range :cmns-pts/PartyRole,
    :skos/definition
    "chooses someone, or a group of individuals, to hold office or some other position by voting",
    :skos/editorialNote
@@ -608,7 +604,7 @@
     "https://spec.edmcouncil.org/fibo/ontology/BE/OwnershipAndControl/Executives/"},
    :rdfs/label "has authorized party",
    :rdfs/range :fibo-be-oac-exec/AuthorizedParty,
-   :rdfs/subPropertyOf :fibo-fnd-pty-pty/hasUndergoer,
+   :rdfs/subPropertyOf :cmns-pts/hasUndergoer,
    :skos/definition
    "indicates the party that is endorsed, enabled, empowered, or otherwise permitted to do something in the situation"})
 
@@ -621,7 +617,7 @@
     "https://spec.edmcouncil.org/fibo/ontology/BE/OwnershipAndControl/Executives/"},
    :rdfs/label "has authorizing party",
    :rdfs/range :fibo-be-oac-exec/AuthorizingParty,
-   :rdfs/subPropertyOf :fibo-fnd-pty-pty/hasActor,
+   :rdfs/subPropertyOf :cmns-pts/hasActor,
    :skos/definition
    "indicates the party that endorses, enables, empowers, or gives permission in the situation"})
 
@@ -678,7 +674,7 @@
 (def hasResponsibility
   {:db/ident :fibo-be-oac-exec/hasResponsibility,
    :rdf/type :owl/ObjectProperty,
-   :rdfs/domain :fibo-fnd-pty-pty/IndependentParty,
+   :rdfs/domain :cmns-pts/Party,
    :rdfs/isDefinedBy
    {:xsd/anyURI
     "https://spec.edmcouncil.org/fibo/ontology/BE/OwnershipAndControl/Executives/"},
@@ -697,7 +693,7 @@
     "https://spec.edmcouncil.org/fibo/ontology/BE/OwnershipAndControl/Executives/"},
    :rdfs/label "has responsible party",
    :rdfs/range :fibo-be-oac-exec/ResponsibleParty,
-   :rdfs/subPropertyOf :fibo-fnd-pty-pty/hasPartyInRole,
+   :rdfs/subPropertyOf :cmns-pts/hasPartyRole,
    :skos/definition
    "identifies a party that has some assignment, commitment or obligation with respect to the formal organization"})
 
@@ -736,7 +732,7 @@
     "https://spec.edmcouncil.org/fibo/ontology/BE/OwnershipAndControl/Executives/"},
    :rdfs/label "is authorized by",
    :rdfs/range :fibo-be-oac-exec/AuthorizingParty,
-   :rdfs/subPropertyOf :fibo-fnd-pty-pty/isAffectedBy,
+   :rdfs/subPropertyOf :cmns-pts/isAffectedBy,
    :skos/definition
    "is endorsed, enabled, empowered, or otherwise permitted by"})
 
@@ -750,7 +746,7 @@
     "https://spec.edmcouncil.org/fibo/ontology/BE/OwnershipAndControl/Executives/"},
    :rdfs/label "is authorized through",
    :rdfs/range :fibo-be-oac-exec/Authorization,
-   :rdfs/subPropertyOf :fibo-fnd-pty-pty/undergoes,
+   :rdfs/subPropertyOf :cmns-pts/undergoes,
    :skos/definition
    "indicates the situation that faciliates endorsement of the authorized party for some purpose"})
 
@@ -800,60 +796,59 @@
    "Note that nominates is defined as a relation between two parties-in-role (the range of which could be a corporation or partnership in the case of an auditor), whereas appoints between independent parties.",
    :db/ident :fibo-be-oac-exec/nominates,
    :rdf/type :owl/ObjectProperty,
-   :rdfs/domain :fibo-fnd-pty-pty/PartyInRole,
+   :rdfs/domain :cmns-pts/PartyRole,
    :rdfs/isDefinedBy
    {:xsd/anyURI
     "https://spec.edmcouncil.org/fibo/ontology/BE/OwnershipAndControl/Executives/"},
    :rdfs/label "nominates",
-   :rdfs/range :fibo-fnd-pty-pty/PartyInRole,
+   :rdfs/range :cmns-pts/PartyRole,
    :skos/definition
    "appoints or proposes for appointment to an office or place"})
 
 (def urn:uuid:a5ca5e2a-1e48-50d7-b40c-8428f2acdedb
-  {:cmns-av/copyright #{"Copyright (c) 2013-2023 Object Management Group, Inc."
-                        "Copyright (c) 2013-2023 EDM Council, Inc."},
+  {:cmns-av/copyright
+   #{"Copyright (c) 2013-2024 EDM Council, Inc."
+     "Copyright (c) 2013-2024 Object Management Group, Inc."},
    :dcterms/abstract
    "This ontology defines concepts relating to executives and their formal capacities. The concepts defined in this ontology cover types of corporate officers, board members and the like, along with the capacities in terms of which those party roles are defined, and the kinds of entity (principally natural persons) that are able to perform in those roles.",
    :dcterms/license {:xsd/anyURI "https://opensource.org/licenses/MIT"},
    :fibo-fnd-utl-av/hasMaturityLevel :fibo-fnd-utl-av/Release,
    :owl/imports
-   #{{:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/OwnershipAndControl/Control/"}
+   #{{:xsd/anyURI "https://www.omg.org/spec/Commons/RolesAndCompositions/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/BE/OwnershipAndControl/CorporateControl/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Law/LegalCapacity/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/BE/OwnershipAndControl/ControlParties/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/BE/OwnershipAndControl/OwnershipParties/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Utilities/AnnotationVocabulary/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Organizations/Organizations/"}
+     {:xsd/anyURI "https://www.omg.org/spec/Commons/PartiesAndSituations/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Organizations/Organizations/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/BE/OwnershipAndControl/CorporateControl/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/BE/LegalEntities/CorporateBodies/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Law/Jurisdiction/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Parties/Parties/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/BE/LegalEntities/LegalPersons/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/BE/Corporations/Corporations/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Law/Jurisdiction/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Utilities/AnnotationVocabulary/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/Collections/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/BE/OwnershipAndControl/OwnershipParties/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Law/LegalCore/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Parties/Roles/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Relations/Relations/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Law/LegalCapacity/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/BE/OwnershipAndControl/ControlParties/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Relations/Relations/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/OwnershipAndControl/Control/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Law/LegalCore/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/BE/Corporations/Corporations/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Organizations/FormalOrganizations/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/BE/LegalEntities/CorporateBodies/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/AnnotationVocabulary/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/BE/LegalEntities/LegalPersons/"}},
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Organizations/FormalOrganizations/"}},
    :owl/versionIRI
    {:xsd/anyURI
-    "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/BE/OwnershipAndControl/Executives/"},
+    "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/BE/OwnershipAndControl/Executives/"},
    :rdf/type :owl/Ontology,
    :rdfs/label "Executives Ontology",
    :skos/changeNote
@@ -867,6 +862,7 @@
      "The https://spec.edmcouncil.org/fibo/ontology/BE/OwnershipAndControl/Executives.rdf version of the ontology was modified to fix spelling errors."
      "The https://spec.edmcouncil.org/fibo/ontology/BE/OwnershipAndControl/Executives.rdf version of this ontology was modified per the issue resolutions identified in the FIBO BE 1.0 FTF report."
      "The https://spec.edmcouncil.org/fibo/ontology/BE/OwnershipAndControl/Executives.rdf version of the ontology was modified to reflect the move of OrganizationMember from Parties to Organizations in FND and to incorporate the latest insights into how control relations should integrate with the control situation."
+     "The https://spec.edmcouncil.org/fibo/ontology/BE/OwnershipAndControl/Executives.rdf version of the ontology was modified to replace content that is now available in the OMG Commons Ontology Library (Commons) v1.1 (FND-380)."
      "The https://spec.edmcouncil.org/fibo/ontology/BE/OwnershipAndControl/Executives.rdf version of this ontology was modified to eliminate references to external dictionary sites that no longer resolve, add the concept of corporate bylaws and restriction on authorized shares (moved from SEC)."
      "The https://spec.edmcouncil.org/fibo/ontology/BE/OwnershipAndControl/Executives.rdf version of the ontology was modified to refine the definition of corporate officer."
      "The https://spec.edmcouncil.org/fibo/ontology/BE/OwnershipAndControl/Executives.rdf version of the ontology was modified to use the Commons Ontology Library (Commons) Annotation Vocabulary rather than the OMG's Specification Metadata vocabulary."

@@ -1,8 +1,9 @@
 (ns net.wikipunk.rdf.fibo-fnd-arr-asmt
-  {:cmns-av/copyright #{"Copyright (c) 2019-2023 Object Management Group, Inc."
-                        "Copyright (c) 2019-2023 EDM Council, Inc."},
+  {:cmns-av/copyright
+   #{"Copyright (c) 2019-2024 EDM Council, Inc."
+     "Copyright (c) 2019-2024 Object Management Group, Inc."},
    :dcat/downloadURL
-   "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Arrangements/Assessments/",
+   "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Arrangements/Assessments/",
    :dcterms/abstract
    "This ontology defines abstract concepts for assessments, evaluations, and outcomes, as the basis for various analysis, such as for business performance, compliance and risk.",
    :dcterms/license {:xsd/anyURI "https://opensource.org/licenses/MIT"},
@@ -10,6 +11,8 @@
    :namespaces
    {"cmns-av" "https://www.omg.org/spec/Commons/AnnotationVocabulary/",
     "cmns-dt" "https://www.omg.org/spec/Commons/DatesAndTimes/",
+    "cmns-pts" "https://www.omg.org/spec/Commons/PartiesAndSituations/",
+    "cmns-qtu" "https://www.omg.org/spec/Commons/QuantitiesAndUnits/",
     "dcterms" "http://purl.org/dc/terms/",
     "fibo-fnd-acc-cur"
     "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/CurrencyAmount/",
@@ -23,14 +26,8 @@
     "https://spec.edmcouncil.org/fibo/ontology/FND/GoalsAndObjectives/Objectives/",
     "fibo-fnd-oac-own"
     "https://spec.edmcouncil.org/fibo/ontology/FND/OwnershipAndControl/Ownership/",
-    "fibo-fnd-pty-pty"
-    "https://spec.edmcouncil.org/fibo/ontology/FND/Parties/Parties/",
-    "fibo-fnd-pty-rl"
-    "https://spec.edmcouncil.org/fibo/ontology/FND/Parties/Roles/",
     "fibo-fnd-rel-rel"
     "https://spec.edmcouncil.org/fibo/ontology/FND/Relations/Relations/",
-    "fibo-fnd-utl-alx"
-    "https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/Analytics/",
     "fibo-fnd-utl-av"
     "https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/AnnotationVocabulary/",
     "owl" "http://www.w3.org/2002/07/owl#",
@@ -40,41 +37,39 @@
     "xsd" "http://www.w3.org/2001/XMLSchema#"},
    :owl/imports
    #{{:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Utilities/Analytics/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Accounting/CurrencyAmount/"}
+     {:xsd/anyURI "https://www.omg.org/spec/Commons/PartiesAndSituations/"}
+     {:xsd/anyURI "https://www.omg.org/spec/Commons/QuantitiesAndUnits/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Utilities/AnnotationVocabulary/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/OwnershipAndControl/Ownership/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/GoalsAndObjectives/Objectives/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Utilities/AnnotationVocabulary/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Parties/Parties/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/GoalsAndObjectives/Objectives/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Accounting/CurrencyAmount/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/DatesAndTimes/Occurrences/"}
+     {:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Relations/Relations/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/DatesAndTimes/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/DatesAndTimes/Occurrences/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/OwnershipAndControl/Ownership/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Parties/Roles/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Relations/Relations/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Arrangements/Reporting/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Arrangements/Reporting/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/AnnotationVocabulary/"}},
    :owl/versionIRI
    {:xsd/anyURI
-    "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Arrangements/Assessments/"},
+    "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Arrangements/Assessments/"},
    :rdf/type :owl/Ontology,
    :rdfa/prefix "fibo-fnd-arr-asmt",
    :rdfa/uri
    "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Assessments/",
    :rdfs/label "Assessments Ontology",
    :skos/changeNote
-   #{"The https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Assessments.rdf version of this ontology was modified to use the Commons Ontology Library (Commons) rather than the OMG's Languages, Countries and Codes (LCC), eliminating redundancies in FIBO as appropriate."
+   #{"The https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Assessments.rdf version of this ontology was modified to replace content that is now available in the OMG Commons Ontology Library (Commons) v1.1 (FND-380)."
+     "The https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Assessments.rdf version of this ontology was modified to use the Commons Ontology Library (Commons) rather than the OMG's Languages, Countries and Codes (LCC), eliminating redundancies in FIBO as appropriate."
      "The https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Assessments.rdf version of this ontology was revised to integrate concepts related to value assessments / appraisals."
      "The https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Assessments.rdf version of the ontology was modified to use the Commons Ontology Library (Commons) Annotation Vocabulary rather than the OMG's Specification Metadata vocabulary."
      "The https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Assessments.rdf version of this ontology was revised to add the concept of a valuation method, which is then applied in the context of a value assessment."
-     "The https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Assessments.rdf version of this ontology was revised to augment the definition of appraisal with an estimated value and correct a bug in the definition of hasAppraiser."},
+     "The https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Assessments.rdf version of this ontology was revised to augment the definition of appraisal with an estimated value and correct a bug in the definition of hasAppraiser."
+     "The https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Assessments.rdf version of this ontology was modified to replace additional content that is now available in the OMG Commons Ontology Library (Commons) v1.1 (FND-380)."},
    :xsd/anyURI
    "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Assessments/"})
 
@@ -118,7 +113,7 @@
    {:xsd/anyURI
     "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Assessments/"},
    :rdfs/label "appraiser",
-   :rdfs/subClassOf #{:fibo-fnd-pty-pty/PartyInRole
+   :rdfs/subClassOf #{:cmns-pts/PartyRole
                       {:owl/onProperty     :fibo-fnd-rel-rel/provides,
                        :owl/someValuesFrom :fibo-fnd-arr-asmt/Appraisal,
                        :rdf/type           :owl/Restriction}
@@ -135,10 +130,10 @@
    {:xsd/anyURI
     "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Assessments/"},
    :rdfs/label "assessment activity",
-   :rdfs/subClassOf #{{:owl/onProperty     :fibo-fnd-rel-rel/isProvidedBy,
-                       :owl/someValuesFrom :fibo-fnd-pty-rl/AgentInRole,
+   :rdfs/subClassOf #{:fibo-fnd-dt-oc/OccurrenceKind
+                      {:owl/onProperty     :fibo-fnd-rel-rel/isProvidedBy,
+                       :owl/someValuesFrom :cmns-pts/AgentRole,
                        :rdf/type           :owl/Restriction}
-                      :fibo-fnd-dt-oc/OccurrenceKind
                       {:owl/minCardinality 0,
                        :owl/onProperty     :fibo-fnd-rel-rel/evaluates,
                        :rdf/type           :owl/Restriction}},
@@ -152,21 +147,21 @@
    {:xsd/anyURI
     "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Assessments/"},
    :rdfs/label "assessment event",
-   :rdfs/subClassOf #{{:owl/onProperty     :fibo-fnd-rel-rel/isProvidedBy,
-                       :owl/someValuesFrom :fibo-fnd-pty-rl/AgentInRole,
-                       :rdf/type           :owl/Restriction}
-                      :fibo-fnd-dt-oc/Occurrence
+   :rdfs/subClassOf #{:fibo-fnd-dt-oc/Occurrence
                       {:owl/onProperty     :fibo-fnd-dt-oc/hasOutput,
                        :owl/someValuesFrom :fibo-fnd-arr-asmt/Opinion,
                        :rdf/type           :owl/Restriction}
                       {:owl/onClass    :fibo-fnd-arr-asmt/AssessmentActivity,
-                       :owl/onProperty :fibo-fnd-dt-oc/exemplifies,
+                       :owl/onProperty :fibo-fnd-rel-rel/exemplifies,
                        :owl/qualifiedCardinality 1,
                        :rdf/type       :owl/Restriction}
                       {:owl/minQualifiedCardinality 0,
                        :owl/onClass    :fibo-fnd-arr-asmt/AssessmentReport,
                        :owl/onProperty :fibo-fnd-dt-oc/hasOutput,
                        :rdf/type       :owl/Restriction}
+                      {:owl/onProperty     :fibo-fnd-rel-rel/isProvidedBy,
+                       :owl/someValuesFrom :cmns-pts/AgentRole,
+                       :rdf/type           :owl/Restriction}
                       {:owl/minCardinality 0,
                        :owl/onProperty     :fibo-fnd-rel-rel/evaluates,
                        :rdf/type           :owl/Restriction}},
@@ -196,7 +191,7 @@
     "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Assessments/"},
    :rdfs/label "opinion",
    :rdfs/subClassOf #{{:owl/onProperty     :fibo-fnd-rel-rel/isGeneratedBy,
-                       :owl/someValuesFrom :fibo-fnd-pty-rl/AgentInRole,
+                       :owl/someValuesFrom :cmns-pts/AgentRole,
                        :rdf/type           :owl/Restriction}
                       {:owl/onProperty     :fibo-fnd-dt-oc/isOutputFrom,
                        :owl/someValuesFrom :fibo-fnd-arr-asmt/AssessmentEvent,
@@ -230,7 +225,10 @@
    {:xsd/anyURI
     "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Assessments/"},
    :rdfs/label "value assessment",
-   :rdfs/subClassOf #{:fibo-fnd-arr-asmt/AssessmentEvent
+   :rdfs/subClassOf #{{:owl/onProperty     :fibo-fnd-arr-asmt/hasAppraiser,
+                       :owl/someValuesFrom :cmns-pts/AgentRole,
+                       :rdf/type           :owl/Restriction}
+                      :fibo-fnd-arr-asmt/AssessmentEvent
                       {:owl/minQualifiedCardinality 0,
                        :owl/onClass    :fibo-fnd-arr-asmt/Appraisal,
                        :owl/onProperty :fibo-fnd-dt-oc/hasOutput,
@@ -238,10 +236,7 @@
                       {:owl/minQualifiedCardinality 0,
                        :owl/onClass    :fibo-fnd-arr-asmt/ValuationMethod,
                        :owl/onProperty :fibo-fnd-arr-asmt/appliesMethodology,
-                       :rdf/type       :owl/Restriction}
-                      {:owl/onProperty     :fibo-fnd-arr-asmt/hasAppraiser,
-                       :owl/someValuesFrom :fibo-fnd-pty-rl/AgentInRole,
-                       :rdf/type           :owl/Restriction}},
+                       :rdf/type       :owl/Restriction}},
    :skos/definition "assessment event to estimate the value of something"})
 
 (def appliesMethodology
@@ -313,50 +308,49 @@
    {:xsd/anyURI
     "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Assessments/"},
    :rdfs/label "is estimated value of",
-   :rdfs/subPropertyOf :fibo-fnd-utl-alx/isValueOf,
+   :rdfs/subPropertyOf :cmns-qtu/isValueOf,
    :skos/definition
    "relates an appraised value to the asset of interest as of the date of the assessment"})
 
 (def urn:uuid:5d3ee1b3-7c51-5092-a646-3f07c6c32006
-  {:cmns-av/copyright #{"Copyright (c) 2019-2023 Object Management Group, Inc."
-                        "Copyright (c) 2019-2023 EDM Council, Inc."},
+  {:cmns-av/copyright
+   #{"Copyright (c) 2019-2024 EDM Council, Inc."
+     "Copyright (c) 2019-2024 Object Management Group, Inc."},
    :dcterms/abstract
    "This ontology defines abstract concepts for assessments, evaluations, and outcomes, as the basis for various analysis, such as for business performance, compliance and risk.",
    :dcterms/license {:xsd/anyURI "https://opensource.org/licenses/MIT"},
    :fibo-fnd-utl-av/hasMaturityLevel :fibo-fnd-utl-av/Release,
    :owl/imports
    #{{:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Utilities/Analytics/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Accounting/CurrencyAmount/"}
+     {:xsd/anyURI "https://www.omg.org/spec/Commons/PartiesAndSituations/"}
+     {:xsd/anyURI "https://www.omg.org/spec/Commons/QuantitiesAndUnits/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Utilities/AnnotationVocabulary/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/OwnershipAndControl/Ownership/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/GoalsAndObjectives/Objectives/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Utilities/AnnotationVocabulary/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Parties/Parties/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/GoalsAndObjectives/Objectives/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Accounting/CurrencyAmount/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/DatesAndTimes/Occurrences/"}
+     {:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Relations/Relations/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/DatesAndTimes/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/DatesAndTimes/Occurrences/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/OwnershipAndControl/Ownership/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Parties/Roles/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Relations/Relations/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Arrangements/Reporting/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Arrangements/Reporting/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/AnnotationVocabulary/"}},
    :owl/versionIRI
    {:xsd/anyURI
-    "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Arrangements/Assessments/"},
+    "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Arrangements/Assessments/"},
    :rdf/type :owl/Ontology,
    :rdfs/label "Assessments Ontology",
    :skos/changeNote
-   #{"The https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Assessments.rdf version of this ontology was modified to use the Commons Ontology Library (Commons) rather than the OMG's Languages, Countries and Codes (LCC), eliminating redundancies in FIBO as appropriate."
+   #{"The https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Assessments.rdf version of this ontology was modified to replace content that is now available in the OMG Commons Ontology Library (Commons) v1.1 (FND-380)."
+     "The https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Assessments.rdf version of this ontology was modified to use the Commons Ontology Library (Commons) rather than the OMG's Languages, Countries and Codes (LCC), eliminating redundancies in FIBO as appropriate."
      "The https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Assessments.rdf version of this ontology was revised to integrate concepts related to value assessments / appraisals."
      "The https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Assessments.rdf version of the ontology was modified to use the Commons Ontology Library (Commons) Annotation Vocabulary rather than the OMG's Specification Metadata vocabulary."
      "The https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Assessments.rdf version of this ontology was revised to add the concept of a valuation method, which is then applied in the context of a value assessment."
-     "The https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Assessments.rdf version of this ontology was revised to augment the definition of appraisal with an estimated value and correct a bug in the definition of hasAppraiser."},
+     "The https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Assessments.rdf version of this ontology was revised to augment the definition of appraisal with an estimated value and correct a bug in the definition of hasAppraiser."
+     "The https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Assessments.rdf version of this ontology was modified to replace additional content that is now available in the OMG Commons Ontology Library (Commons) v1.1 (FND-380)."},
    :xsd/anyURI
    "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Assessments/"})

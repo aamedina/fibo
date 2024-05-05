@@ -2,7 +2,7 @@
   {:cmns-av/copyright #{"Copyright (c) 2018-2023 Object Management Group, Inc."
                         "Copyright (c) 2018-2023 EDM Council, Inc."},
    :dcat/downloadURL
-   "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/CAE/CorporateEvents/MetadataCAECorporateEvents/CorporateEventsModule",
+   "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/CAE/CorporateEvents/MetadataCAECorporateEvents/CorporateEventsModule",
    :dcterms/abstract
    "This module contains ontologies of general corporate events and securities-related actions.",
    :dcterms/issued #inst "2018-03-31T18:00:00.000-00:00",
@@ -21,11 +21,11 @@
     "xsd"     "http://www.w3.org/2001/XMLSchema#"},
    :owl/imports
    #{{:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Utilities/AnnotationVocabulary/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Utilities/AnnotationVocabulary/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/AnnotationVocabulary/"}},
    :owl/versionIRI
    {:xsd/anyURI
-    "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/CAE/CorporateEvents/MetadataCAECorporateEvents/"},
+    "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/CAE/CorporateEvents/MetadataCAECorporateEvents/"},
    :rdf/type :owl/Ontology,
    :rdfa/prefix "fibo-cae-ce-mod",
    :rdfa/uri
@@ -71,11 +71,11 @@
    :dcterms/modified #inst "2023-02-03T18:00:00.000-00:00",
    :owl/imports
    #{{:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Utilities/AnnotationVocabulary/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Utilities/AnnotationVocabulary/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/AnnotationVocabulary/"}},
    :owl/versionIRI
    {:xsd/anyURI
-    "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/CAE/CorporateEvents/MetadataCAECorporateEvents/"},
+    "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/CAE/CorporateEvents/MetadataCAECorporateEvents/"},
    :rdf/type :owl/Ontology,
    :rdfs/label
    "Metadata for the EDMC-FIBO Corporate Actions and Events (CAE) Corporate Events Module",

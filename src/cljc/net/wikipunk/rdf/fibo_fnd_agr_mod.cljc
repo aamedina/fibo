@@ -2,7 +2,7 @@
   {:cmns-av/copyright #{"Copyright (c) 2017-2023 Object Management Group, Inc."
                         "Copyright (c) 2017-2023 EDM Council, Inc."},
    :dcat/downloadURL
-   "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Agreements/MetadataFNDAgreements/AgreementsModule",
+   "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Agreements/MetadataFNDAgreements/AgreementsModule",
    :dcterms/abstract
    "This is the metadata ontology used to describe the Foundations Agreements Module.",
    :dcterms/issued #inst "2018-08-27T18:00:00.000-00:00",
@@ -21,11 +21,11 @@
     "xsd" "http://www.w3.org/2001/XMLSchema#"},
    :owl/imports
    #{{:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Utilities/AnnotationVocabulary/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Utilities/AnnotationVocabulary/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/AnnotationVocabulary/"}},
    :owl/versionIRI
    {:xsd/anyURI
-    "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Agreements/MetadataFNDAgreements/"},
+    "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Agreements/MetadataFNDAgreements/"},
    :rdf/type :owl/Ontology,
    :rdfa/prefix "fibo-fnd-agr-mod",
    :rdfa/uri
@@ -66,11 +66,11 @@
    :dcterms/modified #inst "2023-01-20T18:00:00.000-00:00",
    :owl/imports
    #{{:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Utilities/AnnotationVocabulary/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Utilities/AnnotationVocabulary/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/AnnotationVocabulary/"}},
    :owl/versionIRI
    {:xsd/anyURI
-    "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Agreements/MetadataFNDAgreements/"},
+    "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Agreements/MetadataFNDAgreements/"},
    :rdf/type :owl/Ontology,
    :rdfs/label "Metadata for the EDMC-FIBO Foundations (FND) Agreements Module",
    :xsd/anyURI

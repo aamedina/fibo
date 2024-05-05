@@ -2,7 +2,7 @@
   {:cmns-av/copyright #{"Copyright (c) 2020-2023 Object Management Group, Inc."
                         "Copyright (c) 2020-2023 EDM Council, Inc."},
    :dcat/downloadURL
-   "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FBC/FinancialInstruments/InstrumentPricing/",
+   "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FBC/FinancialInstruments/InstrumentPricing/",
    :dcterms/abstract
    "This ontology provides a basic set of definitions related to pricing, yield, and spread that are extended in other instrument-specific ontologies.",
    :dcterms/license {:xsd/anyURI "https://opensource.org/licenses/MIT"},
@@ -11,7 +11,9 @@
    {"cmns-av" "https://www.omg.org/spec/Commons/AnnotationVocabulary/",
     "cmns-col" "https://www.omg.org/spec/Commons/Collections/",
     "cmns-cxtdsg" "https://www.omg.org/spec/Commons/ContextualDesignators/",
+    "cmns-doc" "https://www.omg.org/spec/Commons/Documents/",
     "cmns-dt" "https://www.omg.org/spec/Commons/DatesAndTimes/",
+    "cmns-qtu" "https://www.omg.org/spec/Commons/QuantitiesAndUnits/",
     "dcterms" "http://purl.org/dc/terms/",
     "fibo-be-fct-pub"
     "https://spec.edmcouncil.org/fibo/ontology/BE/FunctionalEntities/Publishers/",
@@ -29,10 +31,6 @@
     "https://spec.edmcouncil.org/fibo/ontology/FND/DatesAndTimes/FinancialDates/",
     "fibo-fnd-gao-obj"
     "https://spec.edmcouncil.org/fibo/ontology/FND/GoalsAndObjectives/Objectives/",
-    "fibo-fnd-qt-qtu"
-    "https://spec.edmcouncil.org/fibo/ontology/FND/Quantities/QuantitiesAndUnits/",
-    "fibo-fnd-rel-rel"
-    "https://spec.edmcouncil.org/fibo/ontology/FND/Relations/Relations/",
     "fibo-fnd-utl-alx"
     "https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/Analytics/",
     "fibo-fnd-utl-av"
@@ -44,38 +42,34 @@
     "xsd" "http://www.w3.org/2001/XMLSchema#"},
    :owl/imports
    #{{:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FBC/FunctionalEntities/Markets/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FBC/FunctionalEntities/Markets/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Quantities/QuantitiesAndUnits/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Accounting/CurrencyAmount/"}
+     {:xsd/anyURI "https://www.omg.org/spec/Commons/Documents/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Utilities/Analytics/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Utilities/AnnotationVocabulary/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/GoalsAndObjectives/Objectives/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/BE/FunctionalEntities/Publishers/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/ContextualDesignators/"}
+     {:xsd/anyURI "https://www.omg.org/spec/Commons/QuantitiesAndUnits/"}
+     {:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/OwnershipAndControl/Ownership/"}
+     {:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FBC/ProductsAndServices/FinancialProductsAndServices/"}
+     {:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Utilities/AnnotationVocabulary/"}
+     {:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/DatesAndTimes/FinancialDates/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/Collections/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/BE/FunctionalEntities/Publishers/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/GoalsAndObjectives/Objectives/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Accounting/CurrencyAmount/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Utilities/Analytics/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/DatesAndTimes/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/OwnershipAndControl/Ownership/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Relations/Relations/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FBC/FinancialInstruments/FinancialInstruments/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Arrangements/Documents/"}
-     {:xsd/anyURI "https://www.omg.org/spec/Commons/AnnotationVocabulary/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/DatesAndTimes/FinancialDates/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FBC/ProductsAndServices/FinancialProductsAndServices/"}},
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FBC/FinancialInstruments/FinancialInstruments/"}
+     {:xsd/anyURI "https://www.omg.org/spec/Commons/AnnotationVocabulary/"}},
    :owl/versionIRI
    {:xsd/anyURI
-    "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FBC/FinancialInstruments/InstrumentPricing/"},
+    "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FBC/FinancialInstruments/InstrumentPricing/"},
    :rdf/type :owl/Ontology,
    :rdfa/prefix "fibo-fbc-fi-ip",
    :rdfa/uri
@@ -85,6 +79,7 @@
    :skos/changeNote
    #{"The https://spec.edmcouncil.org/fibo/ontology/FBC/FinancialInstruments/InstrumentPricing.rdf version of the ontology was modified to use the Commons Ontology Library (Commons) Annotation Vocabulary rather than the OMG's Specification Metadata vocabulary."
      "The https://spec.edmcouncil.org/fibo/ontology/FBC/FinancialInstruments/InstrumentPricing.rdf version of this ontology was modified to use the Commons Ontology Library (Commons) rather than the OMG's Languages, Countries and Codes (LCC), eliminating redundancies in FIBO as appropriate."
+     "The https://spec.edmcouncil.org/fibo/ontology/FBC/FinancialInstruments/InstrumentPricing.rdf version of this ontology was modified to move the nominal for auction market from CDS to the pricing ontology (its IRI was that of this instrument pricing ontology but it was mistakenly in the CDS ontology) and simplify the definition (DER-140), and to replace content that is now available in the OMG Commons Ontology Library (Commons) v1.1 (FND-380)."
      "The https://spec.edmcouncil.org/fibo/ontology/FBC/FinancialInstruments/InstrumentPricing.rdf version of this ontology was modified to reflect the move of dated collection from arrangements to financial dates."
      "The https://spec.edmcouncil.org/fibo/ontology/FBC/FinancialInstruments/InstrumentPricing.rdf version of this ontology was modified to change one of the subclasses of price determination method to a named individual and correct the definition of mean price determination. Note that there may be multiple individuals of type 'closing price determination method', depending on the exchange and other factors. Also revised the lot size properties to have a range of xsd:decimal to allow for fractional shares or number of elements, revised the explanatory note, and added examples."
      "The https://spec.edmcouncil.org/fibo/ontology/FBC/FinancialInstruments/InstrumentPricing.rdf version of this ontology was modified to add trading day and trading session, to address ambiguity in some definitions, to add adjusted price and to create a more general hasLotSize property that can be used in various contexts."
@@ -112,6 +107,23 @@
     :rdf/value
     "amended closing price to reflect a security's value after accounting for any corporate actions, such as stock splits, dividends, and rights offerings"}})
 
+(def AuctionMethod
+  {:cmns-av/explanatoryNote
+   {:rdf/language "en",
+    :rdf/value
+    "Auction method refers to a process where buyers enter competitive bids and sellers submit competitive offers at the same time. The price at which a security trades represents the highest price that a buyer is willing to pay and the lowest price that a seller is willing to accept. Matching bids and offers are then paired together, and the orders are executed."},
+   :db/ident :fibo-fbc-fi-ip/AuctionMethod,
+   :rdf/type #{:owl/NamedIndividual :fibo-fbc-fi-ip/PriceDeterminationMethod},
+   :rdfs/isDefinedBy
+   {:xsd/anyURI
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FinancialInstruments/InstrumentPricing/"},
+   :rdfs/label {:rdf/language "en",
+                :rdf/value    "auction method"},
+   :skos/definition
+   {:rdf/language "en",
+    :rdf/value
+    "method for determining a price that represents use of an independently administered synthetic auction"}})
+
 (def BestBid
   {:db/ident :fibo-fbc-fi-ip/BestBid,
    :rdf/type :owl/Class,
@@ -120,10 +132,10 @@
     "https://spec.edmcouncil.org/fibo/ontology/FBC/FinancialInstruments/InstrumentPricing/"},
    :rdfs/label {:rdf/language "en",
                 :rdf/value    "best bid"},
-   :rdfs/subClassOf #{{:owl/onProperty
-                       :fibo-fnd-utl-alx/hasApplicableDatePeriod,
+   :rdfs/subClassOf #{{:owl/onProperty     :cmns-cxtdsg/hasApplicablePeriod,
                        :owl/someValuesFrom :cmns-dt/DatePeriod,
-                       :rdf/type :owl/Restriction} :fibo-fbc-fi-ip/BidPrice},
+                       :rdf/type           :owl/Restriction}
+                      :fibo-fbc-fi-ip/BidPrice},
    :skos/definition
    {:rdf/language "en",
     :rdf/value
@@ -137,10 +149,10 @@
     "https://spec.edmcouncil.org/fibo/ontology/FBC/FinancialInstruments/InstrumentPricing/"},
    :rdfs/label {:rdf/language "en",
                 :rdf/value    "best offer"},
-   :rdfs/subClassOf #{{:owl/onProperty
-                       :fibo-fnd-utl-alx/hasApplicableDatePeriod,
+   :rdfs/subClassOf #{{:owl/onProperty     :cmns-cxtdsg/hasApplicablePeriod,
                        :owl/someValuesFrom :cmns-dt/DatePeriod,
-                       :rdf/type :owl/Restriction} :fibo-fbc-fi-ip/OfferPrice},
+                       :rdf/type           :owl/Restriction}
+                      :fibo-fbc-fi-ip/OfferPrice},
    :skos/definition
    {:rdf/language "en",
     :rdf/value
@@ -154,11 +166,11 @@
     "https://spec.edmcouncil.org/fibo/ontology/FBC/FinancialInstruments/InstrumentPricing/"},
    :rdfs/label {:rdf/language "en",
                 :rdf/value    "bid ask spread"},
-   :rdfs/subClassOf #{:fibo-fbc-fi-ip/PriceSpread
-                      {:owl/onProperty     :fibo-fnd-utl-alx/hasArgument,
+   :rdfs/subClassOf #{{:owl/onProperty     :cmns-qtu/hasArgument,
                        :owl/someValuesFrom :fibo-fbc-fi-ip/BidPrice,
                        :rdf/type           :owl/Restriction}
-                      {:owl/onProperty     :fibo-fnd-utl-alx/hasArgument,
+                      :fibo-fbc-fi-ip/PriceSpread
+                      {:owl/onProperty     :cmns-qtu/hasArgument,
                        :owl/someValuesFrom :fibo-fbc-fi-ip/OfferPrice,
                        :rdf/type           :owl/Restriction}},
    :skos/definition
@@ -260,10 +272,10 @@
     "https://spec.edmcouncil.org/fibo/ontology/FBC/FinancialInstruments/InstrumentPricing/"},
    :rdfs/label {:rdf/language "en",
                 :rdf/value    "high price"},
-   :rdfs/subClassOf
-   #{{:owl/onProperty     :fibo-fnd-utl-alx/hasApplicableDatePeriod,
-      :owl/someValuesFrom :cmns-dt/DatePeriod,
-      :rdf/type           :owl/Restriction} :fibo-fbc-fi-ip/SecurityPrice},
+   :rdfs/subClassOf #{{:owl/onProperty     :cmns-cxtdsg/hasApplicablePeriod,
+                       :owl/someValuesFrom :cmns-dt/DatePeriod,
+                       :rdf/type           :owl/Restriction}
+                      :fibo-fbc-fi-ip/SecurityPrice},
    :skos/definition
    {:rdf/language "en",
     :rdf/value "highest price for a given security over the period specified"}})
@@ -308,10 +320,10 @@
     "https://spec.edmcouncil.org/fibo/ontology/FBC/FinancialInstruments/InstrumentPricing/"},
    :rdfs/label {:rdf/language "en",
                 :rdf/value    "low price"},
-   :rdfs/subClassOf
-   #{{:owl/onProperty     :fibo-fnd-utl-alx/hasApplicableDatePeriod,
-      :owl/someValuesFrom :cmns-dt/DatePeriod,
-      :rdf/type           :owl/Restriction} :fibo-fbc-fi-ip/SecurityPrice},
+   :rdfs/subClassOf #{{:owl/onProperty     :cmns-cxtdsg/hasApplicablePeriod,
+                       :owl/someValuesFrom :cmns-dt/DatePeriod,
+                       :rdf/type           :owl/Restriction}
+                      :fibo-fbc-fi-ip/SecurityPrice},
    :skos/definition
    {:rdf/language "en",
     :rdf/value "lowest value for a given security over the period specified"}})
@@ -360,17 +372,17 @@
    :rdfs/label {:rdf/language "en",
                 :rdf/value    "mid price"},
    :rdfs/subClassOf
-   #{{:owl/onProperty     :fibo-fnd-utl-alx/hasApplicableDatePeriod,
+   #{{:owl/onProperty     :cmns-cxtdsg/hasApplicablePeriod,
       :owl/someValuesFrom :cmns-dt/DatePeriod,
+      :rdf/type           :owl/Restriction}
+     {:owl/onProperty     :cmns-qtu/hasArgument,
+      :owl/someValuesFrom :fibo-fbc-fi-ip/BidPrice,
       :rdf/type           :owl/Restriction}
      {:owl/onClass    :fibo-fnd-acc-cur/Currency,
       :owl/onProperty :fibo-fnd-acc-cur/hasCurrency,
       :owl/qualifiedCardinality 1,
       :rdf/type       :owl/Restriction} :fibo-fnd-utl-alx/ArithmeticMean
-     {:owl/onProperty     :fibo-fnd-utl-alx/hasArgument,
-      :owl/someValuesFrom :fibo-fbc-fi-ip/BidPrice,
-      :rdf/type           :owl/Restriction}
-     {:owl/onProperty     :fibo-fnd-utl-alx/hasArgument,
+     {:owl/onProperty     :cmns-qtu/hasArgument,
       :owl/someValuesFrom :fibo-fbc-fi-ip/OfferPrice,
       :rdf/type           :owl/Restriction} :fibo-fbc-fi-ip/SecurityPrice},
    :skos/definition {:rdf/language "en",
@@ -447,13 +459,13 @@
    :rdfs/label {:rdf/language "en",
                 :rdf/value    "price analytic"},
    :rdfs/subClassOf
-   #{{:owl/onProperty     :cmns-cxtdsg/appliesTo,
-      :owl/someValuesFrom :fibo-fbc-fi-ip/CollectionOfSecurityPrices,
-      :rdf/type           :owl/Restriction}
-     {:owl/onProperty     :fibo-fnd-utl-alx/hasApplicableDatePeriod,
+   #{{:owl/onProperty     :cmns-cxtdsg/hasApplicablePeriod,
       :owl/someValuesFrom :cmns-dt/DatePeriod,
       :rdf/type           :owl/Restriction}
-     {:owl/onProperty     :fibo-fnd-rel-rel/refersTo,
+     {:owl/onProperty     :cmns-cxtdsg/appliesTo,
+      :owl/someValuesFrom :fibo-fbc-fi-ip/CollectionOfSecurityPrices,
+      :rdf/type           :owl/Restriction}
+     {:owl/onProperty     :cmns-doc/refersTo,
       :owl/someValuesFrom :fibo-fbc-fi-fi/Security,
       :rdf/type           :owl/Restriction} :fibo-fnd-utl-alx/ScopedMeasure},
    :skos/definition {:rdf/language "en",
@@ -481,12 +493,12 @@
    {:xsd/anyURI
     "https://spec.edmcouncil.org/fibo/ontology/FBC/FinancialInstruments/InstrumentPricing/"},
    :rdfs/label "price spread",
-   :rdfs/subClassOf #{{:owl/onProperty
-                       :fibo-fnd-utl-alx/hasApplicableDatePeriod,
+   :rdfs/subClassOf #{{:owl/onProperty     :cmns-cxtdsg/hasApplicablePeriod,
                        :owl/someValuesFrom :cmns-dt/DatePeriod,
-                       :rdf/type :owl/Restriction} :fibo-fnd-utl-alx/Difference
+                       :rdf/type           :owl/Restriction}
+                      :fibo-fnd-utl-alx/Difference
                       {:owl/onClass    :fibo-fnd-acc-cur/MonetaryPrice,
-                       :owl/onProperty :fibo-fnd-utl-alx/hasArgument,
+                       :owl/onProperty :cmns-qtu/hasArgument,
                        :owl/qualifiedCardinality 2,
                        :rdf/type       :owl/Restriction}},
    :skos/definition "difference between two prices"})
@@ -499,11 +511,11 @@
     "https://spec.edmcouncil.org/fibo/ontology/FBC/FinancialInstruments/InstrumentPricing/"},
    :rdfs/label {:rdf/language "en",
                 :rdf/value    "pricing model"},
-   :rdfs/subClassOf :fibo-fnd-utl-alx/Formula,
+   :rdfs/subClassOf :cmns-qtu/Expression,
    :skos/definition
    {:rdf/language "en",
     :rdf/value
-    "formula used to determine a value for an instrument at a given point in time"}})
+    "expression used to determine a value for an instrument at a given point in time"}})
 
 (def RateOfReturn
   {:cmns-av/abbreviation {:rdf/language "en",
@@ -515,13 +527,13 @@
     "https://spec.edmcouncil.org/fibo/ontology/FBC/FinancialInstruments/InstrumentPricing/"},
    :rdfs/label {:rdf/language "en",
                 :rdf/value    "rate of return"},
-   :rdfs/subClassOf
-   #{{:owl/onProperty     :fibo-fnd-utl-alx/hasApplicableDatePeriod,
-      :owl/someValuesFrom :cmns-dt/DatePeriod,
-      :rdf/type           :owl/Restriction}
-     {:owl/onProperty     :fibo-fnd-rel-rel/refersTo,
-      :owl/someValuesFrom :fibo-fbc-fi-fi/Security,
-      :rdf/type           :owl/Restriction} :fibo-fnd-utl-alx/Percentage},
+   :rdfs/subClassOf #{{:owl/onProperty     :cmns-cxtdsg/hasApplicablePeriod,
+                       :owl/someValuesFrom :cmns-dt/DatePeriod,
+                       :rdf/type           :owl/Restriction}
+                      {:owl/onProperty     :cmns-doc/refersTo,
+                       :owl/someValuesFrom :fibo-fbc-fi-fi/Security,
+                       :rdf/type           :owl/Restriction}
+                      :cmns-qtu/Percentage},
    :skos/definition
    {:rdf/language "en",
     :rdf/value
@@ -676,17 +688,16 @@
     "https://spec.edmcouncil.org/fibo/ontology/FBC/FinancialInstruments/InstrumentPricing/"},
    :rdfs/label {:rdf/language "en",
                 :rdf/value    "yield"},
-   :rdfs/subClassOf
-   #{{:owl/onProperty     :fibo-fnd-utl-alx/hasApplicableDatePeriod,
-      :owl/someValuesFrom :cmns-dt/DatePeriod,
-      :rdf/type           :owl/Restriction}
-     {:owl/onProperty     :fibo-fnd-rel-rel/refersTo,
-      :owl/someValuesFrom :fibo-fbc-fi-fi/Security,
-      :rdf/type           :owl/Restriction}
-     {:owl/onClass    :fibo-fnd-acc-cur/Currency,
-      :owl/onProperty :fibo-fnd-acc-cur/hasCurrency,
-      :owl/qualifiedCardinality 1,
-      :rdf/type       :owl/Restriction} :fibo-fnd-utl-alx/Percentage},
+   :rdfs/subClassOf #{{:owl/onProperty     :cmns-cxtdsg/hasApplicablePeriod,
+                       :owl/someValuesFrom :cmns-dt/DatePeriod,
+                       :rdf/type           :owl/Restriction}
+                      {:owl/onProperty     :cmns-doc/refersTo,
+                       :owl/someValuesFrom :fibo-fbc-fi-fi/Security,
+                       :rdf/type           :owl/Restriction}
+                      {:owl/onClass    :fibo-fnd-acc-cur/Currency,
+                       :owl/onProperty :fibo-fnd-acc-cur/hasCurrency,
+                       :owl/qualifiedCardinality 1,
+                       :rdf/type       :owl/Restriction} :cmns-qtu/Percentage},
    :skos/definition {:rdf/language "en",
                      :rdf/value "return on the investor's capital investment"}})
 
@@ -698,7 +709,7 @@
     "https://spec.edmcouncil.org/fibo/ontology/FBC/FinancialInstruments/InstrumentPricing/"},
    :rdfs/label "yield spread",
    :rdfs/subClassOf #{{:owl/onClass    :fibo-fbc-fi-ip/Yield,
-                       :owl/onProperty :fibo-fnd-utl-alx/hasArgument,
+                       :owl/onProperty :cmns-qtu/hasArgument,
                        :owl/qualifiedCardinality 2,
                        :rdf/type       :owl/Restriction}
                       :fibo-fnd-utl-alx/Difference},
@@ -755,7 +766,7 @@
    :rdfs/label {:rdf/language "en",
                 :rdf/value    "has lot size"},
    :rdfs/range :xsd/decimal,
-   :rdfs/subPropertyOf :fibo-fnd-qt-qtu/hasNumericValue,
+   :rdfs/subPropertyOf :cmns-qtu/hasNumericValue,
    :skos/definition {:rdf/language "en",
                      :rdf/value "magnitude of an item (i.e., total quantity)"},
    :skos/example
@@ -785,7 +796,7 @@
     "https://spec.edmcouncil.org/fibo/ontology/FBC/FinancialInstruments/InstrumentPricing/"},
    :rdfs/label {:rdf/language "en",
                 :rdf/value    "has pricing source"},
-   :rdfs/subPropertyOf :fibo-fnd-rel-rel/refersTo,
+   :rdfs/subPropertyOf :cmns-doc/refersTo,
    :skos/definition
    {:rdf/language "en",
     :rdf/value
@@ -816,7 +827,7 @@
    :rdfs/label {:rdf/language "en",
                 :rdf/value    "has rate of return"},
    :rdfs/range :fibo-fbc-fi-ip/RateOfReturn,
-   :rdfs/subPropertyOf :fibo-fnd-qt-qtu/hasQuantityValue,
+   :rdfs/subPropertyOf :cmns-qtu/hasQuantityValue,
    :skos/definition
    {:rdf/language "en",
     :rdf/value
@@ -869,7 +880,7 @@
    :rdfs/label {:rdf/language "en",
                 :rdf/value    "has trading volume"},
    :rdfs/range :xsd/decimal,
-   :rdfs/subPropertyOf :fibo-fnd-qt-qtu/hasNumericValue,
+   :rdfs/subPropertyOf :cmns-qtu/hasNumericValue,
    :skos/definition
    {:rdf/language "en",
     :rdf/value
@@ -884,44 +895,41 @@
    :fibo-fnd-utl-av/hasMaturityLevel :fibo-fnd-utl-av/Release,
    :owl/imports
    #{{:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FBC/FunctionalEntities/Markets/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FBC/FunctionalEntities/Markets/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Quantities/QuantitiesAndUnits/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Accounting/CurrencyAmount/"}
+     {:xsd/anyURI "https://www.omg.org/spec/Commons/Documents/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Utilities/Analytics/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Utilities/AnnotationVocabulary/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/GoalsAndObjectives/Objectives/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/BE/FunctionalEntities/Publishers/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/ContextualDesignators/"}
+     {:xsd/anyURI "https://www.omg.org/spec/Commons/QuantitiesAndUnits/"}
+     {:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/OwnershipAndControl/Ownership/"}
+     {:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FBC/ProductsAndServices/FinancialProductsAndServices/"}
+     {:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Utilities/AnnotationVocabulary/"}
+     {:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/DatesAndTimes/FinancialDates/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/Collections/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/BE/FunctionalEntities/Publishers/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/GoalsAndObjectives/Objectives/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Accounting/CurrencyAmount/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Utilities/Analytics/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/DatesAndTimes/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/OwnershipAndControl/Ownership/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Relations/Relations/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FBC/FinancialInstruments/FinancialInstruments/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Arrangements/Documents/"}
-     {:xsd/anyURI "https://www.omg.org/spec/Commons/AnnotationVocabulary/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/DatesAndTimes/FinancialDates/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FBC/ProductsAndServices/FinancialProductsAndServices/"}},
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FBC/FinancialInstruments/FinancialInstruments/"}
+     {:xsd/anyURI "https://www.omg.org/spec/Commons/AnnotationVocabulary/"}},
    :owl/versionIRI
    {:xsd/anyURI
-    "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FBC/FinancialInstruments/InstrumentPricing/"},
+    "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FBC/FinancialInstruments/InstrumentPricing/"},
    :rdf/type :owl/Ontology,
    :rdfs/label {:rdf/language "en",
                 :rdf/value    "Instrument Pricing Ontology"},
    :skos/changeNote
    #{"The https://spec.edmcouncil.org/fibo/ontology/FBC/FinancialInstruments/InstrumentPricing.rdf version of the ontology was modified to use the Commons Ontology Library (Commons) Annotation Vocabulary rather than the OMG's Specification Metadata vocabulary."
      "The https://spec.edmcouncil.org/fibo/ontology/FBC/FinancialInstruments/InstrumentPricing.rdf version of this ontology was modified to use the Commons Ontology Library (Commons) rather than the OMG's Languages, Countries and Codes (LCC), eliminating redundancies in FIBO as appropriate."
+     "The https://spec.edmcouncil.org/fibo/ontology/FBC/FinancialInstruments/InstrumentPricing.rdf version of this ontology was modified to move the nominal for auction market from CDS to the pricing ontology (its IRI was that of this instrument pricing ontology but it was mistakenly in the CDS ontology) and simplify the definition (DER-140), and to replace content that is now available in the OMG Commons Ontology Library (Commons) v1.1 (FND-380)."
      "The https://spec.edmcouncil.org/fibo/ontology/FBC/FinancialInstruments/InstrumentPricing.rdf version of this ontology was modified to reflect the move of dated collection from arrangements to financial dates."
      "The https://spec.edmcouncil.org/fibo/ontology/FBC/FinancialInstruments/InstrumentPricing.rdf version of this ontology was modified to change one of the subclasses of price determination method to a named individual and correct the definition of mean price determination. Note that there may be multiple individuals of type 'closing price determination method', depending on the exchange and other factors. Also revised the lot size properties to have a range of xsd:decimal to allow for fractional shares or number of elements, revised the explanatory note, and added examples."
      "The https://spec.edmcouncil.org/fibo/ontology/FBC/FinancialInstruments/InstrumentPricing.rdf version of this ontology was modified to add trading day and trading session, to address ambiguity in some definitions, to add adjusted price and to create a more general hasLotSize property that can be used in various contexts."

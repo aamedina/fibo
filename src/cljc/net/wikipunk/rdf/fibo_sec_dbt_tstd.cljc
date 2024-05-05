@@ -1,8 +1,9 @@
 (ns net.wikipunk.rdf.fibo-sec-dbt-tstd
-  {:cmns-av/copyright #{"Copyright (c) 2018-2023 Object Management Group, Inc."
-                        "Copyright (c) 2018-2023 EDM Council, Inc."},
+  {:cmns-av/copyright
+   #{"Copyright (c) 2018-2024 EDM Council, Inc."
+     "Copyright (c) 2018-2024 Object Management Group, Inc."},
    :dcat/downloadURL
-   "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/SEC/Debt/TradedShortTermDebt/",
+   "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/SEC/Debt/TradedShortTermDebt/",
    :dcterms/abstract
    "This ontology defines a number of basic, traded short-term debt instruments, many of which are considered money market instruments that may be freely traded.",
    :dcterms/license {:xsd/anyURI "http://opensource.org/licenses/MIT"},
@@ -10,6 +11,8 @@
    :namespaces
    {"cmns-av" "https://www.omg.org/spec/Commons/AnnotationVocabulary/",
     "cmns-dt" "https://www.omg.org/spec/Commons/DatesAndTimes/",
+    "cmns-pts" "https://www.omg.org/spec/Commons/PartiesAndSituations/",
+    "cmns-rlcmp" "https://www.omg.org/spec/Commons/RolesAndCompositions/",
     "dcterms" "http://purl.org/dc/terms/",
     "fibo-fbc-dae-gty"
     "https://spec.edmcouncil.org/fibo/ontology/FBC/DebtAndEquities/Guaranty/",
@@ -23,10 +26,6 @@
     "https://spec.edmcouncil.org/fibo/ontology/FND/Agreements/Contracts/",
     "fibo-fnd-pas-psch"
     "https://spec.edmcouncil.org/fibo/ontology/FND/ProductsAndServices/PaymentsAndSchedules/",
-    "fibo-fnd-pty-pty"
-    "https://spec.edmcouncil.org/fibo/ontology/FND/Parties/Parties/",
-    "fibo-fnd-pty-rl"
-    "https://spec.edmcouncil.org/fibo/ontology/FND/Parties/Roles/",
     "fibo-fnd-rel-rel"
     "https://spec.edmcouncil.org/fibo/ontology/FND/Relations/Relations/",
     "fibo-fnd-utl-av"
@@ -41,35 +40,33 @@
     "skos" "http://www.w3.org/2004/02/skos/core#",
     "xsd" "http://www.w3.org/2001/XMLSchema#"},
    :owl/imports
-   #{{:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FBC/DebtAndEquities/Guaranty/"}
+   #{{:xsd/anyURI "https://www.omg.org/spec/Commons/RolesAndCompositions/"}
+     {:xsd/anyURI "https://www.omg.org/spec/Commons/PartiesAndSituations/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FBC/ProductsAndServices/ClientsAndAccounts/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/ProductsAndServices/PaymentsAndSchedules/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Utilities/AnnotationVocabulary/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Utilities/AnnotationVocabulary/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Parties/Parties/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FBC/FunctionalEntities/FinancialServicesEntities/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Agreements/Agreements/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FBC/ProductsAndServices/ClientsAndAccounts/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FBC/FunctionalEntities/FinancialServicesEntities/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/SEC/Debt/DebtInstruments/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Relations/Relations/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/DatesAndTimes/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/ProductsAndServices/PaymentsAndSchedules/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FBC/DebtAndEquities/Guaranty/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Agreements/Contracts/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Agreements/Contracts/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Parties/Roles/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FBC/FinancialInstruments/FinancialInstruments/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Relations/Relations/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/SEC/Debt/DebtInstruments/"}
+     {:xsd/anyURI "https://www.omg.org/spec/Commons/AnnotationVocabulary/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FBC/FinancialInstruments/FinancialInstruments/"}
-     {:xsd/anyURI "https://www.omg.org/spec/Commons/AnnotationVocabulary/"}},
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Agreements/Agreements/"}},
    :owl/versionIRI
    {:xsd/anyURI
-    "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/SEC/Debt/TradedShortTermDebt/"},
+    "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/SEC/Debt/TradedShortTermDebt/"},
    :rdf/type :owl/Ontology,
    :rdfa/prefix "fibo-sec-dbt-tstd",
    :rdfa/uri
@@ -77,7 +74,8 @@
    :rdfs/label {:rdf/language "en",
                 :rdf/value    "Traded Short-Term Debt Ontology"},
    :skos/changeNote
-   #{"The https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/TradedShortTermDebt.rdf version of this ontology was modified to clarify the definition of bill of exchange."
+   #{"The https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/TradedShortTermDebt.rdf version of this ontology was modified to replace content that is now available in the OMG Commons Ontology Library (Commons) v1.1 (FND-380)."
+     "The https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/TradedShortTermDebt.rdf version of this ontology was modified to clarify the definition of bill of exchange."
      "The https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/TradedShortTermDebt.rdf version of this ontology was modified to use the Commons Ontology Library (Commons) rather than the OMG's Languages, Countries and Codes (LCC), eliminating redundancies in FIBO as appropriate."
      "The https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/TradedShortTermDebt.rdf version of this ontology was modified to remove the subclass relationship with respect to fixed income from bankers' acceptance, make bill of exchange a subclass of money market instrument and fix spelling errors."
      "The https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/TradedShortTermDebt.rdf version of this ontology was modified to eliminate a circular definition."
@@ -129,7 +127,7 @@
     "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/TradedShortTermDebt/"},
    :rdfs/label {:rdf/language "en",
                 :rdf/value    "bill of exchange"},
-   :rdfs/subClassOf #{{:owl/onProperty     :fibo-fnd-pty-pty/hasPartyInRole,
+   :rdfs/subClassOf #{{:owl/onProperty     :cmns-pts/hasPartyRole,
                        :owl/someValuesFrom :fibo-sec-dbt-tstd/Drawer,
                        :rdf/type           :owl/Restriction}
                       :fibo-sec-dbt-tstd/MoneyMarketInstrument
@@ -139,9 +137,9 @@
                        :rdf/type       :owl/Restriction}
                       {:owl/minQualifiedCardinality 0,
                        :owl/onClass    :fibo-fnd-pas-psch/Payee,
-                       :owl/onProperty :fibo-fnd-pty-pty/hasPartyInRole,
+                       :owl/onProperty :cmns-pts/hasPartyRole,
                        :rdf/type       :owl/Restriction}
-                      {:owl/onProperty     :fibo-fnd-pty-pty/hasPartyInRole,
+                      {:owl/onProperty     :cmns-pts/hasPartyRole,
                        :owl/someValuesFrom :fibo-sec-dbt-tstd/Drawee,
                        :rdf/type           :owl/Restriction}},
    :skos/definition
@@ -182,9 +180,9 @@
     "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/TradedShortTermDebt/"},
    :rdfs/label "drawee",
    :rdfs/subClassOf #{:fibo-fnd-pas-psch/Payer
-                      {:owl/onProperty     :fibo-fnd-pty-rl/isPlayedBy,
+                      {:owl/onProperty     :cmns-rlcmp/isPlayedBy,
                        :owl/someValuesFrom {:owl/onProperty
-                                            :fibo-fnd-pty-pty/isAPartyTo,
+                                            :cmns-pts/isAPartyTo,
                                             :owl/someValuesFrom
                                             :fibo-sec-dbt-tstd/BillOfExchange,
                                             :rdf/type :owl/Restriction},
@@ -200,8 +198,8 @@
     "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/TradedShortTermDebt/"},
    :rdfs/label "drawer",
    :rdfs/subClassOf
-   #{{:owl/onProperty     :fibo-fnd-pty-rl/isPlayedBy,
-      :owl/someValuesFrom {:owl/onProperty :fibo-fnd-pty-pty/isAPartyTo,
+   #{{:owl/onProperty     :cmns-rlcmp/isPlayedBy,
+      :owl/someValuesFrom {:owl/onProperty :cmns-pts/isAPartyTo,
                            :owl/someValuesFrom
                            :fibo-sec-dbt-tstd/BillOfExchange,
                            :rdf/type :owl/Restriction},
@@ -273,47 +271,47 @@
     "agreement between two parties whereby one party lends the other a security at a specified price with a commitment to take the security back at a later date for another specified price"}})
 
 (def urn:uuid:d06b0f5d-a137-5ee7-9e59-f587a91de489
-  {:cmns-av/copyright #{"Copyright (c) 2018-2023 Object Management Group, Inc."
-                        "Copyright (c) 2018-2023 EDM Council, Inc."},
+  {:cmns-av/copyright
+   #{"Copyright (c) 2018-2024 EDM Council, Inc."
+     "Copyright (c) 2018-2024 Object Management Group, Inc."},
    :dcterms/abstract
    "This ontology defines a number of basic, traded short-term debt instruments, many of which are considered money market instruments that may be freely traded.",
    :dcterms/license {:xsd/anyURI "http://opensource.org/licenses/MIT"},
    :fibo-fnd-utl-av/hasMaturityLevel :fibo-fnd-utl-av/Release,
    :owl/imports
-   #{{:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FBC/DebtAndEquities/Guaranty/"}
+   #{{:xsd/anyURI "https://www.omg.org/spec/Commons/RolesAndCompositions/"}
+     {:xsd/anyURI "https://www.omg.org/spec/Commons/PartiesAndSituations/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FBC/ProductsAndServices/ClientsAndAccounts/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/ProductsAndServices/PaymentsAndSchedules/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Utilities/AnnotationVocabulary/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Utilities/AnnotationVocabulary/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Parties/Parties/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FBC/FunctionalEntities/FinancialServicesEntities/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Agreements/Agreements/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FBC/ProductsAndServices/ClientsAndAccounts/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FBC/FunctionalEntities/FinancialServicesEntities/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/SEC/Debt/DebtInstruments/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Relations/Relations/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/DatesAndTimes/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/ProductsAndServices/PaymentsAndSchedules/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FBC/DebtAndEquities/Guaranty/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Agreements/Contracts/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Agreements/Contracts/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Parties/Roles/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FBC/FinancialInstruments/FinancialInstruments/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Relations/Relations/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/SEC/Debt/DebtInstruments/"}
+     {:xsd/anyURI "https://www.omg.org/spec/Commons/AnnotationVocabulary/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FBC/FinancialInstruments/FinancialInstruments/"}
-     {:xsd/anyURI "https://www.omg.org/spec/Commons/AnnotationVocabulary/"}},
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Agreements/Agreements/"}},
    :owl/versionIRI
    {:xsd/anyURI
-    "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/SEC/Debt/TradedShortTermDebt/"},
+    "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/SEC/Debt/TradedShortTermDebt/"},
    :rdf/type :owl/Ontology,
    :rdfs/label {:rdf/language "en",
                 :rdf/value    "Traded Short-Term Debt Ontology"},
    :skos/changeNote
-   #{"The https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/TradedShortTermDebt.rdf version of this ontology was modified to clarify the definition of bill of exchange."
+   #{"The https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/TradedShortTermDebt.rdf version of this ontology was modified to replace content that is now available in the OMG Commons Ontology Library (Commons) v1.1 (FND-380)."
+     "The https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/TradedShortTermDebt.rdf version of this ontology was modified to clarify the definition of bill of exchange."
      "The https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/TradedShortTermDebt.rdf version of this ontology was modified to use the Commons Ontology Library (Commons) rather than the OMG's Languages, Countries and Codes (LCC), eliminating redundancies in FIBO as appropriate."
      "The https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/TradedShortTermDebt.rdf version of this ontology was modified to remove the subclass relationship with respect to fixed income from bankers' acceptance, make bill of exchange a subclass of money market instrument and fix spelling errors."
      "The https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/TradedShortTermDebt.rdf version of this ontology was modified to eliminate a circular definition."

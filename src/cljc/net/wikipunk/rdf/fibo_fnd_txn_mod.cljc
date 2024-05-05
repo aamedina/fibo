@@ -1,7 +1,7 @@
 (ns net.wikipunk.rdf.fibo-fnd-txn-mod
   {:cmns-av/copyright "Copyright (c) 2017-2023 EDM Council, Inc.",
    :dcat/downloadURL
-   "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/TransactionsExt/MetadataFNDTransactionsExt/TransactionsExtModule",
+   "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/TransactionsExt/MetadataFNDTransactionsExt/TransactionsExtModule",
    :dcterms/abstract
    "This is the metadata ontology used to describe the Foundations Transactions Module.",
    :dcterms/issued #inst "2021-12-27T18:00:00.000-00:00",
@@ -21,11 +21,11 @@
     "xsd" "http://www.w3.org/2001/XMLSchema#"},
    :owl/imports
    #{{:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Utilities/AnnotationVocabulary/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Utilities/AnnotationVocabulary/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/AnnotationVocabulary/"}},
    :owl/versionIRI
    {:xsd/anyURI
-    "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/TransactionsExt/MetadataFNDTransactionsExt/"},
+    "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/TransactionsExt/MetadataFNDTransactionsExt/"},
    :rdf/type :owl/Ontology,
    :rdfa/prefix "fibo-fnd-txn-mod",
    :rdfa/uri
@@ -69,11 +69,11 @@
    :dcterms/modified #inst "2023-01-20T18:00:00.000-00:00",
    :owl/imports
    #{{:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Utilities/AnnotationVocabulary/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Utilities/AnnotationVocabulary/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/AnnotationVocabulary/"}},
    :owl/versionIRI
    {:xsd/anyURI
-    "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/TransactionsExt/MetadataFNDTransactionsExt/"},
+    "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/TransactionsExt/MetadataFNDTransactionsExt/"},
    :rdf/type :owl/Ontology,
    :rdfs/label
    "Metadata for the EDMC-FIBO Foundations (FND) TransactionsExt Module",

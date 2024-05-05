@@ -1,9 +1,8 @@
 (ns net.wikipunk.rdf.fibo-fbc-pas-fpas
-  {:cmns-av/copyright
-   #{"Copyright (c) 2015-2023 EDM Council, Inc."
-     "Copyright (c) 2015-2023 Object Management Group, Inc."},
+  {:cmns-av/copyright #{"Copyright (c) 2015-2024 Object Management Group, Inc."
+                        "Copyright (c) 2015-2024 EDM Council, Inc."},
    :dcat/downloadURL
-   "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FBC/ProductsAndServices/FinancialProductsAndServices/",
+   "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FBC/ProductsAndServices/FinancialProductsAndServices/",
    :dcterms/abstract
    "This ontology defines concepts that extend the Foundations (FND) Products and Services concepts specifically for the financial industry, including financial product, financial service, and financial service provider.",
    :dcterms/license {:xsd/anyURI "https://opensource.org/licenses/MIT"},
@@ -16,6 +15,9 @@
     "cmns-dsg" "https://www.omg.org/spec/Commons/Designators/",
     "cmns-dt" "https://www.omg.org/spec/Commons/DatesAndTimes/",
     "cmns-id" "https://www.omg.org/spec/Commons/Identifiers/",
+    "cmns-pts" "https://www.omg.org/spec/Commons/PartiesAndSituations/",
+    "cmns-qtu" "https://www.omg.org/spec/Commons/QuantitiesAndUnits/",
+    "cmns-rlcmp" "https://www.omg.org/spec/Commons/RolesAndCompositions/",
     "cmns-txt" "https://www.omg.org/spec/Commons/TextDatatype/",
     "dcterms" "http://purl.org/dc/terms/",
     "fibo-be-fct-fct"
@@ -38,8 +40,6 @@
     "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Lifecycles/",
     "fibo-fnd-dt-fd"
     "https://spec.edmcouncil.org/fibo/ontology/FND/DatesAndTimes/FinancialDates/",
-    "fibo-fnd-dt-oc"
-    "https://spec.edmcouncil.org/fibo/ontology/FND/DatesAndTimes/Occurrences/",
     "fibo-fnd-gao-obj"
     "https://spec.edmcouncil.org/fibo/ontology/FND/GoalsAndObjectives/Objectives/",
     "fibo-fnd-law-jur"
@@ -50,10 +50,6 @@
     "https://spec.edmcouncil.org/fibo/ontology/FND/OwnershipAndControl/Ownership/",
     "fibo-fnd-pas-pas"
     "https://spec.edmcouncil.org/fibo/ontology/FND/ProductsAndServices/ProductsAndServices/",
-    "fibo-fnd-pty-pty"
-    "https://spec.edmcouncil.org/fibo/ontology/FND/Parties/Parties/",
-    "fibo-fnd-pty-rl"
-    "https://spec.edmcouncil.org/fibo/ontology/FND/Parties/Roles/",
     "fibo-fnd-rel-rel"
     "https://spec.edmcouncil.org/fibo/ontology/FND/Relations/Relations/",
     "fibo-fnd-utl-alx"
@@ -67,62 +63,55 @@
     "xsd" "http://www.w3.org/2001/XMLSchema#"},
    :owl/imports
    #{{:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Quantities/QuantitiesAndUnits/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/ProductsAndServices/ProductsAndServices/"}
+     {:xsd/anyURI "https://www.omg.org/spec/Commons/RolesAndCompositions/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Utilities/Analytics/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Accounting/CurrencyAmount/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Utilities/AnnotationVocabulary/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Law/LegalCapacity/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/GoalsAndObjectives/Objectives/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/BE/OwnershipAndControl/Executives/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/BE/FunctionalEntities/Publishers/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/Identifiers/"}
+     {:xsd/anyURI "https://www.omg.org/spec/Commons/PartiesAndSituations/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/ContextualDesignators/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Parties/Parties/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Arrangements/Lifecycles/"}
+     {:xsd/anyURI "https://www.omg.org/spec/Commons/QuantitiesAndUnits/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FBC/FunctionalEntities/RegulatoryAgencies/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/OwnershipAndControl/Ownership/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Law/Jurisdiction/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Law/Jurisdiction/"}
+     {:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/BE/OwnershipAndControl/Executives/"}
+     {:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/BE/LegalEntities/LEIEntities/"}
+     {:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/BE/LegalEntities/LegalPersons/"}
+     {:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Utilities/AnnotationVocabulary/"}
+     {:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/DatesAndTimes/FinancialDates/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/Collections/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/BE/FunctionalEntities/Publishers/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/GoalsAndObjectives/Objectives/"}
+     {:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Utilities/Analytics/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/Classifiers/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/Designators/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Accounting/CurrencyAmount/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Relations/Relations/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/DatesAndTimes/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/DatesAndTimes/Occurrences/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Agreements/Contracts/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/BE/LegalEntities/LEIEntities/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Arrangements/Lifecycles/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Agreements/Contracts/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/OwnershipAndControl/Ownership/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Parties/Roles/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Law/LegalCapacity/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/DatesAndTimes/BusinessDates/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Relations/Relations/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/BE/FunctionalEntities/FunctionalEntities/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/TextDatatype/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/BE/FunctionalEntities/FunctionalEntities/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/AnnotationVocabulary/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/BE/LegalEntities/LegalPersons/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/DatesAndTimes/FinancialDates/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/ProductsAndServices/ProductsAndServices/"}},
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FBC/FunctionalEntities/RegulatoryAgencies/"}},
    :owl/versionIRI
    {:xsd/anyURI
-    "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FBC/ProductsAndServices/FinancialProductsAndServices/"},
+    "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FBC/ProductsAndServices/FinancialProductsAndServices/"},
    :rdf/type :owl/Ontology,
    :rdfa/prefix "fibo-fbc-pas-fpas",
    :rdfa/uri
@@ -136,14 +125,17 @@
      "The https://spec.edmcouncil.org/fibo/ontology/FBC/ProductsAndServices/FinancialProductsAndServices.rdf version of this ontology was modified to use the Commons Ontology Library (Commons) rather than the OMG's Languages, Countries and Codes (LCC) and to eliminate redundancies in FIBO as appropriate."
      "The https://spec.edmcouncil.org/fibo/ontology/FBC/ProductsAndServices/FinancialProductsAndServices/ version of this ontology was modified to add the notion of a weighted basket, whose consituents are weighted."
      "The https://spec.edmcouncil.org/fibo/ontology/FBC/ProductsAndServices/FinancialProductsAndServices.rdf version of the ontology was modified to use the Commons Ontology Library (Commons) Annotation Vocabulary rather than the OMG's Specification Metadata vocabulary."
+     "The https://spec.edmcouncil.org/fibo/ontology/FBC/ProductsAndServices/FinancialProductsAndServices.rdf version of the ontology was modified to replace additional content that is now available in the OMG Commons Ontology Library (Commons) v1.1 (FND-380)."
      "The https://spec.edmcouncil.org/fibo/ontology/FBC/ProductsAndServices/FinancialProductsAndServices/ version of this ontology was modified to fix spelling errors."
      "The https://spec.edmcouncil.org/fibo/ontology/FBC/ProductsAndServices/FinancialProductsAndServices/ version of this ontology was modified to eliminate duplication with concepts in LCC and eliminated a redundant superclass on FinancialServiceProvider."
      "The https://spec.edmcouncil.org/fibo/ontology/FBC/ProductsAndServices/FinancialProductsAndServices/ version of this ontology was modified to eliminate deprecated elements."
      "The https://spec.edmcouncil.org/fibo/ontology/FBC/ProductsAndServices/FinancialProductsAndServices/ version of this ontology was modified to rename ownership related properties for consistent alignment with the ownership situational pattern, add a definition for trading strategy, and loosen the constraint on offeree for offering to be optional."
+     "The https://spec.edmcouncil.org/fibo/ontology/FBC/ProductsAndServices/FinancialProductsAndServices.rdf version of the ontology was modified to add the concept of a contract lifecycle, as distinct from a product or trade lifecycle (FBC-317)."
      "The https://spec.edmcouncil.org/fibo/ontology/FBC/ProductsAndServices/FinancialProductsAndServices/ version of this ontology was modified to eliminate references to external dictionary sites that no longer resolve, eliminate circular and ambiguous definitions, and revise definitions that referenced 'face value' improperly."
      "The https://spec.edmcouncil.org/fibo/ontology/FBC/ProductsAndServices/FinancialProductsAndServices/ version of this ontology was modified to replace hasDefinition with isDefinedIn to clarify intent."
      "The https://spec.edmcouncil.org/fibo/ontology/FBC/ProductsAndServices/FinancialProductsAndServices.rdf version of this ontology was revised to augment the representation of institutions based on their definitions in the law, and to clarify and extend definitions related to non-bank financial institutions."
      "The https://spec.edmcouncil.org/fibo/ontology/FBC/ProductsAndServices/FinancialProductsAndServices/ version of this ontology was modified to replace the property 'characterizes' with 'describes' with respect to restrictions on catalogs, and to correct the label on terminated trade."
+     "The https://spec.edmcouncil.org/fibo/ontology/FBC/ProductsAndServices/FinancialProductsAndServices.rdf version of the ontology was modified to eliminate deprecations that are more than 6 months old and to replace content that is now available in the OMG Commons Ontology Library (Commons) v1.1 (FND-380)."
      "The https://spec.edmcouncil.org/fibo/ontology/FBC/ProductsAndServices/FinancialProductsAndServices/ version of this ontology was modified by the FIBO 2.0 RFC, including, but not limited to, the addition of lifecycle events, concepts related to trade settlement, and the definition of a unique transaction identifier (UTI)."},
    :xsd/anyURI
    "https://spec.edmcouncil.org/fibo/ontology/FBC/ProductsAndServices/FinancialProductsAndServices/"})
@@ -162,7 +154,7 @@
                        :owl/someValuesFrom :fibo-fbc-pas-fpas/RegisteredAgent,
                        :rdf/type           :owl/Restriction}},
    :skos/definition
-   "an agreement that designates a party as a registered agent to represent and act on behalf of another party in some, typically legal, financial, or medical capacity"})
+   "agreement that designates a party as a registered agent to represent and act on behalf of another party in some, typically legal, financial, or medical capacity"})
 
 (def AgentForServiceOfProcess
   {:cmns-av/explanatoryNote
@@ -179,7 +171,7 @@
       "http://www.law.cornell.edu/wex/agent_for_service_of_process"}},
    :rdfs/subClassOf :fibo-fbc-pas-fpas/RegisteredAgent,
    :skos/definition
-   "a registered agent (person or organization) designated by a business entity, such as a corporation, to receive legal correspondence on behalf of the business entity in the jurisdiction in which the agent's address is located"})
+   "registered agent (person or organization) designated by a business entity, such as a corporation, to receive legal correspondence on behalf of the business entity in the jurisdiction in which the agent's address is located"})
 
 (def AmendedTrade
   {:db/ident :fibo-fbc-pas-fpas/AmendedTrade,
@@ -202,17 +194,17 @@
     "https://spec.edmcouncil.org/fibo/ontology/FBC/ProductsAndServices/FinancialProductsAndServices/"},
    :rdfs/label "basket",
    :rdfs/subClassOf #{:cmns-col/Collection
-                      {:owl/minQualifiedCardinality 0,
-                       :owl/onClass    :fibo-fnd-pty-pty/IndependentParty,
-                       :owl/onProperty :fibo-fbc-pas-fpas/hasSelectingParty,
-                       :rdf/type       :owl/Restriction}
                       {:owl/onProperty     :cmns-col/hasConstituent,
                        :owl/someValuesFrom :fibo-fbc-pas-fpas/BasketConstituent,
                        :rdf/type           :owl/Restriction}
                       {:owl/minQualifiedCardinality 0,
                        :owl/onDataRange :xsd/string,
                        :owl/onProperty  :fibo-fbc-pas-fpas/hasSelectionCriteria,
-                       :rdf/type        :owl/Restriction}},
+                       :rdf/type        :owl/Restriction}
+                      {:owl/minQualifiedCardinality 0,
+                       :owl/onClass    :cmns-pts/Party,
+                       :owl/onProperty :fibo-fbc-pas-fpas/hasSelectingParty,
+                       :rdf/type       :owl/Restriction}},
    :skos/definition
    "collection of goods, services, or other things (e.g., financial contracts) that can be purchased and sold in some marketplace"})
 
@@ -302,6 +294,141 @@
    :skos/definition
    "stage in the lifecycle of a trade indicating that the trade has been finalized, and that there is no longer a corresponding open position on the books of the trader, eliminating any exposure"})
 
+(def ContractLifecycle
+  {:cmns-av/explanatoryNote
+   "Certain business agreements, such as partnership agreements,may involve planning, drafting/review/revision, execution and management, renewal, and possibly sunsetting phases. Financial contracts, such as loans and other instruments have specific stages and events during the execution and management phase, i.e. from the effective date of the contract through maturity and redemption.",
+   :db/ident :fibo-fbc-pas-fpas/ContractLifecycle,
+   :rdf/type :owl/Class,
+   :rdfs/isDefinedBy
+   {:xsd/anyURI
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/ProductsAndServices/FinancialProductsAndServices/"},
+   :rdfs/label "contract lifecycle",
+   :rdfs/subClassOf
+   #{{:owl/onProperty     :fibo-fnd-arr-lif/isLifecycleOf,
+      :owl/someValuesFrom :fibo-fnd-agr-ctr/Contract,
+      :rdf/type           :owl/Restriction}
+     {:owl/onProperty     :fibo-fnd-arr-lif/hasStage,
+      :owl/someValuesFrom :fibo-fbc-pas-fpas/ContractLifecycleStage,
+      :rdf/type           :owl/Restriction} :fibo-fnd-arr-lif/Lifecycle
+     {:owl/onProperty     :cmns-dsg/defines,
+      :owl/someValuesFrom :fibo-fbc-pas-fpas/ContractLifecycleStage,
+      :rdf/type           :owl/Restriction}},
+   :skos/definition
+   "lifecycle of an agreement, including, but not limited to a credit agreement, financial instrument, or other formal contract, from initial stages through retirement"})
+
+(def ContractLifecycleEvent
+  {:db/ident :fibo-fbc-pas-fpas/ContractLifecycleEvent,
+   :rdf/type :owl/Class,
+   :rdfs/isDefinedBy
+   {:xsd/anyURI
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/ProductsAndServices/FinancialProductsAndServices/"},
+   :rdfs/label "contract lifecycle event",
+   :rdfs/subClassOf
+   #{{:owl/minQualifiedCardinality 0,
+      :owl/onClass    :fibo-fbc-pas-fpas/ContractLifecycleEvent,
+      :owl/onProperty :cmns-dt/succeeds,
+      :rdf/type       :owl/Restriction} :fibo-fnd-arr-lif/LifecycleEvent
+     {:owl/onProperty     :cmns-cxtdsg/appliesTo,
+      :owl/someValuesFrom :fibo-fbc-pas-fpas/ContractLifecycleStage,
+      :rdf/type           :owl/Restriction}
+     {:owl/minQualifiedCardinality 0,
+      :owl/onClass    :fibo-fbc-pas-fpas/ContractLifecycleEventOccurrence,
+      :owl/onProperty :cmns-cls/classifies,
+      :rdf/type       :owl/Restriction}},
+   :skos/definition
+   "kind of event that occurs during one or more stages of the lifecycle of an agreement",
+   :skos/example
+   "a call notification or coupon payment as a part of a bond lifecycle"})
+
+(def ContractLifecycleEventOccurrence
+  {:db/ident :fibo-fbc-pas-fpas/ContractLifecycleEventOccurrence,
+   :rdf/type :owl/Class,
+   :rdfs/isDefinedBy
+   {:xsd/anyURI
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/ProductsAndServices/FinancialProductsAndServices/"},
+   :rdfs/label "contract lifecycle event occurrence",
+   :rdfs/subClassOf
+   #{{:owl/onProperty     :cmns-cxtdsg/appliesTo,
+      :owl/someValuesFrom :fibo-fbc-pas-fpas/ContractLifecycleStageOccurrence,
+      :rdf/type           :owl/Restriction}
+     :fibo-fnd-arr-lif/LifecycleEventOccurrence
+     {:owl/onClass    :fibo-fbc-pas-fpas/ContractLifecycleEvent,
+      :owl/onProperty :fibo-fnd-rel-rel/exemplifies,
+      :owl/qualifiedCardinality 1,
+      :rdf/type       :owl/Restriction}
+     {:owl/onProperty     :cmns-cls/isClassifiedBy,
+      :owl/someValuesFrom :fibo-fbc-pas-fpas/ContractLifecycleEvent,
+      :rdf/type           :owl/Restriction}},
+   :skos/definition
+   "actual occurrence of an event during a specific stage of a specific contract lifecycle"})
+
+(def ContractLifecycleOccurrence
+  {:db/ident :fibo-fbc-pas-fpas/ContractLifecycleOccurrence,
+   :rdf/type :owl/Class,
+   :rdfs/isDefinedBy
+   {:xsd/anyURI
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/ProductsAndServices/FinancialProductsAndServices/"},
+   :rdfs/label "contract lifecycle occurrence",
+   :rdfs/subClassOf #{:fibo-fnd-arr-lif/LifecycleOccurrence
+                      {:owl/onProperty :fibo-fnd-arr-lif/hasStage,
+                       :owl/someValuesFrom
+                       :fibo-fbc-pas-fpas/ContractLifecycleStageOccurrence,
+                       :rdf/type :owl/Restriction}
+                      {:owl/onClass    :fibo-fbc-pas-fpas/ContractLifecycle,
+                       :owl/onProperty :fibo-fnd-rel-rel/exemplifies,
+                       :owl/qualifiedCardinality 1,
+                       :rdf/type       :owl/Restriction}},
+   :skos/definition "realization of the lifecycle of a specific contract"})
+
+(def ContractLifecycleStage
+  {:db/ident :fibo-fbc-pas-fpas/ContractLifecycleStage,
+   :rdf/type :owl/Class,
+   :rdfs/isDefinedBy
+   {:xsd/anyURI
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/ProductsAndServices/FinancialProductsAndServices/"},
+   :rdfs/label "contract lifecycle stage",
+   :rdfs/subClassOf #{:fibo-fnd-arr-lif/LifecycleStage
+                      {:owl/onProperty     :cmns-cls/classifies,
+                       :owl/someValuesFrom :fibo-fnd-agr-ctr/Contract,
+                       :rdf/type           :owl/Restriction}
+                      {:owl/onProperty     :cmns-dsg/isDefinedIn,
+                       :owl/someValuesFrom :fibo-fbc-pas-fpas/ContractLifecycle,
+                       :rdf/type           :owl/Restriction}
+                      {:owl/onProperty :cmns-col/comprises,
+                       :owl/someValuesFrom
+                       :fibo-fbc-pas-fpas/ContractLifecycleEvent,
+                       :rdf/type :owl/Restriction}
+                      {:owl/onProperty     :fibo-fnd-arr-lif/isStageOf,
+                       :owl/someValuesFrom :fibo-fbc-pas-fpas/ContractLifecycle,
+                       :rdf/type           :owl/Restriction}
+                      {:owl/minQualifiedCardinality 0,
+                       :owl/onClass :fibo-fbc-pas-fpas/ContractLifecycleStage,
+                       :owl/onProperty :cmns-dt/succeeds,
+                       :rdf/type :owl/Restriction}},
+   :skos/definition "phase in the lifecycle of an agreement"})
+
+(def ContractLifecycleStageOccurrence
+  {:db/ident :fibo-fbc-pas-fpas/ContractLifecycleStageOccurrence,
+   :rdf/type :owl/Class,
+   :rdfs/isDefinedBy
+   {:xsd/anyURI
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/ProductsAndServices/FinancialProductsAndServices/"},
+   :rdfs/label "contract lifecycle stage occurrence",
+   :rdfs/subClassOf
+   #{:fibo-fnd-arr-lif/LifecycleStageOccurrence
+     {:owl/onProperty     :fibo-fnd-arr-lif/isStageOf,
+      :owl/someValuesFrom :fibo-fbc-pas-fpas/ContractLifecycleOccurrence,
+      :rdf/type           :owl/Restriction}
+     {:owl/onProperty     :cmns-col/comprises,
+      :owl/someValuesFrom :fibo-fbc-pas-fpas/ContractLifecycleEventOccurrence,
+      :rdf/type           :owl/Restriction}
+     {:owl/onClass    :fibo-fbc-pas-fpas/ContractLifecycleStage,
+      :owl/onProperty :fibo-fnd-rel-rel/exemplifies,
+      :owl/qualifiedCardinality 1,
+      :rdf/type       :owl/Restriction}},
+   :skos/definition
+   "realization, from start to finish of a phase in an occurrence of a specific contract lifecycle"})
+
 (def Dealer
   {:cmns-av/explanatoryNote
    "A dealer is a counterparty or principal in the transaction with the customer.",
@@ -325,6 +452,9 @@
    {:xsd/anyURI
     "https://spec.edmcouncil.org/fibo/ontology/FBC/ProductsAndServices/FinancialProductsAndServices/"},
    :rdfs/label "exposure",
+   :rdfs/subClassOf {:owl/onProperty     :cmns-cxtdsg/appliesTo,
+                     :owl/someValuesFrom :cmns-pts/Party,
+                     :rdf/type           :owl/Restriction},
    :skos/definition
    "the extent to which an individual or organization is unprotected and open to damage, danger, risk of suffering a loss, or uncertainty",
    :skos/example
@@ -337,10 +467,7 @@
    {:xsd/anyURI
     "https://spec.edmcouncil.org/fibo/ontology/FBC/ProductsAndServices/FinancialProductsAndServices/"},
    :rdfs/label "financial exposure",
-   :rdfs/subClassOf #{{:owl/onProperty     :cmns-cxtdsg/appliesTo,
-                       :owl/someValuesFrom :fibo-fnd-pty-pty/PartyInRole,
-                       :rdf/type           :owl/Restriction}
-                      :fibo-fbc-pas-fpas/Exposure},
+   :rdfs/subClassOf #{:fibo-fbc-pas-fpas/Exposure :cmns-qtu/Expression},
    :skos/definition
    "the extent to which an individual or organization is open to risk of suffering a loss in a transaction, or with respect to some investment or set of investments, e.g., some holding; the amount one stands to lose in that transaction or investment",
    :skos/example
@@ -389,7 +516,7 @@
                        :owl/someValuesFrom :fibo-fbc-pas-fpas/FinancialProduct,
                        :rdf/type           :owl/Restriction}},
    :skos/definition
-   "a catalog of financial products and/or services available for sale with their description and other product details"})
+   "catalog of financial products and/or services available for sale with their description and other product details"})
 
 (def FinancialService
   {:db/ident :fibo-fbc-pas-fpas/FinancialService,
@@ -414,13 +541,13 @@
     "https://spec.edmcouncil.org/fibo/ontology/FBC/ProductsAndServices/FinancialProductsAndServices/"},
    :rdfs/label "financial service provider",
    :rdfs/subClassOf #{:fibo-be-fct-fct/FunctionalBusinessEntity
-                      {:owl/onClass    :fibo-be-le-lp/LegalEntity,
-                       :owl/onProperty :fibo-fnd-rel-rel/hasIdentity,
-                       :owl/qualifiedCardinality 1,
-                       :rdf/type       :owl/Restriction}
                       {:owl/onProperty     :fibo-fnd-rel-rel/provides,
                        :owl/someValuesFrom :fibo-fbc-pas-fpas/FinancialService,
                        :rdf/type           :owl/Restriction}
+                      {:owl/onClass    :fibo-be-le-lp/LegalEntity,
+                       :owl/onProperty :cmns-rlcmp/isPlayedBy,
+                       :owl/qualifiedCardinality 1,
+                       :rdf/type       :owl/Restriction}
                       :fibo-fnd-pas-pas/ServiceProvider},
    :skos/definition
    "functional entity either licensed to provide financial services to consumers and/or businesses or established by law to provide financial services, such as a central bank"})
@@ -450,8 +577,8 @@
    {:xsd/anyURI
     "https://spec.edmcouncil.org/fibo/ontology/FBC/ProductsAndServices/FinancialProductsAndServices/"},
    :rdfs/label "legal agent",
-   :rdfs/subClassOf #{:fibo-fnd-pty-rl/AgentInRole
-                      {:owl/onProperty :fibo-fnd-pty-rl/isPlayedBy,
+   :rdfs/subClassOf #{:cmns-pts/AgentRole
+                      {:owl/onProperty :cmns-rlcmp/isPlayedBy,
                        :owl/someValuesFrom
                        {:owl/onProperty :fibo-fnd-law-lcap/hasCapacity,
                         :owl/someValuesFrom
@@ -496,30 +623,33 @@
     "https://spec.edmcouncil.org/fibo/ontology/FBC/ProductsAndServices/FinancialProductsAndServices/"},
    :rdfs/label "offeree",
    :rdfs/subClassOf
-   #{{:owl/onProperty     :fibo-fnd-pty-rl/isPlayedBy,
-      :owl/someValuesFrom {:owl/onProperty     :fibo-fnd-pty-pty/isAPartyTo,
+   #{:cmns-pts/PartyRole
+     {:owl/onProperty     :cmns-rlcmp/isPlayedBy,
+      :owl/someValuesFrom {:owl/onProperty     :cmns-pts/isAPartyTo,
                            :owl/someValuesFrom :fibo-fbc-pas-fpas/Offering,
                            :rdf/type           :owl/Restriction},
-      :rdf/type           :owl/Restriction} :fibo-fnd-pty-pty/PartyInRole},
+      :rdf/type           :owl/Restriction}},
    :skos/definition
    "party that receives an offer from something from someone (i.e., an offerer) based on the terms of the offering"})
 
 (def Offering
   {:cmns-av/explanatoryNote
    "The making of an offer is the first of three steps in the traditional process of forming a valid contract: an offer, an acceptance of the offer, and an exchange of consideration. (Consideration is the act of doing something or promising to do something that a person is not legally required to do, or the forbearance or the promise to forbear from doing something that he or she has the legal right to do.)",
+   :cmns-av/usageNote
+   "An offering may or may not be considered a 'state of affairs' or situation, depending on the circumstances. In some cases such as a prospectus or other offering in the context of financial services, an offering may also be classified as a situation. Users may choose to model an individual offering as both an offering and situation, depending on the circumstances, in other words.",
    :db/ident :fibo-fbc-pas-fpas/Offering,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    {:xsd/anyURI
     "https://spec.edmcouncil.org/fibo/ontology/FBC/ProductsAndServices/FinancialProductsAndServices/"},
    :rdfs/label "offering",
-   :rdfs/subClassOf #{{:owl/onProperty     :fibo-fnd-pty-pty/hasPartyInRole,
+   :rdfs/subClassOf #{{:owl/minQualifiedCardinality 0,
+                       :owl/onClass    :fibo-fbc-pas-fpas/Offeree,
+                       :owl/onProperty :cmns-pts/hasPartyRole,
+                       :rdf/type       :owl/Restriction}
+                      {:owl/onProperty     :cmns-pts/hasPartyRole,
                        :owl/someValuesFrom :fibo-fbc-pas-fpas/Offeror,
                        :rdf/type           :owl/Restriction}
-                      {:owl/minQualifiedCardinality 0,
-                       :owl/onClass    :fibo-fbc-pas-fpas/Offeree,
-                       :owl/onProperty :fibo-fnd-pty-pty/hasPartyInRole,
-                       :rdf/type       :owl/Restriction}
                       {:owl/onProperty     :cmns-cxtdsg/appliesTo,
                        :owl/someValuesFrom :owl/Thing,
                        :rdf/type           :owl/Restriction}
@@ -537,16 +667,17 @@
     "https://spec.edmcouncil.org/fibo/ontology/FBC/ProductsAndServices/FinancialProductsAndServices/"},
    :rdfs/label "offeror",
    :rdfs/subClassOf
-   #{{:owl/onProperty     :fibo-fnd-pty-rl/isPlayedBy,
-      :owl/someValuesFrom {:owl/onProperty     :fibo-fnd-pty-pty/isAPartyTo,
-                           :owl/someValuesFrom :fibo-fbc-pas-fpas/Offering,
-                           :rdf/type           :owl/Restriction},
-      :rdf/type           :owl/Restriction}
+   #{:cmns-pts/PartyRole
      {:owl/onProperty     :fibo-fnd-rel-rel/issues,
       :owl/someValuesFrom :fibo-fbc-pas-fpas/Offering,
-      :rdf/type           :owl/Restriction} :fibo-fnd-pty-pty/PartyInRole},
+      :rdf/type           :owl/Restriction}
+     {:owl/onProperty     :cmns-rlcmp/isPlayedBy,
+      :owl/someValuesFrom {:owl/onProperty     :cmns-pts/isAPartyTo,
+                           :owl/someValuesFrom :fibo-fbc-pas-fpas/Offering,
+                           :rdf/type           :owl/Restriction},
+      :rdf/type           :owl/Restriction}},
    :skos/definition
-   "a party that proposes to make something available to someone (i.e., an offeree) based on the terms of the offering"})
+   "party that proposes to make something available to someone (i.e., an offeree) based on the terms of the offering"})
 
 (def OpenTrade
   {:db/ident :fibo-fbc-pas-fpas/OpenTrade,
@@ -592,7 +723,7 @@
      {:owl/onProperty     :fibo-fnd-arr-lif/isLifecycleOf,
       :owl/someValuesFrom :fibo-fnd-pas-pas/Product,
       :rdf/type           :owl/Restriction}},
-   :skos/definition "a lifecycle specific to a product or product family",
+   :skos/definition "lifecycle specific to a product or product family",
    :skos/example
    "The product life cycle describes the period of time over which an item is developed, brought to market and eventually removed from the market. The cycle is broken into four stages: introduction, growth, maturity and decline. The idea of the product life cycle is used in marketing to decide when it is appropriate to advertise, reduce prices, explore new markets or create new packaging."})
 
@@ -604,13 +735,19 @@
     "https://spec.edmcouncil.org/fibo/ontology/FBC/ProductsAndServices/FinancialProductsAndServices/"},
    :rdfs/label "product lifecycle event",
    :rdfs/subClassOf
-   #{{:owl/onProperty     :cmns-cxtdsg/appliesTo,
+   #{{:owl/minQualifiedCardinality 0,
+      :owl/onClass    :fibo-fbc-pas-fpas/ProductLifecycleEvent,
+      :owl/onProperty :cmns-dt/succeeds,
+      :rdf/type       :owl/Restriction}
+     {:owl/onProperty     :cmns-cxtdsg/appliesTo,
       :owl/someValuesFrom :fibo-fbc-pas-fpas/ProductLifecycleStage,
-      :rdf/type           :owl/Restriction} :fibo-fnd-arr-lif/LifecycleEvent},
+      :rdf/type           :owl/Restriction} :fibo-fnd-arr-lif/LifecycleEvent
+     {:owl/minQualifiedCardinality 0,
+      :owl/onClass    :fibo-fbc-pas-fpas/ProductLifecycleEventOccurrence,
+      :owl/onProperty :cmns-cls/classifies,
+      :rdf/type       :owl/Restriction}},
    :skos/definition
-   "a kind of event that occurs during one or more stages of a product lifecycle",
-   :skos/example
-   "a call notification or coupon payment as a part of a bond lifecycle"})
+   "kind of event that occurs during one or more stages of a product lifecycle"})
 
 (def ProductLifecycleEventOccurrence
   {:db/ident :fibo-fbc-pas-fpas/ProductLifecycleEventOccurrence,
@@ -620,7 +757,7 @@
     "https://spec.edmcouncil.org/fibo/ontology/FBC/ProductsAndServices/FinancialProductsAndServices/"},
    :rdfs/label "product lifecycle event occurrence",
    :rdfs/subClassOf #{{:owl/onClass    :fibo-fbc-pas-fpas/ProductLifecycleEvent,
-                       :owl/onProperty :fibo-fnd-dt-oc/exemplifies,
+                       :owl/onProperty :fibo-fnd-rel-rel/exemplifies,
                        :owl/qualifiedCardinality 1,
                        :rdf/type       :owl/Restriction}
                       :fibo-fnd-arr-lif/LifecycleEventOccurrence
@@ -629,7 +766,7 @@
                        :fibo-fbc-pas-fpas/ProductLifecycleStageOccurrence,
                        :rdf/type :owl/Restriction}},
    :skos/definition
-   "an occurrence of an event that occurs during a specific stage of a specific product lifecycle"})
+   "actual occurrence of an event that happens during a specific stage of a specific product lifecycle"})
 
 (def ProductLifecycleOccurrence
   {:db/ident :fibo-fbc-pas-fpas/ProductLifecycleOccurrence,
@@ -639,15 +776,15 @@
     "https://spec.edmcouncil.org/fibo/ontology/FBC/ProductsAndServices/FinancialProductsAndServices/"},
    :rdfs/label "product lifecycle occurrence",
    :rdfs/subClassOf #{:fibo-fnd-arr-lif/LifecycleOccurrence
+                      {:owl/onClass    :fibo-fbc-pas-fpas/ProductLifecycle,
+                       :owl/onProperty :fibo-fnd-rel-rel/exemplifies,
+                       :owl/qualifiedCardinality 1,
+                       :rdf/type       :owl/Restriction}
                       {:owl/onProperty :fibo-fnd-arr-lif/hasStage,
                        :owl/someValuesFrom
                        :fibo-fbc-pas-fpas/ProductLifecycleStageOccurrence,
-                       :rdf/type :owl/Restriction}
-                      {:owl/onClass    :fibo-fbc-pas-fpas/ProductLifecycle,
-                       :owl/onProperty :fibo-fnd-dt-oc/exemplifies,
-                       :owl/qualifiedCardinality 1,
-                       :rdf/type       :owl/Restriction}},
-   :skos/definition "a realization of a product lifecycle"})
+                       :rdf/type :owl/Restriction}},
+   :skos/definition "realization of the lifecycle of a specific product"})
 
 (def ProductLifecycleStage
   {:db/ident :fibo-fbc-pas-fpas/ProductLifecycleStage,
@@ -660,6 +797,10 @@
                       {:owl/onProperty     :fibo-fnd-arr-lif/isStageOf,
                        :owl/someValuesFrom :fibo-fbc-pas-fpas/ProductLifecycle,
                        :rdf/type           :owl/Restriction}
+                      {:owl/minQualifiedCardinality 0,
+                       :owl/onClass    :fibo-fbc-pas-fpas/ProductLifecycleStage,
+                       :owl/onProperty :cmns-dt/succeeds,
+                       :rdf/type       :owl/Restriction}
                       {:owl/onProperty     :cmns-dsg/isDefinedIn,
                        :owl/someValuesFrom :fibo-fbc-pas-fpas/ProductLifecycle,
                        :rdf/type           :owl/Restriction}
@@ -670,9 +811,9 @@
                        :owl/someValuesFrom
                        :fibo-fbc-pas-fpas/ProductLifecycleEvent,
                        :rdf/type :owl/Restriction}},
-   :skos/definition "a phase in a product lifecycle",
+   :skos/definition "phase in a product lifecycle",
    :skos/example
-   "a research and development phase of a product lifecycle, the introduction phase in a marketing lifecycle, a growth stage in an economic lifecycle, or the origination phase in the lifecycle of a loan"})
+   "research and development phase of a product lifecycle or the introduction phase in a marketing lifecycle, growth stage in an economic lifecycle for a product"})
 
 (def ProductLifecycleStageOccurrence
   {:db/ident :fibo-fbc-pas-fpas/ProductLifecycleStageOccurrence,
@@ -683,18 +824,18 @@
    :rdfs/label "product lifecycle stage occurrence",
    :rdfs/subClassOf
    #{:fibo-fnd-arr-lif/LifecycleStageOccurrence
-     {:owl/onClass    :fibo-fbc-pas-fpas/ProductLifecycleStage,
-      :owl/onProperty :fibo-fnd-dt-oc/exemplifies,
-      :owl/qualifiedCardinality 1,
-      :rdf/type       :owl/Restriction}
      {:owl/onProperty     :fibo-fnd-arr-lif/isStageOf,
       :owl/someValuesFrom :fibo-fbc-pas-fpas/ProductLifecycleOccurrence,
       :rdf/type           :owl/Restriction}
      {:owl/onProperty     :cmns-col/comprises,
       :owl/someValuesFrom :fibo-fbc-pas-fpas/ProductLifecycleEventOccurrence,
-      :rdf/type           :owl/Restriction}},
+      :rdf/type           :owl/Restriction}
+     {:owl/onClass    :fibo-fbc-pas-fpas/ProductLifecycleStage,
+      :owl/onProperty :fibo-fnd-rel-rel/exemplifies,
+      :owl/qualifiedCardinality 1,
+      :rdf/type       :owl/Restriction}},
    :skos/definition
-   "an instance of a phase in an occurrence of a given product lifecycle"})
+   "realization of a specific stage in the lifecycle of a given product"})
 
 (def RegisteredAgent
   {:cmns-av/explanatoryNote
@@ -710,9 +851,10 @@
                     "http://www.sos.state.tx.us/corp/registeredagents.shtml"}
                    {:xsd/anyURI "https://thelawdictionary.org/agent/"}},
    :rdfs/subClassOf
-   #{{:owl/onProperty     :fibo-fnd-pty-rl/isPlayedBy,
+   #{:fibo-fnd-agr-ctr/ContractParty
+     {:owl/onProperty     :cmns-rlcmp/isPlayedBy,
       :owl/someValuesFrom {:owl/intersectionOf
-                           [{:owl/onProperty :fibo-fnd-pty-pty/isAPartyTo,
+                           [{:owl/onProperty :cmns-pts/isAPartyTo,
                              :owl/someValuesFrom
                              :fibo-fbc-pas-fpas/AgencyAgreement,
                              :rdf/type :owl/Restriction}
@@ -720,10 +862,9 @@
                              :owl/someValuesFrom :fibo-fnd-law-jur/Jurisdiction,
                              :rdf/type           :owl/Restriction}],
                            :rdf/type :owl/Class},
-      :rdf/type           :owl/Restriction} :fibo-fnd-agr-ctr/ContractParty
-     :fibo-fbc-pas-fpas/LegalAgent},
+      :rdf/type           :owl/Restriction} :fibo-fbc-pas-fpas/LegalAgent},
    :skos/definition
-   "a legal agent designated by another party (person or organization), to represent and acts on their behalf under a formal agency agreement"})
+   "legal agent designated by some party to represent them and act on their behalf under a formal agency agreement"})
 
 (def RegulatedCommodity
   {:cmns-av/explanatoryNote
@@ -742,7 +883,7 @@
                        :rdf/type           :owl/Restriction}
                       :fibo-fnd-pas-pas/Commodity},
    :skos/definition
-   "a commodity under the jurisdiction of the regulatory agency, such as the Commodities Futures Trading Commission (CFTF), which includes any commodity traded in an organized contracts market"})
+   "commodity under the jurisdiction of the regulatory agency, such as the Commodities Futures Trading Commission (CFTF) in the United States, which includes any commodity traded in an organized contracts market"})
 
 (def SettlementTerms
   {:cmns-av/explanatoryNote
@@ -802,34 +943,40 @@
    {:xsd/anyURI
     "https://spec.edmcouncil.org/fibo/ontology/FBC/ProductsAndServices/FinancialProductsAndServices/"},
    :rdfs/label "trade",
-   :rdfs/subClassOf
-   #{{:owl/minQualifiedCardinality 0,
-      :owl/onClass    :fibo-fbc-pas-fpas/TradeLifecycle,
-      :owl/onProperty :cmns-cls/isCharacterizedBy,
-      :rdf/type       :owl/Restriction}
-     {:owl/minQualifiedCardinality 0,
-      :owl/onClass    :fibo-fbc-pas-fpas/Trader,
-      :owl/onProperty :fibo-fbc-pas-fpas/isFacilitatedBy,
-      :rdf/type       :owl/Restriction}
-     {:owl/onProperty     :fibo-fbc-pas-fpas/isEmbodiedIn,
-      :owl/someValuesFrom :fibo-fnd-agr-ctr/Contract,
-      :rdf/type           :owl/Restriction}
-     {:owl/minQualifiedCardinality 0,
-      :owl/onClass    :fibo-fbc-pas-fpas/TradeIdentifier,
-      :owl/onProperty :cmns-id/isIdentifiedBy,
-      :rdf/type       :owl/Restriction}
-     {:owl/minQualifiedCardinality 0,
-      :owl/onClass    :fibo-fbc-pas-fpas/Trade,
-      :owl/onProperty :cmns-dt/succeeds,
-      :rdf/type       :owl/Restriction} :fibo-fnd-pas-pas/TransactionEvent
-     {:owl/onProperty     :fibo-fnd-rel-rel/involves,
-      :owl/someValuesFrom {:owl/unionOf [:fibo-fnd-pas-pas/Good
-                                         :fibo-fnd-pas-pas/Service
-                                         :fibo-fnd-agr-ctr/Contract],
-                           :rdf/type    :owl/Class},
-      :rdf/type           :owl/Restriction}},
+   :rdfs/subClassOf #{{:owl/minQualifiedCardinality 0,
+                       :owl/onClass    :fibo-fbc-pas-fpas/TradeLifecycle,
+                       :owl/onProperty :cmns-cls/isCharacterizedBy,
+                       :rdf/type       :owl/Restriction}
+                      {:owl/minQualifiedCardinality 0,
+                       :owl/onClass    :fibo-fbc-pas-fpas/Trader,
+                       :owl/onProperty :fibo-fbc-pas-fpas/isFacilitatedBy,
+                       :rdf/type       :owl/Restriction}
+                      {:owl/onProperty     :fibo-fbc-pas-fpas/isEmbodiedIn,
+                       :owl/someValuesFrom :fibo-fnd-agr-ctr/Contract,
+                       :rdf/type           :owl/Restriction}
+                      {:owl/minQualifiedCardinality 0,
+                       :owl/onClass    :fibo-fbc-pas-fpas/TradeIdentifier,
+                       :owl/onProperty :cmns-id/isIdentifiedBy,
+                       :rdf/type       :owl/Restriction}
+                      {:owl/minQualifiedCardinality 0,
+                       :owl/onClass    :fibo-fbc-pas-fpas/Trade,
+                       :owl/onProperty :cmns-dt/succeeds,
+                       :rdf/type       :owl/Restriction} :cmns-pts/Situation
+                      {:owl/onProperty     :fibo-fnd-pas-pas/hasSeller,
+                       :owl/someValuesFrom :fibo-fnd-pas-pas/Seller,
+                       :rdf/type           :owl/Restriction}
+                      {:owl/onProperty     :fibo-fnd-pas-pas/hasBuyer,
+                       :owl/someValuesFrom :fibo-fnd-pas-pas/Buyer,
+                       :rdf/type           :owl/Restriction}
+                      {:owl/onProperty     :fibo-fnd-rel-rel/involves,
+                       :owl/someValuesFrom {:owl/unionOf
+                                            [:fibo-fnd-pas-pas/Good
+                                             :fibo-fnd-pas-pas/Service
+                                             :fibo-fnd-agr-ctr/Contract],
+                                            :rdf/type :owl/Class},
+                       :rdf/type           :owl/Restriction}},
    :skos/definition
-   "agreement between parties participating in a voluntary action of buying and selling goods and services"})
+   "situation that realizes an agreement between parties participating in a voluntary action of buying and selling goods and services"})
 
 (def TradeIdentifier
   {:db/ident :fibo-fbc-pas-fpas/TradeIdentifier,
@@ -845,7 +992,7 @@
    :skos/definition
    "sequence of characters identifying a trade within some context",
    :skos/note
-   "Note that a given trade may consist of multiple transactions, and thus there may be multiple UTIs associated with a trade."})
+   "Note that a given trade may consist of multiple transactions, and thus there may be multiple identifiers for such transactions associated with a specific trade."})
 
 (def TradeLifecycle
   {:db/ident :fibo-fbc-pas-fpas/TradeLifecycle,
@@ -865,9 +1012,9 @@
       :owl/someValuesFrom :fibo-fbc-pas-fpas/TradeLifecycleStage,
       :rdf/type           :owl/Restriction}},
    :skos/definition
-   "a lifecycle that defines the evolution of a trade, from initiation through settlement",
+   "lifecycle that defines the evolution of a trade, from initiation through settlement",
    :skos/example
-   "The trade life cycle describes the period of time over which a trade is initiated, typically as a part of a broader deal, consumated, processed and executed, settled or closed for other reasons, and reported."})
+   "The trade life cycle covers the period of time over which a trade is initiated, typically as a part of a broader deal, is consumated, processed and executed, is settled or closed for other reasons, and is reported. Parts of a trade lifecycle may include or overlap with the lifecycle of one or more contracts."})
 
 (def TradeLifecycleEvent
   {:db/ident :fibo-fbc-pas-fpas/TradeLifecycleEvent,
@@ -880,12 +1027,16 @@
    #{{:owl/minQualifiedCardinality 0,
       :owl/onClass    :fibo-fbc-pas-fpas/TradeLifecycleEvent,
       :owl/onProperty :cmns-dt/succeeds,
+      :rdf/type       :owl/Restriction}
+     {:owl/minQualifiedCardinality 0,
+      :owl/onClass    :fibo-fbc-pas-fpas/TradeLifecycleEventOccurrence,
+      :owl/onProperty :cmns-cls/classifies,
       :rdf/type       :owl/Restriction} :fibo-fnd-arr-lif/LifecycleEvent
      {:owl/onProperty     :cmns-cxtdsg/appliesTo,
       :owl/someValuesFrom :fibo-fbc-pas-fpas/TradeLifecycleStage,
       :rdf/type           :owl/Restriction}},
    :skos/definition
-   "a kind of event that occurs during one or more stages of the lifecycle of a trade"})
+   "kind of event that occurs during one or more stages of the lifecycle of a trade"})
 
 (def TradeLifecycleEventOccurrence
   {:db/ident :fibo-fbc-pas-fpas/TradeLifecycleEventOccurrence,
@@ -896,7 +1047,7 @@
    :rdfs/label "trade lifecycle event occurrence",
    :rdfs/subClassOf
    #{{:owl/onClass    :fibo-fbc-pas-fpas/TradeLifecycleEvent,
-      :owl/onProperty :fibo-fnd-dt-oc/exemplifies,
+      :owl/onProperty :fibo-fnd-rel-rel/exemplifies,
       :owl/qualifiedCardinality 1,
       :rdf/type       :owl/Restriction}
      :fibo-fnd-arr-lif/LifecycleEventOccurrence
@@ -908,7 +1059,7 @@
       :owl/someValuesFrom :fibo-fbc-pas-fpas/TradeLifecycleStageOccurrence,
       :rdf/type           :owl/Restriction}},
    :skos/definition
-   "an occurrence of an event that occurs during a specific stage of a specific trade lifecycle"})
+   "realization of an event that happens during a specific stage of a specific trade lifecycle"})
 
 (def TradeLifecycleOccurrence
   {:db/ident :fibo-fbc-pas-fpas/TradeLifecycleOccurrence,
@@ -917,16 +1068,15 @@
    {:xsd/anyURI
     "https://spec.edmcouncil.org/fibo/ontology/FBC/ProductsAndServices/FinancialProductsAndServices/"},
    :rdfs/label "trade lifecycle occurrence",
-   :rdfs/subClassOf #{:fibo-fnd-arr-lif/LifecycleOccurrence
-                      {:owl/onProperty :fibo-fnd-arr-lif/hasStage,
-                       :owl/someValuesFrom
-                       :fibo-fbc-pas-fpas/TradeLifecycleStageOccurrence,
-                       :rdf/type :owl/Restriction}
-                      {:owl/onClass    :fibo-fbc-pas-fpas/TradeLifecycle,
-                       :owl/onProperty :fibo-fnd-dt-oc/exemplifies,
-                       :owl/qualifiedCardinality 1,
-                       :rdf/type       :owl/Restriction}},
-   :skos/definition "a realization of a trade lifecycle"})
+   :rdfs/subClassOf
+   #{{:owl/onClass    :fibo-fbc-pas-fpas/TradeLifecycle,
+      :owl/onProperty :fibo-fnd-rel-rel/exemplifies,
+      :owl/qualifiedCardinality 1,
+      :rdf/type       :owl/Restriction} :fibo-fnd-arr-lif/LifecycleOccurrence
+     {:owl/onProperty     :fibo-fnd-arr-lif/hasStage,
+      :owl/someValuesFrom :fibo-fbc-pas-fpas/TradeLifecycleStageOccurrence,
+      :rdf/type           :owl/Restriction}},
+   :skos/definition "realization of the lifecycle for a specific trade"})
 
 (def TradeLifecycleStage
   {:db/ident :fibo-fbc-pas-fpas/TradeLifecycleStage,
@@ -952,7 +1102,7 @@
      {:owl/onProperty     :cmns-col/comprises,
       :owl/someValuesFrom :fibo-fbc-pas-fpas/TradeLifecycleEvent,
       :rdf/type           :owl/Restriction}},
-   :skos/definition "a phase in the lifecycle of a trade"})
+   :skos/definition "phase in the lifecycle of a trade"})
 
 (def TradeLifecycleStageOccurrence
   {:db/ident :fibo-fbc-pas-fpas/TradeLifecycleStageOccurrence,
@@ -974,11 +1124,11 @@
       :owl/someValuesFrom :fibo-fbc-pas-fpas/TradeLifecycleEventOccurrence,
       :rdf/type           :owl/Restriction}
      {:owl/onClass    :fibo-fbc-pas-fpas/TradeLifecycleStage,
-      :owl/onProperty :fibo-fnd-dt-oc/exemplifies,
+      :owl/onProperty :fibo-fnd-rel-rel/exemplifies,
       :owl/qualifiedCardinality 1,
       :rdf/type       :owl/Restriction}},
    :skos/definition
-   "an instance of a phase in an occurrence of a given trade lifecycle"})
+   "realization of a phase in the lifecycle of a specific trade"})
 
 (def Trader
   {:db/ident :fibo-fbc-pas-fpas/Trader,
@@ -988,7 +1138,7 @@
     "https://spec.edmcouncil.org/fibo/ontology/FBC/ProductsAndServices/FinancialProductsAndServices/"},
    :rdfs/label "trader",
    :rdfs/subClassOf
-   #{{:owl/onProperty     :fibo-fnd-pty-rl/isPlayedBy,
+   #{{:owl/onProperty     :cmns-rlcmp/isPlayedBy,
       :owl/someValuesFrom {:owl/onProperty :fibo-fnd-law-lcap/hasCapacity,
                            :owl/someValuesFrom
                            :fibo-fnd-law-lcap/ContractualCapability,
@@ -1042,13 +1192,14 @@
    {:xsd/anyURI
     "https://spec.edmcouncil.org/fibo/ontology/FBC/ProductsAndServices/FinancialProductsAndServices/"},
    :rdfs/label "weighted basket",
-   :rdfs/subClassOf
-   #{{:owl/onProperty     :fibo-fnd-utl-alx/hasExpression,
-      :owl/someValuesFrom :fibo-fnd-utl-alx/WeightingFunction,
-      :rdf/type           :owl/Restriction} :cmns-col/StructuredCollection
-     {:owl/onProperty     :cmns-col/hasConstituent,
-      :owl/someValuesFrom :fibo-fbc-pas-fpas/WeightedBasketConstituent,
-      :rdf/type           :owl/Restriction} :fibo-fbc-pas-fpas/Basket},
+   :rdfs/subClassOf #{:cmns-col/StructuredCollection
+                      {:owl/onProperty     :cmns-qtu/hasExpression,
+                       :owl/someValuesFrom :fibo-fnd-utl-alx/WeightingFunction,
+                       :rdf/type           :owl/Restriction}
+                      {:owl/onProperty :cmns-col/hasConstituent,
+                       :owl/someValuesFrom
+                       :fibo-fbc-pas-fpas/WeightedBasketConstituent,
+                       :rdf/type :owl/Restriction} :fibo-fbc-pas-fpas/Basket},
    :skos/definition
    "basket whose constituents have some relative importance with respect to one another"})
 
@@ -1074,8 +1225,9 @@
    {:xsd/anyURI
     "https://spec.edmcouncil.org/fibo/ontology/FBC/ProductsAndServices/FinancialProductsAndServices/"},
    :rdfs/label "facilitates",
+   :rdfs/subPropertyOf :cmns-pts/playsActivePartyIn,
    :skos/definition
-   "provides the context in which an event, a task, a conversation or something else can occur"})
+   "acts as an enabler in a situation in which an event, a task, a conversation or something else occurs"})
 
 (def hasGeneratingEntity
   {:db/ident :fibo-fbc-pas-fpas/hasGeneratingEntity,
@@ -1090,7 +1242,7 @@
 
 (def hasGeneratingEntityIdentifier
   {:cmns-av/explanatoryNote
-   "Note that the range of is identified by must be that entity's LEI in the context of a UTI",
+   "Note that the range of is identified by must be that entity's LEI in the context of a UTI.",
    :db/ident :fibo-fbc-pas-fpas/hasGeneratingEntityIdentifier,
    :owl/propertyChainAxiom [:fibo-fbc-pas-fpas/hasGeneratingEntity
                             :cmns-id/isIdentifiedBy],
@@ -1101,7 +1253,7 @@
     "https://spec.edmcouncil.org/fibo/ontology/FBC/ProductsAndServices/FinancialProductsAndServices/"},
    :rdfs/label "has generating entity identifier",
    :skos/definition
-   "specifies an identifier for the entity that generated something"})
+   "specifies an identifier for the entity that generated a unique transaction identifier"})
 
 (def hasLegalAgent
   {:db/ident :fibo-fbc-pas-fpas/hasLegalAgent,
@@ -1111,7 +1263,7 @@
     "https://spec.edmcouncil.org/fibo/ontology/FBC/ProductsAndServices/FinancialProductsAndServices/"},
    :rdfs/label "has registered agent",
    :rdfs/range :fibo-fbc-pas-fpas/LegalAgent,
-   :rdfs/subPropertyOf :fibo-fnd-pty-pty/hasPartyInRole,
+   :rdfs/subPropertyOf :cmns-pts/hasPartyRole,
    :skos/definition
    "identifies a party as one that has the legal, medical or financial capacity to act on behalf of someone else under specific circumstances"})
 
@@ -1182,8 +1334,8 @@
    {:xsd/anyURI
     "https://spec.edmcouncil.org/fibo/ontology/FBC/ProductsAndServices/FinancialProductsAndServices/"},
    :rdfs/label "has selecting party",
-   :rdfs/range :fibo-fnd-pty-pty/IndependentParty,
-   :rdfs/subPropertyOf :fibo-fnd-pty-pty/hasParty,
+   :rdfs/range :cmns-pts/Party,
+   :rdfs/subPropertyOf :cmns-pts/hasParty,
    :skos/definition
    "indicates the person(s) or organization(s) responsible for determining the contents of a basket"})
 
@@ -1244,6 +1396,7 @@
    {:xsd/anyURI
     "https://spec.edmcouncil.org/fibo/ontology/FBC/ProductsAndServices/FinancialProductsAndServices/"},
    :rdfs/label "is facilitated by",
+   :rdfs/subPropertyOf :cmns-pts/hasActiveParty,
    :skos/definition
    "identifies someone or something that expedites some event, transaction, conversation or something else in some context"})
 
@@ -1258,15 +1411,6 @@
    :skos/definition
    "relates an offering to one or things that are the subject of the offer"})
 
-(def precedes
-  {:db/ident :fibo-fbc-pas-fpas/precedes,
-   :owl/deprecated true,
-   :owl/equivalentProperty :cmns-dt/precedes,
-   :rdf/type :owl/ObjectProperty,
-   :rdfs/isDefinedBy
-   {:xsd/anyURI
-    "https://spec.edmcouncil.org/fibo/ontology/FBC/ProductsAndServices/FinancialProductsAndServices/"}})
-
 (def relatesTo
   {:db/ident :fibo-fbc-pas-fpas/relatesTo,
    :rdf/type :owl/ObjectProperty,
@@ -1276,81 +1420,64 @@
    :rdfs/label "relates to",
    :skos/definition "has a logical or causal connection with"})
 
-(def succeeds
-  {:db/ident :fibo-fbc-pas-fpas/succeeds,
-   :owl/deprecated true,
-   :owl/equivalentProperty :cmns-dt/succeeds,
-   :rdf/type :owl/ObjectProperty,
-   :rdfs/isDefinedBy
-   {:xsd/anyURI
-    "https://spec.edmcouncil.org/fibo/ontology/FBC/ProductsAndServices/FinancialProductsAndServices/"}})
-
 (def urn:uuid:de475ece-328c-5cc2-a6e1-e3687e181321
-  {:cmns-av/copyright
-   #{"Copyright (c) 2015-2023 EDM Council, Inc."
-     "Copyright (c) 2015-2023 Object Management Group, Inc."},
+  {:cmns-av/copyright #{"Copyright (c) 2015-2024 Object Management Group, Inc."
+                        "Copyright (c) 2015-2024 EDM Council, Inc."},
    :dcterms/abstract
    "This ontology defines concepts that extend the Foundations (FND) Products and Services concepts specifically for the financial industry, including financial product, financial service, and financial service provider.",
    :dcterms/license {:xsd/anyURI "https://opensource.org/licenses/MIT"},
    :fibo-fnd-utl-av/hasMaturityLevel :fibo-fnd-utl-av/Release,
    :owl/imports
    #{{:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Quantities/QuantitiesAndUnits/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/ProductsAndServices/ProductsAndServices/"}
+     {:xsd/anyURI "https://www.omg.org/spec/Commons/RolesAndCompositions/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Utilities/Analytics/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Accounting/CurrencyAmount/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Utilities/AnnotationVocabulary/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Law/LegalCapacity/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/GoalsAndObjectives/Objectives/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/BE/OwnershipAndControl/Executives/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/BE/FunctionalEntities/Publishers/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/Identifiers/"}
+     {:xsd/anyURI "https://www.omg.org/spec/Commons/PartiesAndSituations/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/ContextualDesignators/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Parties/Parties/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Arrangements/Lifecycles/"}
+     {:xsd/anyURI "https://www.omg.org/spec/Commons/QuantitiesAndUnits/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FBC/FunctionalEntities/RegulatoryAgencies/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/OwnershipAndControl/Ownership/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Law/Jurisdiction/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Law/Jurisdiction/"}
+     {:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/BE/OwnershipAndControl/Executives/"}
+     {:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/BE/LegalEntities/LEIEntities/"}
+     {:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/BE/LegalEntities/LegalPersons/"}
+     {:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Utilities/AnnotationVocabulary/"}
+     {:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/DatesAndTimes/FinancialDates/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/Collections/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/BE/FunctionalEntities/Publishers/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/GoalsAndObjectives/Objectives/"}
+     {:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Utilities/Analytics/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/Classifiers/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/Designators/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Accounting/CurrencyAmount/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Relations/Relations/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/DatesAndTimes/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/DatesAndTimes/Occurrences/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Agreements/Contracts/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/BE/LegalEntities/LEIEntities/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Arrangements/Lifecycles/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Agreements/Contracts/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/OwnershipAndControl/Ownership/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Parties/Roles/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Law/LegalCapacity/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/DatesAndTimes/BusinessDates/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Relations/Relations/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/BE/FunctionalEntities/FunctionalEntities/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/TextDatatype/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/BE/FunctionalEntities/FunctionalEntities/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/AnnotationVocabulary/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/BE/LegalEntities/LegalPersons/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/DatesAndTimes/FinancialDates/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/ProductsAndServices/ProductsAndServices/"}},
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FBC/FunctionalEntities/RegulatoryAgencies/"}},
    :owl/versionIRI
    {:xsd/anyURI
-    "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FBC/ProductsAndServices/FinancialProductsAndServices/"},
+    "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FBC/ProductsAndServices/FinancialProductsAndServices/"},
    :rdf/type :owl/Ontology,
    :rdfs/label "Financial Products and Services Ontology",
    :skos/changeNote
@@ -1361,14 +1488,17 @@
      "The https://spec.edmcouncil.org/fibo/ontology/FBC/ProductsAndServices/FinancialProductsAndServices.rdf version of this ontology was modified to use the Commons Ontology Library (Commons) rather than the OMG's Languages, Countries and Codes (LCC) and to eliminate redundancies in FIBO as appropriate."
      "The https://spec.edmcouncil.org/fibo/ontology/FBC/ProductsAndServices/FinancialProductsAndServices/ version of this ontology was modified to add the notion of a weighted basket, whose consituents are weighted."
      "The https://spec.edmcouncil.org/fibo/ontology/FBC/ProductsAndServices/FinancialProductsAndServices.rdf version of the ontology was modified to use the Commons Ontology Library (Commons) Annotation Vocabulary rather than the OMG's Specification Metadata vocabulary."
+     "The https://spec.edmcouncil.org/fibo/ontology/FBC/ProductsAndServices/FinancialProductsAndServices.rdf version of the ontology was modified to replace additional content that is now available in the OMG Commons Ontology Library (Commons) v1.1 (FND-380)."
      "The https://spec.edmcouncil.org/fibo/ontology/FBC/ProductsAndServices/FinancialProductsAndServices/ version of this ontology was modified to fix spelling errors."
      "The https://spec.edmcouncil.org/fibo/ontology/FBC/ProductsAndServices/FinancialProductsAndServices/ version of this ontology was modified to eliminate duplication with concepts in LCC and eliminated a redundant superclass on FinancialServiceProvider."
      "The https://spec.edmcouncil.org/fibo/ontology/FBC/ProductsAndServices/FinancialProductsAndServices/ version of this ontology was modified to eliminate deprecated elements."
      "The https://spec.edmcouncil.org/fibo/ontology/FBC/ProductsAndServices/FinancialProductsAndServices/ version of this ontology was modified to rename ownership related properties for consistent alignment with the ownership situational pattern, add a definition for trading strategy, and loosen the constraint on offeree for offering to be optional."
+     "The https://spec.edmcouncil.org/fibo/ontology/FBC/ProductsAndServices/FinancialProductsAndServices.rdf version of the ontology was modified to add the concept of a contract lifecycle, as distinct from a product or trade lifecycle (FBC-317)."
      "The https://spec.edmcouncil.org/fibo/ontology/FBC/ProductsAndServices/FinancialProductsAndServices/ version of this ontology was modified to eliminate references to external dictionary sites that no longer resolve, eliminate circular and ambiguous definitions, and revise definitions that referenced 'face value' improperly."
      "The https://spec.edmcouncil.org/fibo/ontology/FBC/ProductsAndServices/FinancialProductsAndServices/ version of this ontology was modified to replace hasDefinition with isDefinedIn to clarify intent."
      "The https://spec.edmcouncil.org/fibo/ontology/FBC/ProductsAndServices/FinancialProductsAndServices.rdf version of this ontology was revised to augment the representation of institutions based on their definitions in the law, and to clarify and extend definitions related to non-bank financial institutions."
      "The https://spec.edmcouncil.org/fibo/ontology/FBC/ProductsAndServices/FinancialProductsAndServices/ version of this ontology was modified to replace the property 'characterizes' with 'describes' with respect to restrictions on catalogs, and to correct the label on terminated trade."
+     "The https://spec.edmcouncil.org/fibo/ontology/FBC/ProductsAndServices/FinancialProductsAndServices.rdf version of the ontology was modified to eliminate deprecations that are more than 6 months old and to replace content that is now available in the OMG Commons Ontology Library (Commons) v1.1 (FND-380)."
      "The https://spec.edmcouncil.org/fibo/ontology/FBC/ProductsAndServices/FinancialProductsAndServices/ version of this ontology was modified by the FIBO 2.0 RFC, including, but not limited to, the addition of lifecycle events, concepts related to trade settlement, and the definition of a unique transaction identifier (UTI)."},
    :xsd/anyURI
    "https://spec.edmcouncil.org/fibo/ontology/FBC/ProductsAndServices/FinancialProductsAndServices/"})

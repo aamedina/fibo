@@ -2,7 +2,7 @@
   {:cmns-av/copyright #{"Copyright (c) 2014-2023 Object Management Group, Inc."
                         "Copyright (c) 2014-2023 EDM Council, Inc."},
    :dcat/downloadURL
-   "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/DatesAndTimes/FinancialDates/",
+   "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/DatesAndTimes/FinancialDates/",
    :dcterms/abstract
    "This ontology provides definitions of date and schedule concepts for use in other FIBO ontologies.",
    :dcterms/license {:xsd/anyURI "https://opensource.org/licenses/MIT"},
@@ -23,13 +23,13 @@
     "xsd" "http://www.w3.org/2001/XMLSchema#"},
    :owl/imports
    #{{:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Utilities/AnnotationVocabulary/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Utilities/AnnotationVocabulary/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/Collections/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/DatesAndTimes/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/AnnotationVocabulary/"}},
    :owl/versionIRI
    {:xsd/anyURI
-    "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/DatesAndTimes/FinancialDates/"},
+    "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/DatesAndTimes/FinancialDates/"},
    :rdf/type :owl/Ontology,
    :rdfa/prefix "fibo-fnd-dt-fd",
    :rdfa/uri
@@ -39,11 +39,13 @@
    #{"The https://spec.edmcouncil.org/fibo/ontology/FND/DatesAndTimes/FinancialDates/ version of this ontology was revised to move dated collection and dated collection constituent as well as hasObservedDateTime and hasAcquisitionDate to financial dates in order to improve usability, simplify reasoning, made definitions ISO 704 compliant, and eliminate redundant restrictions on ad hoc schedule entry."
      "The https://spec.edmcouncil.org/fibo/ontology/FND/DatesAndTimes/FinancialDates/ version of this ontology was revised to add hasOpeningDateTime and hasClosingDateTime for use in defining trading days and sessions and eliminated the functional property declaration on hasExplicitDate."
      "The https://spec.edmcouncil.org/fibo/ontology/FND/DatesAndTimes/FinancialDates/ version of this ontology was revised to add the concept of age and a corresponding property that supports its use."
+     "The https://spec.edmcouncil.org/fibo/ontology/FND/DatesAndTimes/FinancialDates.rdf version of the ontology was modified to add the general notions of explicit anchor date and calculation period (FBC-317) and to add the concept of a business calendar (FBC-319)."
      "The https://spec.edmcouncil.org/fibo/ontology/FND/DatesAndTimes/FinancialDates.rdf version of this ontology was modified to address hygiene issues with respect to text formatting."
      "The https://spec.edmcouncil.org/fibo/ontology/FND/DatesAndTimes/FinancialDates/ version of this ontology was revised to eliminate deprecated elements."
      "The https://spec.edmcouncil.org/fibo/ontology/FND/DatesAndTimes/FinancialDates/ version of this ontology was revised to introduce a composite date datatype to allow for cases whereby the representation of a date for certain purposes, such as GLEIF LEI data, is inconsistent, and to facilitate mapping FIBO to multiple data sources in user environments."
      "The https://spec.edmcouncil.org/fibo/ontology/FND/DatesAndTimes/FinancialDates/ version of this ontology was revised to add the 'has date added' property, which is needed for the date a constituent is added to a basket, among other purposes, to add a TimeOfDay class, needed for representing rate reset times, eliminate duplication with concepts in LCC, and make AdHocScheduleEntry a child of DatedCollectionConstituent."
      "The https://spec.edmcouncil.org/fibo/ontology/FND/DatesAndTimes/FinancialDates/ version of this ontology was revised by the FIBO 2.0 RFC in order to introduce the definition of a time instant, to eliminate a reasoning issue with relative dates, and remove a circular dependency inadvertently incorporated in the ontology with a FIBO FND 1.2 modification."
+     "The https://spec.edmcouncil.org/fibo/ontology/FND/DatesAndTimes/FinancialDates.rdf version of the ontology was modified to eliminate deprecations that are more than 6 months old."
      "The https://spec.edmcouncil.org/fibo/ontology/FND/DatesAndTimes/FinancialDates.rdf version of the ontology was modified to use the Commons Ontology Library (Commons) Annotation Vocabulary rather than the OMG's Specification Metadata vocabulary."
      "This ontology was added to Foundations in advance of the December 2014 Long Beach meeting in support of the SEC specification. It is also needed to provide temporal relationships for Ownership and Control.\n\nThese three ontologies are designed for use together:\n\n\t* FinancialDates -- financial Dates and Schedules\n\t* BusinessDates -- business day adjustments\n\t* Occurrences -- occurrences (events) and kinds of occurrences\n\nThey are modularized this way to minimize the ontological committments that are imposed upon ontologies that rely upon them. Ontologies can import FinancialDates alone, or FinancialDates + BusinessDates, or FinancialDates + Occurrences, or all three together."
      "The https://spec.edmcouncil.org/fibo/ontology/FND/DatesAndTimes/FinancialDates.rdf version of this ontology was modified to use the Commons Ontology Library (Commons) rather than the OMG's Languages, Countries and Codes (LCC), eliminating redundancies in FIBO as appropriate."
@@ -98,6 +100,30 @@
    :skos/definition
    "length of time that something or someone has been alive or existed"})
 
+(def AnchorDate
+  {:cmns-av/explanatoryNote
+   "It is an explicit date chosen to provide context or structure for analyzing data or events.",
+   :db/ident :fibo-fnd-dt-fd/AnchorDate,
+   :rdf/type :owl/Class,
+   :rdfs/isDefinedBy
+   {:xsd/anyURI
+    "https://spec.edmcouncil.org/fibo/ontology/FND/DatesAndTimes/FinancialDates/"},
+   :rdfs/label "anchor date",
+   :rdfs/subClassOf :cmns-dt/ExplicitDate,
+   :skos/definition "fixed reference point within a series or timeline"})
+
+(def BusinessCalendar
+  {:db/ident :fibo-fnd-dt-fd/BusinessCalendar,
+   :rdf/type :owl/Class,
+   :rdfs/isDefinedBy
+   {:xsd/anyURI
+    "https://spec.edmcouncil.org/fibo/ontology/FND/DatesAndTimes/FinancialDates/"},
+   :rdfs/label "business calendar",
+   :rdfs/subClassOf :fibo-fnd-dt-fd/Schedule,
+   :skos/definition
+   "schedule and communications tool used to manage meetings, plan events, and coordinate activities within and/or across organizations",
+   :skos/example "academic calendar, bank holiday calendar"})
+
 (def CalculatedDate
   {:cmns-av/explanatoryNote
    "The hasDateValue property of a CalculatedDate is not set until the Date is calculated. Since the calculation may depend upon future events that may or may not ever happen, the hasDateValue property may never be set.",
@@ -110,6 +136,32 @@
    :rdfs/label "calculated date",
    :rdfs/subClassOf :cmns-dt/Date,
    :skos/definition "date that is or will be determined based on some formula"})
+
+(def CalculationPeriod
+  {:db/ident :fibo-fnd-dt-fd/CalculationPeriod,
+   :rdf/type :owl/Class,
+   :rdfs/isDefinedBy
+   {:xsd/anyURI
+    "https://spec.edmcouncil.org/fibo/ontology/FND/DatesAndTimes/FinancialDates/"},
+   :rdfs/label "calculation period",
+   :rdfs/subClassOf #{:cmns-dt/ExplicitDatePeriod
+                      {:owl/maxQualifiedCardinality 1,
+                       :owl/onClass    :fibo-fnd-dt-fd/CalculationPeriodLength,
+                       :owl/onProperty :cmns-dt/hasDuration,
+                       :rdf/type       :owl/Restriction}},
+   :skos/definition
+   "explicit period from the start to the end of a specific interval or range within which a computational process or operation occurs"})
+
+(def CalculationPeriodLength
+  {:db/ident :fibo-fnd-dt-fd/CalculationPeriodLength,
+   :rdf/type :owl/Class,
+   :rdfs/isDefinedBy
+   {:xsd/anyURI
+    "https://spec.edmcouncil.org/fibo/ontology/FND/DatesAndTimes/FinancialDates/"},
+   :rdfs/label "calculation period length",
+   :rdfs/subClassOf :cmns-dt/ExplicitDuration,
+   :skos/definition
+   "explicit number of days from the adjusted effective or start date to the adjusted termination or end date calculated in accordance with the applicable day count fraction"})
 
 (def CalendarMonth
   {:cmns-av/adaptedFrom {:rdf/value "ISO 8601, clause 2.2.11"},
@@ -198,53 +250,6 @@
    :skos/definition
    "cyclic time interval in a calendar which is required for one revolution of the Earth around the Sun and approximated to an integral number of calendar days; a year in the Gregorian calendar"})
 
-(def CombinedDateTime
-  {:cmns-av/usageNote
-   "The use of custom datatypes is outside the OWL 2 RL profile and so users should consider commenting this and its usage here, and in other ontologies out, or replacing it with rdfs:Literal out in applications that are constrained to OWL 2 RL.",
-   :db/ident :fibo-fnd-dt-fd/CombinedDateTime,
-   :owl/deprecated true,
-   :owl/equivalentDatatype :cmns-dt/CombinedDateTime,
-   :rdf/type :rdfs/Datatype,
-   :rdfs/isDefinedBy
-   {:xsd/anyURI
-    "https://spec.edmcouncil.org/fibo/ontology/FND/DatesAndTimes/FinancialDates/"}})
-
-(def Date
-  {:db/ident :fibo-fnd-dt-fd/Date,
-   :owl/deprecated true,
-   :owl/equivalentClass :cmns-dt/Date,
-   :rdf/type :owl/Class,
-   :rdfs/isDefinedBy
-   {:xsd/anyURI
-    "https://spec.edmcouncil.org/fibo/ontology/FND/DatesAndTimes/FinancialDates/"}})
-
-(def DatePeriod
-  {:db/ident :fibo-fnd-dt-fd/DatePeriod,
-   :owl/deprecated true,
-   :owl/equivalentClass :cmns-dt/DatePeriod,
-   :rdf/type :owl/Class,
-   :rdfs/isDefinedBy
-   {:xsd/anyURI
-    "https://spec.edmcouncil.org/fibo/ontology/FND/DatesAndTimes/FinancialDates/"}})
-
-(def DateTime
-  {:db/ident :fibo-fnd-dt-fd/DateTime,
-   :owl/deprecated true,
-   :owl/equivalentClass :cmns-dt/DateTime,
-   :rdf/type :owl/Class,
-   :rdfs/isDefinedBy
-   {:xsd/anyURI
-    "https://spec.edmcouncil.org/fibo/ontology/FND/DatesAndTimes/FinancialDates/"}})
-
-(def DateTimeStamp
-  {:db/ident :fibo-fnd-dt-fd/DateTimeStamp,
-   :owl/deprecated true,
-   :owl/equivalentClass :cmns-dt/DateTimeStamp,
-   :rdf/type :owl/Class,
-   :rdfs/isDefinedBy
-   {:xsd/anyURI
-    "https://spec.edmcouncil.org/fibo/ontology/FND/DatesAndTimes/FinancialDates/"}})
-
 (def DatedCollectionConstituent
   {:cmns-av/explanatoryNote
    "Note that the use of several options for the representation of a date and time stamp enables extensions for milliseconds, nanoseconds using an xsd:string that has the format of an xsd:dateTime datatype but extends the level of granularity consistently. An example of where this is required is to represent prices that change multiple times in a given day.",
@@ -276,51 +281,6 @@
       :rdf/type           :owl/Restriction} :cmns-col/StructuredCollection},
    :skos/definition
    "structured collection whose elements are required to have a date and time"})
-
-(def Day
-  {:db/ident :fibo-fnd-dt-fd/Day,
-   :owl/deprecated true,
-   :owl/equivalentClass :cmns-dt/Day,
-   :rdf/type :owl/NamedIndividual,
-   :rdfs/isDefinedBy
-   {:xsd/anyURI
-    "https://spec.edmcouncil.org/fibo/ontology/FND/DatesAndTimes/FinancialDates/"}})
-
-(def Duration
-  {:db/ident :fibo-fnd-dt-fd/Duration,
-   :owl/deprecated true,
-   :owl/equivalentClass :cmns-dt/Duration,
-   :rdf/type :owl/Class,
-   :rdfs/isDefinedBy
-   {:xsd/anyURI
-    "https://spec.edmcouncil.org/fibo/ontology/FND/DatesAndTimes/FinancialDates/"}})
-
-(def ExplicitDate
-  {:db/ident :fibo-fnd-dt-fd/ExplicitDate,
-   :owl/deprecated true,
-   :owl/equivalentClass :cmns-dt/ExplicitDate,
-   :rdf/type :owl/Class,
-   :rdfs/isDefinedBy
-   {:xsd/anyURI
-    "https://spec.edmcouncil.org/fibo/ontology/FND/DatesAndTimes/FinancialDates/"}})
-
-(def ExplicitDatePeriod
-  {:db/ident :fibo-fnd-dt-fd/ExplicitDatePeriod,
-   :owl/deprecated true,
-   :owl/equivalentClass :cmns-dt/ExplicitDatePeriod,
-   :rdf/type :owl/Class,
-   :rdfs/isDefinedBy
-   {:xsd/anyURI
-    "https://spec.edmcouncil.org/fibo/ontology/FND/DatesAndTimes/FinancialDates/"}})
-
-(def ExplicitDuration
-  {:db/ident :fibo-fnd-dt-fd/ExplicitDuration,
-   :owl/deprecated true,
-   :owl/equivalentClass :cmns-dt/ExplicitDuration,
-   :rdf/type :owl/Class,
-   :rdfs/isDefinedBy
-   {:xsd/anyURI
-    "https://spec.edmcouncil.org/fibo/ontology/FND/DatesAndTimes/FinancialDates/"}})
 
 (def ExplicitRecurrenceInterval
   {:db/ident :fibo-fnd-dt-fd/ExplicitRecurrenceInterval,
@@ -403,24 +363,31 @@
    {:xsd/anyURI
     "https://spec.edmcouncil.org/fibo/ontology/FND/DatesAndTimes/FinancialDates/"},
    :rdfs/label "regular schedule",
-   :rdfs/subClassOf #{{:owl/minQualifiedCardinality 0,
-                       :owl/onClass    :fibo-fnd-dt-fd/ScheduleStub,
-                       :owl/onProperty :fibo-fnd-dt-fd/hasFinalStub,
-                       :rdf/type       :owl/Restriction}
-                      {:owl/onProperty :fibo-fnd-dt-fd/hasRecurrenceInterval,
-                       :owl/someValuesFrom :fibo-fnd-dt-fd/RecurrenceInterval,
-                       :rdf/type :owl/Restriction}
-                      {:owl/onProperty     :fibo-fnd-dt-fd/hasCount,
-                       :owl/someValuesFrom :xsd/positiveInteger,
-                       :rdf/type           :owl/Restriction}
-                      {:owl/onProperty :fibo-fnd-dt-fd/hasRecurrenceStartDate,
-                       :owl/someValuesFrom :cmns-dt/Date,
-                       :rdf/type :owl/Restriction}
-                      {:owl/minQualifiedCardinality 0,
-                       :owl/onClass    :fibo-fnd-dt-fd/ScheduleStub,
-                       :owl/onProperty :fibo-fnd-dt-fd/hasInitialStub,
-                       :rdf/type       :owl/Restriction}
-                      :fibo-fnd-dt-fd/Schedule},
+   :rdfs/subClassOf
+   #{{:owl/onDataRange :xsd/positiveInteger,
+      :owl/onProperty  :fibo-fnd-dt-fd/hasCount,
+      :owl/qualifiedCardinality 1,
+      :rdf/type        :owl/Restriction}
+     {:owl/minQualifiedCardinality 0,
+      :owl/onClass    :fibo-fnd-dt-fd/ScheduleStub,
+      :owl/onProperty :fibo-fnd-dt-fd/hasFinalStub,
+      :rdf/type       :owl/Restriction}
+     {:owl/minQualifiedCardinality 0,
+      :owl/onClass    :fibo-fnd-dt-fd/AnchorDate,
+      :owl/onProperty :fibo-fnd-dt-fd/hasAnchorDate,
+      :rdf/type       :owl/Restriction}
+     {:owl/onProperty     :fibo-fnd-dt-fd/hasRecurrenceInterval,
+      :owl/someValuesFrom :fibo-fnd-dt-fd/RecurrenceInterval,
+      :rdf/type           :owl/Restriction} :cmns-col/StructuredCollection
+     {:owl/onProperty     :cmns-dt/hasStartDate,
+      :owl/someValuesFrom {:owl/unionOf [:fibo-fnd-dt-fd/CalculatedDate
+                                         :cmns-dt/ExplicitDate],
+                           :rdf/type    :owl/Class},
+      :rdf/type           :owl/Restriction}
+     {:owl/minQualifiedCardinality 0,
+      :owl/onClass    :fibo-fnd-dt-fd/ScheduleStub,
+      :owl/onProperty :fibo-fnd-dt-fd/hasInitialStub,
+      :rdf/type       :owl/Restriction} :fibo-fnd-dt-fd/Schedule},
    :skos/definition "schedule whose time intervals recur regularly",
    :skos/editorialNote
    "The BusinessDates ontology extends 'RegularSchedule' with an optional BusinessDayAdjustment that specifies what should happen if a scheduled date falls on a weekend or a holiday.",
@@ -466,7 +433,7 @@
 
 (def Schedule
   {:cmns-av/explanatoryNote
-   "The overall period covers the entire DatePeriod of the Schedule, from the earliest Date to the final Date of the Schedule. Schedules may be ad hoc, essentially a list of dates and events without any consistency in the durations between events, regular, in which case there is a consistently recurring interval between events, or a combination of the two.",
+   "The overall period covers the entire DatePeriod of the Schedule, from the earliest Date to the final Date of the Schedule. Schedules may be ad hoc, essentially a list of dates and events without any consistency in the durations between events, regular, in which case there is a consistently recurring interval between events, or a combination of the two. There may be a single overall period, or more than one if the schedule is extended for some reason.",
    :db/ident :fibo-fnd-dt-fd/Schedule,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
@@ -474,10 +441,9 @@
     "https://spec.edmcouncil.org/fibo/ontology/FND/DatesAndTimes/FinancialDates/"},
    :rdfs/label "schedule",
    :rdfs/subClassOf #{:cmns-col/Collection
-                      {:owl/onClass    :cmns-dt/DatePeriod,
-                       :owl/onProperty :fibo-fnd-dt-fd/hasOverallPeriod,
-                       :owl/qualifiedCardinality 1,
-                       :rdf/type       :owl/Restriction}},
+                      {:owl/onProperty     :fibo-fnd-dt-fd/hasOverallPeriod,
+                       :owl/someValuesFrom :cmns-dt/DatePeriod,
+                       :rdf/type           :owl/Restriction}},
    :skos/definition
    "collection of events, observations, or other occurrences and the associated dates and/or times when they will be done"})
 
@@ -546,33 +512,6 @@
    :skos/definition
    "enumeration that indicates whether a calendar-specified date is figured from the start or the end of a calendar period"})
 
-(def TimeInstant
-  {:db/ident :fibo-fnd-dt-fd/TimeInstant,
-   :owl/deprecated true,
-   :owl/equivalentClass :cmns-dt/TimeInstant,
-   :rdf/type :owl/Class,
-   :rdfs/isDefinedBy
-   {:xsd/anyURI
-    "https://spec.edmcouncil.org/fibo/ontology/FND/DatesAndTimes/FinancialDates/"}})
-
-(def TimeInterval
-  {:db/ident :fibo-fnd-dt-fd/TimeInterval,
-   :owl/deprecated true,
-   :owl/equivalentClass :cmns-dt/TimeInterval,
-   :rdf/type :owl/Class,
-   :rdfs/isDefinedBy
-   {:xsd/anyURI
-    "https://spec.edmcouncil.org/fibo/ontology/FND/DatesAndTimes/FinancialDates/"}})
-
-(def TimeOfDay
-  {:db/ident :fibo-fnd-dt-fd/TimeOfDay,
-   :owl/deprecated true,
-   :owl/equivalentClass :cmns-dt/TimeOfDay,
-   :rdf/type :owl/Class,
-   :rdfs/isDefinedBy
-   {:xsd/anyURI
-    "https://spec.edmcouncil.org/fibo/ontology/FND/DatesAndTimes/FinancialDates/"}})
-
 (def Tuesday
   {:db/ident :fibo-fnd-dt-fd/Tuesday,
    :rdf/type #{:cmns-dt/TimeInterval :owl/NamedIndividual},
@@ -617,6 +556,20 @@
    :rdfs/range :cmns-dt/Duration,
    :rdfs/subPropertyOf :cmns-dt/hasDuration,
    :skos/definition "relates something to the length of time it has existed"})
+
+(def hasAnchorDate
+  {:db/ident :fibo-fnd-dt-fd/hasAnchorDate,
+   :rdf/type :owl/ObjectProperty,
+   :rdfs/isDefinedBy
+   {:xsd/anyURI
+    "https://spec.edmcouncil.org/fibo/ontology/FND/DatesAndTimes/FinancialDates/"},
+   :rdfs/label "has anchor date",
+   :rdfs/range :fibo-fnd-dt-fd/AnchorDate,
+   :rdfs/subPropertyOf :cmns-dt/hasExplicitDate,
+   :skos/definition
+   "specifies a fixed reference point within a series or timeline",
+   :skos/example
+   "With respect to a scoped measure, such as an economic indicator, the anchor date specifies the reference date against which the value of a numeric index for a more recent date is compared (i.e., the starting point from which it stems)."})
 
 (def hasAsOfDate
   {:cmns-av/explanatoryNote
@@ -668,15 +621,6 @@
    :skos/definition
    "specifies the total number of things in a collection, such as the number of entries in a regular schedule"})
 
-(def hasDate
-  {:db/ident :fibo-fnd-dt-fd/hasDate,
-   :owl/deprecated true,
-   :owl/equivalentProperty :cmns-dt/hasDate,
-   :rdf/type :owl/ObjectProperty,
-   :rdfs/isDefinedBy
-   {:xsd/anyURI
-    "https://spec.edmcouncil.org/fibo/ontology/FND/DatesAndTimes/FinancialDates/"}})
-
 (def hasDateAdded
   {:db/ident :fibo-fnd-dt-fd/hasDateAdded,
    :rdf/type :owl/ObjectProperty,
@@ -688,15 +632,6 @@
    :rdfs/subPropertyOf #{:cmns-dt/hasExplicitDate :cmns-dt/hasStartDate},
    :skos/definition
    "indicates the date something was included in something else"})
-
-(def hasDatePeriod
-  {:db/ident :fibo-fnd-dt-fd/hasDatePeriod,
-   :owl/deprecated true,
-   :owl/equivalentProperty :cmns-dt/hasDatePeriod,
-   :rdf/type :owl/ObjectProperty,
-   :rdfs/isDefinedBy
-   {:xsd/anyURI
-    "https://spec.edmcouncil.org/fibo/ontology/FND/DatesAndTimes/FinancialDates/"}})
 
 (def hasDateReceived
   {:db/ident :fibo-fnd-dt-fd/hasDateReceived,
@@ -722,87 +657,6 @@
    :skos/editorialNote
    "The rule is modeled as a simple String because OWL2 provides no way to model the semantics of such a rule."})
 
-(def hasDateTime
-  {:db/ident :fibo-fnd-dt-fd/hasDateTime,
-   :owl/deprecated true,
-   :owl/equivalentProperty :cmns-dt/hasDateTime,
-   :rdf/type :owl/ObjectProperty,
-   :rdfs/isDefinedBy
-   {:xsd/anyURI
-    "https://spec.edmcouncil.org/fibo/ontology/FND/DatesAndTimes/FinancialDates/"}})
-
-(def hasDateTimeStamp
-  {:db/ident :fibo-fnd-dt-fd/hasDateTimeStamp,
-   :owl/deprecated true,
-   :owl/equivalentProperty :cmns-dt/hasDateTimeStamp,
-   :rdf/type :owl/ObjectProperty,
-   :rdfs/isDefinedBy
-   {:xsd/anyURI
-    "https://spec.edmcouncil.org/fibo/ontology/FND/DatesAndTimes/FinancialDates/"}})
-
-(def hasDateTimeStampValue
-  {:db/ident :fibo-fnd-dt-fd/hasDateTimeStampValue,
-   :owl/deprecated true,
-   :owl/equivalentProperty :cmns-dt/hasDateTimeStampValue,
-   :rdf/type :owl/DatatypeProperty,
-   :rdfs/isDefinedBy
-   {:xsd/anyURI
-    "https://spec.edmcouncil.org/fibo/ontology/FND/DatesAndTimes/FinancialDates/"}})
-
-(def hasDateTimeValue
-  {:db/ident :fibo-fnd-dt-fd/hasDateTimeValue,
-   :owl/deprecated true,
-   :owl/equivalentProperty :cmns-dt/hasDateTimeValue,
-   :rdf/type :owl/DatatypeProperty,
-   :rdfs/isDefinedBy
-   {:xsd/anyURI
-    "https://spec.edmcouncil.org/fibo/ontology/FND/DatesAndTimes/FinancialDates/"}})
-
-(def hasDateValue
-  {:db/ident :fibo-fnd-dt-fd/hasDateValue,
-   :owl/deprecated true,
-   :owl/equivalentProperty :cmns-dt/hasDateValue,
-   :rdf/type :owl/DatatypeProperty,
-   :rdfs/isDefinedBy
-   {:xsd/anyURI
-    "https://spec.edmcouncil.org/fibo/ontology/FND/DatesAndTimes/FinancialDates/"}})
-
-(def hasDuration
-  {:db/ident :fibo-fnd-dt-fd/hasDuration,
-   :owl/deprecated true,
-   :owl/equivalentProperty :cmns-dt/hasDuration,
-   :rdf/type :owl/ObjectProperty,
-   :rdfs/isDefinedBy
-   {:xsd/anyURI
-    "https://spec.edmcouncil.org/fibo/ontology/FND/DatesAndTimes/FinancialDates/"}})
-
-(def hasDurationValue
-  {:db/ident :fibo-fnd-dt-fd/hasDurationValue,
-   :owl/deprecated true,
-   :owl/equivalentProperty :cmns-dt/hasDurationValue,
-   :rdf/type :owl/DatatypeProperty,
-   :rdfs/isDefinedBy
-   {:xsd/anyURI
-    "https://spec.edmcouncil.org/fibo/ontology/FND/DatesAndTimes/FinancialDates/"}})
-
-(def hasEndDate
-  {:db/ident :fibo-fnd-dt-fd/hasEndDate,
-   :owl/deprecated true,
-   :owl/equivalentProperty :cmns-dt/hasEndDate,
-   :rdf/type :owl/ObjectProperty,
-   :rdfs/isDefinedBy
-   {:xsd/anyURI
-    "https://spec.edmcouncil.org/fibo/ontology/FND/DatesAndTimes/FinancialDates/"}})
-
-(def hasExplicitDate
-  {:db/ident :fibo-fnd-dt-fd/hasExplicitDate,
-   :owl/deprecated true,
-   :owl/equivalentProperty :cmns-dt/hasExplicitDate,
-   :rdf/type :owl/ObjectProperty,
-   :rdfs/isDefinedBy
-   {:xsd/anyURI
-    "https://spec.edmcouncil.org/fibo/ontology/FND/DatesAndTimes/FinancialDates/"}})
-
 (def hasFinalStub
   {:db/ident :fibo-fnd-dt-fd/hasFinalStub,
    :rdf/type :owl/ObjectProperty,
@@ -824,15 +678,6 @@
    :rdfs/subPropertyOf :fibo-fnd-dt-fd/hasStub,
    :skos/definition
    "identifies any special period at the start of a regular schedule"})
-
-(def hasObservedDateTime
-  {:db/ident :fibo-fnd-dt-fd/hasObservedDateTime,
-   :owl/deprecated true,
-   :owl/equivalentProperty :cmns-dt/hasObservedDateTime,
-   :rdf/type :owl/DatatypeProperty,
-   :rdfs/isDefinedBy
-   {:xsd/anyURI
-    "https://spec.edmcouncil.org/fibo/ontology/FND/DatesAndTimes/FinancialDates/"}})
 
 (def hasOpeningDateTime
   {:cmns-av/usageNote
@@ -887,14 +732,12 @@
 
 (def hasRecurrenceStartDate
   {:db/ident :fibo-fnd-dt-fd/hasRecurrenceStartDate,
+   :owl/deprecated true,
+   :owl/equivalentProperty :cmns-dt/hasStartDate,
    :rdf/type :owl/ObjectProperty,
    :rdfs/isDefinedBy
    {:xsd/anyURI
-    "https://spec.edmcouncil.org/fibo/ontology/FND/DatesAndTimes/FinancialDates/"},
-   :rdfs/label "has recurrence start date",
-   :rdfs/subPropertyOf :cmns-dt/hasStartDate,
-   :skos/definition
-   "the starting date of the first recurrence in a regular schedule"})
+    "https://spec.edmcouncil.org/fibo/ontology/FND/DatesAndTimes/FinancialDates/"}})
 
 (def hasRelativeDuration
   {:cmns-av/explanatoryNote
@@ -919,15 +762,6 @@
    :rdfs/range :fibo-fnd-dt-fd/Schedule,
    :skos/definition "indicates a schedule for something"})
 
-(def hasStartDate
-  {:db/ident :fibo-fnd-dt-fd/hasStartDate,
-   :owl/deprecated true,
-   :owl/equivalentProperty :cmns-dt/hasStartDate,
-   :rdf/type :owl/ObjectProperty,
-   :rdfs/isDefinedBy
-   {:xsd/anyURI
-    "https://spec.edmcouncil.org/fibo/ontology/FND/DatesAndTimes/FinancialDates/"}})
-
 (def hasStub
   {:db/ident :fibo-fnd-dt-fd/hasStub,
    :rdf/type :owl/ObjectProperty,
@@ -951,15 +785,6 @@
    :skos/definition
    "indicates whether a calendar-specified date is figured from the beginning or end of a calendar period"})
 
-(def hasTimeValue
-  {:db/ident :fibo-fnd-dt-fd/hasTimeValue,
-   :owl/deprecated true,
-   :owl/equivalentProperty :cmns-dt/hasTimeValue,
-   :rdf/type :owl/DatatypeProperty,
-   :rdfs/isDefinedBy
-   {:xsd/anyURI
-    "https://spec.edmcouncil.org/fibo/ontology/FND/DatesAndTimes/FinancialDates/"}})
-
 (def isRelativeTo
   {:db/ident :fibo-fnd-dt-fd/isRelativeTo,
    :rdf/type :owl/ObjectProperty,
@@ -980,24 +805,26 @@
    :fibo-fnd-utl-av/hasMaturityLevel :fibo-fnd-utl-av/Release,
    :owl/imports
    #{{:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Utilities/AnnotationVocabulary/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Utilities/AnnotationVocabulary/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/Collections/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/DatesAndTimes/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/AnnotationVocabulary/"}},
    :owl/versionIRI
    {:xsd/anyURI
-    "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/DatesAndTimes/FinancialDates/"},
+    "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/DatesAndTimes/FinancialDates/"},
    :rdf/type :owl/Ontology,
    :rdfs/label "Financial Dates Ontology",
    :skos/changeNote
    #{"The https://spec.edmcouncil.org/fibo/ontology/FND/DatesAndTimes/FinancialDates/ version of this ontology was revised to move dated collection and dated collection constituent as well as hasObservedDateTime and hasAcquisitionDate to financial dates in order to improve usability, simplify reasoning, made definitions ISO 704 compliant, and eliminate redundant restrictions on ad hoc schedule entry."
      "The https://spec.edmcouncil.org/fibo/ontology/FND/DatesAndTimes/FinancialDates/ version of this ontology was revised to add hasOpeningDateTime and hasClosingDateTime for use in defining trading days and sessions and eliminated the functional property declaration on hasExplicitDate."
      "The https://spec.edmcouncil.org/fibo/ontology/FND/DatesAndTimes/FinancialDates/ version of this ontology was revised to add the concept of age and a corresponding property that supports its use."
+     "The https://spec.edmcouncil.org/fibo/ontology/FND/DatesAndTimes/FinancialDates.rdf version of the ontology was modified to add the general notions of explicit anchor date and calculation period (FBC-317) and to add the concept of a business calendar (FBC-319)."
      "The https://spec.edmcouncil.org/fibo/ontology/FND/DatesAndTimes/FinancialDates.rdf version of this ontology was modified to address hygiene issues with respect to text formatting."
      "The https://spec.edmcouncil.org/fibo/ontology/FND/DatesAndTimes/FinancialDates/ version of this ontology was revised to eliminate deprecated elements."
      "The https://spec.edmcouncil.org/fibo/ontology/FND/DatesAndTimes/FinancialDates/ version of this ontology was revised to introduce a composite date datatype to allow for cases whereby the representation of a date for certain purposes, such as GLEIF LEI data, is inconsistent, and to facilitate mapping FIBO to multiple data sources in user environments."
      "The https://spec.edmcouncil.org/fibo/ontology/FND/DatesAndTimes/FinancialDates/ version of this ontology was revised to add the 'has date added' property, which is needed for the date a constituent is added to a basket, among other purposes, to add a TimeOfDay class, needed for representing rate reset times, eliminate duplication with concepts in LCC, and make AdHocScheduleEntry a child of DatedCollectionConstituent."
      "The https://spec.edmcouncil.org/fibo/ontology/FND/DatesAndTimes/FinancialDates/ version of this ontology was revised by the FIBO 2.0 RFC in order to introduce the definition of a time instant, to eliminate a reasoning issue with relative dates, and remove a circular dependency inadvertently incorporated in the ontology with a FIBO FND 1.2 modification."
+     "The https://spec.edmcouncil.org/fibo/ontology/FND/DatesAndTimes/FinancialDates.rdf version of the ontology was modified to eliminate deprecations that are more than 6 months old."
      "The https://spec.edmcouncil.org/fibo/ontology/FND/DatesAndTimes/FinancialDates.rdf version of the ontology was modified to use the Commons Ontology Library (Commons) Annotation Vocabulary rather than the OMG's Specification Metadata vocabulary."
      "This ontology was added to Foundations in advance of the December 2014 Long Beach meeting in support of the SEC specification. It is also needed to provide temporal relationships for Ownership and Control.\n\nThese three ontologies are designed for use together:\n\n\t* FinancialDates -- financial Dates and Schedules\n\t* BusinessDates -- business day adjustments\n\t* Occurrences -- occurrences (events) and kinds of occurrences\n\nThey are modularized this way to minimize the ontological committments that are imposed upon ontologies that rely upon them. Ontologies can import FinancialDates alone, or FinancialDates + BusinessDates, or FinancialDates + Occurrences, or all three together."
      "The https://spec.edmcouncil.org/fibo/ontology/FND/DatesAndTimes/FinancialDates.rdf version of this ontology was modified to use the Commons Ontology Library (Commons) rather than the OMG's Languages, Countries and Codes (LCC), eliminating redundancies in FIBO as appropriate."

@@ -1,8 +1,9 @@
 (ns net.wikipunk.rdf.fibo-fnd-law-lcap
-  {:cmns-av/copyright #{"Copyright (c) 2013-2023 Object Management Group, Inc."
-                        "Copyright (c) 2013-2023 EDM Council, Inc."},
+  {:cmns-av/copyright
+   #{"Copyright (c) 2013-2024 EDM Council, Inc."
+     "Copyright (c) 2013-2024 Object Management Group, Inc."},
    :dcat/downloadURL
-   "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Law/LegalCapacity/",
+   "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Law/LegalCapacity/",
    :dcterms/abstract
    "This ontology defines high-level legal concepts related to legal responsibilities. The ontology defines things which are conferred upon some entity by some legal instrument, and elaborates this into a number of specific capacities, responsibilities and powers, each of which forms the basis for many of the concepts used elsewhere in FIBO in defining legal personhood, executive powers and the like.",
    :dcterms/license {:xsd/anyURI "https://opensource.org/licenses/MIT"},
@@ -10,17 +11,16 @@
    :namespaces
    {"cmns-av" "https://www.omg.org/spec/Commons/AnnotationVocabulary/",
     "cmns-cxtdsg" "https://www.omg.org/spec/Commons/ContextualDesignators/",
+    "cmns-doc" "https://www.omg.org/spec/Commons/Documents/",
     "cmns-dt" "https://www.omg.org/spec/Commons/DatesAndTimes/",
     "cmns-id" "https://www.omg.org/spec/Commons/Identifiers/",
+    "cmns-pts" "https://www.omg.org/spec/Commons/PartiesAndSituations/",
+    "cmns-rlcmp" "https://www.omg.org/spec/Commons/RolesAndCompositions/",
     "dcterms" "http://purl.org/dc/terms/",
     "fibo-fnd-agr-agr"
     "https://spec.edmcouncil.org/fibo/ontology/FND/Agreements/Agreements/",
     "fibo-fnd-agr-ctr"
     "https://spec.edmcouncil.org/fibo/ontology/FND/Agreements/Contracts/",
-    "fibo-fnd-arr-doc"
-    "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Documents/",
-    "fibo-fnd-dt-bd"
-    "https://spec.edmcouncil.org/fibo/ontology/FND/DatesAndTimes/BusinessDates/",
     "fibo-fnd-gao-obj"
     "https://spec.edmcouncil.org/fibo/ontology/FND/GoalsAndObjectives/Objectives/",
     "fibo-fnd-law-cor"
@@ -29,10 +29,6 @@
     "https://spec.edmcouncil.org/fibo/ontology/FND/Law/Jurisdiction/",
     "fibo-fnd-law-lcap"
     "https://spec.edmcouncil.org/fibo/ontology/FND/Law/LegalCapacity/",
-    "fibo-fnd-pty-pty"
-    "https://spec.edmcouncil.org/fibo/ontology/FND/Parties/Parties/",
-    "fibo-fnd-pty-rl"
-    "https://spec.edmcouncil.org/fibo/ontology/FND/Parties/Roles/",
     "fibo-fnd-rel-rel"
     "https://spec.edmcouncil.org/fibo/ontology/FND/Relations/Relations/",
     "fibo-fnd-utl-av"
@@ -43,35 +39,30 @@
     "skos" "http://www.w3.org/2004/02/skos/core#",
     "xsd" "http://www.w3.org/2001/XMLSchema#"},
    :owl/imports
-   #{{:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Utilities/AnnotationVocabulary/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/GoalsAndObjectives/Objectives/"}
+   #{{:xsd/anyURI "https://www.omg.org/spec/Commons/RolesAndCompositions/"}
+     {:xsd/anyURI "https://www.omg.org/spec/Commons/Documents/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/Identifiers/"}
+     {:xsd/anyURI "https://www.omg.org/spec/Commons/PartiesAndSituations/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/ContextualDesignators/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Parties/Parties/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Law/Jurisdiction/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Law/Jurisdiction/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Utilities/AnnotationVocabulary/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Agreements/Agreements/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Law/LegalCore/"}
+     {:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/GoalsAndObjectives/Objectives/"}
+     {:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Relations/Relations/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/DatesAndTimes/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Agreements/Contracts/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Agreements/Contracts/"}
+     {:xsd/anyURI "https://www.omg.org/spec/Commons/AnnotationVocabulary/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Parties/Roles/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/DatesAndTimes/BusinessDates/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Relations/Relations/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Law/LegalCore/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Arrangements/Documents/"}
-     {:xsd/anyURI "https://www.omg.org/spec/Commons/AnnotationVocabulary/"}},
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Agreements/Agreements/"}},
    :owl/versionIRI
    {:xsd/anyURI
-    "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Law/LegalCapacity/"},
+    "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Law/LegalCapacity/"},
    :rdf/type :owl/Ontology,
    :rdfa/prefix "fibo-fnd-law-lcap",
    :rdfa/uri "https://spec.edmcouncil.org/fibo/ontology/FND/Law/LegalCapacity/",
@@ -80,11 +71,13 @@
    #{"The https://spec.edmcouncil.org/fibo/ontology/FND/Law/LegalCapacity.rdf version of the ontology was modified to eliminate duplication with concepts in LCC as well as minimum cardinality restrictions of 1."
      "The https://spec.edmcouncil.org/fibo/ontology/FND/Law/LegalCapacity.rdf version of the ontology was modified per the FIBO FBC RFC, namely to add concepts to support license, licensee, and licensor to the ontology."
      "The https://spec.edmcouncil.org/fibo/ontology/FND/Law/LegalCapacity.rdf version of the ontology was modified per the FIBO 1.1 RTF to add the concept of litigation capacity to the ontology."
+     "The https://spec.edmcouncil.org/fibo/ontology/FND/Law/LegalCapacity.rdf version of the ontology was modified to replace concepts from several FIBO FND ontologies with their counterparts added to the Commons Ontology Library (Commons) v1.1."
      "The https://spec.edmcouncil.org/fibo/ontology/FND/Law/LegalCapacity.rdf version of this ontology was modified to replace autonomous agent with independent party in property declarations."
      "The https://spec.edmcouncil.org/fibo/ontology/FND/Law/LegalCapacity.rdf version of the ontology was modified to add concepts related to policies, and adjust the hierarchy to better support regulatory requirements."
      "The https://spec.edmcouncil.org/fibo/ontology/FND/Law/LegalCapacity.rdf version of the ontology was modified to move the property, 'is conferred on' from Relations to the Legal Capacity ontology and to use the Commons Ontology Library (Commons) rather than the OMG's Languages, Countries and Codes (LCC), eliminating redundancies in FIBO as appropriate."
      "The https://spec.edmcouncil.org/fibo/ontology/FND/Law/LegalCapacity.rdf version of this ontology was modified to introduce 'right' as a kind of legal construct, move legal right, contractual right, and contingent right under right as siblings, and update their definitions as appropriate."
      "The https://spec.edmcouncil.org/fibo/ontology/FND/Law/LegalCapacity.rdf version of this ontology was modified to eliminate an unnecessary link."
+     "The https://spec.edmcouncil.org/fibo/ontology/FND/Law/LegalCapacity.rdf version of the ontology was modified to replace additional concepts from several FIBO FND ontologies with their counterparts added to the Commons Ontology Library (Commons) v1.1."
      "The https://spec.edmcouncil.org/fibo/ontology/FND/Law/LegalCapacity.rdf version of this ontology was modified to reflect the merge of Goals and Objectives."
      "The https://spec.edmcouncil.org/fibo/ontology/FND/Law/LegalCapacity.rdf version of the ontology was modified to eliminate deprecated elements."
      "The http://www.omg.org/spec/FIBO/Foundations/20130601/Law/LegalCapacity.owl version of the ontology was revised in advance of the September 2013 New Brunswick, NJ meeting, as follows:\n\t(1) to use slash style URI/IRIss (also called 303 URIs, vs. hash style) as required to support server side processing \n\t(2) to use version-independent IRIs for all definitions internally as opposed to version-specific IRIs\n\t(3) to change the file suffix from .owl to .rdf to increase usability in RDF tools\n\t(4) to use 4-level abbreviations and corresponding namespace prefixes for all FIBO ontologies, reflecting a family/specification/module/ontology structure\n\t(5) to incorporate changes to the specification metadata to support documentation at the family, specification, module, and ontology level, similar to the abbreviations."
@@ -136,14 +129,13 @@
     "https://spec.edmcouncil.org/fibo/ontology/FND/Law/LegalCapacity/"},
    :rdfs/label {:rdf/language "en",
                 :rdf/value    "contingent right"},
-   :rdfs/subClassOf #{:fibo-fnd-law-lcap/Right
-                      {:owl/onProperty :fibo-fnd-law-lcap/implies,
-                       :owl/someValuesFrom
-                       :fibo-fnd-law-lcap/ContingentObligation,
-                       :rdf/type :owl/Restriction}
-                      {:owl/onProperty     :fibo-fnd-law-lcap/isConferredOn,
-                       :owl/someValuesFrom :fibo-fnd-pty-pty/IndependentParty,
-                       :rdf/type           :owl/Restriction}},
+   :rdfs/subClassOf
+   #{{:owl/onProperty     :fibo-fnd-law-lcap/isConferredOn,
+      :owl/someValuesFrom :cmns-pts/Party,
+      :rdf/type           :owl/Restriction} :fibo-fnd-law-lcap/Right
+     {:owl/onProperty     :fibo-fnd-law-lcap/implies,
+      :owl/someValuesFrom :fibo-fnd-law-lcap/ContingentObligation,
+      :rdf/type           :owl/Restriction}},
    :skos/definition
    "right that depends on a future event or the performance of an action"})
 
@@ -252,7 +244,7 @@
     "https://spec.edmcouncil.org/fibo/ontology/FND/Law/LegalCapacity/"},
    :rdfs/label "legal construct",
    :rdfs/subClassOf #{{:owl/minQualifiedCardinality 0,
-                       :owl/onClass    :fibo-fnd-pty-pty/IndependentParty,
+                       :owl/onClass    :cmns-pts/Party,
                        :owl/onProperty :fibo-fnd-law-lcap/isConferredOn,
                        :rdf/type       :owl/Restriction}
                       {:owl/minQualifiedCardinality 0,
@@ -340,19 +332,18 @@
    {:xsd/anyURI
     "https://spec.edmcouncil.org/fibo/ontology/FND/Law/LegalCapacity/"},
    :rdfs/label "license",
-   :rdfs/subClassOf #{{:owl/onProperty     :fibo-fnd-pty-pty/hasPartyInRole,
-                       :owl/someValuesFrom :fibo-fnd-law-lcap/Licensee,
-                       :rdf/type           :owl/Restriction}
+   :rdfs/subClassOf #{{:owl/onClass    :cmns-dt/DatePeriod,
+                       :owl/onProperty :cmns-pts/holdsDuring,
+                       :owl/qualifiedCardinality 1,
+                       :rdf/type       :owl/Restriction} :cmns-doc/LegalDocument
                       {:owl/onProperty     :fibo-fnd-rel-rel/confers,
                        :owl/someValuesFrom :fibo-fnd-law-lcap/LegalCapacity,
                        :rdf/type           :owl/Restriction}
-                      :fibo-fnd-arr-doc/LegalDocument
-                      {:owl/onClass    :cmns-dt/DatePeriod,
-                       :owl/onProperty :fibo-fnd-dt-bd/holdsDuring,
-                       :owl/qualifiedCardinality 1,
-                       :rdf/type       :owl/Restriction}
                       {:owl/onProperty     :fibo-fnd-rel-rel/isIssuedBy,
                        :owl/someValuesFrom :fibo-fnd-law-lcap/Licensor,
+                       :rdf/type           :owl/Restriction}
+                      {:owl/onProperty     :cmns-pts/hasPartyRole,
+                       :owl/someValuesFrom :fibo-fnd-law-lcap/Licensee,
                        :rdf/type           :owl/Restriction}},
    :skos/definition "grant of permission needed to do something"})
 
@@ -381,11 +372,12 @@
     "https://spec.edmcouncil.org/fibo/ontology/FND/Law/LegalCapacity/"},
    :rdfs/label "licensee",
    :rdfs/subClassOf
-   #{{:owl/onProperty     :fibo-fnd-pty-rl/isPlayedBy,
-      :owl/someValuesFrom {:owl/onProperty     :fibo-fnd-pty-pty/isAPartyTo,
+   #{:cmns-pts/PartyRole
+     {:owl/onProperty     :cmns-rlcmp/isPlayedBy,
+      :owl/someValuesFrom {:owl/onProperty     :cmns-pts/isAPartyTo,
                            :owl/someValuesFrom :fibo-fnd-law-lcap/License,
                            :rdf/type           :owl/Restriction},
-      :rdf/type           :owl/Restriction} :fibo-fnd-pty-pty/PartyInRole},
+      :rdf/type           :owl/Restriction}},
    :skos/definition "a party to whom a license has been granted"})
 
 (def Licensor
@@ -401,15 +393,15 @@
    :rdfs/subClassOf
    #{{:owl/onProperty     :fibo-fnd-rel-rel/issues,
       :owl/someValuesFrom :fibo-fnd-law-lcap/License,
-      :rdf/type           :owl/Restriction}
+      :rdf/type           :owl/Restriction} :cmns-pts/PartyRole
      {:owl/onProperty     :fibo-fnd-law-lcap/licenses,
       :owl/someValuesFrom :owl/Thing,
       :rdf/type           :owl/Restriction}
-     {:owl/onProperty     :fibo-fnd-pty-rl/isPlayedBy,
-      :owl/someValuesFrom {:owl/onProperty     :fibo-fnd-pty-pty/isAPartyTo,
+     {:owl/onProperty     :cmns-rlcmp/isPlayedBy,
+      :owl/someValuesFrom {:owl/onProperty     :cmns-pts/isAPartyTo,
                            :owl/someValuesFrom :fibo-fnd-law-lcap/License,
                            :rdf/type           :owl/Restriction},
-      :rdf/type           :owl/Restriction} :fibo-fnd-pty-pty/PartyInRole},
+      :rdf/type           :owl/Restriction}},
    :skos/definition "a party who grants a license"})
 
 (def LitigationCapacity
@@ -505,7 +497,7 @@
   {:db/ident :fibo-fnd-law-lcap/hasCapacity,
    :owl/inverseOf :fibo-fnd-law-lcap/isCapacityOf,
    :rdf/type :owl/ObjectProperty,
-   :rdfs/domain :fibo-fnd-pty-pty/IndependentParty,
+   :rdfs/domain :cmns-pts/Party,
    :rdfs/isDefinedBy
    {:xsd/anyURI
     "https://spec.edmcouncil.org/fibo/ontology/FND/Law/LegalCapacity/"},
@@ -543,7 +535,7 @@
    {:xsd/anyURI
     "https://spec.edmcouncil.org/fibo/ontology/FND/Law/LegalCapacity/"},
    :rdfs/label "is capacity of",
-   :rdfs/range :fibo-fnd-pty-pty/IndependentParty,
+   :rdfs/range :cmns-pts/Party,
    :rdfs/subPropertyOf :fibo-fnd-law-lcap/isConferredOn,
    :skos/definition
    "identifies an individual or organization on which a given legal capacity has been conferred",
@@ -557,7 +549,7 @@
    {:xsd/anyURI
     "https://spec.edmcouncil.org/fibo/ontology/FND/Law/LegalCapacity/"},
    :rdfs/label "is conferred on",
-   :rdfs/range :fibo-fnd-pty-pty/IndependentParty,
+   :rdfs/range :cmns-pts/Party,
    :skos/definition
    "indicates a party to which some benefit or right has been granted"})
 
@@ -593,7 +585,7 @@
    {:xsd/anyURI
     "https://spec.edmcouncil.org/fibo/ontology/FND/Law/LegalCapacity/"},
    :rdfs/label "is licensed by",
-   :rdfs/range :fibo-fnd-pty-pty/PartyInRole,
+   :rdfs/range :cmns-pts/PartyRole,
    :rdfs/subPropertyOf :fibo-fnd-rel-rel/isGovernedBy,
    :skos/definition
    "indicates the party that has issued a particular license to some other party"})
@@ -601,7 +593,7 @@
 (def licenses
   {:db/ident :fibo-fnd-law-lcap/licenses,
    :rdf/type :owl/ObjectProperty,
-   :rdfs/domain :fibo-fnd-pty-pty/PartyInRole,
+   :rdfs/domain :cmns-pts/PartyRole,
    :rdfs/isDefinedBy
    {:xsd/anyURI
     "https://spec.edmcouncil.org/fibo/ontology/FND/Law/LegalCapacity/"},
@@ -611,53 +603,51 @@
    "issues a license required in order to perform some task, provide some service, exercise some privilege, or pursue some line of business or occupation to some party"})
 
 (def urn:uuid:a4ea0dd5-4900-57e4-996a-d411405996c5
-  {:cmns-av/copyright #{"Copyright (c) 2013-2023 Object Management Group, Inc."
-                        "Copyright (c) 2013-2023 EDM Council, Inc."},
+  {:cmns-av/copyright
+   #{"Copyright (c) 2013-2024 EDM Council, Inc."
+     "Copyright (c) 2013-2024 Object Management Group, Inc."},
    :dcterms/abstract
    "This ontology defines high-level legal concepts related to legal responsibilities. The ontology defines things which are conferred upon some entity by some legal instrument, and elaborates this into a number of specific capacities, responsibilities and powers, each of which forms the basis for many of the concepts used elsewhere in FIBO in defining legal personhood, executive powers and the like.",
    :dcterms/license {:xsd/anyURI "https://opensource.org/licenses/MIT"},
    :fibo-fnd-utl-av/hasMaturityLevel :fibo-fnd-utl-av/Release,
    :owl/imports
-   #{{:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Utilities/AnnotationVocabulary/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/GoalsAndObjectives/Objectives/"}
+   #{{:xsd/anyURI "https://www.omg.org/spec/Commons/RolesAndCompositions/"}
+     {:xsd/anyURI "https://www.omg.org/spec/Commons/Documents/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/Identifiers/"}
+     {:xsd/anyURI "https://www.omg.org/spec/Commons/PartiesAndSituations/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/ContextualDesignators/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Parties/Parties/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Law/Jurisdiction/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Law/Jurisdiction/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Utilities/AnnotationVocabulary/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Agreements/Agreements/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Law/LegalCore/"}
+     {:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/GoalsAndObjectives/Objectives/"}
+     {:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Relations/Relations/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/DatesAndTimes/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Agreements/Contracts/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Agreements/Contracts/"}
+     {:xsd/anyURI "https://www.omg.org/spec/Commons/AnnotationVocabulary/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Parties/Roles/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/DatesAndTimes/BusinessDates/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Relations/Relations/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Law/LegalCore/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Arrangements/Documents/"}
-     {:xsd/anyURI "https://www.omg.org/spec/Commons/AnnotationVocabulary/"}},
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Agreements/Agreements/"}},
    :owl/versionIRI
    {:xsd/anyURI
-    "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Law/LegalCapacity/"},
+    "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Law/LegalCapacity/"},
    :rdf/type :owl/Ontology,
    :rdfs/label "Legal Capacity Ontology",
    :skos/changeNote
    #{"The https://spec.edmcouncil.org/fibo/ontology/FND/Law/LegalCapacity.rdf version of the ontology was modified to eliminate duplication with concepts in LCC as well as minimum cardinality restrictions of 1."
      "The https://spec.edmcouncil.org/fibo/ontology/FND/Law/LegalCapacity.rdf version of the ontology was modified per the FIBO FBC RFC, namely to add concepts to support license, licensee, and licensor to the ontology."
      "The https://spec.edmcouncil.org/fibo/ontology/FND/Law/LegalCapacity.rdf version of the ontology was modified per the FIBO 1.1 RTF to add the concept of litigation capacity to the ontology."
+     "The https://spec.edmcouncil.org/fibo/ontology/FND/Law/LegalCapacity.rdf version of the ontology was modified to replace concepts from several FIBO FND ontologies with their counterparts added to the Commons Ontology Library (Commons) v1.1."
      "The https://spec.edmcouncil.org/fibo/ontology/FND/Law/LegalCapacity.rdf version of this ontology was modified to replace autonomous agent with independent party in property declarations."
      "The https://spec.edmcouncil.org/fibo/ontology/FND/Law/LegalCapacity.rdf version of the ontology was modified to add concepts related to policies, and adjust the hierarchy to better support regulatory requirements."
      "The https://spec.edmcouncil.org/fibo/ontology/FND/Law/LegalCapacity.rdf version of the ontology was modified to move the property, 'is conferred on' from Relations to the Legal Capacity ontology and to use the Commons Ontology Library (Commons) rather than the OMG's Languages, Countries and Codes (LCC), eliminating redundancies in FIBO as appropriate."
      "The https://spec.edmcouncil.org/fibo/ontology/FND/Law/LegalCapacity.rdf version of this ontology was modified to introduce 'right' as a kind of legal construct, move legal right, contractual right, and contingent right under right as siblings, and update their definitions as appropriate."
      "The https://spec.edmcouncil.org/fibo/ontology/FND/Law/LegalCapacity.rdf version of this ontology was modified to eliminate an unnecessary link."
+     "The https://spec.edmcouncil.org/fibo/ontology/FND/Law/LegalCapacity.rdf version of the ontology was modified to replace additional concepts from several FIBO FND ontologies with their counterparts added to the Commons Ontology Library (Commons) v1.1."
      "The https://spec.edmcouncil.org/fibo/ontology/FND/Law/LegalCapacity.rdf version of this ontology was modified to reflect the merge of Goals and Objectives."
      "The https://spec.edmcouncil.org/fibo/ontology/FND/Law/LegalCapacity.rdf version of the ontology was modified to eliminate deprecated elements."
      "The http://www.omg.org/spec/FIBO/Foundations/20130601/Law/LegalCapacity.owl version of the ontology was revised in advance of the September 2013 New Brunswick, NJ meeting, as follows:\n\t(1) to use slash style URI/IRIss (also called 303 URIs, vs. hash style) as required to support server side processing \n\t(2) to use version-independent IRIs for all definitions internally as opposed to version-specific IRIs\n\t(3) to change the file suffix from .owl to .rdf to increase usability in RDF tools\n\t(4) to use 4-level abbreviations and corresponding namespace prefixes for all FIBO ontologies, reflecting a family/specification/module/ontology structure\n\t(5) to incorporate changes to the specification metadata to support documentation at the family, specification, module, and ontology level, similar to the abbreviations."

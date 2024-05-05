@@ -3,7 +3,7 @@
    #{"Copyright (c) 2015-2023 EDM Council, Inc."
      "Copyright (c) 2015-2023 Object Management Group, Inc."},
    :dcat/downloadURL
-   "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/BE/LegalEntities/MetadataBELegalEntities/LegalEntitiesModule",
+   "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/BE/LegalEntities/MetadataBELegalEntities/LegalEntitiesModule",
    :dcterms/abstract
    "The legal entities module contains ontologies which define the basis for legal personhood and business entities generally. This includes (1) definitions that distinguish between judicial and natural person, (2) definitions of formally constituted organizations, their members and high-level subdivisions, and identification and classification schemes, (3) definitions of corporate entities and the ways in which they may be incorporated, and (4) definitions required for implementation and use of the ISO 17442 Legal Entity Identifier (LEI) standard, including concepts for contractually capable and legal entities that reuse properties defined elsewhere in FIBO FND and BE.",
    :dcterms/issued #inst "2015-01-25T18:00:00.000-00:00",
@@ -22,11 +22,11 @@
     "xsd" "http://www.w3.org/2001/XMLSchema#"},
    :owl/imports
    #{{:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Utilities/AnnotationVocabulary/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Utilities/AnnotationVocabulary/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/AnnotationVocabulary/"}},
    :owl/versionIRI
    {:xsd/anyURI
-    "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/BE/LegalEntities/MetadataBELegalEntities/"},
+    "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/BE/LegalEntities/MetadataBELegalEntities/"},
    :rdf/type :owl/Ontology,
    :rdfa/prefix "fibo-be-le-mod",
    :rdfa/uri
@@ -78,11 +78,11 @@
    :dcterms/modified #inst "2023-01-27T18:00:00.000-00:00",
    :owl/imports
    #{{:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Utilities/AnnotationVocabulary/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Utilities/AnnotationVocabulary/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/AnnotationVocabulary/"}},
    :owl/versionIRI
    {:xsd/anyURI
-    "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/BE/LegalEntities/MetadataBELegalEntities/"},
+    "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/BE/LegalEntities/MetadataBELegalEntities/"},
    :rdf/type :owl/Ontology,
    :rdfs/label
    "Metadata about the EDMC-FIBO Business Entities (BE) Legal Entities Module",

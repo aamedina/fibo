@@ -1,7 +1,7 @@
 (ns net.wikipunk.rdf.fibo-bp-iss-ipo
-  {:cmns-av/copyright "Copyright (c) 2013-2023 EDM Council, Inc.",
+  {:cmns-av/copyright "Copyright (c) 2013-2024 EDM Council, Inc.",
    :dcat/downloadURL
-   "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/BP/SecuritiesIssuance/EquitiesIPOIssuance/",
+   "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/BP/SecuritiesIssuance/EquitiesIPOIssuance/",
    :dcterms/abstract
    "Issuance process for equity instruments that are issued via an Initial Public Offering (IPO).",
    :dcterms/license {:xsd/anyURI "https://opensource.org/licenses/MIT"},
@@ -9,7 +9,10 @@
    :namespaces
    {"cmns-av" "https://www.omg.org/spec/Commons/AnnotationVocabulary/",
     "cmns-cxtdsg" "https://www.omg.org/spec/Commons/ContextualDesignators/",
+    "cmns-doc" "https://www.omg.org/spec/Commons/Documents/",
     "cmns-dt" "https://www.omg.org/spec/Commons/DatesAndTimes/",
+    "cmns-pts" "https://www.omg.org/spec/Commons/PartiesAndSituations/",
+    "cmns-rlcmp" "https://www.omg.org/spec/Commons/RolesAndCompositions/",
     "dcterms" "http://purl.org/dc/terms/",
     "fibo-bp-iss-doc"
     "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/IssuanceDocuments/",
@@ -27,14 +30,8 @@
     "https://spec.edmcouncil.org/fibo/ontology/FBC/ProductsAndServices/FinancialProductsAndServices/",
     "fibo-fnd-acc-cur"
     "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/CurrencyAmount/",
-    "fibo-fnd-arr-doc"
-    "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Documents/",
     "fibo-fnd-dt-oc"
     "https://spec.edmcouncil.org/fibo/ontology/FND/DatesAndTimes/Occurrences/",
-    "fibo-fnd-pty-pty"
-    "https://spec.edmcouncil.org/fibo/ontology/FND/Parties/Parties/",
-    "fibo-fnd-pty-rl"
-    "https://spec.edmcouncil.org/fibo/ontology/FND/Parties/Roles/",
     "fibo-fnd-rel-rel"
     "https://spec.edmcouncil.org/fibo/ontology/FND/Relations/Relations/",
     "fibo-fnd-utl-av"
@@ -45,39 +42,36 @@
     "xsd" "http://www.w3.org/2001/XMLSchema#"},
    :owl/imports
    #{{:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FBC/FunctionalEntities/Markets/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FBC/FunctionalEntities/Markets/"}
+     {:xsd/anyURI "https://www.omg.org/spec/Commons/RolesAndCompositions/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FBC/FunctionalEntities/RegistrationAuthorities/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Utilities/AnnotationVocabulary/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Accounting/CurrencyAmount/"}
+     {:xsd/anyURI "https://www.omg.org/spec/Commons/Documents/"}
+     {:xsd/anyURI "https://www.omg.org/spec/Commons/PartiesAndSituations/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/ContextualDesignators/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Parties/Parties/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/SEC/Securities/SecuritiesListings/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/SEC/Securities/SecuritiesListings/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FBC/FunctionalEntities/RegistrationAuthorities/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/BP/SecuritiesIssuance/IssuanceDocuments/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FBC/ProductsAndServices/FinancialProductsAndServices/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Accounting/CurrencyAmount/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Utilities/AnnotationVocabulary/"}
+     {:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/BP/SecuritiesIssuance/IssuanceDocuments/"}
+     {:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/DatesAndTimes/Occurrences/"}
+     {:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Relations/Relations/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/DatesAndTimes/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/DatesAndTimes/Occurrences/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/BP/SecuritiesIssuance/IssuanceProcess/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Parties/Roles/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Relations/Relations/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FBC/FinancialInstruments/FinancialInstruments/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/BP/SecuritiesIssuance/IssuanceProcess/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Arrangements/Documents/"}
-     {:xsd/anyURI "https://www.omg.org/spec/Commons/AnnotationVocabulary/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FBC/ProductsAndServices/FinancialProductsAndServices/"}},
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FBC/FinancialInstruments/FinancialInstruments/"}
+     {:xsd/anyURI "https://www.omg.org/spec/Commons/AnnotationVocabulary/"}},
    :owl/versionIRI
    {:xsd/anyURI
-    "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/BP/SecuritiesIssuance/EquitiesIPOIssuance/"},
+    "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/BP/SecuritiesIssuance/EquitiesIPOIssuance/"},
    :rdf/type :owl/Ontology,
    :rdfa/prefix "fibo-bp-iss-ipo",
    :rdfa/uri
@@ -115,7 +109,7 @@
     "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/EquitiesIPOIssuance/"},
    :rdfs/label {:rdf/language "en",
                 :rdf/value    "allocation basis details"},
-   :rdfs/subClassOf :fibo-fnd-arr-doc/Document})
+   :rdfs/subClassOf :cmns-doc/Document})
 
 (def AllocationDetails
   {:db/ident :fibo-bp-iss-ipo/AllocationDetails,
@@ -125,7 +119,7 @@
     "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/EquitiesIPOIssuance/"},
    :rdfs/label {:rdf/language "en",
                 :rdf/value    "allocation details"},
-   :rdfs/subClassOf :fibo-fnd-arr-doc/Document})
+   :rdfs/subClassOf :cmns-doc/Document})
 
 (def AnnounceEquityIssue
   {:db/ident :fibo-bp-iss-ipo/AnnounceEquityIssue,
@@ -145,7 +139,7 @@
     "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/EquitiesIPOIssuance/"},
    :rdfs/label {:rdf/language "en",
                 :rdf/value    "application for shares"},
-   :rdfs/subClassOf :fibo-fnd-arr-doc/Document})
+   :rdfs/subClassOf :cmns-doc/Document})
 
 (def AppointAdvisors
   {:db/ident :fibo-bp-iss-ipo/AppointAdvisors,
@@ -156,6 +150,9 @@
    :rdfs/label {:rdf/language "en",
                 :rdf/value    "appoint advisors"},
    :rdfs/subClassOf #{:fibo-bp-iss-ipo/InitialPublicOfferingProcessStep
+                      {:owl/onProperty     :cmns-rlcmp/playsRole,
+                       :owl/someValuesFrom :fibo-fbc-fi-fi/Issuer,
+                       :rdf/type           :owl/Restriction}
                       {:owl/onProperty :fibo-fnd-rel-rel/designates,
                        :owl/someValuesFrom
                        {:owl/unionOf [:fibo-bp-iss-ipo/CorporateBroker
@@ -163,10 +160,7 @@
                                       :fibo-bp-iss-ipo/ReportingAccountant
                                       :fibo-fbc-fct-ra/RegistrationAuthority],
                         :rdf/type    :owl/Class},
-                       :rdf/type :owl/Restriction}
-                      {:owl/onProperty     :fibo-fnd-pty-rl/playsRole,
-                       :owl/someValuesFrom :fibo-fbc-fi-fi/Issuer,
-                       :rdf/type           :owl/Restriction}}})
+                       :rdf/type :owl/Restriction}}})
 
 (def ApproveForFlotation
   {:db/ident :fibo-bp-iss-ipo/ApproveForFlotation,
@@ -199,7 +193,7 @@
     "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/EquitiesIPOIssuance/"},
    :rdfs/label {:rdf/language "en",
                 :rdf/value    "equity announcement"},
-   :rdfs/subClassOf :fibo-fnd-arr-doc/Notice})
+   :rdfs/subClassOf :cmns-doc/Notice})
 
 (def FilingDetails
   {:db/ident :fibo-bp-iss-ipo/FilingDetails,
@@ -209,7 +203,7 @@
     "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/EquitiesIPOIssuance/"},
    :rdfs/label {:rdf/language "en",
                 :rdf/value    "filing details"},
-   :rdfs/subClassOf :fibo-fnd-arr-doc/Document})
+   :rdfs/subClassOf :cmns-doc/Document})
 
 (def FormalApprovalForListingAndTrading
   {:db/ident :fibo-bp-iss-ipo/FormalApprovalForListingAndTrading,
@@ -267,7 +261,7 @@
     "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/EquitiesIPOIssuance/"},
    :rdfs/label {:rdf/language "en",
                 :rdf/value    "i p o settlement details"},
-   :rdfs/subClassOf :fibo-fnd-arr-doc/Document})
+   :rdfs/subClassOf :cmns-doc/Document})
 
 (def IndicationOfInterest
   {:db/ident :fibo-bp-iss-ipo/IndicationOfInterest,
@@ -277,7 +271,7 @@
     "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/EquitiesIPOIssuance/"},
    :rdfs/label {:rdf/language "en",
                 :rdf/value    "indication of interest"},
-   :rdfs/subClassOf :fibo-fnd-arr-doc/Document})
+   :rdfs/subClassOf :cmns-doc/Document})
 
 (def InitialPublicOfferingProcessStep
   {:cmns-av/abbreviation "IPO process step",
@@ -383,7 +377,7 @@
     "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/EquitiesIPOIssuance/"},
    :rdfs/label {:rdf/language "en",
                 :rdf/value    "registration statement document"},
-   :rdfs/subClassOf :fibo-fnd-arr-doc/Document})
+   :rdfs/subClassOf :cmns-doc/Document})
 
 (def ReportingAccountant
   {:db/ident :fibo-bp-iss-ipo/ReportingAccountant,
@@ -393,7 +387,7 @@
     "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/EquitiesIPOIssuance/"},
    :rdfs/label {:rdf/language "en",
                 :rdf/value    "reporting accountant"},
-   :rdfs/subClassOf :fibo-fnd-pty-pty/PartyInRole})
+   :rdfs/subClassOf :cmns-pts/PartyRole})
 
 (def SetPrice
   {:db/ident :fibo-bp-iss-ipo/SetPrice,
@@ -433,7 +427,7 @@
     "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/EquitiesIPOIssuance/"},
    :rdfs/label {:rdf/language "en",
                 :rdf/value    "sponsor"},
-   :rdfs/subClassOf #{:fibo-fnd-pty-pty/PartyInRole
+   :rdfs/subClassOf #{:cmns-pts/PartyRole
                       {:owl/onProperty     :fibo-bp-iss-ipo/mayBe,
                        :owl/someValuesFrom :fibo-bp-iss-ipo/CorporateBroker,
                        :rdf/type           :owl/Restriction}}})
@@ -446,7 +440,7 @@
     "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/EquitiesIPOIssuance/"},
    :rdfs/label {:rdf/language "en",
                 :rdf/value    "syndicate member"},
-   :rdfs/subClassOf :fibo-fnd-pty-pty/PartyInRole})
+   :rdfs/subClassOf :cmns-pts/PartyRole})
 
 (def Underwriting
   {:db/ident :fibo-bp-iss-ipo/Underwriting,
@@ -509,46 +503,43 @@
    :rdfs/range :fibo-bp-iss-ipo/SyndicateMember})
 
 (def urn:uuid:ab52f445-6f83-534f-83ab-a7473b9e895d
-  {:cmns-av/copyright "Copyright (c) 2013-2023 EDM Council, Inc.",
+  {:cmns-av/copyright "Copyright (c) 2013-2024 EDM Council, Inc.",
    :dcterms/abstract
    "Issuance process for equity instruments that are issued via an Initial Public Offering (IPO).",
    :dcterms/license {:xsd/anyURI "https://opensource.org/licenses/MIT"},
    :fibo-fnd-utl-av/hasMaturityLevel :fibo-fnd-utl-av/Provisional,
    :owl/imports
    #{{:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FBC/FunctionalEntities/Markets/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FBC/FunctionalEntities/Markets/"}
+     {:xsd/anyURI "https://www.omg.org/spec/Commons/RolesAndCompositions/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FBC/FunctionalEntities/RegistrationAuthorities/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Utilities/AnnotationVocabulary/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Accounting/CurrencyAmount/"}
+     {:xsd/anyURI "https://www.omg.org/spec/Commons/Documents/"}
+     {:xsd/anyURI "https://www.omg.org/spec/Commons/PartiesAndSituations/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/ContextualDesignators/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Parties/Parties/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/SEC/Securities/SecuritiesListings/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/SEC/Securities/SecuritiesListings/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FBC/FunctionalEntities/RegistrationAuthorities/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/BP/SecuritiesIssuance/IssuanceDocuments/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FBC/ProductsAndServices/FinancialProductsAndServices/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Accounting/CurrencyAmount/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Utilities/AnnotationVocabulary/"}
+     {:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/BP/SecuritiesIssuance/IssuanceDocuments/"}
+     {:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/DatesAndTimes/Occurrences/"}
+     {:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Relations/Relations/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/DatesAndTimes/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/DatesAndTimes/Occurrences/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/BP/SecuritiesIssuance/IssuanceProcess/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Parties/Roles/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Relations/Relations/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FBC/FinancialInstruments/FinancialInstruments/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/BP/SecuritiesIssuance/IssuanceProcess/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Arrangements/Documents/"}
-     {:xsd/anyURI "https://www.omg.org/spec/Commons/AnnotationVocabulary/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FBC/ProductsAndServices/FinancialProductsAndServices/"}},
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FBC/FinancialInstruments/FinancialInstruments/"}
+     {:xsd/anyURI "https://www.omg.org/spec/Commons/AnnotationVocabulary/"}},
    :owl/versionIRI
    {:xsd/anyURI
-    "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/BP/SecuritiesIssuance/EquitiesIPOIssuance/"},
+    "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/BP/SecuritiesIssuance/EquitiesIPOIssuance/"},
    :rdf/type :owl/Ontology,
    :rdfs/label {:rdf/language "en",
                 :rdf/value    "Equities IPO Issuance Ontology"},

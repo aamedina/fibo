@@ -1,8 +1,9 @@
 (ns net.wikipunk.rdf.fibo-loan-ln-app
-  {:cmns-av/copyright #{"Copyright (c) 2016-2023 Object Management Group, Inc."
-                        "Copyright (c) 2016-2023 EDM Council, Inc."},
+  {:cmns-av/copyright
+   #{"Copyright (c) 2016-2024 EDM Council, Inc."
+     "Copyright (c) 2016-2024 Object Management Group, Inc."},
    :dcat/downloadURL
-   "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/LOAN/LoansGeneral/LoanApplications/",
+   "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/LOAN/LoansGeneral/LoanApplications/",
    :dcterms/abstract
    "This ontology defines concepts for the loan application process, along with kinds of loan application and the parties thereto. Another major thread of this ontology is credit risk assessment at the highest level, which includes security agreements, pre-approvals, and credit reports.",
    :dcterms/license {:xsd/anyURI "https://opensource.org/licenses/MIT"},
@@ -12,7 +13,9 @@
     "cmns-cls" "https://www.omg.org/spec/Commons/Classifiers/",
     "cmns-col" "https://www.omg.org/spec/Commons/Collections/",
     "cmns-cxtdsg" "https://www.omg.org/spec/Commons/ContextualDesignators/",
+    "cmns-doc" "https://www.omg.org/spec/Commons/Documents/",
     "cmns-dt" "https://www.omg.org/spec/Commons/DatesAndTimes/",
+    "cmns-pts" "https://www.omg.org/spec/Commons/PartiesAndSituations/",
     "dcterms" "http://purl.org/dc/terms/",
     "fibo-fbc-dae-crt"
     "https://spec.edmcouncil.org/fibo/ontology/FBC/DebtAndEquities/CreditRatings/",
@@ -28,8 +31,6 @@
     "https://spec.edmcouncil.org/fibo/ontology/FND/Agreements/Contracts/",
     "fibo-fnd-arr-asmt"
     "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Assessments/",
-    "fibo-fnd-arr-doc"
-    "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Documents/",
     "fibo-fnd-arr-lif"
     "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Lifecycles/",
     "fibo-fnd-arr-rep"
@@ -38,10 +39,6 @@
     "https://spec.edmcouncil.org/fibo/ontology/FND/DatesAndTimes/FinancialDates/",
     "fibo-fnd-dt-oc"
     "https://spec.edmcouncil.org/fibo/ontology/FND/DatesAndTimes/Occurrences/",
-    "fibo-fnd-pty-pty"
-    "https://spec.edmcouncil.org/fibo/ontology/FND/Parties/Parties/",
-    "fibo-fnd-rel-rel"
-    "https://spec.edmcouncil.org/fibo/ontology/FND/Relations/Relations/",
     "fibo-fnd-utl-av"
     "https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/AnnotationVocabulary/",
     "fibo-loan-ln-app"
@@ -55,45 +52,41 @@
     "xsd" "http://www.w3.org/2001/XMLSchema#"},
    :owl/imports
    #{{:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FBC/ProductsAndServices/ClientsAndAccounts/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Accounting/CurrencyAmount/"}
+     {:xsd/anyURI "https://www.omg.org/spec/Commons/Documents/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Utilities/Analytics/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Utilities/AnnotationVocabulary/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FBC/DebtAndEquities/Debt/"}
+     {:xsd/anyURI "https://www.omg.org/spec/Commons/PartiesAndSituations/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/ContextualDesignators/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Parties/Parties/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Arrangements/Lifecycles/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FBC/DebtAndEquities/Debt/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Utilities/AnnotationVocabulary/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Accounting/AccountingEquity/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FBC/DebtAndEquities/CreditRatings/"}
+     {:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/DatesAndTimes/FinancialDates/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/Collections/"}
+     {:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Utilities/Analytics/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/Classifiers/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Accounting/CurrencyAmount/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FBC/ProductsAndServices/ClientsAndAccounts/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Arrangements/Assessments/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/DatesAndTimes/Occurrences/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/DatesAndTimes/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/DatesAndTimes/Occurrences/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Agreements/Contracts/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Arrangements/Lifecycles/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Accounting/AccountingEquity/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Agreements/Contracts/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FBC/DebtAndEquities/CreditRatings/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Relations/Relations/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Arrangements/Reporting/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Arrangements/Documents/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Arrangements/Reporting/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/AnnotationVocabulary/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/DatesAndTimes/FinancialDates/"}},
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Arrangements/Assessments/"}},
    :owl/versionIRI
    {:xsd/anyURI
-    "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/LOAN/LoansGeneral/LoanApplications/"},
+    "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/LOAN/LoansGeneral/LoanApplications/"},
    :rdf/type :owl/Ontology,
    :rdfa/prefix "fibo-loan-ln-app",
    :rdfa/uri
@@ -143,6 +136,9 @@
    :rdfs/label {:rdf/language "en",
                 :rdf/value    "borrower assessment"},
    :rdfs/subClassOf #{:fibo-fnd-arr-asmt/AssessmentReport
+                      {:owl/onProperty     :cmns-doc/isAbout,
+                       :owl/someValuesFrom :fibo-fbc-dae-dbt/Borrower,
+                       :rdf/type           :owl/Restriction}
                       {:owl/onProperty :fibo-fnd-arr-asmt/hasDateOfAssessment,
                        :owl/someValuesFrom :cmns-dt/ExplicitDate,
                        :rdf/type :owl/Restriction}
@@ -159,10 +155,7 @@
                        :fibo-loan-ln-app/IndividualPersonCreditRating,
                        :owl/onProperty :cmns-col/comprises,
                        :rdf/type :owl/Restriction}
-                      {:owl/onProperty     :fibo-fnd-arr-doc/isAbout,
-                       :owl/someValuesFrom :fibo-fbc-dae-dbt/Borrower,
-                       :rdf/type           :owl/Restriction}
-                      {:owl/onProperty     :fibo-fnd-arr-doc/isAbout,
+                      {:owl/onProperty     :cmns-doc/isAbout,
                        :owl/someValuesFrom :fibo-loan-ln-app/LoanApplication,
                        :rdf/type           :owl/Restriction}},
    :skos/definition
@@ -178,7 +171,7 @@
     "https://spec.edmcouncil.org/fibo/ontology/LOAN/LoansGeneral/LoanApplications/"},
    :rdfs/label "borrower monthly income",
    :rdfs/subClassOf #{:fibo-fnd-acc-cur/MonetaryAmount :fibo-fnd-acc-aeq/Income
-                      {:owl/onProperty     :fibo-fnd-pty-pty/hasPartyInRole,
+                      {:owl/onProperty     :cmns-pts/hasPartyRole,
                        :owl/someValuesFrom :fibo-fbc-dae-dbt/Borrower,
                        :rdf/type           :owl/Restriction}},
    :skos/definition "total monthly qualifying income of a potential borrower"})
@@ -205,10 +198,7 @@
      {:owl/onProperty     :fibo-fnd-dt-oc/hasInput,
       :owl/someValuesFrom :fibo-fbc-dae-crt/CreditReport,
       :rdf/type           :owl/Restriction}
-     {:owl/minQualifiedCardinality 0,
-      :owl/onClass    :fibo-loan-ln-app/AutomaticUnderwriting,
-      :owl/onProperty :fibo-fbc-dae-dbt/isBasedOn,
-      :rdf/type       :owl/Restriction} :fibo-fnd-arr-asmt/AssessmentActivity
+     :fibo-fnd-arr-asmt/AssessmentActivity
      {:owl/onProperty     :fibo-loan-ln-app/usesFactor,
       :owl/someValuesFrom :fibo-loan-ln-app/TotalDebtExpenseRatio,
       :rdf/type           :owl/Restriction}
@@ -346,8 +336,7 @@
     "https://spec.edmcouncil.org/fibo/ontology/LOAN/LoansGeneral/LoanApplications/"},
    :rdfs/label "loan application",
    :rdfs/subClassOf
-   #{:fibo-fnd-arr-doc/Document
-     {:owl/minQualifiedCardinality 0,
+   #{{:owl/minQualifiedCardinality 0,
       :owl/onClass    :fibo-loan-ln-ln/LoanToValueRatio,
       :owl/onProperty :cmns-col/comprises,
       :rdf/type       :owl/Restriction}
@@ -374,7 +363,7 @@
      {:owl/onClass    :cmns-dt/ExplicitDate,
       :owl/onProperty :fibo-loan-ln-app/hasApplicationDate,
       :owl/qualifiedCardinality 1,
-      :rdf/type       :owl/Restriction}
+      :rdf/type       :owl/Restriction} :cmns-doc/Document
      {:owl/onProperty     :cmns-col/comprises,
       :owl/someValuesFrom :fibo-loan-ln-app/TotalDebtExpenseRatio,
       :rdf/type           :owl/Restriction}},
@@ -490,18 +479,18 @@
    {:xsd/anyURI
     "https://spec.edmcouncil.org/fibo/ontology/LOAN/LoansGeneral/LoanApplications/"},
    :rdfs/label "public record",
-   :rdfs/subClassOf
-   #{{:owl/onProperty     :cmns-cls/isClassifiedBy,
-      :owl/someValuesFrom :fibo-loan-ln-app/PublicRecordCategory,
-      :rdf/type           :owl/Restriction}
-     {:owl/minQualifiedCardinality 0,
-      :owl/onClass    :fibo-fnd-arr-doc/LegalDocument,
-      :owl/onProperty :fibo-fnd-agr-ctr/isEvidencedBy,
-      :rdf/type       :owl/Restriction}
-     {:owl/minQualifiedCardinality 0,
-      :owl/onClass    :fibo-fbc-pas-caa/Account,
-      :owl/onProperty :fibo-fnd-rel-rel/refersTo,
-      :rdf/type       :owl/Restriction} :fibo-fnd-arr-doc/Record},
+   :rdfs/subClassOf #{{:owl/minQualifiedCardinality 0,
+                       :owl/onClass    :cmns-doc/LegalDocument,
+                       :owl/onProperty :fibo-fnd-agr-ctr/isEvidencedBy,
+                       :rdf/type       :owl/Restriction}
+                      {:owl/onProperty :cmns-cls/isClassifiedBy,
+                       :owl/someValuesFrom
+                       :fibo-loan-ln-app/PublicRecordCategory,
+                       :rdf/type :owl/Restriction} :cmns-doc/Record
+                      {:owl/minQualifiedCardinality 0,
+                       :owl/onClass    :fibo-fbc-pas-caa/Account,
+                       :owl/onProperty :cmns-doc/refersTo,
+                       :rdf/type       :owl/Restriction}},
    :skos/definition
    "record about an action involving a party that is publicly available from a court or other government agency"})
 
@@ -792,53 +781,50 @@
     "relates e.g. a risk assessment to something used as a factor to make the assessment"}})
 
 (def urn:uuid:ad28a18d-4780-5359-b6e7-0053bea8b97f
-  {:cmns-av/copyright #{"Copyright (c) 2016-2023 Object Management Group, Inc."
-                        "Copyright (c) 2016-2023 EDM Council, Inc."},
+  {:cmns-av/copyright
+   #{"Copyright (c) 2016-2024 EDM Council, Inc."
+     "Copyright (c) 2016-2024 Object Management Group, Inc."},
    :dcterms/abstract
    "This ontology defines concepts for the loan application process, along with kinds of loan application and the parties thereto. Another major thread of this ontology is credit risk assessment at the highest level, which includes security agreements, pre-approvals, and credit reports.",
    :dcterms/license {:xsd/anyURI "https://opensource.org/licenses/MIT"},
    :fibo-fnd-utl-av/hasMaturityLevel :fibo-fnd-utl-av/Provisional,
    :owl/imports
    #{{:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FBC/ProductsAndServices/ClientsAndAccounts/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Accounting/CurrencyAmount/"}
+     {:xsd/anyURI "https://www.omg.org/spec/Commons/Documents/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Utilities/Analytics/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Utilities/AnnotationVocabulary/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FBC/DebtAndEquities/Debt/"}
+     {:xsd/anyURI "https://www.omg.org/spec/Commons/PartiesAndSituations/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/ContextualDesignators/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Parties/Parties/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Arrangements/Lifecycles/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FBC/DebtAndEquities/Debt/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Utilities/AnnotationVocabulary/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Accounting/AccountingEquity/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FBC/DebtAndEquities/CreditRatings/"}
+     {:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/DatesAndTimes/FinancialDates/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/Collections/"}
+     {:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Utilities/Analytics/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/Classifiers/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Accounting/CurrencyAmount/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FBC/ProductsAndServices/ClientsAndAccounts/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Arrangements/Assessments/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/DatesAndTimes/Occurrences/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/DatesAndTimes/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/DatesAndTimes/Occurrences/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Agreements/Contracts/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Arrangements/Lifecycles/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Accounting/AccountingEquity/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Agreements/Contracts/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FBC/DebtAndEquities/CreditRatings/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Relations/Relations/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Arrangements/Reporting/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Arrangements/Documents/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Arrangements/Reporting/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/AnnotationVocabulary/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/DatesAndTimes/FinancialDates/"}},
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Arrangements/Assessments/"}},
    :owl/versionIRI
    {:xsd/anyURI
-    "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/LOAN/LoansGeneral/LoanApplications/"},
+    "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/LOAN/LoansGeneral/LoanApplications/"},
    :rdf/type :owl/Ontology,
    :rdfs/label {:rdf/language "en",
                 :rdf/value    "Loan Applications Ontology"},

@@ -2,7 +2,7 @@
   {:cmns-av/copyright #{"Copyright (c) 2020-2023 Object Management Group, Inc."
                         "Copyright (c) 2020-2023 EDM Council, Inc."},
    :dcat/downloadURL
-   "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/BE/LegalEntities/NorthAmericanEntities/USExampleEntities/",
+   "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/BE/LegalEntities/NorthAmericanEntities/USExampleEntities/",
    :dcterms/abstract
    "This ontology includes example entities that are companies in the US that issue stock and that are represented in the Dow Jones Industrial Average (DJIA), to demonstrate how to begin to model those entities in FIBO.",
    :dcterms/license {:xsd/anyURI "https://opensource.org/licenses/MIT"},
@@ -36,28 +36,28 @@
     "skos" "http://www.w3.org/2004/02/skos/core#",
     "xsd" "http://www.w3.org/2001/XMLSchema#"},
    :owl/imports
-   #{{:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Utilities/AnnotationVocabulary/"}
-     {:xsd/anyURI "https://www.omg.org/spec/Commons/Identifiers/"}
+   #{{:xsd/anyURI "https://www.omg.org/spec/Commons/Identifiers/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/BE/LegalEntities/CorporateBodies/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/BE/LegalEntities/LEIEntities/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/BE/Corporations/Corporations/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Utilities/AnnotationVocabulary/"}
+     {:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Relations/Relations/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/DatesAndTimes/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/BE/LegalEntities/LEIEntities/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/BE/Corporations/Corporations/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Relations/Relations/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/BE/LegalEntities/CorporateBodies/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/BE/GovernmentEntities/NorthAmericanJurisdiction/USGovernmentEntitiesAndJurisdictions/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Organizations/FormalOrganizations/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/BE/GovernmentEntities/NorthAmericanJurisdiction/USGovernmentEntitiesAndJurisdictions/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/AnnotationVocabulary/"}
+     {:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Organizations/FormalOrganizations/"}
      {:xsd/anyURI
       "https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/"}},
    :owl/versionIRI
    {:xsd/anyURI
-    "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/BE/LegalEntities/NorthAmericanEntities/USExampleEntities/"},
+    "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/BE/LegalEntities/NorthAmericanEntities/USExampleEntities/"},
    :rdf/type :owl/Ontology,
    :rdfa/prefix "fibo-be-le-usee",
    :rdfa/uri
@@ -315,6 +315,15 @@
    :skos/definition
    "date that The Proctor & Gamble Company was first registered as a corporation in the State of Ohio"})
 
+(def urn:uuid:aa902058-1d8f-54a9-847e-cf9024122dbd
+  {:cmns-id/identifies :fibo-be-le-usee/TheCoca-ColaCompany-US-DE,
+   :fibo-fnd-rel-rel/hasTag "UWJKFUJFZ02DKWI3RY53",
+   :rdf/type           #{:owl/NamedIndividual
+                         :fibo-be-le-lei/LegalEntityIdentifier},
+   :rdfs/label         "The Coca-Cola Company legal entity identifier",
+   :skos/definition    "legal entity identifier for The Coca-Cola Company",
+   :xsd/anyURI         "https://rdf.gleif.org/L1/L-UWJKFUJFZ02DKWI3RY53-LEI"})
+
 (def urn:uuid:3cec2df6-8392-595f-85ba-e2d10541d4b6
   {:cmns-av/copyright #{"Copyright (c) 2020-2023 Object Management Group, Inc."
                         "Copyright (c) 2020-2023 EDM Council, Inc."},
@@ -323,28 +332,28 @@
    :dcterms/license {:xsd/anyURI "https://opensource.org/licenses/MIT"},
    :fibo-fnd-utl-av/hasMaturityLevel :fibo-fnd-utl-av/Release,
    :owl/imports
-   #{{:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Utilities/AnnotationVocabulary/"}
-     {:xsd/anyURI "https://www.omg.org/spec/Commons/Identifiers/"}
+   #{{:xsd/anyURI "https://www.omg.org/spec/Commons/Identifiers/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/BE/LegalEntities/CorporateBodies/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/BE/LegalEntities/LEIEntities/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/BE/Corporations/Corporations/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Utilities/AnnotationVocabulary/"}
+     {:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Relations/Relations/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/DatesAndTimes/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/BE/LegalEntities/LEIEntities/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/BE/Corporations/Corporations/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Relations/Relations/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/BE/LegalEntities/CorporateBodies/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/BE/GovernmentEntities/NorthAmericanJurisdiction/USGovernmentEntitiesAndJurisdictions/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Organizations/FormalOrganizations/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/BE/GovernmentEntities/NorthAmericanJurisdiction/USGovernmentEntitiesAndJurisdictions/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/AnnotationVocabulary/"}
+     {:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Organizations/FormalOrganizations/"}
      {:xsd/anyURI
       "https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/"}},
    :owl/versionIRI
    {:xsd/anyURI
-    "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/BE/LegalEntities/NorthAmericanEntities/USExampleEntities/"},
+    "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/BE/LegalEntities/NorthAmericanEntities/USExampleEntities/"},
    :rdf/type :owl/Ontology,
    :rdfs/label "US Example Entities",
    :skos/changeNote
@@ -356,3 +365,49 @@
      "The https://spec.edmcouncil.org/fibo/ontology/BE/LegalEntities/NorthAmericanEntities/USExampleEntities.rdf version of this ontology was revised to update a dead link."},
    :xsd/anyURI
    "https://spec.edmcouncil.org/fibo/ontology/BE/LegalEntities/NorthAmericanEntities/USExampleEntities/"})
+
+(def urn:uuid:101c71f6-2093-5177-900e-543f50e7da35
+  {:cmns-id/identifies :fibo-be-le-usee/TheProctorAndGambleCompany-US-OH,
+   :fibo-fnd-rel-rel/hasTag "2572IBTT8CCZW6AU4141",
+   :rdf/type #{:owl/NamedIndividual :fibo-be-le-lei/LegalEntityIdentifier},
+   :rdfs/label "The Proctor & Gamble Company legal entity identifier",
+   :skos/definition "legal entity identifier for The Proctor & Gamble Company",
+   :xsd/anyURI "https://rdf.gleif.org/L1/L-2572IBTT8CCZW6AU4141-LEI"})
+
+(def urn:uuid:af07bc7d-5c44-5a0a-bb6b-b5ab0c9cdf75
+  {:cmns-id/identifies :fibo-be-le-usee/TheHomeDepotInc-US-DE,
+   :fibo-fnd-rel-rel/hasTag "QEKMOTMBBKA8I816DO57",
+   :rdf/type           #{:owl/NamedIndividual
+                         :fibo-be-le-lei/LegalEntityIdentifier},
+   :rdfs/label         "The Home Depot, Inc. legal entity identifier",
+   :skos/definition    "legal entity identifier for The Home Depot, Inc.",
+   :xsd/anyURI         "https://rdf.gleif.org/L1/L-QEKMOTMBBKA8I816DO57-LEI"})
+
+(def urn:uuid:5470c4ad-71de-5a27-973e-499c416bed30
+  {:cmns-id/identifies :fibo-be-le-usee/AppleInc-US-CA,
+   :fibo-fnd-rel-rel/hasTag "HWUPKR0MPOU8FGXBT394",
+   :rdf/type           #{:owl/NamedIndividual
+                         :fibo-be-le-lei/LegalEntityIdentifier},
+   :rdfs/label         "Apple Inc. legal entity identifier",
+   :skos/definition    "legal entity identifier for Apple Inc.",
+   :xsd/anyURI         "https://rdf.gleif.org/L1/L-HWUPKR0MPOU8FGXBT394-LEI"})
+
+(def urn:uuid:d47074cb-d849-58c8-a85f-4ab966de7bf8
+  {:cmns-id/identifies :fibo-be-le-usee/AlphabetInc-US-CA,
+   :fibo-fnd-rel-rel/hasTag "5493006MHB84DD0ZWV18",
+   :rdf/type           #{:owl/NamedIndividual
+                         :fibo-be-le-lei/LegalEntityIdentifier},
+   :rdfs/label         "Alphabet Inc. legal entity identifier",
+   :skos/definition    "legal entity identifier for Alphabet Inc.",
+   :xsd/anyURI         "https://rdf.gleif.org/L1/L-5493006MHB84DD0ZWV18-LEI"})
+
+(def urn:uuid:81c51c10-bbac-5419-bc7a-809690f6c535
+  {:cmns-id/identifies
+   :fibo-be-le-usee/InternationalBusinessMachinesCorporation-US-NY,
+   :fibo-fnd-rel-rel/hasTag "VGRQXHF3J8VDLUA7XE92",
+   :rdf/type #{:owl/NamedIndividual :fibo-be-le-lei/LegalEntityIdentifier},
+   :rdfs/label
+   "International Business Machines Corporation legal entity identifier",
+   :skos/definition
+   "legal entity identifier for International Business Machines Corporation",
+   :xsd/anyURI "https://rdf.gleif.org/L1/L-VGRQXHF3J8VDLUA7XE92-LEI"})

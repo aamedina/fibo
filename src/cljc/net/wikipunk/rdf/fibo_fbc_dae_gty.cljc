@@ -1,16 +1,19 @@
 (ns net.wikipunk.rdf.fibo-fbc-dae-gty
-  {:cmns-av/copyright #{"Copyright (c) 2016-2023 Object Management Group, Inc."
-                        "Copyright (c) 2016-2023 EDM Council, Inc."},
+  {:cmns-av/copyright
+   #{"Copyright (c) 2016-2024 EDM Council, Inc."
+     "Copyright (c) 2016-2024 Object Management Group, Inc."},
    :dcat/downloadURL
-   "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FBC/DebtAndEquities/Guaranty/",
+   "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FBC/DebtAndEquities/Guaranty/",
    :dcterms/abstract
    "This ontology defines concepts related to contractual guaranty.",
-   :dcterms/license {:xsd/anyURI "http://opensource.org/licenses/MIT"},
+   :dcterms/license {:xsd/anyURI "https://opensource.org/licenses/MIT"},
    :fibo-fnd-utl-av/hasMaturityLevel :fibo-fnd-utl-av/Release,
    :namespaces
    {"cmns-av" "https://www.omg.org/spec/Commons/AnnotationVocabulary/",
     "cmns-cls" "https://www.omg.org/spec/Commons/Classifiers/",
     "cmns-dt" "https://www.omg.org/spec/Commons/DatesAndTimes/",
+    "cmns-pts" "https://www.omg.org/spec/Commons/PartiesAndSituations/",
+    "cmns-rlcmp" "https://www.omg.org/spec/Commons/RolesAndCompositions/",
     "dcterms" "http://purl.org/dc/terms/",
     "fibo-be-ge-ge"
     "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/GovernmentEntities/",
@@ -22,8 +25,6 @@
     "https://spec.edmcouncil.org/fibo/ontology/FBC/DebtAndEquities/Debt/",
     "fibo-fbc-dae-gty"
     "https://spec.edmcouncil.org/fibo/ontology/FBC/DebtAndEquities/Guaranty/",
-    "fibo-fbc-pas-caa"
-    "https://spec.edmcouncil.org/fibo/ontology/FBC/ProductsAndServices/ClientsAndAccounts/",
     "fibo-fbc-pas-fpas"
     "https://spec.edmcouncil.org/fibo/ontology/FBC/ProductsAndServices/FinancialProductsAndServices/",
     "fibo-fnd-acc-aeq"
@@ -36,14 +37,8 @@
     "https://spec.edmcouncil.org/fibo/ontology/FND/Agreements/Contracts/",
     "fibo-fnd-arr-doc"
     "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Documents/",
-    "fibo-fnd-dt-bd"
-    "https://spec.edmcouncil.org/fibo/ontology/FND/DatesAndTimes/BusinessDates/",
     "fibo-fnd-oac-ctl"
     "https://spec.edmcouncil.org/fibo/ontology/FND/OwnershipAndControl/Control/",
-    "fibo-fnd-pty-pty"
-    "https://spec.edmcouncil.org/fibo/ontology/FND/Parties/Parties/",
-    "fibo-fnd-pty-rl"
-    "https://spec.edmcouncil.org/fibo/ontology/FND/Parties/Roles/",
     "fibo-fnd-rel-rel"
     "https://spec.edmcouncil.org/fibo/ontology/FND/Relations/Relations/",
     "fibo-fnd-utl-av"
@@ -54,46 +49,40 @@
     "skos" "http://www.w3.org/2004/02/skos/core#",
     "xsd" "http://www.w3.org/2001/XMLSchema#"},
    :owl/imports
-   #{{:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/BE/GovernmentEntities/GovernmentEntities/"}
+   #{{:xsd/anyURI "https://www.omg.org/spec/Commons/RolesAndCompositions/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/OwnershipAndControl/Control/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Accounting/CurrencyAmount/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FBC/ProductsAndServices/ClientsAndAccounts/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FBC/DebtAndEquities/Debt/"}
+     {:xsd/anyURI "https://www.omg.org/spec/Commons/PartiesAndSituations/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/BE/OwnershipAndControl/ControlParties/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/BE/GovernmentEntities/GovernmentEntities/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Utilities/AnnotationVocabulary/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Arrangements/Documents/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Parties/Parties/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FBC/ProductsAndServices/FinancialProductsAndServices/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FBC/DebtAndEquities/Debt/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/BE/LegalEntities/LegalPersons/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Accounting/AccountingEquity/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Agreements/Agreements/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Utilities/AnnotationVocabulary/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/Classifiers/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Accounting/CurrencyAmount/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Relations/Relations/"}
+     {:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/BE/OwnershipAndControl/ControlParties/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/DatesAndTimes/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Agreements/Contracts/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Agreements/Contracts/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Parties/Roles/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Accounting/AccountingEquity/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/DatesAndTimes/BusinessDates/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Relations/Relations/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Arrangements/Documents/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/OwnershipAndControl/Control/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/AnnotationVocabulary/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/BE/LegalEntities/LegalPersons/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FBC/ProductsAndServices/FinancialProductsAndServices/"}},
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Agreements/Agreements/"}},
    :owl/versionIRI
    {:xsd/anyURI
-    "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FBC/DebtAndEquities/Guaranty/"},
+    "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FBC/DebtAndEquities/Guaranty/"},
    :rdf/type :owl/Ontology,
    :rdfa/prefix "fibo-fbc-dae-gty",
    :rdfa/uri
@@ -105,6 +94,7 @@
      "The https://spec.edmcouncil.org/fibo/ontology/FBC/DebtAndEquities/Guaranty/ version of this ontology revised to incorporate refinement of the concept of a guaranty as needed for debt securities and loans."
      "The https://spec.edmcouncil.org/fibo/ontology/FBC/DebtAndEquities/Guaranty/ version of this ontology revised to simplify the contract party hierarchy, add properties linking controlled parties to their guarantor, and clean up definitions to eliminate ambiguity, etc."
      "The https://spec.edmcouncil.org/fibo/ontology/FBC/DebtAndEquities/Guaranty/ version of this ontology revised to make letter of credit a subclass of committed credit facility, and to differentiate financial collateral from physical collateral."
+     "The https://spec.edmcouncil.org/fibo/ontology/FBC/DebtAndEquities/Guaranty.rdf version of this ontology was modified to replace content that is now available in the OMG Commons Ontology Library (Commons) v1.1 (FND-380)."
      "The https://spec.edmcouncil.org/fibo/ontology/FBC/DebtAndEquities/Guaranty.rdf version of the ontology was modified to use the Commons Ontology Library (Commons) Annotation Vocabulary rather than the OMG's Specification Metadata vocabulary."
      "The https://spec.edmcouncil.org/fibo/ontology/FBC/DebtAndEquities/Guaranty/ version of this ontology revised to address text formatting issues uncovered by hygiene testing."
      "The https://spec.edmcouncil.org/fibo/ontology/FBC/DebtAndEquities/Guaranty/ version of this ontology revised to eliminate duplication of concepts in LCC."
@@ -138,7 +128,7 @@
    :rdfs/subClassOf
    #{:fibo-fbc-dae-gty/Guaranty
      {:owl/onProperty     :fibo-fbc-dae-gty/isGuaranteedBy,
-      :owl/someValuesFrom {:owl/onProperty     :fibo-fnd-pty-rl/isPlayedBy,
+      :owl/someValuesFrom {:owl/onProperty     :cmns-rlcmp/isPlayedBy,
                            :owl/someValuesFrom :fibo-be-ge-ge/Polity,
                            :rdf/type           :owl/Restriction},
       :rdf/type           :owl/Restriction}},
@@ -158,16 +148,16 @@
     "https://spec.edmcouncil.org/fibo/ontology/FBC/DebtAndEquities/Guaranty/"},
    :rdfs/label "guarantor",
    :rdfs/subClassOf
-   #{{:owl/allValuesFrom :fibo-be-le-lp/LegalPerson,
-      :owl/onProperty    :fibo-fnd-rel-rel/hasIdentity,
-      :rdf/type          :owl/Restriction}
-     :fibo-be-oac-cpty/DeJureControllingInterestParty
-     :fibo-fnd-agr-ctr/ContractThirdParty
-     {:owl/onProperty     :fibo-fnd-pty-rl/isPlayedBy,
-      :owl/someValuesFrom {:owl/onProperty     :fibo-fnd-pty-pty/isAPartyTo,
+   #{{:owl/onProperty     :cmns-rlcmp/isPlayedBy,
+      :owl/someValuesFrom {:owl/onProperty     :cmns-pts/isAPartyTo,
                            :owl/someValuesFrom :fibo-fnd-agr-ctr/Contract,
                            :rdf/type           :owl/Restriction},
-      :rdf/type           :owl/Restriction}},
+      :rdf/type           :owl/Restriction}
+     :fibo-be-oac-cpty/DeJureControllingInterestParty
+     :fibo-fnd-agr-ctr/ContractThirdParty
+     {:owl/allValuesFrom :fibo-be-le-lp/LegalPerson,
+      :owl/onProperty    :cmns-rlcmp/isPlayedBy,
+      :rdf/type          :owl/Restriction}},
    :skos/definition
    "party that guarantees, endorses, or provides indemnity for some obligation on behalf of some other party"})
 
@@ -183,10 +173,7 @@
    {:xsd/anyURI
     "https://spec.edmcouncil.org/fibo/ontology/FBC/DebtAndEquities/Guaranty/"},
    :rdfs/label "guaranty",
-   :rdfs/subClassOf #{{:owl/allValuesFrom :cmns-dt/DatePeriod,
-                       :owl/onProperty    :fibo-fnd-dt-bd/holdsDuring,
-                       :rdf/type          :owl/Restriction}
-                      {:owl/allValuesFrom :fibo-fnd-acc-cur/MonetaryAmount,
+   :rdfs/subClassOf #{{:owl/allValuesFrom :fibo-fnd-acc-cur/MonetaryAmount,
                        :owl/onProperty    :fibo-fbc-dae-gty/hasGuaranteedAmount,
                        :rdf/type          :owl/Restriction}
                       {:owl/allValuesFrom :cmns-dt/Date,
@@ -194,6 +181,9 @@
                        :rdf/type          :owl/Restriction}
                       {:owl/allValuesFrom :fibo-fbc-dae-gty/PriorityLevel,
                        :owl/onProperty    :fibo-fbc-dae-gty/hasPriorityLevel,
+                       :rdf/type          :owl/Restriction}
+                      {:owl/allValuesFrom :cmns-dt/DatePeriod,
+                       :owl/onProperty    :cmns-pts/holdsDuring,
                        :rdf/type          :owl/Restriction}
                       {:owl/allValuesFrom :fibo-fbc-dae-gty/Guarantor,
                        :owl/onProperty    :fibo-fbc-dae-gty/isGuaranteedBy,
@@ -210,7 +200,7 @@
     "https://spec.edmcouncil.org/fibo/ontology/FBC/DebtAndEquities/Guaranty/"},
    :rdfs/label "insurance-backed guaranty",
    :rdfs/subClassOf #{:fibo-fbc-dae-gty/Guaranty
-                      {:owl/onProperty     :fibo-fbc-pas-caa/isRealizedBy,
+                      {:owl/onProperty     :fibo-fnd-rel-rel/isExemplifiedBy,
                        :owl/someValuesFrom :fibo-fbc-dae-gty/InsurancePolicy,
                        :rdf/type           :owl/Restriction}},
    :skos/definition "guaranty that is realized as an insurance policy"})
@@ -252,9 +242,9 @@
     "https://spec.edmcouncil.org/fibo/ontology/FBC/DebtAndEquities/Guaranty/"},
    :rdfs/label "joint guaranty",
    :rdfs/subClassOf #{:fibo-fbc-dae-gty/Guaranty
-                      {:owl/onClass    :fibo-fbc-dae-gty/Guarantor,
+                      {:owl/minQualifiedCardinality 2,
+                       :owl/onClass    :fibo-fbc-dae-gty/Guarantor,
                        :owl/onProperty :fibo-fbc-dae-gty/isGuaranteedBy,
-                       :owl/qualifiedCardinality 2,
                        :rdf/type       :owl/Restriction}},
    :skos/definition
    "guaranty provided by at least two parties, jointly and severally"})
@@ -270,11 +260,11 @@
    {:xsd/anyURI
     "https://spec.edmcouncil.org/fibo/ontology/FBC/DebtAndEquities/Guaranty/"},
    :rdfs/label "letter of credit",
-   :rdfs/subClassOf #{:fibo-fnd-acc-aeq/FinancialAsset
-                      :fibo-fbc-dae-dbt/CommittedCreditFacility
-                      {:owl/onProperty     :fibo-fnd-rel-rel/isIssuedBy,
-                       :owl/someValuesFrom :fibo-fnd-pty-pty/PartyInRole,
-                       :rdf/type           :owl/Restriction}},
+   :rdfs/subClassOf #{{:owl/onProperty     :fibo-fnd-rel-rel/isIssuedBy,
+                       :owl/someValuesFrom :cmns-pts/PartyRole,
+                       :rdf/type           :owl/Restriction}
+                      :fibo-fnd-acc-aeq/FinancialAsset
+                      :fibo-fbc-dae-dbt/CommittedCreditFacility},
    :skos/definition
    "letter from a bank or other creditworthy institution guaranteeing that a buyer's payment to a seller will be received on time and for the correct amount"})
 
@@ -285,10 +275,10 @@
    {:xsd/anyURI
     "https://spec.edmcouncil.org/fibo/ontology/FBC/DebtAndEquities/Guaranty/"},
    :rdfs/label "letter of credit guaranty",
-   :rdfs/subClassOf #{{:owl/onProperty     :fibo-fbc-pas-caa/isRealizedBy,
+   :rdfs/subClassOf #{:fibo-fbc-dae-gty/CollateralizedGuaranty
+                      {:owl/onProperty     :fibo-fnd-rel-rel/isExemplifiedBy,
                        :owl/someValuesFrom :fibo-fbc-dae-gty/LetterOfCredit,
-                       :rdf/type           :owl/Restriction}
-                      :fibo-fbc-dae-gty/CollateralizedGuaranty},
+                       :rdf/type           :owl/Restriction}},
    :skos/definition
    "guaranty that takes the form of a letter of credit, i.e., a document issued by a bank guaranteeing the payment up to a stated amount for a specified period"})
 
@@ -404,53 +394,48 @@
    "identifies a party over which a guarantor has some measure of control by virtue of the guarantee"})
 
 (def urn:uuid:5774dcf1-170b-5ead-ad23-bb7aafc12210
-  {:cmns-av/copyright #{"Copyright (c) 2016-2023 Object Management Group, Inc."
-                        "Copyright (c) 2016-2023 EDM Council, Inc."},
+  {:cmns-av/copyright
+   #{"Copyright (c) 2016-2024 EDM Council, Inc."
+     "Copyright (c) 2016-2024 Object Management Group, Inc."},
    :dcterms/abstract
    "This ontology defines concepts related to contractual guaranty.",
-   :dcterms/license {:xsd/anyURI "http://opensource.org/licenses/MIT"},
+   :dcterms/license {:xsd/anyURI "https://opensource.org/licenses/MIT"},
    :fibo-fnd-utl-av/hasMaturityLevel :fibo-fnd-utl-av/Release,
    :owl/imports
-   #{{:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/BE/GovernmentEntities/GovernmentEntities/"}
+   #{{:xsd/anyURI "https://www.omg.org/spec/Commons/RolesAndCompositions/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/OwnershipAndControl/Control/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Accounting/CurrencyAmount/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FBC/ProductsAndServices/ClientsAndAccounts/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FBC/DebtAndEquities/Debt/"}
+     {:xsd/anyURI "https://www.omg.org/spec/Commons/PartiesAndSituations/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/BE/OwnershipAndControl/ControlParties/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/BE/GovernmentEntities/GovernmentEntities/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Utilities/AnnotationVocabulary/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Arrangements/Documents/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Parties/Parties/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FBC/ProductsAndServices/FinancialProductsAndServices/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FBC/DebtAndEquities/Debt/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/BE/LegalEntities/LegalPersons/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Accounting/AccountingEquity/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Agreements/Agreements/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Utilities/AnnotationVocabulary/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/Classifiers/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Accounting/CurrencyAmount/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Relations/Relations/"}
+     {:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/BE/OwnershipAndControl/ControlParties/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/DatesAndTimes/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Agreements/Contracts/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Agreements/Contracts/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Parties/Roles/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Accounting/AccountingEquity/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/DatesAndTimes/BusinessDates/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Relations/Relations/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Arrangements/Documents/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/OwnershipAndControl/Control/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/AnnotationVocabulary/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/BE/LegalEntities/LegalPersons/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FBC/ProductsAndServices/FinancialProductsAndServices/"}},
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Agreements/Agreements/"}},
    :owl/versionIRI
    {:xsd/anyURI
-    "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FBC/DebtAndEquities/Guaranty/"},
+    "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FBC/DebtAndEquities/Guaranty/"},
    :rdf/type :owl/Ontology,
    :rdfs/label "Guaranty Ontology",
    :skos/changeNote
@@ -459,6 +444,7 @@
      "The https://spec.edmcouncil.org/fibo/ontology/FBC/DebtAndEquities/Guaranty/ version of this ontology revised to incorporate refinement of the concept of a guaranty as needed for debt securities and loans."
      "The https://spec.edmcouncil.org/fibo/ontology/FBC/DebtAndEquities/Guaranty/ version of this ontology revised to simplify the contract party hierarchy, add properties linking controlled parties to their guarantor, and clean up definitions to eliminate ambiguity, etc."
      "The https://spec.edmcouncil.org/fibo/ontology/FBC/DebtAndEquities/Guaranty/ version of this ontology revised to make letter of credit a subclass of committed credit facility, and to differentiate financial collateral from physical collateral."
+     "The https://spec.edmcouncil.org/fibo/ontology/FBC/DebtAndEquities/Guaranty.rdf version of this ontology was modified to replace content that is now available in the OMG Commons Ontology Library (Commons) v1.1 (FND-380)."
      "The https://spec.edmcouncil.org/fibo/ontology/FBC/DebtAndEquities/Guaranty.rdf version of the ontology was modified to use the Commons Ontology Library (Commons) Annotation Vocabulary rather than the OMG's Specification Metadata vocabulary."
      "The https://spec.edmcouncil.org/fibo/ontology/FBC/DebtAndEquities/Guaranty/ version of this ontology revised to address text formatting issues uncovered by hygiene testing."
      "The https://spec.edmcouncil.org/fibo/ontology/FBC/DebtAndEquities/Guaranty/ version of this ontology revised to eliminate duplication of concepts in LCC."

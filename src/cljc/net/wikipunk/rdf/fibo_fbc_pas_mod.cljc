@@ -3,7 +3,7 @@
    #{"Copyright (c) 2015-2023 EDM Council, Inc."
      "Copyright (c) 2015-2023 Object Management Group, Inc."},
    :dcat/downloadURL
-   "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FBC/ProductsAndServices/MetadataFBCProductsAndServices/FBCProductsAndServicesModule",
+   "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FBC/ProductsAndServices/MetadataFBCProductsAndServices/FBCProductsAndServicesModule",
    :dcterms/abstract
    "The FBC Products and Services module extends the FND Products and Services module via ontologies defining financial products, financial services, financial service providers, and product catalogs as well as customer/client accounts.",
    :dcterms/issued #inst "2015-08-13T18:00:00.000-00:00",
@@ -22,11 +22,11 @@
     "xsd" "http://www.w3.org/2001/XMLSchema#"},
    :owl/imports
    #{{:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Utilities/AnnotationVocabulary/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Utilities/AnnotationVocabulary/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/AnnotationVocabulary/"}},
    :owl/versionIRI
    {:xsd/anyURI
-    "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FBC/ProductsAndServices/MetadataFBCProductsAndServices/"},
+    "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FBC/ProductsAndServices/MetadataFBCProductsAndServices/"},
    :rdf/type :owl/Ontology,
    :rdfa/prefix "fibo-fbc-pas-mod",
    :rdfa/uri
@@ -70,11 +70,11 @@
    :dcterms/modified #inst "2023-06-27T18:00:00.000-00:00",
    :owl/imports
    #{{:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Utilities/AnnotationVocabulary/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Utilities/AnnotationVocabulary/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/AnnotationVocabulary/"}},
    :owl/versionIRI
    {:xsd/anyURI
-    "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FBC/ProductsAndServices/MetadataFBCProductsAndServices/"},
+    "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FBC/ProductsAndServices/MetadataFBCProductsAndServices/"},
    :rdf/type :owl/Ontology,
    :rdfs/label
    "Metadata about the EDMC-FIBO Financial Business and Commerce(FBC) Products and Services Module",

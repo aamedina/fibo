@@ -1,15 +1,16 @@
 (ns net.wikipunk.rdf.fibo-der-drc-raw
-  {:cmns-av/copyright
-   #{"Copyright (c) 2015-2023 EDM Council, Inc."
-     "Copyright (c) 2015-2023 Object Management Group, Inc."},
+  {:cmns-av/copyright #{"Copyright (c) 2015-2024 Object Management Group, Inc."
+                        "Copyright (c) 2015-2024 EDM Council, Inc."},
    :dcat/downloadURL
-   "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/DER/DerivativesContracts/RightsAndWarrants/",
+   "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/DER/DerivativesContracts/RightsAndWarrants/",
    :dcterms/abstract
    "The Rights and Warrants ontology covers a range of financial instruments providing the holder with the privilege to subscribe to or receive specific assets on terms specified. These include rights (privileges) extended to existing security holders to make new securities available to them at reduced prices or for free, and warrants whereby the holder can purchase or sell back a given quantity of the instrument, commodity or currency during a specified period at a pre-defined price.",
    :dcterms/license {:xsd/anyURI "https://opensource.org/licenses/MIT"},
    :fibo-fnd-utl-av/hasMaturityLevel :fibo-fnd-utl-av/Release,
    :namespaces
    {"cmns-av" "https://www.omg.org/spec/Commons/AnnotationVocabulary/",
+    "cmns-qtu" "https://www.omg.org/spec/Commons/QuantitiesAndUnits/",
+    "cmns-rlcmp" "https://www.omg.org/spec/Commons/RolesAndCompositions/",
     "dcterms" "http://purl.org/dc/terms/",
     "fibo-be-le-cb"
     "https://spec.edmcouncil.org/fibo/ontology/BE/LegalEntities/CorporateBodies/",
@@ -27,12 +28,8 @@
     "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/FinancialServicesEntities/",
     "fibo-fbc-fi-fi"
     "https://spec.edmcouncil.org/fibo/ontology/FBC/FinancialInstruments/FinancialInstruments/",
-    "fibo-fnd-qt-qtu"
-    "https://spec.edmcouncil.org/fibo/ontology/FND/Quantities/QuantitiesAndUnits/",
     "fibo-fnd-rel-rel"
     "https://spec.edmcouncil.org/fibo/ontology/FND/Relations/Relations/",
-    "fibo-fnd-utl-alx"
-    "https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/Analytics/",
     "fibo-fnd-utl-av"
     "https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/AnnotationVocabulary/",
     "fibo-ind-ei-ei"
@@ -57,50 +54,48 @@
     "skos" "http://www.w3.org/2004/02/skos/core#",
     "xsd" "http://www.w3.org/2001/XMLSchema#"},
    :owl/imports
-   #{{:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Quantities/QuantitiesAndUnits/"}
+   #{{:xsd/anyURI "https://www.omg.org/spec/Commons/RolesAndCompositions/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Utilities/Analytics/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/SEC/Debt/Bonds/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Utilities/AnnotationVocabulary/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/DER/DerivativesContracts/ExoticOptions/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/DER/SecurityBasedDerivatives/SecurityBasedDerivatives/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/SEC/Securities/SecuritiesListings/"}
+     {:xsd/anyURI "https://www.omg.org/spec/Commons/QuantitiesAndUnits/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/DER/DerivativesContracts/ExoticOptions/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/IND/EconomicIndicators/EconomicIndicators/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/BE/LegalEntities/CorporateBodies/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/SEC/Debt/ExerciseConventions/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/SEC/Securities/SecuritiesListings/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/DER/DerivativesContracts/CommoditiesContracts/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/DER/DerivativesContracts/DerivativesBasics/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Utilities/AnnotationVocabulary/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/IND/MarketIndices/BasketIndices/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FBC/FunctionalEntities/FinancialServicesEntities/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/IND/EconomicIndicators/EconomicIndicators/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/SEC/Securities/SecuritiesIssuance/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FBC/FunctionalEntities/FinancialServicesEntities/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/DER/SecurityBasedDerivatives/SecurityBasedDerivatives/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/SEC/Debt/ExerciseConventions/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/SEC/Equities/EquityInstruments/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/DER/DerivativesContracts/CommoditiesContracts/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Relations/Relations/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/SEC/Securities/SecuritiesIssuance/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/DER/DerivativesContracts/DerivativesBasics/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/SEC/Equities/EquityInstruments/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/IND/MarketIndices/BasketIndices/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/SEC/Debt/Bonds/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/SEC/Securities/Baskets/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/DER/DerivativesContracts/CurrencyContracts/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/BE/LegalEntities/CorporateBodies/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Relations/Relations/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FBC/FinancialInstruments/FinancialInstruments/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/SEC/Securities/Baskets/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FBC/FinancialInstruments/FinancialInstruments/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/DER/DerivativesContracts/CurrencyContracts/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/AnnotationVocabulary/"}},
    :owl/versionIRI
    {:xsd/anyURI
-    "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/DER/DerivativesContracts/RightsAndWarrants/"},
+    "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/DER/DerivativesContracts/RightsAndWarrants/"},
    :rdf/type :owl/Ontology,
    :rdfa/prefix "fibo-der-drc-raw",
    :rdfa/uri
@@ -109,7 +104,9 @@
                 :rdf/value    "Rights and Warrants Ontology"},
    :skos/changeNote
    #{"The https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/RightsAndWarrants.rdf version of this ontology was modified to add concepts including mini-future certificate and constant leverage certificate."
-     "The https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/RightsAndWarrants.rdf version of this ontology was modified to use the Commons Ontology Library (Commons) Annotation Vocabulary rather than the OMG's Specification Metadata vocabulary, to move the definition of an underlier and the related property, has underlier, to financial instruments so that these concepts are also available for use in relation to pool-backed securities."},
+     "The https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/RightsAndWarrants.rdf version of this ontology was modified to use the Commons Ontology Library (Commons) Annotation Vocabulary rather than the OMG's Specification Metadata vocabulary, to move the definition of an underlier and the related property, has underlier, to financial instruments so that these concepts are also available for use in relation to pool-backed securities."
+     "The https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/RightsAndWarrants.rdf version of this ontology was modified to replace content that is now available in the OMG Commons Ontology Library (Commons) v1.1 (FND-380)."
+     "The https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/RightsAndWarrants.rdf version of this ontology was modified to replace additional content that is now available in the OMG Commons Ontology Library (Commons) v1.1 (FND-380)."},
    :xsd/anyURI
    "https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/RightsAndWarrants/"})
 
@@ -131,11 +128,11 @@
     "https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/RightsAndWarrants/"},
    :rdfs/label {:rdf/language "en",
                 :rdf/value    "allotment right"},
-   :rdfs/subClassOf #{:fibo-der-sbd-sbd/EquityDerivative
-                      {:owl/onProperty :fibo-fnd-utl-alx/hasFormula,
-                       :owl/someValuesFrom
-                       :fibo-der-drc-raw/AllotmentRightFormula,
-                       :rdf/type :owl/Restriction} :fibo-fbc-fi-fi/Entitlement},
+   :rdfs/subClassOf
+   #{:fibo-der-sbd-sbd/EquityDerivative :fibo-fbc-fi-fi/Entitlement
+     {:owl/onProperty     :cmns-qtu/hasExpression,
+      :owl/someValuesFrom :fibo-der-drc-raw/AllotmentRightFormula,
+      :rdf/type           :owl/Restriction}},
    :skos/definition
    {:rdf/language "en",
     :rdf/value
@@ -153,7 +150,7 @@
     "https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/RightsAndWarrants/"},
    :rdfs/label {:rdf/language "en",
                 :rdf/value    "allotment right formula"},
-   :rdfs/subClassOf :fibo-fnd-utl-alx/Formula,
+   :rdfs/subClassOf :cmns-qtu/Expression,
    :skos/definition
    {:rdf/language "en",
     :rdf/value
@@ -231,7 +228,7 @@
    :rdfs/subClassOf
    #{:fibo-der-drc-raw/PurchaseRight
      {:owl/onProperty     :fibo-fbc-fi-fi/hasUnderlier,
-      :owl/someValuesFrom {:owl/onProperty     :fibo-fnd-rel-rel/hasIdentity,
+      :owl/someValuesFrom {:owl/onProperty     :cmns-rlcmp/isPlayedBy,
                            :owl/someValuesFrom :fibo-sec-dbt-bnd/Bond,
                            :rdf/type           :owl/Restriction},
       :rdf/type           :owl/Restriction}},
@@ -255,7 +252,7 @@
    :rdfs/subClassOf
    #{:fibo-der-drc-raw/SubscriptionRight
      {:owl/onProperty     :fibo-fbc-fi-fi/hasUnderlier,
-      :owl/someValuesFrom {:owl/onProperty     :fibo-fnd-rel-rel/hasIdentity,
+      :owl/someValuesFrom {:owl/onProperty     :cmns-rlcmp/isPlayedBy,
                            :owl/someValuesFrom :fibo-sec-dbt-bnd/Bond,
                            :rdf/type           :owl/Restriction},
       :rdf/type           :owl/Restriction}},
@@ -372,14 +369,13 @@
     "https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/RightsAndWarrants/"},
    :rdfs/label {:rdf/language "en",
                 :rdf/value    "common convertible share purchase right"},
-   :rdfs/subClassOf #{:fibo-der-drc-raw/PurchaseRight
-                      {:owl/onProperty :fibo-fbc-fi-fi/hasUnderlier,
-                       :owl/someValuesFrom
-                       {:owl/onProperty :fibo-fnd-rel-rel/hasIdentity,
-                        :owl/someValuesFrom
-                        :fibo-sec-eq-eq/ConvertibleCommonShare,
-                        :rdf/type :owl/Restriction},
-                       :rdf/type :owl/Restriction}},
+   :rdfs/subClassOf
+   #{{:owl/onProperty     :fibo-fbc-fi-fi/hasUnderlier,
+      :owl/someValuesFrom {:owl/onProperty :cmns-rlcmp/isPlayedBy,
+                           :owl/someValuesFrom
+                           :fibo-sec-eq-eq/ConvertibleCommonShare,
+                           :rdf/type :owl/Restriction},
+      :rdf/type           :owl/Restriction} :fibo-der-drc-raw/PurchaseRight},
    :skos/definition
    {:rdf/language "en",
     :rdf/value
@@ -397,14 +393,14 @@
     "https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/RightsAndWarrants/"},
    :rdfs/label {:rdf/language "en",
                 :rdf/value    "common convertible share subscription right"},
-   :rdfs/subClassOf #{:fibo-der-drc-raw/SubscriptionRight
-                      {:owl/onProperty :fibo-fbc-fi-fi/hasUnderlier,
+   :rdfs/subClassOf #{{:owl/onProperty :fibo-fbc-fi-fi/hasUnderlier,
                        :owl/someValuesFrom
-                       {:owl/onProperty :fibo-fnd-rel-rel/hasIdentity,
+                       {:owl/onProperty :cmns-rlcmp/isPlayedBy,
                         :owl/someValuesFrom
                         :fibo-sec-eq-eq/ConvertibleCommonShare,
                         :rdf/type :owl/Restriction},
-                       :rdf/type :owl/Restriction}},
+                       :rdf/type :owl/Restriction}
+                      :fibo-der-drc-raw/SubscriptionRight},
    :skos/definition
    {:rdf/language "en",
     :rdf/value
@@ -423,11 +419,12 @@
    :rdfs/label {:rdf/language "en",
                 :rdf/value    "common share purchase right"},
    :rdfs/subClassOf
-   #{{:owl/onProperty     :fibo-fbc-fi-fi/hasUnderlier,
-      :owl/someValuesFrom {:owl/onProperty     :fibo-fnd-rel-rel/hasIdentity,
+   #{:fibo-der-drc-raw/PurchaseRight
+     {:owl/onProperty     :fibo-fbc-fi-fi/hasUnderlier,
+      :owl/someValuesFrom {:owl/onProperty     :cmns-rlcmp/isPlayedBy,
                            :owl/someValuesFrom :fibo-sec-eq-eq/CommonShare,
                            :rdf/type           :owl/Restriction},
-      :rdf/type           :owl/Restriction} :fibo-der-drc-raw/PurchaseRight},
+      :rdf/type           :owl/Restriction}},
    :skos/definition
    {:rdf/language "en",
     :rdf/value
@@ -448,7 +445,7 @@
    :rdfs/subClassOf
    #{:fibo-der-drc-raw/SubscriptionRight
      {:owl/onProperty     :fibo-fbc-fi-fi/hasUnderlier,
-      :owl/someValuesFrom {:owl/onProperty     :fibo-fnd-rel-rel/hasIdentity,
+      :owl/someValuesFrom {:owl/onProperty     :cmns-rlcmp/isPlayedBy,
                            :owl/someValuesFrom :fibo-sec-eq-eq/CommonShare,
                            :rdf/type           :owl/Restriction},
       :rdf/type           :owl/Restriction}},
@@ -468,12 +465,12 @@
    :rdfs/seeAlso {:xsd/anyURI
                   "https://www.lawinsider.com/dictionary/company-warrant"},
    :rdfs/subClassOf
-   #{:fibo-der-drc-raw/EquityWarrant :fibo-der-drc-raw/TraditionalWarrant
-     {:owl/onProperty     :fibo-fnd-rel-rel/isIssuedBy,
+   #{{:owl/onProperty     :fibo-fnd-rel-rel/isIssuedBy,
       :owl/someValuesFrom {:owl/allValuesFrom :fibo-be-le-cb/StockCorporation,
-                           :owl/onProperty    :fibo-fnd-rel-rel/hasIdentity,
+                           :owl/onProperty    :cmns-rlcmp/isPlayedBy,
                            :rdf/type          :owl/Restriction},
-      :rdf/type           :owl/Restriction}},
+      :rdf/type           :owl/Restriction} :fibo-der-drc-raw/EquityWarrant
+     :fibo-der-drc-raw/TraditionalWarrant},
    :skos/definition
    {:rdf/language "en",
     :rdf/value
@@ -617,7 +614,7 @@
                                             [:fibo-ind-ei-ei/EconomicIndicator
                                              :fibo-ind-mkt-bas/ReferenceIndex],
                                             :rdf/type :owl/Class},
-                           :owl/onProperty :fibo-fnd-rel-rel/hasIdentity,
+                           :owl/onProperty :cmns-rlcmp/isPlayedBy,
                            :rdf/type       :owl/Restriction},
       :rdf/type           :owl/Restriction} :fibo-der-drc-raw/Warrant},
    :skos/definition
@@ -723,7 +720,7 @@
                 :rdf/value    "preferred convertible share purchase right"},
    :rdfs/subClassOf
    #{{:owl/onProperty     :fibo-fbc-fi-fi/hasUnderlier,
-      :owl/someValuesFrom {:owl/onProperty :fibo-fnd-rel-rel/hasIdentity,
+      :owl/someValuesFrom {:owl/onProperty :cmns-rlcmp/isPlayedBy,
                            :owl/someValuesFrom
                            :fibo-sec-eq-eq/ConvertiblePreferredShare,
                            :rdf/type :owl/Restriction},
@@ -745,14 +742,14 @@
     "https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/RightsAndWarrants/"},
    :rdfs/label {:rdf/language "en",
                 :rdf/value    "preferred convertible share subscription right"},
-   :rdfs/subClassOf #{:fibo-der-drc-raw/SubscriptionRight
-                      {:owl/onProperty :fibo-fbc-fi-fi/hasUnderlier,
+   :rdfs/subClassOf #{{:owl/onProperty :fibo-fbc-fi-fi/hasUnderlier,
                        :owl/someValuesFrom
-                       {:owl/onProperty :fibo-fnd-rel-rel/hasIdentity,
+                       {:owl/onProperty :cmns-rlcmp/isPlayedBy,
                         :owl/someValuesFrom
                         :fibo-sec-eq-eq/ConvertiblePreferredShare,
                         :rdf/type :owl/Restriction},
-                       :rdf/type :owl/Restriction}},
+                       :rdf/type :owl/Restriction}
+                      :fibo-der-drc-raw/SubscriptionRight},
    :skos/definition
    {:rdf/language "en",
     :rdf/value
@@ -771,12 +768,11 @@
    :rdfs/label {:rdf/language "en",
                 :rdf/value    "preferred share purchase right"},
    :rdfs/subClassOf
-   #{:fibo-der-drc-raw/PurchaseRight
-     {:owl/onProperty     :fibo-fbc-fi-fi/hasUnderlier,
-      :owl/someValuesFrom {:owl/onProperty     :fibo-fnd-rel-rel/hasIdentity,
+   #{{:owl/onProperty     :fibo-fbc-fi-fi/hasUnderlier,
+      :owl/someValuesFrom {:owl/onProperty     :cmns-rlcmp/isPlayedBy,
                            :owl/someValuesFrom :fibo-sec-eq-eq/PreferredShare,
                            :rdf/type           :owl/Restriction},
-      :rdf/type           :owl/Restriction}},
+      :rdf/type           :owl/Restriction} :fibo-der-drc-raw/PurchaseRight},
    :skos/definition
    {:rdf/language "en",
     :rdf/value
@@ -797,7 +793,7 @@
    :rdfs/subClassOf
    #{:fibo-der-drc-raw/SubscriptionRight
      {:owl/onProperty     :fibo-fbc-fi-fi/hasUnderlier,
-      :owl/someValuesFrom {:owl/onProperty     :fibo-fnd-rel-rel/hasIdentity,
+      :owl/someValuesFrom {:owl/onProperty     :cmns-rlcmp/isPlayedBy,
                            :owl/someValuesFrom :fibo-sec-eq-eq/PreferredShare,
                            :rdf/type           :owl/Restriction},
       :rdf/type           :owl/Restriction}},
@@ -970,7 +966,7 @@
    :rdfs/label {:rdf/language "en",
                 :rdf/value    "has conversion ratio"},
    :rdfs/range :xsd/decimal,
-   :rdfs/subPropertyOf :fibo-fnd-qt-qtu/hasNumericValue,
+   :rdfs/subPropertyOf :cmns-qtu/hasNumericValue,
    :skos/definition
    {:rdf/language "en",
     :rdf/value
@@ -992,63 +988,62 @@
     "indicates whether the holders of the rights instrument may get securities in the event that other right holders choose not to subscribe"}})
 
 (def urn:uuid:6046dcea-6005-54d9-9824-589a68688304
-  {:cmns-av/copyright
-   #{"Copyright (c) 2015-2023 EDM Council, Inc."
-     "Copyright (c) 2015-2023 Object Management Group, Inc."},
+  {:cmns-av/copyright #{"Copyright (c) 2015-2024 Object Management Group, Inc."
+                        "Copyright (c) 2015-2024 EDM Council, Inc."},
    :dcterms/abstract
    "The Rights and Warrants ontology covers a range of financial instruments providing the holder with the privilege to subscribe to or receive specific assets on terms specified. These include rights (privileges) extended to existing security holders to make new securities available to them at reduced prices or for free, and warrants whereby the holder can purchase or sell back a given quantity of the instrument, commodity or currency during a specified period at a pre-defined price.",
    :dcterms/license {:xsd/anyURI "https://opensource.org/licenses/MIT"},
    :fibo-fnd-utl-av/hasMaturityLevel :fibo-fnd-utl-av/Release,
    :owl/imports
-   #{{:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Quantities/QuantitiesAndUnits/"}
+   #{{:xsd/anyURI "https://www.omg.org/spec/Commons/RolesAndCompositions/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Utilities/Analytics/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/SEC/Debt/Bonds/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Utilities/AnnotationVocabulary/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/DER/DerivativesContracts/ExoticOptions/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/DER/SecurityBasedDerivatives/SecurityBasedDerivatives/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/SEC/Securities/SecuritiesListings/"}
+     {:xsd/anyURI "https://www.omg.org/spec/Commons/QuantitiesAndUnits/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/DER/DerivativesContracts/ExoticOptions/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/IND/EconomicIndicators/EconomicIndicators/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/BE/LegalEntities/CorporateBodies/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/SEC/Debt/ExerciseConventions/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/SEC/Securities/SecuritiesListings/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/DER/DerivativesContracts/CommoditiesContracts/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/DER/DerivativesContracts/DerivativesBasics/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Utilities/AnnotationVocabulary/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/IND/MarketIndices/BasketIndices/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FBC/FunctionalEntities/FinancialServicesEntities/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/IND/EconomicIndicators/EconomicIndicators/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/SEC/Securities/SecuritiesIssuance/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FBC/FunctionalEntities/FinancialServicesEntities/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/DER/SecurityBasedDerivatives/SecurityBasedDerivatives/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/SEC/Debt/ExerciseConventions/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/SEC/Equities/EquityInstruments/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/DER/DerivativesContracts/CommoditiesContracts/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Relations/Relations/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/SEC/Securities/SecuritiesIssuance/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/DER/DerivativesContracts/DerivativesBasics/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/SEC/Equities/EquityInstruments/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/IND/MarketIndices/BasketIndices/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/SEC/Debt/Bonds/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/SEC/Securities/Baskets/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/DER/DerivativesContracts/CurrencyContracts/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/BE/LegalEntities/CorporateBodies/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Relations/Relations/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FBC/FinancialInstruments/FinancialInstruments/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/SEC/Securities/Baskets/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FBC/FinancialInstruments/FinancialInstruments/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/DER/DerivativesContracts/CurrencyContracts/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/AnnotationVocabulary/"}},
    :owl/versionIRI
    {:xsd/anyURI
-    "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/DER/DerivativesContracts/RightsAndWarrants/"},
+    "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/DER/DerivativesContracts/RightsAndWarrants/"},
    :rdf/type :owl/Ontology,
    :rdfs/label {:rdf/language "en",
                 :rdf/value    "Rights and Warrants Ontology"},
    :skos/changeNote
    #{"The https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/RightsAndWarrants.rdf version of this ontology was modified to add concepts including mini-future certificate and constant leverage certificate."
-     "The https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/RightsAndWarrants.rdf version of this ontology was modified to use the Commons Ontology Library (Commons) Annotation Vocabulary rather than the OMG's Specification Metadata vocabulary, to move the definition of an underlier and the related property, has underlier, to financial instruments so that these concepts are also available for use in relation to pool-backed securities."},
+     "The https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/RightsAndWarrants.rdf version of this ontology was modified to use the Commons Ontology Library (Commons) Annotation Vocabulary rather than the OMG's Specification Metadata vocabulary, to move the definition of an underlier and the related property, has underlier, to financial instruments so that these concepts are also available for use in relation to pool-backed securities."
+     "The https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/RightsAndWarrants.rdf version of this ontology was modified to replace content that is now available in the OMG Commons Ontology Library (Commons) v1.1 (FND-380)."
+     "The https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/RightsAndWarrants.rdf version of this ontology was modified to replace additional content that is now available in the OMG Commons Ontology Library (Commons) v1.1 (FND-380)."},
    :xsd/anyURI
    "https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/RightsAndWarrants/"})

@@ -1,8 +1,9 @@
 (ns net.wikipunk.rdf.fibo-loan-spc-crd
-  {:cmns-av/copyright #{"Copyright (c) 2020-2023 Object Management Group, Inc."
-                        "Copyright (c) 2020-2023 EDM Council, Inc."},
+  {:cmns-av/copyright
+   #{"Copyright (c) 2020-2024 EDM Council, Inc."
+     "Copyright (c) 2020-2024 Object Management Group, Inc."},
    :dcat/downloadURL
-   "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/LOAN/LoansSpecific/CardAccounts/",
+   "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/LOAN/LoansSpecific/CardAccounts/",
    :dcterms/abstract
    "This ontology defines revolving credit account-related concepts that are specific to credit and debit cards. Note that it does not differentiate between consumer and commercial/corporate cards and is capable of representing either.",
    :dcterms/license {:xsd/anyURI "https://opensource.org/licenses/MIT"},
@@ -12,9 +13,12 @@
     "cmns-cds" "https://www.omg.org/spec/Commons/CodesAndCodeSets/",
     "cmns-cls" "https://www.omg.org/spec/Commons/Classifiers/",
     "cmns-cxtdsg" "https://www.omg.org/spec/Commons/ContextualDesignators/",
+    "cmns-doc" "https://www.omg.org/spec/Commons/Documents/",
     "cmns-dsg" "https://www.omg.org/spec/Commons/Designators/",
     "cmns-dt" "https://www.omg.org/spec/Commons/DatesAndTimes/",
     "cmns-id" "https://www.omg.org/spec/Commons/Identifiers/",
+    "cmns-pts" "https://www.omg.org/spec/Commons/PartiesAndSituations/",
+    "cmns-rlcmp" "https://www.omg.org/spec/Commons/RolesAndCompositions/",
     "dcterms" "http://purl.org/dc/terms/",
     "fibo-fbc-dae-dbt"
     "https://spec.edmcouncil.org/fibo/ontology/FBC/DebtAndEquities/Debt/",
@@ -38,10 +42,6 @@
     "https://spec.edmcouncil.org/fibo/ontology/FND/ProductsAndServices/ProductsAndServices/",
     "fibo-fnd-plc-loc"
     "https://spec.edmcouncil.org/fibo/ontology/FND/Places/Locations/",
-    "fibo-fnd-pty-pty"
-    "https://spec.edmcouncil.org/fibo/ontology/FND/Parties/Parties/",
-    "fibo-fnd-pty-rl"
-    "https://spec.edmcouncil.org/fibo/ontology/FND/Parties/Roles/",
     "fibo-fnd-rel-rel"
     "https://spec.edmcouncil.org/fibo/ontology/FND/Relations/Relations/",
     "fibo-fnd-utl-av"
@@ -58,49 +58,47 @@
     "xsd" "http://www.w3.org/2001/XMLSchema#"},
    :owl/imports
    #{{:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FBC/ProductsAndServices/ClientsAndAccounts/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/ProductsAndServices/ProductsAndServices/"}
+     {:xsd/anyURI "https://www.omg.org/spec/Commons/RolesAndCompositions/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Utilities/AnnotationVocabulary/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Accounting/CurrencyAmount/"}
      {:xsd/anyURI
       "https://www.omg.org/spec/LCC/Countries/CountryRepresentation/"}
+     {:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FBC/DebtAndEquities/Debt/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/Identifiers/"}
+     {:xsd/anyURI "https://www.omg.org/spec/Commons/PartiesAndSituations/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/ContextualDesignators/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Parties/Parties/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/OwnershipAndControl/Ownership/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FBC/DebtAndEquities/Debt/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Arrangements/Documents/"}
+     {:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Places/Locations/"}
+     {:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FBC/ProductsAndServices/FinancialProductsAndServices/"}
+     {:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Utilities/AnnotationVocabulary/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/CodesAndCodeSets/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/Classifiers/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/Designators/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/LOAN/LoansSpecific/ConsumerLoans/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FBC/ProductsAndServices/ClientsAndAccounts/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Accounting/CurrencyAmount/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Places/Locations/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Relations/Relations/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/DatesAndTimes/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Agreements/Contracts/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Agreements/Contracts/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/OwnershipAndControl/Ownership/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/LOAN/LoansSpecific/ConsumerLoans/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Parties/Roles/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Relations/Relations/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FBC/FinancialInstruments/FinancialInstruments/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Arrangements/Documents/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Organizations/FormalOrganizations/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FBC/FinancialInstruments/FinancialInstruments/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/AnnotationVocabulary/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/ProductsAndServices/ProductsAndServices/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FBC/ProductsAndServices/FinancialProductsAndServices/"}},
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Organizations/FormalOrganizations/"}},
    :owl/versionIRI
    {:xsd/anyURI
-    "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/LOAN/LoansSpecific/CardAccounts/"},
+    "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/LOAN/LoansSpecific/CardAccounts/"},
    :rdf/type :owl/Ontology,
    :rdfa/prefix "fibo-loan-spc-crd",
    :rdfa/uri
@@ -108,6 +106,8 @@
    :rdfs/label "Card Accounts Ontology",
    :skos/changeNote
    #{"The https://spec.edmcouncil.org/fibo/ontology/LOAN/LoansSpecific/CardAccounts.rdf version of this ontology was modified to make consumer credit card agreement a subclass of unsecured consumer loan."
+     "The https://spec.edmcouncil.org/fibo/ontology/LOAN/LoansSpecific/CardAccounts.rdf version of the ontology was modified to replace concepts from several FIBO FND ontologies with their counterparts added to the Commons Ontology Library (Commons) v1.1."
+     "The https://spec.edmcouncil.org/fibo/ontology/LOAN/LoansSpecific/CardAccounts.rdf version of the ontology was modified to replace additional concepts from several FIBO FND ontologies with their counterparts added to the Commons Ontology Library (Commons) v1.1."
      "The https://spec.edmcouncil.org/fibo/ontology/LOAN/LoansSpecific/CardAccounts.rdf version of this ontology was modified to add a distinction between consumer and commercial credit card agreements."},
    :xsd/anyURI
    "https://spec.edmcouncil.org/fibo/ontology/LOAN/LoansSpecific/CardAccounts/"})
@@ -133,13 +133,13 @@
    #{{:owl/onProperty     :cmns-dsg/isDefinedIn,
       :owl/someValuesFrom :fibo-loan-spc-crd/PaymentCardAgreement,
       :rdf/type           :owl/Restriction} :fibo-fbc-pas-caa/CustomerAccount
+     {:owl/onProperty     :fibo-fnd-rel-rel/exemplifies,
+      :owl/someValuesFrom :fibo-loan-spc-crd/CardProduct,
+      :rdf/type           :owl/Restriction}
      {:owl/minQualifiedCardinality 0,
       :owl/onClass    :fibo-fbc-pas-caa/CustomerAccount,
       :owl/onProperty :fibo-fbc-pas-caa/isLinkedToAccount,
       :rdf/type       :owl/Restriction}
-     {:owl/onProperty     :fibo-fbc-pas-caa/realizes,
-      :owl/someValuesFrom :fibo-loan-spc-crd/CardProduct,
-      :rdf/type           :owl/Restriction}
      {:owl/onProperty     :cmns-dsg/isSignifiedBy,
       :owl/someValuesFrom :fibo-loan-spc-crd/PaymentCard,
       :rdf/type           :owl/Restriction}
@@ -216,6 +216,9 @@
                        :owl/onProperty :fibo-fnd-plc-loc/hasCountry,
                        :owl/qualifiedCardinality 1,
                        :rdf/type       :owl/Restriction}
+                      {:owl/onProperty     :fibo-fnd-rel-rel/isExemplifiedBy,
+                       :owl/someValuesFrom :fibo-loan-spc-crd/CardAccount,
+                       :rdf/type           :owl/Restriction}
                       {:owl/minQualifiedCardinality 0,
                        :owl/onClass    :fibo-loan-spc-crd/CreditCardNetwork,
                        :owl/onProperty :fibo-loan-spc-crd/hasCreditCardNetwork,
@@ -224,9 +227,6 @@
                        :owl/onProperty :fibo-loan-spc-crd/usesCurrency,
                        :owl/qualifiedCardinality 1,
                        :rdf/type       :owl/Restriction}
-                      {:owl/onProperty     :fibo-fbc-pas-caa/isRealizedBy,
-                       :owl/someValuesFrom :fibo-loan-spc-crd/CardAccount,
-                       :rdf/type           :owl/Restriction}
                       {:owl/minQualifiedCardinality 0,
                        :owl/onClass    :lcc-cr/CountrySubdivision,
                        :owl/onProperty :fibo-fnd-plc-loc/hasSubdivision,
@@ -334,16 +334,16 @@
    :rdfs/label "cardholder",
    :rdfs/subClassOf
    #{:fibo-fbc-pas-caa/CustomerAccountHolder
-     {:owl/onProperty     :fibo-fnd-pty-rl/isPlayedBy,
-      :owl/someValuesFrom {:owl/onProperty     :fibo-fnd-oac-own/owns,
-                           :owl/someValuesFrom :fibo-loan-spc-crd/CardAccount,
-                           :rdf/type           :owl/Restriction},
-      :rdf/type           :owl/Restriction}
      {:owl/onProperty     :fibo-fnd-rel-rel/holds,
       :owl/someValuesFrom :fibo-loan-spc-crd/CardAccount,
       :rdf/type           :owl/Restriction}
-     {:owl/onProperty     :fibo-fnd-pty-rl/isPlayedBy,
-      :owl/someValuesFrom {:owl/onProperty     :fibo-fnd-pty-pty/isAPartyTo,
+     {:owl/onProperty     :cmns-rlcmp/isPlayedBy,
+      :owl/someValuesFrom {:owl/onProperty     :cmns-pts/isAPartyTo,
+                           :owl/someValuesFrom :fibo-loan-spc-crd/CardAccount,
+                           :rdf/type           :owl/Restriction},
+      :rdf/type           :owl/Restriction}
+     {:owl/onProperty     :cmns-rlcmp/isPlayedBy,
+      :owl/someValuesFrom {:owl/onProperty     :fibo-fnd-oac-own/owns,
                            :owl/someValuesFrom :fibo-loan-spc-crd/CardAccount,
                            :rdf/type           :owl/Restriction},
       :rdf/type           :owl/Restriction}},
@@ -363,14 +363,14 @@
     "https://spec.edmcouncil.org/fibo/ontology/LOAN/LoansSpecific/CardAccounts/"},
    :rdfs/label "commercial credit card agreement",
    :rdfs/subClassOf #{:fibo-fbc-dae-dbt/CommittedCreditFacility
-                      :fibo-loan-spc-crd/PaymentCardAgreement
                       {:owl/onProperty     :fibo-fbc-dae-dbt/hasBorrower,
                        :owl/someValuesFrom {:owl/onProperty
-                                            :fibo-fnd-pty-rl/isPlayedBy,
+                                            :cmns-rlcmp/isPlayedBy,
                                             :owl/someValuesFrom
                                             :fibo-fnd-org-fm/FormalOrganization,
                                             :rdf/type :owl/Restriction},
-                       :rdf/type           :owl/Restriction}},
+                       :rdf/type           :owl/Restriction}
+                      :fibo-loan-spc-crd/PaymentCardAgreement},
    :skos/definition
    "credit card agreement for a card issued to, or in conjunction with, a formal organization, such as a small business, middle market business, local, state, or national government, or large corporation"})
 
@@ -435,7 +435,7 @@
      {:owl/onProperty     :cmns-dsg/isSignifiedBy,
       :owl/someValuesFrom :fibo-loan-spc-crd/CreditCard,
       :rdf/type           :owl/Restriction}
-     {:owl/onProperty     :fibo-fbc-pas-caa/realizes,
+     {:owl/onProperty     :fibo-fnd-rel-rel/exemplifies,
       :owl/someValuesFrom :fibo-loan-spc-crd/CreditCardProduct,
       :rdf/type           :owl/Restriction} :fibo-loan-spc-crd/CardAccount},
    :skos/definition
@@ -491,10 +491,10 @@
    {:xsd/anyURI
     "https://spec.edmcouncil.org/fibo/ontology/LOAN/LoansSpecific/CardAccounts/"},
    :rdfs/label "credit card product",
-   :rdfs/subClassOf #{:fibo-loan-spc-crd/CardProduct
-                      {:owl/onProperty     :fibo-fbc-pas-caa/isRealizedBy,
+   :rdfs/subClassOf #{{:owl/onProperty     :fibo-fnd-rel-rel/isExemplifiedBy,
                        :owl/someValuesFrom :fibo-loan-spc-crd/CreditCardAccount,
                        :rdf/type           :owl/Restriction}
+                      :fibo-loan-spc-crd/CardProduct
                       {:owl/onClass    :fibo-loan-spc-crd/CreditCardNetwork,
                        :owl/onProperty :fibo-loan-spc-crd/hasCreditCardNetwork,
                        :owl/qualifiedCardinality 1,
@@ -533,7 +533,7 @@
    :rdfs/subClassOf #{{:owl/onProperty     :cmns-dsg/isSignifiedBy,
                        :owl/someValuesFrom :fibo-loan-spc-crd/DebitCard,
                        :rdf/type           :owl/Restriction}
-                      {:owl/onProperty     :fibo-fbc-pas-caa/realizes,
+                      {:owl/onProperty     :fibo-fnd-rel-rel/exemplifies,
                        :owl/someValuesFrom :fibo-loan-spc-crd/DebitCardProduct,
                        :rdf/type           :owl/Restriction}
                       :fibo-loan-spc-crd/CardAccount},
@@ -550,10 +550,10 @@
    :rdfs/subClassOf #{{:owl/onProperty     :cmns-cls/classifies,
                        :owl/someValuesFrom :fibo-loan-spc-crd/DebitCard,
                        :rdf/type           :owl/Restriction}
-                      :fibo-loan-spc-crd/CardProduct
-                      {:owl/onProperty     :fibo-fbc-pas-caa/isRealizedBy,
+                      {:owl/onProperty     :fibo-fnd-rel-rel/isExemplifiedBy,
                        :owl/someValuesFrom :fibo-loan-spc-crd/DebitCardAccount,
-                       :rdf/type           :owl/Restriction}},
+                       :rdf/type           :owl/Restriction}
+                      :fibo-loan-spc-crd/CardProduct},
    :skos/definition
    "card product card typically provided by a depository institution allowing the holder to transfer money electronically to another account when making a purchase"})
 
@@ -630,7 +630,7 @@
    :rdfs/seeAlso
    {:xsd/anyURI "https://www.irs.gov/payments/payment-card-transactions-faqs"},
    :rdfs/subClassOf
-   #{:fibo-fnd-arr-doc/LegalDocument
+   #{:cmns-doc/LegalDocument
      {:owl/onClass    :fibo-loan-spc-crd/CardExpirationDate,
       :owl/onProperty :fibo-fnd-arr-doc/hasExpirationDate,
       :owl/qualifiedCardinality 1,
@@ -780,61 +780,62 @@
    "indicates the currency defined for the credit card product"})
 
 (def urn:uuid:265e2615-f907-52ec-8bdb-6fbc88dc06ce
-  {:cmns-av/copyright #{"Copyright (c) 2020-2023 Object Management Group, Inc."
-                        "Copyright (c) 2020-2023 EDM Council, Inc."},
+  {:cmns-av/copyright
+   #{"Copyright (c) 2020-2024 EDM Council, Inc."
+     "Copyright (c) 2020-2024 Object Management Group, Inc."},
    :dcterms/abstract
    "This ontology defines revolving credit account-related concepts that are specific to credit and debit cards. Note that it does not differentiate between consumer and commercial/corporate cards and is capable of representing either.",
    :dcterms/license {:xsd/anyURI "https://opensource.org/licenses/MIT"},
    :fibo-fnd-utl-av/hasMaturityLevel :fibo-fnd-utl-av/Release,
    :owl/imports
    #{{:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FBC/ProductsAndServices/ClientsAndAccounts/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/ProductsAndServices/ProductsAndServices/"}
+     {:xsd/anyURI "https://www.omg.org/spec/Commons/RolesAndCompositions/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Utilities/AnnotationVocabulary/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Accounting/CurrencyAmount/"}
      {:xsd/anyURI
       "https://www.omg.org/spec/LCC/Countries/CountryRepresentation/"}
+     {:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FBC/DebtAndEquities/Debt/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/Identifiers/"}
+     {:xsd/anyURI "https://www.omg.org/spec/Commons/PartiesAndSituations/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/ContextualDesignators/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Parties/Parties/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/OwnershipAndControl/Ownership/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FBC/DebtAndEquities/Debt/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Arrangements/Documents/"}
+     {:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Places/Locations/"}
+     {:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FBC/ProductsAndServices/FinancialProductsAndServices/"}
+     {:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Utilities/AnnotationVocabulary/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/CodesAndCodeSets/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/Classifiers/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/Designators/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/LOAN/LoansSpecific/ConsumerLoans/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FBC/ProductsAndServices/ClientsAndAccounts/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Accounting/CurrencyAmount/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Places/Locations/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Relations/Relations/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/DatesAndTimes/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Agreements/Contracts/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Agreements/Contracts/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/OwnershipAndControl/Ownership/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/LOAN/LoansSpecific/ConsumerLoans/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Parties/Roles/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Relations/Relations/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FBC/FinancialInstruments/FinancialInstruments/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Arrangements/Documents/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Organizations/FormalOrganizations/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FBC/FinancialInstruments/FinancialInstruments/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/AnnotationVocabulary/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/ProductsAndServices/ProductsAndServices/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FBC/ProductsAndServices/FinancialProductsAndServices/"}},
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Organizations/FormalOrganizations/"}},
    :owl/versionIRI
    {:xsd/anyURI
-    "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/LOAN/LoansSpecific/CardAccounts/"},
+    "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/LOAN/LoansSpecific/CardAccounts/"},
    :rdf/type :owl/Ontology,
    :rdfs/label "Card Accounts Ontology",
    :skos/changeNote
    #{"The https://spec.edmcouncil.org/fibo/ontology/LOAN/LoansSpecific/CardAccounts.rdf version of this ontology was modified to make consumer credit card agreement a subclass of unsecured consumer loan."
+     "The https://spec.edmcouncil.org/fibo/ontology/LOAN/LoansSpecific/CardAccounts.rdf version of the ontology was modified to replace concepts from several FIBO FND ontologies with their counterparts added to the Commons Ontology Library (Commons) v1.1."
+     "The https://spec.edmcouncil.org/fibo/ontology/LOAN/LoansSpecific/CardAccounts.rdf version of the ontology was modified to replace additional concepts from several FIBO FND ontologies with their counterparts added to the Commons Ontology Library (Commons) v1.1."
      "The https://spec.edmcouncil.org/fibo/ontology/LOAN/LoansSpecific/CardAccounts.rdf version of this ontology was modified to add a distinction between consumer and commercial credit card agreements."},
    :xsd/anyURI
    "https://spec.edmcouncil.org/fibo/ontology/LOAN/LoansSpecific/CardAccounts/"})

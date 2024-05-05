@@ -1,9 +1,8 @@
 (ns net.wikipunk.rdf.fibo-fbc-fct-usfse
-  {:cmns-av/copyright
-   #{"Copyright (c) 2015-2023 EDM Council, Inc."
-     "Copyright (c) 2015-2023 Object Management Group, Inc."},
+  {:cmns-av/copyright #{"Copyright (c) 2015-2024 Object Management Group, Inc."
+                        "Copyright (c) 2015-2024 EDM Council, Inc."},
    :dcat/downloadURL
-   "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FBC/FunctionalEntities/NorthAmericanEntities/USFinancialServicesEntities/",
+   "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FBC/FunctionalEntities/NorthAmericanEntities/USFinancialServicesEntities/",
    :dcterms/abstract
    "This ontology extends the primary financial services entities ontology in FBC with additional kinds of entities that are specific to the United States.",
    :dcterms/license {:xsd/anyURI "https://opensource.org/licenses/MIT"},
@@ -11,6 +10,7 @@
    :namespaces
    {"cmns-av" "https://www.omg.org/spec/Commons/AnnotationVocabulary/",
     "cmns-col" "https://www.omg.org/spec/Commons/Collections/",
+    "cmns-rlcmp" "https://www.omg.org/spec/Commons/RolesAndCompositions/",
     "dcterms" "http://purl.org/dc/terms/",
     "fibo-be-ge-usj"
     "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/NorthAmericanJurisdiction/USGovernmentEntitiesAndJurisdictions/",
@@ -38,8 +38,6 @@
     "https://spec.edmcouncil.org/fibo/ontology/FND/Places/Facilities/",
     "fibo-fnd-plc-loc"
     "https://spec.edmcouncil.org/fibo/ontology/FND/Places/Locations/",
-    "fibo-fnd-pty-rl"
-    "https://spec.edmcouncil.org/fibo/ontology/FND/Parties/Roles/",
     "fibo-fnd-rel-rel"
     "https://spec.edmcouncil.org/fibo/ontology/FND/Relations/Relations/",
     "fibo-fnd-utl-av"
@@ -54,46 +52,45 @@
     "xsd" "http://www.w3.org/2001/XMLSchema#"},
    :owl/imports
    #{{:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/OwnershipAndControl/Control/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/BE/OwnershipAndControl/CorporateControl/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Utilities/AnnotationVocabulary/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Places/Facilities/"}
+     {:xsd/anyURI "https://www.omg.org/spec/Commons/RolesAndCompositions/"}
      {:xsd/anyURI
       "https://www.omg.org/spec/LCC/Countries/CountryRepresentation/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/BE/LegalEntities/FormalBusinessOrganizations/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/BE/OwnershipAndControl/CorporateControl/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/BE/LegalEntities/CorporateBodies/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/OwnershipAndControl/Ownership/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FBC/FunctionalEntities/RegulatoryAgencies/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Places/Locations/"}
+     {:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FBC/ProductsAndServices/FinancialProductsAndServices/"}
+     {:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/BE/LegalEntities/LegalPersons/"}
+     {:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Utilities/AnnotationVocabulary/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/Collections/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FBC/FunctionalEntities/FinancialServicesEntities/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FBC/FunctionalEntities/FinancialServicesEntities/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Places/Locations/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Relations/Relations/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Places/Facilities/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/BE/LegalEntities/FormalBusinessOrganizations/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/OwnershipAndControl/Ownership/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/OwnershipAndControl/Control/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Parties/Roles/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/BE/LegalEntities/CorporateBodies/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Relations/Relations/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/BE/GovernmentEntities/NorthAmericanJurisdiction/USGovernmentEntitiesAndJurisdictions/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Organizations/FormalOrganizations/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/BE/GovernmentEntities/NorthAmericanJurisdiction/USGovernmentEntitiesAndJurisdictions/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/AnnotationVocabulary/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/BE/LegalEntities/LegalPersons/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Organizations/FormalOrganizations/"}
      {:xsd/anyURI
-      "https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FBC/FunctionalEntities/RegulatoryAgencies/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FBC/ProductsAndServices/FinancialProductsAndServices/"}},
+      "https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/"}},
    :owl/versionIRI
    {:xsd/anyURI
-    "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FBC/FunctionalEntities/NorthAmericanEntities/USFinancialServicesEntities/"},
+    "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FBC/FunctionalEntities/NorthAmericanEntities/USFinancialServicesEntities/"},
    :rdf/type :owl/Ontology,
    :rdfa/prefix "fibo-fbc-fct-usfse",
    :rdfa/uri
@@ -106,6 +103,7 @@
      "The https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USFinancialServicesEntities.rdf version of this ontology was modified to augment the representation of institutions based on their definitions in the law, in order to answer competency questions using the National Information Center (NIC) repository"
      "The https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USFinancialServicesEntities.rdf version of this ontology was modified to generalize the definition of credit union."
      "The https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USFinancialServicesEntities.rdf version of this ontology was modified to eliminate circular definitions and revise names such that concepts don't appear to refer to multiple things."
+     "The https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USFinancialServicesEntities.rdf version of this ontology was modified to replace content that is now available in the OMG Commons Ontology Library (Commons) v1.1 (FND-380)."
      "The https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USFinancialServicesEntities.rdf version of this ontology was modified to eliminate dead links and address text formatting issues identified through hygiene testing."},
    :xsd/anyURI
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USFinancialServicesEntities/"})
@@ -126,17 +124,17 @@
     "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USFinancialServicesEntities/"},
    :rdfs/label "agency of a foreign banking organization",
    :rdfs/subClassOf
-   #{{:owl/onProperty     :fibo-fnd-pty-rl/isPlayedBy,
+   #{:fibo-fbc-fct-fse/FinancialInstitution
+     {:owl/onProperty     :cmns-rlcmp/isPlayedBy,
       :owl/someValuesFrom {:owl/hasValue   :lcc-3166-1/UnitedStatesOfAmerica,
                            :owl/onProperty :fibo-fnd-org-fm/isDomiciledIn,
                            :rdf/type       :owl/Restriction},
       :rdf/type           :owl/Restriction}
-     :fibo-fbc-fct-fse/FinancialInstitution
-     {:owl/onProperty     :fibo-fnd-pty-rl/isPlayedBy,
-      :owl/someValuesFrom :fibo-fbc-fct-usfse/OfficeOfAForeignBank,
-      :rdf/type           :owl/Restriction}
      {:owl/onProperty     :fibo-fnd-oac-own/isOwnedAsset,
       :owl/someValuesFrom :fibo-fbc-fct-usfse/ForeignBank,
+      :rdf/type           :owl/Restriction}
+     {:owl/onProperty     :cmns-rlcmp/isPlayedBy,
+      :owl/someValuesFrom :fibo-fbc-fct-usfse/OfficeOfAForeignBank,
       :rdf/type           :owl/Restriction}
      {:owl/onProperty     :fibo-fnd-oac-ctl/isControlledPartyOf,
       :owl/someValuesFrom :fibo-fbc-fct-usfse/ForeignBank,
@@ -155,7 +153,7 @@
    :rdfs/label "agreement corporation",
    :rdfs/subClassOf #{:fibo-fbc-fct-fse/FinancialInstitution
                       {:owl/onClass    :fibo-be-le-cb/Corporation,
-                       :owl/onProperty :fibo-fnd-rel-rel/hasIdentity,
+                       :owl/onProperty :cmns-rlcmp/isPlayedBy,
                        :owl/qualifiedCardinality 1,
                        :rdf/type       :owl/Restriction}},
    :skos/definition
@@ -256,14 +254,13 @@
    {:xsd/anyURI
     "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USFinancialServicesEntities/"},
    :rdfs/label "branch of a depository institution",
-   :rdfs/subClassOf #{:fibo-be-le-fbo/Branch
-                      {:owl/onProperty :cmns-col/isPartOf,
+   :rdfs/subClassOf #{{:owl/onProperty :cmns-col/isPartOf,
                        :owl/someValuesFrom
-                       {:owl/onProperty :fibo-fnd-pty-rl/playsRole,
+                       {:owl/onProperty :cmns-rlcmp/playsRole,
                         :owl/someValuesFrom
                         :fibo-fbc-fct-fse/DepositoryInstitution,
                         :rdf/type :owl/Restriction},
-                       :rdf/type :owl/Restriction}},
+                       :rdf/type :owl/Restriction} :fibo-be-le-fbo/Branch},
    :skos/definition
    "any office or any place of business located in any State of the United States at which deposits are received"})
 
@@ -302,7 +299,7 @@
    :db/ident :fibo-fbc-fct-usfse/DomesticBranchOfAForeignBank,
    :owl/disjointWith {:owl/allValuesFrom
                       :fibo-fbc-fct-usfse/AgencyOfAForeignBankingOrganization,
-                      :owl/onProperty :fibo-fnd-pty-rl/playsRole,
+                      :owl/onProperty :cmns-rlcmp/playsRole,
                       :rdf/type :owl/Restriction},
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
@@ -310,12 +307,12 @@
     "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USFinancialServicesEntities/"},
    :rdfs/label "domestic branch of a foreign bank",
    :rdfs/subClassOf
-   #{{:owl/onProperty     :cmns-col/isPartOf,
-      :owl/someValuesFrom {:owl/onProperty     :fibo-fnd-pty-rl/playsRole,
+   #{:fibo-fbc-fct-usfse/BranchOfADepositoryInstitution
+     {:owl/onProperty     :cmns-col/isPartOf,
+      :owl/someValuesFrom {:owl/onProperty     :cmns-rlcmp/playsRole,
                            :owl/someValuesFrom :fibo-fbc-fct-usfse/ForeignBank,
                            :rdf/type           :owl/Restriction},
       :rdf/type           :owl/Restriction}
-     :fibo-fbc-fct-usfse/BranchOfADepositoryInstitution
      {:owl/hasValue   :lcc-3166-1/UnitedStatesOfAmerica,
       :owl/onProperty :fibo-fnd-org-fm/isDomiciledIn,
       :rdf/type       :owl/Restriction}
@@ -335,12 +332,12 @@
     "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USFinancialServicesEntities/"},
    :rdfs/label "domestic branch of domestic bank",
    :rdfs/subClassOf
-   #{{:owl/onProperty     :cmns-col/isPartOf,
-      :owl/someValuesFrom {:owl/onProperty     :fibo-fnd-pty-rl/playsRole,
+   #{:fibo-fbc-fct-usfse/BranchOfADepositoryInstitution
+     {:owl/onProperty     :cmns-col/isPartOf,
+      :owl/someValuesFrom {:owl/onProperty     :cmns-rlcmp/playsRole,
                            :owl/someValuesFrom :fibo-fbc-fct-usfse/USBank,
                            :rdf/type           :owl/Restriction},
       :rdf/type           :owl/Restriction}
-     :fibo-fbc-fct-usfse/BranchOfADepositoryInstitution
      {:owl/hasValue   :lcc-3166-1/UnitedStatesOfAmerica,
       :owl/onProperty :fibo-fnd-org-fm/isDomiciledIn,
       :rdf/type       :owl/Restriction}},
@@ -355,7 +352,7 @@
     "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USFinancialServicesEntities/"},
    :rdfs/label "domestic entity",
    :rdfs/subClassOf #{:fibo-fbc-pas-fpas/FinancialServiceProvider
-                      {:owl/onProperty :fibo-fnd-pty-rl/isPlayedBy,
+                      {:owl/onProperty :cmns-rlcmp/isPlayedBy,
                        :owl/someValuesFrom
                        {:owl/intersectionOf
                         [{:owl/hasValue   :lcc-3166-1/UnitedStatesOfAmerica,
@@ -414,7 +411,7 @@
    :rdfs/label "edge corporation",
    :rdfs/subClassOf #{:fibo-fbc-fct-fse/FinancialInstitution
                       {:owl/onClass    :fibo-be-le-cb/Corporation,
-                       :owl/onProperty :fibo-fnd-rel-rel/hasIdentity,
+                       :owl/onProperty :cmns-rlcmp/isPlayedBy,
                        :owl/qualifiedCardinality 1,
                        :rdf/type       :owl/Restriction}},
    :skos/definition
@@ -443,17 +440,16 @@
    {:xsd/anyURI
     "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USFinancialServicesEntities/"},
    :rdfs/label "edge corporation - domestic branch",
-   :rdfs/subClassOf #{:fibo-be-le-fbo/Branch
-                      {:owl/onProperty     :cmns-col/isPartOf,
-                       :owl/someValuesFrom {:owl/onProperty
-                                            :fibo-fnd-pty-rl/playsRole,
-                                            :owl/someValuesFrom
-                                            :fibo-fbc-fct-usfse/EdgeCorporation,
-                                            :rdf/type :owl/Restriction},
-                       :rdf/type           :owl/Restriction}
-                      {:owl/hasValue   :lcc-3166-1/UnitedStatesOfAmerica,
-                       :owl/onProperty :fibo-fnd-org-fm/isDomiciledIn,
-                       :rdf/type       :owl/Restriction}},
+   :rdfs/subClassOf
+   #{{:owl/onProperty     :cmns-col/isPartOf,
+      :owl/someValuesFrom {:owl/onProperty :cmns-rlcmp/playsRole,
+                           :owl/someValuesFrom
+                           :fibo-fbc-fct-usfse/EdgeCorporation,
+                           :rdf/type :owl/Restriction},
+      :rdf/type           :owl/Restriction} :fibo-be-le-fbo/Branch
+     {:owl/hasValue   :lcc-3166-1/UnitedStatesOfAmerica,
+      :owl/onProperty :fibo-fnd-org-fm/isDomiciledIn,
+      :rdf/type       :owl/Restriction}},
    :skos/definition
    "branch of an edge corporation that is located in the United States"})
 
@@ -639,12 +635,12 @@
    :rdfs/label "foreign banking organization as a bank holding company",
    :rdfs/subClassOf
    #{:fibo-fbc-fct-fse/BankHoldingCompany
-     {:owl/onProperty     :fibo-fnd-pty-rl/isPlayedBy,
+     :fibo-fbc-fct-usfse/ForeignBankingOrganization
+     {:owl/onProperty     :cmns-rlcmp/isPlayedBy,
       :owl/someValuesFrom {:owl/hasValue   :lcc-3166-1/UnitedStatesOfAmerica,
                            :owl/onProperty :fibo-fnd-org-fm/isDomiciledIn,
                            :rdf/type       :owl/Restriction},
-      :rdf/type           :owl/Restriction}
-     :fibo-fbc-fct-usfse/ForeignBankingOrganization},
+      :rdf/type           :owl/Restriction}},
    :skos/definition
    "foreign banking organization that is a bank holding company in the United States"})
 
@@ -676,12 +672,12 @@
     "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USFinancialServicesEntities/"},
    :rdfs/label "foreign branch of foreign bank",
    :rdfs/subClassOf
-   #{{:owl/onProperty     :cmns-col/isPartOf,
-      :owl/someValuesFrom {:owl/onProperty     :fibo-fnd-pty-rl/playsRole,
+   #{:fibo-fbc-fct-usfse/BranchOfADepositoryInstitution
+     {:owl/onProperty     :cmns-col/isPartOf,
+      :owl/someValuesFrom {:owl/onProperty     :cmns-rlcmp/playsRole,
                            :owl/someValuesFrom :fibo-fbc-fct-usfse/ForeignBank,
                            :rdf/type           :owl/Restriction},
-      :rdf/type           :owl/Restriction}
-     :fibo-fbc-fct-usfse/BranchOfADepositoryInstitution},
+      :rdf/type           :owl/Restriction}},
    :skos/definition
    "branch that resides outside of the United States whose parent is located outside of the United States"})
 
@@ -695,7 +691,7 @@
    :rdfs/subClassOf
    #{{:owl/onProperty :fibo-fnd-rel-rel/isManagedBy,
       :owl/someValuesFrom
-      {:owl/unionOf [{:owl/onProperty :fibo-fnd-pty-rl/isPlayedBy,
+      {:owl/unionOf [{:owl/onProperty :cmns-rlcmp/isPlayedBy,
                       :owl/someValuesFrom
                       :fibo-fbc-fct-usfse/DomesticBranchOfAForeignBank,
                       :rdf/type :owl/Restriction}
@@ -720,12 +716,12 @@
     "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USFinancialServicesEntities/"},
    :rdfs/label "foreign branch of US bank",
    :rdfs/subClassOf
-   #{{:owl/onProperty     :cmns-col/isPartOf,
-      :owl/someValuesFrom {:owl/onProperty     :fibo-fnd-pty-rl/playsRole,
+   #{:fibo-fbc-fct-usfse/BranchOfADepositoryInstitution
+     {:owl/onProperty     :cmns-col/isPartOf,
+      :owl/someValuesFrom {:owl/onProperty     :cmns-rlcmp/playsRole,
                            :owl/someValuesFrom :fibo-fbc-fct-usfse/USBank,
                            :rdf/type           :owl/Restriction},
-      :rdf/type           :owl/Restriction}
-     :fibo-fbc-fct-usfse/BranchOfADepositoryInstitution},
+      :rdf/type           :owl/Restriction}},
    :skos/definition
    "branch that resides outside of the United States, but has a parent that is located in the United States"})
 
@@ -807,16 +803,17 @@
    {:xsd/anyURI
     "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USFinancialServicesEntities/"},
    :rdfs/label "international bank of US depositary, edge, trust company",
-   :rdfs/subClassOf #{{:owl/onProperty :cmns-col/isPartOf,
+   :rdfs/subClassOf #{:fibo-fbc-fct-fse/Bank
+                      {:owl/onProperty :cmns-col/isPartOf,
                        :owl/someValuesFrom
-                       {:owl/onProperty :fibo-fnd-pty-rl/playsRole,
+                       {:owl/onProperty :cmns-rlcmp/playsRole,
                         :owl/someValuesFrom
                         {:owl/unionOf [:fibo-fbc-fct-fse/DepositoryInstitution
                                        :fibo-fbc-fct-usfse/EdgeCorporation
                                        :fibo-fbc-fct-fse/TrustCompany],
                          :rdf/type    :owl/Class},
                         :rdf/type :owl/Restriction},
-                       :rdf/type :owl/Restriction} :fibo-fbc-fct-fse/Bank},
+                       :rdf/type :owl/Restriction}},
    :skos/definition
    "bank that is owned or controlled by a US depository institution, Edge Act corporation or trust company"})
 
@@ -914,7 +911,7 @@
     "https://fraser.stlouisfed.org/title/bank-holding-company-act-1956-984/fulltext"},
    :rdfs/subClassOf #{{:owl/onProperty :fibo-be-oac-cctl/isSubsidiaryOf,
                        :owl/someValuesFrom
-                       {:owl/onProperty :fibo-fnd-pty-rl/isPlayedBy,
+                       {:owl/onProperty :cmns-rlcmp/isPlayedBy,
                         :owl/someValuesFrom
                         :fibo-fbc-fct-fse/FinancialInstitution,
                         :rdf/type :owl/Restriction},
@@ -972,11 +969,11 @@
     "https://www.ecfr.gov/current/title-12/chapter-II/subchapter-A/part-211/subpart-B/section-211.21"},
    :cmns-av/synonym "representative office",
    :db/ident :fibo-fbc-fct-usfse/RepresentativeOfficeOfAForeignBank,
-   :owl/disjointWith #{{:owl/onProperty :fibo-fnd-pty-rl/playsRole,
+   :owl/disjointWith #{{:owl/onProperty :cmns-rlcmp/playsRole,
                         :owl/someValuesFrom
                         :fibo-fbc-fct-usfse/AgencyOfAForeignBankingOrganization,
                         :rdf/type :owl/Restriction}
-                       {:owl/onProperty :fibo-fnd-pty-rl/playsRole,
+                       {:owl/onProperty :cmns-rlcmp/playsRole,
                         :owl/someValuesFrom
                         :fibo-fbc-fct-usfse/CommercialLendingCompany,
                         :rdf/type :owl/Restriction}
@@ -1133,7 +1130,7 @@
     "https://fraser.stlouisfed.org/title/bank-holding-company-act-1956-984/fulltext"},
    :rdfs/subClassOf
    #{{:owl/onProperty     :fibo-be-oac-cctl/isSubsidiaryOf,
-      :owl/someValuesFrom {:owl/onProperty :fibo-fnd-pty-rl/isPlayedBy,
+      :owl/someValuesFrom {:owl/onProperty :cmns-rlcmp/isPlayedBy,
                            :owl/someValuesFrom
                            :fibo-fbc-fct-usfse/DomesticEntity,
                            :rdf/type :owl/Restriction},
@@ -1206,11 +1203,11 @@
     "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USFinancialServicesEntities/"},
    :rdfs/label "U.S. credit union",
    :rdfs/subClassOf #{:fibo-fbc-fct-fse/CreditUnion
+                      :fibo-fbc-fct-usfse/ThriftInstitution
                       {:owl/onClass    :fibo-be-le-cb/NotForProfitCorporation,
-                       :owl/onProperty :fibo-fnd-rel-rel/hasIdentity,
+                       :owl/onProperty :cmns-rlcmp/isPlayedBy,
                        :owl/qualifiedCardinality 1,
-                       :rdf/type       :owl/Restriction}
-                      :fibo-fbc-fct-usfse/ThriftInstitution},
+                       :rdf/type       :owl/Restriction}},
    :skos/definition
    "cooperative association organized for the purpose of promoting thrift among its members and creating a source of credit for provident or productive purposes"})
 
@@ -1333,55 +1330,53 @@
    "indicates whether some capability of a financial service provider is contingent on conformance with certain Federal Reserve policies, regulations, or other requirements"})
 
 (def urn:uuid:913f4dab-b337-5e12-867e-7ad96f167896
-  {:cmns-av/copyright
-   #{"Copyright (c) 2015-2023 EDM Council, Inc."
-     "Copyright (c) 2015-2023 Object Management Group, Inc."},
+  {:cmns-av/copyright #{"Copyright (c) 2015-2024 Object Management Group, Inc."
+                        "Copyright (c) 2015-2024 EDM Council, Inc."},
    :dcterms/abstract
    "This ontology extends the primary financial services entities ontology in FBC with additional kinds of entities that are specific to the United States.",
    :dcterms/license {:xsd/anyURI "https://opensource.org/licenses/MIT"},
    :fibo-fnd-utl-av/hasMaturityLevel :fibo-fnd-utl-av/Release,
    :owl/imports
    #{{:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/OwnershipAndControl/Control/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/BE/OwnershipAndControl/CorporateControl/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Utilities/AnnotationVocabulary/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Places/Facilities/"}
+     {:xsd/anyURI "https://www.omg.org/spec/Commons/RolesAndCompositions/"}
      {:xsd/anyURI
       "https://www.omg.org/spec/LCC/Countries/CountryRepresentation/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/BE/LegalEntities/FormalBusinessOrganizations/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/BE/OwnershipAndControl/CorporateControl/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/BE/LegalEntities/CorporateBodies/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/OwnershipAndControl/Ownership/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FBC/FunctionalEntities/RegulatoryAgencies/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Places/Locations/"}
+     {:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FBC/ProductsAndServices/FinancialProductsAndServices/"}
+     {:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/BE/LegalEntities/LegalPersons/"}
+     {:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Utilities/AnnotationVocabulary/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/Collections/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FBC/FunctionalEntities/FinancialServicesEntities/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FBC/FunctionalEntities/FinancialServicesEntities/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Places/Locations/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Relations/Relations/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Places/Facilities/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/BE/LegalEntities/FormalBusinessOrganizations/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/OwnershipAndControl/Ownership/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/OwnershipAndControl/Control/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Parties/Roles/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/BE/LegalEntities/CorporateBodies/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Relations/Relations/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/BE/GovernmentEntities/NorthAmericanJurisdiction/USGovernmentEntitiesAndJurisdictions/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Organizations/FormalOrganizations/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/BE/GovernmentEntities/NorthAmericanJurisdiction/USGovernmentEntitiesAndJurisdictions/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/AnnotationVocabulary/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/BE/LegalEntities/LegalPersons/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Organizations/FormalOrganizations/"}
      {:xsd/anyURI
-      "https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FBC/FunctionalEntities/RegulatoryAgencies/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FBC/ProductsAndServices/FinancialProductsAndServices/"}},
+      "https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/"}},
    :owl/versionIRI
    {:xsd/anyURI
-    "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FBC/FunctionalEntities/NorthAmericanEntities/USFinancialServicesEntities/"},
+    "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FBC/FunctionalEntities/NorthAmericanEntities/USFinancialServicesEntities/"},
    :rdf/type :owl/Ontology,
    :rdfs/label "US Financial Services Entities Ontology",
    :skos/changeNote
@@ -1391,6 +1386,7 @@
      "The https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USFinancialServicesEntities.rdf version of this ontology was modified to augment the representation of institutions based on their definitions in the law, in order to answer competency questions using the National Information Center (NIC) repository"
      "The https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USFinancialServicesEntities.rdf version of this ontology was modified to generalize the definition of credit union."
      "The https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USFinancialServicesEntities.rdf version of this ontology was modified to eliminate circular definitions and revise names such that concepts don't appear to refer to multiple things."
+     "The https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USFinancialServicesEntities.rdf version of this ontology was modified to replace content that is now available in the OMG Commons Ontology Library (Commons) v1.1 (FND-380)."
      "The https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USFinancialServicesEntities.rdf version of this ontology was modified to eliminate dead links and address text formatting issues identified through hygiene testing."},
    :xsd/anyURI
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USFinancialServicesEntities/"})

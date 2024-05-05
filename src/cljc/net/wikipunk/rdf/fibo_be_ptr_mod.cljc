@@ -3,7 +3,7 @@
    #{"Copyright (c) 2015-2023 EDM Council, Inc."
      "Copyright (c) 2015-2023 Object Management Group, Inc."},
    :dcat/downloadURL
-   "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/BE/Partnerships/MetadataBEPartnerships/PartnershipsModule",
+   "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/BE/Partnerships/MetadataBEPartnerships/PartnershipsModule",
    :dcterms/abstract
    "The partnerships module contains ontologies that define concepts relating to types of partnerships, including incorporated and non-incorporated organizations. Partnerships are defined without reference to jurisdiction-specific legal forms. The abstractions distinguish between types of partnerships and related formation characteristics, as well as kinds of partners and types of partnership equity.",
    :dcterms/issued #inst "2018-08-27T18:00:00.000-00:00",
@@ -22,11 +22,11 @@
     "xsd"     "http://www.w3.org/2001/XMLSchema#"},
    :owl/imports
    #{{:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Utilities/AnnotationVocabulary/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Utilities/AnnotationVocabulary/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/AnnotationVocabulary/"}},
    :owl/versionIRI
    {:xsd/anyURI
-    "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/BE/Partnerships/MetadataBEPartnerships/"},
+    "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/BE/Partnerships/MetadataBEPartnerships/"},
    :rdf/type :owl/Ontology,
    :rdfa/prefix "fibo-be-ptr-mod",
    :rdfa/uri
@@ -68,11 +68,11 @@
    :dcterms/modified #inst "2023-01-27T18:00:00.000-00:00",
    :owl/imports
    #{{:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Utilities/AnnotationVocabulary/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Utilities/AnnotationVocabulary/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/AnnotationVocabulary/"}},
    :owl/versionIRI
    {:xsd/anyURI
-    "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/BE/Partnerships/MetadataBEPartnerships/"},
+    "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/BE/Partnerships/MetadataBEPartnerships/"},
    :rdf/type :owl/Ontology,
    :rdfs/label
    "Metadata about the EDMC-FIBO Business Entities (BE) Partnerships Module",

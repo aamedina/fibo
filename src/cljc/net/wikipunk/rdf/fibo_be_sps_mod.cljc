@@ -3,7 +3,7 @@
    #{"Copyright (c) 2015-2023 EDM Council, Inc."
      "Copyright (c) 2015-2023 Object Management Group, Inc."},
    :dcat/downloadURL
-   "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/BE/SoleProprietorships/MetadataBESoleProprietorships/SoleProprietorshipsModule",
+   "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/BE/SoleProprietorships/MetadataBESoleProprietorships/SoleProprietorshipsModule",
    :dcterms/abstract
    "The sole proprietorships module includes ontologies describing business entities or financial ventures that are carried out by a single person who is directly responsible for all liabilities of that venture.",
    :dcterms/issued #inst "2018-08-27T18:00:00.000-00:00",
@@ -22,11 +22,11 @@
     "xsd"     "http://www.w3.org/2001/XMLSchema#"},
    :owl/imports
    #{{:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Utilities/AnnotationVocabulary/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Utilities/AnnotationVocabulary/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/AnnotationVocabulary/"}},
    :owl/versionIRI
    {:xsd/anyURI
-    "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/BE/SoleProprietorships/MetadataBESoleProprietorships/"},
+    "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/BE/SoleProprietorships/MetadataBESoleProprietorships/"},
    :rdf/type :owl/Ontology,
    :rdfa/prefix "fibo-be-sps-mod",
    :rdfa/uri
@@ -68,11 +68,11 @@
    :dcterms/modified #inst "2023-01-27T18:00:00.000-00:00",
    :owl/imports
    #{{:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Utilities/AnnotationVocabulary/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Utilities/AnnotationVocabulary/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/AnnotationVocabulary/"}},
    :owl/versionIRI
    {:xsd/anyURI
-    "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/BE/SoleProprietorships/MetadataBESoleProprietorships/"},
+    "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/BE/SoleProprietorships/MetadataBESoleProprietorships/"},
    :rdf/type :owl/Ontology,
    :rdfs/label
    "Metadata about the EDMC-FIBO Business Entities (BE) Sole Proprietorships Module",

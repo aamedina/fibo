@@ -2,7 +2,7 @@
   {:cmns-av/copyright #{"Copyright (c) 2014-2023 Object Management Group, Inc."
                         "Copyright (c) 2014-2023 EDM Council, Inc."},
    :dcat/downloadURL
-   "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Arrangements/Arrangements/",
+   "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Arrangements/Arrangements/",
    :dcterms/abstract
    "This ontology defines abstract structural concepts, extending the Commons concept of an arrangement to represent schemes.",
    :dcterms/license {:xsd/anyURI "https://opensource.org/licenses/MIT"},
@@ -24,14 +24,14 @@
     "xsd" "http://www.w3.org/2001/XMLSchema#"},
    :owl/imports
    #{{:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Utilities/AnnotationVocabulary/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Utilities/AnnotationVocabulary/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/Collections/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/CodesAndCodeSets/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/Designators/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/AnnotationVocabulary/"}},
    :owl/versionIRI
    {:xsd/anyURI
-    "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Arrangements/Arrangements/"},
+    "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Arrangements/Arrangements/"},
    :rdf/type :owl/Ontology,
    :rdfa/prefix "fibo-fnd-arr-arr",
    :rdfa/uri
@@ -48,18 +48,10 @@
      "The https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Arrangements.rdf version of this ontology was revised to add a restriction to structured collection pointing to the arrangement used to organize that collection, and to revise the definition accordingly."
      "The https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Arrangements.rdf version of this ontology was revised to loosen the restriction on hasObservedDateTime so that it can be used with the new CombinedDateTime datatype (in FinancialDates, which is not imported herein to avoid circular dependencies), with finer granularity than seconds as appropriate for trades, for example."
      "The https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Arrangements.rdf version of this ontology was revised to move the concepts of a dated collection and dated collection constituent to Financial Dates in order to improve usability and simplify reasoning and make definitions ISO 704 compliant."
+     "The https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Arrangements.rdf version of the ontology was modified to eliminate deprecations that are more than 6 months old."
      "The https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Arrangements.rdf version of this ontology was revised to eliminate duplication with concepts in LCC for classes including arrangement, collection, code element, code set, etc to simplify the hierarchy and usage for FIBO users."},
    :xsd/anyURI
    "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Arrangements/"})
-
-(def CollectionConstituent
-  {:db/ident :fibo-fnd-arr-arr/CollectionConstituent,
-   :owl/deprecated true,
-   :owl/equivalentClass :cmns-col/Constituent,
-   :rdf/type :owl/Class,
-   :rdfs/isDefinedBy
-   {:xsd/anyURI
-    "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Arrangements/"}})
 
 (def Scheme
   {:db/ident :fibo-fnd-arr-arr/Scheme,
@@ -75,15 +67,6 @@
    :skos/definition
    "structure or means of organizing information such as a blueprint, schema, numbering system, organization structure, measurement system, plan, taxonomy, or language for organizing information"})
 
-(def StructuredCollection
-  {:db/ident :fibo-fnd-arr-arr/StructuredCollection,
-   :owl/deprecated true,
-   :owl/equivalentClass :cmns-col/StructuredCollection,
-   :rdf/type :owl/Class,
-   :rdfs/isDefinedBy
-   {:xsd/anyURI
-    "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Arrangements/"}})
-
 (def hasCollectionSize
   {:db/ident :fibo-fnd-arr-arr/hasCollectionSize,
    :rdf/type :owl/DatatypeProperty,
@@ -94,24 +77,6 @@
    :rdfs/range :xsd/nonNegativeInteger,
    :skos/definition "indicates the number of elements in a given collection"})
 
-(def hasConstituent
-  {:db/ident :fibo-fnd-arr-arr/hasConstituent,
-   :owl/deprecated true,
-   :owl/equivalentProperty :cmns-col/hasConstituent,
-   :rdf/type :owl/ObjectProperty,
-   :rdfs/isDefinedBy
-   {:xsd/anyURI
-    "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Arrangements/"}})
-
-(def isConstituentOf
-  {:db/ident :fibo-fnd-arr-arr/isConstituentOf,
-   :owl/deprecated true,
-   :owl/equivalentProperty :cmns-col/isConstituentOf,
-   :rdf/type :owl/ObjectProperty,
-   :rdfs/isDefinedBy
-   {:xsd/anyURI
-    "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Arrangements/"}})
-
 (def urn:uuid:38dc0e54-8d23-579c-ac18-c78618ec9e39
   {:cmns-av/copyright #{"Copyright (c) 2014-2023 Object Management Group, Inc."
                         "Copyright (c) 2014-2023 EDM Council, Inc."},
@@ -121,14 +86,14 @@
    :fibo-fnd-utl-av/hasMaturityLevel :fibo-fnd-utl-av/Release,
    :owl/imports
    #{{:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Utilities/AnnotationVocabulary/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Utilities/AnnotationVocabulary/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/Collections/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/CodesAndCodeSets/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/Designators/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/AnnotationVocabulary/"}},
    :owl/versionIRI
    {:xsd/anyURI
-    "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Arrangements/Arrangements/"},
+    "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Arrangements/Arrangements/"},
    :rdf/type :owl/Ontology,
    :rdfs/label "Arrangements Ontology",
    :skos/changeNote
@@ -142,6 +107,7 @@
      "The https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Arrangements.rdf version of this ontology was revised to add a restriction to structured collection pointing to the arrangement used to organize that collection, and to revise the definition accordingly."
      "The https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Arrangements.rdf version of this ontology was revised to loosen the restriction on hasObservedDateTime so that it can be used with the new CombinedDateTime datatype (in FinancialDates, which is not imported herein to avoid circular dependencies), with finer granularity than seconds as appropriate for trades, for example."
      "The https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Arrangements.rdf version of this ontology was revised to move the concepts of a dated collection and dated collection constituent to Financial Dates in order to improve usability and simplify reasoning and make definitions ISO 704 compliant."
+     "The https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Arrangements.rdf version of the ontology was modified to eliminate deprecations that are more than 6 months old."
      "The https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Arrangements.rdf version of this ontology was revised to eliminate duplication with concepts in LCC for classes including arrangement, collection, code element, code set, etc to simplify the hierarchy and usage for FIBO users."},
    :xsd/anyURI
    "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Arrangements/"})

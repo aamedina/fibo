@@ -1,8 +1,9 @@
 (ns net.wikipunk.rdf.fibo-fnd-pas-pas
-  {:cmns-av/copyright #{"Copyright (c) 2013-2023 Object Management Group, Inc."
-                        "Copyright (c) 2013-2023 EDM Council, Inc."},
+  {:cmns-av/copyright
+   #{"Copyright (c) 2013-2024 EDM Council, Inc."
+     "Copyright (c) 2013-2024 Object Management Group, Inc."},
    :dcat/downloadURL
-   "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/ProductsAndServices/ProductsAndServices/",
+   "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/ProductsAndServices/ProductsAndServices/",
    :dcterms/abstract
    "This ontology defines fundamental concepts for buyers, sellers, clients, customers, products, goods and services for use in other FIBO ontologies.",
    :dcterms/license {:xsd/anyURI "https://opensource.org/licenses/MIT"},
@@ -10,14 +11,15 @@
    :namespaces
    {"cmns-av" "https://www.omg.org/spec/Commons/AnnotationVocabulary/",
     "cmns-cxtdsg" "https://www.omg.org/spec/Commons/ContextualDesignators/",
+    "cmns-doc" "https://www.omg.org/spec/Commons/Documents/",
     "cmns-id" "https://www.omg.org/spec/Commons/Identifiers/",
+    "cmns-pts" "https://www.omg.org/spec/Commons/PartiesAndSituations/",
+    "cmns-rlcmp" "https://www.omg.org/spec/Commons/RolesAndCompositions/",
     "dcterms" "http://purl.org/dc/terms/",
     "fibo-fnd-acc-cur"
     "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/CurrencyAmount/",
     "fibo-fnd-agr-ctr"
     "https://spec.edmcouncil.org/fibo/ontology/FND/Agreements/Contracts/",
-    "fibo-fnd-arr-doc"
-    "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Documents/",
     "fibo-fnd-dt-oc"
     "https://spec.edmcouncil.org/fibo/ontology/FND/DatesAndTimes/Occurrences/",
     "fibo-fnd-law-lcap"
@@ -30,8 +32,6 @@
     "https://spec.edmcouncil.org/fibo/ontology/FND/Places/Locations/",
     "fibo-fnd-pty-pty"
     "https://spec.edmcouncil.org/fibo/ontology/FND/Parties/Parties/",
-    "fibo-fnd-pty-rl"
-    "https://spec.edmcouncil.org/fibo/ontology/FND/Parties/Roles/",
     "fibo-fnd-rel-rel"
     "https://spec.edmcouncil.org/fibo/ontology/FND/Relations/Relations/",
     "fibo-fnd-utl-av"
@@ -43,33 +43,32 @@
     "xsd" "http://www.w3.org/2001/XMLSchema#"},
    :owl/imports
    #{{:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Utilities/AnnotationVocabulary/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Places/Facilities/"}
+     {:xsd/anyURI "https://www.omg.org/spec/Commons/RolesAndCompositions/"}
+     {:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Accounting/CurrencyAmount/"}
+     {:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Law/LegalCapacity/"}
+     {:xsd/anyURI "https://www.omg.org/spec/Commons/Documents/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/Identifiers/"}
+     {:xsd/anyURI "https://www.omg.org/spec/Commons/PartiesAndSituations/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/ContextualDesignators/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Parties/Parties/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Places/Locations/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Accounting/CurrencyAmount/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Utilities/AnnotationVocabulary/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Places/Locations/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/DatesAndTimes/Occurrences/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Places/Facilities/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Relations/Relations/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/DatesAndTimes/Occurrences/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Parties/Parties/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Agreements/Contracts/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Parties/Roles/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Law/LegalCapacity/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Relations/Relations/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Arrangements/Documents/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Agreements/Contracts/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/AnnotationVocabulary/"}},
    :owl/versionIRI
    {:xsd/anyURI
-    "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/ProductsAndServices/ProductsAndServices/"},
+    "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/ProductsAndServices/ProductsAndServices/"},
    :rdf/type :owl/Ontology,
    :rdfa/prefix "fibo-fnd-pas-pas",
    :rdfa/uri
@@ -78,9 +77,11 @@
    :skos/changeNote
    #{"The https://spec.edmcouncil.org/fibo/ontology/FND/ProductsAndServices/ProductsAndServices.rdf version of this ontology was modified per the issue resolutions identified in the FIBO FND 1.1 RTF report to replace MoneyAmount with AmountOfMoney."
      "The https://spec.edmcouncil.org/fibo/ontology/FND/ProductsAndServices/ProductsAndServices.rdf version of this ontology was modified to move (deprecate) the properties produces and isProducedBy to Relations for more general usability."
+     "The https://spec.edmcouncil.org/fibo/ontology/FND/ProductsAndServices/ProductsAndServices.rdf version of the ontology was modified to replace concepts from several FIBO FND ontologies with their counterparts added to the Commons Ontology Library (Commons) v1.1."
      "The https://spec.edmcouncil.org/fibo/ontology/FND/ProductsAndServices/ProductsAndServices.rdf version of this ontology was modified to use the Commons Ontology Library (Commons) rather than the OMG's Languages, Countries and Codes (LCC), eliminating redundancies in FIBO as appropriate."
      "The https://spec.edmcouncil.org/fibo/ontology/FND/ProductsAndServices/ProductsAndServices.rdf version of this ontology was revised to replace uses of hasTag in Relations with hasTag from LCC, as the more complex union of datatypes in the Relations concept is not needed here."
      "The https://spec.edmcouncil.org/fibo/ontology/FND/ProductsAndServices/ProductsAndServices.rdf version of this ontology was revised to incorporate the concept of a right into the definition of product, to cover leases and rentals, such as the right to use a piece of property or other asset for some period of time, as products."
+     "The https://spec.edmcouncil.org/fibo/ontology/FND/ProductsAndServices/ProductsAndServices.rdf version of the ontology was modified to replace additional concepts from several FIBO FND ontologies with their counterparts added to the Commons Ontology Library (Commons) v1.1."
      "The https://spec.edmcouncil.org/fibo/ontology/FND/ProductsAndServices/ProductsAndServices.rdf version of this ontology was revised to leverage the new party identifier."
      "The https://spec.edmcouncil.org/fibo/ontology/FND/ProductsAndServices/ProductsAndServices.rdf version of the ontology was modified to use the Commons Ontology Library (Commons) Annotation Vocabulary rather than the OMG's Specification Metadata vocabulary."
      "The https://spec.edmcouncil.org/fibo/ontology/FND/ProductsAndServices/ProductsAndServices.rdf version of this ontology was revised move the definition of precious metal and the corresponding identifier to CurrencyAmount from this ontology to simplify imports in cases where the broader definitions for commodities are not required."
@@ -103,7 +104,7 @@
    {:xsd/anyURI
     "https://spec.edmcouncil.org/fibo/ontology/FND/ProductsAndServices/ProductsAndServices/"},
    :rdfs/label "buyer",
-   :rdfs/subClassOf #{:fibo-fnd-pty-pty/PartyInRole
+   :rdfs/subClassOf #{:cmns-pts/PartyRole
                       {:owl/onProperty     :fibo-fnd-pas-pas/buys,
                        :owl/someValuesFrom :fibo-fnd-pas-pas/Product,
                        :rdf/type           :owl/Restriction}},
@@ -118,12 +119,12 @@
     "https://spec.edmcouncil.org/fibo/ontology/FND/ProductsAndServices/ProductsAndServices/"},
    :rdfs/label "client",
    :rdfs/subClassOf
-   #{{:owl/onProperty     :fibo-fnd-pty-rl/isPlayedBy,
-      :owl/someValuesFrom {:owl/onProperty :fibo-fnd-pty-pty/isAPartyTo,
+   #{{:owl/onProperty     :cmns-rlcmp/isPlayedBy,
+      :owl/someValuesFrom {:owl/onProperty :cmns-pts/isAPartyTo,
                            :owl/someValuesFrom
                            :fibo-fnd-pas-pas/ServiceAgreement,
                            :rdf/type :owl/Restriction},
-      :rdf/type           :owl/Restriction} :fibo-fnd-pty-pty/PartyInRole},
+      :rdf/type           :owl/Restriction} :cmns-pts/PartyRole},
    :skos/definition
    "party that purchases professional services from, or has a formal relationship to purchase services from another party"})
 
@@ -138,7 +139,7 @@
                        :owl/onProperty :cmns-id/identifies,
                        :owl/qualifiedCardinality 1,
                        :rdf/type       :owl/Restriction}
-                      :fibo-fnd-pty-pty/PartyInRoleIdentifier},
+                      :fibo-fnd-pty-pty/PartyRoleIdentifier},
    :skos/definition
    "sequence of characters uniquely identifying a client within the context of some organization"})
 
@@ -165,7 +166,7 @@
     "https://spec.edmcouncil.org/fibo/ontology/FND/ProductsAndServices/ProductsAndServices/"},
    :rdfs/label "consumer",
    :rdfs/seeAlso {:xsd/anyURI "http://www.oecd.org/sti/consumer/"},
-   :rdfs/subClassOf :fibo-fnd-pty-pty/PartyInRole,
+   :rdfs/subClassOf :cmns-pts/PartyRole,
    :skos/definition
    "party that utilizes economic goods or services, typically for personal, family, or household purposes"})
 
@@ -232,7 +233,7 @@
                        :owl/onProperty :cmns-id/identifies,
                        :owl/qualifiedCardinality 1,
                        :rdf/type       :owl/Restriction}
-                      :fibo-fnd-pty-pty/PartyInRoleIdentifier},
+                      :fibo-fnd-pty-pty/PartyRoleIdentifier},
    :skos/definition
    "sequence of characters uniquely identifying a customer within the context of some organization"})
 
@@ -285,7 +286,7 @@
    {:xsd/anyURI
     "https://spec.edmcouncil.org/fibo/ontology/FND/ProductsAndServices/ProductsAndServices/"},
    :rdfs/label "producer",
-   :rdfs/subClassOf #{:fibo-fnd-pty-pty/PartyInRole
+   :rdfs/subClassOf #{:cmns-pts/PartyRole
                       {:owl/onProperty     :fibo-fnd-rel-rel/produces,
                        :owl/someValuesFrom :fibo-fnd-pas-pas/Good,
                        :rdf/type           :owl/Restriction}},
@@ -330,19 +331,19 @@
    {:xsd/anyURI
     "https://spec.edmcouncil.org/fibo/ontology/FND/ProductsAndServices/ProductsAndServices/"},
    :rdfs/label "sale",
-   :rdfs/subClassOf
-   #{{:owl/onProperty     :fibo-fnd-acc-cur/hasPrice,
-      :owl/someValuesFrom :fibo-fnd-acc-cur/MonetaryAmount,
-      :rdf/type           :owl/Restriction} :fibo-fnd-pas-pas/TransactionEvent
-     {:owl/onProperty     :cmns-cxtdsg/appliesTo,
-      :owl/someValuesFrom :fibo-fnd-pas-pas/Product,
-      :rdf/type           :owl/Restriction}
-     {:owl/onProperty     :fibo-fnd-pas-pas/hasSeller,
-      :owl/someValuesFrom :fibo-fnd-pas-pas/Seller,
-      :rdf/type           :owl/Restriction} :fibo-fnd-pty-pty/Situation
-     {:owl/onProperty     :fibo-fnd-pas-pas/hasBuyer,
-      :owl/someValuesFrom :fibo-fnd-pas-pas/Buyer,
-      :rdf/type           :owl/Restriction}},
+   :rdfs/subClassOf #{{:owl/onProperty     :fibo-fnd-acc-cur/hasPrice,
+                       :owl/someValuesFrom :fibo-fnd-acc-cur/MonetaryAmount,
+                       :rdf/type           :owl/Restriction}
+                      :fibo-fnd-pas-pas/TransactionEvent :cmns-pts/Situation
+                      {:owl/onProperty     :cmns-cxtdsg/appliesTo,
+                       :owl/someValuesFrom :fibo-fnd-pas-pas/Product,
+                       :rdf/type           :owl/Restriction}
+                      {:owl/onProperty     :fibo-fnd-pas-pas/hasSeller,
+                       :owl/someValuesFrom :fibo-fnd-pas-pas/Seller,
+                       :rdf/type           :owl/Restriction}
+                      {:owl/onProperty     :fibo-fnd-pas-pas/hasBuyer,
+                       :owl/someValuesFrom :fibo-fnd-pas-pas/Buyer,
+                       :rdf/type           :owl/Restriction}},
    :skos/definition "exchange of goods or services for money"})
 
 (def Seller
@@ -353,10 +354,10 @@
    {:xsd/anyURI
     "https://spec.edmcouncil.org/fibo/ontology/FND/ProductsAndServices/ProductsAndServices/"},
    :rdfs/label "seller",
-   :rdfs/subClassOf #{{:owl/onProperty     :fibo-fnd-pas-pas/sells,
+   :rdfs/subClassOf #{:cmns-pts/PartyRole
+                      {:owl/onProperty     :fibo-fnd-pas-pas/sells,
                        :owl/someValuesFrom :fibo-fnd-pas-pas/Product,
-                       :rdf/type           :owl/Restriction}
-                      :fibo-fnd-pty-pty/PartyInRole},
+                       :rdf/type           :owl/Restriction}},
    :skos/definition
    "party that makes, offers or contracts to make a sale to an actual or potential buyer"})
 
@@ -413,12 +414,11 @@
    :rdfs/label "service provider",
    :rdfs/subClassOf #{{:owl/onProperty     :fibo-fnd-rel-rel/provides,
                        :owl/someValuesFrom :fibo-fnd-pas-pas/Service,
-                       :rdf/type           :owl/Restriction}
+                       :rdf/type           :owl/Restriction} :cmns-rlcmp/Role
                       {:owl/minQualifiedCardinality 0,
                        :owl/onClass    :fibo-fnd-plc-fac/Facility,
                        :owl/onProperty :fibo-fnd-pas-pas/provisions,
                        :rdf/type       :owl/Restriction}
-                      :fibo-fnd-pty-rl/ThingInRole
                       {:owl/minQualifiedCardinality 0,
                        :owl/onClass    :fibo-fnd-pas-pas/Service,
                        :owl/onProperty :fibo-fnd-pas-pas/provisions,
@@ -435,7 +435,7 @@
    {:xsd/anyURI
     "https://spec.edmcouncil.org/fibo/ontology/FND/ProductsAndServices/ProductsAndServices/"},
    :rdfs/label "supplier",
-   :rdfs/subClassOf #{:fibo-fnd-pty-pty/PartyInRole
+   :rdfs/subClassOf #{:cmns-pts/PartyRole
                       {:owl/onProperty     :fibo-fnd-pas-pas/supplies,
                        :owl/someValuesFrom :fibo-fnd-pas-pas/Product,
                        :rdf/type           :owl/Restriction}},
@@ -449,7 +449,7 @@
    {:xsd/anyURI
     "https://spec.edmcouncil.org/fibo/ontology/FND/ProductsAndServices/ProductsAndServices/"},
    :rdfs/label "transaction confirmation",
-   :rdfs/subClassOf #{:fibo-fnd-arr-doc/LegalDocument
+   :rdfs/subClassOf #{:cmns-doc/LegalDocument
                       {:owl/onClass    :fibo-fnd-pas-pas/TransactionEvent,
                        :owl/onProperty :fibo-fnd-agr-ctr/isEvidenceFor,
                        :owl/qualifiedCardinality 1,
@@ -493,7 +493,7 @@
     "https://spec.edmcouncil.org/fibo/ontology/FND/ProductsAndServices/ProductsAndServices/"},
    :rdfs/label "buys from",
    :rdfs/range :fibo-fnd-pas-pas/Seller,
-   :rdfs/subPropertyOf :fibo-fnd-pty-pty/isAffectedBy,
+   :rdfs/subPropertyOf :cmns-pts/isAffectedBy,
    :skos/definition
    "links a party in the role of purchaser to a party from which they have made or are planning to make a purchase"})
 
@@ -506,8 +506,7 @@
    :rdfs/label {:rdf/language "en",
                 :rdf/value    "has buyer"},
    :rdfs/range :fibo-fnd-pas-pas/Buyer,
-   :rdfs/subPropertyOf #{:fibo-fnd-pty-pty/hasPartyInRole
-                         :fibo-fnd-pty-pty/hasUndergoer},
+   :rdfs/subPropertyOf #{:cmns-pts/hasUndergoer :cmns-pts/hasPartyRole},
    :skos/definition
    "indicates the purchasing party in the context of a sales transaction"})
 
@@ -520,7 +519,7 @@
    :rdfs/label {:rdf/language "en",
                 :rdf/value    "has seller"},
    :rdfs/range :fibo-fnd-pas-pas/Seller,
-   :rdfs/subPropertyOf :fibo-fnd-pty-pty/hasActor,
+   :rdfs/subPropertyOf :cmns-pts/hasActor,
    :skos/definition
    "indicates the vendor in the context of a sales transaction"})
 
@@ -585,7 +584,7 @@
     "https://spec.edmcouncil.org/fibo/ontology/FND/ProductsAndServices/ProductsAndServices/"},
    :rdfs/label "sells to",
    :rdfs/range :fibo-fnd-pas-pas/Buyer,
-   :rdfs/subPropertyOf :fibo-fnd-pty-pty/actsOn,
+   :rdfs/subPropertyOf :cmns-pts/actsOn,
    :skos/definition
    "links a party in the role of broker, dealer, vendor, or merchandiser to a purchaser or potential purchasing party"})
 
@@ -603,49 +602,51 @@
    "links a party in the role of outfitter, provisioner, distributor, etc. to something that they provide"})
 
 (def urn:uuid:e4f6f843-189a-5fd3-b4fe-c6d184538022
-  {:cmns-av/copyright #{"Copyright (c) 2013-2023 Object Management Group, Inc."
-                        "Copyright (c) 2013-2023 EDM Council, Inc."},
+  {:cmns-av/copyright
+   #{"Copyright (c) 2013-2024 EDM Council, Inc."
+     "Copyright (c) 2013-2024 Object Management Group, Inc."},
    :dcterms/abstract
    "This ontology defines fundamental concepts for buyers, sellers, clients, customers, products, goods and services for use in other FIBO ontologies.",
    :dcterms/license {:xsd/anyURI "https://opensource.org/licenses/MIT"},
    :fibo-fnd-utl-av/hasMaturityLevel :fibo-fnd-utl-av/Release,
    :owl/imports
    #{{:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Utilities/AnnotationVocabulary/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Places/Facilities/"}
+     {:xsd/anyURI "https://www.omg.org/spec/Commons/RolesAndCompositions/"}
+     {:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Accounting/CurrencyAmount/"}
+     {:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Law/LegalCapacity/"}
+     {:xsd/anyURI "https://www.omg.org/spec/Commons/Documents/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/Identifiers/"}
+     {:xsd/anyURI "https://www.omg.org/spec/Commons/PartiesAndSituations/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/ContextualDesignators/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Parties/Parties/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Places/Locations/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Accounting/CurrencyAmount/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Utilities/AnnotationVocabulary/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Places/Locations/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/DatesAndTimes/Occurrences/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Places/Facilities/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Relations/Relations/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/DatesAndTimes/Occurrences/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Parties/Parties/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Agreements/Contracts/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Parties/Roles/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Law/LegalCapacity/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Relations/Relations/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Arrangements/Documents/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Agreements/Contracts/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/AnnotationVocabulary/"}},
    :owl/versionIRI
    {:xsd/anyURI
-    "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/ProductsAndServices/ProductsAndServices/"},
+    "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/ProductsAndServices/ProductsAndServices/"},
    :rdf/type :owl/Ontology,
    :rdfs/label "Products and Services Ontology",
    :skos/changeNote
    #{"The https://spec.edmcouncil.org/fibo/ontology/FND/ProductsAndServices/ProductsAndServices.rdf version of this ontology was modified per the issue resolutions identified in the FIBO FND 1.1 RTF report to replace MoneyAmount with AmountOfMoney."
      "The https://spec.edmcouncil.org/fibo/ontology/FND/ProductsAndServices/ProductsAndServices.rdf version of this ontology was modified to move (deprecate) the properties produces and isProducedBy to Relations for more general usability."
+     "The https://spec.edmcouncil.org/fibo/ontology/FND/ProductsAndServices/ProductsAndServices.rdf version of the ontology was modified to replace concepts from several FIBO FND ontologies with their counterparts added to the Commons Ontology Library (Commons) v1.1."
      "The https://spec.edmcouncil.org/fibo/ontology/FND/ProductsAndServices/ProductsAndServices.rdf version of this ontology was modified to use the Commons Ontology Library (Commons) rather than the OMG's Languages, Countries and Codes (LCC), eliminating redundancies in FIBO as appropriate."
      "The https://spec.edmcouncil.org/fibo/ontology/FND/ProductsAndServices/ProductsAndServices.rdf version of this ontology was revised to replace uses of hasTag in Relations with hasTag from LCC, as the more complex union of datatypes in the Relations concept is not needed here."
      "The https://spec.edmcouncil.org/fibo/ontology/FND/ProductsAndServices/ProductsAndServices.rdf version of this ontology was revised to incorporate the concept of a right into the definition of product, to cover leases and rentals, such as the right to use a piece of property or other asset for some period of time, as products."
+     "The https://spec.edmcouncil.org/fibo/ontology/FND/ProductsAndServices/ProductsAndServices.rdf version of the ontology was modified to replace additional concepts from several FIBO FND ontologies with their counterparts added to the Commons Ontology Library (Commons) v1.1."
      "The https://spec.edmcouncil.org/fibo/ontology/FND/ProductsAndServices/ProductsAndServices.rdf version of this ontology was revised to leverage the new party identifier."
      "The https://spec.edmcouncil.org/fibo/ontology/FND/ProductsAndServices/ProductsAndServices.rdf version of the ontology was modified to use the Commons Ontology Library (Commons) Annotation Vocabulary rather than the OMG's Specification Metadata vocabulary."
      "The https://spec.edmcouncil.org/fibo/ontology/FND/ProductsAndServices/ProductsAndServices.rdf version of this ontology was revised move the definition of precious metal and the corresponding identifier to CurrencyAmount from this ontology to simplify imports in cases where the broader definitions for commodities are not required."

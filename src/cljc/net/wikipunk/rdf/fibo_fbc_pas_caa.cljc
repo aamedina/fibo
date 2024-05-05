@@ -1,9 +1,8 @@
 (ns net.wikipunk.rdf.fibo-fbc-pas-caa
-  {:cmns-av/copyright
-   #{"Copyright (c) 2015-2023 EDM Council, Inc."
-     "Copyright (c) 2015-2023 Object Management Group, Inc."},
+  {:cmns-av/copyright #{"Copyright (c) 2015-2024 Object Management Group, Inc."
+                        "Copyright (c) 2015-2024 EDM Council, Inc."},
    :dcat/downloadURL
-   "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FBC/ProductsAndServices/ClientsAndAccounts/",
+   "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FBC/ProductsAndServices/ClientsAndAccounts/",
    :dcterms/abstract
    "This ontology provides basic concepts such as account, account holder, account provider, relationship manager that are commonly used by financial services providers to describe customers and to determine counterparty identities.",
    :dcterms/license {:xsd/anyURI "https://opensource.org/licenses/MIT"},
@@ -15,9 +14,12 @@
     "cmns-col" "https://www.omg.org/spec/Commons/Collections/",
     "cmns-cxtdsg" "https://www.omg.org/spec/Commons/ContextualDesignators/",
     "cmns-cxtid" "https://www.omg.org/spec/Commons/ContextualIdentifiers/",
+    "cmns-doc" "https://www.omg.org/spec/Commons/Documents/",
     "cmns-dsg" "https://www.omg.org/spec/Commons/Designators/",
     "cmns-dt" "https://www.omg.org/spec/Commons/DatesAndTimes/",
     "cmns-id" "https://www.omg.org/spec/Commons/Identifiers/",
+    "cmns-pts" "https://www.omg.org/spec/Commons/PartiesAndSituations/",
+    "cmns-rlcmp" "https://www.omg.org/spec/Commons/RolesAndCompositions/",
     "dcterms" "http://purl.org/dc/terms/",
     "fibo-be-fct-fct"
     "https://spec.edmcouncil.org/fibo/ontology/BE/FunctionalEntities/FunctionalEntities/",
@@ -51,10 +53,6 @@
     "https://spec.edmcouncil.org/fibo/ontology/FND/OwnershipAndControl/Ownership/",
     "fibo-fnd-pas-pas"
     "https://spec.edmcouncil.org/fibo/ontology/FND/ProductsAndServices/ProductsAndServices/",
-    "fibo-fnd-pty-pty"
-    "https://spec.edmcouncil.org/fibo/ontology/FND/Parties/Parties/",
-    "fibo-fnd-pty-rl"
-    "https://spec.edmcouncil.org/fibo/ontology/FND/Parties/Roles/",
     "fibo-fnd-rel-rel"
     "https://spec.edmcouncil.org/fibo/ontology/FND/Relations/Relations/",
     "fibo-fnd-utl-av"
@@ -67,59 +65,58 @@
     "xsd" "http://www.w3.org/2001/XMLSchema#"},
    :owl/imports
    #{{:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FBC/FunctionalEntities/RegistrationAuthorities/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/ProductsAndServices/ProductsAndServices/"}
+     {:xsd/anyURI "https://www.omg.org/spec/Commons/RolesAndCompositions/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FBC/FunctionalEntities/BusinessRegistries/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Utilities/AnnotationVocabulary/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/BE/OwnershipAndControl/Executives/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Accounting/CurrencyAmount/"}
+     {:xsd/anyURI "https://www.omg.org/spec/Commons/Documents/"}
      {:xsd/anyURI
       "https://www.omg.org/spec/LCC/Countries/CountryRepresentation/"}
+     {:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FBC/DebtAndEquities/Debt/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/Identifiers/"}
+     {:xsd/anyURI "https://www.omg.org/spec/Commons/PartiesAndSituations/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/ContextualDesignators/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Parties/Parties/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FBC/FunctionalEntities/RegistrationAuthorities/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FBC/DebtAndEquities/Debt/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/OwnershipAndControl/Ownership/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Accounting/AccountingEquity/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Arrangements/Documents/"}
+     {:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/BE/OwnershipAndControl/Executives/"}
+     {:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FBC/ProductsAndServices/FinancialProductsAndServices/"}
+     {:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Utilities/AnnotationVocabulary/"}
+     {:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/DatesAndTimes/FinancialDates/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/Collections/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/CodesAndCodeSets/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/Classifiers/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/Designators/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FBC/FunctionalEntities/FinancialServicesEntities/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FBC/FunctionalEntities/FinancialServicesEntities/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Accounting/CurrencyAmount/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/DatesAndTimes/Occurrences/"}
+     {:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Relations/Relations/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/DatesAndTimes/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/DatesAndTimes/Occurrences/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FBC/FunctionalEntities/BusinessRegistries/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/ContextualIdentifiers/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Agreements/Contracts/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Agreements/Contracts/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/OwnershipAndControl/Ownership/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Accounting/AccountingEquity/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Parties/Roles/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FBC/FinancialInstruments/FinancialInstruments/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Relations/Relations/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FBC/FinancialInstruments/FinancialInstruments/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/BE/FunctionalEntities/FunctionalEntities/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Arrangements/Documents/"}
-     {:xsd/anyURI "https://www.omg.org/spec/Commons/AnnotationVocabulary/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/DatesAndTimes/FinancialDates/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/ProductsAndServices/ProductsAndServices/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FBC/ProductsAndServices/FinancialProductsAndServices/"}},
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/BE/FunctionalEntities/FunctionalEntities/"}
+     {:xsd/anyURI "https://www.omg.org/spec/Commons/AnnotationVocabulary/"}},
    :owl/versionIRI
    {:xsd/anyURI
-    "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FBC/ProductsAndServices/ClientsAndAccounts/"},
+    "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FBC/ProductsAndServices/ClientsAndAccounts/"},
    :rdf/type :owl/Ontology,
    :rdfa/prefix "fibo-fbc-pas-caa",
    :rdfa/uri
@@ -135,8 +132,10 @@
      "The https://spec.edmcouncil.org/fibo/ontology/FBC/ProductsAndServices/ClientsAndAccounts.rdf version of this ontology was revised to reflect the move of hasTerm from FinancialInstruments to Contracts and add the definition of a lending officer."
      "The https://spec.edmcouncil.org/fibo/ontology/FBC/ProductsAndServices/ClientsAndAccounts.rdf version of this ontology was revised to generalize the definition of customer account and eliminate ambiguity in others."
      "The https://spec.edmcouncil.org/fibo/ontology/FBC/ProductsAndServices/ClientsAndAccounts.rdf version of this ontology was revised to reflect the move of certain organization-specific concepts from BE to FND, to incorporate the concept of a composite identifier for BBAN and IBAN definition, loosen the definition of bank identifier with respect to the nature of the functional entity it identifies, and clarify the identifier hierarchy and fix spelling."
+     "The https://spec.edmcouncil.org/fibo/ontology/FBC/ProductsAndServices/ClientsAndAccounts.rdf version of the ontology was modified to replace concepts from several FIBO FND ontologies with their counterparts added to the Commons Ontology Library (Commons) v1.1."
      "The https://spec.edmcouncil.org/fibo/ontology/FBC/ProductsAndServices/ClientsAndAccounts.rdf version of this ontology was revised to add definitions for transaction records, which are needed to represent statements of various sorts, to add the concept of an account statement, and to clean up and augment definitions related to accounts, account holders, etc. as required for the purpose of representing credit card accounts."
      "The https://spec.edmcouncil.org/fibo/ontology/FBC/ProductsAndServices/ClientsAndAccounts.rdf version of this ontology was revised per the FIBO 2.0 RFC with respect to the definitions for accounts and account identifiers, such as BBAN and IBAN identifiers, including but not limited to bank accounts."
+     "The https://spec.edmcouncil.org/fibo/ontology/FBC/ProductsAndServices/ClientsAndAccounts.rdf version of the ontology was modified to replace additional concepts from several FIBO FND ontologies with their counterparts added to the Commons Ontology Library (Commons) v1.1."
      "The https://spec.edmcouncil.org/fibo/ontology/FBC/ProductsAndServices/ClientsAndAccounts.rdf version of this ontology was revised to eliminate the disjointness between a deposit account and investment account to allow for certain portfolio management accounts that have characteristics of both."
      "The https://spec.edmcouncil.org/fibo/ontology/FBC/ProductsAndServices/ClientsAndAccounts.rdf version of this ontology was revised to clean up dead links and address text formatting hygiene issues."
      "The https://spec.edmcouncil.org/fibo/ontology/FBC/ProductsAndServices/ClientsAndAccounts.rdf version of this ontology was revised to eliminate deprecated elements."
@@ -192,7 +191,7 @@
     "https://spec.edmcouncil.org/fibo/ontology/FBC/ProductsAndServices/ClientsAndAccounts/"},
    :rdfs/label "account as an asset",
    :rdfs/subClassOf #{:fibo-fnd-acc-aeq/FinancialAsset
-                      {:owl/onProperty     :fibo-fnd-pty-rl/isPlayedBy,
+                      {:owl/onProperty     :cmns-rlcmp/isPlayedBy,
                        :owl/someValuesFrom :fibo-fbc-pas-caa/Account,
                        :rdf/type           :owl/Restriction}
                       {:owl/onProperty     :fibo-fnd-oac-own/isAssetOf,
@@ -212,18 +211,18 @@
    :rdfs/label "account holder",
    :rdfs/subClassOf
    #{:fibo-fnd-oac-own/Owner
-     {:owl/onProperty     :fibo-fnd-pty-rl/isPlayedBy,
+     {:owl/onProperty     :cmns-rlcmp/isPlayedBy,
+      :owl/someValuesFrom {:owl/onProperty     :cmns-pts/isAPartyTo,
+                           :owl/someValuesFrom :fibo-fbc-pas-caa/Account,
+                           :rdf/type           :owl/Restriction},
+      :rdf/type           :owl/Restriction}
+     {:owl/onProperty     :cmns-rlcmp/isPlayedBy,
       :owl/someValuesFrom {:owl/onProperty     :fibo-fnd-oac-own/owns,
                            :owl/someValuesFrom :fibo-fbc-pas-caa/Account,
                            :rdf/type           :owl/Restriction},
       :rdf/type           :owl/Restriction}
      {:owl/onProperty     :fibo-fnd-rel-rel/holds,
       :owl/someValuesFrom :fibo-fbc-pas-caa/Account,
-      :rdf/type           :owl/Restriction}
-     {:owl/onProperty     :fibo-fnd-pty-rl/isPlayedBy,
-      :owl/someValuesFrom {:owl/onProperty     :fibo-fnd-pty-pty/isAPartyTo,
-                           :owl/someValuesFrom :fibo-fbc-pas-caa/Account,
-                           :rdf/type           :owl/Restriction},
       :rdf/type           :owl/Restriction}},
    :skos/definition "party that owns an account"})
 
@@ -270,12 +269,11 @@
     "https://spec.edmcouncil.org/fibo/ontology/FBC/ProductsAndServices/ClientsAndAccounts/"},
    :rdfs/label "account provider",
    :rdfs/subClassOf
-   #{:fibo-fnd-pas-pas/ServiceProvider
-     {:owl/onProperty     :fibo-fnd-pty-rl/isPlayedBy,
-      :owl/someValuesFrom {:owl/onProperty     :fibo-fnd-pty-pty/isAPartyTo,
+   #{{:owl/onProperty     :cmns-rlcmp/isPlayedBy,
+      :owl/someValuesFrom {:owl/onProperty     :cmns-pts/isAPartyTo,
                            :owl/someValuesFrom :fibo-fbc-pas-caa/Account,
                            :rdf/type           :owl/Restriction},
-      :rdf/type           :owl/Restriction}},
+      :rdf/type           :owl/Restriction} :fibo-fnd-pas-pas/ServiceProvider},
    :skos/definition "party that provides and services an account"})
 
 (def AccountSpecificServiceAgreement
@@ -309,26 +307,27 @@
    {:xsd/anyURI
     "https://spec.edmcouncil.org/fibo/ontology/FBC/ProductsAndServices/ClientsAndAccounts/"},
    :rdfs/label "account statement",
-   :rdfs/subClassOf
-   #{{:owl/maxQualifiedCardinality 1,
-      :owl/onClass    :cmns-dt/ExplicitDatePeriod,
-      :owl/onProperty :fibo-fnd-arr-doc/hasReportingPeriod,
-      :rdf/type       :owl/Restriction} :fibo-fnd-arr-doc/LegalDocument
-     {:owl/maxQualifiedCardinality 1,
-      :owl/onClass    :fibo-fbc-pas-caa/Balance,
-      :owl/onProperty :fibo-fbc-pas-caa/hasStartingBalance,
-      :rdf/type       :owl/Restriction}
-     {:owl/onProperty     :fibo-fbc-pas-caa/recordsTransaction,
-      :owl/someValuesFrom :fibo-fbc-pas-caa/IndividualTransaction,
-      :rdf/type           :owl/Restriction}
-     {:owl/maxQualifiedCardinality 1,
-      :owl/onClass    :fibo-fbc-pas-caa/Balance,
-      :owl/onProperty :fibo-fbc-pas-caa/hasEndingBalance,
-      :rdf/type       :owl/Restriction}
-     {:owl/onClass    :fibo-fbc-pas-caa/Account,
-      :owl/onProperty :fibo-fbc-pas-caa/appliesToAccount,
-      :owl/qualifiedCardinality 1,
-      :rdf/type       :owl/Restriction} :fibo-fnd-arr-doc/Record},
+   :rdfs/subClassOf #{:cmns-doc/LegalDocument
+                      {:owl/maxQualifiedCardinality 1,
+                       :owl/onClass    :cmns-dt/ExplicitDatePeriod,
+                       :owl/onProperty :fibo-fnd-arr-doc/hasReportingPeriod,
+                       :rdf/type       :owl/Restriction}
+                      {:owl/maxQualifiedCardinality 1,
+                       :owl/onClass    :fibo-fbc-pas-caa/Balance,
+                       :owl/onProperty :fibo-fbc-pas-caa/hasStartingBalance,
+                       :rdf/type       :owl/Restriction}
+                      {:owl/onProperty :fibo-fbc-pas-caa/recordsTransaction,
+                       :owl/someValuesFrom
+                       :fibo-fbc-pas-caa/IndividualTransaction,
+                       :rdf/type :owl/Restriction}
+                      {:owl/maxQualifiedCardinality 1,
+                       :owl/onClass    :fibo-fbc-pas-caa/Balance,
+                       :owl/onProperty :fibo-fbc-pas-caa/hasEndingBalance,
+                       :rdf/type       :owl/Restriction} :cmns-doc/Record
+                      {:owl/onClass    :fibo-fbc-pas-caa/Account,
+                       :owl/onProperty :fibo-fbc-pas-caa/appliesToAccount,
+                       :owl/qualifiedCardinality 1,
+                       :rdf/type       :owl/Restriction}},
    :skos/definition
    "periodic summary of account activity for a given period of time"})
 
@@ -506,16 +505,16 @@
      {:owl/onProperty     :cmns-id/isIdentifiedBy,
       :owl/someValuesFrom :fibo-fbc-pas-caa/AccountIdentifier,
       :rdf/type           :owl/Restriction}
-     {:owl/onProperty     :fibo-fbc-pas-caa/realizes,
-      :owl/someValuesFrom {:owl/unionOf [:fibo-fbc-pas-fpas/FinancialProduct
-                                         :fibo-fbc-pas-fpas/FinancialService],
-                           :rdf/type    :owl/Class},
-      :rdf/type           :owl/Restriction}
      {:owl/onProperty     :fibo-fnd-rel-rel/isHeldBy,
       :owl/someValuesFrom :fibo-fbc-pas-caa/CustomerAccountHolder,
       :rdf/type           :owl/Restriction}
      {:owl/onProperty     :cmns-dsg/isDefinedIn,
       :owl/someValuesFrom :fibo-fnd-pas-pas/ServiceAgreement,
+      :rdf/type           :owl/Restriction}
+     {:owl/onProperty     :fibo-fnd-rel-rel/exemplifies,
+      :owl/someValuesFrom {:owl/unionOf [:fibo-fbc-pas-fpas/FinancialProduct
+                                         :fibo-fbc-pas-fpas/FinancialService],
+                           :rdf/type    :owl/Class},
       :rdf/type           :owl/Restriction}
      {:owl/onProperty     :fibo-fnd-rel-rel/isProvidedBy,
       :owl/someValuesFrom {:owl/intersectionOf
@@ -591,10 +590,10 @@
    {:xsd/anyURI
     "https://spec.edmcouncil.org/fibo/ontology/FBC/ProductsAndServices/ClientsAndAccounts/"},
    :rdfs/label "general ledger",
-   :rdfs/subClassOf #{{:owl/onProperty     :cmns-col/comprises,
+   :rdfs/subClassOf #{:cmns-doc/Record
+                      {:owl/onProperty     :cmns-col/comprises,
                        :owl/someValuesFrom :fibo-fbc-pas-caa/LedgerAccount,
-                       :rdf/type           :owl/Restriction}
-                      :fibo-fnd-arr-doc/Record},
+                       :rdf/type           :owl/Restriction}},
    :skos/definition
    "accounting record summarizing changes in position as transactions are posted during an accounting period"})
 
@@ -628,7 +627,7 @@
       :rdf/type       :owl/Restriction}
      {:owl/minQualifiedCardinality 0,
       :owl/onClass    :fibo-fnd-pas-pas/TransactionEvent,
-      :owl/onProperty :fibo-fnd-dt-oc/exemplifies,
+      :owl/onProperty :fibo-fnd-rel-rel/exemplifies,
       :rdf/type       :owl/Restriction}
      {:owl/onClass    :fibo-fbc-pas-caa/PostingDate,
       :owl/onProperty :fibo-fbc-pas-caa/hasPostingDate,
@@ -818,7 +817,7 @@
    {:xsd/anyURI
     "https://spec.edmcouncil.org/fibo/ontology/FBC/ProductsAndServices/ClientsAndAccounts/"},
    :rdfs/label "time certificate of deposit account",
-   :rdfs/subClassOf #{{:owl/onProperty :fibo-fbc-pas-caa/isRealizedBy,
+   :rdfs/subClassOf #{{:owl/onProperty :fibo-fnd-rel-rel/isExemplifiedBy,
                        :owl/someValuesFrom
                        :fibo-fbc-pas-caa/CertificateOfDeposit,
                        :rdf/type :owl/Restriction}
@@ -935,7 +934,7 @@
      {:owl/minQualifiedCardinality 0,
       :owl/onDataRange :xsd/string,
       :owl/onProperty  :fibo-fbc-pas-caa/hasTransactionRecordStatus,
-      :rdf/type        :owl/Restriction}
+      :rdf/type        :owl/Restriction} :cmns-doc/Record
      {:owl/minQualifiedCardinality 0,
       :owl/onClass    :fibo-fbc-pas-caa/IndividualTransaction,
       :owl/onProperty :fibo-fbc-fct-ra/hasRegistryEntry,
@@ -947,7 +946,7 @@
      {:owl/onClass    :fibo-fbc-pas-caa/AccountProvider,
       :owl/onProperty :fibo-fnd-rel-rel/isManagedBy,
       :owl/qualifiedCardinality 1,
-      :rdf/type       :owl/Restriction} :fibo-fnd-arr-doc/Record},
+      :rdf/type       :owl/Restriction}},
    :skos/definition "record of transactions associated with an account"})
 
 (def TransactionRecordIdentifier
@@ -1186,23 +1185,21 @@
 
 (def isRealizedBy
   {:db/ident :fibo-fbc-pas-caa/isRealizedBy,
-   :owl/inverseOf :fibo-fbc-pas-caa/realizes,
+   :owl/deprecated true,
+   :owl/equivalentProperty :fibo-fnd-rel-rel/isExemplifiedBy,
    :rdf/type :owl/ObjectProperty,
    :rdfs/isDefinedBy
    {:xsd/anyURI
-    "https://spec.edmcouncil.org/fibo/ontology/FBC/ProductsAndServices/ClientsAndAccounts/"},
-   :rdfs/label "is realized by",
-   :skos/definition "is made concrete by"})
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/ProductsAndServices/ClientsAndAccounts/"}})
 
 (def realizes
   {:db/ident :fibo-fbc-pas-caa/realizes,
+   :owl/deprecated true,
+   :owl/equivalentProperty :fibo-fnd-rel-rel/exemplifies,
    :rdf/type :owl/ObjectProperty,
    :rdfs/isDefinedBy
    {:xsd/anyURI
-    "https://spec.edmcouncil.org/fibo/ontology/FBC/ProductsAndServices/ClientsAndAccounts/"},
-   :rdfs/label "realizes",
-   :rdfs/subPropertyOf :cmns-cxtdsg/appliesTo,
-   :skos/definition "makes concrete"})
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/ProductsAndServices/ClientsAndAccounts/"}})
 
 (def recordsTransaction
   {:db/ident :fibo-fbc-pas-caa/recordsTransaction,
@@ -1218,68 +1215,66 @@
    "links an account statement to the individual transactions it documents"})
 
 (def urn:uuid:1212164b-c408-55eb-865b-0404498064c5
-  {:cmns-av/copyright
-   #{"Copyright (c) 2015-2023 EDM Council, Inc."
-     "Copyright (c) 2015-2023 Object Management Group, Inc."},
+  {:cmns-av/copyright #{"Copyright (c) 2015-2024 Object Management Group, Inc."
+                        "Copyright (c) 2015-2024 EDM Council, Inc."},
    :dcterms/abstract
    "This ontology provides basic concepts such as account, account holder, account provider, relationship manager that are commonly used by financial services providers to describe customers and to determine counterparty identities.",
    :dcterms/license {:xsd/anyURI "https://opensource.org/licenses/MIT"},
    :fibo-fnd-utl-av/hasMaturityLevel :fibo-fnd-utl-av/Release,
    :owl/imports
    #{{:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FBC/FunctionalEntities/RegistrationAuthorities/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/ProductsAndServices/ProductsAndServices/"}
+     {:xsd/anyURI "https://www.omg.org/spec/Commons/RolesAndCompositions/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FBC/FunctionalEntities/BusinessRegistries/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Utilities/AnnotationVocabulary/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/BE/OwnershipAndControl/Executives/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Accounting/CurrencyAmount/"}
+     {:xsd/anyURI "https://www.omg.org/spec/Commons/Documents/"}
      {:xsd/anyURI
       "https://www.omg.org/spec/LCC/Countries/CountryRepresentation/"}
+     {:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FBC/DebtAndEquities/Debt/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/Identifiers/"}
+     {:xsd/anyURI "https://www.omg.org/spec/Commons/PartiesAndSituations/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/ContextualDesignators/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Parties/Parties/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FBC/FunctionalEntities/RegistrationAuthorities/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FBC/DebtAndEquities/Debt/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/OwnershipAndControl/Ownership/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Accounting/AccountingEquity/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Arrangements/Documents/"}
+     {:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/BE/OwnershipAndControl/Executives/"}
+     {:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FBC/ProductsAndServices/FinancialProductsAndServices/"}
+     {:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Utilities/AnnotationVocabulary/"}
+     {:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/DatesAndTimes/FinancialDates/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/Collections/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/CodesAndCodeSets/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/Classifiers/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/Designators/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FBC/FunctionalEntities/FinancialServicesEntities/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FBC/FunctionalEntities/FinancialServicesEntities/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Accounting/CurrencyAmount/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/DatesAndTimes/Occurrences/"}
+     {:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Relations/Relations/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/DatesAndTimes/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/DatesAndTimes/Occurrences/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FBC/FunctionalEntities/BusinessRegistries/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/ContextualIdentifiers/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Agreements/Contracts/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Agreements/Contracts/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/OwnershipAndControl/Ownership/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Accounting/AccountingEquity/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Parties/Roles/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FBC/FinancialInstruments/FinancialInstruments/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Relations/Relations/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FBC/FinancialInstruments/FinancialInstruments/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/BE/FunctionalEntities/FunctionalEntities/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Arrangements/Documents/"}
-     {:xsd/anyURI "https://www.omg.org/spec/Commons/AnnotationVocabulary/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/DatesAndTimes/FinancialDates/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/ProductsAndServices/ProductsAndServices/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FBC/ProductsAndServices/FinancialProductsAndServices/"}},
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/BE/FunctionalEntities/FunctionalEntities/"}
+     {:xsd/anyURI "https://www.omg.org/spec/Commons/AnnotationVocabulary/"}},
    :owl/versionIRI
    {:xsd/anyURI
-    "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FBC/ProductsAndServices/ClientsAndAccounts/"},
+    "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FBC/ProductsAndServices/ClientsAndAccounts/"},
    :rdf/type :owl/Ontology,
    :rdfs/label "Clients and Accounts Ontology",
    :skos/changeNote
@@ -1292,8 +1287,10 @@
      "The https://spec.edmcouncil.org/fibo/ontology/FBC/ProductsAndServices/ClientsAndAccounts.rdf version of this ontology was revised to reflect the move of hasTerm from FinancialInstruments to Contracts and add the definition of a lending officer."
      "The https://spec.edmcouncil.org/fibo/ontology/FBC/ProductsAndServices/ClientsAndAccounts.rdf version of this ontology was revised to generalize the definition of customer account and eliminate ambiguity in others."
      "The https://spec.edmcouncil.org/fibo/ontology/FBC/ProductsAndServices/ClientsAndAccounts.rdf version of this ontology was revised to reflect the move of certain organization-specific concepts from BE to FND, to incorporate the concept of a composite identifier for BBAN and IBAN definition, loosen the definition of bank identifier with respect to the nature of the functional entity it identifies, and clarify the identifier hierarchy and fix spelling."
+     "The https://spec.edmcouncil.org/fibo/ontology/FBC/ProductsAndServices/ClientsAndAccounts.rdf version of the ontology was modified to replace concepts from several FIBO FND ontologies with their counterparts added to the Commons Ontology Library (Commons) v1.1."
      "The https://spec.edmcouncil.org/fibo/ontology/FBC/ProductsAndServices/ClientsAndAccounts.rdf version of this ontology was revised to add definitions for transaction records, which are needed to represent statements of various sorts, to add the concept of an account statement, and to clean up and augment definitions related to accounts, account holders, etc. as required for the purpose of representing credit card accounts."
      "The https://spec.edmcouncil.org/fibo/ontology/FBC/ProductsAndServices/ClientsAndAccounts.rdf version of this ontology was revised per the FIBO 2.0 RFC with respect to the definitions for accounts and account identifiers, such as BBAN and IBAN identifiers, including but not limited to bank accounts."
+     "The https://spec.edmcouncil.org/fibo/ontology/FBC/ProductsAndServices/ClientsAndAccounts.rdf version of the ontology was modified to replace additional concepts from several FIBO FND ontologies with their counterparts added to the Commons Ontology Library (Commons) v1.1."
      "The https://spec.edmcouncil.org/fibo/ontology/FBC/ProductsAndServices/ClientsAndAccounts.rdf version of this ontology was revised to eliminate the disjointness between a deposit account and investment account to allow for certain portfolio management accounts that have characteristics of both."
      "The https://spec.edmcouncil.org/fibo/ontology/FBC/ProductsAndServices/ClientsAndAccounts.rdf version of this ontology was revised to clean up dead links and address text formatting hygiene issues."
      "The https://spec.edmcouncil.org/fibo/ontology/FBC/ProductsAndServices/ClientsAndAccounts.rdf version of this ontology was revised to eliminate deprecated elements."

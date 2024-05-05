@@ -1,22 +1,22 @@
 (ns net.wikipunk.rdf.fibo-fnd-oac-ctl
-  {:cmns-av/copyright #{"Copyright (c) 2013-2023 Object Management Group, Inc."
-                        "Copyright (c) 2013-2023 EDM Council, Inc."},
+  {:cmns-av/copyright
+   #{"Copyright (c) 2013-2024 EDM Council, Inc."
+     "Copyright (c) 2013-2024 Object Management Group, Inc."},
    :dcat/downloadURL
-   "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/OwnershipAndControl/Control/",
+   "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/OwnershipAndControl/Control/",
    :dcterms/abstract
-   "This ontology defines high-level, control-related concepts, including basic concepts for control, along with a distinction between de jure and de facto control, the former being derived with reference to terms in the LegalCapacity ontology.",
+   "This ontology defines high-level, control-related concepts, including the distinction between de jure and de facto control, the former being derived with reference to terms in the Legal Capacity ontology.",
    :dcterms/license {:xsd/anyURI "https://opensource.org/licenses/MIT"},
    :fibo-fnd-utl-av/hasMaturityLevel :fibo-fnd-utl-av/Release,
    :namespaces
    {"cmns-av" "https://www.omg.org/spec/Commons/AnnotationVocabulary/",
     "cmns-dt" "https://www.omg.org/spec/Commons/DatesAndTimes/",
+    "cmns-pts" "https://www.omg.org/spec/Commons/PartiesAndSituations/",
     "dcterms" "http://purl.org/dc/terms/",
     "fibo-fnd-law-lcap"
     "https://spec.edmcouncil.org/fibo/ontology/FND/Law/LegalCapacity/",
     "fibo-fnd-oac-ctl"
     "https://spec.edmcouncil.org/fibo/ontology/FND/OwnershipAndControl/Control/",
-    "fibo-fnd-pty-pty"
-    "https://spec.edmcouncil.org/fibo/ontology/FND/Parties/Parties/",
     "fibo-fnd-rel-rel"
     "https://spec.edmcouncil.org/fibo/ontology/FND/Relations/Relations/",
     "fibo-fnd-utl-av"
@@ -28,20 +28,17 @@
     "xsd" "http://www.w3.org/2001/XMLSchema#"},
    :owl/imports
    #{{:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Utilities/AnnotationVocabulary/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Law/LegalCapacity/"}
+     {:xsd/anyURI "https://www.omg.org/spec/Commons/PartiesAndSituations/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Parties/Parties/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Utilities/AnnotationVocabulary/"}
+     {:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Relations/Relations/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/DatesAndTimes/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Parties/Roles/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Law/LegalCapacity/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Relations/Relations/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/AnnotationVocabulary/"}},
    :owl/versionIRI
    {:xsd/anyURI
-    "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/OwnershipAndControl/Control/"},
+    "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/OwnershipAndControl/Control/"},
    :rdf/type :owl/Ontology,
    :rdfa/prefix "fibo-fnd-oac-ctl",
    :rdfa/uri
@@ -56,6 +53,7 @@
      "The https://spec.edmcouncil.org/fibo/ontology/FND/OwnershipAndControl/Control.rdf version of this ontology was modified to use the Commons Ontology Library (Commons) rather than the OMG's Languages, Countries and Codes (LCC), eliminating redundancies in FIBO as appropriate."
      "The https://spec.edmcouncil.org/fibo/ontology/FND/OwnershipAndControl/Control.rdf version of the ontology was modified to address hygiene issues with respect to text formatting."
      "The https://spec.edmcouncil.org/fibo/ontology/FND/OwnershipAndControl/Control.rdf version of the ontology was modified to incorporate the latest insights into how control relations should integrate with the control situation and to unwind confusion around the various properties used to represent aspects of control with respect to their domains and ranges."
+     "The https://spec.edmcouncil.org/fibo/ontology/FND/OwnershipAndControl/Control.rdf version of this ontology was modified to replace content that is now available in the OMG Commons Ontology Library (Commons) v1.1 (FND-380)."
      "The https://spec.edmcouncil.org/fibo/ontology/FND/OwnershipAndControl/Control.rdf version of the ontology was modified to integrate the concept of a situation, situational roles, and corresponding relations with the definition of control and eliminate minimum cardinality of 1 restrictions."},
    :xsd/anyURI
    "https://spec.edmcouncil.org/fibo/ontology/FND/OwnershipAndControl/Control/"})
@@ -71,11 +69,11 @@
    :rdfs/label "control",
    :rdfs/subClassOf #{{:owl/onProperty     :fibo-fnd-oac-ctl/hasPartyInControl,
                        :owl/someValuesFrom :fibo-fnd-oac-ctl/ControllingParty,
-                       :rdf/type           :owl/Restriction}
+                       :rdf/type           :owl/Restriction} :cmns-pts/Situation
                       {:owl/onProperty
                        :fibo-fnd-oac-ctl/involvesControlledThing,
                        :owl/someValuesFrom :fibo-fnd-oac-ctl/ControlledThing,
-                       :rdf/type :owl/Restriction} :fibo-fnd-pty-pty/Situation},
+                       :rdf/type :owl/Restriction}},
    :skos/definition
    "situation in which some party has the power to direct or strongly influence the direction of the management and policies related to something"})
 
@@ -86,11 +84,12 @@
    {:xsd/anyURI
     "https://spec.edmcouncil.org/fibo/ontology/FND/OwnershipAndControl/Control/"},
    :rdfs/label "controlled thing",
-   :rdfs/subClassOf #{{:owl/onDataRange :cmns-dt/CombinedDateTime,
+   :rdfs/subClassOf #{:cmns-pts/Undergoer
+                      {:owl/onDataRange :cmns-dt/CombinedDateTime,
                        :owl/onProperty
                        :fibo-fnd-oac-ctl/isInitiallyControlledOn,
                        :owl/qualifiedCardinality 1,
-                       :rdf/type :owl/Restriction} :fibo-fnd-pty-pty/Undergoer
+                       :rdf/type :owl/Restriction}
                       {:owl/onProperty :fibo-fnd-oac-ctl/hasControllingParty,
                        :owl/someValuesFrom :fibo-fnd-oac-ctl/ControllingParty,
                        :rdf/type :owl/Restriction}
@@ -107,7 +106,7 @@
    {:xsd/anyURI
     "https://spec.edmcouncil.org/fibo/ontology/FND/OwnershipAndControl/Control/"},
    :rdfs/label "controlling party",
-   :rdfs/subClassOf #{:fibo-fnd-pty-pty/Actor
+   :rdfs/subClassOf #{:cmns-pts/Actor
                       {:owl/onProperty :fibo-fnd-oac-ctl/isControllingPartyIn,
                        :owl/someValuesFrom :fibo-fnd-oac-ctl/Control,
                        :rdf/type :owl/Restriction}
@@ -154,7 +153,7 @@
     "https://spec.edmcouncil.org/fibo/ontology/FND/OwnershipAndControl/Control/"},
    :rdfs/label "has controlling party",
    :rdfs/range :fibo-fnd-oac-ctl/ControllingParty,
-   :rdfs/subPropertyOf :fibo-fnd-pty-pty/isAffectedBy,
+   :rdfs/subPropertyOf :cmns-pts/isAffectedBy,
    :skos/definition
    "indicates the party that exercises authority or influence over something"})
 
@@ -167,7 +166,7 @@
     "https://spec.edmcouncil.org/fibo/ontology/FND/OwnershipAndControl/Control/"},
    :rdfs/label "has party in control",
    :rdfs/range :fibo-fnd-oac-ctl/ControllingParty,
-   :rdfs/subPropertyOf :fibo-fnd-pty-pty/hasActor,
+   :rdfs/subPropertyOf :cmns-pts/hasActor,
    :skos/definition
    "indicates the actor in the context of a control situation"})
 
@@ -180,7 +179,7 @@
     "https://spec.edmcouncil.org/fibo/ontology/FND/OwnershipAndControl/Control/"},
    :rdfs/label "involves controlled thing",
    :rdfs/range :fibo-fnd-oac-ctl/ControlledThing,
-   :rdfs/subPropertyOf :fibo-fnd-pty-pty/hasUndergoer,
+   :rdfs/subPropertyOf :cmns-pts/hasUndergoer,
    :skos/definition
    "indicates something controlled in the context of a control situation"})
 
@@ -192,7 +191,7 @@
     "https://spec.edmcouncil.org/fibo/ontology/FND/OwnershipAndControl/Control/"},
    :rdfs/label "is controlled party of",
    :rdfs/range :fibo-fnd-oac-ctl/ControllingParty,
-   :rdfs/subPropertyOf :fibo-fnd-pty-pty/isDirectlyAffectedBy,
+   :rdfs/subPropertyOf :cmns-pts/isDirectlyAffectedBy,
    :skos/definition
    "indicates a controlling party that has some amount of authority or influence over it"})
 
@@ -206,7 +205,7 @@
     "https://spec.edmcouncil.org/fibo/ontology/FND/OwnershipAndControl/Control/"},
    :rdfs/label "is controlled thing in",
    :rdfs/range :fibo-fnd-oac-ctl/Control,
-   :rdfs/subPropertyOf :fibo-fnd-pty-pty/undergoes,
+   :rdfs/subPropertyOf :cmns-pts/undergoes,
    :skos/definition
    "indicates the context of control in which something is being controlled"})
 
@@ -220,7 +219,7 @@
     "https://spec.edmcouncil.org/fibo/ontology/FND/OwnershipAndControl/Control/"},
    :rdfs/label "is controlling party in",
    :rdfs/range :fibo-fnd-oac-ctl/Control,
-   :rdfs/subPropertyOf :fibo-fnd-pty-pty/actsIn,
+   :rdfs/subPropertyOf :cmns-pts/actsIn,
    :skos/definition
    "indicates the context of control in which the party plays the role of controlling something"})
 
@@ -232,7 +231,7 @@
    {:xsd/anyURI
     "https://spec.edmcouncil.org/fibo/ontology/FND/OwnershipAndControl/Control/"},
    :rdfs/label "is controlling party of",
-   :rdfs/subPropertyOf :fibo-fnd-pty-pty/directlyAffects,
+   :rdfs/subPropertyOf :cmns-pts/directlyAffects,
    :skos/definition
    "indicates something that a controlling party has some amount of authority or influence over"})
 
@@ -258,33 +257,31 @@
     "https://spec.edmcouncil.org/fibo/ontology/FND/OwnershipAndControl/Control/"},
    :rdfs/label "is party controlling",
    :rdfs/range :fibo-fnd-oac-ctl/ControlledThing,
-   :rdfs/subPropertyOf :fibo-fnd-pty-pty/actsOn,
+   :rdfs/subPropertyOf :cmns-pts/actsOn,
    :skos/definition
    "indicates something controlled that a controlling party has some amount of authority or influence over"})
 
 (def urn:uuid:292fa690-ca20-5ac0-9ea3-f00ccceba0fe
-  {:cmns-av/copyright #{"Copyright (c) 2013-2023 Object Management Group, Inc."
-                        "Copyright (c) 2013-2023 EDM Council, Inc."},
+  {:cmns-av/copyright
+   #{"Copyright (c) 2013-2024 EDM Council, Inc."
+     "Copyright (c) 2013-2024 Object Management Group, Inc."},
    :dcterms/abstract
-   "This ontology defines high-level, control-related concepts, including basic concepts for control, along with a distinction between de jure and de facto control, the former being derived with reference to terms in the LegalCapacity ontology.",
+   "This ontology defines high-level, control-related concepts, including the distinction between de jure and de facto control, the former being derived with reference to terms in the Legal Capacity ontology.",
    :dcterms/license {:xsd/anyURI "https://opensource.org/licenses/MIT"},
    :fibo-fnd-utl-av/hasMaturityLevel :fibo-fnd-utl-av/Release,
    :owl/imports
    #{{:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Utilities/AnnotationVocabulary/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Law/LegalCapacity/"}
+     {:xsd/anyURI "https://www.omg.org/spec/Commons/PartiesAndSituations/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Parties/Parties/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Utilities/AnnotationVocabulary/"}
+     {:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Relations/Relations/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/DatesAndTimes/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Parties/Roles/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Law/LegalCapacity/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Relations/Relations/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/AnnotationVocabulary/"}},
    :owl/versionIRI
    {:xsd/anyURI
-    "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/OwnershipAndControl/Control/"},
+    "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/OwnershipAndControl/Control/"},
    :rdf/type :owl/Ontology,
    :rdfs/label "Control Ontology",
    :skos/changeNote
@@ -296,6 +293,7 @@
      "The https://spec.edmcouncil.org/fibo/ontology/FND/OwnershipAndControl/Control.rdf version of this ontology was modified to use the Commons Ontology Library (Commons) rather than the OMG's Languages, Countries and Codes (LCC), eliminating redundancies in FIBO as appropriate."
      "The https://spec.edmcouncil.org/fibo/ontology/FND/OwnershipAndControl/Control.rdf version of the ontology was modified to address hygiene issues with respect to text formatting."
      "The https://spec.edmcouncil.org/fibo/ontology/FND/OwnershipAndControl/Control.rdf version of the ontology was modified to incorporate the latest insights into how control relations should integrate with the control situation and to unwind confusion around the various properties used to represent aspects of control with respect to their domains and ranges."
+     "The https://spec.edmcouncil.org/fibo/ontology/FND/OwnershipAndControl/Control.rdf version of this ontology was modified to replace content that is now available in the OMG Commons Ontology Library (Commons) v1.1 (FND-380)."
      "The https://spec.edmcouncil.org/fibo/ontology/FND/OwnershipAndControl/Control.rdf version of the ontology was modified to integrate the concept of a situation, situational roles, and corresponding relations with the definition of control and eliminate minimum cardinality of 1 restrictions."},
    :xsd/anyURI
    "https://spec.edmcouncil.org/fibo/ontology/FND/OwnershipAndControl/Control/"})

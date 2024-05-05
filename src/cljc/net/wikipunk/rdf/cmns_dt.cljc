@@ -1,11 +1,11 @@
 (ns net.wikipunk.rdf.cmns-dt
-  {:cmns-av/copyright #{"Copyright (c) 2014-2022 Object Management Group, Inc."
-                        "Copyright (c) 2021-2022 agnos.ai U.K. Ltd"
-                        "Copyright (c) 2014-2022 EDM Council, Inc."
-                        "Copyright (c) 2014-2022 Thematix Partners LLC"},
+  {:cmns-av/copyright #{"Copyright (c) 2014-2023 Object Management Group, Inc."
+                        "Copyright (c) 2021-2023 agnos.ai U.K. Ltd"
+                        "Copyright (c) 2014-2023 EDM Council, Inc."
+                        "Copyright (c) 2014-2023 Thematix Partners LLC"},
    :dcterms/abstract
    "The dates and times ontology defines commonly used temporal concepts that cover those most frequently needed across domains, with a focus on terminology that is used in business applications. It is designed to be mappable to other date and time ontologies and specifications, such as the W3C Time Ontology in OWL (available at https://www.w3.org/TR/owl-time/), certain temporal elements in BFO 2020 (see https://basic-formal-ontology.org/bfo-2020.html), time concepts defined in schema.org, and the Object Management Group's Date Time Vocabulary (DTV) specification (available at https://www.omg.org/spec/DTV/), without the corresponding overhead or in some cases, issues. The concepts were originally derived from a number of date and time standards including ISO 8601:2004 Representation of Dates and Times. The ontology itself was derived from the Financial Industry Business Ontology (FIBO) Financial Dates ontology, with minor revisions to better reflect requirements for mapping to other ontologies.",
-   :dcterms/contributor #{"Pete Rivett, agnos.ai U.K. Ltd"
+   :dcterms/contributor #{"Pete Rivett, Federated Knowledge LLC"
                           "Elisa Kendall, Thematix Partners LLC"
                           "Mark Linehan, Thematix Partners LLC"},
    :dcterms/license {:xsd/anyURI "http://opensource.org/licenses/MIT"},
@@ -21,13 +21,14 @@
    :owl/imports {:xsd/anyURI
                  "https://www.omg.org/spec/Commons/AnnotationVocabulary/"},
    :owl/versionIRI {:xsd/anyURI
-                    "https://www.omg.org/spec/Commons/20221101/DatesAndTimes/"},
+                    "https://www.omg.org/spec/Commons/20230801/DatesAndTimes/"},
    :rdf/type :owl/Ontology,
    :rdfa/prefix "cmns-dt",
    :rdfa/uri "https://www.omg.org/spec/Commons/DatesAndTimes/",
    :rdfs/label "Commons Dates and Times Ontology",
    :skos/changeNote
-   "https://www.omg.org/spec/Commons/20220501/DatesAndTimes.rdf version of this ontology was modified to eliminate a double space in the scope note on CombinedDateTime (COMMONS-6).",
+   #{"https://www.omg.org/spec/Commons/20220501/DatesAndTimes.rdf version of this ontology was modified to eliminate a double space in the scope note on CombinedDateTime (COMMONS-6)."
+     "https://www.omg.org/spec/Commons/20221101/DatesAndTimes.rdf version of this ontology was revised to add properties supporting start and end time and related concepts (COMMONS-11-8)."},
    :skos/note
    "The dates and times ontology conforms with the OWL 2 DL semantics, and is outside of OWL 2 RL due to the inclusion of exact cardinality constraints on explicit date, explicit duration and time of day. These constraints can be changed to maximum cardinality constraints if needed to support OWL RL rule-based applications that cannot be extended to support them.",
    :xsd/anyURI "https://www.omg.org/spec/Commons/DatesAndTimes/"})
@@ -179,6 +180,28 @@
    :skos/note
    "This class is used when a duration is guaranteed to be known when it is created."})
 
+(def ExplicitTimePeriod
+  {:db/ident :cmns-dt/ExplicitTimePeriod,
+   :rdf/type :owl/Class,
+   :rdfs/label "explicit time period",
+   :rdfs/subClassOf #{{:owl/maxQualifiedCardinality 1,
+                       :owl/onClass    :cmns-dt/TimeOfDay,
+                       :owl/onProperty :cmns-dt/hasEndTime,
+                       :rdf/type       :owl/Restriction}
+                      {:owl/maxQualifiedCardinality 1,
+                       :owl/onClass    :cmns-dt/TimeOfDay,
+                       :owl/onProperty :cmns-dt/hasStartTime,
+                       :rdf/type       :owl/Restriction}
+                      {:owl/maxQualifiedCardinality 1,
+                       :owl/onClass    :cmns-dt/ExplicitDuration,
+                       :owl/onProperty :cmns-dt/hasDuration,
+                       :rdf/type       :owl/Restriction} :cmns-dt/TimePeriod
+                      :cmns-dt/ProperInterval},
+   :skos/definition
+   "time period for which the starting time, ending time, and/or duration are required",
+   :skos/note
+   "As with 'time period', any one of {start time, end time, duration} may be omitted because the missing property can be inferred from the other two."})
+
 (def ProperInterval
   {:db/ident :cmns-dt/ProperInterval,
    :dcterms/source {:xsd/anyURI
@@ -244,18 +267,50 @@
    :skos/note
    "The representation similar to xsd:dateTime, but should exclude the date component and time zone. The value of the has time value property roughly corresponds to xsd:time in XML schema datatypes, which is prohibited from use in OWL due to ambiguity in its definition."})
 
+(def TimePeriod
+  {:db/ident :cmns-dt/TimePeriod,
+   :rdf/type :owl/Class,
+   :rdfs/label "time period",
+   :rdfs/subClassOf #{{:owl/maxQualifiedCardinality 1,
+                       :owl/onClass    :cmns-dt/TimeOfDay,
+                       :owl/onProperty :cmns-dt/hasEndTime,
+                       :rdf/type       :owl/Restriction}
+                      {:owl/maxQualifiedCardinality 1,
+                       :owl/onClass    :cmns-dt/TimeOfDay,
+                       :owl/onProperty :cmns-dt/hasStartTime,
+                       :rdf/type       :owl/Restriction}
+                      {:owl/maxQualifiedCardinality 1,
+                       :owl/onClass    :cmns-dt/Duration,
+                       :owl/onProperty :cmns-dt/hasDuration,
+                       :rdf/type       :owl/Restriction} :cmns-dt/TimeInterval},
+   :skos/definition "time span over some finite window",
+   :skos/note
+   #{"A time period is unknown if either the starting or ending time has no value. If a time period is unknown, then the duration should either be omitted or unknown (have no value)."
+     "A time period is defined by at least two of three properties: (1) a start time, (2) an end time, and (3) a duration. If more than one of these properties is missing, the time period may be invalid or unknown."}})
+
 (def hasDate
-  {:db/ident        :cmns-dt/hasDate,
-   :rdf/type        :owl/ObjectProperty,
-   :rdfs/label      "has date",
-   :rdfs/range      :cmns-dt/Date,
-   :skos/definition "identifies a calendar day, month and year"})
+  {:db/ident           :cmns-dt/hasDate,
+   :rdf/type           :owl/ObjectProperty,
+   :rdfs/label         "has date",
+   :rdfs/range         :cmns-dt/Date,
+   :rdfs/subPropertyOf :cmns-dt/hasTime,
+   :skos/definition    "identifies a calendar day, month and year"})
+
+(def hasDateOfIssuance
+  {:db/ident :cmns-dt/hasDateOfIssuance,
+   :rdf/type #{:owl/ObjectProperty :owl/FunctionalProperty},
+   :rdfs/label "has date of issuance",
+   :rdfs/range :cmns-dt/Date,
+   :rdfs/subPropertyOf :cmns-dt/hasStartDate,
+   :skos/definition
+   "links something, such as an agreement, contract, license, or report, to the date it was made available"})
 
 (def hasDatePeriod
   {:db/ident :cmns-dt/hasDatePeriod,
    :rdf/type :owl/ObjectProperty,
    :rdfs/label "has date period",
    :rdfs/range :cmns-dt/DatePeriod,
+   :rdfs/subPropertyOf :cmns-dt/hasTime,
    :skos/definition
    "identifies a specific window of time, including a start date, end date and/or duration"})
 
@@ -264,6 +319,7 @@
    :rdf/type :owl/ObjectProperty,
    :rdfs/label "has date time",
    :rdfs/range :cmns-dt/DateTime,
+   :rdfs/subPropertyOf :cmns-dt/hasTime,
    :skos/definition
    "identifies a specific date and time of day, possibly excluding the time zone"})
 
@@ -272,6 +328,7 @@
    :rdf/type :owl/ObjectProperty,
    :rdfs/label "has date time stamp",
    :rdfs/range :cmns-dt/DateTimeStamp,
+   :rdfs/subPropertyOf :cmns-dt/hasTime,
    :skos/definition
    "identifies a specific date and time of day, explicitly including the time zone"})
 
@@ -306,6 +363,7 @@
    :rdf/type :owl/ObjectProperty,
    :rdfs/label "has duration",
    :rdfs/range :cmns-dt/Duration,
+   :rdfs/subPropertyOf :cmns-dt/hasTime,
    :skos/definition "specifies the time during which something continues",
    :skos/note
    "This duration may be omitted or unknown if either the start or end Date of the DatePeriod is an ExplicitDate."})
@@ -327,13 +385,34 @@
    :skos/note
    "Negative durations are used to indicate relative dates that are before (rather than after) some other Date."})
 
+(def hasEnd
+  {:db/ident :cmns-dt/hasEnd,
+   :rdf/type :owl/ObjectProperty,
+   :rdfs/label "has end",
+   :rdfs/range :cmns-dt/TimeInstant,
+   :rdfs/subPropertyOf :cmns-dt/hasTime,
+   :skos/definition
+   "indicates the final or ending time point associated with something"})
+
 (def hasEndDate
-  {:db/ident           :cmns-dt/hasEndDate,
-   :rdf/type           :owl/ObjectProperty,
-   :rdfs/label         "has end date",
-   :rdfs/range         :cmns-dt/Date,
-   :rdfs/subPropertyOf :cmns-dt/hasDate,
-   :skos/definition    "indicates the ending date of some date period"})
+  {:db/ident :cmns-dt/hasEndDate,
+   :rdf/type :owl/ObjectProperty,
+   :rdfs/label "has end date",
+   :rdfs/range :cmns-dt/Date,
+   :rdfs/subPropertyOf #{:cmns-dt/hasEnd :cmns-dt/hasDate},
+   :skos/definition
+   "indicates the final or ending date associated with something"})
+
+(def hasEndTime
+  {:cmns-av/usageNote
+   "Use of the property 'hasTimeValue' as a property of the TimeOfDay to record the actual time, or use either the DateTime or DateTimeStamp class with the date zeroed out if the date is not relevant but with the time included.",
+   :db/ident :cmns-dt/hasEndTime,
+   :rdf/type :owl/ObjectProperty,
+   :rdfs/label "has end time",
+   :rdfs/range :cmns-dt/TimeOfDay,
+   :rdfs/subPropertyOf :cmns-dt/hasEnd,
+   :skos/definition
+   "indicates the final or ending time associated with something"})
 
 (def hasExplicitDate
   {:db/ident :cmns-dt/hasExplicitDate,
@@ -352,13 +431,53 @@
    :skos/definition
    "indicates a date and time associated with an event, measurement, record, or observation"})
 
+(def hasStart
+  {:db/ident :cmns-dt/hasStart,
+   :rdf/type :owl/ObjectProperty,
+   :rdfs/label "has start",
+   :rdfs/range :cmns-dt/TimeInstant,
+   :rdfs/subPropertyOf :cmns-dt/hasTime,
+   :skos/definition
+   "indicates the initial time point associated with something"})
+
 (def hasStartDate
   {:db/ident           :cmns-dt/hasStartDate,
    :rdf/type           :owl/ObjectProperty,
    :rdfs/label         "has start date",
    :rdfs/range         :cmns-dt/Date,
-   :rdfs/subPropertyOf :cmns-dt/hasDate,
-   :skos/definition    "indicates the initial date of something"})
+   :rdfs/subPropertyOf #{:cmns-dt/hasStart :cmns-dt/hasDate},
+   :skos/definition    "indicates the initial date associated with something"})
+
+(def hasStartTime
+  {:cmns-av/usageNote
+   "Use of the property 'hasTimeValue' as a property of the TimeOfDay to record the actual time, or use either the DateTime or DateTimeStamp class with the date zeroed out if the date is not relevant but with the time included.",
+   :db/ident :cmns-dt/hasStartTime,
+   :rdf/type :owl/ObjectProperty,
+   :rdfs/label "has end time",
+   :rdfs/range :cmns-dt/TimeOfDay,
+   :rdfs/subPropertyOf :cmns-dt/hasStart,
+   :skos/definition
+   "indicates the initial or starting time associated with something"})
+
+(def hasTime
+  {:db/ident :cmns-dt/hasTime,
+   :rdf/type :owl/ObjectProperty,
+   :rdfs/label "has time",
+   :rdfs/range :cmns-dt/TemporalEntity,
+   :rdfs/seeAlso {:xsd/anyURI "https://w3c.github.io/sdw/time/#time:hasTime"},
+   :skos/definition
+   "specifies a general time that can be associated with any element",
+   :skos/note
+   "This property corresponds to the property of the same name in the W3C Time Ontology, and can be used to support mapping."})
+
+(def hasTimePeriod
+  {:db/ident :cmns-dt/hasTimePeriod,
+   :rdf/type :owl/ObjectProperty,
+   :rdfs/label "has time period",
+   :rdfs/range :cmns-dt/TimePeriod,
+   :rdfs/subPropertyOf :cmns-dt/hasTime,
+   :skos/definition
+   "identifies a specific window of time, including a starting time, ending time and/or duration"})
 
 (def hasTimeValue
   {:db/ident :cmns-dt/hasTimeValue,
@@ -390,24 +509,25 @@
    "associates based on subsequent spatial or temporal proximity; follows in a logical order or sequence"})
 
 (def urn:uuid:719920ff-3a09-5349-bd0f-485a704c7266
-  {:cmns-av/copyright #{"Copyright (c) 2014-2022 Object Management Group, Inc."
-                        "Copyright (c) 2021-2022 agnos.ai U.K. Ltd"
-                        "Copyright (c) 2014-2022 EDM Council, Inc."
-                        "Copyright (c) 2014-2022 Thematix Partners LLC"},
+  {:cmns-av/copyright #{"Copyright (c) 2014-2023 Object Management Group, Inc."
+                        "Copyright (c) 2021-2023 agnos.ai U.K. Ltd"
+                        "Copyright (c) 2014-2023 EDM Council, Inc."
+                        "Copyright (c) 2014-2023 Thematix Partners LLC"},
    :dcterms/abstract
    "The dates and times ontology defines commonly used temporal concepts that cover those most frequently needed across domains, with a focus on terminology that is used in business applications. It is designed to be mappable to other date and time ontologies and specifications, such as the W3C Time Ontology in OWL (available at https://www.w3.org/TR/owl-time/), certain temporal elements in BFO 2020 (see https://basic-formal-ontology.org/bfo-2020.html), time concepts defined in schema.org, and the Object Management Group's Date Time Vocabulary (DTV) specification (available at https://www.omg.org/spec/DTV/), without the corresponding overhead or in some cases, issues. The concepts were originally derived from a number of date and time standards including ISO 8601:2004 Representation of Dates and Times. The ontology itself was derived from the Financial Industry Business Ontology (FIBO) Financial Dates ontology, with minor revisions to better reflect requirements for mapping to other ontologies.",
-   :dcterms/contributor #{"Pete Rivett, agnos.ai U.K. Ltd"
+   :dcterms/contributor #{"Pete Rivett, Federated Knowledge LLC"
                           "Elisa Kendall, Thematix Partners LLC"
                           "Mark Linehan, Thematix Partners LLC"},
    :dcterms/license {:xsd/anyURI "http://opensource.org/licenses/MIT"},
    :owl/imports {:xsd/anyURI
                  "https://www.omg.org/spec/Commons/AnnotationVocabulary/"},
    :owl/versionIRI {:xsd/anyURI
-                    "https://www.omg.org/spec/Commons/20221101/DatesAndTimes/"},
+                    "https://www.omg.org/spec/Commons/20230801/DatesAndTimes/"},
    :rdf/type :owl/Ontology,
    :rdfs/label "Commons Dates and Times Ontology",
    :skos/changeNote
-   "https://www.omg.org/spec/Commons/20220501/DatesAndTimes.rdf version of this ontology was modified to eliminate a double space in the scope note on CombinedDateTime (COMMONS-6).",
+   #{"https://www.omg.org/spec/Commons/20220501/DatesAndTimes.rdf version of this ontology was modified to eliminate a double space in the scope note on CombinedDateTime (COMMONS-6)."
+     "https://www.omg.org/spec/Commons/20221101/DatesAndTimes.rdf version of this ontology was revised to add properties supporting start and end time and related concepts (COMMONS-11-8)."},
    :skos/note
    "The dates and times ontology conforms with the OWL 2 DL semantics, and is outside of OWL 2 RL due to the inclusion of exact cardinality constraints on explicit date, explicit duration and time of day. These constraints can be changed to maximum cardinality constraints if needed to support OWL RL rule-based applications that cannot be extended to support them.",
    :xsd/anyURI "https://www.omg.org/spec/Commons/DatesAndTimes/"})

@@ -1,7 +1,7 @@
 (ns net.wikipunk.rdf.fibo-sec-fund-civ
-  {:cmns-av/copyright "Copyright (c) 2013-2023 EDM Council, Inc.",
+  {:cmns-av/copyright "Copyright (c) 2013-2024 EDM Council, Inc.",
    :dcat/downloadURL
-   "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/SEC/Funds/CollectiveInvestmentVehicles/",
+   "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/SEC/Funds/CollectiveInvestmentVehicles/",
    :dcterms/abstract
    "Reference data terms and non time dependent facts about funds and CIVs.",
    :dcterms/license {:xsd/anyURI "https://opensource.org/licenses/MIT"},
@@ -11,11 +11,13 @@
     "cmns-cls" "https://www.omg.org/spec/Commons/Classifiers/",
     "cmns-col" "https://www.omg.org/spec/Commons/Collections/",
     "cmns-cxtdsg" "https://www.omg.org/spec/Commons/ContextualDesignators/",
+    "cmns-doc" "https://www.omg.org/spec/Commons/Documents/",
     "cmns-dsg" "https://www.omg.org/spec/Commons/Designators/",
     "cmns-dt" "https://www.omg.org/spec/Commons/DatesAndTimes/",
+    "cmns-pts" "https://www.omg.org/spec/Commons/PartiesAndSituations/",
+    "cmns-qtu" "https://www.omg.org/spec/Commons/QuantitiesAndUnits/",
+    "cmns-rlcmp" "https://www.omg.org/spec/Commons/RolesAndCompositions/",
     "dcterms" "http://purl.org/dc/terms/",
-    "fibo-be-fct-fct"
-    "https://spec.edmcouncil.org/fibo/ontology/BE/FunctionalEntities/FunctionalEntities/",
     "fibo-be-ge-euj"
     "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/EuropeanJurisdiction/EUGovernmentEntitiesAndJurisdictions/",
     "fibo-be-le-cb"
@@ -36,8 +38,6 @@
     "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/CurrencyAmount/",
     "fibo-fnd-agr-ctr"
     "https://spec.edmcouncil.org/fibo/ontology/FND/Agreements/Contracts/",
-    "fibo-fnd-arr-doc"
-    "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Documents/",
     "fibo-fnd-arr-lif"
     "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Lifecycles/",
     "fibo-fnd-arr-rt"
@@ -58,14 +58,8 @@
     "https://spec.edmcouncil.org/fibo/ontology/FND/OwnershipAndControl/Ownership/",
     "fibo-fnd-org-org"
     "https://spec.edmcouncil.org/fibo/ontology/FND/Organizations/Organizations/",
-    "fibo-fnd-pty-pty"
-    "https://spec.edmcouncil.org/fibo/ontology/FND/Parties/Parties/",
-    "fibo-fnd-pty-rl"
-    "https://spec.edmcouncil.org/fibo/ontology/FND/Parties/Roles/",
     "fibo-fnd-rel-rel"
     "https://spec.edmcouncil.org/fibo/ontology/FND/Relations/Relations/",
-    "fibo-fnd-utl-alx"
-    "https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/Analytics/",
     "fibo-fnd-utl-av"
     "https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/AnnotationVocabulary/",
     "fibo-ind-ind-ind"
@@ -91,93 +85,87 @@
     "skos" "http://www.w3.org/2004/02/skos/core#",
     "xsd" "http://www.w3.org/2001/XMLSchema#"},
    :owl/imports
-   #{{:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/IND/Indicators/Indicators/"}
+   #{{:xsd/anyURI "https://www.omg.org/spec/Commons/RolesAndCompositions/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FBC/ProductsAndServices/ClientsAndAccounts/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Accounting/CurrencyAmount/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Utilities/Analytics/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Law/LegalCapacity/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Utilities/AnnotationVocabulary/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/BE/OwnershipAndControl/OwnershipParties/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/GoalsAndObjectives/Objectives/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/SEC/Securities/SecuritiesRestrictions/"}
+     {:xsd/anyURI "https://www.omg.org/spec/Commons/Documents/"}
      {:xsd/anyURI
       "https://www.omg.org/spec/LCC/Countries/CountryRepresentation/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/BE/LegalEntities/FormalBusinessOrganizations/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Arrangements/Ratings/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Organizations/Organizations/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FBC/DebtAndEquities/Debt/"}
+     {:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/IND/Indicators/Indicators/"}
+     {:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Organizations/Organizations/"}
+     {:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/SEC/Securities/SecuritiesClassification/"}
+     {:xsd/anyURI "https://www.omg.org/spec/Commons/PartiesAndSituations/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/ContextualDesignators/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/SEC/Securities/SecuritiesRestrictions/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Arrangements/Lifecycles/"}
+     {:xsd/anyURI "https://www.omg.org/spec/Commons/QuantitiesAndUnits/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/BE/LegalEntities/CorporateBodies/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/OwnershipAndControl/Ownership/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/SEC/Securities/SecuritiesIdentification/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/SEC/Securities/SecurityAssets/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Parties/Parties/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Law/Jurisdiction/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/BE/GovernmentEntities/EuropeanJurisdiction/EUGovernmentEntitiesAndJurisdictions/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FBC/ProductsAndServices/FinancialProductsAndServices/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FBC/DebtAndEquities/Debt/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/BE/LegalEntities/LegalPersons/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Law/Jurisdiction/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Utilities/AnnotationVocabulary/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Accounting/AccountingEquity/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/DatesAndTimes/FinancialDates/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/Collections/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/SEC/Securities/SecuritiesClassification/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/BE/GovernmentEntities/EuropeanJurisdiction/EUGovernmentEntitiesAndJurisdictions/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/SEC/Securities/SecurityAssets/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Law/LegalCore/"}
+     {:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/GoalsAndObjectives/Objectives/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/Classifiers/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/Designators/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Accounting/CurrencyAmount/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/SEC/Securities/SecuritiesIssuance/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/BE/OwnershipAndControl/OwnershipParties/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FBC/ProductsAndServices/ClientsAndAccounts/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/SEC/Funds/Funds/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/SEC/Equities/EquityInstruments/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FBC/FinancialInstruments/Settlement/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Relations/Relations/"}
+     {:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/BE/LegalEntities/FormalBusinessOrganizations/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/DatesAndTimes/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/SEC/Securities/SecuritiesIssuance/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Agreements/Contracts/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/SEC/Equities/EquityInstruments/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Accounting/AccountingEquity/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Arrangements/Lifecycles/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/SEC/Securities/SecuritiesIdentification/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Agreements/Contracts/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/SEC/Funds/Funds/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Arrangements/Ratings/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/BE/LegalEntities/CorporateBodies/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/OwnershipAndControl/Ownership/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FBC/FinancialInstruments/FinancialInstruments/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Parties/Roles/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Law/LegalCapacity/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/DatesAndTimes/BusinessDates/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Relations/Relations/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FBC/FinancialInstruments/FinancialInstruments/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/BE/FunctionalEntities/FunctionalEntities/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Law/LegalCore/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Arrangements/Documents/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FBC/FinancialInstruments/Settlement/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/AnnotationVocabulary/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/BE/LegalEntities/LegalPersons/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/DatesAndTimes/FinancialDates/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FBC/ProductsAndServices/FinancialProductsAndServices/"}},
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/DatesAndTimes/BusinessDates/"}},
    :owl/versionIRI
    {:xsd/anyURI
-    "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/SEC/Funds/CollectiveInvestmentVehicles/"},
+    "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/SEC/Funds/CollectiveInvestmentVehicles/"},
    :rdf/type :owl/Ontology,
    :rdfa/prefix "fibo-sec-fund-civ",
    :rdfa/uri
@@ -332,7 +320,7 @@
    :rdfs/label {:rdf/language "en",
                 :rdf/value    "equity asset"},
    :rdfs/subClassOf #{{:owl/allValuesFrom :fibo-sec-eq-eq/Share,
-                       :owl/onProperty    :fibo-fnd-rel-rel/hasIdentity,
+                       :owl/onProperty    :cmns-rlcmp/isPlayedBy,
                        :rdf/type          :owl/Restriction}
                       :fibo-sec-sec-ast/PortfolioHolding},
    :skos/definition {:rdf/language "en",
@@ -385,19 +373,32 @@
                      :rdf/value
                      "A stake held in a fund by way of a Share Class Unit."}})
 
-(def FCP
-  {:db/ident :fibo-sec-fund-civ/FCP,
+(def FondsCommunDePlacement
+  {:cmns-av/abbreviation {:rdf/language "en",
+                          :rdf/value    "FCP"},
+   :db/ident :fibo-sec-fund-civ/FondsCommunDePlacement,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    {:xsd/anyURI
     "https://spec.edmcouncil.org/fibo/ontology/SEC/Funds/CollectiveInvestmentVehicles/"},
-   :rdfs/label {:rdf/language "en",
-                :rdf/value    "f c p"},
-   :rdfs/subClassOf :fibo-be-fct-fct/FunctionalBusinessEntity,
+   :rdfs/label {:rdf/language "fr-FR",
+                :rdf/value    "fonds commun de placement"},
+   :rdfs/seeAlso
+   #{{:xsd/anyURI
+      "https://iclg.com/practice-areas/public-investment-funds-laws-and-regulations/france"}
+     {:xsd/anyURI
+      "https://www.ubp.com/en/glossary-risk-management/glossary-legal-compliance/fcp"}
+     {:xsd/anyURI
+      "https://www.alfi.lu/en-gb/understandinginvesting/post/which-structure-to-choose"}},
+   :rdfs/subClassOf :fibo-sec-fund-fund/CollectiveInvestmentVehicle,
    :skos/definition
    {:rdf/language "en",
     :rdf/value
-    "A French fund vehicle type. Designation and definition needed."}})
+    "open-ended collective investment fund, which is a contractual form set up between the fund manager and investors and not a separate legal entity"},
+   :skos/note
+   {:rdf/language "en",
+    :rdf/value
+    "An FCP is similar to a unit trust in the UK. FCPs are not investment companies, but more like open partnerships. They can be set up as a single fund or as an umbrella fund with multiple sub-funds, typically issued in the French-speaking countries of Europe."}})
 
 (def FundAccountant
   {:db/ident :fibo-sec-fund-civ/FundAccountant,
@@ -426,10 +427,9 @@
    :rdfs/label {:rdf/language "en",
                 :rdf/value    "fund administrator"},
    :rdfs/subClassOf #{:fibo-sec-fund-civ/FundsProcessingParty
-                      {:owl/onProperty
-                       :fibo-sec-fund-civ/processingPartyHasIdentity,
+                      {:owl/onProperty     :cmns-rlcmp/isPlayedBy,
                        :owl/someValuesFrom :fibo-be-le-lp/LegalEntity,
-                       :rdf/type :owl/Restriction}
+                       :rdf/type           :owl/Restriction}
                       {:owl/onProperty     :fibo-sec-fund-civ/mayAlsoBe,
                        :owl/someValuesFrom :fibo-sec-fund-civ/UnitIssuer,
                        :rdf/type           :owl/Restriction}},
@@ -471,7 +471,7 @@
      {:owl/onProperty     :fibo-sec-fund-civ/hasExpectedCoupon,
       :owl/someValuesFrom :fibo-sec-fund-civ/FundBondUnitCoupon,
       :rdf/type           :owl/Restriction}
-     {:owl/onProperty     :fibo-sec-fund-civ/hasDistributiojnPolicy,
+     {:owl/onProperty     :fibo-fnd-gao-obj/hasStrategy,
       :owl/someValuesFrom :fibo-sec-fund-civ/FundUnitDistributionPolicy,
       :rdf/type           :owl/Restriction}},
    :skos/definition {:rdf/language "en",
@@ -565,10 +565,9 @@
    :rdfs/label {:rdf/language "en",
                 :rdf/value    "fund data provider"},
    :rdfs/subClassOf #{:fibo-sec-fund-civ/FundsProcessingParty
-                      {:owl/onProperty
-                       :fibo-sec-fund-civ/processingPartyHasIdentity,
+                      {:owl/onProperty     :cmns-rlcmp/isPlayedBy,
                        :owl/someValuesFrom :fibo-be-le-lp/LegalEntity,
-                       :rdf/type :owl/Restriction}},
+                       :rdf/type           :owl/Restriction}},
    :skos/definition {:rdf/language "en",
                      :rdf/value
                      "A party which supplies market data to a fund."}})
@@ -752,11 +751,11 @@
     "https://spec.edmcouncil.org/fibo/ontology/SEC/Funds/CollectiveInvestmentVehicles/"},
    :rdfs/label {:rdf/language "en",
                 :rdf/value    "fund manager"},
-   :rdfs/subClassOf
-   #{:fibo-sec-fund-civ/FundsProcessingParty
-     {:owl/onProperty     :fibo-sec-fund-civ/processingPartyHasIdentity,
-      :owl/someValuesFrom :fibo-sec-fund-civ/FundManagementCompany,
-      :rdf/type           :owl/Restriction}},
+   :rdfs/subClassOf #{:fibo-sec-fund-civ/FundsProcessingParty
+                      {:owl/onProperty :cmns-rlcmp/isPlayedBy,
+                       :owl/someValuesFrom
+                       :fibo-sec-fund-civ/FundManagementCompany,
+                       :rdf/type :owl/Restriction}},
    :skos/definition
    {:rdf/language "en",
     :rdf/value
@@ -770,10 +769,10 @@
     "https://spec.edmcouncil.org/fibo/ontology/SEC/Funds/CollectiveInvestmentVehicles/"},
    :rdfs/label {:rdf/language "en",
                 :rdf/value    "fund order desk"},
-   :rdfs/subClassOf #{:fibo-fbc-pas-caa/AccountProvider
-                      {:owl/onProperty :fibo-sec-fund-civ/providerHasIdentity,
+   :rdfs/subClassOf #{{:owl/onProperty     :cmns-rlcmp/isPlayedBy,
                        :owl/someValuesFrom :fibo-be-le-lp/LegalEntity,
-                       :rdf/type :owl/Restriction}},
+                       :rdf/type           :owl/Restriction}
+                      :fibo-fbc-pas-caa/AccountProvider},
    :skos/definition
    {:rdf/language "en",
     :rdf/value
@@ -791,7 +790,7 @@
     "https://spec.edmcouncil.org/fibo/ontology/SEC/Funds/CollectiveInvestmentVehicles/"},
    :rdfs/label {:rdf/language "en",
                 :rdf/value    "fund order desk physical form document"},
-   :rdfs/subClassOf :fibo-fnd-arr-doc/Document,
+   :rdfs/subClassOf :cmns-doc/Document,
    :skos/definition
    {:rdf/language "en",
     :rdf/value "A phsyical form obtained through the main fund order desk."}})
@@ -885,14 +884,11 @@
     "https://spec.edmcouncil.org/fibo/ontology/SEC/Funds/CollectiveInvestmentVehicles/"},
    :rdfs/label {:rdf/language "en",
                 :rdf/value    "fund processing form"},
-   :rdfs/subClassOf
-   #{:fibo-fnd-arr-doc/Document
-     {:owl/maxQualifiedCardinality 1,
-      :owl/onClass :fibo-sec-fund-civ/FundOrderDeskPhysicalFormDocument,
-      :owl/onProperty
-      {:xsd/anyURI
-       "https://spec.edmcouncil.org/fibo/ontology/SEC/Funds/CollectiveInvestmentVehicles/mayBe.1"},
-      :rdf/type :owl/Restriction}},
+   :rdfs/subClassOf #{{:owl/maxQualifiedCardinality 1,
+                       :owl/onClass
+                       :fibo-sec-fund-civ/FundOrderDeskPhysicalFormDocument,
+                       :owl/onProperty :fibo-sec-fund-civ/mayBe.1,
+                       :rdf/type :owl/Restriction} :cmns-doc/Document},
    :skos/definition
    {:rdf/language "en",
     :rdf/value
@@ -1047,7 +1043,7 @@
    :rdfs/label {:rdf/language "en",
                 :rdf/value    "fund share class unit"},
    :rdfs/subClassOf #{:fibo-sec-fund-fund/FundUnit
-                      {:owl/onProperty :fibo-sec-fund-civ/hasDistributionPolicy,
+                      {:owl/onProperty :fibo-fnd-gao-obj/hasStrategy,
                        :owl/someValuesFrom
                        :fibo-sec-fund-civ/FundUnitDistributionPolicy,
                        :rdf/type :owl/Restriction}},
@@ -1081,13 +1077,10 @@
     "https://spec.edmcouncil.org/fibo/ontology/SEC/Funds/CollectiveInvestmentVehicles/"},
    :rdfs/label {:rdf/language "en",
                 :rdf/value    "fund supervisory authority"},
-   :rdfs/subClassOf #{:fibo-fnd-pty-pty/PartyInRole
-                      {:owl/onProperty     :fibo-fnd-rel-rel/hasIdentity,
-                       :owl/someValuesFrom :fibo-be-le-cb/Corporation,
-                       :rdf/type           :owl/Restriction}},
-   :skos/definition
-   {:rdf/language "en",
-    :rdf/value "The legal entity which supervises the fund or fund industry"}})
+   :rdfs/subClassOf :cmns-pts/PartyRole,
+   :skos/definition {:rdf/language "en",
+                     :rdf/value
+                     "party that supervises the fund or fund industry"}})
 
 (def FundTransferAgent
   {:db/ident :fibo-sec-fund-civ/FundTransferAgent,
@@ -1123,13 +1116,11 @@
     "https://spec.edmcouncil.org/fibo/ontology/SEC/Funds/CollectiveInvestmentVehicles/"},
    :rdfs/label {:rdf/language "en",
                 :rdf/value    "fund unit distribution policy"},
-   :rdfs/subClassOf
-   #{:fibo-fnd-law-lcap/Policy
-     {:owl/onProperty
-      {:xsd/anyURI
-       "https://spec.edmcouncil.org/fibo/ontology/SEC/Funds/CollectiveInvestmentVehicles/hasDistributionPolicy.2"},
-      :owl/someValuesFrom :fibo-sec-fund-civ/FundUnitDistributionMethod,
-      :rdf/type :owl/Restriction}},
+   :rdfs/subClassOf #{:fibo-fnd-law-lcap/Policy
+                      {:owl/onProperty :fibo-fnd-gao-obj/hasStrategy,
+                       :owl/someValuesFrom
+                       :fibo-sec-fund-civ/FundUnitDistributionMethod,
+                       :rdf/type :owl/Restriction}},
    :skos/definition
    {:rdf/language "en",
     :rdf/value
@@ -1219,10 +1210,9 @@
     "https://spec.edmcouncil.org/fibo/ontology/SEC/Funds/CollectiveInvestmentVehicles/"},
    :rdfs/label {:rdf/language "en",
                 :rdf/value    "funds processing party"},
-   :rdfs/subClassOf :fibo-fnd-pty-pty/PartyInRole,
-   :skos/definition
-   {:rdf/language "en",
-    :rdf/value    "A party involved in the processing of funds in some way."}})
+   :rdfs/subClassOf :cmns-pts/PartyRole,
+   :skos/definition {:rdf/language "en",
+                     :rdf/value "party involved in the processing of funds"}})
 
 (def FundsProcessingPassport
   {:db/ident :fibo-sec-fund-civ/FundsProcessingPassport,
@@ -1232,8 +1222,7 @@
     "https://spec.edmcouncil.org/fibo/ontology/SEC/Funds/CollectiveInvestmentVehicles/"},
    :rdfs/label {:rdf/language "en",
                 :rdf/value    "funds processing passport"},
-   :rdfs/subClassOf #{:fibo-fnd-arr-doc/Document
-                      {:owl/onProperty     :fibo-sec-fund-civ/mayBeDefinedIn,
+   :rdfs/subClassOf #{{:owl/onProperty     :fibo-sec-fund-civ/mayBeDefinedIn,
                        :owl/someValuesFrom :fibo-sec-fund-civ/FundProspectus,
                        :rdf/type           :owl/Restriction}
                       {:owl/onProperty :fibo-fnd-agr-ctr/definesTermsFor,
@@ -1242,7 +1231,7 @@
                        :rdf/type :owl/Restriction}
                       {:owl/onProperty :fibo-sec-fund-civ/hasInformationAbout,
                        :owl/someValuesFrom :fibo-sec-fund-fund/FundUnit,
-                       :rdf/type :owl/Restriction}},
+                       :rdf/type :owl/Restriction} :cmns-doc/Document},
    :skos/definition
    {:rdf/language "en",
     :rdf/value
@@ -1289,10 +1278,9 @@
    :rdfs/label {:rdf/language "en",
                 :rdf/value    "investment advisor"},
    :rdfs/subClassOf #{:fibo-sec-fund-civ/FundsProcessingParty
-                      {:owl/onProperty
-                       :fibo-sec-fund-civ/processingPartyHasIdentity,
+                      {:owl/onProperty     :cmns-rlcmp/isPlayedBy,
                        :owl/someValuesFrom :fibo-be-le-lp/LegalEntity,
-                       :rdf/type :owl/Restriction}},
+                       :rdf/type           :owl/Restriction}},
    :skos/definition
    {:rdf/language "en",
     :rdf/value
@@ -1345,13 +1333,10 @@
     "https://spec.edmcouncil.org/fibo/ontology/SEC/Funds/CollectiveInvestmentVehicles/"},
    :rdfs/label {:rdf/language "en",
                 :rdf/value    "jurisdiction strategy"},
-   :rdfs/subClassOf
-   #{{:owl/onProperty
-      {:xsd/anyURI
-       "https://spec.edmcouncil.org/fibo/ontology/SEC/Funds/CollectiveInvestmentVehicles/identifies.1"},
-      :owl/someValuesFrom :fibo-fnd-law-jur/Jurisdiction,
-      :rdf/type :owl/Restriction}
-     :fibo-sec-fund-civ/FundPortfolioInvestmentLimitations},
+   :rdfs/subClassOf #{:fibo-sec-fund-civ/FundPortfolioInvestmentLimitations
+                      {:owl/onProperty     :fibo-sec-fund-civ/identifies.1,
+                       :owl/someValuesFrom :fibo-fnd-law-jur/Jurisdiction,
+                       :rdf/type           :owl/Restriction}},
    :skos/definition {:rdf/language "en",
                      :rdf/value    "Strategy which is jurisdiction based."}})
 
@@ -1417,10 +1402,10 @@
     "https://spec.edmcouncil.org/fibo/ontology/SEC/Funds/CollectiveInvestmentVehicles/"},
    :rdfs/label {:rdf/language "en",
                 :rdf/value    "net asset value calculation method"},
-   :rdfs/subClassOf #{:fibo-fnd-utl-alx/Expression
-                      {:owl/onProperty     :fibo-sec-fund-civ/isCalculatedIn,
+   :rdfs/subClassOf #{{:owl/onProperty     :fibo-sec-fund-civ/isCalculatedIn,
                        :owl/someValuesFrom :fibo-fnd-acc-cur/Currency,
-                       :rdf/type           :owl/Restriction}},
+                       :rdf/type           :owl/Restriction}
+                      :cmns-qtu/Expression},
    :skos/definition
    {:rdf/language "en",
     :rdf/value
@@ -1471,7 +1456,7 @@
     "https://spec.edmcouncil.org/fibo/ontology/SEC/Funds/CollectiveInvestmentVehicles/"},
    :rdfs/label {:rdf/language "en",
                 :rdf/value    "other investment fund information"},
-   :rdfs/subClassOf :fibo-fnd-arr-doc/Document,
+   :rdfs/subClassOf :cmns-doc/Document,
    :skos/definition
    {:rdf/language "en",
     :rdf/value
@@ -1503,13 +1488,13 @@
     "https://spec.edmcouncil.org/fibo/ontology/SEC/Funds/CollectiveInvestmentVehicles/"},
    :rdfs/label {:rdf/language "en",
                 :rdf/value    "portfolio benchmark"},
-   :rdfs/subClassOf #{{:owl/onProperty     :fibo-sec-fund-civ/definesBenchmark,
+   :rdfs/subClassOf #{:cmns-qtu/Measure
+                      {:owl/onProperty     :fibo-sec-fund-civ/definesBenchmark,
                        :owl/someValuesFrom :fibo-ind-ind-ind/MarketRate,
                        :rdf/type           :owl/Restriction}
                       {:owl/onProperty     :cmns-cxtdsg/appliesTo,
                        :owl/someValuesFrom :fibo-sec-fund-civ/FundPortfolio,
-                       :rdf/type           :owl/Restriction}
-                      :fibo-fnd-utl-alx/Measure},
+                       :rdf/type           :owl/Restriction}},
    :skos/definition
    {:rdf/language "en",
     :rdf/value
@@ -1544,16 +1529,16 @@
    {:xsd/anyURI
     "https://spec.edmcouncil.org/fibo/ontology/SEC/Funds/CollectiveInvestmentVehicles/"},
    :rdfs/label "portfolio manager",
-   :rdfs/subClassOf #{{:owl/onProperty :fibo-fnd-pty-rl/isPlayedBy,
+   :rdfs/subClassOf #{{:owl/onProperty     :fibo-fnd-rel-rel/manages,
+                       :owl/someValuesFrom :fibo-sec-fund-civ/FundPortfolio,
+                       :rdf/type           :owl/Restriction}
+                      {:owl/onProperty :cmns-rlcmp/isPlayedBy,
                        :owl/someValuesFrom
                        {:owl/allValuesFrom
                         :fibo-sec-fund-civ/FundManagementCompany,
                         :owl/onProperty :cmns-col/isMemberOf,
                         :rdf/type :owl/Restriction},
                        :rdf/type :owl/Restriction}
-                      {:owl/onProperty     :fibo-fnd-rel-rel/manages,
-                       :owl/someValuesFrom :fibo-sec-fund-civ/FundPortfolio,
-                       :rdf/type           :owl/Restriction}
                       :fibo-fnd-org-org/OrganizationMember},
    :skos/definition
    "person or entity responsible for day to day investment decisions for a fund or asset"})
@@ -1636,7 +1621,7 @@
     "https://spec.edmcouncil.org/fibo/ontology/SEC/Funds/CollectiveInvestmentVehicles/"},
    :rdfs/label {:rdf/language "en",
                 :rdf/value    "s i c a f"},
-   :rdfs/subClassOf :fibo-be-fct-fct/FunctionalBusinessEntity,
+   :rdfs/subClassOf :fibo-sec-fund-fund/CollectiveInvestmentVehicle,
    :skos/definition
    {:rdf/language "en",
     :rdf/value
@@ -1650,7 +1635,7 @@
     "https://spec.edmcouncil.org/fibo/ontology/SEC/Funds/CollectiveInvestmentVehicles/"},
    :rdfs/label {:rdf/language "en",
                 :rdf/value    "s i c a v"},
-   :rdfs/subClassOf :fibo-be-fct-fct/FunctionalBusinessEntity,
+   :rdfs/subClassOf :fibo-sec-fund-fund/CollectiveInvestmentVehicle,
    :skos/definition {:rdf/language "en",
                      :rdf/value    "Societe Collective a Capital Variable"}})
 
@@ -1703,15 +1688,13 @@
     "https://spec.edmcouncil.org/fibo/ontology/SEC/Funds/CollectiveInvestmentVehicles/"},
    :rdfs/label {:rdf/language "en",
                 :rdf/value    "stake in fund"},
-   :rdfs/subClassOf
-   #{{:owl/onProperty     :fibo-sec-fund-civ/givesOwnershipOf,
-      :owl/someValuesFrom :fibo-sec-fund-fund/CollectiveInvestmentVehicle,
-      :rdf/type           :owl/Restriction} :fibo-fbc-pas-fpas/Position
-     {:owl/onProperty
-      {:xsd/anyURI
-       "https://spec.edmcouncil.org/fibo/ontology/SEC/Funds/CollectiveInvestmentVehicles/identifiedAs.5"},
-      :owl/someValuesFrom :fibo-sec-fund-fund/FundUnit,
-      :rdf/type :owl/Restriction}},
+   :rdfs/subClassOf #{{:owl/onProperty :fibo-sec-fund-civ/givesOwnershipOf,
+                       :owl/someValuesFrom
+                       :fibo-sec-fund-fund/CollectiveInvestmentVehicle,
+                       :rdf/type :owl/Restriction} :fibo-fbc-pas-fpas/Position
+                      {:owl/onProperty     :fibo-sec-fund-civ/identifiedAs.5,
+                       :owl/someValuesFrom :fibo-sec-fund-fund/FundUnit,
+                       :rdf/type           :owl/Restriction}},
    :skos/definition
    {:rdf/language "en",
     :rdf/value
@@ -1743,10 +1726,9 @@
                       {:owl/onProperty     :fibo-sec-fund-civ/issues,
                        :owl/someValuesFrom :fibo-sec-fund-fund/FundUnit,
                        :rdf/type           :owl/Restriction}
-                      {:owl/onProperty
-                       :fibo-sec-fund-civ/processingPartyHasIdentity,
+                      {:owl/onProperty     :cmns-rlcmp/isPlayedBy,
                        :owl/someValuesFrom :fibo-be-le-cb/Corporation,
-                       :rdf/type :owl/Restriction}},
+                       :rdf/type           :owl/Restriction}},
    :skos/definition {:rdf/language "en",
                      :rdf/value    "The party which issues the Fund Unit."}})
 
@@ -1812,7 +1794,7 @@
     "https://spec.edmcouncil.org/fibo/ontology/SEC/Funds/CollectiveInvestmentVehicles/"},
    :rdfs/label {:rdf/language "en",
                 :rdf/value    "anticipated volatility"},
-   :rdfs/range :fibo-fnd-utl-alx/Percentage})
+   :rdfs/range :cmns-qtu/Percentage})
 
 (def anticipates
   {:db/ident :fibo-sec-fund-civ/anticipates,
@@ -1874,7 +1856,7 @@
     "https://spec.edmcouncil.org/fibo/ontology/SEC/Funds/CollectiveInvestmentVehicles/"},
    :rdfs/label {:rdf/language "en",
                 :rdf/value    "benchmark weight"},
-   :rdfs/range :fibo-fnd-utl-alx/Percentage,
+   :rdfs/range :cmns-qtu/Percentage,
    :skos/definition
    {:rdf/language "en",
     :rdf/value    "Instrument weighting in the benchmark for the portfolio."}})
@@ -2075,6 +2057,21 @@
    {:rdf/language "en",
     :rdf/value
     "The manner in which the manager tries to reach the funds objectives"}})
+
+(def description_1
+  {:db/ident :fibo-sec-fund-civ/description.1,
+   :rdf/type :owl/DatatypeProperty,
+   :rdfs/domain :fibo-sec-fund-civ/PortfolioBenchmark,
+   :rdfs/isDefinedBy
+   {:xsd/anyURI
+    "https://spec.edmcouncil.org/fibo/ontology/SEC/Funds/CollectiveInvestmentVehicles/"},
+   :rdfs/label {:rdf/language "en",
+                :rdf/value    "description"},
+   :rdfs/range :xsd/string,
+   :skos/definition
+   {:rdf/language "en",
+    :rdf/value
+    "Description of the benchmark used to determine the performance of a portfolio."}})
 
 (def distributedBy
   {:db/ident :fibo-sec-fund-civ/distributedBy,
@@ -2355,28 +2352,6 @@
     :rdf/value
     "Information on the net asset value calculation of the investment fund component."}})
 
-(def hasDistributiojnPolicy
-  {:db/ident :fibo-sec-fund-civ/hasDistributiojnPolicy,
-   :rdf/type :owl/ObjectProperty,
-   :rdfs/domain :fibo-sec-fund-civ/FundBondClassUnit,
-   :rdfs/isDefinedBy
-   {:xsd/anyURI
-    "https://spec.edmcouncil.org/fibo/ontology/SEC/Funds/CollectiveInvestmentVehicles/"},
-   :rdfs/label {:rdf/language "en",
-                :rdf/value    "has distributiojn policy"},
-   :rdfs/range :fibo-sec-fund-civ/FundUnitDistributionPolicy})
-
-(def hasDistributionPolicy
-  {:db/ident :fibo-sec-fund-civ/hasDistributionPolicy,
-   :rdf/type :owl/ObjectProperty,
-   :rdfs/domain :fibo-sec-fund-civ/FundShareClassUnit,
-   :rdfs/isDefinedBy
-   {:xsd/anyURI
-    "https://spec.edmcouncil.org/fibo/ontology/SEC/Funds/CollectiveInvestmentVehicles/"},
-   :rdfs/label {:rdf/language "en",
-                :rdf/value    "has distribution policy"},
-   :rdfs/range :fibo-sec-fund-civ/FundUnitDistributionPolicy})
-
 (def hasExpectedCoupon
   {:db/ident :fibo-sec-fund-civ/hasExpectedCoupon,
    :rdf/type :owl/ObjectProperty,
@@ -2646,6 +2621,32 @@
                      :rdf/value
                      "The Funds Special Purpose Vehicle holds this Fund."}})
 
+(def identifiedAs_5
+  {:db/ident :fibo-sec-fund-civ/identifiedAs.5,
+   :rdf/type :owl/ObjectProperty,
+   :rdfs/domain :fibo-sec-fund-civ/StakeInFund,
+   :rdfs/isDefinedBy
+   {:xsd/anyURI
+    "https://spec.edmcouncil.org/fibo/ontology/SEC/Funds/CollectiveInvestmentVehicles/"},
+   :rdfs/label {:rdf/language "en",
+                :rdf/value    "identified as"},
+   :rdfs/range :fibo-sec-fund-fund/FundUnit})
+
+(def identifies_1
+  {:db/ident :fibo-sec-fund-civ/identifies.1,
+   :rdf/type :owl/ObjectProperty,
+   :rdfs/domain :fibo-sec-fund-civ/JurisdictionStrategy,
+   :rdfs/isDefinedBy
+   {:xsd/anyURI
+    "https://spec.edmcouncil.org/fibo/ontology/SEC/Funds/CollectiveInvestmentVehicles/"},
+   :rdfs/label {:rdf/language "en",
+                :rdf/value    "identifies"},
+   :rdfs/range :fibo-fnd-law-jur/Jurisdiction,
+   :skos/definition
+   {:rdf/language "en",
+    :rdf/value
+    "Jurisdiction (country, county, state, province, city) of the investment."}})
+
 (def identifiesAssetTypesBy
   {:db/ident :fibo-sec-fund-civ/identifiesAssetTypesBy,
    :rdf/type :owl/ObjectProperty,
@@ -2681,6 +2682,21 @@
    :skos/definition {:rdf/language "en",
                      :rdf/value
                      "Authorization date in the country of origin."}})
+
+(def inceptionDate_1
+  {:db/ident :fibo-sec-fund-civ/inceptionDate.1,
+   :rdf/type :owl/ObjectProperty,
+   :rdfs/domain :fibo-sec-fund-civ/FundShareClassUnit,
+   :rdfs/isDefinedBy
+   {:xsd/anyURI
+    "https://spec.edmcouncil.org/fibo/ontology/SEC/Funds/CollectiveInvestmentVehicles/"},
+   :rdfs/label {:rdf/language "en",
+                :rdf/value    "inception date"},
+   :rdfs/range :cmns-dt/Date,
+   :skos/definition
+   {:rdf/language "en",
+    :rdf/value
+    "Authorization date in the country of origin. Further Notes See definition in Inception Date for Fund. Separate fact exists here. Same definition used. EFAMA Review notes: Inception Date exists as soon as there is a prospectus, so it is a fact about a Share Class even if the share class is never formally issued or offered to the public. Legal structure exists even if something is not launched. Editor question: Review stated this was a fact about Share Class; confirm this fact does not apply to Bond and Note units, or was the term Share Class being used to mean all three? Meanwhile I have put the term \"Issue Date\" as a fact about all Fund Unit, as this is given a sa separate term in the EFAMA DD spreadsheet. MAy come clearer in the next version of that."}})
 
 (def includeRelatedFirms
   {:db/ident :fibo-sec-fund-civ/includeRelatedFirms,
@@ -2894,7 +2910,7 @@
     "https://spec.edmcouncil.org/fibo/ontology/SEC/Funds/CollectiveInvestmentVehicles/"},
    :rdfs/label {:rdf/language "en",
                 :rdf/value    "maximum deviation"},
-   :rdfs/range :fibo-fnd-utl-alx/Percentage,
+   :rdfs/range :cmns-qtu/Percentage,
    :skos/definition {:rdf/language "en",
                      :rdf/value
                      "Maximum allowable deviation from the benchmark."}})
@@ -2923,7 +2939,7 @@
     "https://spec.edmcouncil.org/fibo/ontology/SEC/Funds/CollectiveInvestmentVehicles/"},
    :rdfs/label {:rdf/language "en",
                 :rdf/value    "maximum investment percentage"},
-   :rdfs/range :fibo-fnd-utl-alx/Percentage,
+   :rdfs/range :cmns-qtu/Percentage,
    :skos/definition
    {:rdf/language "en",
     :rdf/value
@@ -2983,7 +2999,7 @@
     "https://spec.edmcouncil.org/fibo/ontology/SEC/Funds/CollectiveInvestmentVehicles/"},
    :rdfs/label {:rdf/language "en",
                 :rdf/value    "maximum redemption percentage"},
-   :rdfs/range :fibo-fnd-utl-alx/Percentage,
+   :rdfs/range :cmns-qtu/Percentage,
    :skos/definition
    {:rdf/language "en",
     :rdf/value
@@ -3019,6 +3035,17 @@
     :rdf/value
     "The unit issuer would be the fund administrator (except when it is a Bond)."}})
 
+(def mayBe_1
+  {:db/ident :fibo-sec-fund-civ/mayBe.1,
+   :rdf/type :owl/ObjectProperty,
+   :rdfs/domain :fibo-sec-fund-civ/FundProcessingForm,
+   :rdfs/isDefinedBy
+   {:xsd/anyURI
+    "https://spec.edmcouncil.org/fibo/ontology/SEC/Funds/CollectiveInvestmentVehicles/"},
+   :rdfs/label {:rdf/language "en",
+                :rdf/value    "may be"},
+   :rdfs/range :fibo-sec-fund-civ/FundOrderDeskPhysicalFormDocument})
+
 (def mayBeDefinedIn
   {:db/ident :fibo-sec-fund-civ/mayBeDefinedIn,
    :rdf/type :owl/ObjectProperty,
@@ -3039,7 +3066,7 @@
     "https://spec.edmcouncil.org/fibo/ontology/SEC/Funds/CollectiveInvestmentVehicles/"},
    :rdfs/label {:rdf/language "en",
                 :rdf/value    "minimum deviation"},
-   :rdfs/range :fibo-fnd-utl-alx/Percentage,
+   :rdfs/range :cmns-qtu/Percentage,
    :skos/definition {:rdf/language "en",
                      :rdf/value
                      "Minimum allowable deviation from the benchmark."}})
@@ -3111,7 +3138,7 @@
     "https://spec.edmcouncil.org/fibo/ontology/SEC/Funds/CollectiveInvestmentVehicles/"},
    :rdfs/label {:rdf/language "en",
                 :rdf/value    "minimum investment percentage"},
-   :rdfs/range :fibo-fnd-utl-alx/Percentage,
+   :rdfs/range :cmns-qtu/Percentage,
    :skos/definition
    {:rdf/language "en",
     :rdf/value
@@ -3203,6 +3230,19 @@
    :skos/definition {:rdf/language "en",
                      :rdf/value    "Name of the investment fund."}})
 
+(def name_1
+  {:db/ident :fibo-sec-fund-civ/name.1,
+   :rdf/type :owl/DatatypeProperty,
+   :rdfs/domain :fibo-sec-fund-civ/FundPortfolioInvestmentPolicy,
+   :rdfs/isDefinedBy
+   {:xsd/anyURI
+    "https://spec.edmcouncil.org/fibo/ontology/SEC/Funds/CollectiveInvestmentVehicles/"},
+   :rdfs/label {:rdf/language "en",
+                :rdf/value    "name"},
+   :rdfs/range :xsd/string,
+   :skos/definition {:rdf/language "en",
+                     :rdf/value    "Name given to the defined strategy."}})
+
 (def outlines
   {:db/ident :fibo-sec-fund-civ/outlines,
    :owl/inverseOf :fibo-sec-fund-civ/statedIn,
@@ -3224,7 +3264,7 @@
     "https://spec.edmcouncil.org/fibo/ontology/SEC/Funds/CollectiveInvestmentVehicles/"},
    :rdfs/label {:rdf/language "en",
                 :rdf/value    "percentage invested"},
-   :rdfs/range :fibo-fnd-utl-alx/Percentage,
+   :rdfs/range :cmns-qtu/Percentage,
    :skos/definition
    {:rdf/language "en",
     :rdf/value
@@ -3289,22 +3329,6 @@
    {:rdf/language "en",
     :rdf/value    "Country in which the processing characteristic applies."}})
 
-(def processingPartyHasIdentity
-  {:db/ident :fibo-sec-fund-civ/processingPartyHasIdentity,
-   :rdf/type :owl/ObjectProperty,
-   :rdfs/domain :fibo-sec-fund-civ/FundsProcessingParty,
-   :rdfs/isDefinedBy
-   {:xsd/anyURI
-    "https://spec.edmcouncil.org/fibo/ontology/SEC/Funds/CollectiveInvestmentVehicles/"},
-   :rdfs/label {:rdf/language "en",
-                :rdf/value    "processing party has identity"},
-   :rdfs/range :fibo-be-le-lp/LegalEntity,
-   :rdfs/subPropertyOf :fibo-fnd-rel-rel/hasIdentity,
-   :skos/definition
-   {:rdf/language "en",
-    :rdf/value
-    "The organization which plays the role of the funds processing party"}})
-
 (def productGroupDescription
   {:db/ident :fibo-sec-fund-civ/productGroupDescription,
    :rdf/type :owl/DatatypeProperty,
@@ -3330,18 +3354,6 @@
                 :rdf/value    "promoted by"},
    :rdfs/range :fibo-sec-fund-civ/FundPromoter,
    :rdfs/subPropertyOf :fibo-sec-fund-civ/fundHasRelatedParty})
-
-(def providerHasIdentity
-  {:db/ident :fibo-sec-fund-civ/providerHasIdentity,
-   :rdf/type :owl/ObjectProperty,
-   :rdfs/domain :fibo-fbc-pas-caa/AccountProvider,
-   :rdfs/isDefinedBy
-   {:xsd/anyURI
-    "https://spec.edmcouncil.org/fibo/ontology/SEC/Funds/CollectiveInvestmentVehicles/"},
-   :rdfs/label {:rdf/language "en",
-                :rdf/value    "provider has identity"},
-   :rdfs/range :fibo-be-le-lp/LegalEntity,
-   :rdfs/subPropertyOf :fibo-fnd-rel-rel/hasIdentity})
 
 (def providesDepositaryServiceFor
   {:db/ident :fibo-sec-fund-civ/providesDepositaryServiceFor,
@@ -3724,7 +3736,7 @@
     "https://spec.edmcouncil.org/fibo/ontology/SEC/Funds/CollectiveInvestmentVehicles/"},
    :rdfs/label {:rdf/language "en",
                 :rdf/value    "tracking error"},
-   :rdfs/range :fibo-fnd-utl-alx/Percentage,
+   :rdfs/range :cmns-qtu/Percentage,
    :skos/definition {:rdf/language "en",
                      :rdf/value    "See RiskFactors narrative in EFAMA DD"}})
 
@@ -3781,230 +3793,102 @@
     "https://spec.edmcouncil.org/fibo/ontology/SEC/Funds/CollectiveInvestmentVehicles/"},
    :rdfs/label {:rdf/language "en",
                 :rdf/value    "value at risk"},
-   :rdfs/range :fibo-fnd-utl-alx/Percentage,
+   :rdfs/range :cmns-qtu/Percentage,
    :skos/definition
    {:rdf/language "en",
     :rdf/value
     "See RiskClassification_NameOf in EFAMA DD Applies to Fund not Portfolio."}})
 
-(def urn:uuid:ebb5591f-bde9-5627-812e-d6c7b88911e2
-  {:rdf/type :owl/DatatypeProperty,
-   :rdfs/domain :fibo-sec-fund-civ/FundPortfolioInvestmentPolicy,
-   :rdfs/isDefinedBy
-   {:xsd/anyURI
-    "https://spec.edmcouncil.org/fibo/ontology/SEC/Funds/CollectiveInvestmentVehicles/"},
-   :rdfs/label {:rdf/language "en",
-                :rdf/value    "name"},
-   :rdfs/range :xsd/string,
-   :skos/definition {:rdf/language "en",
-                     :rdf/value    "Name given to the defined strategy."},
-   :xsd/anyURI
-   "https://spec.edmcouncil.org/fibo/ontology/SEC/Funds/CollectiveInvestmentVehicles/name.1"})
-
 (def urn:uuid:8f8222bc-fe26-5132-be0f-e6cf30b52d0a
-  {:cmns-av/copyright "Copyright (c) 2013-2023 EDM Council, Inc.",
+  {:cmns-av/copyright "Copyright (c) 2013-2024 EDM Council, Inc.",
    :dcterms/abstract
    "Reference data terms and non time dependent facts about funds and CIVs.",
    :dcterms/license {:xsd/anyURI "https://opensource.org/licenses/MIT"},
    :fibo-fnd-utl-av/hasMaturityLevel :fibo-fnd-utl-av/Provisional,
    :owl/imports
-   #{{:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/IND/Indicators/Indicators/"}
+   #{{:xsd/anyURI "https://www.omg.org/spec/Commons/RolesAndCompositions/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FBC/ProductsAndServices/ClientsAndAccounts/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Accounting/CurrencyAmount/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Utilities/Analytics/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Law/LegalCapacity/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Utilities/AnnotationVocabulary/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/BE/OwnershipAndControl/OwnershipParties/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/GoalsAndObjectives/Objectives/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/SEC/Securities/SecuritiesRestrictions/"}
+     {:xsd/anyURI "https://www.omg.org/spec/Commons/Documents/"}
      {:xsd/anyURI
       "https://www.omg.org/spec/LCC/Countries/CountryRepresentation/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/BE/LegalEntities/FormalBusinessOrganizations/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Arrangements/Ratings/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Organizations/Organizations/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FBC/DebtAndEquities/Debt/"}
+     {:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/IND/Indicators/Indicators/"}
+     {:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Organizations/Organizations/"}
+     {:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/SEC/Securities/SecuritiesClassification/"}
+     {:xsd/anyURI "https://www.omg.org/spec/Commons/PartiesAndSituations/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/ContextualDesignators/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/SEC/Securities/SecuritiesRestrictions/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Arrangements/Lifecycles/"}
+     {:xsd/anyURI "https://www.omg.org/spec/Commons/QuantitiesAndUnits/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/BE/LegalEntities/CorporateBodies/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/OwnershipAndControl/Ownership/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/SEC/Securities/SecuritiesIdentification/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/SEC/Securities/SecurityAssets/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Parties/Parties/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Law/Jurisdiction/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/BE/GovernmentEntities/EuropeanJurisdiction/EUGovernmentEntitiesAndJurisdictions/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FBC/ProductsAndServices/FinancialProductsAndServices/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FBC/DebtAndEquities/Debt/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/BE/LegalEntities/LegalPersons/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Law/Jurisdiction/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Utilities/AnnotationVocabulary/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Accounting/AccountingEquity/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/DatesAndTimes/FinancialDates/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/Collections/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/SEC/Securities/SecuritiesClassification/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/BE/GovernmentEntities/EuropeanJurisdiction/EUGovernmentEntitiesAndJurisdictions/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/SEC/Securities/SecurityAssets/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Law/LegalCore/"}
+     {:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/GoalsAndObjectives/Objectives/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/Classifiers/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/Designators/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Accounting/CurrencyAmount/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/SEC/Securities/SecuritiesIssuance/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/BE/OwnershipAndControl/OwnershipParties/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FBC/ProductsAndServices/ClientsAndAccounts/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/SEC/Funds/Funds/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/SEC/Equities/EquityInstruments/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FBC/FinancialInstruments/Settlement/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Relations/Relations/"}
+     {:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/BE/LegalEntities/FormalBusinessOrganizations/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/DatesAndTimes/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/SEC/Securities/SecuritiesIssuance/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Agreements/Contracts/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/SEC/Equities/EquityInstruments/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Accounting/AccountingEquity/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Arrangements/Lifecycles/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/SEC/Securities/SecuritiesIdentification/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Agreements/Contracts/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/SEC/Funds/Funds/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Arrangements/Ratings/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/BE/LegalEntities/CorporateBodies/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/OwnershipAndControl/Ownership/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FBC/FinancialInstruments/FinancialInstruments/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Parties/Roles/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Law/LegalCapacity/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/DatesAndTimes/BusinessDates/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Relations/Relations/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FBC/FinancialInstruments/FinancialInstruments/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/BE/FunctionalEntities/FunctionalEntities/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Law/LegalCore/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Arrangements/Documents/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FBC/FinancialInstruments/Settlement/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/AnnotationVocabulary/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/BE/LegalEntities/LegalPersons/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/DatesAndTimes/FinancialDates/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FBC/ProductsAndServices/FinancialProductsAndServices/"}},
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/DatesAndTimes/BusinessDates/"}},
    :owl/versionIRI
    {:xsd/anyURI
-    "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/SEC/Funds/CollectiveInvestmentVehicles/"},
+    "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/SEC/Funds/CollectiveInvestmentVehicles/"},
    :rdf/type :owl/Ontology,
    :rdfs/label {:rdf/language "en",
                 :rdf/value    "Collective Investment Vehicles Ontology"},
    :xsd/anyURI
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Funds/CollectiveInvestmentVehicles/"})
-
-(def urn:uuid:5c8bb0c3-b030-5ddc-9a61-e582bf715bac
-  {:rdf/type :owl/DatatypeProperty,
-   :rdfs/domain :fibo-sec-fund-civ/PortfolioBenchmark,
-   :rdfs/isDefinedBy
-   {:xsd/anyURI
-    "https://spec.edmcouncil.org/fibo/ontology/SEC/Funds/CollectiveInvestmentVehicles/"},
-   :rdfs/label {:rdf/language "en",
-                :rdf/value    "description"},
-   :rdfs/range :xsd/string,
-   :skos/definition
-   {:rdf/language "en",
-    :rdf/value
-    "Description of the benchmark used to determine the performance of a portfolio."},
-   :xsd/anyURI
-   "https://spec.edmcouncil.org/fibo/ontology/SEC/Funds/CollectiveInvestmentVehicles/description.1"})
-
-(def urn:uuid:b2ea76e7-cf5d-5fa4-bf97-d726e6d5867d
-  {:rdf/type :owl/ObjectProperty,
-   :rdfs/domain :fibo-sec-fund-civ/FundShareClassUnit,
-   :rdfs/isDefinedBy
-   {:xsd/anyURI
-    "https://spec.edmcouncil.org/fibo/ontology/SEC/Funds/CollectiveInvestmentVehicles/"},
-   :rdfs/label {:rdf/language "en",
-                :rdf/value    "inception date"},
-   :rdfs/range :cmns-dt/Date,
-   :skos/definition
-   {:rdf/language "en",
-    :rdf/value
-    "Authorization date in the country of origin. Further Notes See definition in Inception Date for Fund. Separate fact exists here. Same definition used. EFAMA Review notes: Inception Date exists as soon as there is a prospectus, so it is a fact about a Share Class even if the share class is never formally issued or offered to the public. Legal structure exists even if something is not launched. Editor question: Review stated this was a fact about Share Class; confirm this fact does not apply to Bond and Note units, or was the term Share Class being used to mean all three? Meanwhile I have put the term \"Issue Date\" as a fact about all Fund Unit, as this is given a sa separate term in the EFAMA DD spreadsheet. MAy come clearer in the next version of that."},
-   :xsd/anyURI
-   "https://spec.edmcouncil.org/fibo/ontology/SEC/Funds/CollectiveInvestmentVehicles/inceptionDate.1"})
-
-(def urn:uuid:a8fa9209-5c03-5919-8234-583ffef50ee8
-  {:rdf/type :owl/ObjectProperty,
-   :rdfs/domain :fibo-sec-fund-civ/FundUnitDistributionPolicy,
-   :rdfs/isDefinedBy
-   {:xsd/anyURI
-    "https://spec.edmcouncil.org/fibo/ontology/SEC/Funds/CollectiveInvestmentVehicles/"},
-   :rdfs/label {:rdf/language "en",
-                :rdf/value    "has distribution policy"},
-   :rdfs/range :fibo-sec-fund-civ/FundUnitDistributionMethod,
-   :skos/definition
-   {:rdf/language "en",
-    :rdf/value
-    "Income policy relating to a class type, ie, if income is paid out or retained in the fund."},
-   :xsd/anyURI
-   "https://spec.edmcouncil.org/fibo/ontology/SEC/Funds/CollectiveInvestmentVehicles/hasDistributionPolicy.2"})
-
-(def urn:uuid:89bf2f58-6f8a-50aa-af52-36a0ed6d3397
-  {:rdf/type :owl/ObjectProperty,
-   :rdfs/domain :fibo-sec-fund-civ/FundProcessingForm,
-   :rdfs/isDefinedBy
-   {:xsd/anyURI
-    "https://spec.edmcouncil.org/fibo/ontology/SEC/Funds/CollectiveInvestmentVehicles/"},
-   :rdfs/label {:rdf/language "en",
-                :rdf/value    "may be"},
-   :rdfs/range :fibo-sec-fund-civ/FundOrderDeskPhysicalFormDocument,
-   :xsd/anyURI
-   "https://spec.edmcouncil.org/fibo/ontology/SEC/Funds/CollectiveInvestmentVehicles/mayBe.1"})
-
-(def urn:uuid:0a3782a5-1578-509b-9265-61fac499003f
-  {:rdf/type :owl/ObjectProperty,
-   :rdfs/domain :fibo-sec-fund-civ/StakeInFund,
-   :rdfs/isDefinedBy
-   {:xsd/anyURI
-    "https://spec.edmcouncil.org/fibo/ontology/SEC/Funds/CollectiveInvestmentVehicles/"},
-   :rdfs/label {:rdf/language "en",
-                :rdf/value    "identified as"},
-   :rdfs/range :fibo-sec-fund-fund/FundUnit,
-   :xsd/anyURI
-   "https://spec.edmcouncil.org/fibo/ontology/SEC/Funds/CollectiveInvestmentVehicles/identifiedAs.5"})
-
-(def urn:uuid:de7e68fa-c7e2-57e3-8df9-874578757d14
-  {:cmns-av/explanatoryNote
-   {:rdf/language "en",
-    :rdf/value
-    "This is a fact about each individual type of Fund Unit. Additional facts may apply to the Fund as a whole - to be reviewed. Need to determine if there is an overall distribution policy term applicable to the Fund. Kept as a place holder in case there is."},
-   :rdf/type :owl/ObjectProperty,
-   :rdfs/domain :fibo-sec-fund-fund/CollectiveInvestmentVehicle,
-   :rdfs/isDefinedBy
-   {:xsd/anyURI
-    "https://spec.edmcouncil.org/fibo/ontology/SEC/Funds/CollectiveInvestmentVehicles/"},
-   :rdfs/label {:rdf/language "en",
-                :rdf/value    "has distribution policy"},
-   :rdfs/range :fibo-sec-fund-civ/FundUnitDistributionMethod,
-   :skos/definition
-   {:rdf/language "en",
-    :rdf/value
-    "Income policy relating to a class type, ie, if income is paid out or retained in the fund."},
-   :xsd/anyURI
-   "https://spec.edmcouncil.org/fibo/ontology/SEC/Funds/CollectiveInvestmentVehicles/hasDistributionPolicy.1"})
-
-(def urn:uuid:844f51d1-86fd-54b9-83e7-4cd7107c287d
-  {:rdf/type :owl/ObjectProperty,
-   :rdfs/domain :fibo-sec-fund-civ/JurisdictionStrategy,
-   :rdfs/isDefinedBy
-   {:xsd/anyURI
-    "https://spec.edmcouncil.org/fibo/ontology/SEC/Funds/CollectiveInvestmentVehicles/"},
-   :rdfs/label {:rdf/language "en",
-                :rdf/value    "identifies"},
-   :rdfs/range :fibo-fnd-law-jur/Jurisdiction,
-   :skos/definition
-   {:rdf/language "en",
-    :rdf/value
-    "Jurisdiction (country, county, state, province, city) of the investment."},
-   :xsd/anyURI
-   "https://spec.edmcouncil.org/fibo/ontology/SEC/Funds/CollectiveInvestmentVehicles/identifies.1"})

@@ -2,7 +2,7 @@
   {:cmns-av/copyright #{"Copyright (c) 2018-2023 Object Management Group, Inc."
                         "Copyright (c) 2018-2023 EDM Council, Inc."},
    :dcat/downloadURL
-   "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/DER/MetadataDER/DERDomain",
+   "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/DER/MetadataDER/DERDomain",
    :dcterms/abstract
    "The Derivatives (DER) Domain covers many of the concepts that are common to derivative instruments, including but not limited to options, futures, forwards, swaps, and a wide range of other derivatives. This ontology provides metadata about the Derivatives Domain and its contents.",
    :dcterms/issued #inst "2018-03-31T18:00:00.000-00:00",
@@ -28,19 +28,19 @@
     "xsd"          "http://www.w3.org/2001/XMLSchema#"},
    :owl/imports
    #{{:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Utilities/AnnotationVocabulary/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/DER/DerivativesContracts/MetadataDERDerivativesContracts/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/DER/DerivativesContracts/MetadataDERDerivativesContracts/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Utilities/AnnotationVocabulary/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/DER/CreditDerivatives/MetadataDERCreditDerivatives/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/DER/RateDerivatives/MetadataDERRateDerivatives/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/DER/RateDerivatives/MetadataDERRateDerivatives/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/DER/CreditDerivatives/MetadataDERCreditDerivatives/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/DER/SecurityBasedDerivatives/MetadataDERSecurityBasedDerivatives/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/DER/SecurityBasedDerivatives/MetadataDERSecurityBasedDerivatives/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/AnnotationVocabulary/"}},
    :owl/versionIRI
    {:xsd/anyURI
-    "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/DER/MetadataDER/"},
+    "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/DER/MetadataDER/"},
    :rdf/type :owl/Ontology,
    :rdfa/prefix "fibo-der-mod",
    :rdfa/uri "https://spec.edmcouncil.org/fibo/ontology/DER/MetadataDER/",
@@ -90,19 +90,19 @@
    :dcterms/modified #inst "2023-02-03T18:00:00.000-00:00",
    :owl/imports
    #{{:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Utilities/AnnotationVocabulary/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/DER/DerivativesContracts/MetadataDERDerivativesContracts/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/DER/DerivativesContracts/MetadataDERDerivativesContracts/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Utilities/AnnotationVocabulary/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/DER/CreditDerivatives/MetadataDERCreditDerivatives/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/DER/RateDerivatives/MetadataDERRateDerivatives/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/DER/RateDerivatives/MetadataDERRateDerivatives/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/DER/CreditDerivatives/MetadataDERCreditDerivatives/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/DER/SecurityBasedDerivatives/MetadataDERSecurityBasedDerivatives/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/DER/SecurityBasedDerivatives/MetadataDERSecurityBasedDerivatives/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/AnnotationVocabulary/"}},
    :owl/versionIRI
    {:xsd/anyURI
-    "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/DER/MetadataDER/"},
+    "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/DER/MetadataDER/"},
    :rdf/type :owl/Ontology,
    :rdfs/label "Metadata about the EDMC-FIBO Derivatives (DER) Domain",
    :xsd/anyURI "https://spec.edmcouncil.org/fibo/ontology/DER/MetadataDER/"})

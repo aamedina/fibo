@@ -1,8 +1,9 @@
 (ns net.wikipunk.rdf.fibo-loan-ln-ln
-  {:cmns-av/copyright #{"Copyright (c) 2016-2023 Object Management Group, Inc."
-                        "Copyright (c) 2016-2023 EDM Council, Inc."},
+  {:cmns-av/copyright
+   #{"Copyright (c) 2016-2024 EDM Council, Inc."
+     "Copyright (c) 2016-2024 Object Management Group, Inc."},
    :dcat/downloadURL
-   "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/LOAN/LoansGeneral/Loans/",
+   "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/LOAN/LoansGeneral/Loans/",
    :dcterms/abstract
    "This ontology is the top-level, and most fundamental ontology for the LOAN module, extending the Debt ontology to define concepts common to all loans. It includes the primary obligations to fund the loan and to pay it back according to payment schedules. Kinds of loans covered in this ontology include open and closed end, secured and unsecured.",
    :dcterms/license {:xsd/anyURI "https://opensource.org/licenses/MIT"},
@@ -12,7 +13,10 @@
     "cmns-cls" "https://www.omg.org/spec/Commons/Classifiers/",
     "cmns-col" "https://www.omg.org/spec/Commons/Collections/",
     "cmns-cxtdsg" "https://www.omg.org/spec/Commons/ContextualDesignators/",
+    "cmns-doc" "https://www.omg.org/spec/Commons/Documents/",
     "cmns-dt" "https://www.omg.org/spec/Commons/DatesAndTimes/",
+    "cmns-pts" "https://www.omg.org/spec/Commons/PartiesAndSituations/",
+    "cmns-qtu" "https://www.omg.org/spec/Commons/QuantitiesAndUnits/",
     "dcterms" "http://purl.org/dc/terms/",
     "fibo-fbc-dae-dbt"
     "https://spec.edmcouncil.org/fibo/ontology/FBC/DebtAndEquities/Debt/",
@@ -34,18 +38,12 @@
     "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Assessments/",
     "fibo-fnd-arr-doc"
     "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Documents/",
-    "fibo-fnd-dt-fd"
-    "https://spec.edmcouncil.org/fibo/ontology/FND/DatesAndTimes/FinancialDates/",
     "fibo-fnd-oac-own"
     "https://spec.edmcouncil.org/fibo/ontology/FND/OwnershipAndControl/Ownership/",
     "fibo-fnd-pas-psch"
     "https://spec.edmcouncil.org/fibo/ontology/FND/ProductsAndServices/PaymentsAndSchedules/",
-    "fibo-fnd-pty-pty"
-    "https://spec.edmcouncil.org/fibo/ontology/FND/Parties/Parties/",
     "fibo-fnd-rel-rel"
     "https://spec.edmcouncil.org/fibo/ontology/FND/Relations/Relations/",
-    "fibo-fnd-utl-alx"
-    "https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/Analytics/",
     "fibo-fnd-utl-av"
     "https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/AnnotationVocabulary/",
     "fibo-loan-ln-ln"
@@ -57,51 +55,50 @@
     "xsd" "http://www.w3.org/2001/XMLSchema#"},
    :owl/imports
    #{{:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FBC/FunctionalEntities/RegistrationAuthorities/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Accounting/CurrencyAmount/"}
+     {:xsd/anyURI "https://www.omg.org/spec/Commons/Documents/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FBC/DebtAndEquities/Guaranty/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FBC/ProductsAndServices/ClientsAndAccounts/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Utilities/Analytics/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Utilities/AnnotationVocabulary/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FBC/DebtAndEquities/Debt/"}
+     {:xsd/anyURI "https://www.omg.org/spec/Commons/PartiesAndSituations/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/ContextualDesignators/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Parties/Parties/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/ProductsAndServices/PaymentsAndSchedules/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FBC/DebtAndEquities/Debt/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FBC/FunctionalEntities/RegistrationAuthorities/"}
+     {:xsd/anyURI "https://www.omg.org/spec/Commons/QuantitiesAndUnits/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Agreements/Agreements/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/OwnershipAndControl/Ownership/"}
+     {:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Arrangements/Documents/"}
+     {:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FBC/ProductsAndServices/FinancialProductsAndServices/"}
+     {:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Utilities/AnnotationVocabulary/"}
+     {:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/DatesAndTimes/FinancialDates/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/Collections/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/Classifiers/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Accounting/CurrencyAmount/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FBC/ProductsAndServices/ClientsAndAccounts/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/SEC/Debt/DebtInstruments/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Arrangements/Assessments/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Relations/Relations/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/DatesAndTimes/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/ProductsAndServices/PaymentsAndSchedules/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FBC/DebtAndEquities/Guaranty/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Agreements/Contracts/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Agreements/Contracts/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/OwnershipAndControl/Ownership/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FBC/FinancialInstruments/FinancialInstruments/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Relations/Relations/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FBC/FinancialInstruments/FinancialInstruments/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Arrangements/Documents/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/SEC/Debt/DebtInstruments/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/AnnotationVocabulary/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/DatesAndTimes/FinancialDates/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Agreements/Agreements/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FBC/ProductsAndServices/FinancialProductsAndServices/"}},
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Arrangements/Assessments/"}},
    :owl/versionIRI
    {:xsd/anyURI
-    "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/LOAN/LoansGeneral/Loans/"},
+    "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/LOAN/LoansGeneral/Loans/"},
    :rdf/type :owl/Ontology,
    :rdfa/prefix "fibo-loan-ln-ln",
    :rdfa/uri
@@ -109,7 +106,10 @@
    :rdfs/label "Loans Ontology",
    :skos/changeNote
    #{"The https://spec.edmcouncil.org/fibo/ontology/LOAN/LoansGeneral/Loans.rdf version of the ontology was modified to use the Commons Ontology Library (Commons) Annotation Vocabulary rather than the OMG's Specification Metadata vocabulary."
-     "The https://spec.edmcouncil.org/fibo/ontology/LOAN/LoansGeneral/Loans.rdf version of this ontology was modified to use the Commons Ontology Library (Commons) rather than the OMG's Languages, Countries and Codes (LCC), eliminating redundancies in FIBO as appropriate."},
+     "The https://spec.edmcouncil.org/fibo/ontology/LOAN/LoansGeneral/Loans.rdf version of this ontology was modified to replace content that is now available in the OMG Commons Ontology Library (Commons) v1.1 (FND-380)."
+     "The https://spec.edmcouncil.org/fibo/ontology/LOAN/LoansGeneral/Loans.rdf version of this ontology was modified to move certain terms athat are general debt schedule terms to the Debt ontology (FBC-317)."
+     "The https://spec.edmcouncil.org/fibo/ontology/LOAN/LoansGeneral/Loans.rdf version of this ontology was modified to use the Commons Ontology Library (Commons) rather than the OMG's Languages, Countries and Codes (LCC), eliminating redundancies in FIBO as appropriate."
+     "The https://spec.edmcouncil.org/fibo/ontology/LOAN/LoansGeneral/Loans.rdf version of this ontology was modified to eliminate a subproperty relationship between the principal and notional amount, which may not be appropriate (DER-127) and to replace content that is now available in the OMG Commons Ontology Library (Commons) v1.1 (FND-380)."},
    :xsd/anyURI
    "https://spec.edmcouncil.org/fibo/ontology/LOAN/LoansGeneral/Loans/"})
 
@@ -168,26 +168,27 @@
 
 (def CombinedLoanToValueRatio
   {:cmns-av/explanatoryNote
-   "This is particularly important for secondary loans, or for refinancing that combines outstanding loans against a given asset.",
+   "This is particularly important for secondary loans, or for refinancing that combines outstanding loans against a given asset. Lenders use this ratio to evaluate the risk of extending a loan to a borrower(s) in cases where multiple loans are involved.",
    :db/ident :fibo-loan-ln-ln/CombinedLoanToValueRatio,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    {:xsd/anyURI
     "https://spec.edmcouncil.org/fibo/ontology/LOAN/LoansGeneral/Loans/"},
    :rdfs/label "combined loan-to-value ratio",
-   :rdfs/subClassOf #{{:owl/onProperty     :fibo-fnd-utl-alx/hasArgument,
-                       :owl/someValuesFrom :fibo-loan-ln-ln/LoanPrincipal,
+   :rdfs/subClassOf #{{:owl/onProperty :cmns-qtu/hasArgument,
+                       :owl/someValuesFrom
+                       :fibo-loan-ln-ln/TotalOutstandingPrincipal,
+                       :rdf/type :owl/Restriction}
+                      {:owl/onProperty     :cmns-doc/refersTo,
+                       :owl/someValuesFrom :fibo-fnd-arr-asmt/Appraisal,
+                       :rdf/type           :owl/Restriction}
+                      {:owl/onProperty     :cmns-qtu/hasArgument,
+                       :owl/someValuesFrom :fibo-fnd-arr-asmt/AppraisedValue,
                        :rdf/type           :owl/Restriction}
                       {:owl/onProperty     :cmns-cxtdsg/appliesTo,
                        :owl/someValuesFrom :fibo-fnd-oac-own/Asset,
                        :rdf/type           :owl/Restriction}
-                      :fibo-fnd-acc-cur/PercentageMonetaryAmount
-                      {:owl/onProperty     :fibo-fnd-rel-rel/refersTo,
-                       :owl/someValuesFrom :fibo-fnd-arr-asmt/Appraisal,
-                       :rdf/type           :owl/Restriction}
-                      {:owl/onProperty     :fibo-fnd-utl-alx/hasArgument,
-                       :owl/someValuesFrom :fibo-fnd-arr-asmt/AppraisedValue,
-                       :rdf/type           :owl/Restriction}},
+                      :fibo-fnd-acc-cur/PercentageMonetaryAmount},
    :skos/definition
    "ratio of the total amount of debt that is secured by the asset(s) and the appraised value of the asset(s) securing the financing"})
 
@@ -293,13 +294,13 @@
       :owl/onClass    :fibo-fbc-dae-gty/Guarantor,
       :owl/onProperty :fibo-fbc-dae-gty/hasGuarantor,
       :rdf/type       :owl/Restriction}
+     {:owl/onProperty     :fibo-loan-ln-ln/hasPrincipalAmount,
+      :owl/someValuesFrom :fibo-fnd-acc-cur/MonetaryAmount,
+      :rdf/type           :owl/Restriction}
      {:owl/minQualifiedCardinality 0,
       :owl/onDataRange :xsd/boolean,
       :owl/onProperty  :fibo-loan-ln-ln/hasNegativeAmortization,
-      :rdf/type        :owl/Restriction}
-     {:owl/onProperty     :fibo-loan-ln-ln/hasPrincipalAmount,
-      :owl/someValuesFrom :fibo-loan-ln-ln/LoanPrincipal,
-      :rdf/type           :owl/Restriction} :fibo-fbc-fi-fi/DebtInstrument
+      :rdf/type        :owl/Restriction} :fibo-fbc-fi-fi/DebtInstrument
      {:owl/minQualifiedCardinality 0,
       :owl/onClass    :fibo-fnd-agr-ctr/ContractThirdParty,
       :owl/onProperty :fibo-fnd-agr-ctr/hasThirdParty,
@@ -331,30 +332,24 @@
     "https://spec.edmcouncil.org/fibo/ontology/LOAN/LoansGeneral/Loans/"},
    :rdfs/label "loan payment schedule",
    :rdfs/subClassOf
-   #{{:owl/onProperty     :fibo-loan-ln-ln/hasAnticipatedNumberOfPayments,
+   #{{:owl/onProperty     :fibo-fbc-dae-dbt/hasAnticipatedNumberOfPayments,
       :owl/someValuesFrom :xsd/positiveInteger,
-      :rdf/type           :owl/Restriction} :fibo-fnd-pas-psch/PaymentSchedule
+      :rdf/type           :owl/Restriction}
+     :fibo-fbc-dae-dbt/AmortizationSchedule
      {:owl/onProperty     :cmns-cxtdsg/appliesTo,
       :owl/someValuesFrom :fibo-loan-ln-ln/LoanSpecificCustomerAccount,
-      :rdf/type           :owl/Restriction}
-     :fibo-fbc-dae-dbt/ProjectedContractEventSchedule},
+      :rdf/type           :owl/Restriction}},
    :skos/definition
    "regular payment schedule associated with a given loan-specific account"})
 
 (def LoanPrincipal
   {:db/ident :fibo-loan-ln-ln/LoanPrincipal,
+   :owl/deprecated true,
+   :owl/equivalentClass :fibo-fnd-acc-cur/MonetaryAmount,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    {:xsd/anyURI
-    "https://spec.edmcouncil.org/fibo/ontology/LOAN/LoansGeneral/Loans/"},
-   :rdfs/label "loan principal",
-   :rdfs/subClassOf #{:fibo-fnd-acc-cur/MonetaryAmount
-                      {:owl/onProperty     :fibo-fbc-dae-dbt/isPrincipalOf,
-                       :owl/someValuesFrom :fibo-loan-ln-ln/Loan,
-                       :rdf/type           :owl/Restriction}
-                      :fibo-fbc-dae-dbt/Principal},
-   :skos/definition
-   "notional value of the loan that must be paid at or before maturity"})
+    "https://spec.edmcouncil.org/fibo/ontology/LOAN/LoansGeneral/Loans/"}})
 
 (def LoanSpecificCustomerAccount
   {:db/ident :fibo-loan-ln-ln/LoanSpecificCustomerAccount,
@@ -399,18 +394,18 @@
    {:xsd/anyURI
     "https://spec.edmcouncil.org/fibo/ontology/LOAN/LoansGeneral/Loans/"},
    :rdfs/label "loan-to-value ratio",
-   :rdfs/subClassOf #{{:owl/onProperty     :fibo-fnd-utl-alx/hasArgument,
-                       :owl/someValuesFrom :fibo-loan-ln-ln/LoanPrincipal,
+   :rdfs/subClassOf #{{:owl/onProperty     :cmns-doc/refersTo,
+                       :owl/someValuesFrom :fibo-fnd-arr-asmt/Appraisal,
+                       :rdf/type           :owl/Restriction}
+                      {:owl/onProperty     :cmns-qtu/hasArgument,
+                       :owl/someValuesFrom :fibo-fnd-arr-asmt/AppraisedValue,
                        :rdf/type           :owl/Restriction}
                       {:owl/onProperty     :cmns-cxtdsg/appliesTo,
                        :owl/someValuesFrom :fibo-fnd-oac-own/Asset,
                        :rdf/type           :owl/Restriction}
                       :fibo-fnd-acc-cur/PercentageMonetaryAmount
-                      {:owl/onProperty     :fibo-fnd-rel-rel/refersTo,
-                       :owl/someValuesFrom :fibo-fnd-arr-asmt/Appraisal,
-                       :rdf/type           :owl/Restriction}
-                      {:owl/onProperty     :fibo-fnd-utl-alx/hasArgument,
-                       :owl/someValuesFrom :fibo-fnd-arr-asmt/AppraisedValue,
+                      {:owl/onProperty     :cmns-qtu/hasArgument,
+                       :owl/someValuesFrom :fibo-fbc-dae-dbt/Principal,
                        :rdf/type           :owl/Restriction}},
    :skos/definition
    "ratio, expressed as a percentage, between the principal amount of the loan and the appraised value of the asset securing the financing"})
@@ -574,6 +569,17 @@
     :rdf/value
     "secondary or lower position in the order of seniority in which the law recognizes lenders' claims against a property"}})
 
+(def TotalOutstandingPrincipal
+  {:db/ident :fibo-loan-ln-ln/TotalOutstandingPrincipal,
+   :rdf/type :owl/Class,
+   :rdfs/isDefinedBy
+   {:xsd/anyURI
+    "https://spec.edmcouncil.org/fibo/ontology/LOAN/LoansGeneral/Loans/"},
+   :rdfs/label "total outstanding principal",
+   :rdfs/subClassOf :fibo-fbc-dae-dbt/Principal,
+   :skos/definition
+   "the principal balance of all loans secured by the property"})
+
 (def UnsecuredLoan
   {:db/ident :fibo-loan-ln-ln/UnsecuredLoan,
    :owl/disjointWith :fibo-loan-ln-ln/SecuredLoan,
@@ -588,15 +594,12 @@
 
 (def hasAnticipatedNumberOfPayments
   {:db/ident :fibo-loan-ln-ln/hasAnticipatedNumberOfPayments,
+   :owl/deprecated true,
+   :owl/equivalentProperty :fibo-fbc-dae-dbt/hasAnticipatedNumberOfPayments,
    :rdf/type :owl/DatatypeProperty,
    :rdfs/isDefinedBy
    {:xsd/anyURI
-    "https://spec.edmcouncil.org/fibo/ontology/LOAN/LoansGeneral/Loans/"},
-   :rdfs/label "has anticipated number of payments",
-   :rdfs/range :xsd/positiveInteger,
-   :rdfs/subPropertyOf :fibo-fnd-dt-fd/hasCount,
-   :skos/definition
-   "specifies the number payments promised per the terms of the contract over the lifetime of the contract assuming all payments are made"})
+    "https://spec.edmcouncil.org/fibo/ontology/LOAN/LoansGeneral/Loans/"}})
 
 (def hasBalloonPayment
   {:db/ident :fibo-loan-ln-ln/hasBalloonPayment,
@@ -721,12 +724,13 @@
     "https://spec.edmcouncil.org/fibo/ontology/LOAN/LoansGeneral/Loans/"},
    :rdfs/label {:rdf/language "en",
                 :rdf/value    "has principal amount"},
-   :rdfs/range :fibo-loan-ln-ln/LoanPrincipal,
-   :rdfs/subPropertyOf #{:fibo-fnd-acc-cur/hasNotionalAmount
+   :rdfs/range :fibo-fnd-acc-cur/MonetaryAmount,
+   :rdfs/subPropertyOf #{:fibo-fnd-acc-cur/hasMonetaryAmount
                          :fibo-fbc-dae-dbt/hasPrincipal},
-   :skos/definition {:rdf/language "en",
-                     :rdf/value
-                     "indicates the notional amount of the contract"}})
+   :skos/definition
+   {:rdf/language "en",
+    :rdf/value
+    "indicates the nominal amount of the loan that must be paid at or before maturity"}})
 
 (def hasScheduledUnpaidBalance
   {:db/ident :fibo-loan-ln-ln/hasScheduledUnpaidBalance,
@@ -817,68 +821,71 @@
     "https://spec.edmcouncil.org/fibo/ontology/LOAN/LoansGeneral/Loans/"},
    :rdfs/label "is performed by",
    :rdfs/range :fibo-loan-ln-ln/Servicer,
-   :rdfs/subPropertyOf :fibo-fnd-pty-pty/hasPartyInRole,
+   :rdfs/subPropertyOf :cmns-pts/hasPartyRole,
    :skos/definition
    "relates a loan to the financial service provider that services it"})
 
 (def urn:uuid:894150a2-9037-581e-b425-33fc9a2ee5ba
-  {:cmns-av/copyright #{"Copyright (c) 2016-2023 Object Management Group, Inc."
-                        "Copyright (c) 2016-2023 EDM Council, Inc."},
+  {:cmns-av/copyright
+   #{"Copyright (c) 2016-2024 EDM Council, Inc."
+     "Copyright (c) 2016-2024 Object Management Group, Inc."},
    :dcterms/abstract
    "This ontology is the top-level, and most fundamental ontology for the LOAN module, extending the Debt ontology to define concepts common to all loans. It includes the primary obligations to fund the loan and to pay it back according to payment schedules. Kinds of loans covered in this ontology include open and closed end, secured and unsecured.",
    :dcterms/license {:xsd/anyURI "https://opensource.org/licenses/MIT"},
    :fibo-fnd-utl-av/hasMaturityLevel :fibo-fnd-utl-av/Release,
    :owl/imports
    #{{:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FBC/FunctionalEntities/RegistrationAuthorities/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Accounting/CurrencyAmount/"}
+     {:xsd/anyURI "https://www.omg.org/spec/Commons/Documents/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FBC/DebtAndEquities/Guaranty/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FBC/ProductsAndServices/ClientsAndAccounts/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Utilities/Analytics/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Utilities/AnnotationVocabulary/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FBC/DebtAndEquities/Debt/"}
+     {:xsd/anyURI "https://www.omg.org/spec/Commons/PartiesAndSituations/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/ContextualDesignators/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Parties/Parties/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/ProductsAndServices/PaymentsAndSchedules/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FBC/DebtAndEquities/Debt/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FBC/FunctionalEntities/RegistrationAuthorities/"}
+     {:xsd/anyURI "https://www.omg.org/spec/Commons/QuantitiesAndUnits/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Agreements/Agreements/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/OwnershipAndControl/Ownership/"}
+     {:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Arrangements/Documents/"}
+     {:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FBC/ProductsAndServices/FinancialProductsAndServices/"}
+     {:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Utilities/AnnotationVocabulary/"}
+     {:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/DatesAndTimes/FinancialDates/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/Collections/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/Classifiers/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Accounting/CurrencyAmount/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FBC/ProductsAndServices/ClientsAndAccounts/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/SEC/Debt/DebtInstruments/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Arrangements/Assessments/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Relations/Relations/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/DatesAndTimes/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/ProductsAndServices/PaymentsAndSchedules/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FBC/DebtAndEquities/Guaranty/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Agreements/Contracts/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Agreements/Contracts/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/OwnershipAndControl/Ownership/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FBC/FinancialInstruments/FinancialInstruments/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Relations/Relations/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FBC/FinancialInstruments/FinancialInstruments/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Arrangements/Documents/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/SEC/Debt/DebtInstruments/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/AnnotationVocabulary/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/DatesAndTimes/FinancialDates/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Agreements/Agreements/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FBC/ProductsAndServices/FinancialProductsAndServices/"}},
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Arrangements/Assessments/"}},
    :owl/versionIRI
    {:xsd/anyURI
-    "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/LOAN/LoansGeneral/Loans/"},
+    "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/LOAN/LoansGeneral/Loans/"},
    :rdf/type :owl/Ontology,
    :rdfs/label "Loans Ontology",
    :skos/changeNote
    #{"The https://spec.edmcouncil.org/fibo/ontology/LOAN/LoansGeneral/Loans.rdf version of the ontology was modified to use the Commons Ontology Library (Commons) Annotation Vocabulary rather than the OMG's Specification Metadata vocabulary."
-     "The https://spec.edmcouncil.org/fibo/ontology/LOAN/LoansGeneral/Loans.rdf version of this ontology was modified to use the Commons Ontology Library (Commons) rather than the OMG's Languages, Countries and Codes (LCC), eliminating redundancies in FIBO as appropriate."},
+     "The https://spec.edmcouncil.org/fibo/ontology/LOAN/LoansGeneral/Loans.rdf version of this ontology was modified to replace content that is now available in the OMG Commons Ontology Library (Commons) v1.1 (FND-380)."
+     "The https://spec.edmcouncil.org/fibo/ontology/LOAN/LoansGeneral/Loans.rdf version of this ontology was modified to move certain terms athat are general debt schedule terms to the Debt ontology (FBC-317)."
+     "The https://spec.edmcouncil.org/fibo/ontology/LOAN/LoansGeneral/Loans.rdf version of this ontology was modified to use the Commons Ontology Library (Commons) rather than the OMG's Languages, Countries and Codes (LCC), eliminating redundancies in FIBO as appropriate."
+     "The https://spec.edmcouncil.org/fibo/ontology/LOAN/LoansGeneral/Loans.rdf version of this ontology was modified to eliminate a subproperty relationship between the principal and notional amount, which may not be appropriate (DER-127) and to replace content that is now available in the OMG Commons Ontology Library (Commons) v1.1 (FND-380)."},
    :xsd/anyURI
    "https://spec.edmcouncil.org/fibo/ontology/LOAN/LoansGeneral/Loans/"})

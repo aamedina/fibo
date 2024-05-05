@@ -1,8 +1,9 @@
 (ns net.wikipunk.rdf.fibo-sec-dbt-bnd
-  {:cmns-av/copyright #{"Copyright (c) 2018-2023 Object Management Group, Inc."
-                        "Copyright (c) 2016-2023 EDM Council, Inc."},
+  {:cmns-av/copyright
+   #{"Copyright (c) 2016-2024 EDM Council, Inc."
+     "Copyright (c) 2018-2024 Object Management Group, Inc."},
    :dcat/downloadURL
-   "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/SEC/Debt/Bonds/",
+   "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/SEC/Debt/Bonds/",
    :dcterms/abstract
    "This ontology defines the basic concept of a bond and a number of bond variants including convertible and callable bonds. Medium term notes (MTNs) and debentures are also defined.",
    :dcterms/license {:xsd/anyURI "https://opensource.org/licenses/MIT"},
@@ -10,7 +11,10 @@
    :namespaces
    {"cmns-av" "https://www.omg.org/spec/Commons/AnnotationVocabulary/",
     "cmns-col" "https://www.omg.org/spec/Commons/Collections/",
+    "cmns-doc" "https://www.omg.org/spec/Commons/Documents/",
     "cmns-dt" "https://www.omg.org/spec/Commons/DatesAndTimes/",
+    "cmns-qtu" "https://www.omg.org/spec/Commons/QuantitiesAndUnits/",
+    "cmns-rlcmp" "https://www.omg.org/spec/Commons/RolesAndCompositions/",
     "dcterms" "http://purl.org/dc/terms/",
     "fibo-be-ge-ge"
     "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/GovernmentEntities/",
@@ -36,8 +40,6 @@
     "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/CurrencyAmount/",
     "fibo-fnd-agr-ctr"
     "https://spec.edmcouncil.org/fibo/ontology/FND/Agreements/Contracts/",
-    "fibo-fnd-arr-doc"
-    "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Documents/",
     "fibo-fnd-dt-bd"
     "https://spec.edmcouncil.org/fibo/ontology/FND/DatesAndTimes/BusinessDates/",
     "fibo-fnd-dt-fd"
@@ -46,12 +48,8 @@
     "https://spec.edmcouncil.org/fibo/ontology/FND/GoalsAndObjectives/Objectives/",
     "fibo-fnd-pas-psch"
     "https://spec.edmcouncil.org/fibo/ontology/FND/ProductsAndServices/PaymentsAndSchedules/",
-    "fibo-fnd-pty-rl"
-    "https://spec.edmcouncil.org/fibo/ontology/FND/Parties/Roles/",
     "fibo-fnd-rel-rel"
     "https://spec.edmcouncil.org/fibo/ontology/FND/Relations/Relations/",
-    "fibo-fnd-utl-alx"
-    "https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/Analytics/",
     "fibo-fnd-utl-av"
     "https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/AnnotationVocabulary/",
     "fibo-ind-ei-ei"
@@ -79,79 +77,76 @@
     "xsd" "http://www.w3.org/2001/XMLSchema#"},
    :owl/imports
    #{{:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FBC/FunctionalEntities/RegistrationAuthorities/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/IND/InterestRates/InterestRates/"}
+     {:xsd/anyURI "https://www.omg.org/spec/Commons/RolesAndCompositions/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FBC/DebtAndEquities/Guaranty/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/SEC/Debt/TradedShortTermDebt/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/BE/GovernmentEntities/GovernmentEntities/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Accounting/CurrencyAmount/"}
+     {:xsd/anyURI "https://www.omg.org/spec/Commons/Documents/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/IND/Indicators/Indicators/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FBC/DebtAndEquities/Debt/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Utilities/Analytics/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/IND/Indicators/Indicators/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Utilities/AnnotationVocabulary/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/BE/GovernmentEntities/GovernmentEntities/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/GoalsAndObjectives/Objectives/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/ProductsAndServices/PaymentsAndSchedules/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/BE/LegalEntities/CorporateBodies/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/SEC/Securities/SecuritiesListings/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Parties/Parties/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FBC/FunctionalEntities/RegistrationAuthorities/"}
+     {:xsd/anyURI "https://www.omg.org/spec/Commons/QuantitiesAndUnits/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/SEC/Securities/SecuritiesListings/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/IND/EconomicIndicators/EconomicIndicators/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Accounting/ISO4217-CurrencyCodes/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FBC/ProductsAndServices/FinancialProductsAndServices/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FBC/DebtAndEquities/Debt/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/BE/LegalEntities/LegalPersons/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Agreements/Agreements/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Utilities/AnnotationVocabulary/"}
+     {:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/DatesAndTimes/FinancialDates/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/Collections/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/IND/EconomicIndicators/EconomicIndicators/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/GoalsAndObjectives/Objectives/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FBC/FunctionalEntities/FinancialServicesEntities/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Accounting/ISO4217-CurrencyCodes/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Accounting/CurrencyAmount/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FBC/FunctionalEntities/FinancialServicesEntities/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/SEC/Debt/DebtInstruments/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/SEC/Securities/SecuritiesIssuance/"}
+     {:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/SEC/Equities/EquityInstruments/"}
+     {:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/DatesAndTimes/Occurrences/"}
+     {:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Relations/Relations/"}
+     {:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Parties/Parties/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/DatesAndTimes/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/BE/Trusts/Trusts/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FBC/DebtAndEquities/Guaranty/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/SEC/Securities/SecuritiesIssuance/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Agreements/Contracts/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/DatesAndTimes/Occurrences/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/BE/LegalEntities/CorporateBodies/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/SEC/Equities/EquityInstruments/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FBC/FinancialInstruments/FinancialInstruments/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/ProductsAndServices/PaymentsAndSchedules/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/BE/FunctionalEntities/FunctionalEntities/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Agreements/Contracts/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Parties/Roles/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/DatesAndTimes/BusinessDates/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Relations/Relations/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FBC/FinancialInstruments/FinancialInstruments/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/IND/InterestRates/InterestRates/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/BE/FunctionalEntities/FunctionalEntities/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Arrangements/Documents/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/SEC/Debt/DebtInstruments/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/AnnotationVocabulary/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/SEC/Debt/TradedShortTermDebt/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Agreements/Agreements/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/BE/LegalEntities/LegalPersons/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/DatesAndTimes/BusinessDates/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/DatesAndTimes/FinancialDates/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FBC/ProductsAndServices/FinancialProductsAndServices/"}},
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/BE/Trusts/Trusts/"}},
    :owl/versionIRI
    {:xsd/anyURI
-    "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/SEC/Debt/Bonds/"},
+    "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/SEC/Debt/Bonds/"},
    :rdf/type :owl/Ontology,
    :rdfa/prefix "fibo-sec-dbt-bnd",
    :rdfa/uri "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/Bonds/",
@@ -163,10 +158,13 @@
      "The https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/Debt/Bonds.rdf version of this ontology was revised to eliminate a duplicate 'isBasedOn' property and replace it with the property of the same name in the debt ontology, to revise the inheritance hierarchy for bond conversion terms to reflect changes in the representation of redemption more generally, to reflect the move of redemption provision from debt to financial instruments, and eliminate circular and ambiguous definitions."
      "The https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/Debt/Bonds.rdf version of this ontology was revised to eliminate false positives in hygiene tests due to concept names containing words, such as 'and', which might indicate that the concept actually reflects more than one thing, including distinguishing zero coupon from original issue discount bonds, and replace the use of call price and put price, which are overly constrained, with monetary price."
      "The https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/Debt/Bonds.rdf version of this ontology was revised to incorporate the concept of a credit agreement repaid at maturity, which is a component assumed to be part of the definition of a bond, and to add an explanatory note to the definition of Treasury Bill."
+     "The https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/Bonds.rdf version of the ontology was modified to replace concepts from several FIBO FND ontologies with their counterparts added to the Commons Ontology Library (Commons) v1.1."
      "The https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/Bonds.rdf version of the ontology was modified to use the Commons Ontology Library (Commons) Annotation Vocabulary rather than the OMG's Specification Metadata vocabulary."
+     "The https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/Bonds.rdf version of the ontology was modified to replace concepts from additional FIBO FND ontologies with their counterparts added to the Commons Ontology Library (Commons) v1.1."
      "The https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/Debt/Bonds.rdf version of this ontology was revised to eliminate duplication of concepts in LCC and eliminate a redundant superclass from RegularCouponSchedule."
      "The https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/Debt/Bonds.rdf version of this ontology was revised to reflect the refactored definition of a listing and improve the definition of corporate bond."
-     "The https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/Bonds.rdf version of this ontology was modified to use the Commons Ontology Library (Commons) rather than the OMG's Languages, Countries and Codes (LCC), eliminating redundancies in FIBO as appropriate."},
+     "The https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/Bonds.rdf version of this ontology was modified to use the Commons Ontology Library (Commons) rather than the OMG's Languages, Countries and Codes (LCC), eliminating redundancies in FIBO as appropriate."
+     "The https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/Bonds.rdf version of this ontology was modified to move details regarding step schedules to the debt instruments ontology for broader use and deprecate the use of a 'coupon' schedule in favor of interest payment schedule, which is the more modern terminology, aligning with other uses of the related terms in FIBO (FBC-317)."},
    :xsd/anyURI "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/Bonds/"})
 
 (def AmortizingBond
@@ -465,7 +463,7 @@
    :rdfs/label "corporate bond",
    :rdfs/subClassOf
    #{{:owl/onProperty     :fibo-fnd-rel-rel/isIssuedBy,
-      :owl/someValuesFrom {:owl/onProperty     :fibo-fnd-pty-rl/isPlayedBy,
+      :owl/someValuesFrom {:owl/onProperty     :cmns-rlcmp/isPlayedBy,
                            :owl/someValuesFrom :fibo-be-le-lp/LegalEntity,
                            :rdf/type           :owl/Restriction},
       :rdf/type           :owl/Restriction} :fibo-sec-dbt-bnd/Bond},
@@ -473,12 +471,11 @@
 
 (def CouponPayment
   {:db/ident :fibo-sec-dbt-bnd/CouponPayment,
+   :owl/deprecated true,
+   :owl/equivalentClass :fibo-fbc-dae-dbt/InterestPayment,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   {:xsd/anyURI "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/Bonds/"},
-   :rdfs/label "coupon payment",
-   :rdfs/subClassOf :fibo-fnd-pas-psch/PaymentEvent,
-   :skos/definition "payment event involving an interest payment on a bond"})
+   {:xsd/anyURI "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/Bonds/"}})
 
 (def CouponPaymentTerms
   {:db/ident :fibo-sec-dbt-bnd/CouponPaymentTerms,
@@ -486,9 +483,10 @@
    :rdfs/isDefinedBy
    {:xsd/anyURI "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/Bonds/"},
    :rdfs/label "coupon payment terms",
-   :rdfs/subClassOf #{{:owl/onProperty     :fibo-fnd-dt-fd/hasSchedule,
-                       :owl/someValuesFrom :fibo-sec-dbt-bnd/CouponSchedule,
-                       :rdf/type           :owl/Restriction}
+   :rdfs/subClassOf #{{:owl/onProperty :fibo-fnd-dt-fd/hasSchedule,
+                       :owl/someValuesFrom
+                       :fibo-fbc-dae-dbt/InterestPaymentSchedule,
+                       :rdf/type :owl/Restriction}
                       {:owl/onProperty     :fibo-fnd-acc-cur/hasCurrency,
                        :owl/someValuesFrom :fibo-fnd-acc-cur/Currency,
                        :rdf/type           :owl/Restriction}
@@ -500,17 +498,11 @@
 
 (def CouponSchedule
   {:db/ident :fibo-sec-dbt-bnd/CouponSchedule,
+   :owl/deprecated true,
+   :owl/equivalentClass :fibo-fbc-dae-dbt/InterestPaymentSchedule,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   {:xsd/anyURI "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/Bonds/"},
-   :rdfs/label "coupon schedule",
-   :rdfs/subClassOf #{{:owl/onProperty     :cmns-col/comprises,
-                       :owl/someValuesFrom :fibo-sec-dbt-bnd/CouponPayment,
-                       :rdf/type           :owl/Restriction}
-                      :fibo-fnd-dt-fd/RegularSchedule
-                      :fibo-fnd-pas-psch/PaymentSchedule},
-   :skos/definition
-   "payment schedule that consists of interest payments on a bond"})
+   {:xsd/anyURI "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/Bonds/"}})
 
 (def EquityLinkedBond
   {:db/ident :fibo-sec-dbt-bnd/EquityLinkedBond,
@@ -634,11 +626,12 @@
    {:xsd/anyURI "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/Bonds/"},
    :rdfs/label "government issued debt security",
    :rdfs/subClassOf
-   #{{:owl/onProperty     :fibo-fnd-rel-rel/isIssuedBy,
-      :owl/someValuesFrom {:owl/onProperty     :fibo-fnd-pty-rl/isPlayedBy,
+   #{:fibo-fbc-fi-fi/DebtInstrument
+     {:owl/onProperty     :fibo-fnd-rel-rel/isIssuedBy,
+      :owl/someValuesFrom {:owl/onProperty     :cmns-rlcmp/isPlayedBy,
                            :owl/someValuesFrom :fibo-be-ge-ge/Polity,
                            :rdf/type           :owl/Restriction},
-      :rdf/type           :owl/Restriction} :fibo-fbc-fi-fi/DebtInstrument},
+      :rdf/type           :owl/Restriction}},
    :skos/definition
    "debt security issued by some government on behalf of some polity, including sovereign and municipal debt"})
 
@@ -793,7 +786,7 @@
    :rdfs/isDefinedBy
    {:xsd/anyURI "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/Bonds/"},
    :rdfs/label "municipal debt funds usage",
-   :rdfs/subClassOf :fibo-fnd-arr-doc/LegalDocument,
+   :rdfs/subClassOf :cmns-doc/LegalDocument,
    :skos/definition
    "official statement specifying how the funds raised via a new issue of municipal securities are to be applied"})
 
@@ -816,7 +809,7 @@
    :rdfs/isDefinedBy
    {:xsd/anyURI "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/Bonds/"},
    :rdfs/label "municipal debt source of funds",
-   :rdfs/subClassOf :fibo-fnd-arr-doc/LegalDocument,
+   :rdfs/subClassOf :cmns-doc/LegalDocument,
    :skos/definition
    "official statement identifying the source of funds for a new issue of municipal securities"})
 
@@ -846,7 +839,7 @@
       :owl/someValuesFrom :fibo-sec-dbt-bnd/MunicipalDebtFundsUsage,
       :rdf/type           :owl/Restriction}
      {:owl/onProperty     :fibo-fnd-rel-rel/isIssuedBy,
-      :owl/someValuesFrom {:owl/onProperty :fibo-fnd-pty-rl/isPlayedBy,
+      :owl/someValuesFrom {:owl/onProperty :cmns-rlcmp/isPlayedBy,
                            :owl/someValuesFrom
                            {:owl/unionOf [:fibo-be-ge-ge/MunicipalEntity
                                           :fibo-be-ge-ge/RegionalSovereignty],
@@ -1012,16 +1005,12 @@
    "repayment schedule whereby a given percentage of a bond issue is redeemed on predefined dates"})
 
 (def RegularCouponSchedule
-  {:cmns-av/explanatoryNote
-   "A regular schedule may include an initial and/or final stub period.",
-   :db/ident :fibo-sec-dbt-bnd/RegularCouponSchedule,
+  {:db/ident :fibo-sec-dbt-bnd/RegularCouponSchedule,
+   :owl/deprecated true,
+   :owl/equivalentClass :fibo-fbc-dae-dbt/InterestPaymentSchedule,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   {:xsd/anyURI "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/Bonds/"},
-   :rdfs/label "regular coupon schedule",
-   :rdfs/subClassOf :fibo-sec-dbt-bnd/CouponSchedule,
-   :skos/definition
-   "schedule including an interval of regular coupon payment dates"})
+   {:xsd/anyURI "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/Bonds/"}})
 
 (def RegulatoryCall
   {:db/ident :fibo-sec-dbt-bnd/RegulatoryCall,
@@ -1108,7 +1097,7 @@
    :rdfs/label "sovereign debt instrument",
    :rdfs/subClassOf
    #{{:owl/onProperty     :fibo-fnd-rel-rel/isIssuedBy,
-      :owl/someValuesFrom {:owl/onProperty     :fibo-fnd-pty-rl/isPlayedBy,
+      :owl/someValuesFrom {:owl/onProperty     :cmns-rlcmp/isPlayedBy,
                            :owl/someValuesFrom :fibo-be-ge-ge/SovereignState,
                            :rdf/type           :owl/Restriction},
       :rdf/type           :owl/Restriction}
@@ -1153,29 +1142,19 @@
 
 (def StepEvent
   {:db/ident :fibo-sec-dbt-bnd/StepEvent,
+   :owl/deprecated true,
+   :owl/equivalentClass :fibo-sec-dbt-dbti/StepEvent,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   {:xsd/anyURI "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/Bonds/"},
-   :rdfs/label "step event",
-   :rdfs/subClassOf #{{:owl/onProperty     :fibo-fnd-rel-rel/involves,
-                       :owl/someValuesFrom :fibo-sec-dbt-bnd/FixedCouponTerms,
-                       :rdf/type           :owl/Restriction}
-                      :fibo-sec-dbt-dbti/PrescriptiveEvent},
-   :skos/definition
-   "event whereby a set of fixed coupon terms comes into force as specified in a step schedule"})
+   {:xsd/anyURI "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/Bonds/"}})
 
 (def StepSchedule
   {:db/ident :fibo-sec-dbt-bnd/StepSchedule,
+   :owl/deprecated true,
+   :owl/equivalentClass :fibo-sec-dbt-dbti/StepSchedule,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   {:xsd/anyURI "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/Bonds/"},
-   :rdfs/label "step schedule",
-   :rdfs/subClassOf #{:fibo-fnd-dt-fd/AdHocSchedule
-                      {:owl/onProperty     :cmns-col/comprises,
-                       :owl/someValuesFrom :fibo-sec-dbt-bnd/StepEvent,
-                       :rdf/type           :owl/Restriction}},
-   :skos/definition
-   "schedule specifying the dates and rates relevant to securities that pay an initial interest rate but also have a feature where set rate increases happen at periodic intervals"})
+   {:xsd/anyURI "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/Bonds/"}})
 
 (def StepUpBond
   {:cmns-av/explanatoryNote
@@ -1202,7 +1181,7 @@
    :rdfs/label "stepped coupon terms",
    :rdfs/subClassOf #{:fibo-sec-dbt-bnd/CouponPaymentTerms
                       {:owl/onProperty     :fibo-fnd-dt-fd/hasSchedule,
-                       :owl/someValuesFrom :fibo-sec-dbt-bnd/StepSchedule,
+                       :owl/someValuesFrom :fibo-sec-dbt-dbti/StepSchedule,
                        :rdf/type           :owl/Restriction}},
    :skos/definition
    "coupon payment terms for securities with a coupon that increases (steps up) while the bond is outstanding"})
@@ -1381,13 +1360,13 @@
    {:xsd/anyURI "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/Bonds/"},
    :rdfs/label "variable coupon terms",
    :rdfs/subClassOf #{:fibo-sec-dbt-bnd/CouponPaymentTerms
-                      {:owl/onProperty :fibo-fnd-utl-alx/hasExpression,
-                       :owl/someValuesFrom
-                       :fibo-sec-dbt-bnd/VariableInterestCalculationFormula,
-                       :rdf/type :owl/Restriction}
                       {:owl/onProperty     :fibo-fbc-dae-dbt/isBasedOn,
                        :owl/someValuesFrom :fibo-ind-ind-ind/MarketRate,
-                       :rdf/type           :owl/Restriction}},
+                       :rdf/type           :owl/Restriction}
+                      {:owl/onProperty :cmns-qtu/hasExpression,
+                       :owl/someValuesFrom
+                       :fibo-sec-dbt-bnd/VariableInterestCalculationFormula,
+                       :rdf/type :owl/Restriction}},
    :skos/definition
    "contractual terms specifying the calculation of the interest rate for a variable coupon bond"})
 
@@ -1442,11 +1421,10 @@
                        :owl/onDataRange :xsd/decimal,
                        :owl/onProperty  :fibo-sec-dbt-bnd/hasCeiling,
                        :rdf/type        :owl/Restriction}
-                      :fibo-fnd-utl-alx/Expression
                       {:owl/onClass :fibo-sec-dbt-dbti/FullyIndexedInterestRate,
-                       :owl/onProperty :fibo-fnd-utl-alx/hasArgument,
+                       :owl/onProperty :cmns-qtu/hasArgument,
                        :owl/qualifiedCardinality 1,
-                       :rdf/type :owl/Restriction}},
+                       :rdf/type :owl/Restriction} :cmns-qtu/Expression},
    :skos/definition
    "an expression used to determine a variable interest payment amount"})
 
@@ -1722,7 +1700,7 @@
    {:xsd/anyURI "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/Bonds/"},
    :rdfs/label "has funding source",
    :rdfs/range :fibo-sec-dbt-bnd/MunicipalDebtSourceOfFunds,
-   :rdfs/subPropertyOf :fibo-fnd-arr-doc/hasDataSource,
+   :rdfs/subPropertyOf :cmns-doc/hasDataSource,
    :skos/definition
    "indicates the source of funds for a new issue of municipal securities"})
 
@@ -1912,7 +1890,7 @@
    {:xsd/anyURI "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/Bonds/"},
    :rdfs/label "is linked to fallback",
    :rdfs/range :fibo-sec-dbt-bnd/GovernmentBond,
-   :rdfs/subPropertyOf :fibo-fnd-rel-rel/refersTo,
+   :rdfs/subPropertyOf :cmns-doc/refersTo,
    :skos/definition
    "relates an index-linked instrument to a government bond that may be selected by a calculation agent"})
 
@@ -1950,87 +1928,85 @@
    "indicates that the bond has a long-term coupon but short potential short maturity"})
 
 (def urn:uuid:d3c6acee-6479-5f11-afac-07cad35eb124
-  {:cmns-av/copyright #{"Copyright (c) 2018-2023 Object Management Group, Inc."
-                        "Copyright (c) 2016-2023 EDM Council, Inc."},
+  {:cmns-av/copyright
+   #{"Copyright (c) 2016-2024 EDM Council, Inc."
+     "Copyright (c) 2018-2024 Object Management Group, Inc."},
    :dcterms/abstract
    "This ontology defines the basic concept of a bond and a number of bond variants including convertible and callable bonds. Medium term notes (MTNs) and debentures are also defined.",
    :dcterms/license {:xsd/anyURI "https://opensource.org/licenses/MIT"},
    :fibo-fnd-utl-av/hasMaturityLevel :fibo-fnd-utl-av/Release,
    :owl/imports
    #{{:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FBC/FunctionalEntities/RegistrationAuthorities/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/IND/InterestRates/InterestRates/"}
+     {:xsd/anyURI "https://www.omg.org/spec/Commons/RolesAndCompositions/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FBC/DebtAndEquities/Guaranty/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/SEC/Debt/TradedShortTermDebt/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/BE/GovernmentEntities/GovernmentEntities/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Accounting/CurrencyAmount/"}
+     {:xsd/anyURI "https://www.omg.org/spec/Commons/Documents/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/IND/Indicators/Indicators/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FBC/DebtAndEquities/Debt/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Utilities/Analytics/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/IND/Indicators/Indicators/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Utilities/AnnotationVocabulary/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/BE/GovernmentEntities/GovernmentEntities/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/GoalsAndObjectives/Objectives/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/ProductsAndServices/PaymentsAndSchedules/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/BE/LegalEntities/CorporateBodies/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/SEC/Securities/SecuritiesListings/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Parties/Parties/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FBC/FunctionalEntities/RegistrationAuthorities/"}
+     {:xsd/anyURI "https://www.omg.org/spec/Commons/QuantitiesAndUnits/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/SEC/Securities/SecuritiesListings/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/IND/EconomicIndicators/EconomicIndicators/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Accounting/ISO4217-CurrencyCodes/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FBC/ProductsAndServices/FinancialProductsAndServices/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FBC/DebtAndEquities/Debt/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/BE/LegalEntities/LegalPersons/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Agreements/Agreements/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Utilities/AnnotationVocabulary/"}
+     {:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/DatesAndTimes/FinancialDates/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/Collections/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/IND/EconomicIndicators/EconomicIndicators/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/GoalsAndObjectives/Objectives/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FBC/FunctionalEntities/FinancialServicesEntities/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Accounting/ISO4217-CurrencyCodes/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Accounting/CurrencyAmount/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FBC/FunctionalEntities/FinancialServicesEntities/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/SEC/Debt/DebtInstruments/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/SEC/Securities/SecuritiesIssuance/"}
+     {:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/SEC/Equities/EquityInstruments/"}
+     {:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/DatesAndTimes/Occurrences/"}
+     {:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Relations/Relations/"}
+     {:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Parties/Parties/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/DatesAndTimes/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/BE/Trusts/Trusts/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FBC/DebtAndEquities/Guaranty/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/SEC/Securities/SecuritiesIssuance/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Agreements/Contracts/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/DatesAndTimes/Occurrences/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/BE/LegalEntities/CorporateBodies/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/SEC/Equities/EquityInstruments/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FBC/FinancialInstruments/FinancialInstruments/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/ProductsAndServices/PaymentsAndSchedules/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/BE/FunctionalEntities/FunctionalEntities/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Agreements/Contracts/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Parties/Roles/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/DatesAndTimes/BusinessDates/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Relations/Relations/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FBC/FinancialInstruments/FinancialInstruments/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/IND/InterestRates/InterestRates/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/BE/FunctionalEntities/FunctionalEntities/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Arrangements/Documents/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/SEC/Debt/DebtInstruments/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/AnnotationVocabulary/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/SEC/Debt/TradedShortTermDebt/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Agreements/Agreements/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/BE/LegalEntities/LegalPersons/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/DatesAndTimes/BusinessDates/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/DatesAndTimes/FinancialDates/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FBC/ProductsAndServices/FinancialProductsAndServices/"}},
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/BE/Trusts/Trusts/"}},
    :owl/versionIRI
    {:xsd/anyURI
-    "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/SEC/Debt/Bonds/"},
+    "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/SEC/Debt/Bonds/"},
    :rdf/type :owl/Ontology,
    :rdfs/label "Bonds Ontology",
    :skos/changeNote
@@ -2040,8 +2016,11 @@
      "The https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/Debt/Bonds.rdf version of this ontology was revised to eliminate a duplicate 'isBasedOn' property and replace it with the property of the same name in the debt ontology, to revise the inheritance hierarchy for bond conversion terms to reflect changes in the representation of redemption more generally, to reflect the move of redemption provision from debt to financial instruments, and eliminate circular and ambiguous definitions."
      "The https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/Debt/Bonds.rdf version of this ontology was revised to eliminate false positives in hygiene tests due to concept names containing words, such as 'and', which might indicate that the concept actually reflects more than one thing, including distinguishing zero coupon from original issue discount bonds, and replace the use of call price and put price, which are overly constrained, with monetary price."
      "The https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/Debt/Bonds.rdf version of this ontology was revised to incorporate the concept of a credit agreement repaid at maturity, which is a component assumed to be part of the definition of a bond, and to add an explanatory note to the definition of Treasury Bill."
+     "The https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/Bonds.rdf version of the ontology was modified to replace concepts from several FIBO FND ontologies with their counterparts added to the Commons Ontology Library (Commons) v1.1."
      "The https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/Bonds.rdf version of the ontology was modified to use the Commons Ontology Library (Commons) Annotation Vocabulary rather than the OMG's Specification Metadata vocabulary."
+     "The https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/Bonds.rdf version of the ontology was modified to replace concepts from additional FIBO FND ontologies with their counterparts added to the Commons Ontology Library (Commons) v1.1."
      "The https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/Debt/Bonds.rdf version of this ontology was revised to eliminate duplication of concepts in LCC and eliminate a redundant superclass from RegularCouponSchedule."
      "The https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/Debt/Bonds.rdf version of this ontology was revised to reflect the refactored definition of a listing and improve the definition of corporate bond."
-     "The https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/Bonds.rdf version of this ontology was modified to use the Commons Ontology Library (Commons) rather than the OMG's Languages, Countries and Codes (LCC), eliminating redundancies in FIBO as appropriate."},
+     "The https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/Bonds.rdf version of this ontology was modified to use the Commons Ontology Library (Commons) rather than the OMG's Languages, Countries and Codes (LCC), eliminating redundancies in FIBO as appropriate."
+     "The https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/Bonds.rdf version of this ontology was modified to move details regarding step schedules to the debt instruments ontology for broader use and deprecate the use of a 'coupon' schedule in favor of interest payment schedule, which is the more modern terminology, aligning with other uses of the related terms in FIBO (FBC-317)."},
    :xsd/anyURI "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/Bonds/"})

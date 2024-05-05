@@ -1,8 +1,9 @@
 (ns net.wikipunk.rdf.fibo-sec-eq-eqind
-  {:cmns-av/copyright #{"Copyright (c) 2019-2023 Object Management Group, Inc."
-                        "Copyright (c) 2019-2023 EDM Council, Inc."},
+  {:cmns-av/copyright
+   #{"Copyright (c) 2019-2024 EDM Council, Inc."
+     "Copyright (c) 2019-2024 Object Management Group, Inc."},
    :dcat/downloadURL
-   "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/SEC/Equities/EquitiesExampleIndividuals/",
+   "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/SEC/Equities/EquitiesExampleIndividuals/",
    :dcterms/abstract
    "This ontology provides examples of how to represent simple equities.",
    :dcterms/license {:xsd/anyURI "https://opensource.org/licenses/MIT"},
@@ -11,6 +12,7 @@
    {"cmns-av" "https://www.omg.org/spec/Commons/AnnotationVocabulary/",
     "cmns-cls" "https://www.omg.org/spec/Commons/Classifiers/",
     "cmns-id" "https://www.omg.org/spec/Commons/Identifiers/",
+    "cmns-rlcmp" "https://www.omg.org/spec/Commons/RolesAndCompositions/",
     "dcterms" "http://purl.org/dc/terms/",
     "fibo-be-ge-usj"
     "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/NorthAmericanJurisdiction/USGovernmentEntitiesAndJurisdictions/",
@@ -58,48 +60,49 @@
     "skos" "http://www.w3.org/2004/02/skos/core#",
     "xsd" "http://www.w3.org/2001/XMLSchema#"},
    :owl/imports
-   #{{:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FBC/FunctionalEntities/RegistrationAuthorities/"}
+   #{{:xsd/anyURI "https://www.omg.org/spec/Commons/RolesAndCompositions/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/SEC/Securities/SecuritiesIdentificationIndividuals/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FBC/FunctionalEntities/MarketsIndividuals/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Utilities/AnnotationVocabulary/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Accounting/CurrencyAmount/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/Identifiers/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/SEC/Securities/SecuritiesIdentification/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/SEC/Securities/SecuritiesListings/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/SEC/Securities/SecuritiesListings/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FBC/FunctionalEntities/RegistrationAuthorities/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Accounting/ISO4217-CurrencyCodes/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Utilities/AnnotationVocabulary/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/BE/LegalEntities/NorthAmericanEntities/USExampleEntities/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Accounting/ISO4217-CurrencyCodes/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/Classifiers/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FBC/FunctionalEntities/NorthAmericanEntities/USMarketsAndExchangesIndividuals/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/BE/LegalEntities/NorthAmericanEntities/USExampleEntities/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Accounting/CurrencyAmount/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/SEC/Securities/SecuritiesIssuance/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/SEC/Securities/SecuritiesIssuance/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FBC/FunctionalEntities/NorthAmericanEntities/USMarketsAndExchangesIndividuals/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/SEC/Equities/EquityInstruments/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/SEC/Equities/EquityInstruments/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FBC/FunctionalEntities/NorthAmericanEntities/USExampleIndividuals/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Relations/Relations/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Agreements/Contracts/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Relations/Relations/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Agreements/Contracts/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FBC/FinancialInstruments/FinancialInstruments/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FBC/FunctionalEntities/MarketsIndividuals/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/BE/GovernmentEntities/NorthAmericanJurisdiction/USGovernmentEntitiesAndJurisdictions/"}
-     {:xsd/anyURI "https://www.omg.org/spec/Commons/AnnotationVocabulary/"}},
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FBC/FunctionalEntities/NorthAmericanEntities/USExampleIndividuals/"}
+     {:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/SEC/Securities/SecuritiesIdentification/"}
+     {:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FBC/FinancialInstruments/FinancialInstruments/"}
+     {:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/BE/GovernmentEntities/NorthAmericanJurisdiction/USGovernmentEntitiesAndJurisdictions/"}
+     {:xsd/anyURI "https://www.omg.org/spec/Commons/AnnotationVocabulary/"}
+     {:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/SEC/Securities/SecuritiesIdentificationIndividuals/"}},
    :owl/versionIRI
    {:xsd/anyURI
-    "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/SEC/Equities/EquitiesExampleIndividuals/"},
+    "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/SEC/Equities/EquitiesExampleIndividuals/"},
    :rdf/type :owl/Ontology,
    :rdfa/prefix "fibo-sec-eq-eqind",
    :rdfa/uri
@@ -108,6 +111,7 @@
    :skos/changeNote
    #{"The https://spec.edmcouncil.org/fibo/ontology/SEC/Equities/EquitiesExampleIndividuals.rdf version of this ontology was revised to replace uses of hasTag in Relations with hasTag from LCC, as the more complex union of datatypes in the Relations concept is not needed here."
      "The https://spec.edmcouncil.org/fibo/ontology/SEC/Equities/EquitiesExampleIndividuals.rdf version of this ontology was modified to add CFI codes to the example equity instruments."
+     "The https://spec.edmcouncil.org/fibo/ontology/SEC/Equities/EquitiesExampleIndividuals.rdf version of this ontology was modified to replace content that is now available in the OMG Commons Ontology Library (Commons) v1.1 (FND-380)."
      "The https://spec.edmcouncil.org/fibo/ontology/SEC/Equities/EquitiesExampleIndividuals.rdf version of the ontology was modified to use the Commons Ontology Library (Commons) Annotation Vocabulary rather than the OMG's Specification Metadata vocabulary."
      "The https://spec.edmcouncil.org/fibo/ontology/SEC/Equities/EquitiesExampleIndividuals.rdf version of this ontology was revised to replace equity issuer with share issuer."
      "The https://spec.edmcouncil.org/fibo/ontology/SEC/Equities/EquitiesExampleIndividuals.rdf version of this ontology was revised to address changes to the markets individuals ontology."
@@ -207,8 +211,8 @@
    "Alphabet Inc. class C capital stock financial instrument short name (FISN)"})
 
 (def AlphabetIncEquityIssuer
-  {:db/ident :fibo-sec-eq-eqind/AlphabetIncEquityIssuer,
-   :fibo-fnd-rel-rel/hasIdentity :fibo-be-le-usee/AlphabetInc-US-CA,
+  {:cmns-rlcmp/isPlayedBy :fibo-be-le-usee/AlphabetInc-US-CA,
+   :db/ident :fibo-sec-eq-eqind/AlphabetIncEquityIssuer,
    :fibo-sec-sec-iss/hasIssuerShortName "ALPHABET INC",
    :rdf/type #{:fibo-sec-eq-eq/ShareIssuer :owl/NamedIndividual},
    :rdfs/isDefinedBy
@@ -262,8 +266,8 @@
    "Apple Inc. common stock financial instrument short name (FISN)"})
 
 (def AppleIncEquityIssuer
-  {:db/ident :fibo-sec-eq-eqind/AppleIncEquityIssuer,
-   :fibo-fnd-rel-rel/hasIdentity :fibo-be-le-usee/AppleInc-US-CA,
+  {:cmns-rlcmp/isPlayedBy :fibo-be-le-usee/AppleInc-US-CA,
+   :db/ident :fibo-sec-eq-eqind/AppleIncEquityIssuer,
    :fibo-sec-sec-iss/hasIssuerShortName "APPLE INC",
    :rdf/type #{:fibo-sec-eq-eq/ShareIssuer :owl/NamedIndividual},
    :rdfs/isDefinedBy
@@ -730,8 +734,8 @@
    "Citigroup Inc. common stock financial instrument short name (FISN)"})
 
 (def CitigroupIncEquityIssuer
-  {:db/ident :fibo-sec-eq-eqind/CitigroupIncEquityIssuer,
-   :fibo-fnd-rel-rel/hasIdentity :fibo-fbc-fct-usind/CitigroupInc-US-DE,
+  {:cmns-rlcmp/isPlayedBy :fibo-fbc-fct-usind/CitigroupInc-US-DE,
+   :db/ident :fibo-sec-eq-eqind/CitigroupIncEquityIssuer,
    :fibo-sec-sec-iss/hasIssuerShortName "CITIGROUP INC",
    :rdf/type #{:fibo-sec-eq-eq/ShareIssuer :owl/NamedIndividual},
    :rdfs/isDefinedBy
@@ -912,10 +916,10 @@
    :skos/definition "IBM common stock financial instrument short name (FISN)"})
 
 (def InternationalBusinessMachinesCorporationEquityIssuer
-  {:db/ident
-   :fibo-sec-eq-eqind/InternationalBusinessMachinesCorporationEquityIssuer,
-   :fibo-fnd-rel-rel/hasIdentity
+  {:cmns-rlcmp/isPlayedBy
    :fibo-be-le-usee/InternationalBusinessMachinesCorporation-US-NY,
+   :db/ident
+   :fibo-sec-eq-eqind/InternationalBusinessMachinesCorporationEquityIssuer,
    :fibo-sec-sec-iss/hasIssuerShortName "INTL BUS MACHIN",
    :rdf/type #{:fibo-sec-eq-eq/ShareIssuer :owl/NamedIndividual},
    :rdfs/isDefinedBy
@@ -974,8 +978,8 @@
    "J.P. Morgan Chase & Co. common stock financial instrument short name (FISN)"})
 
 (def JPMorganChaseAndCoEquityIssuer
-  {:db/ident :fibo-sec-eq-eqind/JPMorganChaseAndCoEquityIssuer,
-   :fibo-fnd-rel-rel/hasIdentity :fibo-fbc-fct-usind/JPMorganChaseAndCo-US-DE,
+  {:cmns-rlcmp/isPlayedBy :fibo-fbc-fct-usind/JPMorganChaseAndCo-US-DE,
+   :db/ident :fibo-sec-eq-eqind/JPMorganChaseAndCoEquityIssuer,
    :fibo-sec-sec-iss/hasIssuerShortName "JPMORGAN CHASE",
    :rdf/type #{:fibo-sec-eq-eq/ShareIssuer :owl/NamedIndividual},
    :rdfs/isDefinedBy
@@ -1046,8 +1050,8 @@
    "The Coca-Cola Company common stock financial instrument short name (FISN)"})
 
 (def TheCoca-ColaCompanyEquityIssuer
-  {:db/ident :fibo-sec-eq-eqind/TheCoca-ColaCompanyEquityIssuer,
-   :fibo-fnd-rel-rel/hasIdentity :fibo-be-le-usee/TheCoca-ColaCompany-US-DE,
+  {:cmns-rlcmp/isPlayedBy :fibo-be-le-usee/TheCoca-ColaCompany-US-DE,
+   :db/ident :fibo-sec-eq-eqind/TheCoca-ColaCompanyEquityIssuer,
    :fibo-sec-sec-iss/hasIssuerShortName "COCA COLA CO",
    :rdf/type #{:fibo-sec-eq-eq/ShareIssuer :owl/NamedIndividual},
    :rdfs/isDefinedBy
@@ -1105,8 +1109,8 @@
    "Home Depot, Inc. common stock financial instrument short name (FISN)"})
 
 (def TheHomeDepotIncEquityIssuer
-  {:db/ident :fibo-sec-eq-eqind/TheHomeDepotIncEquityIssuer,
-   :fibo-fnd-rel-rel/hasIdentity :fibo-be-le-usee/TheHomeDepotInc-US-DE,
+  {:cmns-rlcmp/isPlayedBy :fibo-be-le-usee/TheHomeDepotInc-US-DE,
+   :db/ident :fibo-sec-eq-eqind/TheHomeDepotIncEquityIssuer,
    :fibo-sec-sec-iss/hasIssuerShortName "HOME DEPOT INC",
    :rdf/type #{:fibo-sec-eq-eq/ShareIssuer :owl/NamedIndividual},
    :rdfs/isDefinedBy
@@ -1163,9 +1167,8 @@
    "The Proctor & Gamble Company common stock financial instrument short name (FISN)"})
 
 (def TheProctorAndGambleCompanyEquityIssuer
-  {:db/ident :fibo-sec-eq-eqind/TheProctorAndGambleCompanyEquityIssuer,
-   :fibo-fnd-rel-rel/hasIdentity
-   :fibo-be-le-usee/TheProctorAndGambleCompany-US-OH,
+  {:cmns-rlcmp/isPlayedBy :fibo-be-le-usee/TheProctorAndGambleCompany-US-OH,
+   :db/ident :fibo-sec-eq-eqind/TheProctorAndGambleCompanyEquityIssuer,
    :fibo-sec-sec-iss/hasIssuerShortName "PROCTOR & GAMBL",
    :rdf/type #{:fibo-sec-eq-eq/ShareIssuer :owl/NamedIndividual},
    :rdfs/isDefinedBy
@@ -1508,60 +1511,63 @@
    "Wells Fargo & Company common share listed in the New York Stock Exchange (NYSE)"})
 
 (def urn:uuid:ba49ab56-936a-5ab2-bb92-2024b03745f7
-  {:cmns-av/copyright #{"Copyright (c) 2019-2023 Object Management Group, Inc."
-                        "Copyright (c) 2019-2023 EDM Council, Inc."},
+  {:cmns-av/copyright
+   #{"Copyright (c) 2019-2024 EDM Council, Inc."
+     "Copyright (c) 2019-2024 Object Management Group, Inc."},
    :dcterms/abstract
    "This ontology provides examples of how to represent simple equities.",
    :dcterms/license {:xsd/anyURI "https://opensource.org/licenses/MIT"},
    :fibo-fnd-utl-av/hasMaturityLevel :fibo-fnd-utl-av/Release,
    :owl/imports
-   #{{:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FBC/FunctionalEntities/RegistrationAuthorities/"}
+   #{{:xsd/anyURI "https://www.omg.org/spec/Commons/RolesAndCompositions/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/SEC/Securities/SecuritiesIdentificationIndividuals/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FBC/FunctionalEntities/MarketsIndividuals/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Utilities/AnnotationVocabulary/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Accounting/CurrencyAmount/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/Identifiers/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/SEC/Securities/SecuritiesIdentification/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/SEC/Securities/SecuritiesListings/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/SEC/Securities/SecuritiesListings/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FBC/FunctionalEntities/RegistrationAuthorities/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Accounting/ISO4217-CurrencyCodes/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Utilities/AnnotationVocabulary/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/BE/LegalEntities/NorthAmericanEntities/USExampleEntities/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Accounting/ISO4217-CurrencyCodes/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/Classifiers/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FBC/FunctionalEntities/NorthAmericanEntities/USMarketsAndExchangesIndividuals/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/BE/LegalEntities/NorthAmericanEntities/USExampleEntities/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Accounting/CurrencyAmount/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/SEC/Securities/SecuritiesIssuance/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/SEC/Securities/SecuritiesIssuance/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FBC/FunctionalEntities/NorthAmericanEntities/USMarketsAndExchangesIndividuals/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/SEC/Equities/EquityInstruments/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/SEC/Equities/EquityInstruments/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FBC/FunctionalEntities/NorthAmericanEntities/USExampleIndividuals/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Relations/Relations/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Agreements/Contracts/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Relations/Relations/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Agreements/Contracts/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FBC/FinancialInstruments/FinancialInstruments/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FBC/FunctionalEntities/MarketsIndividuals/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/BE/GovernmentEntities/NorthAmericanJurisdiction/USGovernmentEntitiesAndJurisdictions/"}
-     {:xsd/anyURI "https://www.omg.org/spec/Commons/AnnotationVocabulary/"}},
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FBC/FunctionalEntities/NorthAmericanEntities/USExampleIndividuals/"}
+     {:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/SEC/Securities/SecuritiesIdentification/"}
+     {:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FBC/FinancialInstruments/FinancialInstruments/"}
+     {:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/BE/GovernmentEntities/NorthAmericanJurisdiction/USGovernmentEntitiesAndJurisdictions/"}
+     {:xsd/anyURI "https://www.omg.org/spec/Commons/AnnotationVocabulary/"}
+     {:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/SEC/Securities/SecuritiesIdentificationIndividuals/"}},
    :owl/versionIRI
    {:xsd/anyURI
-    "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/SEC/Equities/EquitiesExampleIndividuals/"},
+    "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/SEC/Equities/EquitiesExampleIndividuals/"},
    :rdf/type :owl/Ontology,
    :rdfs/label "Equities Example Individuals Ontology",
    :skos/changeNote
    #{"The https://spec.edmcouncil.org/fibo/ontology/SEC/Equities/EquitiesExampleIndividuals.rdf version of this ontology was revised to replace uses of hasTag in Relations with hasTag from LCC, as the more complex union of datatypes in the Relations concept is not needed here."
      "The https://spec.edmcouncil.org/fibo/ontology/SEC/Equities/EquitiesExampleIndividuals.rdf version of this ontology was modified to add CFI codes to the example equity instruments."
+     "The https://spec.edmcouncil.org/fibo/ontology/SEC/Equities/EquitiesExampleIndividuals.rdf version of this ontology was modified to replace content that is now available in the OMG Commons Ontology Library (Commons) v1.1 (FND-380)."
      "The https://spec.edmcouncil.org/fibo/ontology/SEC/Equities/EquitiesExampleIndividuals.rdf version of the ontology was modified to use the Commons Ontology Library (Commons) Annotation Vocabulary rather than the OMG's Specification Metadata vocabulary."
      "The https://spec.edmcouncil.org/fibo/ontology/SEC/Equities/EquitiesExampleIndividuals.rdf version of this ontology was revised to replace equity issuer with share issuer."
      "The https://spec.edmcouncil.org/fibo/ontology/SEC/Equities/EquitiesExampleIndividuals.rdf version of this ontology was revised to address changes to the markets individuals ontology."

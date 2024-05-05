@@ -1,8 +1,9 @@
 (ns net.wikipunk.rdf.fibo-fnd-utl-alx
-  {:cmns-av/copyright #{"Copyright (c) 2013-2023 Object Management Group, Inc."
-                        "Copyright (c) 2013-2023 EDM Council, Inc."},
+  {:cmns-av/copyright
+   #{"Copyright (c) 2013-2024 EDM Council, Inc."
+     "Copyright (c) 2013-2024 Object Management Group, Inc."},
    :dcat/downloadURL
-   "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Utilities/Analytics/",
+   "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Utilities/Analytics/",
    :dcterms/abstract
    "This ontology provides mathematical abstractions for use in other ontologies, including for example the basic components of formulae, parameters and values.",
    :dcterms/license {:xsd/anyURI "https://opensource.org/licenses/MIT"},
@@ -12,8 +13,10 @@
     "cmns-cls" "https://www.omg.org/spec/Commons/Classifiers/",
     "cmns-col" "https://www.omg.org/spec/Commons/Collections/",
     "cmns-cxtdsg" "https://www.omg.org/spec/Commons/ContextualDesignators/",
+    "cmns-doc" "https://www.omg.org/spec/Commons/Documents/",
     "cmns-dt" "https://www.omg.org/spec/Commons/DatesAndTimes/",
     "cmns-id" "https://www.omg.org/spec/Commons/Identifiers/",
+    "cmns-qtu" "https://www.omg.org/spec/Commons/QuantitiesAndUnits/",
     "dcterms" "http://purl.org/dc/terms/",
     "fibo-fnd-arr-arr"
     "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Arrangements/",
@@ -23,8 +26,6 @@
     "https://spec.edmcouncil.org/fibo/ontology/FND/GoalsAndObjectives/Objectives/",
     "fibo-fnd-plc-loc"
     "https://spec.edmcouncil.org/fibo/ontology/FND/Places/Locations/",
-    "fibo-fnd-qt-qtu"
-    "https://spec.edmcouncil.org/fibo/ontology/FND/Quantities/QuantitiesAndUnits/",
     "fibo-fnd-rel-rel"
     "https://spec.edmcouncil.org/fibo/ontology/FND/Relations/Relations/",
     "fibo-fnd-utl-alx"
@@ -38,31 +39,31 @@
     "skos" "http://www.w3.org/2004/02/skos/core#",
     "xsd" "http://www.w3.org/2001/XMLSchema#"},
    :owl/imports
-   #{{:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Quantities/QuantitiesAndUnits/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Utilities/AnnotationVocabulary/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/GoalsAndObjectives/Objectives/"}
+   #{{:xsd/anyURI "https://www.omg.org/spec/Commons/Documents/"}
      {:xsd/anyURI
       "https://www.omg.org/spec/LCC/Countries/CountryRepresentation/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Arrangements/Arrangements/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/Identifiers/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/ContextualDesignators/"}
+     {:xsd/anyURI "https://www.omg.org/spec/Commons/QuantitiesAndUnits/"}
+     {:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Places/Locations/"}
+     {:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Utilities/AnnotationVocabulary/"}
+     {:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/DatesAndTimes/FinancialDates/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/Collections/"}
+     {:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/GoalsAndObjectives/Objectives/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/Classifiers/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Places/Locations/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Relations/Relations/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/DatesAndTimes/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Relations/Relations/"}
-     {:xsd/anyURI "https://www.omg.org/spec/Commons/AnnotationVocabulary/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/DatesAndTimes/FinancialDates/"}},
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Arrangements/Arrangements/"}
+     {:xsd/anyURI "https://www.omg.org/spec/Commons/AnnotationVocabulary/"}},
    :owl/versionIRI
    {:xsd/anyURI
-    "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Utilities/Analytics/"},
+    "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Utilities/Analytics/"},
    :rdf/type :owl/Ontology,
    :rdfa/prefix "fibo-fnd-utl-alx",
    :rdfa/uri
@@ -78,6 +79,7 @@
      "The https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/Analytics.rdf version of this ontology was modified per the FIBO 2.0 RFC."
      "The https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/Analytics.rdf version of this ontology was modified to make statistical program a subclass of program and revised restrictions on statistical program to better reflect its intent."
      "The https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/Analytics.rdf version of this ontology was modified to eliminate the redundant 'calculation formula' concept and eliminate the property hasOperand, which is not used anywhere and whose definition is circular."
+     "The https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/Analytics.rdf version of the ontology was modified to replace content that is now available in the OMG Commons Ontology Library (Commons) v1.1 (FND-380)."
      "The https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/Analytics.rdf version of this ontology was modified to add the concept of a weighting algorithm."
      "The https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/Analytics.rdf version of this ontology was modified to use the Commons Ontology Library (Commons) rather than the OMG's Languages, Countries and Codes (LCC), eliminating redundancies in FIBO as appropriate."
      "The https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/Analytics.rdf version of this ontology was modified to eliminate deprecated elements."
@@ -86,8 +88,10 @@
      "The https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/Analytics.rdf version of this ontology was modified to add a synonym of 'average' to arithmetic mean."
      "The https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/Analytics.rdf version of this ontology was modified to update the reference link for ratio."
      "The https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/Analytics.rdf version of this ontology was modified to eliminate unused imports."
+     "The https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/Analytics.rdf version of the ontology was modified to replace additional content that is now available in the OMG Commons Ontology Library (Commons) v1.1 (FND-380) and to move the concept of an anchor date to Financial Dates (FBC-317)."
      "The https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/Analytics.rdf version of this ontology was modified to eliminate duplication with concepts in LCC, merge countries with locations, and correct a restriction on qualified measure."
      "The https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/Analytics.rdf version of this ontology was modified per the issue resolutions identified in the FIBO FND 1.0 FTF report and in https://spec.edmcouncil.org/fibo/ontology/FND/1.0/AboutFND-1.0/."
+     "The https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/Analytics.rdf version of the ontology was modified to eliminate deprecations that are more than 6 months old."
      "The https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/Analytics.rdf version of this ontology was modified to address issue FIBOFND11-20, which added the definition of Calculation and corrected a reasoning issue related to the use of a custom datatype."},
    :xsd/anyURI
    "https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/Analytics/"})
@@ -123,15 +127,6 @@
    :skos/definition
    "sum of a collection of numbers divided by the number of numbers in the collection"})
 
-(def Aspect
-  {:db/ident :fibo-fnd-utl-alx/Aspect,
-   :owl/deprecated true,
-   :owl/equivalentClass :cmns-cls/Aspect,
-   :rdf/type :owl/Class,
-   :rdfs/isDefinedBy
-   {:xsd/anyURI
-    "https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/Analytics/"}})
-
 (def AverageAbsoluteDeviation
   {:cmns-av/explanatoryNote
    "The central point can be the mean, median, mode, or the result of another measure of central tendency. Absolute deviation is the distance between each value in the data set and that data set's mean or median.",
@@ -143,7 +138,7 @@
     "https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/Analytics/"},
    :rdfs/label "average absolute deviation",
    :rdfs/subClassOf #{:fibo-fnd-utl-alx/Dispersion
-                      {:owl/onProperty     :fibo-fnd-utl-alx/hasArgument,
+                      {:owl/onProperty     :cmns-qtu/hasArgument,
                        :owl/someValuesFrom {:owl/unionOf
                                             [:fibo-fnd-utl-alx/Mean
                                              :fibo-fnd-utl-alx/Median],
@@ -153,14 +148,12 @@
 
 (def Constant
   {:db/ident :fibo-fnd-utl-alx/Constant,
+   :owl/deprecated true,
+   :owl/equivalentClass :cmns-qtu/Constant,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    {:xsd/anyURI
-    "https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/Analytics/"},
-   :rdfs/label "constant",
-   :rdfs/subClassOf #{:cmns-cls/Aspect :fibo-fnd-rel-rel/Reference},
-   :skos/definition
-   "symbol that represents a value that does not change (i.e., is fixed) with respect to a formula or expression"})
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/Analytics/"}})
 
 (def Difference
   {:db/ident :fibo-fnd-utl-alx/Difference,
@@ -169,13 +162,14 @@
    {:xsd/anyURI
     "https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/Analytics/"},
    :rdfs/label "difference",
-   :rdfs/subClassOf
-   #{{:owl/cardinality 1,
-      :owl/onProperty  :fibo-fnd-utl-alx/hasMinuend,
-      :rdf/type        :owl/Restriction} :fibo-fnd-utl-alx/Expression
-     {:owl/cardinality 1,
-      :owl/onProperty  :fibo-fnd-utl-alx/hasSubtrahend,
-      :rdf/type        :owl/Restriction} :fibo-fnd-utl-alx/StatisticalMeasure},
+   :rdfs/subClassOf #{{:owl/cardinality 1,
+                       :owl/onProperty  :fibo-fnd-utl-alx/hasMinuend,
+                       :rdf/type        :owl/Restriction}
+                      {:owl/cardinality 1,
+                       :owl/onProperty  :fibo-fnd-utl-alx/hasSubtrahend,
+                       :rdf/type        :owl/Restriction}
+                      :fibo-fnd-utl-alx/StatisticalMeasure
+                      :cmns-qtu/Expression},
    :skos/definition
    "quantity by which amounts differ; the remainder left after subtraction of one value from another"})
 
@@ -191,39 +185,29 @@
    {:xsd/anyURI
     "https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/Analytics/"},
    :rdfs/label "dispersion",
-   :rdfs/subClassOf
-   #{{:owl/onProperty     :fibo-fnd-utl-alx/hasObservedValue,
-      :owl/someValuesFrom :cmns-col/StructuredCollection,
-      :rdf/type           :owl/Restriction} :fibo-fnd-utl-alx/Expression
-     {:owl/maxQualifiedCardinality 1,
-      :owl/onDataRange :xsd/nonNegativeInteger,
-      :owl/onProperty  :fibo-fnd-arr-arr/hasCollectionSize,
-      :rdf/type        :owl/Restriction} :fibo-fnd-utl-alx/StatisticalMeasure
-     {:owl/onProperty     :cmns-cxtdsg/appliesTo,
-      :owl/someValuesFrom :fibo-fnd-utl-alx/FinitePopulation,
-      :rdf/type           :owl/Restriction}},
+   :rdfs/subClassOf #{{:owl/onProperty     :fibo-fnd-utl-alx/hasObservedValue,
+                       :owl/someValuesFrom :cmns-col/StructuredCollection,
+                       :rdf/type           :owl/Restriction}
+                      {:owl/maxQualifiedCardinality 1,
+                       :owl/onDataRange :xsd/nonNegativeInteger,
+                       :owl/onProperty  :fibo-fnd-arr-arr/hasCollectionSize,
+                       :rdf/type        :owl/Restriction}
+                      :fibo-fnd-utl-alx/StatisticalMeasure :cmns-qtu/Expression
+                      {:owl/onProperty     :cmns-cxtdsg/appliesTo,
+                       :owl/someValuesFrom :fibo-fnd-utl-alx/FinitePopulation,
+                       :rdf/type           :owl/Restriction}},
    :skos/definition "degree of scatter or variability shown by observations",
    :skos/example
    "Common examples of measures of statistical dispersion are the variance, standard deviation, and interquartile range. The collection size argument, above, represents the number of elements in the set, if known. The collection of values under consideration is represented as a structured collection in FIBO, typically a sample set derived from a finite population."})
 
 (def Expression
   {:db/ident :fibo-fnd-utl-alx/Expression,
+   :owl/deprecated true,
+   :owl/equivalentClass :cmns-qtu/Expression,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    {:xsd/anyURI
-    "https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/Analytics/"},
-   :rdfs/label "expression",
-   :rdfs/subClassOf #{{:owl/minQualifiedCardinality 0,
-                       :owl/onClass    :fibo-fnd-utl-alx/Constant,
-                       :owl/onProperty :fibo-fnd-utl-alx/hasArgument,
-                       :rdf/type       :owl/Restriction}
-                      :fibo-fnd-rel-rel/Reference
-                      {:owl/minQualifiedCardinality 0,
-                       :owl/onClass    :fibo-fnd-utl-alx/Variable,
-                       :owl/onProperty :fibo-fnd-utl-alx/hasArgument,
-                       :rdf/type       :owl/Restriction}},
-   :skos/definition
-   "finite combination of symbols that are well-formed according to applicable rules"})
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/Analytics/"}})
 
 (def FinitePopulation
   {:cmns-av/adaptedFrom {:xsd/anyURI
@@ -247,10 +231,10 @@
    {:xsd/anyURI
     "https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/Analytics/"},
    :rdfs/label "formula",
-   :rdfs/subClassOf #{:fibo-fnd-rel-rel/Reference
-                      {:owl/onProperty     :fibo-fnd-utl-alx/hasExpression,
-                       :owl/someValuesFrom :fibo-fnd-utl-alx/Expression,
-                       :rdf/type           :owl/Restriction}},
+   :rdfs/subClassOf #{{:owl/onProperty     :cmns-qtu/hasExpression,
+                       :owl/someValuesFrom :cmns-qtu/Expression,
+                       :rdf/type           :owl/Restriction}
+                      :cmns-doc/Specification},
    :skos/definition
    "rule expressed in letters and symbols that consists of at least one expression"})
 
@@ -285,25 +269,19 @@
    :rdfs/subClassOf #{{:owl/onProperty     :fibo-fnd-utl-alx/hasObservedValue,
                        :owl/someValuesFrom :cmns-col/StructuredCollection,
                        :rdf/type           :owl/Restriction}
-                      :fibo-fnd-utl-alx/Expression
-                      :fibo-fnd-utl-alx/StatisticalMeasure},
+                      :fibo-fnd-utl-alx/StatisticalMeasure
+                      :cmns-qtu/Expression},
    :skos/definition
    "most common measure of central tendency; the average of a set of numbers"})
 
 (def Measure
-  {:cmns-av/adaptedFrom {:xsd/anyURI
-                         "https://stats.oecd.org/glossary/detail.asp?ID=7062"},
-   :cmns-av/explanatoryNote
-   "Measure refers to the phenomenon or phenomena to be measured in a data set. In a data set, the instance of a measure is often called an observation.",
-   :db/ident :fibo-fnd-utl-alx/Measure,
+  {:db/ident :fibo-fnd-utl-alx/Measure,
+   :owl/deprecated true,
+   :owl/equivalentClass :cmns-qtu/Measure,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    {:xsd/anyURI
-    "https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/Analytics/"},
-   :rdfs/label "measure",
-   :rdfs/subClassOf :fibo-fnd-rel-rel/Reference,
-   :skos/definition
-   "amount or degree of something; the dimensions, capacity, or amount of something ascertained by measuring"})
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/Analytics/"}})
 
 (def Median
   {:cmns-av/adaptedFrom {:xsd/anyURI
@@ -320,8 +298,8 @@
    :rdfs/subClassOf #{{:owl/onProperty     :fibo-fnd-utl-alx/hasObservedValue,
                        :owl/someValuesFrom :cmns-col/StructuredCollection,
                        :rdf/type           :owl/Restriction}
-                      :fibo-fnd-utl-alx/Expression
-                      :fibo-fnd-utl-alx/StatisticalMeasure},
+                      :fibo-fnd-utl-alx/StatisticalMeasure
+                      :cmns-qtu/Expression},
    :skos/definition
    "value of the variate dividing the total frequency of a data sample, population, or probability distribution, into two halves"})
 
@@ -332,10 +310,10 @@
    {:xsd/anyURI
     "https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/Analytics/"},
    :rdfs/label "median absolute deviation",
-   :rdfs/subClassOf #{:fibo-fnd-utl-alx/Dispersion
-                      {:owl/onProperty     :fibo-fnd-utl-alx/hasArgument,
+   :rdfs/subClassOf #{{:owl/onProperty     :cmns-qtu/hasArgument,
                        :owl/someValuesFrom :fibo-fnd-utl-alx/Median,
-                       :rdf/type           :owl/Restriction}},
+                       :rdf/type           :owl/Restriction}
+                      :fibo-fnd-utl-alx/Dispersion},
    :skos/definition
    "median of the absolute deviations of observations from the average which may be the arithmetic mean, the median or the mode"})
 
@@ -352,30 +330,24 @@
     "https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/Analytics/"},
    :rdfs/label "numeric index value",
    :rdfs/subClassOf #{{:owl/minQualifiedCardinality 0,
-                       :owl/onClass    :fibo-fnd-utl-alx/ScopedMeasure,
-                       :owl/onProperty :fibo-fnd-utl-alx/isValueOf,
-                       :rdf/type       :owl/Restriction}
-                      {:owl/minQualifiedCardinality 0,
                        :owl/onDataRange :cmns-dt/CombinedDateTime,
                        :owl/onProperty :fibo-fnd-utl-alx/hasMeasurementDateTime,
-                       :rdf/type :owl/Restriction}
-                      :fibo-fnd-qt-qtu/QuantityValue},
+                       :rdf/type :owl/Restriction} :cmns-qtu/ScalarQuantityValue
+                      {:owl/minQualifiedCardinality 0,
+                       :owl/onClass    :fibo-fnd-utl-alx/ScopedMeasure,
+                       :owl/onProperty :cmns-qtu/isValueOf,
+                       :rdf/type       :owl/Restriction}},
    :skos/definition
    "numeric value of some aggregate relative to the value of that aggregate as of some date"})
 
 (def Percentage
-  {:cmns-av/explanatoryNote
-   #{"The percent value is computed by multiplying the numeric value of the ratio by 100."
-     "While many percentage values are between 0 and 100, there is no mathematical restriction and percentages may take on other values (positive or negative), particularly in the case of comparisons (percent change)."},
-   :db/ident :fibo-fnd-utl-alx/Percentage,
+  {:db/ident :fibo-fnd-utl-alx/Percentage,
+   :owl/deprecated true,
+   :owl/equivalentClass :cmns-qtu/Percentage,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    {:xsd/anyURI
-    "https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/Analytics/"},
-   :rdfs/label "percentage",
-   :rdfs/subClassOf :fibo-fnd-utl-alx/RatioValue,
-   :skos/definition
-   "ratio value expressed as a fraction of 100, i.e., in which the denominator is fixed rather than variable and equal to 100"})
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/Analytics/"}})
 
 (def QualifiedMeasure
   {:db/ident :fibo-fnd-utl-alx/QualifiedMeasure,
@@ -386,50 +358,34 @@
    :rdfs/label "qualified measure",
    :rdfs/subClassOf
    #{{:owl/minQualifiedCardinality 0,
+      :owl/onClass    :fibo-fnd-dt-fd/AnchorDate,
+      :owl/onProperty :fibo-fnd-dt-fd/hasAnchorDate,
+      :rdf/type       :owl/Restriction}
+     {:owl/minQualifiedCardinality 0,
       :owl/onDataRange {:owl/unionOf [:xsd/string :xsd/anyURI],
                         :rdf/type    :rdfs/Datatype},
       :owl/onProperty  :fibo-fnd-utl-alx/isCalculatedViaMethodology,
-      :rdf/type        :owl/Restriction}
-     {:owl/minQualifiedCardinality 0,
-      :owl/onClass    :cmns-dt/ExplicitDate,
-      :owl/onProperty :fibo-fnd-utl-alx/hasAnchorDate,
-      :rdf/type       :owl/Restriction} :fibo-fnd-utl-alx/StatisticalMeasure},
+      :rdf/type        :owl/Restriction} :fibo-fnd-utl-alx/StatisticalMeasure},
    :skos/definition
    "statistical measure that is constrained by features, quantity kinds or units that refine how it is calculated"})
 
 (def Ratio
-  {:cmns-av/adaptedFrom
-   #{{:xsd/anyURI "https://stats.oecd.org/glossary/detail.asp?ID=6688"}
-     {:xsd/anyURI
-      "https://www150.statcan.gc.ca/n1/edu/power-pouvoir/glossary-glossaire/5214842-eng.htm#r."}},
-   :cmns-av/explanatoryNote
-   "A ratio is a quantity measured with respect to some other quantity.",
-   :cmns-av/synonym "rate",
-   :db/ident :fibo-fnd-utl-alx/Ratio,
+  {:db/ident :fibo-fnd-utl-alx/Ratio,
+   :owl/deprecated true,
+   :owl/equivalentClass :cmns-qtu/Ratio,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    {:xsd/anyURI
-    "https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/Analytics/"},
-   :rdfs/label "ratio",
-   :rdfs/subClassOf #{:fibo-fnd-utl-alx/Expression
-                      :fibo-fnd-utl-alx/StatisticalMeasure},
-   :skos/definition
-   "proportional relationship between two different numbers or quantities, or in mathematics a quotient of two numbers or expressions, arrived at by dividing one by the other"})
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/Analytics/"}})
 
 (def RatioValue
   {:db/ident :fibo-fnd-utl-alx/RatioValue,
+   :owl/deprecated true,
+   :owl/equivalentClass :cmns-qtu/Ratio,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    {:xsd/anyURI
-    "https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/Analytics/"},
-   :rdfs/label "ratio value",
-   :rdfs/subClassOf #{{:owl/onClass    :fibo-fnd-utl-alx/Variable,
-                       :owl/onProperty :fibo-fnd-utl-alx/hasArgument,
-                       :owl/qualifiedCardinality 2,
-                       :rdf/type       :owl/Restriction}
-                      :fibo-fnd-qt-qtu/QuantityValue},
-   :skos/definition
-   "proportional relationship specifically between two different quantity values that gives rise to a datum of a specific quantity type"})
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/Analytics/"}})
 
 (def SamplingVariance
   {:cmns-av/adaptedFrom
@@ -489,7 +445,7 @@
     "https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/Analytics/"},
    :rdfs/label "standard deviation",
    :rdfs/subClassOf #{:fibo-fnd-utl-alx/Dispersion
-                      {:owl/onProperty     :fibo-fnd-utl-alx/hasArgument,
+                      {:owl/onProperty     :cmns-qtu/hasArgument,
                        :owl/someValuesFrom {:owl/unionOf
                                             [:fibo-fnd-utl-alx/Mean
                                              :fibo-fnd-utl-alx/Variance],
@@ -551,12 +507,11 @@
    :rdfs/subClassOf #{{:owl/minQualifiedCardinality 0,
                        :owl/onClass    :cmns-cls/Aspect,
                        :owl/onProperty :cmns-cls/isCharacterizedBy,
-                       :rdf/type       :owl/Restriction}
+                       :rdf/type       :owl/Restriction} :cmns-qtu/Measure
                       {:owl/onDataRange :xsd/boolean,
                        :owl/onProperty  :fibo-fnd-utl-alx/isEstimate,
                        :owl/qualifiedCardinality 1,
-                       :rdf/type        :owl/Restriction}
-                      :fibo-fnd-utl-alx/Measure},
+                       :rdf/type        :owl/Restriction}},
    :skos/definition
    "summary (means, mode, total, index, etc.) of the individual quantitative variable values for the statistical units in a specific group (study domain)"})
 
@@ -628,25 +583,21 @@
 
 (def Total
   {:db/ident :fibo-fnd-utl-alx/Total,
+   :owl/deprecated true,
+   :owl/equivalentClass :cmns-qtu/Total,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    {:xsd/anyURI
-    "https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/Analytics/"},
-   :rdfs/label "total",
-   :rdfs/subClassOf #{:fibo-fnd-utl-alx/Expression
-                      :fibo-fnd-utl-alx/StatisticalMeasure},
-   :skos/definition "sum of the values for some characteristic of all units"})
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/Analytics/"}})
 
 (def Variable
   {:db/ident :fibo-fnd-utl-alx/Variable,
+   :owl/deprecated true,
+   :owl/equivalentClass :cmns-qtu/Variable,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    {:xsd/anyURI
-    "https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/Analytics/"},
-   :rdfs/label "variable",
-   :rdfs/subClassOf #{:cmns-cls/Aspect :fibo-fnd-rel-rel/Reference},
-   :skos/definition
-   "symbol that represents a parameter in a formula or expression"})
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/Analytics/"}})
 
 (def Variance
   {:cmns-av/adaptedFrom
@@ -661,7 +612,7 @@
     "https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/Analytics/"},
    :rdfs/label "variance",
    :rdfs/subClassOf #{:fibo-fnd-utl-alx/Dispersion
-                      {:owl/onProperty     :fibo-fnd-utl-alx/hasArgument,
+                      {:owl/onProperty     :cmns-qtu/hasArgument,
                        :owl/someValuesFrom :fibo-fnd-utl-alx/Mean,
                        :rdf/type           :owl/Restriction}},
    :skos/definition
@@ -677,76 +628,57 @@
    {:xsd/anyURI
     "https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/Analytics/"},
    :rdfs/label "weighting function",
-   :rdfs/subClassOf #{:fibo-fnd-utl-alx/Expression
-                      :fibo-fnd-utl-alx/StatisticalMeasure},
+   :rdfs/subClassOf #{:fibo-fnd-utl-alx/StatisticalMeasure
+                      :cmns-qtu/Expression},
    :skos/definition
    "expression or function that determines the relative importance or influence of a given element of a set with respect to the whole",
    :skos/example
    "Given a sample size of 1000, and a population of 300M, then the chance that any individual is selected is 1 in 300K. In that case, 300K is the weight assigned to each of the elements in the sample."})
 
 (def actualExpression
-  {:cmns-av/explanatoryNote
-   "In cases where some expression can only be calculated in SPARQL or via rules, this property is useful for stating what that calculation should be using the input arguments to the expression.",
-   :db/ident :fibo-fnd-utl-alx/actualExpression,
+  {:db/ident :fibo-fnd-utl-alx/actualExpression,
+   :owl/deprecated true,
+   :owl/equivalentProperty :cmns-qtu/describesActualExpression,
    :rdf/type :owl/AnnotationProperty,
    :rdfs/isDefinedBy
    {:xsd/anyURI
-    "https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/Analytics/"},
-   :rdfs/label "actual expression",
-   :rdfs/range :xsd/string,
-   :skos/definition
-   "specifies the calculation or expression used to determine the value of something"})
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/Analytics/"}})
 
 (def hasAnchorDate
   {:db/ident :fibo-fnd-utl-alx/hasAnchorDate,
+   :owl/deprecated true,
+   :owl/equivalentProperty :fibo-fnd-dt-fd/hasAnchorDate,
    :rdf/type :owl/ObjectProperty,
    :rdfs/isDefinedBy
    {:xsd/anyURI
-    "https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/Analytics/"},
-   :rdfs/label "has anchor date",
-   :rdfs/range :cmns-dt/ExplicitDate,
-   :rdfs/subPropertyOf :cmns-dt/hasExplicitDate,
-   :skos/definition
-   "specifies the base date against which the value of a numeric index for a more recent date is compared (i.e., the starting point from which it stems)"})
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/Analytics/"}})
 
 (def hasApplicableDatePeriod
   {:db/ident :fibo-fnd-utl-alx/hasApplicableDatePeriod,
+   :owl/deprecated true,
+   :owl/equivalentProperty :cmns-cxtdsg/hasApplicablePeriod,
    :rdf/type :owl/ObjectProperty,
-   :rdfs/domain :fibo-fnd-utl-alx/StatisticalMeasure,
    :rdfs/isDefinedBy
    {:xsd/anyURI
-    "https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/Analytics/"},
-   :rdfs/label "has applicable date period",
-   :rdfs/range :cmns-dt/DatePeriod,
-   :rdfs/subPropertyOf :cmns-dt/hasDatePeriod,
-   :skos/definition
-   "indicates the date period for which the statistical measure is applicable"})
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/Analytics/"}})
 
 (def hasArgument
-  {:cmns-av/synonym "has independent variable",
-   :db/ident :fibo-fnd-utl-alx/hasArgument,
+  {:db/ident :fibo-fnd-utl-alx/hasArgument,
+   :owl/deprecated true,
+   :owl/equivalentProperty :cmns-qtu/hasArgument,
    :rdf/type :owl/ObjectProperty,
    :rdfs/isDefinedBy
    {:xsd/anyURI
-    "https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/Analytics/"},
-   :rdfs/label "has argument",
-   :rdfs/range :fibo-fnd-utl-alx/Variable,
-   :rdfs/subPropertyOf :cmns-cls/isCharacterizedBy,
-   :skos/definition
-   "indicates a specific input to a function, formula or expression, also known as an independent variable"})
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/Analytics/"}})
 
 (def hasExpression
   {:db/ident :fibo-fnd-utl-alx/hasExpression,
+   :owl/deprecated true,
+   :owl/equivalentProperty :cmns-qtu/hasExpression,
    :rdf/type :owl/ObjectProperty,
-   :rdfs/domain :fibo-fnd-rel-rel/Reference,
    :rdfs/isDefinedBy
    {:xsd/anyURI
-    "https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/Analytics/"},
-   :rdfs/label "has expression",
-   :rdfs/range :fibo-fnd-utl-alx/Expression,
-   :rdfs/subPropertyOf :cmns-cls/isCharacterizedBy,
-   :skos/definition
-   "specifies a mathematical or other formal expression, which may be part of a formula"})
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/Analytics/"}})
 
 (def hasFixedComparativeDate
   {:db/ident :fibo-fnd-utl-alx/hasFixedComparativeDate,
@@ -802,7 +734,7 @@
    {:xsd/anyURI
     "https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/Analytics/"},
    :rdfs/label "has minuend",
-   :rdfs/subPropertyOf :fibo-fnd-utl-alx/hasArgument,
+   :rdfs/subPropertyOf :cmns-qtu/hasArgument,
    :skos/definition
    "specifies the quantity value from which something is subtracted; the value that is diminished"})
 
@@ -828,7 +760,7 @@
     "https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/Analytics/"},
    :rdfs/label "has observed value",
    :rdfs/range :cmns-col/StructuredCollection,
-   :rdfs/subPropertyOf :fibo-fnd-utl-alx/hasArgument,
+   :rdfs/subPropertyOf :cmns-qtu/hasArgument,
    :skos/definition
    "specifies a collection of values over which some analysis is performed"})
 
@@ -923,7 +855,7 @@
    {:xsd/anyURI
     "https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/Analytics/"},
    :rdfs/label "has subtrahend",
-   :rdfs/subPropertyOf :fibo-fnd-utl-alx/hasArgument,
+   :rdfs/subPropertyOf :cmns-qtu/hasArgument,
    :skos/definition
    "specifies the quantity value that is subtracted from something"})
 
@@ -946,7 +878,7 @@
     "https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/Analytics/"},
    :rdfs/label "has weight",
    :rdfs/range :xsd/decimal,
-   :rdfs/subPropertyOf :fibo-fnd-qt-qtu/hasNumericValue,
+   :rdfs/subPropertyOf :cmns-qtu/hasNumericValue,
    :skos/definition
    "indicates an amount given to increase or decrease the importance of an item"})
 
@@ -975,48 +907,47 @@
 
 (def isValueOf
   {:db/ident :fibo-fnd-utl-alx/isValueOf,
+   :owl/deprecated true,
+   :owl/equivalentProperty :cmns-qtu/isValueOf,
    :rdf/type :owl/ObjectProperty,
-   :rdfs/domain :fibo-fnd-qt-qtu/QuantityValue,
    :rdfs/isDefinedBy
    {:xsd/anyURI
-    "https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/Analytics/"},
-   :rdfs/label "is value of",
-   :rdfs/subPropertyOf :cmns-cxtdsg/appliesTo,
-   :skos/definition "is the measure that the value represents"})
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/Analytics/"}})
 
 (def urn:uuid:2c7021b9-90c3-55a8-866e-dfad57f9c08c
-  {:cmns-av/copyright #{"Copyright (c) 2013-2023 Object Management Group, Inc."
-                        "Copyright (c) 2013-2023 EDM Council, Inc."},
+  {:cmns-av/copyright
+   #{"Copyright (c) 2013-2024 EDM Council, Inc."
+     "Copyright (c) 2013-2024 Object Management Group, Inc."},
    :dcterms/abstract
    "This ontology provides mathematical abstractions for use in other ontologies, including for example the basic components of formulae, parameters and values.",
    :dcterms/license {:xsd/anyURI "https://opensource.org/licenses/MIT"},
    :fibo-fnd-utl-av/hasMaturityLevel :fibo-fnd-utl-av/Release,
    :owl/imports
-   #{{:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Quantities/QuantitiesAndUnits/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Utilities/AnnotationVocabulary/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/GoalsAndObjectives/Objectives/"}
+   #{{:xsd/anyURI "https://www.omg.org/spec/Commons/Documents/"}
      {:xsd/anyURI
       "https://www.omg.org/spec/LCC/Countries/CountryRepresentation/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Arrangements/Arrangements/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/Identifiers/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/ContextualDesignators/"}
+     {:xsd/anyURI "https://www.omg.org/spec/Commons/QuantitiesAndUnits/"}
+     {:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Places/Locations/"}
+     {:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Utilities/AnnotationVocabulary/"}
+     {:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/DatesAndTimes/FinancialDates/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/Collections/"}
+     {:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/GoalsAndObjectives/Objectives/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/Classifiers/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Places/Locations/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Relations/Relations/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/DatesAndTimes/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Relations/Relations/"}
-     {:xsd/anyURI "https://www.omg.org/spec/Commons/AnnotationVocabulary/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/DatesAndTimes/FinancialDates/"}},
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Arrangements/Arrangements/"}
+     {:xsd/anyURI "https://www.omg.org/spec/Commons/AnnotationVocabulary/"}},
    :owl/versionIRI
    {:xsd/anyURI
-    "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Utilities/Analytics/"},
+    "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Utilities/Analytics/"},
    :rdf/type :owl/Ontology,
    :rdfs/label "Analytics Ontology",
    :skos/changeNote
@@ -1029,6 +960,7 @@
      "The https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/Analytics.rdf version of this ontology was modified per the FIBO 2.0 RFC."
      "The https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/Analytics.rdf version of this ontology was modified to make statistical program a subclass of program and revised restrictions on statistical program to better reflect its intent."
      "The https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/Analytics.rdf version of this ontology was modified to eliminate the redundant 'calculation formula' concept and eliminate the property hasOperand, which is not used anywhere and whose definition is circular."
+     "The https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/Analytics.rdf version of the ontology was modified to replace content that is now available in the OMG Commons Ontology Library (Commons) v1.1 (FND-380)."
      "The https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/Analytics.rdf version of this ontology was modified to add the concept of a weighting algorithm."
      "The https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/Analytics.rdf version of this ontology was modified to use the Commons Ontology Library (Commons) rather than the OMG's Languages, Countries and Codes (LCC), eliminating redundancies in FIBO as appropriate."
      "The https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/Analytics.rdf version of this ontology was modified to eliminate deprecated elements."
@@ -1037,8 +969,10 @@
      "The https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/Analytics.rdf version of this ontology was modified to add a synonym of 'average' to arithmetic mean."
      "The https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/Analytics.rdf version of this ontology was modified to update the reference link for ratio."
      "The https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/Analytics.rdf version of this ontology was modified to eliminate unused imports."
+     "The https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/Analytics.rdf version of the ontology was modified to replace additional content that is now available in the OMG Commons Ontology Library (Commons) v1.1 (FND-380) and to move the concept of an anchor date to Financial Dates (FBC-317)."
      "The https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/Analytics.rdf version of this ontology was modified to eliminate duplication with concepts in LCC, merge countries with locations, and correct a restriction on qualified measure."
      "The https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/Analytics.rdf version of this ontology was modified per the issue resolutions identified in the FIBO FND 1.0 FTF report and in https://spec.edmcouncil.org/fibo/ontology/FND/1.0/AboutFND-1.0/."
+     "The https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/Analytics.rdf version of the ontology was modified to eliminate deprecations that are more than 6 months old."
      "The https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/Analytics.rdf version of this ontology was modified to address issue FIBOFND11-20, which added the definition of Calculation and corrected a reasoning issue related to the use of a custom datatype."},
    :xsd/anyURI
    "https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/Analytics/"})

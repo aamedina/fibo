@@ -1,16 +1,19 @@
 (ns net.wikipunk.rdf.fibo-be-le-usex
-  {:cmns-av/copyright #{"Copyright (c) 2022-2023 Object Management Group, Inc."
-                        "Copyright (c) 2022-2023 EDM Council, Inc."},
+  {:cmns-av/copyright
+   #{"Copyright (c) 2022-2024 EDM Council, Inc."
+     "Copyright (c) 2022-2024 Object Management Group, Inc."},
    :dcat/downloadURL
-   "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/BE/LegalEntities/NorthAmericanEntities/USExampleExecutives/",
+   "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/BE/LegalEntities/NorthAmericanEntities/USExampleExecutives/",
    :dcterms/abstract
-   "This ontology includes example corporate executives and other people to demonstrate how to begin to model those entities in FIBO.",
+   "This ontology includes example corporate executives and other people to demonstrate how to model them using FIBO.",
    :dcterms/license {:xsd/anyURI "https://opensource.org/licenses/MIT"},
    :fibo-fnd-utl-av/hasMaturityLevel :fibo-fnd-utl-av/Provisional,
    :namespaces
    {"cmns-av" "https://www.omg.org/spec/Commons/AnnotationVocabulary/",
     "cmns-dsg" "https://www.omg.org/spec/Commons/Designators/",
     "cmns-dt" "https://www.omg.org/spec/Commons/DatesAndTimes/",
+    "cmns-pts" "https://www.omg.org/spec/Commons/PartiesAndSituations/",
+    "cmns-rlcmp" "https://www.omg.org/spec/Commons/RolesAndCompositions/",
     "dcterms" "http://purl.org/dc/terms/",
     "fibo-be-le-usee"
     "https://spec.edmcouncil.org/fibo/ontology/BE/LegalEntities/NorthAmericanEntities/USExampleEntities/",
@@ -22,14 +25,8 @@
     "https://spec.edmcouncil.org/fibo/ontology/BE/OwnershipAndControl/Executives/",
     "fibo-fnd-aap-ppl"
     "https://spec.edmcouncil.org/fibo/ontology/FND/AgentsAndPeople/People/",
-    "fibo-fnd-dt-bd"
-    "https://spec.edmcouncil.org/fibo/ontology/FND/DatesAndTimes/BusinessDates/",
     "fibo-fnd-org-fm"
     "https://spec.edmcouncil.org/fibo/ontology/FND/Organizations/FormalOrganizations/",
-    "fibo-fnd-pty-rl"
-    "https://spec.edmcouncil.org/fibo/ontology/FND/Parties/Roles/",
-    "fibo-fnd-rel-rel"
-    "https://spec.edmcouncil.org/fibo/ontology/FND/Relations/Relations/",
     "fibo-fnd-utl-av"
     "https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/AnnotationVocabulary/",
     "lcc-3166-1"
@@ -40,36 +37,30 @@
     "skos" "http://www.w3.org/2004/02/skos/core#",
     "xsd" "http://www.w3.org/2001/XMLSchema#"},
    :owl/imports
-   #{{:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/AgentsAndPeople/Agents/"}
+   #{{:xsd/anyURI "https://www.omg.org/spec/Commons/RolesAndCompositions/"}
+     {:xsd/anyURI "https://www.omg.org/spec/Commons/PartiesAndSituations/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/BE/OwnershipAndControl/ControlParties/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/BE/OwnershipAndControl/Executives/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Utilities/AnnotationVocabulary/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/BE/OwnershipAndControl/Executives/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Parties/Parties/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/BE/LegalEntities/NorthAmericanEntities/USExampleEntities/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Utilities/AnnotationVocabulary/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/Designators/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/AgentsAndPeople/People/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/BE/LegalEntities/NorthAmericanEntities/USExampleEntities/"}
+     {:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/AgentsAndPeople/People/"}
+     {:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Relations/Relations/"}
+     {:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/BE/OwnershipAndControl/ControlParties/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/DatesAndTimes/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Parties/Roles/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/DatesAndTimes/BusinessDates/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Relations/Relations/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Organizations/FormalOrganizations/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/AnnotationVocabulary/"}
+     {:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Organizations/FormalOrganizations/"}
      {:xsd/anyURI
       "https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/"}},
    :owl/versionIRI
    {:xsd/anyURI
-    "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/BE/LegalEntities/NorthAmericanEntities/USExampleExecutives/"},
+    "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/BE/LegalEntities/NorthAmericanEntities/USExampleExecutives/"},
    :rdf/type :owl/Ontology,
    :rdfa/prefix "fibo-be-le-usex",
    :rdfa/uri
@@ -79,8 +70,8 @@
    "https://spec.edmcouncil.org/fibo/ontology/BE/LegalEntities/NorthAmericanEntities/USExampleExecutives/"})
 
 (def AppleIncAsControlledParty
-  {:db/ident :fibo-be-le-usex/AppleIncAsControlledParty,
-   :fibo-fnd-rel-rel/hasIdentity :fibo-be-le-usee/AppleInc-US-CA,
+  {:cmns-rlcmp/isPlayedBy :fibo-be-le-usee/AppleInc-US-CA,
+   :db/ident :fibo-be-le-usex/AppleIncAsControlledParty,
    :rdf/type #{:owl/NamedIndividual :fibo-be-oac-cpty/ControlledParty},
    :rdfs/isDefinedBy
    {:xsd/anyURI
@@ -90,8 +81,8 @@
    "Apple Inc. in its role as a corporation that is controlled to some degree by its corporate officers"})
 
 (def AppleIncAsEmployer
-  {:db/ident :fibo-be-le-usex/AppleIncAsEmployer,
-   :fibo-fnd-rel-rel/hasIdentity :fibo-be-le-usee/AppleInc-US-CA,
+  {:cmns-rlcmp/isPlayedBy :fibo-be-le-usee/AppleInc-US-CA,
+   :db/ident :fibo-be-le-usex/AppleIncAsEmployer,
    :rdf/type #{:fibo-fnd-org-fm/Employer :owl/NamedIndividual},
    :rdfs/isDefinedBy
    {:xsd/anyURI
@@ -113,8 +104,8 @@
    "situation representing the relationship between Apple Inc. as an employer and Katherine Adams as an employee"})
 
 (def EmploymentOfTimCookAtAppleInc
-  {:db/ident :fibo-be-le-usex/EmploymentOfTimCookAtAppleInc,
-   :fibo-fnd-dt-bd/holdsDuring :fibo-be-le-usex/TimCookPeriodOfEmployment,
+  {:cmns-pts/holdsDuring :fibo-be-le-usex/TimCookPeriodOfEmployment,
+   :db/ident :fibo-be-le-usex/EmploymentOfTimCookAtAppleInc,
    :fibo-fnd-org-fm/hasEmployedParty :fibo-be-le-usex/TimCookAsEmployee,
    :fibo-fnd-org-fm/hasEmployingParty :fibo-be-le-usex/AppleIncAsEmployer,
    :rdf/type #{:owl/NamedIndividual :fibo-fnd-org-fm/Employment},
@@ -138,11 +129,11 @@
    :skos/definition "person that is an American attorney and corporate lawyer"})
 
 (def KatherineAdamsAsEmployee
-  {:db/ident :fibo-be-le-usex/KatherineAdamsAsEmployee,
+  {:cmns-rlcmp/isPlayedBy :fibo-be-le-usex/KatherineAdams,
+   :db/ident :fibo-be-le-usex/KatherineAdamsAsEmployee,
    :fibo-fnd-org-fm/isEmployedIn
    :fibo-be-le-usex/EmploymentOfKatherineAdamsAtAppleInc,
    :fibo-fnd-org-fm/isEmployeeOf :fibo-be-le-usex/AppleIncAsEmployer,
-   :fibo-fnd-pty-rl/isPlayedBy :fibo-be-le-usex/KatherineAdams,
    :rdf/type #{:owl/NamedIndividual :fibo-fnd-org-fm/Employee},
    :rdfs/isDefinedBy
    {:xsd/anyURI
@@ -152,9 +143,9 @@
    "Katherine Adams in the role of being employed by Apple Inc."})
 
 (def KatherineAdamsAsGeneralCounsel
-  {:db/ident :fibo-be-le-usex/KatherineAdamsAsGeneralCounsel,
+  {:cmns-rlcmp/isPlayedBy :fibo-be-le-usex/KatherineAdams,
+   :db/ident :fibo-be-le-usex/KatherineAdamsAsGeneralCounsel,
    :fibo-be-oac-exec/isOfficerOf :fibo-be-le-usex/AppleIncAsControlledParty,
-   :fibo-fnd-pty-rl/isPlayedBy :fibo-be-le-usex/KatherineAdams,
    :rdf/type #{:fibo-be-oac-exec/CorporateOfficer :owl/NamedIndividual},
    :rdfs/isDefinedBy
    {:xsd/anyURI
@@ -199,9 +190,9 @@
    "person that lives in Palo Alto, California in the San Francisco Bay Area"})
 
 (def TimCookAsChiefExecutiveOfficer
-  {:db/ident :fibo-be-le-usex/TimCookAsChiefExecutiveOfficer,
+  {:cmns-rlcmp/isPlayedBy :fibo-be-le-usex/TimCook,
+   :db/ident :fibo-be-le-usex/TimCookAsChiefExecutiveOfficer,
    :fibo-be-oac-exec/isOfficerOf :fibo-be-le-usex/AppleIncAsControlledParty,
-   :fibo-fnd-pty-rl/isPlayedBy :fibo-be-le-usex/TimCook,
    :rdf/type #{:fibo-be-oac-exec/ChiefExecutiveOfficer :owl/NamedIndividual},
    :rdfs/isDefinedBy
    {:xsd/anyURI
@@ -210,10 +201,10 @@
    :skos/definition "Tim Cook in the role of CEO of Apple Inc."})
 
 (def TimCookAsEmployee
-  {:db/ident :fibo-be-le-usex/TimCookAsEmployee,
+  {:cmns-rlcmp/isPlayedBy :fibo-be-le-usex/TimCook,
+   :db/ident :fibo-be-le-usex/TimCookAsEmployee,
    :fibo-fnd-org-fm/isEmployedIn :fibo-be-le-usex/EmploymentOfTimCookAtAppleInc,
    :fibo-fnd-org-fm/isEmployeeOf :fibo-be-le-usex/AppleIncAsEmployer,
-   :fibo-fnd-pty-rl/isPlayedBy :fibo-be-le-usex/TimCook,
    :rdf/type #{:owl/NamedIndividual :fibo-fnd-org-fm/Employee},
    :rdfs/isDefinedBy
    {:xsd/anyURI
@@ -265,43 +256,38 @@
    "date period reflecting when Tim Cook was (is) employed by Apple Inc."})
 
 (def urn:uuid:a7b6dcda-5420-55af-bdb6-99a7af84e301
-  {:cmns-av/copyright #{"Copyright (c) 2022-2023 Object Management Group, Inc."
-                        "Copyright (c) 2022-2023 EDM Council, Inc."},
+  {:cmns-av/copyright
+   #{"Copyright (c) 2022-2024 EDM Council, Inc."
+     "Copyright (c) 2022-2024 Object Management Group, Inc."},
    :dcterms/abstract
-   "This ontology includes example corporate executives and other people to demonstrate how to begin to model those entities in FIBO.",
+   "This ontology includes example corporate executives and other people to demonstrate how to model them using FIBO.",
    :dcterms/license {:xsd/anyURI "https://opensource.org/licenses/MIT"},
    :fibo-fnd-utl-av/hasMaturityLevel :fibo-fnd-utl-av/Provisional,
    :owl/imports
-   #{{:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/AgentsAndPeople/Agents/"}
+   #{{:xsd/anyURI "https://www.omg.org/spec/Commons/RolesAndCompositions/"}
+     {:xsd/anyURI "https://www.omg.org/spec/Commons/PartiesAndSituations/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/BE/OwnershipAndControl/ControlParties/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/BE/OwnershipAndControl/Executives/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Utilities/AnnotationVocabulary/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/BE/OwnershipAndControl/Executives/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Parties/Parties/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/BE/LegalEntities/NorthAmericanEntities/USExampleEntities/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Utilities/AnnotationVocabulary/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/Designators/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/AgentsAndPeople/People/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/BE/LegalEntities/NorthAmericanEntities/USExampleEntities/"}
+     {:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/AgentsAndPeople/People/"}
+     {:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Relations/Relations/"}
+     {:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/BE/OwnershipAndControl/ControlParties/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/DatesAndTimes/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Parties/Roles/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/DatesAndTimes/BusinessDates/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Relations/Relations/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Organizations/FormalOrganizations/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/AnnotationVocabulary/"}
+     {:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Organizations/FormalOrganizations/"}
      {:xsd/anyURI
       "https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/"}},
    :owl/versionIRI
    {:xsd/anyURI
-    "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/BE/LegalEntities/NorthAmericanEntities/USExampleExecutives/"},
+    "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/BE/LegalEntities/NorthAmericanEntities/USExampleExecutives/"},
    :rdf/type :owl/Ontology,
    :rdfs/label "US Example Executives",
    :xsd/anyURI

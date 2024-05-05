@@ -5,7 +5,7 @@
    #{"ISO 4217 Codes for the representation of currencies and funds, Seventh edition, 2008-07-15"
      "ISO 4217 Codes for the representation of currencies and funds, Eighth edition, 2015-08-01"},
    :dcat/downloadURL
-   "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Accounting/CurrencyAmount/",
+   "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Accounting/CurrencyAmount/",
    :dcterms/abstract
    "This ontology defines currency and monetary amount related concepts for use in defining other FIBO ontology elements. There are two distinct kinds of concepts that correspond to money and amounts: a concrete, actual amount of money, and the monetary measure of something denominated in some currency. These are dimensionally the same but whereas 'money amount' is defined as an amount of money, 'monetary amount' is an abstract monetary measure.\n\nThe definition of currency provided herein is compliant with the definitions given in ISO 4217. ISO 4217 provides universally applicable coded representations of names of currencies and funds, used internationally for financial transaction support. The ontology has been partitioned into 2 parts: (1) the essential concept system describing the standard (this module), and (2) ISO4217-1-CurrencyCodes, which contains all of the individuals specified in ISO 4217.",
    :dcterms/license {:xsd/anyURI "https://opensource.org/licenses/MIT"},
@@ -15,18 +15,16 @@
     "cmns-cds" "https://www.omg.org/spec/Commons/CodesAndCodeSets/",
     "cmns-col" "https://www.omg.org/spec/Commons/Collections/",
     "cmns-cxtdsg" "https://www.omg.org/spec/Commons/ContextualDesignators/",
+    "cmns-doc" "https://www.omg.org/spec/Commons/Documents/",
     "cmns-dsg" "https://www.omg.org/spec/Commons/Designators/",
     "cmns-id" "https://www.omg.org/spec/Commons/Identifiers/",
+    "cmns-qtu" "https://www.omg.org/spec/Commons/QuantitiesAndUnits/",
     "cmns-txt" "https://www.omg.org/spec/Commons/TextDatatype/",
     "dcterms" "http://purl.org/dc/terms/",
     "fibo-fnd-acc-cur"
     "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/CurrencyAmount/",
-    "fibo-fnd-qt-qtu"
-    "https://spec.edmcouncil.org/fibo/ontology/FND/Quantities/QuantitiesAndUnits/",
     "fibo-fnd-rel-rel"
     "https://spec.edmcouncil.org/fibo/ontology/FND/Relations/Relations/",
-    "fibo-fnd-utl-alx"
-    "https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/Analytics/",
     "fibo-fnd-utl-av"
     "https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/AnnotationVocabulary/",
     "lcc-cr" "https://www.omg.org/spec/LCC/Countries/CountryRepresentation/",
@@ -36,33 +34,32 @@
     "skos" "http://www.w3.org/2004/02/skos/core#",
     "xsd" "http://www.w3.org/2001/XMLSchema#"},
    :owl/imports
-   #{{:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Quantities/QuantitiesAndUnits/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Utilities/Analytics/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Utilities/AnnotationVocabulary/"}
+   #{{:xsd/anyURI "https://www.omg.org/spec/Commons/Documents/"}
      {:xsd/anyURI
       "https://www.omg.org/spec/LCC/Countries/CountryRepresentation/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/Identifiers/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/ContextualDesignators/"}
+     {:xsd/anyURI "https://www.omg.org/spec/Commons/QuantitiesAndUnits/"}
+     {:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Utilities/AnnotationVocabulary/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/Collections/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/CodesAndCodeSets/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/Designators/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Relations/Relations/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Relations/Relations/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/TextDatatype/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/AnnotationVocabulary/"}},
    :owl/versionIRI
    {:xsd/anyURI
-    "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Accounting/CurrencyAmount/"},
+    "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Accounting/CurrencyAmount/"},
    :rdf/type :owl/Ontology,
    :rdfa/prefix "fibo-fnd-acc-cur",
    :rdfa/uri
    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/CurrencyAmount/",
    :rdfs/label "Currency Amount Ontology",
    :skos/changeNote
-   #{"The https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/CurrencyAmount/ version of this ontology was modified to eliminate hygiene errors with respect to text formatting."
+   #{"The https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/CurrencyAmount.rdf version of the ontology was modified to eliminate deprecations that are more than 6 months old."
+     "The https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/CurrencyAmount/ version of this ontology was modified to eliminate hygiene errors with respect to text formatting."
      "The https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/CurrencyAmount/ version of this ontology was modified to correct the explanatory note on currency identifier."
      "The https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/CurrencyAmount/ version of this ontology was modified to eliminate deprecated elements."
      "The https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/CurrencyAmount/ version of this ontology was modified to move the definition of precious metal and the corresponding identifier to this ontology from Products and Services to simplify imports in cases where the broader definitions for commodities are not required and deprecated isTenderIn, given that we have used the property isUsedBy for this purpose in the currency codes themselves."
@@ -76,7 +73,8 @@
      "The https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/CurrencyAmount/ version of this ontology was modified to eliminate duplication with concepts in LCC, dependencies on a couple of ontologies that were unnecessary, eliminate references to external dictionary sites that no longer resolve, clean up ambiguity in definitions, eliminate a redundant property, and add unit price."
      "The https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/CurrencyAmount.rdf version of this ontology was modified to include several classes to support automated inclusion of all ISO 4217 codes published as of 2018-06-04, and to revise definitions per the eighth edition of the specification."
      "The FIBO FND 1.0 (https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/CurrencyAmount.rdf) version of this ontology was modified per the additions introduced in the FIBO FBC RFC and related issue resolutions identified in the FIBO FND 1.1 RTF report and https://spec.edmcouncil.org/fibo/ontology/FND/1.0/AboutFND-1.1/, including adding support for ISO 4217 currency codes."
-     "The FIBO FND 1.1 (https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/CurrencyAmount.rdf) version of this ontology was modified per FIBO 2.0 RFC, including the addition of a new hasMonetaryAmount property as a superproperty of others required by various FIBO domain teams and integration with LCC."},
+     "The FIBO FND 1.1 (https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/CurrencyAmount.rdf) version of this ontology was modified per FIBO 2.0 RFC, including the addition of a new hasMonetaryAmount property as a superproperty of others required by various FIBO domain teams and integration with LCC."
+     "The https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/CurrencyAmount.rdf version of this ontology was modified to tease out the distinction between the nominal and notional amount, which were confused (DER-127) and to replace content that is now available in the OMG Commons Ontology Library (Commons) v1.1 (FND-380)."},
    :skos/editorialNote
    "(1) The present version of the ontology covers the English sections of the ISO 4217 standard only, and (2) UTF-8 character encodings are employed in names in the currency codes ontology to support the broadest number of tools.",
    :xsd/anyURI
@@ -94,7 +92,7 @@
                        :owl/onProperty :fibo-fnd-acc-cur/hasCurrency,
                        :owl/qualifiedCardinality 1,
                        :rdf/type       :owl/Restriction}
-                      :fibo-fnd-qt-qtu/QuantityValue},
+                      :cmns-qtu/ScalarQuantityValue},
    :skos/definition "amount of readily available cash in banknotes and coins",
    :skos/editorialNote
    "This is an actual sum of money, not the measure of a sum of money in monetary units, although it has the same basic properties (decimal number with a currenct unit)."})
@@ -106,8 +104,8 @@
    {:xsd/anyURI
     "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/CurrencyAmount/"},
    :rdfs/label "calculated price",
-   :rdfs/subClassOf #{{:owl/onClass    :fibo-fnd-utl-alx/Formula,
-                       :owl/onProperty :fibo-fnd-utl-alx/hasFormula,
+   :rdfs/subClassOf #{{:owl/onClass    :cmns-qtu/Expression,
+                       :owl/onProperty :cmns-qtu/hasExpression,
                        :owl/qualifiedCardinality 1,
                        :rdf/type       :owl/Restriction}
                       :fibo-fnd-acc-cur/MonetaryPrice},
@@ -123,11 +121,11 @@
    {:xsd/anyURI
     "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/CurrencyAmount/"},
    :rdfs/label "currency",
-   :rdfs/subClassOf #{:fibo-fnd-qt-qtu/MeasurementUnit
-                      {:owl/maxQualifiedCardinality 1,
+   :rdfs/subClassOf #{{:owl/maxQualifiedCardinality 1,
                        :owl/onDataRange :xsd/string,
                        :owl/onProperty  :fibo-fnd-acc-cur/hasMinorUnit,
                        :rdf/type        :owl/Restriction}
+                      :cmns-qtu/MeasurementUnit
                       {:owl/onProperty     :cmns-cxtdsg/isUsedBy,
                        :owl/someValuesFrom :lcc-cr/GeopoliticalEntity,
                        :rdf/type           :owl/Restriction}
@@ -191,11 +189,10 @@
                        :owl/onProperty :fibo-fnd-acc-cur/hasDealtCurrency,
                        :owl/qualifiedCardinality 1,
                        :rdf/type       :owl/Restriction}
-                      :fibo-fnd-utl-alx/RatioValue
                       {:owl/onDataRange :xsd/decimal,
                        :owl/onProperty  :fibo-fnd-acc-cur/hasRateValue,
                        :owl/qualifiedCardinality 1,
-                       :rdf/type        :owl/Restriction}
+                       :rdf/type        :owl/Restriction} :cmns-qtu/Ratio
                       {:owl/onClass    :fibo-fnd-acc-cur/Currency,
                        :owl/onProperty :fibo-fnd-acc-cur/hasBaseCurrency,
                        :owl/qualifiedCardinality 1,
@@ -274,22 +271,9 @@
                        :owl/onProperty :fibo-fnd-acc-cur/hasCurrency,
                        :owl/qualifiedCardinality 1,
                        :rdf/type       :owl/Restriction}
-                      :fibo-fnd-qt-qtu/QuantityValue},
+                      :cmns-qtu/ScalarQuantityValue},
    :skos/definition
    "measure that is an amount of money specified in monetary units"})
-
-(def MonetaryMeasure
-  {:db/ident :fibo-fnd-acc-cur/MonetaryMeasure,
-   :owl/deprecated true,
-   :rdf/type :owl/Class,
-   :rdfs/isDefinedBy
-   {:xsd/anyURI
-    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/CurrencyAmount/"},
-   :rdfs/label "monetary measure",
-   :rdfs/subClassOf :fibo-fnd-utl-alx/Measure,
-   :skos/definition "measure of or relating to money",
-   :skos/editorialNote
-   "This may be a measure expressed in terms of decimal plus currency, or it may be a measure expressed in terms of a percentage amount with reference to some other monetary amount or to some Money Amount (actual amount of money)."})
 
 (def MonetaryPrice
   {:cmns-av/explanatoryNote
@@ -313,8 +297,7 @@
    :rdfs/subClassOf #{{:owl/onClass    :fibo-fnd-acc-cur/Currency,
                        :owl/onProperty :fibo-fnd-acc-cur/hasCurrency,
                        :owl/qualifiedCardinality 1,
-                       :rdf/type       :owl/Restriction}
-                      :fibo-fnd-utl-alx/Percentage},
+                       :rdf/type       :owl/Restriction} :cmns-qtu/Percentage},
    :skos/definition
    "measure of some amount of money expressed as a percentage of some other amount, some notional amount or some concrete money amount"})
 
@@ -360,7 +343,7 @@
    {:xsd/anyURI
     "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/CurrencyAmount/"},
    :rdfs/label "price",
-   :rdfs/subClassOf :fibo-fnd-qt-qtu/QuantityValue,
+   :rdfs/subClassOf :cmns-qtu/ScalarQuantityValue,
    :skos/definition
    "amount of money, goods, or services requested, expected, required, or given in exchange for something else"})
 
@@ -417,7 +400,7 @@
     "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/CurrencyAmount/"},
    :rdfs/label "has amount",
    :rdfs/range :xsd/decimal,
-   :rdfs/subPropertyOf :fibo-fnd-qt-qtu/hasNumericValue,
+   :rdfs/subPropertyOf :cmns-qtu/hasNumericValue,
    :skos/definition "total number or quantity"})
 
 (def hasBaseCurrency
@@ -440,7 +423,7 @@
     "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/CurrencyAmount/"},
    :rdfs/label "has currency",
    :rdfs/range :fibo-fnd-acc-cur/Currency,
-   :rdfs/subPropertyOf :fibo-fnd-qt-qtu/hasMeasurementUnit,
+   :rdfs/subPropertyOf :cmns-qtu/hasMeasurementUnit,
    :skos/definition
    "specifies the medium of exchange value in which something, such as a monetary amount is denominated"})
 
@@ -491,13 +474,17 @@
     "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/CurrencyAmount/"},
    :rdfs/label "has monetary amount",
    :rdfs/range :fibo-fnd-acc-cur/MonetaryAmount,
-   :rdfs/subPropertyOf :fibo-fnd-qt-qtu/hasQuantityValue,
+   :rdfs/subPropertyOf :cmns-qtu/hasQuantityValue,
    :skos/definition
    "specifies a value for something in terms of an amount of money and the currency in which it is denoted"})
 
 (def hasNotionalAmount
-  {:cmns-av/explanatoryNote
-   "The notional amount (or notional principal amount or notional value) on a financial instrument is the nominal or face amount that is used to calculate payments made on that instrument. This amount generally does not change and is thus referred to as notional.\n\t\t\n\t\tFor securities the nominal value is often referred to as the face or par value. This is the redemption price of the security and is normally stated on the front of that security. With respect to bonds and stocks, it is the stated value of an issued security, as opposed to its market value.\n\t\t\n\t\tWhen applied to a swap this is the amount used for calculating the actual value of the interest due. Also known as Notional Value when describing derivative contracts in the options, futures, and currency markets, this term is often used to value the underlying asset in a derivatives trade. It can be the total value of a position, how much value a position controls, or an agreed-upon amount in a contract.\n\n\t\tAn example is that a firm might have a variable rate loan on $100,000 but decide to swap only $40,000. The $40,000 is the notional amount of the swap and becomes the amount on which interest is paid.",
+  {:cmns-av/adaptedFrom
+   {:rdf/value
+    "ISO 10962:2019, Securities and related financial instruments - Classification of financial instruments (CFI) code, Fourth Edition, 2019-10, clause 6.8.2"},
+   :cmns-av/explanatoryNote
+   #{"The notional amount (or notional principal amount or notional value) on a financial instrument is typically the face amount used to calculate payments made on that instrument. This amount generally does not change and is thus referred to as notional.\n\t\t\n\t\tWhen applied to a swap this is the amount used for calculating the actual value of the interest due. Also known as notional value when describing derivative contracts in the options, futures, and currency markets, this term is often used to value the underlying asset in a derivatives trade. It can be the total value of a position, how much value a position controls, or an agreed-upon amount in a contract.\n\n\t\tAn example is that a firm might have a variable rate loan on $100,000 but decide to swap only $40,000. The $40,000 is the notional amount of the swap and becomes the amount on which interest is paid."
+     "For certain kinds of derivative instruments, including but not limited to swaps, the notional amount indicates face amount of a swap upon which the payment streams for that swap are based. While this is typically constant throughout the lifetime of a contract, it can be accreting, amortizing, or custom, such as in the case of a notional step schedule."},
    :db/ident :fibo-fnd-acc-cur/hasNotionalAmount,
    :rdf/type :owl/ObjectProperty,
    :rdfs/isDefinedBy
@@ -507,9 +494,7 @@
    :rdfs/range :fibo-fnd-acc-cur/MonetaryAmount,
    :rdfs/subPropertyOf :fibo-fnd-acc-cur/hasMonetaryAmount,
    :skos/definition
-   "has an abstract, unchangeable value used for certain applicable calculations, expressed as some monetary amount",
-   :skos/editorialNote
-   "The domain for this property should be interpreted as being an abstraction which covers various forms of commitment, which may set out the existence of some notional amount of money, specified via this property. This is left unspecified for now, so that the property can also be defined directly as being a property of some contractual term which describes that commitment."})
+   "has a generally unchangeable value used for certain calculations, expressed as some monetary amount"})
 
 (def hasNumericCode
   {:db/ident :fibo-fnd-acc-cur/hasNumericCode,
@@ -533,7 +518,7 @@
     "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/CurrencyAmount/"},
    :rdfs/label "has price",
    :rdfs/range :fibo-fnd-acc-cur/Price,
-   :rdfs/subPropertyOf :fibo-fnd-qt-qtu/hasQuantityValue,
+   :rdfs/subPropertyOf :cmns-qtu/hasQuantityValue,
    :skos/definition
    "indicates the value of something expressed as an amount of money or goods"})
 
@@ -545,7 +530,7 @@
     "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/CurrencyAmount/"},
    :rdfs/label "has rate value",
    :rdfs/range :xsd/decimal,
-   :rdfs/subPropertyOf :fibo-fnd-qt-qtu/hasNumericValue,
+   :rdfs/subPropertyOf :cmns-qtu/hasNumericValue,
    :skos/definition
    "has a value for a rate expressed as a number (may be a percentage or raw number)"})
 
@@ -558,17 +543,8 @@
    {:xsd/anyURI
     "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/CurrencyAmount/"},
    :rdfs/label "is price for",
-   :rdfs/subPropertyOf :fibo-fnd-rel-rel/refersTo,
+   :rdfs/subPropertyOf :cmns-doc/refersTo,
    :skos/definition "links a price to something it provides a value for"})
-
-(def isTenderIn
-  {:db/ident :fibo-fnd-acc-cur/isTenderIn,
-   :owl/deprecated true,
-   :owl/equivalentProperty :cmns-cxtdsg/isUsedBy,
-   :rdf/type :owl/ObjectProperty,
-   :rdfs/isDefinedBy
-   {:xsd/anyURI
-    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/CurrencyAmount/"}})
 
 (def urn:uuid:545dce16-de25-55b4-9c31-2389620d6236
   {:cmns-av/copyright #{"Copyright (c) 2013-2023 Object Management Group, Inc."
@@ -581,30 +557,29 @@
    :dcterms/license {:xsd/anyURI "https://opensource.org/licenses/MIT"},
    :fibo-fnd-utl-av/hasMaturityLevel :fibo-fnd-utl-av/Release,
    :owl/imports
-   #{{:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Quantities/QuantitiesAndUnits/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Utilities/Analytics/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Utilities/AnnotationVocabulary/"}
+   #{{:xsd/anyURI "https://www.omg.org/spec/Commons/Documents/"}
      {:xsd/anyURI
       "https://www.omg.org/spec/LCC/Countries/CountryRepresentation/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/Identifiers/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/ContextualDesignators/"}
+     {:xsd/anyURI "https://www.omg.org/spec/Commons/QuantitiesAndUnits/"}
+     {:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Utilities/AnnotationVocabulary/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/Collections/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/CodesAndCodeSets/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/Designators/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Relations/Relations/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Relations/Relations/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/TextDatatype/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/AnnotationVocabulary/"}},
    :owl/versionIRI
    {:xsd/anyURI
-    "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Accounting/CurrencyAmount/"},
+    "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Accounting/CurrencyAmount/"},
    :rdf/type :owl/Ontology,
    :rdfs/label "Currency Amount Ontology",
    :skos/changeNote
-   #{"The https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/CurrencyAmount/ version of this ontology was modified to eliminate hygiene errors with respect to text formatting."
+   #{"The https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/CurrencyAmount.rdf version of the ontology was modified to eliminate deprecations that are more than 6 months old."
+     "The https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/CurrencyAmount/ version of this ontology was modified to eliminate hygiene errors with respect to text formatting."
      "The https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/CurrencyAmount/ version of this ontology was modified to correct the explanatory note on currency identifier."
      "The https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/CurrencyAmount/ version of this ontology was modified to eliminate deprecated elements."
      "The https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/CurrencyAmount/ version of this ontology was modified to move the definition of precious metal and the corresponding identifier to this ontology from Products and Services to simplify imports in cases where the broader definitions for commodities are not required and deprecated isTenderIn, given that we have used the property isUsedBy for this purpose in the currency codes themselves."
@@ -618,7 +593,8 @@
      "The https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/CurrencyAmount/ version of this ontology was modified to eliminate duplication with concepts in LCC, dependencies on a couple of ontologies that were unnecessary, eliminate references to external dictionary sites that no longer resolve, clean up ambiguity in definitions, eliminate a redundant property, and add unit price."
      "The https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/CurrencyAmount.rdf version of this ontology was modified to include several classes to support automated inclusion of all ISO 4217 codes published as of 2018-06-04, and to revise definitions per the eighth edition of the specification."
      "The FIBO FND 1.0 (https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/CurrencyAmount.rdf) version of this ontology was modified per the additions introduced in the FIBO FBC RFC and related issue resolutions identified in the FIBO FND 1.1 RTF report and https://spec.edmcouncil.org/fibo/ontology/FND/1.0/AboutFND-1.1/, including adding support for ISO 4217 currency codes."
-     "The FIBO FND 1.1 (https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/CurrencyAmount.rdf) version of this ontology was modified per FIBO 2.0 RFC, including the addition of a new hasMonetaryAmount property as a superproperty of others required by various FIBO domain teams and integration with LCC."},
+     "The FIBO FND 1.1 (https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/CurrencyAmount.rdf) version of this ontology was modified per FIBO 2.0 RFC, including the addition of a new hasMonetaryAmount property as a superproperty of others required by various FIBO domain teams and integration with LCC."
+     "The https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/CurrencyAmount.rdf version of this ontology was modified to tease out the distinction between the nominal and notional amount, which were confused (DER-127) and to replace content that is now available in the OMG Commons Ontology Library (Commons) v1.1 (FND-380)."},
    :skos/editorialNote
    "(1) The present version of the ontology covers the English sections of the ISO 4217 standard only, and (2) UTF-8 character encodings are employed in names in the currency codes ontology to support the broadest number of tools.",
    :xsd/anyURI

@@ -2,7 +2,7 @@
   {:cmns-av/copyright #{"Copyright (c) 2013-2023 Object Management Group, Inc."
                         "Copyright (c) 2013-2023 EDM Council, Inc."},
    :dcat/downloadURL
-   "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Utilities/AnnotationVocabulary/",
+   "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Utilities/AnnotationVocabulary/",
    :dcterms/abstract
    "This vocabulary provides a set of metadata annotations for use in describing FIBO ontology elements. The annotations extend properties defined in the OMG's Commons Ontology Library (Commons) Annotation Vocabulary, in the Dublin Core Metadata Terms Vocabulary and in the W3C Simple Knowledge Organization System (SKOS) Vocabulary, and have been customized to suit the FIBO specification development process. \n\nNote that any of the original properties provided in Dublin Core and SKOS can be used in addition to the terms provided herein. However, any Dublin Core terms that are not explicitly defined as OWL annotation properties in this ontology or in any of its imports must be so declared in the ontologies that use them.",
    :dcterms/license {:xsd/anyURI "https://opensource.org/licenses/MIT"},
@@ -23,7 +23,7 @@
                    "https://www.omg.org/spec/Commons/AnnotationVocabulary/"}},
    :owl/versionIRI
    {:xsd/anyURI
-    "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Utilities/AnnotationVocabulary/"},
+    "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Utilities/AnnotationVocabulary/"},
    :rdf/type :owl/Ontology,
    :rdfa/prefix "fibo-fnd-utl-av",
    :rdfa/uri
@@ -37,10 +37,10 @@
      "The http://www.omg.org/spec/EDMC-FIBO/FND/20130801/Utilities/AnnotationVocabulary.rdf version of this ontology was modified per the issue resolutions identified in the FIBO FND 1.0 FTF report and in http://www.omg.org/spec/EDMC-FIBO/FND/1.0/AboutFND-1.0/."
      "The https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/AnnotationVocabulary.rdf version of this ontology was modified to eliminate skos:Concept as a superclass of MaturityLevel (replaced with LifecycleStage in the Lifecycles ontology), revise explanatory notes for maturity levels based on community feedback, and correct the subproperty inheritance for adaptedFrom and logicalDefinition."
      "The https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/AnnotationVocabulary.rdf version of this ontology was modified to add the symbol annotation."
+     "The https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/AnnotationVocabulary.rdf version of the ontology was modified to eliminate deprecations that are more than 6 months old."
      "The https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/AnnotationVocabulary.rdf version of this ontology was modified to integrate the Commons Ontology Library (Commons) Annotation Vocabulary and eliminate the need to import the OMG's Specification Metadata vocabulary."},
    :xsd/anyURI
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/AnnotationVocabulary/"}
-  (:refer-clojure :exclude [symbol]))
+   "https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/AnnotationVocabulary/"})
 
 (def Informative
   {:cmns-av/explanatoryNote
@@ -117,24 +117,6 @@
     :rdf/value
     "entity that is considered to be stable and mature from a development perspective"}})
 
-(def abbreviation
-  {:db/ident :fibo-fnd-utl-av/abbreviation,
-   :owl/deprecated true,
-   :owl/equivalentProperty :cmns-av/abbreviation,
-   :rdf/type :owl/AnnotationProperty,
-   :rdfs/isDefinedBy
-   {:xsd/anyURI
-    "https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/AnnotationVocabulary/"}})
-
-(def adaptedFrom
-  {:db/ident :fibo-fnd-utl-av/adaptedFrom,
-   :owl/deprecated true,
-   :owl/equivalentProperty :cmns-av/adaptedFrom,
-   :rdf/type :owl/AnnotationProperty,
-   :rdfs/isDefinedBy
-   {:xsd/anyURI
-    "https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/AnnotationVocabulary/"}})
-
 (def commonDesignation
   {:cmns-av/adaptedFrom {:xsd/anyURI
                          "https://pe.usps.com/cpim/ftp/pubs/Pub28/pub28.pdf"},
@@ -158,15 +140,6 @@
    :skos/definition
    "document or other source from which a given definition was taken directly; the range for this annotation can be a string, URI, or BibliographicCitation"})
 
-(def explanatoryNote
-  {:db/ident :fibo-fnd-utl-av/explanatoryNote,
-   :owl/deprecated true,
-   :owl/equivalentProperty :cmns-av/explanatoryNote,
-   :rdf/type :owl/AnnotationProperty,
-   :rdfs/isDefinedBy
-   {:xsd/anyURI
-    "https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/AnnotationVocabulary/"}})
-
 (def hasMaturityLevel
   {:db/ident :fibo-fnd-utl-av/hasMaturityLevel,
    :rdf/type :owl/AnnotationProperty,
@@ -176,31 +149,6 @@
    :rdfs/label "has maturity level",
    :skos/definition
    "links something to its state with respect to a development lifecycle"})
-
-(def logicalDefinition
-  {:db/ident :fibo-fnd-utl-av/logicalDefinition,
-   :owl/deprecated true,
-   :owl/equivalentProperty :cmns-av/logicalDefinition,
-   :rdf/type :owl/AnnotationProperty,
-   :rdfs/isDefinedBy
-   {:xsd/anyURI
-    "https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/AnnotationVocabulary/"}})
-
-(def modifiedBy
-  {:db/ident :fibo-fnd-utl-av/modifiedBy,
-   :owl/deprecated true,
-   :rdf/type :owl/AnnotationProperty,
-   :rdfs/isDefinedBy
-   {:xsd/anyURI
-    "https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/AnnotationVocabulary/"}})
-
-(def modifiedOn
-  {:db/ident :fibo-fnd-utl-av/modifiedOn,
-   :owl/deprecated true,
-   :rdf/type :owl/AnnotationProperty,
-   :rdfs/isDefinedBy
-   {:xsd/anyURI
-    "https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/AnnotationVocabulary/"}})
 
 (def preferredDesignation
   {:cmns-av/adaptedFrom {:xsd/anyURI
@@ -214,24 +162,6 @@
    :rdfs/subPropertyOf :cmns-av/synonym,
    :skos/definition "recommended designation for an entity in some context"})
 
-(def symbol
-  {:db/ident :fibo-fnd-utl-av/symbol,
-   :owl/deprecated true,
-   :owl/equivalentProperty :cmns-av/symbol,
-   :rdf/type :owl/AnnotationProperty,
-   :rdfs/isDefinedBy
-   {:xsd/anyURI
-    "https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/AnnotationVocabulary/"}})
-
-(def synonym
-  {:db/ident :fibo-fnd-utl-av/synonym,
-   :owl/deprecated true,
-   :owl/equivalentProperty :cmns-av/synonym,
-   :rdf/type :owl/AnnotationProperty,
-   :rdfs/isDefinedBy
-   {:xsd/anyURI
-    "https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/AnnotationVocabulary/"}})
-
 (def termOrigin
   {:db/ident :fibo-fnd-utl-av/termOrigin,
    :rdf/type :owl/AnnotationProperty,
@@ -242,15 +172,6 @@
    :rdfs/subPropertyOf :cmns-av/directSource,
    :skos/definition
    "document or other source from which a given term was taken directly; the range for this annotation can be a string, URI, or BibliographicCitation"})
-
-(def usageNote
-  {:db/ident :fibo-fnd-utl-av/usageNote,
-   :owl/deprecated true,
-   :owl/equivalentProperty :cmns-av/usageNote,
-   :rdf/type :owl/AnnotationProperty,
-   :rdfs/isDefinedBy
-   {:xsd/anyURI
-    "https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/AnnotationVocabulary/"}})
 
 (def urn:uuid:8b442fde-de7a-55cd-a36d-7b0233fd2690
   {:cmns-av/copyright #{"Copyright (c) 2013-2023 Object Management Group, Inc."
@@ -264,7 +185,7 @@
                    "https://www.omg.org/spec/Commons/AnnotationVocabulary/"}},
    :owl/versionIRI
    {:xsd/anyURI
-    "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Utilities/AnnotationVocabulary/"},
+    "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Utilities/AnnotationVocabulary/"},
    :rdf/type :owl/Ontology,
    :rdfs/label "FIBO Annotation Vocabulary",
    :skos/changeNote
@@ -275,6 +196,7 @@
      "The http://www.omg.org/spec/EDMC-FIBO/FND/20130801/Utilities/AnnotationVocabulary.rdf version of this ontology was modified per the issue resolutions identified in the FIBO FND 1.0 FTF report and in http://www.omg.org/spec/EDMC-FIBO/FND/1.0/AboutFND-1.0/."
      "The https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/AnnotationVocabulary.rdf version of this ontology was modified to eliminate skos:Concept as a superclass of MaturityLevel (replaced with LifecycleStage in the Lifecycles ontology), revise explanatory notes for maturity levels based on community feedback, and correct the subproperty inheritance for adaptedFrom and logicalDefinition."
      "The https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/AnnotationVocabulary.rdf version of this ontology was modified to add the symbol annotation."
+     "The https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/AnnotationVocabulary.rdf version of the ontology was modified to eliminate deprecations that are more than 6 months old."
      "The https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/AnnotationVocabulary.rdf version of this ontology was modified to integrate the Commons Ontology Library (Commons) Annotation Vocabulary and eliminate the need to import the OMG's Specification Metadata vocabulary."},
    :xsd/anyURI
    "https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/AnnotationVocabulary/"})

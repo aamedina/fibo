@@ -3,7 +3,7 @@
    #{"Copyright (c) 2021-2023 EDM Council, Inc."
      "Copyright (c) 2021-2023 Object Management Group, Inc."},
    :dcat/downloadURL
-   "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/BE/GovernmentEntities/AsianJurisdiction/WesternAsiaGovernmentEntitiesAndJurisdictions/",
+   "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/BE/GovernmentEntities/AsianJurisdiction/WesternAsiaGovernmentEntitiesAndJurisdictions/",
    :dcterms/abstract
    "This ontology provides government entities and jurisdictions for countries that are defined as being part of Western Asia in the U.N. M49 codes, primarily those that are considered independent countries in ISO 3166, or are important from a banking perspective.",
    :dcterms/license {:xsd/anyURI "http://opensource.org/licenses/MIT"},
@@ -30,27 +30,28 @@
     "xsd" "http://www.w3.org/2001/XMLSchema#"},
    :owl/imports
    #{{:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/BE/GovernmentEntities/GovernmentEntities/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Utilities/AnnotationVocabulary/"}
-     {:xsd/anyURI
       "https://www.omg.org/spec/LCC/Countries/CountryRepresentation/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Law/Jurisdiction/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/BE/GovernmentEntities/GovernmentEntities/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Relations/Relations/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Law/Jurisdiction/"}
+     {:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Utilities/AnnotationVocabulary/"}
+     {:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Relations/Relations/"}
      {:xsd/anyURI
       "https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/"}},
    :owl/versionIRI
    {:xsd/anyURI
-    "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/BE/GovernmentEntities/AsianJurisdiction/WesternAsiaGovernmentEntitiesAndJurisdictions/"},
+    "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/BE/GovernmentEntities/AsianJurisdiction/WesternAsiaGovernmentEntitiesAndJurisdictions/"},
    :rdf/type :owl/Ontology,
    :rdfa/prefix "fibo-be-ge-wasj",
    :rdfa/uri
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/AsianJurisdiction/WesternAsiaGovernmentEntitiesAndJurisdictions/",
    :rdfs/label "Western Asia Government Entities and Jurisdictions Ontology",
    :skos/changeNote
-   "The https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/AsianJurisdiction/WesternAsiaGovernmentEntitiesAndJurisdictions.rdf version of the ontology was modified to use the Commons Ontology Library (Commons) Annotation Vocabulary rather than the OMG's Specification Metadata vocabulary.",
+   #{"The https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/AsianJurisdiction/WesternAsiaGovernmentEntitiesAndJurisdictions.rdf version of the ontology was modified to use the Commons Ontology Library (Commons) Annotation Vocabulary rather than the OMG's Specification Metadata vocabulary."
+     "The https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/AsianJurisdiction/WesternAsiaGovernmentEntitiesAndJurisdictions.rdf version of this ontology was modified to correct spelling errors."},
    :skos/scopeNote
    "The initial version of this ontology reflects the national level only.",
    :xsd/anyURI
@@ -301,17 +302,17 @@
    :skos/definition
    "unitary semi-constitutional monarchy in Western Asia, occupying the small Qatar Peninsula on the northeastern coast of the Arabian Peninsula and bordered by Saudi Arabia to the south"})
 
-(def GovernmentOfTheSultinateOfOman
-  {:db/ident :fibo-be-ge-wasj/GovernmentOfTheSultinateOfOman,
+(def GovernmentOfTheSultanateOfOman
+  {:db/ident :fibo-be-ge-wasj/GovernmentOfTheSultanateOfOman,
    :fibo-be-ge-ge/hasJurisdiction
-   :fibo-be-ge-wasj/JurisdictionOfTheSultinateOfOman,
+   :fibo-be-ge-wasj/JurisdictionOfTheSultanateOfOman,
    :fibo-fnd-rel-rel/governs :lcc-3166-1/Oman,
    :rdf/type #{:owl/NamedIndividual :fibo-be-ge-ge/NationalGovernment},
    :rdfs/isDefinedBy
    {:xsd/anyURI
     "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/AsianJurisdiction/WesternAsiaGovernmentEntitiesAndJurisdictions/"},
    :rdfs/label #{{:rdf/language "en",
-                  :rdf/value    "Government of the Sultinate of Oman"}
+                  :rdf/value    "Government of the Sultanate of Oman"}
                  {:rdf/language "ar",
                   :rdf/value    "سلطنة عُمان"}},
    :skos/definition
@@ -542,16 +543,16 @@
    :skos/definition
    "jurisdiction of the judiciary of Qatar, which is the system of courts that interprets and applies the law in Qatar"})
 
-(def JurisdictionOfTheSultinateOfOman
-  {:db/ident :fibo-be-ge-wasj/JurisdictionOfTheSultinateOfOman,
+(def JurisdictionOfTheSultanateOfOman
+  {:db/ident :fibo-be-ge-wasj/JurisdictionOfTheSultanateOfOman,
    :fibo-be-ge-ge/isJurisdictionOf
-   :fibo-be-ge-wasj/GovernmentOfTheSultinateOfOman,
+   :fibo-be-ge-wasj/GovernmentOfTheSultanateOfOman,
    :fibo-fnd-law-jur/hasReach :lcc-3166-1/Oman,
    :rdf/type #{:fibo-fnd-law-jur/Jurisdiction :owl/NamedIndividual},
    :rdfs/isDefinedBy
    {:xsd/anyURI
     "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/AsianJurisdiction/WesternAsiaGovernmentEntitiesAndJurisdictions/"},
-   :rdfs/label "jurisdiction of the Sultinate of Oman",
+   :rdfs/label "jurisdiction of the Sultanate of Oman",
    :skos/definition
    "jurisdiction of the judiciary of Oman, which is the system of courts that interprets and applies the law in Oman"})
 
@@ -703,7 +704,7 @@
   {:db/ident :fibo-be-ge-wasj/StateOfOman,
    :fibo-be-ge-ge/hasFullSovereigntyOver :lcc-3166-1/Oman,
    :fibo-be-ge-ge/isRepresentedBy
-   :fibo-be-ge-wasj/GovernmentOfTheSultinateOfOman,
+   :fibo-be-ge-wasj/GovernmentOfTheSultanateOfOman,
    :rdf/type #{:fibo-be-ge-ge/SovereignState :owl/NamedIndividual},
    :rdfs/isDefinedBy
    {:xsd/anyURI
@@ -805,24 +806,25 @@
    :fibo-fnd-utl-av/hasMaturityLevel :fibo-fnd-utl-av/Release,
    :owl/imports
    #{{:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/BE/GovernmentEntities/GovernmentEntities/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Utilities/AnnotationVocabulary/"}
-     {:xsd/anyURI
       "https://www.omg.org/spec/LCC/Countries/CountryRepresentation/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Law/Jurisdiction/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/BE/GovernmentEntities/GovernmentEntities/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Relations/Relations/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Law/Jurisdiction/"}
+     {:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Utilities/AnnotationVocabulary/"}
+     {:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Relations/Relations/"}
      {:xsd/anyURI
       "https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/"}},
    :owl/versionIRI
    {:xsd/anyURI
-    "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/BE/GovernmentEntities/AsianJurisdiction/WesternAsiaGovernmentEntitiesAndJurisdictions/"},
+    "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/BE/GovernmentEntities/AsianJurisdiction/WesternAsiaGovernmentEntitiesAndJurisdictions/"},
    :rdf/type :owl/Ontology,
    :rdfs/label "Western Asia Government Entities and Jurisdictions Ontology",
    :skos/changeNote
-   "The https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/AsianJurisdiction/WesternAsiaGovernmentEntitiesAndJurisdictions.rdf version of the ontology was modified to use the Commons Ontology Library (Commons) Annotation Vocabulary rather than the OMG's Specification Metadata vocabulary.",
+   #{"The https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/AsianJurisdiction/WesternAsiaGovernmentEntitiesAndJurisdictions.rdf version of the ontology was modified to use the Commons Ontology Library (Commons) Annotation Vocabulary rather than the OMG's Specification Metadata vocabulary."
+     "The https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/AsianJurisdiction/WesternAsiaGovernmentEntitiesAndJurisdictions.rdf version of this ontology was modified to correct spelling errors."},
    :skos/scopeNote
    "The initial version of this ontology reflects the national level only.",
    :xsd/anyURI

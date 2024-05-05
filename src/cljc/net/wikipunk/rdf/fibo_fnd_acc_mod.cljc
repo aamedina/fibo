@@ -2,7 +2,7 @@
   {:cmns-av/copyright #{"Copyright (c) 2017-2023 Object Management Group, Inc."
                         "Copyright (c) 2017-2023 EDM Council, Inc."},
    :dcat/downloadURL
-   "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Accounting/MetadataFNDAccounting/AccountingModule",
+   "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Accounting/MetadataFNDAccounting/AccountingModule",
    :dcterms/abstract
    "This module contains ontologies of general accounting concepts including currency and the ISO 4217 reference currency codes.",
    :dcterms/issued #inst "2020-02-24T18:00:00.000-00:00",
@@ -21,11 +21,11 @@
     "xsd" "http://www.w3.org/2001/XMLSchema#"},
    :owl/imports
    #{{:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Utilities/AnnotationVocabulary/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Utilities/AnnotationVocabulary/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/AnnotationVocabulary/"}},
    :owl/versionIRI
    {:xsd/anyURI
-    "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Accounting/MetadataFNDAccounting/"},
+    "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Accounting/MetadataFNDAccounting/"},
    :rdf/type :owl/Ontology,
    :rdfa/prefix "fibo-fnd-acc-mod",
    :rdfa/uri
@@ -68,11 +68,11 @@
    :dcterms/modified #inst "2023-01-06T18:00:00.000-00:00",
    :owl/imports
    #{{:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Utilities/AnnotationVocabulary/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Utilities/AnnotationVocabulary/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/AnnotationVocabulary/"}},
    :owl/versionIRI
    {:xsd/anyURI
-    "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Accounting/MetadataFNDAccounting/"},
+    "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Accounting/MetadataFNDAccounting/"},
    :rdf/type :owl/Ontology,
    :rdfs/label "Metadata for the EDMC-FIBO Foundations (FND) Accounting Module",
    :xsd/anyURI

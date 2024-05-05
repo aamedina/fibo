@@ -1,8 +1,9 @@
 (ns net.wikipunk.rdf.fibo-der-drc-swp
-  {:cmns-av/copyright #{"Copyright (c) 2016-2023 Object Management Group, Inc."
-                        "Copyright (c) 2016-2023 EDM Council, Inc."},
+  {:cmns-av/copyright
+   #{"Copyright (c) 2016-2024 EDM Council, Inc."
+     "Copyright (c) 2016-2024 Object Management Group, Inc."},
    :dcat/downloadURL
-   "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/DER/DerivativesContracts/Swaps/",
+   "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/DER/DerivativesContracts/Swaps/",
    :dcterms/abstract
    "This ontology defines concepts specific to swap contracts, including relevant trading organizations, data repositories, and intermediaries.",
    :dcterms/license {:xsd/anyURI "https://opensource.org/licenses/MIT"},
@@ -11,8 +12,12 @@
    {"cmns-av" "https://www.omg.org/spec/Commons/AnnotationVocabulary/",
     "cmns-col" "https://www.omg.org/spec/Commons/Collections/",
     "cmns-cxtdsg" "https://www.omg.org/spec/Commons/ContextualDesignators/",
+    "cmns-doc" "https://www.omg.org/spec/Commons/Documents/",
     "cmns-dt" "https://www.omg.org/spec/Commons/DatesAndTimes/",
     "cmns-id" "https://www.omg.org/spec/Commons/Identifiers/",
+    "cmns-pts" "https://www.omg.org/spec/Commons/PartiesAndSituations/",
+    "cmns-qtu" "https://www.omg.org/spec/Commons/QuantitiesAndUnits/",
+    "cmns-rlcmp" "https://www.omg.org/spec/Commons/RolesAndCompositions/",
     "dcterms" "http://purl.org/dc/terms/",
     "fibo-der-drc-bsc"
     "https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/DerivativesBasics/",
@@ -32,16 +37,14 @@
     "https://spec.edmcouncil.org/fibo/ontology/FND/Agreements/Contracts/",
     "fibo-fnd-arr-doc"
     "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Documents/",
+    "fibo-fnd-arr-lif"
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Lifecycles/",
     "fibo-fnd-oac-own"
     "https://spec.edmcouncil.org/fibo/ontology/FND/OwnershipAndControl/Ownership/",
     "fibo-fnd-pas-pas"
     "https://spec.edmcouncil.org/fibo/ontology/FND/ProductsAndServices/ProductsAndServices/",
     "fibo-fnd-pas-psch"
     "https://spec.edmcouncil.org/fibo/ontology/FND/ProductsAndServices/PaymentsAndSchedules/",
-    "fibo-fnd-pty-pty"
-    "https://spec.edmcouncil.org/fibo/ontology/FND/Parties/Parties/",
-    "fibo-fnd-pty-rl"
-    "https://spec.edmcouncil.org/fibo/ontology/FND/Parties/Roles/",
     "fibo-fnd-rel-rel"
     "https://spec.edmcouncil.org/fibo/ontology/FND/Relations/Relations/",
     "fibo-fnd-utl-av"
@@ -55,61 +58,64 @@
     "xsd" "http://www.w3.org/2001/XMLSchema#"},
    :owl/imports
    #{{:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Utilities/AnnotationVocabulary/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/ProductsAndServices/ProductsAndServices/"}
+     {:xsd/anyURI "https://www.omg.org/spec/Commons/RolesAndCompositions/"}
+     {:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Accounting/CurrencyAmount/"}
+     {:xsd/anyURI "https://www.omg.org/spec/Commons/Documents/"}
+     {:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FBC/DebtAndEquities/Debt/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/Identifiers/"}
+     {:xsd/anyURI "https://www.omg.org/spec/Commons/PartiesAndSituations/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/ContextualDesignators/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Parties/Parties/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/ProductsAndServices/PaymentsAndSchedules/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FBC/DebtAndEquities/Debt/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Arrangements/Lifecycles/"}
+     {:xsd/anyURI "https://www.omg.org/spec/Commons/QuantitiesAndUnits/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/DER/DerivativesContracts/DerivativesBasics/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/OwnershipAndControl/Ownership/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/IND/MarketIndices/BasketIndices/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Arrangements/Documents/"}
+     {:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FBC/ProductsAndServices/FinancialProductsAndServices/"}
+     {:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Utilities/AnnotationVocabulary/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/Collections/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/DER/RateDerivatives/RateDerivatives/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/DER/RateDerivatives/RateDerivatives/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FBC/FunctionalEntities/FinancialServicesEntities/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FBC/FunctionalEntities/FinancialServicesEntities/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Accounting/CurrencyAmount/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Relations/Relations/"}
+     {:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/DER/DerivativesContracts/DerivativesBasics/"}
+     {:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/IND/MarketIndices/BasketIndices/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/DatesAndTimes/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/ProductsAndServices/PaymentsAndSchedules/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Agreements/Contracts/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Agreements/Contracts/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/OwnershipAndControl/Ownership/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Parties/Roles/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Relations/Relations/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FBC/FinancialInstruments/FinancialInstruments/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Arrangements/Documents/"}
-     {:xsd/anyURI "https://www.omg.org/spec/Commons/AnnotationVocabulary/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/ProductsAndServices/ProductsAndServices/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FBC/ProductsAndServices/FinancialProductsAndServices/"}},
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FBC/FinancialInstruments/FinancialInstruments/"}
+     {:xsd/anyURI "https://www.omg.org/spec/Commons/AnnotationVocabulary/"}},
    :owl/versionIRI
    {:xsd/anyURI
-    "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/DER/DerivativesContracts/Swaps/"},
+    "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/DER/DerivativesContracts/Swaps/"},
    :rdf/type :owl/Ontology,
    :rdfa/prefix "fibo-der-drc-swp",
    :rdfa/uri
    "https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/Swaps/",
    :rdfs/label "Swaps Ontology",
    :skos/changeNote
-   #{"The https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/Swaps/ version of this ontology was modified to move swap execution facility to the markets ontology in FBC."
+   #{"The https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/Swaps.rdf version of the ontology was modified to tease out the distinction between the nominal and notional amount, which were confused and augment the definition of notional for swaps to properly reflect variations from the CFI (DER-127), and replace concepts from several FIBO FND ontologies with their counterparts added to the Commons Ontology Library (Commons) v1.1 (FND-380)."
+     "The https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/Swaps/ version of this ontology was modified to move swap execution facility to the markets ontology in FBC."
+     "The https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/Swaps.rdf version of the ontology was modified to replace additional concepts from several FIBO FND ontologies with their counterparts added to the Commons Ontology Library (Commons) v1.1 (FND-380) and to revise definitions related to swap leg-specific events (FBC-317)."
      "The https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/Swaps/ version of this ontology was modified to refine the concept of a unique swap identifier (USI)."
      "The https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/Swaps/ version of this ontology was modified to move the property 'exchanges' to FND given that it could be applied more generally than with respect to swaps only, facilitate the elimination of the property 'mayBeTradedIn', which was only used in one place and was redundant with the concept of a ListedSecurity / Listing in SEC, and move two properties, hasPayingParty and hasReceivingParty to DerivativesBasics to facilitate wider use."
      "The https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/Swaps/ version of this ontology was modified to address text formatting issues identified through hygiene testing."
      "The https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/Swaps/ version of this ontology was modified to make a total return swap a kind of credit derivative."
      "The https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/Swaps/ version of this ontology was modified to add the concept of a rates swap and the corresponding rate-based leg to facilitate mapping to the CFI standard."
      "The https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/Swaps/ version of this ontology was modified to eliminate duplication of concepts in LCC."
-     "The https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/Swaps.rdf version of this ontology was modified to use the Commons Ontology Library (Commons) rather than the OMG's Languages, Countries and Codes (LCC), eliminating redundancies in FIBO as appropriate."
      "The https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/Swaps/ version of this ontology was modified to integrate return swaps and connect swap legs to the swap they comprise, as appropriate, simplify the contract party hierarchy, add basic fixed and floating legs as higher level concepts common to many swaps, and eliminate ambiguity in definitions."
      "The https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/Swaps.rdf version of this ontology was modified to use the Commons Ontology Library (Commons) Annotation Vocabulary rather than the OMG's Specification Metadata vocabulary, to move the definition of an underlier and the related property, has underlier, to financial instruments so that these concepts are also available for use in relation to pool-backed securities."
      "The https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/Swaps/ version of this ontology was modified to eliminate the property 'hasPaymentSchedule' from this ontology in favor of the equivalent property with the same name from FND, adding concepts related to statistical swaps, and revising definitions to be ISO 704 compliant."},
@@ -575,42 +581,60 @@
    "non-depository institution such as one that deals in swaps, makes a market in swaps, regularly enters into swaps with counterparties as an ordinary course of business for its own account, and engages in any activity causing the person to be commonly known in the trade as a dealer/market maker in swaps"})
 
 (def SwapLeg
-  {:cmns-av/synonym "swap stream terms",
-   :db/ident :fibo-der-drc-swp/SwapLeg,
+  {:db/ident :fibo-der-drc-swp/SwapLeg,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    {:xsd/anyURI
     "https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/Swaps/"},
    :rdfs/label "swap leg",
-   :rdfs/subClassOf #{:fibo-der-drc-bsc/CashflowTerms
-                      {:owl/onClass    :fibo-der-drc-swp/SwapReceivingParty,
-                       :owl/onProperty :fibo-fnd-pas-pas/hasSeller,
-                       :owl/qualifiedCardinality 1,
-                       :rdf/type       :owl/Restriction}
-                      {:owl/minQualifiedCardinality 0,
-                       :owl/onClass    :cmns-dt/Date,
-                       :owl/onProperty :fibo-fnd-arr-doc/hasTerminationDate,
-                       :rdf/type       :owl/Restriction}
-                      {:owl/onClass    :fibo-fnd-acc-cur/MonetaryAmount,
-                       :owl/onProperty :fibo-fnd-acc-cur/hasNotionalAmount,
-                       :owl/qualifiedCardinality 1,
-                       :rdf/type       :owl/Restriction}
-                      :fibo-der-drc-swp/SwapTerms
-                      {:owl/onClass    :cmns-dt/Date,
-                       :owl/onProperty :fibo-fnd-agr-ctr/hasEffectiveDate,
-                       :owl/qualifiedCardinality 1,
-                       :rdf/type       :owl/Restriction}
-                      {:owl/onClass    :fibo-der-drc-swp/SwapPayingParty,
-                       :owl/onProperty :fibo-fnd-pas-pas/hasBuyer,
-                       :owl/qualifiedCardinality 1,
-                       :rdf/type       :owl/Restriction}
-                      {:owl/onProperty     :fibo-der-drc-swp/isLegOf,
-                       :owl/someValuesFrom :fibo-der-drc-swp/Swap,
-                       :rdf/type           :owl/Restriction}},
+   :rdfs/subClassOf
+   #{:fibo-der-drc-bsc/CashflowTerms
+     {:owl/onClass    :fibo-der-drc-swp/SwapReceivingParty,
+      :owl/onProperty :fibo-fnd-pas-pas/hasSeller,
+      :owl/qualifiedCardinality 1,
+      :rdf/type       :owl/Restriction}
+     {:owl/minQualifiedCardinality 0,
+      :owl/onClass    :cmns-dt/Date,
+      :owl/onProperty :fibo-fnd-arr-doc/hasTerminationDate,
+      :rdf/type       :owl/Restriction} :fibo-der-drc-swp/SwapTerms
+     {:owl/onClass    :cmns-dt/Date,
+      :owl/onProperty :fibo-fnd-agr-ctr/hasEffectiveDate,
+      :owl/qualifiedCardinality 1,
+      :rdf/type       :owl/Restriction}
+     {:owl/unionOf [{:owl/onClass    :fibo-fnd-acc-cur/MonetaryAmount,
+                     :owl/onProperty :fibo-fnd-acc-cur/hasNotionalAmount,
+                     :owl/qualifiedCardinality 1,
+                     :rdf/type       :owl/Restriction}
+                    {:owl/onClass    :cmns-qtu/ScalarQuantityValue,
+                     :owl/onProperty :cmns-qtu/hasQuantityValue,
+                     :owl/qualifiedCardinality 1,
+                     :rdf/type       :owl/Restriction}],
+      :rdf/type    :owl/Class}
+     {:owl/onClass    :fibo-der-drc-swp/SwapPayingParty,
+      :owl/onProperty :fibo-fnd-pas-pas/hasBuyer,
+      :owl/qualifiedCardinality 1,
+      :rdf/type       :owl/Restriction}
+     {:owl/onProperty     :fibo-der-drc-swp/isLegOf,
+      :owl/someValuesFrom :fibo-der-drc-swp/Swap,
+      :rdf/type           :owl/Restriction}},
    :skos/definition
    "terms defining and the commitment to fulfill cashflow requirements (e.g., interest payments, coupon payments, etc.) for one side of a swap",
    :skos/editorialNote
    "For some swaps this may be a commitment to net up the difference between a strike and an outcome, rather than to make a series of cashflows over time. For credit default swaps there are conditional commitments, contingent on the occurrence of a credit event."})
+
+(def SwapLegEvent
+  {:db/ident :fibo-der-drc-swp/SwapLegEvent,
+   :rdf/type :owl/Class,
+   :rdfs/isDefinedBy
+   {:xsd/anyURI
+    "https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/Swaps/"},
+   :rdfs/label "swap leg event",
+   :rdfs/subClassOf #{{:owl/onProperty     :cmns-cxtdsg/appliesTo,
+                       :owl/someValuesFrom :fibo-der-drc-swp/SwapLeg,
+                       :rdf/type           :owl/Restriction}
+                      :fibo-der-drc-swp/SwapLifecycleEvent},
+   :skos/definition
+   "swap lifecycle event, such as a payment or rate reset event, that applies to one leg of a swap"})
 
 (def SwapLifecycleEvent
   {:db/ident :fibo-der-drc-swp/SwapLifecycleEvent,
@@ -620,12 +644,9 @@
     "https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/Swaps/"},
    :rdfs/label "swap lifecycle event",
    :rdfs/subClassOf
-   #{{:owl/onProperty     :fibo-fnd-pty-pty/hasPartyInRole,
-      :owl/someValuesFrom :fibo-der-drc-swp/SwapParty,
-      :rdf/type           :owl/Restriction}
-     {:owl/onProperty     :cmns-cxtdsg/appliesTo,
+   #{{:owl/onProperty     :cmns-cxtdsg/appliesTo,
       :owl/someValuesFrom :fibo-der-drc-swp/Swap,
-      :rdf/type           :owl/Restriction} :fibo-fnd-pas-pas/TransactionEvent
+      :rdf/type           :owl/Restriction} :fibo-fnd-arr-lif/LifecycleEvent
      {:owl/onClass    :fibo-der-drc-swp/UniqueSwapIdentifier,
       :owl/onProperty :fibo-der-drc-swp/hasSwapIdentifier,
       :owl/qualifiedCardinality 1,
@@ -633,7 +654,10 @@
      {:owl/onClass    :fibo-der-drc-swp/SwapLifecycleEventIdentifier,
       :owl/onProperty :cmns-id/isIdentifiedBy,
       :owl/qualifiedCardinality 1,
-      :rdf/type       :owl/Restriction}},
+      :rdf/type       :owl/Restriction}
+     {:owl/onProperty     :cmns-pts/hasPartyRole,
+      :owl/someValuesFrom :fibo-der-drc-swp/SwapParty,
+      :rdf/type           :owl/Restriction}},
    :skos/definition
    "event that occurs during the lifecycle of a swap, where the overall set of events includes those specific to the issuer, front office, middle office, and/or back office processes"})
 
@@ -660,12 +684,11 @@
     "https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/Swaps/"},
    :rdfs/label "swap party",
    :rdfs/subClassOf
-   #{:fibo-fnd-agr-ctr/ContractParty
-     {:owl/onProperty     :fibo-fnd-pty-rl/isPlayedBy,
-      :owl/someValuesFrom {:owl/onProperty     :fibo-fnd-pty-pty/isAPartyTo,
+   #{{:owl/onProperty     :cmns-rlcmp/isPlayedBy,
+      :owl/someValuesFrom {:owl/onProperty     :cmns-pts/isAPartyTo,
                            :owl/someValuesFrom :fibo-der-drc-swp/Swap,
                            :rdf/type           :owl/Restriction},
-      :rdf/type           :owl/Restriction}},
+      :rdf/type           :owl/Restriction} :fibo-fnd-agr-ctr/ContractParty},
    :skos/definition
    "party to a swap and therefore a legal party to the contract that embodies that transaction"})
 
@@ -695,15 +718,12 @@
 
 (def SwapStreamEvent
   {:db/ident :fibo-der-drc-swp/SwapStreamEvent,
+   :owl/deprecated true,
+   :owl/equivalentClass :fibo-der-drc-swp/SwapLegEvent,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    {:xsd/anyURI
-    "https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/Swaps/"},
-   :rdfs/label "swap stream event",
-   :rdfs/subClassOf #{:fibo-der-drc-swp/SwapLifecycleEvent
-                      :fibo-fnd-pas-psch/PaymentEvent},
-   :skos/definition
-   "payment event (e.g., interest payment, coupon payment, etc.) against one leg of a swap stream"})
+    "https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/Swaps/"}})
 
 (def SwapTerms
   {:db/ident :fibo-der-drc-swp/SwapTerms,
@@ -802,8 +822,7 @@
    "indicates the leg of a return swap that specifies a set payment rate, typically benchmark based but possibly a fixed rate"})
 
 (def hasLeg
-  {:cmns-av/synonym "has swap stream",
-   :db/ident :fibo-der-drc-swp/hasLeg,
+  {:db/ident :fibo-der-drc-swp/hasLeg,
    :rdf/type :owl/ObjectProperty,
    :rdfs/domain :fibo-der-drc-swp/Swap,
    :rdfs/isDefinedBy
@@ -813,7 +832,7 @@
    :rdfs/range :fibo-der-drc-swp/SwapLeg,
    :rdfs/subPropertyOf :fibo-fnd-agr-ctr/hasContractualElement,
    :skos/definition
-   "relates a swap to the legs (swap streams) that comprise the swap"})
+   "relates a swap contract to a leg that is part of that swap"})
 
 (def hasReturnLeg
   {:db/ident :fibo-der-drc-swp/hasReturnLeg,
@@ -837,7 +856,7 @@
     "https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/Swaps/"},
    :rdfs/label "has swap identifier",
    :rdfs/range :fibo-fbc-fi-fi/FinancialInstrumentIdentifier,
-   :rdfs/subPropertyOf :fibo-fnd-rel-rel/refersTo,
+   :rdfs/subPropertyOf :cmns-doc/refersTo,
    :skos/definition
    "relates a swap lifecycle event to the identifier for the swap"})
 
@@ -855,66 +874,70 @@
    :skos/definition "relates a swap leg to the to the swap that includes it"})
 
 (def urn:uuid:b429533e-2af9-5ddc-a57e-3ad15e780b5d
-  {:cmns-av/copyright #{"Copyright (c) 2016-2023 Object Management Group, Inc."
-                        "Copyright (c) 2016-2023 EDM Council, Inc."},
+  {:cmns-av/copyright
+   #{"Copyright (c) 2016-2024 EDM Council, Inc."
+     "Copyright (c) 2016-2024 Object Management Group, Inc."},
    :dcterms/abstract
    "This ontology defines concepts specific to swap contracts, including relevant trading organizations, data repositories, and intermediaries.",
    :dcterms/license {:xsd/anyURI "https://opensource.org/licenses/MIT"},
    :fibo-fnd-utl-av/hasMaturityLevel :fibo-fnd-utl-av/Release,
    :owl/imports
    #{{:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Utilities/AnnotationVocabulary/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/ProductsAndServices/ProductsAndServices/"}
+     {:xsd/anyURI "https://www.omg.org/spec/Commons/RolesAndCompositions/"}
+     {:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Accounting/CurrencyAmount/"}
+     {:xsd/anyURI "https://www.omg.org/spec/Commons/Documents/"}
+     {:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FBC/DebtAndEquities/Debt/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/Identifiers/"}
+     {:xsd/anyURI "https://www.omg.org/spec/Commons/PartiesAndSituations/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/ContextualDesignators/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Parties/Parties/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/ProductsAndServices/PaymentsAndSchedules/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FBC/DebtAndEquities/Debt/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Arrangements/Lifecycles/"}
+     {:xsd/anyURI "https://www.omg.org/spec/Commons/QuantitiesAndUnits/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/DER/DerivativesContracts/DerivativesBasics/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/OwnershipAndControl/Ownership/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/IND/MarketIndices/BasketIndices/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Arrangements/Documents/"}
+     {:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FBC/ProductsAndServices/FinancialProductsAndServices/"}
+     {:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Utilities/AnnotationVocabulary/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/Collections/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/DER/RateDerivatives/RateDerivatives/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/DER/RateDerivatives/RateDerivatives/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FBC/FunctionalEntities/FinancialServicesEntities/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FBC/FunctionalEntities/FinancialServicesEntities/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Accounting/CurrencyAmount/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Relations/Relations/"}
+     {:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/DER/DerivativesContracts/DerivativesBasics/"}
+     {:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/IND/MarketIndices/BasketIndices/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/DatesAndTimes/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/ProductsAndServices/PaymentsAndSchedules/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Agreements/Contracts/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Agreements/Contracts/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/OwnershipAndControl/Ownership/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Parties/Roles/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Relations/Relations/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FBC/FinancialInstruments/FinancialInstruments/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Arrangements/Documents/"}
-     {:xsd/anyURI "https://www.omg.org/spec/Commons/AnnotationVocabulary/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/ProductsAndServices/ProductsAndServices/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FBC/ProductsAndServices/FinancialProductsAndServices/"}},
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FBC/FinancialInstruments/FinancialInstruments/"}
+     {:xsd/anyURI "https://www.omg.org/spec/Commons/AnnotationVocabulary/"}},
    :owl/versionIRI
    {:xsd/anyURI
-    "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/DER/DerivativesContracts/Swaps/"},
+    "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/DER/DerivativesContracts/Swaps/"},
    :rdf/type :owl/Ontology,
    :rdfs/label "Swaps Ontology",
    :skos/changeNote
-   #{"The https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/Swaps/ version of this ontology was modified to move swap execution facility to the markets ontology in FBC."
+   #{"The https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/Swaps.rdf version of the ontology was modified to tease out the distinction between the nominal and notional amount, which were confused and augment the definition of notional for swaps to properly reflect variations from the CFI (DER-127), and replace concepts from several FIBO FND ontologies with their counterparts added to the Commons Ontology Library (Commons) v1.1 (FND-380)."
+     "The https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/Swaps/ version of this ontology was modified to move swap execution facility to the markets ontology in FBC."
+     "The https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/Swaps.rdf version of the ontology was modified to replace additional concepts from several FIBO FND ontologies with their counterparts added to the Commons Ontology Library (Commons) v1.1 (FND-380) and to revise definitions related to swap leg-specific events (FBC-317)."
      "The https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/Swaps/ version of this ontology was modified to refine the concept of a unique swap identifier (USI)."
      "The https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/Swaps/ version of this ontology was modified to move the property 'exchanges' to FND given that it could be applied more generally than with respect to swaps only, facilitate the elimination of the property 'mayBeTradedIn', which was only used in one place and was redundant with the concept of a ListedSecurity / Listing in SEC, and move two properties, hasPayingParty and hasReceivingParty to DerivativesBasics to facilitate wider use."
      "The https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/Swaps/ version of this ontology was modified to address text formatting issues identified through hygiene testing."
      "The https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/Swaps/ version of this ontology was modified to make a total return swap a kind of credit derivative."
      "The https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/Swaps/ version of this ontology was modified to add the concept of a rates swap and the corresponding rate-based leg to facilitate mapping to the CFI standard."
      "The https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/Swaps/ version of this ontology was modified to eliminate duplication of concepts in LCC."
-     "The https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/Swaps.rdf version of this ontology was modified to use the Commons Ontology Library (Commons) rather than the OMG's Languages, Countries and Codes (LCC), eliminating redundancies in FIBO as appropriate."
      "The https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/Swaps/ version of this ontology was modified to integrate return swaps and connect swap legs to the swap they comprise, as appropriate, simplify the contract party hierarchy, add basic fixed and floating legs as higher level concepts common to many swaps, and eliminate ambiguity in definitions."
      "The https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/Swaps.rdf version of this ontology was modified to use the Commons Ontology Library (Commons) Annotation Vocabulary rather than the OMG's Specification Metadata vocabulary, to move the definition of an underlier and the related property, has underlier, to financial instruments so that these concepts are also available for use in relation to pool-backed securities."
      "The https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/Swaps/ version of this ontology was modified to eliminate the property 'hasPaymentSchedule' from this ontology in favor of the equivalent property with the same name from FND, adding concepts related to statistical swaps, and revising definitions to be ISO 704 compliant."},
