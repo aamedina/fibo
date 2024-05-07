@@ -338,7 +338,7 @@
 (def hasThingInRole
   {:db/ident :fibo-fnd-pty-pty/hasThingInRole,
    :owl/deprecated true,
-   :owl/equivalentProperty :cmns-pts/hasObjectRole,
+   :owl/equivalentProperty :cmns-rlcmp/hasRole
    :rdf/type :owl/ObjectProperty,
    :rdfs/isDefinedBy
    {:xsd/anyURI
