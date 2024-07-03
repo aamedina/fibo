@@ -1,12 +1,13 @@
 (ns net.wikipunk.rdf.fibo-ind-ir-cm
   {:cmns-av/adaptedFrom
    {:xsd/anyURI
-    "http://www.fpml.org/coding-scheme/floating-rate-index-3-6.xml"},
-   :cmns-av/copyright
-   #{"Copyright (c) 2015-2023 EDM Council, Inc."
-     "Copyright (c) 2015-2023 Object Management Group, Inc."},
+    "http://www.fpml.org/coding-scheme/floating-rate-index-3-9.xml"},
+   :cmns-av/copyright #{"Copyright (c) 2023-2024 Federated Knowledge, LLC"
+                        "Copyright (c) 2015-2024 Object Management Group, Inc."
+                        "Copyright (c) 2015-2024 Thematix Partners LLC"
+                        "Copyright (c) 2015-2024 EDM Council, Inc."},
    :dcat/downloadURL
-   "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/IND/InterestRates/CommonInterestRates/",
+   "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/IND/InterestRates/CommonInterestRates/",
    :dcterms/abstract
    "This ontology provides reference data for commonly referenced interest rates, specifically those that are referenced in the ISDA FpML codes for floating interest rates. The rates included herein are generated directly from the FpML published reference data.",
    :dcterms/license {:xsd/anyURI "https://opensource.org/licenses/MIT"},
@@ -37,23 +38,23 @@
     "xsd" "http://www.w3.org/2001/XMLSchema#"},
    :owl/imports
    #{{:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/IND/InterestRates/InterestRates/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FBC/FunctionalEntities/NorthAmericanEntities/USFinancialServicesEntitiesIndividuals/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/IND/InterestRates/MarketDataProviders/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Utilities/AnnotationVocabulary/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FND/Accounting/ISO4217-CurrencyCodes/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Accounting/ISO4217-CurrencyCodes/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FND/Utilities/AnnotationVocabulary/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Relations/Relations/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FND/Relations/Relations/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FBC/FunctionalEntities/NorthAmericanEntities/USFinancialServicesEntitiesIndividuals/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/AnnotationVocabulary/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/IND/InterestRates/MarketDataProviders/"}},
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/IND/InterestRates/InterestRates/"}},
    :owl/versionIRI
    {:xsd/anyURI
-    "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/IND/InterestRates/CommonInterestRates/"},
+    "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/IND/InterestRates/CommonInterestRates/"},
    :rdf/type :owl/Ontology,
    :rdfa/prefix "fibo-ind-ir-cm",
    :rdfa/uri
@@ -61,24 +62,13 @@
    :rdfs/label "Common Interest Rates Ontology",
    :skos/changeNote
    #{"The https://spec.edmcouncil.org/fibo/ontology/IND/InterestRates/InterestRates.rdf version of this ontology was revised to reflect the latest FpML rates, which include a number of changes, including deprecating some rates and replacing them with others."
+     "The https://spec.edmcouncil.org/fibo/ontology/IND/InterestRates/InterestRates.rdf version of this ontology was modified to normalize the prefix for the EU individuals ontology and update the reference interest rates as of 26 April 2024."
      "The https://spec.edmcouncil.org/fibo/ontology/IND/InterestRates/CommonInterestRates.rdf version of the ontology was modified to use the Commons Ontology Library (Commons) Annotation Vocabulary rather than the OMG's Specification Metadata vocabulary."
      "The https://spec.edmcouncil.org/fibo/ontology/IND/InterestRates/InterestRates.rdf version of this ontology was revised to reflect the latest FpML rates."
      "The https://spec.edmcouncil.org/fibo/ontology/IND/InterestRates/InterestRates.rdf version of this ontology was modified to normalize the prefix for the EU individuals ontology and update the reference interest rates as of 10 March 2023."
      "The https://spec.edmcouncil.org/fibo/ontology/IND/InterestRates/InterestRates.rdf version of this ontology was revised extensively to restructure the way in which interest rate benchmarks are modeled and eliminate references to the merged interest rate publishers ontology."},
    :xsd/anyURI
    "https://spec.edmcouncil.org/fibo/ontology/IND/InterestRates/CommonInterestRates/"})
-
-(def AED-EIBOR
-  {:cmns-av/abbreviation "AED-EIBOR",
-   :cmns-av/explanatoryNote
-   "Per 2021 ISDA Interest Rate Derivatives Definitions Floating Rate Matrix, as amended through the date on which parties enter into the relevant transaction.",
-   :db/ident :fibo-ind-ir-cm/AED-EIBOR,
-   :fibo-ind-ir-ir/hasReferenceCurrency :fibo-fnd-acc-4217/UAEDirham,
-   :rdf/type #{:fibo-ind-ir-ir/InterestRateBenchmark :owl/NamedIndividual},
-   :rdfs/isDefinedBy
-   {:xsd/anyURI
-    "https://spec.edmcouncil.org/fibo/ontology/IND/InterestRates/CommonInterestRates/"},
-   :rdfs/label "AED-EIBOR"})
 
 (def AUD-AONIA
   {:cmns-av/abbreviation "AUD-AONIA",
@@ -344,7 +334,7 @@
 (def CAD-CORRA-OIS_Compound
   {:cmns-av/abbreviation "CAD-CORRA-OIS Compound",
    :cmns-av/explanatoryNote
-   "Per 2021 ISDA Interest Rate Derivatives Definitions Floating Rate Matrix, as amended through the date on which parties enter into the relevant transaction.",
+   "Per 2021 ISDA Interest Rate Derivatives Definitions Floating Rate Matrix and 2006 ISDA Definitions, Section 7.1 Rate Options, as amended and supplemented through the date on which parties enter into the relevant transaction.",
    :db/ident :fibo-ind-ir-cm/CAD-CORRA-OIS_Compound,
    :fibo-ind-ir-ir/hasReferenceCurrency :fibo-fnd-acc-4217/CanadianDollar,
    :rdf/type #{:fibo-ind-ir-ir/InterestRateBenchmark :owl/NamedIndividual},
@@ -352,6 +342,30 @@
    {:xsd/anyURI
     "https://spec.edmcouncil.org/fibo/ontology/IND/InterestRates/CommonInterestRates/"},
    :rdfs/label "CAD-CORRA-OIS Compound"})
+
+(def CAD-CORRA_CanDeal_TMX_Term
+  {:cmns-av/abbreviation "CAD-CORRA CanDeal TMX Term",
+   :cmns-av/explanatoryNote
+   "Per 2021 ISDA Interest Rate Derivatives Definitions Floating Rate Matrix and 2006 ISDA Definitions, Section 7.1 Rate Options, as amended and supplemented through the date on which parties enter into the relevant transaction.",
+   :db/ident :fibo-ind-ir-cm/CAD-CORRA_CanDeal_TMX_Term,
+   :fibo-ind-ir-ir/hasReferenceCurrency :fibo-fnd-acc-4217/CanadianDollar,
+   :rdf/type #{:fibo-ind-ir-ir/InterestRateBenchmark :owl/NamedIndividual},
+   :rdfs/isDefinedBy
+   {:xsd/anyURI
+    "https://spec.edmcouncil.org/fibo/ontology/IND/InterestRates/CommonInterestRates/"},
+   :rdfs/label "CAD-CORRA CanDeal TMX Term"})
+
+(def CAD-CORRA_Compounded_Index
+  {:cmns-av/abbreviation "CAD-CORRA Compounded Index",
+   :cmns-av/explanatoryNote
+   "Per 2021 ISDA Interest Rate Derivatives Definitions Floating Rate Matrix and 2006 ISDA Definitions, Section 7.1 Rate Options, as amended and supplemented through the date on which parties enter into the relevant transaction.",
+   :db/ident :fibo-ind-ir-cm/CAD-CORRA_Compounded_Index,
+   :fibo-ind-ir-ir/hasReferenceCurrency :fibo-fnd-acc-4217/CanadianDollar,
+   :rdf/type #{:fibo-ind-ir-ir/InterestRateBenchmark :owl/NamedIndividual},
+   :rdfs/isDefinedBy
+   {:xsd/anyURI
+    "https://spec.edmcouncil.org/fibo/ontology/IND/InterestRates/CommonInterestRates/"},
+   :rdfs/label "CAD-CORRA Compounded Index"})
 
 (def CAD-ISDA-Swap_Rate
   {:cmns-av/abbreviation "CAD-ISDA-Swap Rate",
@@ -1865,6 +1879,18 @@
     "https://spec.edmcouncil.org/fibo/ontology/IND/InterestRates/CommonInterestRates/"},
    :rdfs/label "EUR-EuroSTR Compounded Index"})
 
+(def EUR-EuroSTR_FTSE_Term
+  {:cmns-av/abbreviation "EUR-EuroSTR FTSE Term",
+   :cmns-av/explanatoryNote
+   "Per 2021 ISDA Interest Rate Derivatives Definitions Floating Rate Matrix, as amended through the date on which parties enter into the relevant transaction.",
+   :db/ident :fibo-ind-ir-cm/EUR-EuroSTR_FTSE_Term,
+   :fibo-ind-ir-ir/hasReferenceCurrency :fibo-fnd-acc-4217/Euro,
+   :rdf/type #{:fibo-ind-ir-ir/InterestRateBenchmark :owl/NamedIndividual},
+   :rdfs/isDefinedBy
+   {:xsd/anyURI
+    "https://spec.edmcouncil.org/fibo/ontology/IND/InterestRates/CommonInterestRates/"},
+   :rdfs/label "EUR-EuroSTR FTSE Term"})
+
 (def EUR-EuroSTR_ICE_Compounded_Index
   {:cmns-av/abbreviation "EUR-EuroSTR ICE Compounded Index",
    :cmns-av/explanatoryNote
@@ -2342,6 +2368,18 @@
     "https://spec.edmcouncil.org/fibo/ontology/IND/InterestRates/CommonInterestRates/"},
    :rdfs/label "GBP-SONIA Compounded Index"})
 
+(def GBP-SONIA_FTSE_Term
+  {:cmns-av/abbreviation "GBP-SONIA FTSE Term",
+   :cmns-av/explanatoryNote
+   "Per 2021 ISDA Interest Rate Derivatives Definitions Floating Rate Matrix and 2006 ISDA Definitions, Section 7.1 Rate Options, as amended and supplemented through the date on which parties enter into the relevant transaction.",
+   :db/ident :fibo-ind-ir-cm/GBP-SONIA_FTSE_Term,
+   :fibo-ind-ir-ir/hasReferenceCurrency :fibo-fnd-acc-4217/PoundSterling,
+   :rdf/type #{:fibo-ind-ir-ir/InterestRateBenchmark :owl/NamedIndividual},
+   :rdfs/isDefinedBy
+   {:xsd/anyURI
+    "https://spec.edmcouncil.org/fibo/ontology/IND/InterestRates/CommonInterestRates/"},
+   :rdfs/label "GBP-SONIA FTSE Term"})
+
 (def GBP-SONIA_ICE_Compounded_Index
   {:cmns-av/abbreviation "GBP-SONIA ICE Compounded Index",
    :cmns-av/explanatoryNote
@@ -2437,18 +2475,6 @@
    {:xsd/anyURI
     "https://spec.edmcouncil.org/fibo/ontology/IND/InterestRates/CommonInterestRates/"},
    :rdfs/label "GBP-SONIA ICE Term"})
-
-(def GBP-SONIA_Refinitiv_Term
-  {:cmns-av/abbreviation "GBP-SONIA Refinitiv Term",
-   :cmns-av/explanatoryNote
-   "Per 2021 ISDA Interest Rate Derivatives Definitions Floating Rate Matrix and 2006 ISDA Definitions, Section 7.1 Rate Options, as amended and supplemented through the date on which parties enter into the relevant transaction.",
-   :db/ident :fibo-ind-ir-cm/GBP-SONIA_Refinitiv_Term,
-   :fibo-ind-ir-ir/hasReferenceCurrency :fibo-fnd-acc-4217/PoundSterling,
-   :rdf/type #{:fibo-ind-ir-ir/InterestRateBenchmark :owl/NamedIndividual},
-   :rdfs/isDefinedBy
-   {:xsd/anyURI
-    "https://spec.edmcouncil.org/fibo/ontology/IND/InterestRates/CommonInterestRates/"},
-   :rdfs/label "GBP-SONIA Refinitiv Term"})
 
 (def GBP-Semi-Annual_Swap_Rate
   {:cmns-av/abbreviation "GBP-Semi-Annual Swap Rate",
@@ -3935,6 +3961,30 @@
    {:xsd/anyURI
     "https://spec.edmcouncil.org/fibo/ontology/IND/InterestRates/CommonInterestRates/"},
    :rdfs/label "MXN-TIIE-Reference Banks"})
+
+(def MXN-TIIE_ON
+  {:cmns-av/abbreviation "MXN-TIIE ON",
+   :cmns-av/explanatoryNote
+   "Per 2021 ISDA Interest Rate Derivatives Definitions Floating Rate Matrix, as amended through the date on which parties enter into the relevant transaction.",
+   :db/ident :fibo-ind-ir-cm/MXN-TIIE_ON,
+   :fibo-ind-ir-ir/hasReferenceCurrency :fibo-fnd-acc-4217/MexicanPeso,
+   :rdf/type #{:fibo-ind-ir-ir/InterestRateBenchmark :owl/NamedIndividual},
+   :rdfs/isDefinedBy
+   {:xsd/anyURI
+    "https://spec.edmcouncil.org/fibo/ontology/IND/InterestRates/CommonInterestRates/"},
+   :rdfs/label "MXN-TIIE ON"})
+
+(def MXN-TIIE_ON-OIS_Compound
+  {:cmns-av/abbreviation "MXN-TIIE ON-OIS Compound",
+   :cmns-av/explanatoryNote
+   "Per 2021 ISDA Interest Rate Derivatives Definitions Floating Rate Matrix, as amended through the date on which parties enter into the relevant transaction.",
+   :db/ident :fibo-ind-ir-cm/MXN-TIIE_ON-OIS_Compound,
+   :fibo-ind-ir-ir/hasReferenceCurrency :fibo-fnd-acc-4217/MexicanPeso,
+   :rdf/type #{:fibo-ind-ir-ir/InterestRateBenchmark :owl/NamedIndividual},
+   :rdfs/isDefinedBy
+   {:xsd/anyURI
+    "https://spec.edmcouncil.org/fibo/ontology/IND/InterestRates/CommonInterestRates/"},
+   :rdfs/label "MXN-TIIE ON-OIS Compound"})
 
 (def MYR-KLIBOR
   {:cmns-av/abbreviation "MYR-KLIBOR",
@@ -6359,6 +6409,18 @@
     "https://spec.edmcouncil.org/fibo/ontology/IND/InterestRates/CommonInterestRates/"},
    :rdfs/label "USD-TBILL-H.15-Bloomberg"})
 
+(def USD-TBILL_Auction_High_Rate
+  {:cmns-av/abbreviation "USD-TBILL Auction High Rate",
+   :cmns-av/explanatoryNote
+   "Per 2021 ISDA Interest Rate Derivatives Definitions Floating Rate Matrix, as amended through the date on which parties enter into the relevant transaction.",
+   :db/ident :fibo-ind-ir-cm/USD-TBILL_Auction_High_Rate,
+   :fibo-ind-ir-ir/hasReferenceCurrency :fibo-fnd-acc-4217/USDollar,
+   :rdf/type #{:fibo-ind-ir-ir/InterestRateBenchmark :owl/NamedIndividual},
+   :rdfs/isDefinedBy
+   {:xsd/anyURI
+    "https://spec.edmcouncil.org/fibo/ontology/IND/InterestRates/CommonInterestRates/"},
+   :rdfs/label "USD-TBILL Auction High Rate"})
+
 (def USD-TBILL_Secondary_Market-Bond_Equivalent_Yield
   {:cmns-av/abbreviation "USD-TBILL Secondary Market-Bond Equivalent Yield",
    :cmns-av/explanatoryNote
@@ -6631,40 +6693,66 @@
     "https://spec.edmcouncil.org/fibo/ontology/IND/InterestRates/CommonInterestRates/"},
    :rdfs/label "ZAR-Quarterly Swap Rate-TRADITION-Reference Banks"})
 
+(def ZAR-ZARONIA
+  {:cmns-av/abbreviation "ZAR-ZARONIA",
+   :cmns-av/explanatoryNote
+   "Per 2021 ISDA Interest Rate Derivatives Definitions Floating Rate Matrix, as amended through the date on which parties enter into the relevant transaction.",
+   :db/ident :fibo-ind-ir-cm/ZAR-ZARONIA,
+   :fibo-ind-ir-ir/hasReferenceCurrency :fibo-fnd-acc-4217/Rand,
+   :rdf/type #{:fibo-ind-ir-ir/InterestRateBenchmark :owl/NamedIndividual},
+   :rdfs/isDefinedBy
+   {:xsd/anyURI
+    "https://spec.edmcouncil.org/fibo/ontology/IND/InterestRates/CommonInterestRates/"},
+   :rdfs/label "ZAR-ZARONIA"})
+
+(def ZAR-ZARONIA-OIS_Compound
+  {:cmns-av/abbreviation "ZAR-ZARONIA-OIS Compound",
+   :cmns-av/explanatoryNote
+   "Per 2021 ISDA Interest Rate Derivatives Definitions Floating Rate Matrix, as amended through the date on which parties enter into the relevant transaction.",
+   :db/ident :fibo-ind-ir-cm/ZAR-ZARONIA-OIS_Compound,
+   :fibo-ind-ir-ir/hasReferenceCurrency :fibo-fnd-acc-4217/Rand,
+   :rdf/type #{:fibo-ind-ir-ir/InterestRateBenchmark :owl/NamedIndividual},
+   :rdfs/isDefinedBy
+   {:xsd/anyURI
+    "https://spec.edmcouncil.org/fibo/ontology/IND/InterestRates/CommonInterestRates/"},
+   :rdfs/label "ZAR-ZARONIA-OIS Compound"})
+
 (def urn:uuid:3db195ad-719c-5e53-bdf5-14d83ed24097
   {:cmns-av/adaptedFrom
    {:xsd/anyURI
-    "http://www.fpml.org/coding-scheme/floating-rate-index-3-6.xml"},
-   :cmns-av/copyright
-   #{"Copyright (c) 2015-2023 EDM Council, Inc."
-     "Copyright (c) 2015-2023 Object Management Group, Inc."},
+    "http://www.fpml.org/coding-scheme/floating-rate-index-3-9.xml"},
+   :cmns-av/copyright #{"Copyright (c) 2023-2024 Federated Knowledge, LLC"
+                        "Copyright (c) 2015-2024 Object Management Group, Inc."
+                        "Copyright (c) 2015-2024 Thematix Partners LLC"
+                        "Copyright (c) 2015-2024 EDM Council, Inc."},
    :dcterms/abstract
    "This ontology provides reference data for commonly referenced interest rates, specifically those that are referenced in the ISDA FpML codes for floating interest rates. The rates included herein are generated directly from the FpML published reference data.",
    :dcterms/license {:xsd/anyURI "https://opensource.org/licenses/MIT"},
    :fibo-fnd-utl-av/hasMaturityLevel :fibo-fnd-utl-av/Release,
    :owl/imports
    #{{:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/IND/InterestRates/InterestRates/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FBC/FunctionalEntities/NorthAmericanEntities/USFinancialServicesEntitiesIndividuals/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/IND/InterestRates/MarketDataProviders/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Utilities/AnnotationVocabulary/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FND/Accounting/ISO4217-CurrencyCodes/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Accounting/ISO4217-CurrencyCodes/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FND/Utilities/AnnotationVocabulary/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Relations/Relations/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FND/Relations/Relations/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FBC/FunctionalEntities/NorthAmericanEntities/USFinancialServicesEntitiesIndividuals/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/AnnotationVocabulary/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/IND/InterestRates/MarketDataProviders/"}},
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/IND/InterestRates/InterestRates/"}},
    :owl/versionIRI
    {:xsd/anyURI
-    "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/IND/InterestRates/CommonInterestRates/"},
+    "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/IND/InterestRates/CommonInterestRates/"},
    :rdf/type :owl/Ontology,
    :rdfs/label "Common Interest Rates Ontology",
    :skos/changeNote
    #{"The https://spec.edmcouncil.org/fibo/ontology/IND/InterestRates/InterestRates.rdf version of this ontology was revised to reflect the latest FpML rates, which include a number of changes, including deprecating some rates and replacing them with others."
+     "The https://spec.edmcouncil.org/fibo/ontology/IND/InterestRates/InterestRates.rdf version of this ontology was modified to normalize the prefix for the EU individuals ontology and update the reference interest rates as of 26 April 2024."
      "The https://spec.edmcouncil.org/fibo/ontology/IND/InterestRates/CommonInterestRates.rdf version of the ontology was modified to use the Commons Ontology Library (Commons) Annotation Vocabulary rather than the OMG's Specification Metadata vocabulary."
      "The https://spec.edmcouncil.org/fibo/ontology/IND/InterestRates/InterestRates.rdf version of this ontology was revised to reflect the latest FpML rates."
      "The https://spec.edmcouncil.org/fibo/ontology/IND/InterestRates/InterestRates.rdf version of this ontology was modified to normalize the prefix for the EU individuals ontology and update the reference interest rates as of 10 March 2023."

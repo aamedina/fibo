@@ -2,7 +2,7 @@
   {:cmns-av/copyright #{"Copyright (c) 2017-2024 Object Management Group, Inc."
                         "Copyright (c) 2017-2024 EDM Council, Inc."},
    :dcat/downloadURL
-   "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FBC/FunctionalEntities/NorthAmericanEntities/USFinancialServicesEntitiesIndividuals/",
+   "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FBC/FunctionalEntities/NorthAmericanEntities/USFinancialServicesEntitiesIndividuals/",
    :dcterms/abstract
    "This ontology extends the financial services entities ontology in FBC with individual American entities that provide broad based services required by other FIBO domains, such as market data providers, instrument identifier issuers, organizations that provide exchanges in multiple countries, and so forth.",
    :dcterms/license {:xsd/anyURI "https://opensource.org/licenses/MIT"},
@@ -69,73 +69,73 @@
     "xsd" "http://www.w3.org/2001/XMLSchema#"},
    :owl/imports
    #{{:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FBC/FunctionalEntities/Markets/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FBC/FunctionalEntities/NorthAmericanEntities/USFinancialServicesEntities/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/ProductsAndServices/ProductsAndServices/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/BE/LegalEntities/LegalPersons/"}
+     {:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/BE/Corporations/Corporations/"}
+     {:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FBC/FunctionalEntities/BusinessCentersIndividuals/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/RolesAndCompositions/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FBC/FunctionalEntities/BusinessCentersIndividuals/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FND/Places/Locations/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/BE/OwnershipAndControl/OwnershipParties/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/BE/OwnershipAndControl/OwnershipParties/"}
+     {:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FND/Places/Addresses/"}
+     {:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/BE/OwnershipAndControl/ControlParties/"}
+     {:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FND/ProductsAndServices/ProductsAndServices/"}
+     {:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/BE/Trusts/Trusts/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/Identifiers/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/BE/GovernmentEntities/GovernmentEntities/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FBC/FunctionalEntities/RegulatoryAgencies/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/BE/OwnershipAndControl/CorporateControl/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/BE/OwnershipAndControl/CorporateControl/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FBC/FunctionalEntities/RegistrationAuthorities/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Places/Locations/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/BE/GovernmentEntities/GovernmentEntities/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/BE/LegalEntities/LEIEntities/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/BE/GovernmentEntities/NorthAmericanJurisdiction/USGovernmentEntitiesAndJurisdictions/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FBC/ProductsAndServices/FinancialProductsAndServices/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/BE/LegalEntities/LegalPersons/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Utilities/AnnotationVocabulary/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/BE/LegalEntities/LEIEntities/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/Collections/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Places/Addresses/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FBC/FunctionalEntities/RegistrationAuthorities/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FBC/FunctionalEntities/FinancialServicesEntities/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/BE/LegalEntities/FormalBusinessOrganizations/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/BE/Partnerships/Partnerships/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/BE/Partnerships/Partnerships/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Relations/Relations/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FBC/FunctionalEntities/FinancialServicesEntities/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/BE/OwnershipAndControl/ControlParties/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/BE/LegalEntities/FormalBusinessOrganizations/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FBC/ProductsAndServices/FinancialProductsAndServices/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/DatesAndTimes/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FBC/FunctionalEntities/BusinessRegistries/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FBC/FunctionalEntities/Markets/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Agreements/Contracts/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/BE/LegalEntities/CorporateBodies/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/BE/Corporations/Corporations/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/BE/LegalEntities/CorporateBodies/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FND/Utilities/AnnotationVocabulary/"}
      {:xsd/anyURI
       "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-CA/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/BE/GovernmentEntities/NorthAmericanJurisdiction/USGovernmentEntitiesAndJurisdictions/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FND/Relations/Relations/"}
+     {:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FBC/FunctionalEntities/BusinessRegistries/"}
      {:xsd/anyURI
       "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-US/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/AnnotationVocabulary/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/BE/Trusts/Trusts/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FBC/FunctionalEntities/RegulatoryAgencies/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FBC/FunctionalEntities/NorthAmericanEntities/USFinancialServicesEntities/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FND/Agreements/Contracts/"}
      {:xsd/anyURI
       "https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/"}},
    :owl/versionIRI
    {:xsd/anyURI
-    "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FBC/FunctionalEntities/NorthAmericanEntities/USFinancialServicesEntitiesIndividuals/"},
+    "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FBC/FunctionalEntities/NorthAmericanEntities/USFinancialServicesEntitiesIndividuals/"},
    :rdf/type :owl/Ontology,
    :rdfa/prefix "fibo-fbc-fct-usfsind",
    :rdfa/uri
@@ -1071,73 +1071,73 @@
    :fibo-fnd-utl-av/hasMaturityLevel :fibo-fnd-utl-av/Release,
    :owl/imports
    #{{:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FBC/FunctionalEntities/Markets/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FBC/FunctionalEntities/NorthAmericanEntities/USFinancialServicesEntities/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/ProductsAndServices/ProductsAndServices/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/BE/LegalEntities/LegalPersons/"}
+     {:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/BE/Corporations/Corporations/"}
+     {:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FBC/FunctionalEntities/BusinessCentersIndividuals/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/RolesAndCompositions/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FBC/FunctionalEntities/BusinessCentersIndividuals/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FND/Places/Locations/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/BE/OwnershipAndControl/OwnershipParties/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/BE/OwnershipAndControl/OwnershipParties/"}
+     {:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FND/Places/Addresses/"}
+     {:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/BE/OwnershipAndControl/ControlParties/"}
+     {:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FND/ProductsAndServices/ProductsAndServices/"}
+     {:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/BE/Trusts/Trusts/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/Identifiers/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/BE/GovernmentEntities/GovernmentEntities/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FBC/FunctionalEntities/RegulatoryAgencies/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/BE/OwnershipAndControl/CorporateControl/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/BE/OwnershipAndControl/CorporateControl/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FBC/FunctionalEntities/RegistrationAuthorities/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Places/Locations/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/BE/GovernmentEntities/GovernmentEntities/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/BE/LegalEntities/LEIEntities/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/BE/GovernmentEntities/NorthAmericanJurisdiction/USGovernmentEntitiesAndJurisdictions/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FBC/ProductsAndServices/FinancialProductsAndServices/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/BE/LegalEntities/LegalPersons/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Utilities/AnnotationVocabulary/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/BE/LegalEntities/LEIEntities/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/Collections/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Places/Addresses/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FBC/FunctionalEntities/RegistrationAuthorities/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FBC/FunctionalEntities/FinancialServicesEntities/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/BE/LegalEntities/FormalBusinessOrganizations/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/BE/Partnerships/Partnerships/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/BE/Partnerships/Partnerships/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Relations/Relations/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FBC/FunctionalEntities/FinancialServicesEntities/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/BE/OwnershipAndControl/ControlParties/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/BE/LegalEntities/FormalBusinessOrganizations/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FBC/ProductsAndServices/FinancialProductsAndServices/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/DatesAndTimes/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FBC/FunctionalEntities/BusinessRegistries/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FBC/FunctionalEntities/Markets/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Agreements/Contracts/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/BE/LegalEntities/CorporateBodies/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/BE/Corporations/Corporations/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/BE/LegalEntities/CorporateBodies/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FND/Utilities/AnnotationVocabulary/"}
      {:xsd/anyURI
       "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-CA/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/BE/GovernmentEntities/NorthAmericanJurisdiction/USGovernmentEntitiesAndJurisdictions/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FND/Relations/Relations/"}
+     {:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FBC/FunctionalEntities/BusinessRegistries/"}
      {:xsd/anyURI
       "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-US/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/AnnotationVocabulary/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/BE/Trusts/Trusts/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FBC/FunctionalEntities/RegulatoryAgencies/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FBC/FunctionalEntities/NorthAmericanEntities/USFinancialServicesEntities/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FND/Agreements/Contracts/"}
      {:xsd/anyURI
       "https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/"}},
    :owl/versionIRI
    {:xsd/anyURI
-    "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FBC/FunctionalEntities/NorthAmericanEntities/USFinancialServicesEntitiesIndividuals/"},
+    "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FBC/FunctionalEntities/NorthAmericanEntities/USFinancialServicesEntitiesIndividuals/"},
    :rdf/type :owl/Ontology,
    :rdfs/label "American Financial Services Entities - Individuals Ontology",
    :skos/changeNote

@@ -5,7 +5,7 @@
    #{"ISO 4217 Codes for the representation of currencies and funds, Seventh edition, 2008-07-15"
      "ISO 4217 Codes for the representation of currencies and funds, Eighth edition, 2015-08-01"},
    :dcat/downloadURL
-   "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Accounting/CurrencyAmount/",
+   "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FND/Accounting/CurrencyAmount/",
    :dcterms/abstract
    "This ontology defines currency and monetary amount related concepts for use in defining other FIBO ontology elements. There are two distinct kinds of concepts that correspond to money and amounts: a concrete, actual amount of money, and the monetary measure of something denominated in some currency. These are dimensionally the same but whereas 'money amount' is defined as an amount of money, 'monetary amount' is an abstract monetary measure.\n\nThe definition of currency provided herein is compliant with the definitions given in ISO 4217. ISO 4217 provides universally applicable coded representations of names of currencies and funds, used internationally for financial transaction support. The ontology has been partitioned into 2 parts: (1) the essential concept system describing the standard (this module), and (2) ISO4217-1-CurrencyCodes, which contains all of the individuals specified in ISO 4217.",
    :dcterms/license {:xsd/anyURI "https://opensource.org/licenses/MIT"},
@@ -40,18 +40,18 @@
      {:xsd/anyURI "https://www.omg.org/spec/Commons/Identifiers/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/ContextualDesignators/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/QuantitiesAndUnits/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Utilities/AnnotationVocabulary/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/Collections/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/CodesAndCodeSets/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/Designators/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Relations/Relations/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FND/Utilities/AnnotationVocabulary/"}
+     {:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FND/Relations/Relations/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/TextDatatype/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/AnnotationVocabulary/"}},
    :owl/versionIRI
    {:xsd/anyURI
-    "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Accounting/CurrencyAmount/"},
+    "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FND/Accounting/CurrencyAmount/"},
    :rdf/type :owl/Ontology,
    :rdfa/prefix "fibo-fnd-acc-cur",
    :rdfa/uri
@@ -563,18 +563,18 @@
      {:xsd/anyURI "https://www.omg.org/spec/Commons/Identifiers/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/ContextualDesignators/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/QuantitiesAndUnits/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Utilities/AnnotationVocabulary/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/Collections/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/CodesAndCodeSets/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/Designators/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Relations/Relations/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FND/Utilities/AnnotationVocabulary/"}
+     {:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FND/Relations/Relations/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/TextDatatype/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/AnnotationVocabulary/"}},
    :owl/versionIRI
    {:xsd/anyURI
-    "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Accounting/CurrencyAmount/"},
+    "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FND/Accounting/CurrencyAmount/"},
    :rdf/type :owl/Ontology,
    :rdfs/label "Currency Amount Ontology",
    :skos/changeNote

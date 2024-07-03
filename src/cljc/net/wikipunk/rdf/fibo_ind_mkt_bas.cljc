@@ -2,7 +2,7 @@
   {:cmns-av/copyright #{"Copyright (c) 2014-2023 Object Management Group, Inc."
                         "Copyright (c) 2014-2023 EDM Council, Inc."},
    :dcat/downloadURL
-   "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/IND/MarketIndices/BasketIndices/",
+   "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/IND/MarketIndices/BasketIndices/",
    :dcterms/abstract
    "This ontology defines market indices as hypothetical portfolios of investment holdings that correspond to some segment of the financial market, whose value is determined by the prices of the underlying holdings. Coverage includes credit indices, security-based indices, economic indicator based indices, and combinations thereof.",
    :dcterms/license {:xsd/anyURI "https://opensource.org/licenses/MIT"},
@@ -51,43 +51,43 @@
     "xsd" "http://www.w3.org/2001/XMLSchema#"},
    :owl/imports
    #{{:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Accounting/CurrencyAmount/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FND/Utilities/Analytics/"}
+     {:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FND/DatesAndTimes/FinancialDates/"}
+     {:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FND/Arrangements/Documents/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/Documents/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FBC/DebtAndEquities/Debt/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/SEC/Equities/EquityInstruments/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/SEC/Securities/SecuritiesClassification/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/SEC/Securities/Baskets/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/ContextualDesignators/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/QuantitiesAndUnits/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Arrangements/Documents/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FBC/ProductsAndServices/FinancialProductsAndServices/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Arrangements/ClassificationSchemes/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Utilities/AnnotationVocabulary/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/DatesAndTimes/FinancialDates/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/Collections/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Utilities/Analytics/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FBC/DebtAndEquities/Debt/"}
+     {:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/SEC/Securities/SecuritiesClassification/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/Classifiers/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/SEC/Equities/EquityInstruments/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Relations/Relations/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/SEC/Securities/Baskets/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FBC/ProductsAndServices/FinancialProductsAndServices/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/DatesAndTimes/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Agreements/Contracts/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FND/Arrangements/ClassificationSchemes/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FBC/DebtAndEquities/CreditEvents/"}
-     {:xsd/anyURI "https://www.omg.org/spec/Commons/AnnotationVocabulary/"}},
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FND/Utilities/AnnotationVocabulary/"}
+     {:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FND/Accounting/CurrencyAmount/"}
+     {:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FND/Relations/Relations/"}
+     {:xsd/anyURI "https://www.omg.org/spec/Commons/AnnotationVocabulary/"}
+     {:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FND/Agreements/Contracts/"}
+     {:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FBC/DebtAndEquities/CreditEvents/"}},
    :owl/versionIRI
    {:xsd/anyURI
-    "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/IND/MarketIndices/BasketIndices/"},
+    "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/IND/MarketIndices/BasketIndices/"},
    :rdf/type :owl/Ontology,
    :rdfa/prefix "fibo-ind-mkt-bas",
    :rdfa/uri
@@ -453,43 +453,43 @@
    :fibo-fnd-utl-av/hasMaturityLevel :fibo-fnd-utl-av/Release,
    :owl/imports
    #{{:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Accounting/CurrencyAmount/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FND/Utilities/Analytics/"}
+     {:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FND/DatesAndTimes/FinancialDates/"}
+     {:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FND/Arrangements/Documents/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/Documents/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FBC/DebtAndEquities/Debt/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/SEC/Equities/EquityInstruments/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/SEC/Securities/SecuritiesClassification/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/SEC/Securities/Baskets/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/ContextualDesignators/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/QuantitiesAndUnits/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Arrangements/Documents/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FBC/ProductsAndServices/FinancialProductsAndServices/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Arrangements/ClassificationSchemes/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Utilities/AnnotationVocabulary/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/DatesAndTimes/FinancialDates/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/Collections/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Utilities/Analytics/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FBC/DebtAndEquities/Debt/"}
+     {:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/SEC/Securities/SecuritiesClassification/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/Classifiers/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/SEC/Equities/EquityInstruments/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Relations/Relations/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/SEC/Securities/Baskets/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FBC/ProductsAndServices/FinancialProductsAndServices/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/DatesAndTimes/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Agreements/Contracts/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FND/Arrangements/ClassificationSchemes/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FBC/DebtAndEquities/CreditEvents/"}
-     {:xsd/anyURI "https://www.omg.org/spec/Commons/AnnotationVocabulary/"}},
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FND/Utilities/AnnotationVocabulary/"}
+     {:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FND/Accounting/CurrencyAmount/"}
+     {:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FND/Relations/Relations/"}
+     {:xsd/anyURI "https://www.omg.org/spec/Commons/AnnotationVocabulary/"}
+     {:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FND/Agreements/Contracts/"}
+     {:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FBC/DebtAndEquities/CreditEvents/"}},
    :owl/versionIRI
    {:xsd/anyURI
-    "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/IND/MarketIndices/BasketIndices/"},
+    "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/IND/MarketIndices/BasketIndices/"},
    :rdf/type :owl/Ontology,
    :rdfs/label {:rdf/language "en",
                 :rdf/value    "Basket Indices Ontology"},

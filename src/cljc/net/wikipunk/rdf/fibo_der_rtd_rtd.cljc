@@ -3,7 +3,7 @@
    #{"Copyright (c) 2016-2024 EDM Council, Inc."
      "Copyright (c) 2016-2024 Object Management Group, Inc."},
    :dcat/downloadURL
-   "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/DER/RateDerivatives/RateDerivatives/",
+   "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/DER/RateDerivatives/RateDerivatives/",
    :dcterms/abstract
    "This ontology defines concepts that are common to derivatives based on variation in some defined variable, such as an economic rate, an interest rate or an index value.",
    :dcterms/license {:xsd/anyURI "https://opensource.org/licenses/MIT"},
@@ -37,27 +37,27 @@
     "xsd" "http://www.w3.org/2001/XMLSchema#"},
    :owl/imports
    #{{:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/IND/InterestRates/InterestRates/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FND/DatesAndTimes/FinancialDates/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/IND/Indicators/Indicators/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/SEC/Securities/Baskets/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/IND/EconomicIndicators/EconomicIndicators/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/DER/DerivativesContracts/DerivativesBasics/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Utilities/AnnotationVocabulary/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/IND/Indicators/Indicators/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/DatesAndTimes/FinancialDates/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/IND/ForeignExchange/ForeignExchange/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/DER/DerivativesContracts/DerivativesBasics/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/IND/EconomicIndicators/EconomicIndicators/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/SEC/Securities/Baskets/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FND/Utilities/AnnotationVocabulary/"}
+     {:xsd/anyURI "https://www.omg.org/spec/Commons/AnnotationVocabulary/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/IND/ForeignExchange/ForeignExchange/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FBC/FinancialInstruments/FinancialInstruments/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FBC/FinancialInstruments/FinancialInstruments/"}
-     {:xsd/anyURI "https://www.omg.org/spec/Commons/AnnotationVocabulary/"}},
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/IND/InterestRates/InterestRates/"}},
    :owl/versionIRI
    {:xsd/anyURI
-    "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/DER/RateDerivatives/RateDerivatives/"},
+    "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/DER/RateDerivatives/RateDerivatives/"},
    :rdf/type :owl/Ontology,
    :rdfa/prefix "fibo-der-rtd-rtd",
    :rdfa/uri
@@ -213,27 +213,27 @@
    :fibo-fnd-utl-av/hasMaturityLevel :fibo-fnd-utl-av/Release,
    :owl/imports
    #{{:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/IND/InterestRates/InterestRates/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FND/DatesAndTimes/FinancialDates/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/IND/Indicators/Indicators/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/SEC/Securities/Baskets/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/IND/EconomicIndicators/EconomicIndicators/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/DER/DerivativesContracts/DerivativesBasics/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Utilities/AnnotationVocabulary/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/IND/Indicators/Indicators/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/DatesAndTimes/FinancialDates/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/IND/ForeignExchange/ForeignExchange/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/DER/DerivativesContracts/DerivativesBasics/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/IND/EconomicIndicators/EconomicIndicators/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/SEC/Securities/Baskets/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FND/Utilities/AnnotationVocabulary/"}
+     {:xsd/anyURI "https://www.omg.org/spec/Commons/AnnotationVocabulary/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/IND/ForeignExchange/ForeignExchange/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FBC/FinancialInstruments/FinancialInstruments/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FBC/FinancialInstruments/FinancialInstruments/"}
-     {:xsd/anyURI "https://www.omg.org/spec/Commons/AnnotationVocabulary/"}},
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/IND/InterestRates/InterestRates/"}},
    :owl/versionIRI
    {:xsd/anyURI
-    "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/DER/RateDerivatives/RateDerivatives/"},
+    "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/DER/RateDerivatives/RateDerivatives/"},
    :rdf/type :owl/Ontology,
    :rdfs/label "Rate Derivatives Ontology",
    :skos/changeNote

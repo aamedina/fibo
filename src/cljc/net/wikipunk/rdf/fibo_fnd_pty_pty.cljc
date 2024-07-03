@@ -3,7 +3,7 @@
    #{"Copyright (c) 2013-2024 EDM Council, Inc."
      "Copyright (c) 2013-2024 Object Management Group, Inc."},
    :dcat/downloadURL
-   "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Parties/Parties/",
+   "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FND/Parties/Parties/",
    :dcterms/abstract
    "This ontology defines high-level party roles, over and above those provided in the OMG Commons Ontology Library. It describes entities in terms of one or more roles it performs in situations and other relationships such as in some formal contractual or transactional relationship.",
    :dcterms/license {:xsd/anyURI "https://opensource.org/licenses/MIT"},
@@ -33,22 +33,22 @@
     "xsd" "http://www.w3.org/2001/XMLSchema#"},
    :owl/imports
    #{{:xsd/anyURI "https://www.omg.org/spec/Commons/RolesAndCompositions/"}
+     {:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FND/Places/Addresses/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/Identifiers/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/PartiesAndSituations/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/ContextualDesignators/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Utilities/AnnotationVocabulary/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/Collections/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Places/Addresses/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/Designators/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Relations/Relations/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/DatesAndTimes/"}
+     {:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FND/Utilities/AnnotationVocabulary/"}
+     {:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FND/Relations/Relations/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/AnnotationVocabulary/"}},
    :owl/versionIRI
    {:xsd/anyURI
-    "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Parties/Parties/"},
+    "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FND/Parties/Parties/"},
    :rdf/type :owl/Ontology,
    :rdfa/prefix "fibo-fnd-pty-pty",
    :rdfa/uri "https://spec.edmcouncil.org/fibo/ontology/FND/Parties/Parties/",
@@ -69,6 +69,7 @@
      "The https://spec.edmcouncil.org/fibo/ontology/FND/Parties/Parties.rdf version of the ontology was modified to use the Commons Ontology Library (Commons) Annotation Vocabulary rather than the OMG's Specification Metadata vocabulary."
      "The https://spec.edmcouncil.org/fibo/ontology/FND/Parties/Parties.rdf version of this ontology was extended to support more complex situations involving parties in various roles, loosen the restriction on party in role with respect to commencement date, and to eliminate the redundant union in the definition of independent party."
      "The https://spec.edmcouncil.org/fibo/ontology/FND/Parties/Parties.rdf version of the ontology was modified to eliminate deprecations that are more than 6 months old."
+     "The https://spec.edmcouncil.org/fibo/ontology/FND/Parties/Parties.rdf version of the ontology was modified to correct a wrong prefix on hasRole."
      "The http://www.omg.org/spec/EDMC-FIBO/FND/20130801/Parties/Parties.rdf version of the ontology was was modified per the issue resolutions identified in the FIBO FND 1.0 FTF report and in https://spec.edmcouncil.org/fibo/ontology/FND/1.0/AboutFND-1.0/."
      "The https://spec.edmcouncil.org/fibo/ontology/FND/Parties/Parties.rdf version of this ontology was revised to eliminate duplication with the concepts in LCC."
      "The http://www.omg.org/spec/FIBO/Foundations/20130601/Roles/Parties.owl version of the ontology was revised in advance of the September 2013 New Brunswick, NJ meeting, as follows:\n\t(1) to use slash style URI/IRIss (also called 303 URIs, vs. hash style) as required to support server side processing \n\t(2) to use version-independent IRIs for all definitions internally as opposed to version-specific IRIs\n\t(3) to change the file suffix from .owl to .rdf to increase usability in RDF tools\n\t(4) to use 4-level abbreviations and corresponding namespace prefixes for all FIBO ontologies, reflecting a family/specification/module/ontology structure\n\t(5) to incorporate changes to the specification metadata to support documentation at the family, specification, module, and ontology level, similar to the abbreviations.\n\t(6) to combine Parties, Party Roles, and Roles in a single, new, Parties module, combine Parties and Party Roles into a single ontology, and add an inverse for the hasParty property."},
@@ -338,7 +339,7 @@
 (def hasThingInRole
   {:db/ident :fibo-fnd-pty-pty/hasThingInRole,
    :owl/deprecated true,
-   :owl/equivalentProperty :cmns-rlcmp/hasRole
+   :owl/equivalentProperty :cmns-rlcmp/hasRole,
    :rdf/type :owl/ObjectProperty,
    :rdfs/isDefinedBy
    {:xsd/anyURI
@@ -435,22 +436,22 @@
    :fibo-fnd-utl-av/hasMaturityLevel :fibo-fnd-utl-av/Release,
    :owl/imports
    #{{:xsd/anyURI "https://www.omg.org/spec/Commons/RolesAndCompositions/"}
+     {:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FND/Places/Addresses/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/Identifiers/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/PartiesAndSituations/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/ContextualDesignators/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Utilities/AnnotationVocabulary/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/Collections/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Places/Addresses/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/Designators/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Relations/Relations/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/DatesAndTimes/"}
+     {:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FND/Utilities/AnnotationVocabulary/"}
+     {:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FND/Relations/Relations/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/AnnotationVocabulary/"}},
    :owl/versionIRI
    {:xsd/anyURI
-    "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Parties/Parties/"},
+    "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FND/Parties/Parties/"},
    :rdf/type :owl/Ontology,
    :rdfs/label "Parties Ontology",
    :skos/changeNote
@@ -469,6 +470,7 @@
      "The https://spec.edmcouncil.org/fibo/ontology/FND/Parties/Parties.rdf version of the ontology was modified to use the Commons Ontology Library (Commons) Annotation Vocabulary rather than the OMG's Specification Metadata vocabulary."
      "The https://spec.edmcouncil.org/fibo/ontology/FND/Parties/Parties.rdf version of this ontology was extended to support more complex situations involving parties in various roles, loosen the restriction on party in role with respect to commencement date, and to eliminate the redundant union in the definition of independent party."
      "The https://spec.edmcouncil.org/fibo/ontology/FND/Parties/Parties.rdf version of the ontology was modified to eliminate deprecations that are more than 6 months old."
+     "The https://spec.edmcouncil.org/fibo/ontology/FND/Parties/Parties.rdf version of the ontology was modified to correct a wrong prefix on hasRole."
      "The http://www.omg.org/spec/EDMC-FIBO/FND/20130801/Parties/Parties.rdf version of the ontology was was modified per the issue resolutions identified in the FIBO FND 1.0 FTF report and in https://spec.edmcouncil.org/fibo/ontology/FND/1.0/AboutFND-1.0/."
      "The https://spec.edmcouncil.org/fibo/ontology/FND/Parties/Parties.rdf version of this ontology was revised to eliminate duplication with the concepts in LCC."
      "The http://www.omg.org/spec/FIBO/Foundations/20130601/Roles/Parties.owl version of the ontology was revised in advance of the September 2013 New Brunswick, NJ meeting, as follows:\n\t(1) to use slash style URI/IRIss (also called 303 URIs, vs. hash style) as required to support server side processing \n\t(2) to use version-independent IRIs for all definitions internally as opposed to version-specific IRIs\n\t(3) to change the file suffix from .owl to .rdf to increase usability in RDF tools\n\t(4) to use 4-level abbreviations and corresponding namespace prefixes for all FIBO ontologies, reflecting a family/specification/module/ontology structure\n\t(5) to incorporate changes to the specification metadata to support documentation at the family, specification, module, and ontology level, similar to the abbreviations.\n\t(6) to combine Parties, Party Roles, and Roles in a single, new, Parties module, combine Parties and Party Roles into a single ontology, and add an inverse for the hasParty property."},

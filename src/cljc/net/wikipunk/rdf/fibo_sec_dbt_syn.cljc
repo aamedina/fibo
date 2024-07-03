@@ -1,7 +1,7 @@
 (ns net.wikipunk.rdf.fibo-sec-dbt-syn
   {:cmns-av/copyright "Copyright (c) 2015-2023 EDM Council, Inc.",
    :dcat/downloadURL
-   "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/SEC/Debt/SyntheticCDOs/",
+   "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/SEC/Debt/SyntheticCDOs/",
    :dcterms/abstract
    "Synthetic collateralized debt obligations are instruments designed to provide the same kind of structure and returns as a CDO, but these are not backed by an actual pool of debt assets.",
    :dcterms/license {:xsd/anyURI "https://opensource.org/licenses/MIT"},
@@ -35,30 +35,30 @@
     "skos" "http://www.w3.org/2004/02/skos/core#",
     "xsd" "http://www.w3.org/2001/XMLSchema#"},
    :owl/imports
-   #{{:xsd/anyURI "https://www.omg.org/spec/Commons/Documents/"}
+   #{{:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/BE/LegalEntities/LegalPersons/"}
+     {:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/SEC/Securities/Pools/"}
+     {:xsd/anyURI "https://www.omg.org/spec/Commons/Documents/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/QuantitiesAndUnits/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/SEC/Debt/PoolBackedSecurities/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/SEC/Funds/Funds/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/SEC/Securities/Pools/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/DER/CreditDerivatives/CreditDefaultSwaps/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/BE/LegalEntities/LegalPersons/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FND/Accounting/AccountingEquity/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Utilities/AnnotationVocabulary/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FBC/DebtAndEquities/CreditRatings/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FBC/DebtAndEquities/CreditRatings/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/SEC/Debt/CollateralizedDebtObligations/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Accounting/AccountingEquity/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FND/Utilities/AnnotationVocabulary/"}
+     {:xsd/anyURI "https://www.omg.org/spec/Commons/AnnotationVocabulary/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/SEC/Funds/Funds/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/DER/CreditDerivatives/CreditDefaultSwaps/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/SEC/Debt/CollateralizedDebtObligations/"}
-     {:xsd/anyURI "https://www.omg.org/spec/Commons/AnnotationVocabulary/"}},
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/SEC/Debt/PoolBackedSecurities/"}},
    :owl/versionIRI
    {:xsd/anyURI
-    "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/SEC/Debt/SyntheticCDOs/"},
+    "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/SEC/Debt/SyntheticCDOs/"},
    :rdf/type :owl/Ontology,
    :rdfa/prefix "fibo-sec-dbt-syn",
    :rdfa/uri
@@ -460,30 +460,30 @@
    :dcterms/license {:xsd/anyURI "https://opensource.org/licenses/MIT"},
    :fibo-fnd-utl-av/hasMaturityLevel :fibo-fnd-utl-av/Provisional,
    :owl/imports
-   #{{:xsd/anyURI "https://www.omg.org/spec/Commons/Documents/"}
+   #{{:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/BE/LegalEntities/LegalPersons/"}
+     {:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/SEC/Securities/Pools/"}
+     {:xsd/anyURI "https://www.omg.org/spec/Commons/Documents/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/QuantitiesAndUnits/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/SEC/Debt/PoolBackedSecurities/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/SEC/Funds/Funds/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/SEC/Securities/Pools/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/DER/CreditDerivatives/CreditDefaultSwaps/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/BE/LegalEntities/LegalPersons/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FND/Accounting/AccountingEquity/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Utilities/AnnotationVocabulary/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FBC/DebtAndEquities/CreditRatings/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FBC/DebtAndEquities/CreditRatings/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/SEC/Debt/CollateralizedDebtObligations/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Accounting/AccountingEquity/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FND/Utilities/AnnotationVocabulary/"}
+     {:xsd/anyURI "https://www.omg.org/spec/Commons/AnnotationVocabulary/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/SEC/Funds/Funds/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/DER/CreditDerivatives/CreditDefaultSwaps/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/SEC/Debt/CollateralizedDebtObligations/"}
-     {:xsd/anyURI "https://www.omg.org/spec/Commons/AnnotationVocabulary/"}},
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/SEC/Debt/PoolBackedSecurities/"}},
    :owl/versionIRI
    {:xsd/anyURI
-    "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/SEC/Debt/SyntheticCDOs/"},
+    "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/SEC/Debt/SyntheticCDOs/"},
    :rdf/type :owl/Ontology,
    :rdfs/label {:rdf/language "en",
                 :rdf/value    "SyntheticCDOs"},

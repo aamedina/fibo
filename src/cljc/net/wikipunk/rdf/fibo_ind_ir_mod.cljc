@@ -3,7 +3,7 @@
    #{"Copyright (c) 2015-2023 EDM Council, Inc."
      "Copyright (c) 2015-2023 Object Management Group, Inc."},
    :dcat/downloadURL
-   "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/IND/InterestRates/MetadataINDInterestRates/InterestRatesModule",
+   "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/IND/InterestRates/MetadataINDInterestRates/InterestRatesModule",
    :dcterms/abstract
    "This module includes ontologies defining concepts for reference interest rates, that is, rates of interest paid on capital by central banks, groups of banks and other lenders, including inter-bank lending rates and rates of certain representative debt instruments.",
    :dcterms/issued #inst "2018-08-27T18:00:00.000-00:00",
@@ -22,11 +22,11 @@
     "xsd"     "http://www.w3.org/2001/XMLSchema#"},
    :owl/imports
    #{{:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Utilities/AnnotationVocabulary/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FND/Utilities/AnnotationVocabulary/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/AnnotationVocabulary/"}},
    :owl/versionIRI
    {:xsd/anyURI
-    "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/IND/InterestRates/MetadataINDInterestRates/"},
+    "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/IND/InterestRates/MetadataINDInterestRates/"},
    :rdf/type :owl/Ontology,
    :rdfa/prefix "fibo-ind-ir-mod",
    :rdfa/uri
@@ -84,11 +84,11 @@
    :dcterms/modified #inst "2023-02-06T18:00:00.000-00:00",
    :owl/imports
    #{{:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Utilities/AnnotationVocabulary/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FND/Utilities/AnnotationVocabulary/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/AnnotationVocabulary/"}},
    :owl/versionIRI
    {:xsd/anyURI
-    "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/IND/InterestRates/MetadataINDInterestRates/"},
+    "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/IND/InterestRates/MetadataINDInterestRates/"},
    :rdf/type :owl/Ontology,
    :rdfs/label
    "Metadata about the EDMC-FIBO Indices and Indicators (IND) Interest Rates Module",

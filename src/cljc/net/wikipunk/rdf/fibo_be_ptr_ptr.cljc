@@ -3,7 +3,7 @@
    #{"Copyright (c) 2013-2024 EDM Council, Inc."
      "Copyright (c) 2013-2024 Object Management Group, Inc."},
    :dcat/downloadURL
-   "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/BE/Partnerships/Partnerships/",
+   "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/BE/Partnerships/Partnerships/",
    :dcterms/abstract
    "This ontology defines partnerships and related concepts. The concepts distinguish general from limited partners, as well as the types of equity that they hold. Included are abstract definitions of partnership types based on whether they have general, limited or both kinds of partners. Both legally incorporated and non incorporated forms of partnerships are covered.",
    :dcterms/license {:xsd/anyURI "https://opensource.org/licenses/MIT"},
@@ -40,31 +40,31 @@
     "skos" "http://www.w3.org/2004/02/skos/core#",
     "xsd" "http://www.w3.org/2001/XMLSchema#"},
    :owl/imports
-   #{{:xsd/anyURI "https://www.omg.org/spec/Commons/RolesAndCompositions/"}
+   #{{:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/BE/LegalEntities/LegalPersons/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Law/LegalCapacity/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FND/Organizations/Organizations/"}
+     {:xsd/anyURI "https://www.omg.org/spec/Commons/RolesAndCompositions/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/BE/OwnershipAndControl/OwnershipParties/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/BE/OwnershipAndControl/OwnershipParties/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Organizations/Organizations/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/BE/OwnershipAndControl/ControlParties/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/PartiesAndSituations/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/BE/LegalEntities/LegalPersons/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Utilities/AnnotationVocabulary/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/Collections/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/GoalsAndObjectives/Objectives/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/BE/LegalEntities/FormalBusinessOrganizations/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Relations/Relations/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FND/Utilities/AnnotationVocabulary/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/BE/OwnershipAndControl/ControlParties/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FND/Law/LegalCapacity/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/BE/LegalEntities/FormalBusinessOrganizations/"}
-     {:xsd/anyURI "https://www.omg.org/spec/Commons/AnnotationVocabulary/"}},
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FND/Relations/Relations/"}
+     {:xsd/anyURI "https://www.omg.org/spec/Commons/AnnotationVocabulary/"}
+     {:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FND/GoalsAndObjectives/Objectives/"}},
    :owl/versionIRI
    {:xsd/anyURI
-    "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/BE/Partnerships/Partnerships/"},
+    "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/BE/Partnerships/Partnerships/"},
    :rdf/type :owl/Ontology,
    :rdfa/prefix "fibo-be-ptr-ptr",
    :rdfa/uri
@@ -331,31 +331,31 @@
    :dcterms/license {:xsd/anyURI "https://opensource.org/licenses/MIT"},
    :fibo-fnd-utl-av/hasMaturityLevel :fibo-fnd-utl-av/Release,
    :owl/imports
-   #{{:xsd/anyURI "https://www.omg.org/spec/Commons/RolesAndCompositions/"}
+   #{{:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/BE/LegalEntities/LegalPersons/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Law/LegalCapacity/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FND/Organizations/Organizations/"}
+     {:xsd/anyURI "https://www.omg.org/spec/Commons/RolesAndCompositions/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/BE/OwnershipAndControl/OwnershipParties/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/BE/OwnershipAndControl/OwnershipParties/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Organizations/Organizations/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/BE/OwnershipAndControl/ControlParties/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/PartiesAndSituations/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/BE/LegalEntities/LegalPersons/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Utilities/AnnotationVocabulary/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/Collections/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/GoalsAndObjectives/Objectives/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/BE/LegalEntities/FormalBusinessOrganizations/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Relations/Relations/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FND/Utilities/AnnotationVocabulary/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/BE/OwnershipAndControl/ControlParties/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FND/Law/LegalCapacity/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/BE/LegalEntities/FormalBusinessOrganizations/"}
-     {:xsd/anyURI "https://www.omg.org/spec/Commons/AnnotationVocabulary/"}},
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FND/Relations/Relations/"}
+     {:xsd/anyURI "https://www.omg.org/spec/Commons/AnnotationVocabulary/"}
+     {:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FND/GoalsAndObjectives/Objectives/"}},
    :owl/versionIRI
    {:xsd/anyURI
-    "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/BE/Partnerships/Partnerships/"},
+    "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/BE/Partnerships/Partnerships/"},
    :rdf/type :owl/Ontology,
    :rdfs/label "Partnerships Ontology",
    :skos/changeNote

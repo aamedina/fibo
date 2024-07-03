@@ -2,7 +2,7 @@
   {:cmns-av/copyright #{"Copyright (c) 2023 Object Management Group, Inc."
                         "Copyright (c) 2023 EDM Council, Inc."},
    :dcat/downloadURL
-   "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/DER/DerivativesContracts/StructuredInstruments/",
+   "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/DER/DerivativesContracts/StructuredInstruments/",
    :dcterms/abstract
    "This ontology defines concepts common to pre-packaged structured finance investment strategies based on a host of underlying instruments, pools, or other assets.",
    :dcterms/license {:xsd/anyURI "http://opensource.org/licenses/MIT"},
@@ -27,19 +27,19 @@
     "xsd" "http://www.w3.org/2001/XMLSchema#"},
    :owl/imports
    #{{:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/SEC/Debt/PoolBackedSecurities/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/DER/DerivativesContracts/DerivativesBasics/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Utilities/AnnotationVocabulary/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FND/Utilities/AnnotationVocabulary/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/DER/SecurityBasedDerivatives/SecurityBasedDerivatives/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/DER/SecurityBasedDerivatives/SecurityBasedDerivatives/"}
+     {:xsd/anyURI "https://www.omg.org/spec/Commons/AnnotationVocabulary/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/DER/DerivativesContracts/DerivativesBasics/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FBC/FinancialInstruments/FinancialInstruments/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FBC/FinancialInstruments/FinancialInstruments/"}
-     {:xsd/anyURI "https://www.omg.org/spec/Commons/AnnotationVocabulary/"}},
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/SEC/Debt/PoolBackedSecurities/"}},
    :owl/versionIRI
    {:xsd/anyURI
-    "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/DER/DerivativesContracts/StructuredInstruments/"},
+    "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/DER/DerivativesContracts/StructuredInstruments/"},
    :rdf/type :owl/Ontology,
    :rdfa/prefix "fibo-der-drc-str",
    :rdfa/uri
@@ -641,19 +641,19 @@
    :fibo-fnd-utl-av/hasMaturityLevel :fibo-fnd-utl-av/Release,
    :owl/imports
    #{{:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/SEC/Debt/PoolBackedSecurities/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/DER/DerivativesContracts/DerivativesBasics/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Utilities/AnnotationVocabulary/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FND/Utilities/AnnotationVocabulary/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/DER/SecurityBasedDerivatives/SecurityBasedDerivatives/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/DER/SecurityBasedDerivatives/SecurityBasedDerivatives/"}
+     {:xsd/anyURI "https://www.omg.org/spec/Commons/AnnotationVocabulary/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/DER/DerivativesContracts/DerivativesBasics/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FBC/FinancialInstruments/FinancialInstruments/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FBC/FinancialInstruments/FinancialInstruments/"}
-     {:xsd/anyURI "https://www.omg.org/spec/Commons/AnnotationVocabulary/"}},
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/SEC/Debt/PoolBackedSecurities/"}},
    :owl/versionIRI
    {:xsd/anyURI
-    "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/DER/DerivativesContracts/StructuredInstruments/"},
+    "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/DER/DerivativesContracts/StructuredInstruments/"},
    :rdf/type :owl/Ontology,
    :rdfs/label {:rdf/language "en",
                 :rdf/value    "Structured Instruments Ontology"},

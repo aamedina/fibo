@@ -3,7 +3,7 @@
    #{"Copyright (c) 2015-2023 EDM Council, Inc."
      "Copyright (c) 2015-2023 Object Management Group, Inc."},
    :dcat/downloadURL
-   "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FBC/FinancialInstruments/MetadataFBCFinancialInstruments/FinancialInstrumentsModule",
+   "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FBC/FinancialInstruments/MetadataFBCFinancialInstruments/FinancialInstrumentsModule",
    :dcterms/abstract
    "The financial instruments module includes ontologies defining general purpose financial instruments, i.e., agreements, contracts, notes, equities, options, debt instruments, and so forth, some of which may be negotiable.",
    :dcterms/issued #inst "2015-08-13T18:00:00.000-00:00",
@@ -22,11 +22,11 @@
     "xsd"     "http://www.w3.org/2001/XMLSchema#"},
    :owl/imports
    #{{:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Utilities/AnnotationVocabulary/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FND/Utilities/AnnotationVocabulary/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/AnnotationVocabulary/"}},
    :owl/versionIRI
    {:xsd/anyURI
-    "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FBC/FinancialInstruments/MetadataFBCFinancialInstruments/"},
+    "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FBC/FinancialInstruments/MetadataFBCFinancialInstruments/"},
    :rdf/type :owl/Ontology,
    :rdfa/prefix "fibo-fbc-fi-mod",
    :rdfa/uri
@@ -72,11 +72,11 @@
    :dcterms/modified #inst "2023-01-30T18:00:00.000-00:00",
    :owl/imports
    #{{:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Utilities/AnnotationVocabulary/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FND/Utilities/AnnotationVocabulary/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/AnnotationVocabulary/"}},
    :owl/versionIRI
    {:xsd/anyURI
-    "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FBC/FinancialInstruments/MetadataFBCFinancialInstruments/"},
+    "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FBC/FinancialInstruments/MetadataFBCFinancialInstruments/"},
    :rdf/type :owl/Ontology,
    :rdfs/label
    "Metadata about the EDMC-FIBO Financial Business and Commerce(FBC) Financial Instruments Module",

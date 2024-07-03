@@ -2,7 +2,7 @@
   {:cmns-av/copyright #{"Copyright (c) 2013-2023 Object Management Group, Inc."
                         "Copyright (c) 2013-2023 EDM Council, Inc."},
    :dcat/downloadURL
-   "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Places/Locations/",
+   "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FND/Places/Locations/",
    :dcterms/abstract
    "This ontology provides a very high level definition of geographic region and geopolitical entity related concepts, including, but not limited to, countries, sub-country regions such as states and provinces, municipalities, etc., extending the Object Management Group (OMG)'s Languages, Countries, and Codes (LCC) ontologies as needed in FIBO. As such, these terms are automatically mapped to the LCC controlled vocabulary representing ISO 3166 country and country subdivision codes, and may be mapped to other de facto standards such as Geonames and the CIA World Factbook. The concept of a business center, defined herein, maps directly to the FpML concept with the same name, and to the set of business centers and broader municipalities included in ISO 10383, Codes for exchanges and market identification (MIC).",
    :dcterms/license {:xsd/anyURI "https://opensource.org/licenses/MIT"},
@@ -24,11 +24,11 @@
    #{{:xsd/anyURI
       "https://www.omg.org/spec/LCC/Countries/CountryRepresentation/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Utilities/AnnotationVocabulary/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FND/Utilities/AnnotationVocabulary/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/AnnotationVocabulary/"}},
    :owl/versionIRI
    {:xsd/anyURI
-    "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Places/Locations/"},
+    "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FND/Places/Locations/"},
    :rdf/type :owl/Ontology,
    :rdfa/prefix "fibo-fnd-plc-loc",
    :rdfa/uri "https://spec.edmcouncil.org/fibo/ontology/FND/Places/Locations/",
@@ -294,11 +294,11 @@
    #{{:xsd/anyURI
       "https://www.omg.org/spec/LCC/Countries/CountryRepresentation/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Utilities/AnnotationVocabulary/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FND/Utilities/AnnotationVocabulary/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/AnnotationVocabulary/"}},
    :owl/versionIRI
    {:xsd/anyURI
-    "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Places/Locations/"},
+    "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FND/Places/Locations/"},
    :rdf/type :owl/Ontology,
    :rdfs/label "Locations Ontology",
    :skos/changeNote

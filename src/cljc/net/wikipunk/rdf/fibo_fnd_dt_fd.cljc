@@ -2,7 +2,7 @@
   {:cmns-av/copyright #{"Copyright (c) 2014-2023 Object Management Group, Inc."
                         "Copyright (c) 2014-2023 EDM Council, Inc."},
    :dcat/downloadURL
-   "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/DatesAndTimes/FinancialDates/",
+   "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FND/DatesAndTimes/FinancialDates/",
    :dcterms/abstract
    "This ontology provides definitions of date and schedule concepts for use in other FIBO ontologies.",
    :dcterms/license {:xsd/anyURI "https://opensource.org/licenses/MIT"},
@@ -22,14 +22,14 @@
     "skos" "http://www.w3.org/2004/02/skos/core#",
     "xsd" "http://www.w3.org/2001/XMLSchema#"},
    :owl/imports
-   #{{:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Utilities/AnnotationVocabulary/"}
-     {:xsd/anyURI "https://www.omg.org/spec/Commons/Collections/"}
+   #{{:xsd/anyURI "https://www.omg.org/spec/Commons/Collections/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/DatesAndTimes/"}
+     {:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FND/Utilities/AnnotationVocabulary/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/AnnotationVocabulary/"}},
    :owl/versionIRI
    {:xsd/anyURI
-    "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/DatesAndTimes/FinancialDates/"},
+    "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FND/DatesAndTimes/FinancialDates/"},
    :rdf/type :owl/Ontology,
    :rdfa/prefix "fibo-fnd-dt-fd",
    :rdfa/uri
@@ -804,14 +804,14 @@
    :dcterms/license {:xsd/anyURI "https://opensource.org/licenses/MIT"},
    :fibo-fnd-utl-av/hasMaturityLevel :fibo-fnd-utl-av/Release,
    :owl/imports
-   #{{:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Utilities/AnnotationVocabulary/"}
-     {:xsd/anyURI "https://www.omg.org/spec/Commons/Collections/"}
+   #{{:xsd/anyURI "https://www.omg.org/spec/Commons/Collections/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/DatesAndTimes/"}
+     {:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FND/Utilities/AnnotationVocabulary/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/AnnotationVocabulary/"}},
    :owl/versionIRI
    {:xsd/anyURI
-    "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/DatesAndTimes/FinancialDates/"},
+    "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FND/DatesAndTimes/FinancialDates/"},
    :rdf/type :owl/Ontology,
    :rdfs/label "Financial Dates Ontology",
    :skos/changeNote

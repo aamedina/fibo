@@ -3,7 +3,7 @@
    #{"Copyright (c) 2013-2024 EDM Council, Inc."
      "Copyright (c) 2013-2024 Object Management Group, Inc."},
    :dcat/downloadURL
-   "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Parties/Roles/",
+   "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FND/Parties/Roles/",
    :dcterms/abstract
    "This ontology defined high-level concepts concerning roles, including the basic property whereby something has some role, along with the high-level concept of an agent playing a role. This provides the basis for party role concepts in the Parties ontology and is framed as some entity defined specifically in respect to some role which it performs in some context. Note that this ontology has been replaced by its equivalent in the OMG Commons Ontology Library v1.1, and will be eliminated in a subsequent FIBO release.",
    :dcterms/license {:xsd/anyURI "https://opensource.org/licenses/MIT"},
@@ -26,11 +26,11 @@
    #{{:xsd/anyURI "https://www.omg.org/spec/Commons/RolesAndCompositions/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/PartiesAndSituations/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Utilities/AnnotationVocabulary/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FND/Utilities/AnnotationVocabulary/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/AnnotationVocabulary/"}},
    :owl/versionIRI
    {:xsd/anyURI
-    "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Parties/Roles/"},
+    "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FND/Parties/Roles/"},
    :rdf/type :owl/Ontology,
    :rdfa/prefix "fibo-fnd-pty-rl",
    :rdfa/uri "https://spec.edmcouncil.org/fibo/ontology/FND/Parties/Roles/",
@@ -92,11 +92,11 @@
    #{{:xsd/anyURI "https://www.omg.org/spec/Commons/RolesAndCompositions/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/PartiesAndSituations/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Utilities/AnnotationVocabulary/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FND/Utilities/AnnotationVocabulary/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/AnnotationVocabulary/"}},
    :owl/versionIRI
    {:xsd/anyURI
-    "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Parties/Roles/"},
+    "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FND/Parties/Roles/"},
    :rdf/type :owl/Ontology,
    :rdfs/label "Roles Ontology",
    :skos/changeNote

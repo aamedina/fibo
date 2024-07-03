@@ -3,7 +3,7 @@
    #{"Copyright (c) 2013-2024 EDM Council, Inc."
      "Copyright (c) 2018-2024 Object Management Group, Inc."},
    :dcat/downloadURL
-   "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/SEC/Equities/EquityInstruments/",
+   "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/SEC/Equities/EquityInstruments/",
    :dcterms/abstract
    "Core terms are those fundamental to all equity instruments. This ontology also distinguishes between privately held and publicly traded equity instruments, and defines a number of related concepts, such as voting rights.",
    :dcterms/license {:xsd/anyURI "https://opensource.org/licenses/MIT"},
@@ -74,61 +74,61 @@
     "xsd" "http://www.w3.org/2001/XMLSchema#"},
    :owl/imports
    #{{:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/IND/InterestRates/InterestRates/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/BE/LegalEntities/LegalPersons/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/BE/OwnershipAndControl/CorporateOwnership/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FND/DatesAndTimes/FinancialDates/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FBC/FinancialInstruments/InstrumentPricing/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/BE/Corporations/Corporations/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/RolesAndCompositions/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Accounting/CurrencyAmount/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FND/ProductsAndServices/PaymentsAndSchedules/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Law/LegalCapacity/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FND/OwnershipAndControl/Ownership/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FBC/DebtAndEquities/Debt/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/ProductsAndServices/PaymentsAndSchedules/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Arrangements/Lifecycles/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/SEC/Securities/SecuritiesListings/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/SEC/Securities/SecuritiesListings/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/QuantitiesAndUnits/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/OwnershipAndControl/Ownership/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FND/DatesAndTimes/BusinessDates/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FBC/ProductsAndServices/FinancialProductsAndServices/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FND/Agreements/Agreements/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/BE/LegalEntities/LegalPersons/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FBC/DebtAndEquities/Debt/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Utilities/AnnotationVocabulary/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/SEC/Securities/SecuritiesIssuance/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/DatesAndTimes/FinancialDates/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FND/Accounting/AccountingEquity/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/Classifiers/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FBC/FunctionalEntities/FinancialServicesEntities/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/BE/OwnershipAndControl/CorporateOwnership/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/SEC/Securities/SecuritiesIssuance/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/BE/Partnerships/Partnerships/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/BE/Partnerships/Partnerships/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FBC/FunctionalEntities/FinancialServicesEntities/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Relations/Relations/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FBC/ProductsAndServices/FinancialProductsAndServices/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/DatesAndTimes/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Agreements/Contracts/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FBC/FinancialInstruments/InstrumentPricing/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Accounting/AccountingEquity/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FND/Arrangements/Lifecycles/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/BE/Corporations/Corporations/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FND/Utilities/AnnotationVocabulary/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FBC/FinancialInstruments/FinancialInstruments/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FND/Law/LegalCapacity/"}
+     {:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FND/Accounting/CurrencyAmount/"}
+     {:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FND/Relations/Relations/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/AnnotationVocabulary/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Agreements/Agreements/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FBC/FinancialInstruments/FinancialInstruments/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/DatesAndTimes/BusinessDates/"}},
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/IND/InterestRates/InterestRates/"}
+     {:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FND/Agreements/Contracts/"}},
    :owl/versionIRI
    {:xsd/anyURI
-    "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/SEC/Equities/EquityInstruments/"},
+    "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/SEC/Equities/EquityInstruments/"},
    :rdf/type :owl/Ontology,
    :rdfa/prefix "fibo-sec-eq-eq",
    :rdfa/uri
@@ -138,6 +138,7 @@
    :skos/changeNote
    #{"The https://spec.edmcouncil.org/fibo/ontology/SEC/Equities/EquityInstruments.rdf version of this ontology was revised to refine the definition of share to include a restriction for hasSharesOutstanding, eliminate duplication of concepts in LCC, and add the concept of an equity issuer."
      "The https://spec.edmcouncil.org/fibo/ontology/SEC/Equities/EquityInstruments.rdf version of this ontology was revised to revise the definition of dividend to explicitly state that it reflects the announced commitment of a specific dividend rather than a more general policy."
+     "The https://spec.edmcouncil.org/fibo/ontology/SEC/Equities/EquityInstruments.rdf version of the ontology was modified to add a link to the formula used to calculate an adjustable rate dividend and loosen some constraints to make the ontology more useful in cases where one could have information about a preferred share, such as having an adjustable rate dividend, but not necessarily having the details (SEC-138)."
      "The https://spec.edmcouncil.org/fibo/ontology/SEC/Equities/EquityInstruments.rdf version of the ontology was modified to use the Commons Ontology Library (Commons) Annotation Vocabulary rather than the OMG's Specification Metadata vocabulary."
      "The https://spec.edmcouncil.org/fibo/ontology/SEC/Equities/EquityInstruments.rdf version of this ontology was revised to clean up deprecated elements, most of which had been in the ontology for awhile."
      "The https://spec.edmcouncil.org/fibo/ontology/SEC/Equities/EquityInstruments.rdf version of this ontology was revised to refine the definition of listed share, update definitions to remove leading articles, add missing properties and restrictions, revise the definition of dividend."
@@ -170,9 +171,14 @@
    #{{:owl/onProperty     :fibo-sec-eq-eq/hasAdjustableDividendRate,
       :owl/someValuesFrom :fibo-fnd-acc-cur/PercentageMonetaryAmount,
       :rdf/type           :owl/Restriction}
-     {:owl/onProperty     :cmns-qtu/hasQuantityKind,
-      :owl/someValuesFrom :fibo-ind-ir-ir/InterestRateBenchmark,
-      :rdf/type           :owl/Restriction} :fibo-sec-eq-eq/PreferredDividend},
+     {:owl/minQualifiedCardinality 0,
+      :owl/onDataRange :xsd/string,
+      :owl/onProperty  :cmns-qtu/describesActualExpression,
+      :rdf/type        :owl/Restriction} :fibo-sec-eq-eq/PreferredDividend
+     {:owl/minQualifiedCardinality 0,
+      :owl/onClass    :fibo-ind-ir-ir/InterestRateBenchmark,
+      :owl/onProperty :cmns-qtu/hasQuantityKind,
+      :rdf/type       :owl/Restriction}},
    :skos/definition "dividend that varies with a benchmark"})
 
 (def AuctionRateDividend
@@ -810,10 +816,11 @@
    {:xsd/anyURI
     "https://spec.edmcouncil.org/fibo/ontology/SEC/Equities/EquityInstruments/"},
    :rdfs/label "preferred share with adjustable rate dividend",
-   :rdfs/subClassOf
-   #{{:owl/onProperty     :fibo-sec-eq-eq/hasDividend,
-      :owl/someValuesFrom :fibo-sec-eq-eq/AdjustableRateDividend,
-      :rdf/type           :owl/Restriction} :fibo-sec-eq-eq/PreferredShare},
+   :rdfs/subClassOf #{{:owl/minQualifiedCardinality 0,
+                       :owl/onClass    :fibo-sec-eq-eq/AdjustableRateDividend,
+                       :owl/onProperty :fibo-sec-eq-eq/hasDividend,
+                       :rdf/type       :owl/Restriction}
+                      :fibo-sec-eq-eq/PreferredShare},
    :skos/definition
    "preferred share whose dividend rate varies according to some benchmark"})
 
@@ -825,9 +832,10 @@
    {:xsd/anyURI
     "https://spec.edmcouncil.org/fibo/ontology/SEC/Equities/EquityInstruments/"},
    :rdfs/label "preferred share with auction rate dividend",
-   :rdfs/subClassOf #{{:owl/onProperty     :fibo-sec-eq-eq/hasDividend,
-                       :owl/someValuesFrom :fibo-sec-eq-eq/AuctionRateDividend,
-                       :rdf/type           :owl/Restriction}
+   :rdfs/subClassOf #{{:owl/minQualifiedCardinality 0,
+                       :owl/onClass    :fibo-sec-eq-eq/AuctionRateDividend,
+                       :owl/onProperty :fibo-sec-eq-eq/hasDividend,
+                       :rdf/type       :owl/Restriction}
                       :fibo-sec-eq-eq/PreferredShare},
    :skos/definition
    "preferred share whose dividend rate is periodically reset through an auction, such as a Dutch auction"})
@@ -854,10 +862,11 @@
    {:xsd/anyURI
     "https://spec.edmcouncil.org/fibo/ontology/SEC/Equities/EquityInstruments/"},
    :rdfs/label "preferred share with fixed rate dividend",
-   :rdfs/subClassOf #{{:owl/onProperty     :fibo-sec-eq-eq/hasDividend,
-                       :owl/someValuesFrom :fibo-sec-eq-eq/FixedRateDividend,
-                       :rdf/type           :owl/Restriction}
-                      :fibo-sec-eq-eq/PreferredShare},
+   :rdfs/subClassOf #{:fibo-sec-eq-eq/PreferredShare
+                      {:owl/minQualifiedCardinality 0,
+                       :owl/onClass    :fibo-sec-eq-eq/FixedRateDividend,
+                       :owl/onProperty :fibo-sec-eq-eq/hasDividend,
+                       :rdf/type       :owl/Restriction}},
    :skos/definition
    "preferred share whose dividends are set, typically according to the terms of the prospectus"})
 
@@ -1643,67 +1652,68 @@
    :fibo-fnd-utl-av/hasMaturityLevel :fibo-fnd-utl-av/Release,
    :owl/imports
    #{{:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/IND/InterestRates/InterestRates/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/BE/LegalEntities/LegalPersons/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/BE/OwnershipAndControl/CorporateOwnership/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FND/DatesAndTimes/FinancialDates/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FBC/FinancialInstruments/InstrumentPricing/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/BE/Corporations/Corporations/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/RolesAndCompositions/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Accounting/CurrencyAmount/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FND/ProductsAndServices/PaymentsAndSchedules/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Law/LegalCapacity/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FND/OwnershipAndControl/Ownership/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FBC/DebtAndEquities/Debt/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/ProductsAndServices/PaymentsAndSchedules/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Arrangements/Lifecycles/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/SEC/Securities/SecuritiesListings/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/SEC/Securities/SecuritiesListings/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/QuantitiesAndUnits/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/OwnershipAndControl/Ownership/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FND/DatesAndTimes/BusinessDates/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FBC/ProductsAndServices/FinancialProductsAndServices/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FND/Agreements/Agreements/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/BE/LegalEntities/LegalPersons/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FBC/DebtAndEquities/Debt/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Utilities/AnnotationVocabulary/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/SEC/Securities/SecuritiesIssuance/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/DatesAndTimes/FinancialDates/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FND/Accounting/AccountingEquity/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/Classifiers/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FBC/FunctionalEntities/FinancialServicesEntities/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/BE/OwnershipAndControl/CorporateOwnership/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/SEC/Securities/SecuritiesIssuance/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/BE/Partnerships/Partnerships/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/BE/Partnerships/Partnerships/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FBC/FunctionalEntities/FinancialServicesEntities/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Relations/Relations/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FBC/ProductsAndServices/FinancialProductsAndServices/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/DatesAndTimes/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Agreements/Contracts/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FBC/FinancialInstruments/InstrumentPricing/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Accounting/AccountingEquity/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FND/Arrangements/Lifecycles/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/BE/Corporations/Corporations/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FND/Utilities/AnnotationVocabulary/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FBC/FinancialInstruments/FinancialInstruments/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FND/Law/LegalCapacity/"}
+     {:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FND/Accounting/CurrencyAmount/"}
+     {:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FND/Relations/Relations/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/AnnotationVocabulary/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Agreements/Agreements/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FBC/FinancialInstruments/FinancialInstruments/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/DatesAndTimes/BusinessDates/"}},
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/IND/InterestRates/InterestRates/"}
+     {:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FND/Agreements/Contracts/"}},
    :owl/versionIRI
    {:xsd/anyURI
-    "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/SEC/Equities/EquityInstruments/"},
+    "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/SEC/Equities/EquityInstruments/"},
    :rdf/type :owl/Ontology,
    :rdfs/label {:rdf/language "en",
                 :rdf/value    "Equity Instruments Ontology"},
    :skos/changeNote
    #{"The https://spec.edmcouncil.org/fibo/ontology/SEC/Equities/EquityInstruments.rdf version of this ontology was revised to refine the definition of share to include a restriction for hasSharesOutstanding, eliminate duplication of concepts in LCC, and add the concept of an equity issuer."
      "The https://spec.edmcouncil.org/fibo/ontology/SEC/Equities/EquityInstruments.rdf version of this ontology was revised to revise the definition of dividend to explicitly state that it reflects the announced commitment of a specific dividend rather than a more general policy."
+     "The https://spec.edmcouncil.org/fibo/ontology/SEC/Equities/EquityInstruments.rdf version of the ontology was modified to add a link to the formula used to calculate an adjustable rate dividend and loosen some constraints to make the ontology more useful in cases where one could have information about a preferred share, such as having an adjustable rate dividend, but not necessarily having the details (SEC-138)."
      "The https://spec.edmcouncil.org/fibo/ontology/SEC/Equities/EquityInstruments.rdf version of the ontology was modified to use the Commons Ontology Library (Commons) Annotation Vocabulary rather than the OMG's Specification Metadata vocabulary."
      "The https://spec.edmcouncil.org/fibo/ontology/SEC/Equities/EquityInstruments.rdf version of this ontology was revised to clean up deprecated elements, most of which had been in the ontology for awhile."
      "The https://spec.edmcouncil.org/fibo/ontology/SEC/Equities/EquityInstruments.rdf version of this ontology was revised to refine the definition of listed share, update definitions to remove leading articles, add missing properties and restrictions, revise the definition of dividend."

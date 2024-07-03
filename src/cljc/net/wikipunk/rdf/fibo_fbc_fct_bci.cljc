@@ -2,10 +2,11 @@
   {:cmns-av/copyright
    #{"Copyright (c) 2018-2024 EDM Council, Inc."
      "Copyright (c) 2018-2024 Thematix Partners LLC"
-     "Copyright (c) 2020-2024 agnos.ai, UK Ltd."
+     "Copyright (c) 2020-2022 agnos.ai, UK Ltd."
+     "Copyright (c) 2023-2024 Federated Knowledge, LLC"
      "Copyright (c) 2018-2024 Object Management Group, Inc."},
    :dcat/downloadURL
-   "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FBC/FunctionalEntities/BusinessCentersIndividuals/",
+   "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FBC/FunctionalEntities/BusinessCentersIndividuals/",
    :dcterms/abstract
    "This ontology includes individuals representing the set of international business centers corresponding to those identified in FpML as well as additional municipalities called out in the ISO 10383 Codes for exchanges and market identification (MIC) standard.\n\t\tThis set of business centers is current with respect to the FpML published XML data as of Q2 2023 and additional municipalities included in the MIC codes as of Q1 2024. Note that we have deviated from the standard FIBO naming convention of strict use of camel case to add underscores in certain city names for readability purposes.",
    :dcterms/license {:xsd/anyURI "https://opensource.org/licenses/MIT"},
@@ -37,28 +38,28 @@
    :owl/imports
    #{{:xsd/anyURI
       "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-CH/"}
-     {:xsd/anyURI "https://www.omg.org/spec/Commons/Identifiers/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Places/Locations/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FND/Places/Locations/"}
+     {:xsd/anyURI "https://www.omg.org/spec/Commons/Identifiers/"}
      {:xsd/anyURI
       "https://www.omg.org/spec/LCC/Countries/ISO3166-2-SubdivisionCodes/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Utilities/AnnotationVocabulary/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FBC/FunctionalEntities/BusinessCenters/"}
+     {:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FND/DatesAndTimes/BusinessDates/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/Collections/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Relations/Relations/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FND/Utilities/AnnotationVocabulary/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FBC/FunctionalEntities/BusinessCenters/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FND/Relations/Relations/"}
      {:xsd/anyURI
       "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-US/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/AnnotationVocabulary/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/DatesAndTimes/BusinessDates/"}
-     {:xsd/anyURI
       "https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/"}},
    :owl/versionIRI
    {:xsd/anyURI
-    "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FBC/FunctionalEntities/BusinessCentersIndividuals/"},
+    "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FBC/FunctionalEntities/BusinessCentersIndividuals/"},
    :rdf/type :owl/Ontology,
    :rdfa/prefix "fibo-fbc-fct-bci",
    :rdfa/uri
@@ -70,6 +71,7 @@
      "The https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals.rdf version of this ontology was modified to use the Commons Ontology Library (Commons) rather than the OMG's Languages, Countries and Codes (LCC) and to eliminate redundancies in FIBO as appropriate."
      "The https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/ version of this ontology was modified to address text formatting issues uncovered by hygiene testing."
      "The https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/ version of this ontology was modified to support revisions of the MIC codes as of December 2018."
+     "The https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals.rdf version of this ontology was modified to update the business centers per the latest revision of the municipalities per the June 2024 ISO 10383 MIC code update from ISO."
      "The https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals.rdf version of this ontology was modified to update the business centers per the latest revision of the FpML business centers (November 2022) and latest municipalities per the June 2023 ISO 10383 MIC code update from ISO."
      "The https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/ version of this ontology was modified to replace Swaziland with Eswatini, which was revised by the LCC 1.1 RTF to reflect the change to the country name per the U.N."
      "The https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/ version of this ontology was modified to add municipalities required for the ISO revision to the MIC codes as of March 2021."
@@ -4503,6 +4505,15 @@
     "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/"},
    :rdfs/label "Phoenix"})
 
+(def Podgorica
+  {:cmns-col/isPartOf :lcc-3166-1/Montenegro,
+   :db/ident :fibo-fbc-fct-bci/Podgorica,
+   :rdf/type #{:owl/NamedIndividual :fibo-fnd-plc-loc/Municipality},
+   :rdfs/isDefinedBy
+   {:xsd/anyURI
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/"},
+   :rdfs/label "Podgorica"})
+
 (def Polokwane
   {:cmns-col/isPartOf :lcc-3166-1/SouthAfrica,
    :db/ident :fibo-fbc-fct-bci/Polokwane,
@@ -6393,7 +6404,8 @@
   {:cmns-av/copyright
    #{"Copyright (c) 2018-2024 EDM Council, Inc."
      "Copyright (c) 2018-2024 Thematix Partners LLC"
-     "Copyright (c) 2020-2024 agnos.ai, UK Ltd."
+     "Copyright (c) 2020-2022 agnos.ai, UK Ltd."
+     "Copyright (c) 2023-2024 Federated Knowledge, LLC"
      "Copyright (c) 2018-2024 Object Management Group, Inc."},
    :dcterms/abstract
    "This ontology includes individuals representing the set of international business centers corresponding to those identified in FpML as well as additional municipalities called out in the ISO 10383 Codes for exchanges and market identification (MIC) standard.\n\t\tThis set of business centers is current with respect to the FpML published XML data as of Q2 2023 and additional municipalities included in the MIC codes as of Q1 2024. Note that we have deviated from the standard FIBO naming convention of strict use of camel case to add underscores in certain city names for readability purposes.",
@@ -6402,28 +6414,28 @@
    :owl/imports
    #{{:xsd/anyURI
       "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-CH/"}
-     {:xsd/anyURI "https://www.omg.org/spec/Commons/Identifiers/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Places/Locations/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FND/Places/Locations/"}
+     {:xsd/anyURI "https://www.omg.org/spec/Commons/Identifiers/"}
      {:xsd/anyURI
       "https://www.omg.org/spec/LCC/Countries/ISO3166-2-SubdivisionCodes/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Utilities/AnnotationVocabulary/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FBC/FunctionalEntities/BusinessCenters/"}
+     {:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FND/DatesAndTimes/BusinessDates/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/Collections/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Relations/Relations/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FND/Utilities/AnnotationVocabulary/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FBC/FunctionalEntities/BusinessCenters/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FND/Relations/Relations/"}
      {:xsd/anyURI
       "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-US/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/AnnotationVocabulary/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/DatesAndTimes/BusinessDates/"}
-     {:xsd/anyURI
       "https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/"}},
    :owl/versionIRI
    {:xsd/anyURI
-    "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FBC/FunctionalEntities/BusinessCentersIndividuals/"},
+    "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FBC/FunctionalEntities/BusinessCentersIndividuals/"},
    :rdf/type :owl/Ontology,
    :rdfs/label "Business Centers Individuals",
    :skos/changeNote
@@ -6432,6 +6444,7 @@
      "The https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals.rdf version of this ontology was modified to use the Commons Ontology Library (Commons) rather than the OMG's Languages, Countries and Codes (LCC) and to eliminate redundancies in FIBO as appropriate."
      "The https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/ version of this ontology was modified to address text formatting issues uncovered by hygiene testing."
      "The https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/ version of this ontology was modified to support revisions of the MIC codes as of December 2018."
+     "The https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals.rdf version of this ontology was modified to update the business centers per the latest revision of the municipalities per the June 2024 ISO 10383 MIC code update from ISO."
      "The https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals.rdf version of this ontology was modified to update the business centers per the latest revision of the FpML business centers (November 2022) and latest municipalities per the June 2023 ISO 10383 MIC code update from ISO."
      "The https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/ version of this ontology was modified to replace Swaziland with Eswatini, which was revised by the LCC 1.1 RTF to reflect the change to the country name per the U.N."
      "The https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/ version of this ontology was modified to add municipalities required for the ISO revision to the MIC codes as of March 2021."

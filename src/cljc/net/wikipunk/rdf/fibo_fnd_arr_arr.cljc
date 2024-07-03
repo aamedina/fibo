@@ -2,7 +2,7 @@
   {:cmns-av/copyright #{"Copyright (c) 2014-2023 Object Management Group, Inc."
                         "Copyright (c) 2014-2023 EDM Council, Inc."},
    :dcat/downloadURL
-   "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Arrangements/Arrangements/",
+   "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FND/Arrangements/Arrangements/",
    :dcterms/abstract
    "This ontology defines abstract structural concepts, extending the Commons concept of an arrangement to represent schemes.",
    :dcterms/license {:xsd/anyURI "https://opensource.org/licenses/MIT"},
@@ -23,15 +23,15 @@
     "skos" "http://www.w3.org/2004/02/skos/core#",
     "xsd" "http://www.w3.org/2001/XMLSchema#"},
    :owl/imports
-   #{{:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Utilities/AnnotationVocabulary/"}
-     {:xsd/anyURI "https://www.omg.org/spec/Commons/Collections/"}
+   #{{:xsd/anyURI "https://www.omg.org/spec/Commons/Collections/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/CodesAndCodeSets/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/Designators/"}
+     {:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FND/Utilities/AnnotationVocabulary/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/AnnotationVocabulary/"}},
    :owl/versionIRI
    {:xsd/anyURI
-    "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Arrangements/Arrangements/"},
+    "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FND/Arrangements/Arrangements/"},
    :rdf/type :owl/Ontology,
    :rdfa/prefix "fibo-fnd-arr-arr",
    :rdfa/uri
@@ -85,15 +85,15 @@
    :dcterms/license {:xsd/anyURI "https://opensource.org/licenses/MIT"},
    :fibo-fnd-utl-av/hasMaturityLevel :fibo-fnd-utl-av/Release,
    :owl/imports
-   #{{:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Utilities/AnnotationVocabulary/"}
-     {:xsd/anyURI "https://www.omg.org/spec/Commons/Collections/"}
+   #{{:xsd/anyURI "https://www.omg.org/spec/Commons/Collections/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/CodesAndCodeSets/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/Designators/"}
+     {:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FND/Utilities/AnnotationVocabulary/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/AnnotationVocabulary/"}},
    :owl/versionIRI
    {:xsd/anyURI
-    "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Arrangements/Arrangements/"},
+    "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FND/Arrangements/Arrangements/"},
    :rdf/type :owl/Ontology,
    :rdfs/label "Arrangements Ontology",
    :skos/changeNote

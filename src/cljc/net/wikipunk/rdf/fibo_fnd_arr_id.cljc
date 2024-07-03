@@ -3,7 +3,7 @@
    #{"Copyright (c) 2014-2024 EDM Council, Inc."
      "Copyright (c) 2014-2024 Object Management Group, Inc."},
    :dcat/downloadURL
-   "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Arrangements/IdentifiersAndIndices/",
+   "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FND/Arrangements/IdentifiersAndIndices/",
    :dcterms/abstract
    "This ontology defines abstract concepts for representation of indices and indexing schemes, as well as reusable identifiers, for reuse in other ontologies.",
    :dcterms/license {:xsd/anyURI "https://opensource.org/licenses/MIT"},
@@ -32,19 +32,19 @@
    :owl/imports
    #{{:xsd/anyURI "https://www.omg.org/spec/Commons/Documents/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/Identifiers/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Utilities/AnnotationVocabulary/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/Collections/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/CodesAndCodeSets/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/Designators/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/DatesAndTimes/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/ContextualIdentifiers/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Arrangements/Arrangements/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FND/Utilities/AnnotationVocabulary/"}
+     {:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FND/Arrangements/Arrangements/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/AnnotationVocabulary/"}},
    :owl/versionIRI
    {:xsd/anyURI
-    "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Arrangements/IdentifiersAndIndices/"},
+    "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FND/Arrangements/IdentifiersAndIndices/"},
    :rdf/type :owl/Ontology,
    :rdfa/prefix "fibo-fnd-arr-id",
    :rdfa/uri
@@ -188,19 +188,19 @@
    :owl/imports
    #{{:xsd/anyURI "https://www.omg.org/spec/Commons/Documents/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/Identifiers/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Utilities/AnnotationVocabulary/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/Collections/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/CodesAndCodeSets/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/Designators/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/DatesAndTimes/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/ContextualIdentifiers/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Arrangements/Arrangements/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FND/Utilities/AnnotationVocabulary/"}
+     {:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FND/Arrangements/Arrangements/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/AnnotationVocabulary/"}},
    :owl/versionIRI
    {:xsd/anyURI
-    "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Arrangements/IdentifiersAndIndices/"},
+    "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FND/Arrangements/IdentifiersAndIndices/"},
    :rdf/type :owl/Ontology,
    :rdfs/label "Identifiers and Indices Ontology",
    :skos/changeNote

@@ -1,8 +1,9 @@
 (ns net.wikipunk.rdf.fibo-sec-sec-id
-  {:cmns-av/copyright #{"Copyright (c) 2018-2023 Object Management Group, Inc."
-                        "Copyright (c) 2016-2023 EDM Council, Inc."},
+  {:cmns-av/copyright
+   #{"Copyright (c) 2016-2024 EDM Council, Inc."
+     "Copyright (c) 2018-2024 Object Management Group, Inc."},
    :dcat/downloadURL
-   "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/SEC/Securities/SecuritiesIdentification/",
+   "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/SEC/Securities/SecuritiesIdentification/",
    :dcterms/abstract
    "This ontology defines concepts required to identify securities, including a number of well-known securities identifiers and related schemes, registries, and registration authorities.",
    :dcterms/license {:xsd/anyURI "https://opensource.org/licenses/MIT"},
@@ -42,39 +43,39 @@
     "xsd" "http://www.w3.org/2001/XMLSchema#"},
    :owl/imports
    #{{:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FBC/FunctionalEntities/Markets/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FND/Places/Locations/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Arrangements/IdentifiersAndIndices/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/BE/FunctionalEntities/FunctionalEntities/"}
      {:xsd/anyURI
       "https://www.omg.org/spec/LCC/Countries/CountryRepresentation/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/Identifiers/"}
+     {:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FBC/FunctionalEntities/RegulatoryAgencies/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/ContextualDesignators/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/SEC/Securities/SecuritiesListings/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FBC/FunctionalEntities/RegistrationAuthorities/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Places/Locations/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FBC/ProductsAndServices/FinancialProductsAndServices/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Utilities/AnnotationVocabulary/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/SEC/Securities/SecuritiesListings/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/Collections/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/Classifiers/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/Designators/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Relations/Relations/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FBC/FunctionalEntities/RegistrationAuthorities/"}
+     {:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FBC/ProductsAndServices/FinancialProductsAndServices/"}
+     {:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FND/Arrangements/IdentifiersAndIndices/"}
+     {:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FBC/FunctionalEntities/Markets/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/ContextualIdentifiers/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FBC/FinancialInstruments/FinancialInstruments/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FND/Utilities/AnnotationVocabulary/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/BE/FunctionalEntities/FunctionalEntities/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FND/Relations/Relations/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/AnnotationVocabulary/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FBC/FunctionalEntities/RegulatoryAgencies/"}},
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FBC/FinancialInstruments/FinancialInstruments/"}},
    :owl/versionIRI
    {:xsd/anyURI
-    "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/SEC/Securities/SecuritiesIdentification/"},
+    "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/SEC/Securities/SecuritiesIdentification/"},
    :rdf/type :owl/Ontology,
    :rdfa/prefix "fibo-sec-sec-id",
    :rdfa/uri
@@ -87,6 +88,7 @@
      "The https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/SecuritiesIdentification/ version of this ontology was modified to correct the target of a ticker symbol, which identifies a listing not a listed security, refine the restriction on financial instrument identifier to say that it identifies an instrument or listing, normalize definitions to be ISO 704 compliant, eliminate duplication of concepts in LCC, and merge countries with locations in FND."
      "The https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/SecuritiesIdentification.rdf version of this ontology was revised to leverage the notion of a composite identifier and address text formatting hygiene issues."
      "The http://www.omg.org/spec/EDMC-FIBO/FND/20180801/Securities/SecuritiesIdentification.rdf version of this ontology was modified to use the hasCoverageArea property rather than hasJurisdiction for coverage of national numbering agencies, and eliminate redundant subclass relationships for two of the schemes defined herein."
+     "The https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/SecuritiesIdentification.rdf version of this ontology was modified to clarify the definition of ticker symbol (SEC-196)."
      "The https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/SecuritiesIdentification/ version of this ontology was modified to make a ticker symbol reassignable and address circular or ambiguous definitions."
      "The https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/SecuritiesIdentification.rdf version of this ontology was revised to eliminate confusion between listed security and listing (which caused reasoning issues)."
      "The https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/SecuritiesIdentification.rdf version of this ontology was modified to use the Commons Ontology Library (Commons) rather than the OMG's Languages, Countries and Codes (LCC), eliminating redundancies in FIBO as appropriate."
@@ -386,7 +388,7 @@
 
 (def TickerSymbol
   {:cmns-av/explanatoryNote
-   "Every listed security has at least one unique ticker symbol, facilitating the vast array of trade orders that flow through the financial markets every day. However, in some countries this relationship may be indirect, through the listing, rather than direct, as is the case in the United States. In the US, the relationship between a ticker symbol and the listed security is one-to-one. This is not, however, the case in Singapore, where there may be unique ticker symbols for the same security based on the lot size.",
+   "Every listed security has at least one unique ticker symbol, facilitating the vast array of trade orders that flow through the financial markets every day. However, in some countries this relationship may be indirect, through the listing, rather than direct, as is the case in the United States. In the US, the relationship between a ticker symbol and the listed security is one-to-one. This is not, however, the case in Singapore, where there may be unique ticker symbols for the same security based on the lot size. Some well-known ticker symbols are commonly used by multiple exchanges for the same instrument, such as 'IBM', though exchanges attempt to coordinate to limit duplication.",
    :cmns-av/usageNote
    "Ticker symbols are reusable, assigned to a given instrument by an exchange for some period of time.",
    :db/ident :fibo-sec-sec-id/TickerSymbol,
@@ -395,8 +397,9 @@
    {:xsd/anyURI
     "https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/SecuritiesIdentification/"},
    :rdfs/label "ticker symbol",
-   :rdfs/seeAlso {:xsd/anyURI
-                  "https://www.investopedia.com/terms/t/tickersymbol.asp"},
+   :rdfs/seeAlso #{{:xsd/anyURI "https://www.omg.org/spec/FIGI"}
+                   {:xsd/anyURI
+                    "https://www.investopedia.com/terms/t/tickersymbol.asp"}},
    :rdfs/subClassOf #{{:owl/onProperty     :cmns-id/identifies,
                        :owl/someValuesFrom {:owl/unionOf
                                             [:fibo-sec-sec-lst/ListedSecurity
@@ -405,50 +408,51 @@
                        :rdf/type           :owl/Restriction}
                       :fibo-fnd-arr-id/ReassignableIdentifier},
    :skos/definition
-   "exchange-specific identifier for a particular security or listing for that security, depending on the country"})
+   "reassignable identifier of relatively short character string length that is unique within an exchange for a particular financial instrument or listing for that instrument"})
 
 (def urn:uuid:f51da83a-ae6c-5119-86ee-38471359d474
-  {:cmns-av/copyright #{"Copyright (c) 2018-2023 Object Management Group, Inc."
-                        "Copyright (c) 2016-2023 EDM Council, Inc."},
+  {:cmns-av/copyright
+   #{"Copyright (c) 2016-2024 EDM Council, Inc."
+     "Copyright (c) 2018-2024 Object Management Group, Inc."},
    :dcterms/abstract
    "This ontology defines concepts required to identify securities, including a number of well-known securities identifiers and related schemes, registries, and registration authorities.",
    :dcterms/license {:xsd/anyURI "https://opensource.org/licenses/MIT"},
    :fibo-fnd-utl-av/hasMaturityLevel :fibo-fnd-utl-av/Release,
    :owl/imports
    #{{:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FBC/FunctionalEntities/Markets/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FND/Places/Locations/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Arrangements/IdentifiersAndIndices/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/BE/FunctionalEntities/FunctionalEntities/"}
      {:xsd/anyURI
       "https://www.omg.org/spec/LCC/Countries/CountryRepresentation/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/Identifiers/"}
+     {:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FBC/FunctionalEntities/RegulatoryAgencies/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/ContextualDesignators/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/SEC/Securities/SecuritiesListings/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FBC/FunctionalEntities/RegistrationAuthorities/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Places/Locations/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FBC/ProductsAndServices/FinancialProductsAndServices/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Utilities/AnnotationVocabulary/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/SEC/Securities/SecuritiesListings/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/Collections/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/Classifiers/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/Designators/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Relations/Relations/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FBC/FunctionalEntities/RegistrationAuthorities/"}
+     {:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FBC/ProductsAndServices/FinancialProductsAndServices/"}
+     {:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FND/Arrangements/IdentifiersAndIndices/"}
+     {:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FBC/FunctionalEntities/Markets/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/ContextualIdentifiers/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FBC/FinancialInstruments/FinancialInstruments/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FND/Utilities/AnnotationVocabulary/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/BE/FunctionalEntities/FunctionalEntities/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FND/Relations/Relations/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/AnnotationVocabulary/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FBC/FunctionalEntities/RegulatoryAgencies/"}},
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FBC/FinancialInstruments/FinancialInstruments/"}},
    :owl/versionIRI
    {:xsd/anyURI
-    "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/SEC/Securities/SecuritiesIdentification/"},
+    "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/SEC/Securities/SecuritiesIdentification/"},
    :rdf/type :owl/Ontology,
    :rdfs/label "Securities Identification Ontology",
    :skos/changeNote
@@ -458,6 +462,7 @@
      "The https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/SecuritiesIdentification/ version of this ontology was modified to correct the target of a ticker symbol, which identifies a listing not a listed security, refine the restriction on financial instrument identifier to say that it identifies an instrument or listing, normalize definitions to be ISO 704 compliant, eliminate duplication of concepts in LCC, and merge countries with locations in FND."
      "The https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/SecuritiesIdentification.rdf version of this ontology was revised to leverage the notion of a composite identifier and address text formatting hygiene issues."
      "The http://www.omg.org/spec/EDMC-FIBO/FND/20180801/Securities/SecuritiesIdentification.rdf version of this ontology was modified to use the hasCoverageArea property rather than hasJurisdiction for coverage of national numbering agencies, and eliminate redundant subclass relationships for two of the schemes defined herein."
+     "The https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/SecuritiesIdentification.rdf version of this ontology was modified to clarify the definition of ticker symbol (SEC-196)."
      "The https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/SecuritiesIdentification/ version of this ontology was modified to make a ticker symbol reassignable and address circular or ambiguous definitions."
      "The https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/SecuritiesIdentification.rdf version of this ontology was revised to eliminate confusion between listed security and listing (which caused reasoning issues)."
      "The https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/SecuritiesIdentification.rdf version of this ontology was modified to use the Commons Ontology Library (Commons) rather than the OMG's Languages, Countries and Codes (LCC), eliminating redundancies in FIBO as appropriate."

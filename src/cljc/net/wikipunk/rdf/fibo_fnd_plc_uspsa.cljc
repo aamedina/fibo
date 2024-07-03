@@ -2,7 +2,7 @@
   {:cmns-av/copyright #{"Copyright (c) 2019-2023 Object Management Group, Inc."
                         "Copyright (c) 2019-2023 EDM Council, Inc."},
    :dcat/downloadURL
-   "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Places/NorthAmerica/USPostalServiceAddresses/",
+   "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FND/Places/NorthAmerica/USPostalServiceAddresses/",
    :dcterms/abstract
    "This ontology augments the Addresses ontology in FND with concepts that conform to the USPS Pub 28. The USPS provides automated address verification services that use the concepts defined herein for that purpose, and which many financial services entities use for data quality purposes.",
    :dcterms/contributor "Thematix Partners LLC",
@@ -32,22 +32,22 @@
     "xsd" "http://www.w3.org/2001/XMLSchema#"},
    :owl/imports
    #{{:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FND/Places/Locations/"}
+     {:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FND/Places/Addresses/"}
+     {:xsd/anyURI
       "https://www.omg.org/spec/LCC/Countries/CountryRepresentation/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/Identifiers/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Places/Locations/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Utilities/AnnotationVocabulary/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/Collections/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/CodesAndCodeSets/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Places/Addresses/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FND/Utilities/AnnotationVocabulary/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Relations/Relations/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FND/Relations/Relations/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/AnnotationVocabulary/"}},
    :owl/versionIRI
    {:xsd/anyURI
-    "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Places/NorthAmerica/USPostalServiceAddresses/"},
+    "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FND/Places/NorthAmerica/USPostalServiceAddresses/"},
    :rdf/type :owl/Ontology,
    :rdfa/prefix "fibo-fnd-plc-uspsa",
    :rdfa/uri
@@ -598,22 +598,22 @@
    :fibo-fnd-utl-av/hasMaturityLevel :fibo-fnd-utl-av/Release,
    :owl/imports
    #{{:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FND/Places/Locations/"}
+     {:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FND/Places/Addresses/"}
+     {:xsd/anyURI
       "https://www.omg.org/spec/LCC/Countries/CountryRepresentation/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/Identifiers/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Places/Locations/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Utilities/AnnotationVocabulary/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/Collections/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/CodesAndCodeSets/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Places/Addresses/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FND/Utilities/AnnotationVocabulary/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Relations/Relations/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FND/Relations/Relations/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/AnnotationVocabulary/"}},
    :owl/versionIRI
    {:xsd/anyURI
-    "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Places/NorthAmerica/USPostalServiceAddresses/"},
+    "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FND/Places/NorthAmerica/USPostalServiceAddresses/"},
    :rdf/type :owl/Ontology,
    :rdfs/label "U.S. Postal Service Addresses Ontology",
    :rdfs/seeAlso #{{:xsd/anyURI "https://about.usps.com/who/profile/"}

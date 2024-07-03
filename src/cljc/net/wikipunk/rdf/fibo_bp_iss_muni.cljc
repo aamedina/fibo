@@ -1,7 +1,7 @@
 (ns net.wikipunk.rdf.fibo-bp-iss-muni
-  {:cmns-av/copyright "Copyright (c) 2013-2023 EDM Council, Inc.",
+  {:cmns-av/copyright "Copyright (c) 2013-2024 EDM Council, Inc.",
    :dcat/downloadURL
-   "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/BP/SecuritiesIssuance/MuniIssuance/",
+   "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/BP/SecuritiesIssuance/MuniIssuance/",
    :dcterms/abstract
    "Ontology for the process in which municipal bonds are issued.",
    :dcterms/license {:xsd/anyURI "https://opensource.org/licenses/MIT"},
@@ -10,7 +10,9 @@
    {"cmns-av" "https://www.omg.org/spec/Commons/AnnotationVocabulary/",
     "cmns-doc" "https://www.omg.org/spec/Commons/Documents/",
     "cmns-dt" "https://www.omg.org/spec/Commons/DatesAndTimes/",
+    "cmns-pts" "https://www.omg.org/spec/Commons/PartiesAndSituations/",
     "cmns-qtu" "https://www.omg.org/spec/Commons/QuantitiesAndUnits/",
+    "cmns-rlcmp" "https://www.omg.org/spec/Commons/RolesAndCompositions/",
     "dcterms" "http://purl.org/dc/terms/",
     "fibo-bp-iss-dbti"
     "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/DebtIssuance/",
@@ -26,6 +28,8 @@
     "https://spec.edmcouncil.org/fibo/ontology/FBC/FinancialInstruments/FinancialInstruments/",
     "fibo-fnd-acc-cur"
     "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/CurrencyAmount/",
+    "fibo-fnd-agr-ctr"
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Agreements/Contracts/",
     "fibo-fnd-law-jur"
     "https://spec.edmcouncil.org/fibo/ontology/FND/Law/Jurisdiction/",
     "fibo-fnd-utl-av"
@@ -40,37 +44,41 @@
     "skos" "http://www.w3.org/2004/02/skos/core#",
     "xsd" "http://www.w3.org/2001/XMLSchema#"},
    :owl/imports
-   #{{:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Accounting/CurrencyAmount/"}
+   #{{:xsd/anyURI "https://www.omg.org/spec/Commons/RolesAndCompositions/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/Documents/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/BP/SecuritiesIssuance/DebtIssuance/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/BP/Process/FinancialContextAndProcess/"}
+     {:xsd/anyURI "https://www.omg.org/spec/Commons/PartiesAndSituations/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/QuantitiesAndUnits/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Law/Jurisdiction/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FND/Agreements/Agreements/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FBC/ProductsAndServices/FinancialProductsAndServices/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/SEC/Securities/SecuritiesIssuance/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Utilities/AnnotationVocabulary/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FND/Law/Jurisdiction/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/SEC/Securities/SecuritiesIssuance/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/BP/SecuritiesIssuance/IssuanceDocuments/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FBC/ProductsAndServices/FinancialProductsAndServices/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/DatesAndTimes/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/BP/SecuritiesIssuance/IssuanceProcess/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/BP/SecuritiesIssuance/DebtIssuance/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FBC/FinancialInstruments/FinancialInstruments/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FND/Utilities/AnnotationVocabulary/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/SEC/Debt/DebtInstruments/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/BP/SecuritiesIssuance/IssuanceDocuments/"}
+     {:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FND/Accounting/CurrencyAmount/"}
+     {:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/SEC/Debt/DebtInstruments/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/AnnotationVocabulary/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Agreements/Agreements/"}},
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FBC/FinancialInstruments/FinancialInstruments/"}
+     {:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/BP/Process/FinancialContextAndProcess/"}
+     {:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/BP/SecuritiesIssuance/IssuanceProcess/"}
+     {:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FND/Agreements/Contracts/"}},
    :owl/versionIRI
    {:xsd/anyURI
-    "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/BP/SecuritiesIssuance/MuniIssuance/"},
+    "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/BP/SecuritiesIssuance/MuniIssuance/"},
    :rdf/type :owl/Ontology,
    :rdfa/prefix "fibo-bp-iss-muni",
    :rdfa/uri
@@ -103,10 +111,11 @@
     "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/MuniIssuance/"},
    :rdfs/label {:rdf/language "en",
                 :rdf/value    "bond counsel"},
-   :rdfs/subClassOf {:owl/onProperty :fibo-bp-iss-muni/isBondCounsel,
-                     :owl/someValuesFrom
-                     :fibo-bp-iss-muni/DebtUnderwritingIssuanceProcess,
-                     :rdf/type :owl/Restriction}})
+   :rdfs/subClassOf #{:fibo-fnd-agr-ctr/ContractThirdParty
+                      {:owl/onProperty :fibo-bp-iss-muni/isBondCounsel,
+                       :owl/someValuesFrom
+                       :fibo-bp-iss-muni/DebtUnderwritingIssuanceProcess,
+                       :rdf/type :owl/Restriction}}})
 
 (def Correspondent
   {:db/ident :fibo-bp-iss-muni/Correspondent,
@@ -120,7 +129,8 @@
                       {:owl/onProperty :fibo-bp-iss-muni/participatesIn,
                        :owl/someValuesFrom
                        :fibo-bp-iss-muni/SecuritiesUnderwritingIssuanceProcess,
-                       :rdf/type :owl/Restriction}},
+                       :rdf/type :owl/Restriction}
+                      :fibo-fnd-agr-ctr/ContractThirdParty},
    :skos/definition
    {:rdf/language "en",
     :rdf/value
@@ -459,7 +469,8 @@
    {:xsd/anyURI
     "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/MuniIssuance/"},
    :rdfs/label {:rdf/language "en",
-                :rdf/value    "process participant"}})
+                :rdf/value    "process participant"},
+   :rdfs/subClassOf :cmns-pts/PartyRole})
 
 (def RegisteredSecurityIssuanceProcess
   {:db/ident :fibo-bp-iss-muni/RegisteredSecurityIssuanceProcess,
@@ -671,16 +682,14 @@
     "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/MuniIssuance/"},
    :rdfs/label {:rdf/language "en",
                 :rdf/value    "underwriting process actor"},
-   :rdfs/subClassOf
-   {:owl/onProperty     :fibo-bp-iss-muni/underwritingProcessActorHasIdentity,
-    :owl/someValuesFrom {:owl/unionOf [:fibo-bp-iss-muni/Correspondent
-                                       :fibo-bp-iss-muni/DTCCMember],
-                         :rdf/type    :owl/Class},
-    :rdf/type           :owl/Restriction},
+   :rdfs/subClassOf #{:cmns-pts/PartyRole
+                      {:owl/unionOf [:fibo-bp-iss-muni/Correspondent
+                                     :fibo-bp-iss-muni/DTCCMember],
+                       :rdf/type    :owl/Class}},
    :skos/definition
    {:rdf/language "en",
     :rdf/value
-    "any actor within the DTYCC Underwriting Process or any other Underwriting Process. Note: At present all these Actors (e.g. Underwriter) are defined simply as Process Actors and not as specializations of this type of Actor. Therefore this Actor is a Union of all of those."}})
+    "any actor within the DTCC Underwriting Process or any other Underwriting Process. Note: At present all these Actors (e.g. Underwriter) are defined simply as Process Actors and not as specializations of this type of Actor. Therefore this Actor is a Union of all of those."}})
 
 (def actualClosingDate
   {:db/ident :fibo-bp-iss-muni/actualClosingDate,
@@ -1296,19 +1305,6 @@
                 :rdf/value    "underwrites"},
    :rdfs/range :fibo-bp-iss-muni/SecuritiesUnderwritingIssuanceProcess})
 
-(def underwritingProcessActorHasIdentity
-  {:db/ident :fibo-bp-iss-muni/underwritingProcessActorHasIdentity,
-   :rdf/type :owl/ObjectProperty,
-   :rdfs/domain :fibo-bp-iss-muni/UnderwritingProcessActor,
-   :rdfs/isDefinedBy
-   {:xsd/anyURI
-    "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/MuniIssuance/"},
-   :rdfs/label {:rdf/language "en",
-                :rdf/value    "underwriting process actor has identity"},
-   :rdfs/range {:owl/unionOf [:fibo-bp-iss-muni/Correspondent
-                              :fibo-bp-iss-muni/DTCCMember],
-                :rdf/type    :owl/Class}})
-
 (def underwrittenBy
   {:db/ident :fibo-bp-iss-muni/underwrittenBy,
    :rdf/type :owl/ObjectProperty,
@@ -1321,43 +1317,47 @@
    :rdfs/range :fibo-bp-iss-muni/PotentialMuniUnderwriter})
 
 (def urn:uuid:f42677a7-c86e-5eae-b4f9-10221be6972f
-  {:cmns-av/copyright "Copyright (c) 2013-2023 EDM Council, Inc.",
+  {:cmns-av/copyright "Copyright (c) 2013-2024 EDM Council, Inc.",
    :dcterms/abstract
    "Ontology for the process in which municipal bonds are issued.",
    :dcterms/license {:xsd/anyURI "https://opensource.org/licenses/MIT"},
    :fibo-fnd-utl-av/hasMaturityLevel :fibo-fnd-utl-av/Provisional,
    :owl/imports
-   #{{:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Accounting/CurrencyAmount/"}
+   #{{:xsd/anyURI "https://www.omg.org/spec/Commons/RolesAndCompositions/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/Documents/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/BP/SecuritiesIssuance/DebtIssuance/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/BP/Process/FinancialContextAndProcess/"}
+     {:xsd/anyURI "https://www.omg.org/spec/Commons/PartiesAndSituations/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/QuantitiesAndUnits/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Law/Jurisdiction/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FND/Agreements/Agreements/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FBC/ProductsAndServices/FinancialProductsAndServices/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/SEC/Securities/SecuritiesIssuance/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Utilities/AnnotationVocabulary/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FND/Law/Jurisdiction/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/SEC/Securities/SecuritiesIssuance/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/BP/SecuritiesIssuance/IssuanceDocuments/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FBC/ProductsAndServices/FinancialProductsAndServices/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/DatesAndTimes/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/BP/SecuritiesIssuance/IssuanceProcess/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/BP/SecuritiesIssuance/DebtIssuance/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FBC/FinancialInstruments/FinancialInstruments/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FND/Utilities/AnnotationVocabulary/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/SEC/Debt/DebtInstruments/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/BP/SecuritiesIssuance/IssuanceDocuments/"}
+     {:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FND/Accounting/CurrencyAmount/"}
+     {:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/SEC/Debt/DebtInstruments/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/AnnotationVocabulary/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Agreements/Agreements/"}},
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FBC/FinancialInstruments/FinancialInstruments/"}
+     {:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/BP/Process/FinancialContextAndProcess/"}
+     {:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/BP/SecuritiesIssuance/IssuanceProcess/"}
+     {:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FND/Agreements/Contracts/"}},
    :owl/versionIRI
    {:xsd/anyURI
-    "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/BP/SecuritiesIssuance/MuniIssuance/"},
+    "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/BP/SecuritiesIssuance/MuniIssuance/"},
    :rdf/type :owl/Ontology,
    :rdfs/label {:rdf/language "en",
                 :rdf/value    "MuniIssuance"},

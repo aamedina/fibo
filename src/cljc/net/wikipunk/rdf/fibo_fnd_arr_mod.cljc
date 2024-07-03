@@ -2,7 +2,7 @@
   {:cmns-av/copyright #{"Copyright (c) 2017-2023 Object Management Group, Inc."
                         "Copyright (c) 2017-2023 EDM Council, Inc."},
    :dcat/downloadURL
-   "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Arrangements/MetadataFNDArrangements/ArrangementsModule",
+   "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FND/Arrangements/MetadataFNDArrangements/ArrangementsModule",
    :dcterms/abstract
    "This is the metadata ontology used to describe the Foundations Arrangements Module.",
    :dcterms/issued #inst "2021-03-29T18:00:00.000-00:00",
@@ -21,11 +21,11 @@
     "xsd" "http://www.w3.org/2001/XMLSchema#"},
    :owl/imports
    #{{:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Utilities/AnnotationVocabulary/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FND/Utilities/AnnotationVocabulary/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/AnnotationVocabulary/"}},
    :owl/versionIRI
    {:xsd/anyURI
-    "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Arrangements/MetadataFNDArrangements/"},
+    "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FND/Arrangements/MetadataFNDArrangements/"},
    :rdf/type :owl/Ontology,
    :rdfa/prefix "fibo-fnd-arr-mod",
    :rdfa/uri
@@ -79,11 +79,11 @@
    :dcterms/modified #inst "2023-03-31T18:00:00.000-00:00",
    :owl/imports
    #{{:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Utilities/AnnotationVocabulary/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FND/Utilities/AnnotationVocabulary/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/AnnotationVocabulary/"}},
    :owl/versionIRI
    {:xsd/anyURI
-    "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Arrangements/MetadataFNDArrangements/"},
+    "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FND/Arrangements/MetadataFNDArrangements/"},
    :rdf/type :owl/Ontology,
    :rdfs/label
    "Metadata for the EDMC-FIBO Foundations (FND) Arrangements Module",

@@ -12,3 +12,4 @@ pom.xml.asc
 .cpcache/
 .vocab/
 .clj-kondo/
+.lsp/

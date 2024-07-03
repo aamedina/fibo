@@ -1,7 +1,7 @@
 (ns net.wikipunk.rdf.fibo-md-derx-mod
   {:cmns-av/copyright "Copyright (c) 2018-2023 EDM Council, Inc.",
    :dcat/downloadURL
-   "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/MD/DerivativesTemporal/MetadataMDDerivativesTemporal/DerivativesTemporalModule",
+   "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/MD/DerivativesTemporal/MetadataMDDerivativesTemporal/DerivativesTemporalModule",
    :dcterms/abstract
    "This module covers time-dependent concepts related to derivative instruments, such as the various derivatives-related greeks and other analytics.",
    :dcterms/issued #inst "2018-08-27T18:00:00.000-00:00",
@@ -20,11 +20,11 @@
     "xsd" "http://www.w3.org/2001/XMLSchema#"},
    :owl/imports
    #{{:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Utilities/AnnotationVocabulary/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FND/Utilities/AnnotationVocabulary/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/AnnotationVocabulary/"}},
    :owl/versionIRI
    {:xsd/anyURI
-    "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/MD/DerivativesTemporal/MetadataMDDerivativesTemporal/"},
+    "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/MD/DerivativesTemporal/MetadataMDDerivativesTemporal/"},
    :rdf/type :owl/Ontology,
    :rdfa/prefix "fibo-md-derx-mod",
    :rdfa/uri
@@ -64,11 +64,11 @@
    :dcterms/modified #inst "2023-03-31T18:00:00.000-00:00",
    :owl/imports
    #{{:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Utilities/AnnotationVocabulary/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FND/Utilities/AnnotationVocabulary/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/AnnotationVocabulary/"}},
    :owl/versionIRI
    {:xsd/anyURI
-    "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/MD/DerivativesTemporal/MetadataMDDerivativesTemporal/"},
+    "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/MD/DerivativesTemporal/MetadataMDDerivativesTemporal/"},
    :rdf/type :owl/Ontology,
    :rdfs/label
    "Metadata for the EDMC-FIBO Market Data (MD) DerivativesTemporal Module",

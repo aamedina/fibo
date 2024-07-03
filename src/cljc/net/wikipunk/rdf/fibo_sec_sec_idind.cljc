@@ -3,7 +3,7 @@
    #{"Copyright (c) 2016-2024 EDM Council, Inc."
      "Copyright (c) 2018-2024 Object Management Group, Inc."},
    :dcat/downloadURL
-   "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/SEC/Securities/SecuritiesIdentificationIndividuals/",
+   "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/SEC/Securities/SecuritiesIdentificationIndividuals/",
    :dcterms/abstract
    "This ontology defines concepts and primarily individuals required to identify securities, including the individuals that represent a number of well-known securities identifiers and related schemes, registries, and registration authorities.",
    :dcterms/license {:xsd/anyURI "https://opensource.org/licenses/MIT"},
@@ -34,6 +34,8 @@
     "https://spec.edmcouncil.org/fibo/ontology/FND/Relations/Relations/",
     "fibo-fnd-utl-av"
     "https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/AnnotationVocabulary/",
+    "fibo-ind-ir-mdp"
+    "https://spec.edmcouncil.org/fibo/ontology/IND/InterestRates/MarketDataProviders/",
     "fibo-sec-sec-id"
     "https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/SecuritiesIdentification/",
     "fibo-sec-sec-idind"
@@ -48,43 +50,45 @@
    :owl/imports
    #{{:xsd/anyURI "https://www.omg.org/spec/Commons/RolesAndCompositions/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FBC/FunctionalEntities/NorthAmericanEntities/USFinancialServicesEntitiesIndividuals/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/BE/FunctionalEntities/FunctionalEntities/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/BE/FunctionalEntities/Publishers/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/SEC/Securities/SecuritiesIdentification/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/Identifiers/"}
+     {:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FBC/FunctionalEntities/RegulatoryAgencies/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/ContextualDesignators/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/BE/GovernmentEntities/GovernmentEntities/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/SEC/Securities/SecuritiesListings/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/SEC/Securities/SecuritiesListings/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/BE/GovernmentEntities/GovernmentEntities/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FBC/FunctionalEntities/RegistrationAuthorities/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Law/Jurisdiction/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FBC/ProductsAndServices/FinancialProductsAndServices/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Utilities/AnnotationVocabulary/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/IND/InterestRates/MarketDataProviders/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/Collections/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/Designators/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FBC/FunctionalEntities/FinancialServicesEntities/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FBC/FunctionalEntities/RegistrationAuthorities/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Relations/Relations/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FND/Law/Jurisdiction/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/SEC/Securities/SecuritiesIdentification/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/BE/FunctionalEntities/Publishers/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FBC/FunctionalEntities/EuropeanEntities/EuropeanFinancialServicesEntitiesIndividuals/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FBC/FunctionalEntities/FinancialServicesEntities/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FBC/FinancialInstruments/FinancialInstruments/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FBC/ProductsAndServices/FinancialProductsAndServices/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/BE/FunctionalEntities/FunctionalEntities/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FBC/FunctionalEntities/EuropeanEntities/EuropeanFinancialServicesEntitiesIndividuals/"}
+     {:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FND/Utilities/AnnotationVocabulary/"}
+     {:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FND/Relations/Relations/"}
+     {:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FBC/FunctionalEntities/NorthAmericanEntities/USFinancialServicesEntitiesIndividuals/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/AnnotationVocabulary/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FBC/FunctionalEntities/RegulatoryAgencies/"}},
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FBC/FinancialInstruments/FinancialInstruments/"}},
    :owl/versionIRI
    {:xsd/anyURI
-    "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/SEC/Securities/SecuritiesIdentificationIndividuals/"},
+    "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/SEC/Securities/SecuritiesIdentificationIndividuals/"},
    :rdf/type :owl/Ontology,
    :rdfa/prefix "fibo-sec-sec-idind",
    :rdfa/uri
@@ -100,6 +104,7 @@
      "The https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/SecuritiesIdentificationIndividuals.rdf version of this ontology was modified to use the Commons Ontology Library (Commons) rather than the OMG's Languages, Countries and Codes (LCC), eliminating redundancies in FIBO as appropriate."
      "The https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/SecuritiesIdentificationIndividuals.rdf version of the ontology was modified to use the Commons Ontology Library (Commons) Annotation Vocabulary rather than the OMG's Specification Metadata vocabulary."
      "The https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/SecuritiesIdentificationIndividuals.rdf version of this ontology was revised to eliminate punning with respect to the FIGI registry entry."
+     "The https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/SecuritiesIdentificationIndividuals.rdf version of this ontology was modified to revise the representation of a RIC code to reflect that it is now published by the London Stock Exchange and is branded using their Refinitiv brand (SEC-196)."
      "The https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/SecuritiesIdentificationIndividuals/ version of this ontology was modified to replace 'characterizes' with 'describes', which more accurately expresses the intent."
      "The https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/SecuritiesIdentificationIndividuals.rdf version of this ontology was revised to replace 'financial information publisher' with 'publisher'."
      "The https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/SecuritiesIdentificationIndividuals.rdf version of this ontology was revised to eliminate confusion between listed security and listing (which caused reasoning issues) and add the Telekurs Id (now retired) and Valoren as securities identifiers."
@@ -170,6 +175,8 @@
 
 (def CUSIPInternationalNumberingSystemScheme
   {:cmns-av/abbreviation "CINS scheme",
+   :cmns-av/adaptedFrom
+   {:xsd/anyURI "https://www.cusip.com/cusip/about-cgs-identifiers.htm"},
    :db/ident :fibo-sec-sec-idind/CUSIPInternationalNumberingSystemScheme,
    :rdf/type #{:fibo-sec-sec-id/ProprietarySecurityIdentificationScheme
                :owl/NamedIndividual},
@@ -241,6 +248,7 @@
    {:xsd/anyURI
     "https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/SecuritiesIdentificationIndividuals/"},
    :rdfs/label "common code registry entry",
+   :rdfs/seeAlso {:xsd/anyURI "http://www.isin.net/common-code-isin/"},
    :rdfs/subClassOf
    #{{:owl/allValuesFrom :fibo-fbc-fi-fi/Security,
       :owl/onProperty    :cmns-cxtdsg/appliesTo,
@@ -301,7 +309,8 @@
    "nine-character alphanumeric securities identifier, issued in Luxembourg, jointly by Euroclear and Clearstream"})
 
 (def EuroclearClearstreamCommonCodeScheme
-  {:cmns-av/synonym "common code scheme",
+  {:cmns-av/adaptedFrom {:xsd/anyURI "http://www.isin.net/common-code-isin/"},
+   :cmns-av/synonym "common code scheme",
    :cmns-dsg/describes :fibo-sec-sec-idind/CommonCodeRepository,
    :db/ident :fibo-sec-sec-idind/EuroclearClearstreamCommonCodeScheme,
    :rdf/type #{:fibo-sec-sec-id/ProprietarySecurityIdentificationScheme
@@ -315,8 +324,9 @@
 
 (def FinancialInstrumentGlobalIdentifier
   {:cmns-av/abbreviation "FIGI",
+   :cmns-av/adaptedFrom {:xsd/anyURI "https://www.omg.org/spec/FIGI"},
    :cmns-av/explanatoryNote
-   "While in most cases, a FIGI uniquely identifies a security, there are situations outside of the U.S. where it instead identifies a listing for a security, similarly to a ticker symbol.",
+   "The development of the Financial Instrument Global Identifier (FIGI) originated from a need for a standard methodology to bridge across multiple identification systems for financial instruments. Without prejudice against any existing symbol-based solutions, or any question of the validity of one system over the other, the FIGI standard utilizes a metadata driven approach to enable the unique and persistent identification of financial instruments. While in most cases, a FIGI uniquely identifies a security, there are situations outside of the U.S. where it instead identifies a listing for a security, similar to a ticker symbol.",
    :db/ident :fibo-sec-sec-idind/FinancialInstrumentGlobalIdentifier,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
@@ -349,6 +359,7 @@
 
 (def FinancialInstrumentGlobalIdentifierRegistry
   {:cmns-av/abbreviation "FIGI Registry",
+   :cmns-av/adaptedFrom {:xsd/anyURI "https://www.omg.org/spec/FIGI"},
    :db/ident :fibo-sec-sec-idind/FinancialInstrumentGlobalIdentifierRegistry,
    :fibo-fnd-rel-rel/isManagedBy :fibo-fbc-fct-usfsind/BloombergLP,
    :rdf/type #{:fibo-fbc-fct-ra/Registry :owl/NamedIndividual},
@@ -362,6 +373,7 @@
 
 (def FinancialInstrumentGlobalIdentifierRegistryEntry
   {:cmns-av/abbreviation "FIGI registry entry",
+   :cmns-av/adaptedFrom {:xsd/anyURI "https://www.omg.org/spec/FIGI"},
    :db/ident
    :fibo-sec-sec-idind/FinancialInstrumentGlobalIdentifierRegistryEntry,
    :rdf/type :owl/Class,
@@ -388,6 +400,7 @@
 
 (def FinancialInstrumentGlobalIdentifierScheme
   {:cmns-av/abbreviation "FIGI scheme",
+   :cmns-av/adaptedFrom {:xsd/anyURI "https://www.omg.org/spec/FIGI"},
    :cmns-dsg/describes
    :fibo-sec-sec-idind/FinancialInstrumentGlobalIdentifierRegistry,
    :db/ident :fibo-sec-sec-idind/FinancialInstrumentGlobalIdentifierScheme,
@@ -412,39 +425,65 @@
    :skos/definition
    "proprietary identification scheme for securities identifiers managed by the Financial Times"})
 
-(def ReutersInstrumentCode
+(def RefinitivInstrumentCode
   {:cmns-av/abbreviation "RIC",
-   :db/ident :fibo-sec-sec-idind/ReutersInstrumentCode,
+   :cmns-av/adaptedFrom
+   {:xsd/anyURI
+    "https://community.developers.refinitiv.com/questions/28938/ric-code-understandingidentificaiton.html"},
+   :db/ident :fibo-sec-sec-idind/RefinitivInstrumentCode,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    {:xsd/anyURI
     "https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/SecuritiesIdentificationIndividuals/"},
-   :rdfs/label "Reuters instrument code",
-   :rdfs/subClassOf #{{:owl/hasValue   :fibo-fbc-fct-usfsind/ThomsonReuters,
-                       :owl/onProperty :fibo-fbc-fct-ra/isRegisteredBy,
-                       :rdf/type       :owl/Restriction}
-                      :fibo-sec-sec-id/ProprietarySecurityIdentifier
-                      {:owl/hasValue   :fibo-fbc-fct-usfsind/ThomsonReuters,
-                       :owl/onProperty :fibo-fnd-rel-rel/isIssuedBy,
-                       :rdf/type       :owl/Restriction}
-                      {:owl/hasValue
-                       :fibo-sec-sec-idind/ReutersInstrumentCodeScheme,
-                       :owl/onProperty :cmns-dsg/isDefinedIn,
-                       :rdf/type :owl/Restriction}},
+   :rdfs/label "Refinitiv instrument code",
+   :rdfs/subClassOf
+   #{:fibo-sec-sec-id/ProprietarySecurityIdentifier
+     {:owl/hasValue :fibo-ind-ir-mdp/LSEGFinancialSolutionsAsMarketDataProvider,
+      :owl/onProperty :fibo-fbc-fct-ra/isRegisteredBy,
+      :rdf/type :owl/Restriction}
+     {:owl/hasValue   :fibo-sec-sec-idind/RefinitivInstrumentCodeScheme,
+      :owl/onProperty :cmns-dsg/isDefinedIn,
+      :rdf/type       :owl/Restriction}
+     {:owl/hasValue :fibo-ind-ir-mdp/LSEGFinancialSolutionsAsMarketDataProvider,
+      :owl/onProperty :fibo-fnd-rel-rel/isIssuedBy,
+      :rdf/type :owl/Restriction}},
    :skos/definition
-   "ticker-like identifier to identify financial instruments and indices owned, managed, and distributed by Thomson Reuters"})
+   "proprietary code for financial instruments and indices owned, managed, and distributed by the London Stock Exchange Group's LSEG Financial Solutions (branded as Refinitiv)",
+   :skos/note
+   "A Refinitiv Instrument Code (RIC), previously known as the Reuters Instrument Code, is a proprietary identifier used by Refinitiv (now LSEG Financial Solutions) to represent financial instrument related data. The composition of a RIC is dependent on the type of instrument.\n\n- Instrument code : Can be based on the exchange ticker code, ISIN or local code, currency code, and so on\n- Period or time interval : Can be an expiry month code for example\n- Delimiter : Usually a full stop used to separate the instrument code from the exchange code or a = sign for money securities.\n- Source code : Usually a single or double alpha-character capital unique to an exchange\n\nAn equity RIC has several components: the Equity RIC root is in upper case, brokerage characters in lower case (if applicable), and finally an exchange identifier. These codes facilitate information lookup across various financial networks. The concept of RICs traces back to the Quotron service, which Thomson Reuters acquired in the 1980s. The division was spun out as Refinitiv in 2018. Refinitiv was acquired by the London Stock Exchange Group in 2021, and the organization was rebranded as LSEG Financial Solutions in 2023, though the name of the code and certain other branded concepts were retained."})
 
-(def ReutersInstrumentCodeScheme
+(def RefinitivInstrumentCodeScheme
   {:cmns-av/abbreviation "RIC scheme",
-   :db/ident :fibo-sec-sec-idind/ReutersInstrumentCodeScheme,
+   :cmns-av/adaptedFrom
+   {:xsd/anyURI
+    "https://community.developers.refinitiv.com/questions/28938/ric-code-understandingidentificaiton.html"},
+   :db/ident :fibo-sec-sec-idind/RefinitivInstrumentCodeScheme,
    :rdf/type #{:fibo-sec-sec-id/ProprietarySecurityIdentificationScheme
                :owl/NamedIndividual},
    :rdfs/isDefinedBy
    {:xsd/anyURI
     "https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/SecuritiesIdentificationIndividuals/"},
-   :rdfs/label "Reuters instrument code scheme",
+   :rdfs/label "Refinitiv instrument code scheme",
    :skos/definition
-   "proprietary identification scheme for securities identifiers managed by Thomson Reuters"})
+   "proprietary identification scheme for securities identifiers managed by the London Stock Exchange Group's LSEG Financial Solutions"})
+
+(def ReutersInstrumentCode
+  {:db/ident :fibo-sec-sec-idind/ReutersInstrumentCode,
+   :owl/deprecated true,
+   :owl/equivalentClass :fibo-sec-sec-idind/RefinitivInstrumentCode,
+   :rdf/type :owl/Class,
+   :rdfs/isDefinedBy
+   {:xsd/anyURI
+    "https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/SecuritiesIdentificationIndividuals/"}})
+
+(def ReutersInstrumentCodeScheme
+  {:db/ident :fibo-sec-sec-idind/ReutersInstrumentCodeScheme,
+   :owl/deprecated true,
+   :owl/sameAs :fibo-sec-sec-idind/RefinitivInstrumentCodeScheme,
+   :rdf/type :owl/NamedIndividual,
+   :rdfs/isDefinedBy
+   {:xsd/anyURI
+    "https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/SecuritiesIdentificationIndividuals/"}})
 
 (def SEDOLMasterFile
   {:db/ident :fibo-sec-sec-idind/SEDOLMasterFile,
@@ -455,6 +494,7 @@
    {:xsd/anyURI
     "https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/SecuritiesIdentificationIndividuals/"},
    :rdfs/label "SEDOL Master File",
+   :rdfs/seeAlso {:xsd/anyURI "https://www.isin.net/sedol/"},
    :skos/definition
    "repository of security identifiers, issued by the London Stock Exchange, that is the National Securities Identifying Number (NSIN) for securities issued in the United Kingdom, which is also part of the ISIN for the security it identifies"})
 
@@ -466,6 +506,7 @@
    {:xsd/anyURI
     "https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/SecuritiesIdentificationIndividuals/"},
    :rdfs/label "Stock Exchange Daily Official List (SEDOL) code",
+   :rdfs/seeAlso {:xsd/anyURI "https://www.isin.net/sedol/"},
    :rdfs/subClassOf #{:fibo-sec-sec-id/ProprietarySecurityIdentifier
                       {:owl/hasValue :fibo-fbc-fct-eufseind/LondonStockExchange,
                        :owl/onProperty :fibo-fnd-rel-rel/isIssuedBy,
@@ -497,6 +538,7 @@
    {:xsd/anyURI
     "https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/SecuritiesIdentificationIndividuals/"},
    :rdfs/label "Stock Exchange Daily Official List (SEDOL) scheme",
+   :rdfs/seeAlso {:xsd/anyURI "https://www.isin.net/sedol/"},
    :skos/definition
    "national security identification scheme used to identify all stocks and registered bonds in the United Kingdom for the purposes of facilitating clearing and settlement of trades"})
 
@@ -602,43 +644,45 @@
    :owl/imports
    #{{:xsd/anyURI "https://www.omg.org/spec/Commons/RolesAndCompositions/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FBC/FunctionalEntities/NorthAmericanEntities/USFinancialServicesEntitiesIndividuals/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/BE/FunctionalEntities/FunctionalEntities/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/BE/FunctionalEntities/Publishers/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/SEC/Securities/SecuritiesIdentification/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/Identifiers/"}
+     {:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FBC/FunctionalEntities/RegulatoryAgencies/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/ContextualDesignators/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/BE/GovernmentEntities/GovernmentEntities/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/SEC/Securities/SecuritiesListings/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/SEC/Securities/SecuritiesListings/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/BE/GovernmentEntities/GovernmentEntities/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FBC/FunctionalEntities/RegistrationAuthorities/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Law/Jurisdiction/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FBC/ProductsAndServices/FinancialProductsAndServices/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Utilities/AnnotationVocabulary/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/IND/InterestRates/MarketDataProviders/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/Collections/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/Designators/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FBC/FunctionalEntities/FinancialServicesEntities/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FBC/FunctionalEntities/RegistrationAuthorities/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Relations/Relations/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FND/Law/Jurisdiction/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/SEC/Securities/SecuritiesIdentification/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/BE/FunctionalEntities/Publishers/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FBC/FunctionalEntities/EuropeanEntities/EuropeanFinancialServicesEntitiesIndividuals/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FBC/FunctionalEntities/FinancialServicesEntities/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FBC/FinancialInstruments/FinancialInstruments/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FBC/ProductsAndServices/FinancialProductsAndServices/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/BE/FunctionalEntities/FunctionalEntities/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FBC/FunctionalEntities/EuropeanEntities/EuropeanFinancialServicesEntitiesIndividuals/"}
+     {:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FND/Utilities/AnnotationVocabulary/"}
+     {:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FND/Relations/Relations/"}
+     {:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FBC/FunctionalEntities/NorthAmericanEntities/USFinancialServicesEntitiesIndividuals/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/AnnotationVocabulary/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FBC/FunctionalEntities/RegulatoryAgencies/"}},
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FBC/FinancialInstruments/FinancialInstruments/"}},
    :owl/versionIRI
    {:xsd/anyURI
-    "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/SEC/Securities/SecuritiesIdentificationIndividuals/"},
+    "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/SEC/Securities/SecuritiesIdentificationIndividuals/"},
    :rdf/type :owl/Ontology,
    :rdfs/label "Securities Identification Individuals Ontology",
    :skos/changeNote
@@ -651,6 +695,7 @@
      "The https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/SecuritiesIdentificationIndividuals.rdf version of this ontology was modified to use the Commons Ontology Library (Commons) rather than the OMG's Languages, Countries and Codes (LCC), eliminating redundancies in FIBO as appropriate."
      "The https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/SecuritiesIdentificationIndividuals.rdf version of the ontology was modified to use the Commons Ontology Library (Commons) Annotation Vocabulary rather than the OMG's Specification Metadata vocabulary."
      "The https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/SecuritiesIdentificationIndividuals.rdf version of this ontology was revised to eliminate punning with respect to the FIGI registry entry."
+     "The https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/SecuritiesIdentificationIndividuals.rdf version of this ontology was modified to revise the representation of a RIC code to reflect that it is now published by the London Stock Exchange and is branded using their Refinitiv brand (SEC-196)."
      "The https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/SecuritiesIdentificationIndividuals/ version of this ontology was modified to replace 'characterizes' with 'describes', which more accurately expresses the intent."
      "The https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/SecuritiesIdentificationIndividuals.rdf version of this ontology was revised to replace 'financial information publisher' with 'publisher'."
      "The https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/SecuritiesIdentificationIndividuals.rdf version of this ontology was revised to eliminate confusion between listed security and listing (which caused reasoning issues) and add the Telekurs Id (now retired) and Valoren as securities identifiers."

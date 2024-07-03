@@ -2,7 +2,7 @@
   {:cmns-av/copyright #{"Copyright (c) 2013-2023 Object Management Group, Inc."
                         "Copyright (c) 2013-2023 EDM Council, Inc."},
    :dcat/downloadURL
-   "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/MetadataFND/FNDDomain",
+   "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FND/MetadataFND/FNDDomain",
    :dcterms/abstract "The 'metadata for FND' describes the FND domain.",
    :dcterms/issued #inst "2021-03-29T18:00:00.000-00:00",
    :dcterms/license {:xsd/anyURI "https://opensource.org/licenses/MIT"},
@@ -51,43 +51,43 @@
     "xsd" "http://www.w3.org/2001/XMLSchema#"},
    :owl/imports
    #{{:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Arrangements/MetadataFNDArrangements/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FND/Parties/MetadataFNDParties/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Organizations/MetadataFNDOrganizations/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FND/Law/MetadataFNDLaw/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Quantities/MetadataFNDQuantities/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FND/Organizations/MetadataFNDOrganizations/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Parties/MetadataFNDParties/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FND/TransactionsExt/MetadataFNDTransactionsExt/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/TransactionsExt/MetadataFNDTransactionsExt/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FND/DatesAndTimes/MetadataFNDDatesAndTimes/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Utilities/MetadataFNDUtilities/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FND/Places/MetadataFNDPlaces/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Agreements/MetadataFNDAgreements/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FND/ProductsAndServices/MetadataFNDProductsAndServices/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/AgentsAndPeople/MetadataFNDAgentsAndPeople/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FND/Accounting/MetadataFNDAccounting/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Relations/MetadataFNDRelations/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FND/GoalsAndObjectives/MetadataFNDGoalsAndObjectives/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/ProductsAndServices/MetadataFNDProductsAndServices/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FND/Quantities/MetadataFNDQuantities/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Law/MetadataFNDLaw/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FND/Arrangements/MetadataFNDArrangements/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Utilities/AnnotationVocabulary/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FND/AgentsAndPeople/MetadataFNDAgentsAndPeople/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Accounting/MetadataFNDAccounting/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FND/Agreements/MetadataFNDAgreements/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/GoalsAndObjectives/MetadataFNDGoalsAndObjectives/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FND/Utilities/AnnotationVocabulary/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Places/MetadataFNDPlaces/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FND/OwnershipAndControl/MetadataFNDOwnershipAndControl/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/DatesAndTimes/MetadataFNDDatesAndTimes/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FND/Relations/MetadataFNDRelations/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/AnnotationVocabulary/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/OwnershipAndControl/MetadataFNDOwnershipAndControl/"}},
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FND/Utilities/MetadataFNDUtilities/"}},
    :owl/versionIRI
    {:xsd/anyURI
-    "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/MetadataFND/"},
+    "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FND/MetadataFND/"},
    :rdf/type :owl/Ontology,
    :rdfa/prefix "fibo-fnd-mod",
    :rdfa/uri "https://spec.edmcouncil.org/fibo/ontology/FND/MetadataFND/",
@@ -134,43 +134,43 @@
    :dcterms/modified #inst "2023-03-31T18:00:00.000-00:00",
    :owl/imports
    #{{:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Arrangements/MetadataFNDArrangements/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FND/Parties/MetadataFNDParties/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Organizations/MetadataFNDOrganizations/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FND/Law/MetadataFNDLaw/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Quantities/MetadataFNDQuantities/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FND/Organizations/MetadataFNDOrganizations/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Parties/MetadataFNDParties/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FND/TransactionsExt/MetadataFNDTransactionsExt/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/TransactionsExt/MetadataFNDTransactionsExt/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FND/DatesAndTimes/MetadataFNDDatesAndTimes/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Utilities/MetadataFNDUtilities/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FND/Places/MetadataFNDPlaces/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Agreements/MetadataFNDAgreements/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FND/ProductsAndServices/MetadataFNDProductsAndServices/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/AgentsAndPeople/MetadataFNDAgentsAndPeople/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FND/Accounting/MetadataFNDAccounting/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Relations/MetadataFNDRelations/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FND/GoalsAndObjectives/MetadataFNDGoalsAndObjectives/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/ProductsAndServices/MetadataFNDProductsAndServices/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FND/Quantities/MetadataFNDQuantities/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Law/MetadataFNDLaw/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FND/Arrangements/MetadataFNDArrangements/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Utilities/AnnotationVocabulary/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FND/AgentsAndPeople/MetadataFNDAgentsAndPeople/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Accounting/MetadataFNDAccounting/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FND/Agreements/MetadataFNDAgreements/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/GoalsAndObjectives/MetadataFNDGoalsAndObjectives/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FND/Utilities/AnnotationVocabulary/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Places/MetadataFNDPlaces/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FND/OwnershipAndControl/MetadataFNDOwnershipAndControl/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/DatesAndTimes/MetadataFNDDatesAndTimes/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FND/Relations/MetadataFNDRelations/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/AnnotationVocabulary/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/OwnershipAndControl/MetadataFNDOwnershipAndControl/"}},
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FND/Utilities/MetadataFNDUtilities/"}},
    :owl/versionIRI
    {:xsd/anyURI
-    "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/MetadataFND/"},
+    "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FND/MetadataFND/"},
    :rdf/type :owl/Ontology,
    :rdfs/label "Metadata for the EDMC-FIBO Foundations (FND) Domain",
    :xsd/anyURI "https://spec.edmcouncil.org/fibo/ontology/FND/MetadataFND/"})

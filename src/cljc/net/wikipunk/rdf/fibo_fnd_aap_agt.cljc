@@ -3,7 +3,7 @@
    #{"Copyright (c) 2013-2024 EDM Council, Inc."
      "Copyright (c) 2013-2024 Object Management Group, Inc."},
    :dcat/downloadURL
-   "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/AgentsAndPeople/Agents/",
+   "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FND/AgentsAndPeople/Agents/",
    :dcterms/abstract
    "This ontology extends the Commons 1.1 Parties and Situations ontology to define defines the concept of a software system, which may or may not be autonomous. Other concepts that were originally defined in this ontology have been replaced with their corresponding concepts in Commons.",
    :dcterms/license {:xsd/anyURI "https://opensource.org/licenses/MIT"},
@@ -26,16 +26,16 @@
     "skos" "http://www.w3.org/2004/02/skos/core#",
     "xsd" "http://www.w3.org/2001/XMLSchema#"},
    :owl/imports
-   #{{:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Utilities/AnnotationVocabulary/"}
-     {:xsd/anyURI "https://www.omg.org/spec/Commons/Designators/"}
+   #{{:xsd/anyURI "https://www.omg.org/spec/Commons/Designators/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Relations/Relations/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FND/Utilities/AnnotationVocabulary/"}
+     {:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FND/Relations/Relations/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/TextDatatype/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/AnnotationVocabulary/"}},
    :owl/versionIRI
    {:xsd/anyURI
-    "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/AgentsAndPeople/Agents/"},
+    "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FND/AgentsAndPeople/Agents/"},
    :rdf/type :owl/Ontology,
    :rdfa/prefix "fibo-fnd-aap-agt",
    :rdfa/uri
@@ -89,16 +89,16 @@
    :dcterms/license {:xsd/anyURI "https://opensource.org/licenses/MIT"},
    :fibo-fnd-utl-av/hasMaturityLevel :fibo-fnd-utl-av/Release,
    :owl/imports
-   #{{:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Utilities/AnnotationVocabulary/"}
-     {:xsd/anyURI "https://www.omg.org/spec/Commons/Designators/"}
+   #{{:xsd/anyURI "https://www.omg.org/spec/Commons/Designators/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Relations/Relations/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FND/Utilities/AnnotationVocabulary/"}
+     {:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FND/Relations/Relations/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/TextDatatype/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/AnnotationVocabulary/"}},
    :owl/versionIRI
    {:xsd/anyURI
-    "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/AgentsAndPeople/Agents/"},
+    "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FND/AgentsAndPeople/Agents/"},
    :rdf/type :owl/Ontology,
    :rdfs/label "Agents Ontology",
    :skos/changeNote

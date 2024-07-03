@@ -2,7 +2,7 @@
   {:cmns-av/copyright #{"Copyright (c) 2018-2023 Object Management Group, Inc."
                         "Copyright (c) 2018-2023 EDM Council, Inc."},
    :dcat/downloadURL
-   "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/LOAN/LoansGeneral/MetadataLOANLoansGeneral/LoansGeneralModule",
+   "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/LOAN/LoansGeneral/MetadataLOANLoansGeneral/LoansGeneralModule",
    :dcterms/abstract
    "This module contains ontologies defining concepts that apply to most loans, including but not limited to applications.",
    :dcterms/issued #inst "2018-03-31T18:00:00.000-00:00",
@@ -21,11 +21,11 @@
     "xsd" "http://www.w3.org/2001/XMLSchema#"},
    :owl/imports
    #{{:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Utilities/AnnotationVocabulary/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FND/Utilities/AnnotationVocabulary/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/AnnotationVocabulary/"}},
    :owl/versionIRI
    {:xsd/anyURI
-    "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/LOAN/LoansGeneral/MetadataLOANLoansGeneral/"},
+    "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/LOAN/LoansGeneral/MetadataLOANLoansGeneral/"},
    :rdf/type :owl/Ontology,
    :rdfa/prefix "fibo-loan-ln-mod",
    :rdfa/uri
@@ -75,11 +75,11 @@
    :dcterms/modified #inst "2023-02-03T18:00:00.000-00:00",
    :owl/imports
    #{{:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Utilities/AnnotationVocabulary/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FND/Utilities/AnnotationVocabulary/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/AnnotationVocabulary/"}},
    :owl/versionIRI
    {:xsd/anyURI
-    "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/LOAN/LoansGeneral/MetadataLOANLoansGeneral/"},
+    "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/LOAN/LoansGeneral/MetadataLOANLoansGeneral/"},
    :rdf/type :owl/Ontology,
    :rdfs/label "Metadata for the EDMC-FIBO Loans (LOAN) Loans General Module",
    :xsd/anyURI

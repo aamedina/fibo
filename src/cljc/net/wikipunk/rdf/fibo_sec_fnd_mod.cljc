@@ -2,7 +2,7 @@
   {:cmns-av/copyright #{"Copyright (c) 2020-2023 Object Management Group, Inc."
                         "Copyright (c) 2020-2023 EDM Council, Inc."},
    :dcat/downloadURL
-   "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/SEC/Funds/MetadataSECFunds/FundsModule",
+   "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/SEC/Funds/MetadataSECFunds/FundsModule",
    :dcterms/abstract
    "This module contains ontologies of funds concepts covering fund structure, definition and involved parties, along with concepts for tradable fund units.",
    :dcterms/issued #inst "2018-03-31T18:00:00.000-00:00",
@@ -21,11 +21,11 @@
     "xsd" "http://www.w3.org/2001/XMLSchema#"},
    :owl/imports
    #{{:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Utilities/AnnotationVocabulary/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FND/Utilities/AnnotationVocabulary/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/AnnotationVocabulary/"}},
    :owl/versionIRI
    {:xsd/anyURI
-    "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/SEC/Funds/MetadataSECFunds/"},
+    "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/SEC/Funds/MetadataSECFunds/"},
    :rdf/type :owl/Ontology,
    :rdfa/prefix "fibo-sec-fnd-mod",
    :rdfa/uri
@@ -73,11 +73,11 @@
    :dcterms/modified #inst "2023-02-03T18:00:00.000-00:00",
    :owl/imports
    #{{:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Utilities/AnnotationVocabulary/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FND/Utilities/AnnotationVocabulary/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/AnnotationVocabulary/"}},
    :owl/versionIRI
    {:xsd/anyURI
-    "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/SEC/Funds/MetadataSECFunds/"},
+    "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/SEC/Funds/MetadataSECFunds/"},
    :rdf/type :owl/Ontology,
    :rdfs/label "Metadata SEC Funds Module",
    :xsd/anyURI

@@ -3,7 +3,7 @@
    #{"Copyright (c) 2013-2024 EDM Council, Inc."
      "Copyright (c) 2013-2024 Object Management Group, Inc."},
    :dcat/downloadURL
-   "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Relations/Relations/",
+   "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FND/Relations/Relations/",
    :dcterms/abstract
    "This ontology defines a set of general purpose relations for use in other FIBO ontology elements. These include a number of properties required for reuse across the foundations and business entities models.",
    :dcterms/license {:xsd/anyURI "https://opensource.org/licenses/MIT"},
@@ -29,14 +29,14 @@
    #{{:xsd/anyURI "https://www.omg.org/spec/Commons/RolesAndCompositions/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/Documents/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/ContextualDesignators/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Utilities/AnnotationVocabulary/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/Designators/"}
+     {:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FND/Utilities/AnnotationVocabulary/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/TextDatatype/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/AnnotationVocabulary/"}},
    :owl/versionIRI
    {:xsd/anyURI
-    "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Relations/Relations/"},
+    "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FND/Relations/Relations/"},
    :rdf/type :owl/Ontology,
    :rdfa/prefix "fibo-fnd-rel-rel",
    :rdfa/uri
@@ -538,14 +538,14 @@
    #{{:xsd/anyURI "https://www.omg.org/spec/Commons/RolesAndCompositions/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/Documents/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/ContextualDesignators/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Utilities/AnnotationVocabulary/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/Designators/"}
+     {:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FND/Utilities/AnnotationVocabulary/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/TextDatatype/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/AnnotationVocabulary/"}},
    :owl/versionIRI
    {:xsd/anyURI
-    "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Relations/Relations/"},
+    "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FND/Relations/Relations/"},
    :rdf/type :owl/Ontology,
    :rdfs/label "Relations Ontology",
    :skos/changeNote

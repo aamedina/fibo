@@ -3,7 +3,7 @@
    #{"Copyright (c) 2013-2024 EDM Council, Inc."
      "Copyright (c) 2013-2024 Object Management Group, Inc."},
    :dcat/downloadURL
-   "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/BE/OwnershipAndControl/OwnershipParties/",
+   "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/BE/OwnershipAndControl/OwnershipParties/",
    :dcterms/abstract
    "This ontology defines concepts relating to types of organization owning parties. The concepts defined here are party in role concepts, which define the nature of some entity such as an organization or a legal person, in some role such as that of owning equity in the entity. These roles are defined in terms of the ownership enjoyed by the party, with distinctions between constitutional ownership i.e. ownership defined in terms of stockholder equity, and investment ownership more generally.",
    :dcterms/license {:xsd/anyURI "https://opensource.org/licenses/MIT"},
@@ -40,31 +40,31 @@
     "skos" "http://www.w3.org/2004/02/skos/core#",
     "xsd" "http://www.w3.org/2001/XMLSchema#"},
    :owl/imports
-   #{{:xsd/anyURI "https://www.omg.org/spec/Commons/Documents/"}
+   #{{:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/BE/LegalEntities/LegalPersons/"}
+     {:xsd/anyURI "https://www.omg.org/spec/Commons/Documents/"}
+     {:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FND/OwnershipAndControl/Control/"}
+     {:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FND/OwnershipAndControl/Ownership/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/PartiesAndSituations/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/OwnershipAndControl/Ownership/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/BE/LegalEntities/LEIEntities/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/BE/LegalEntities/LEIEntities/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/BE/LegalEntities/LegalPersons/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Utilities/AnnotationVocabulary/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FND/Accounting/AccountingEquity/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/Classifiers/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Relations/Relations/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/BE/LegalEntities/FormalBusinessOrganizations/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/BE/LegalEntities/FormalBusinessOrganizations/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FND/Utilities/AnnotationVocabulary/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Agreements/Contracts/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FND/Relations/Relations/"}
+     {:xsd/anyURI "https://www.omg.org/spec/Commons/AnnotationVocabulary/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Accounting/AccountingEquity/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/OwnershipAndControl/Control/"}
-     {:xsd/anyURI "https://www.omg.org/spec/Commons/AnnotationVocabulary/"}},
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FND/Agreements/Contracts/"}},
    :owl/versionIRI
    {:xsd/anyURI
-    "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/BE/OwnershipAndControl/OwnershipParties/"},
+    "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/BE/OwnershipAndControl/OwnershipParties/"},
    :rdf/type :owl/Ontology,
    :rdfa/prefix "fibo-be-oac-opty",
    :rdfa/uri
@@ -85,6 +85,7 @@
      "The https://spec.edmcouncil.org/fibo/ontology/BE/OwnershipAndControl/OwnershipParties.rdf version of this ontology was modified to use the Commons Ontology Library (Commons) rather than the OMG's Languages, Countries and Codes (LCC) and to eliminate redundancies in FIBO as appropriate."
      "The https://spec.edmcouncil.org/fibo/ontology/BE/OwnershipAndControl/OwnershipParties.rdf version of this ontology was revised to reflect the name change in FND from 'hasPrimaryParty' to 'hasActiveParty' to be more consistent with other role related properties."
      "The https://spec.edmcouncil.org/fibo/ontology/BE/OwnershipAndControl/OwnershipParties.rdf version of this ontology was modified per the issue resolutions identified in the FIBO BE 1.0 FTF report."
+     "The https://spec.edmcouncil.org/fibo/ontology/BE/OwnershipAndControl/OwnershipParties.rdf version of this ontology was modified to add a parent class of contract party to the definition of investory (SEC-113)."
      "The https://spec.edmcouncil.org/fibo/ontology/BE/OwnershipAndControl/OwnershipParties.rdf version of this ontology was modified per the FIBO 2.0 RFC to address missing labels and comments, and revise terminology related to shareholders' equity due to requirements for SEC/Equities."},
    :xsd/anyURI
    "https://spec.edmcouncil.org/fibo/ontology/BE/OwnershipAndControl/OwnershipParties/"})
@@ -218,7 +219,8 @@
    {:xsd/anyURI
     "https://spec.edmcouncil.org/fibo/ontology/BE/OwnershipAndControl/OwnershipParties/"},
    :rdfs/label "investor",
-   :rdfs/subClassOf #{{:owl/onProperty     :fibo-fnd-rel-rel/holds,
+   :rdfs/subClassOf #{:fibo-fnd-agr-ctr/ContractParty
+                      {:owl/onProperty     :fibo-fnd-rel-rel/holds,
                        :owl/someValuesFrom :fibo-be-oac-opty/InvestmentEquity,
                        :rdf/type           :owl/Restriction}
                       :fibo-be-oac-opty/EntityOwner},
@@ -354,31 +356,31 @@
    :dcterms/license {:xsd/anyURI "https://opensource.org/licenses/MIT"},
    :fibo-fnd-utl-av/hasMaturityLevel :fibo-fnd-utl-av/Release,
    :owl/imports
-   #{{:xsd/anyURI "https://www.omg.org/spec/Commons/Documents/"}
+   #{{:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/BE/LegalEntities/LegalPersons/"}
+     {:xsd/anyURI "https://www.omg.org/spec/Commons/Documents/"}
+     {:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FND/OwnershipAndControl/Control/"}
+     {:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FND/OwnershipAndControl/Ownership/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/PartiesAndSituations/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/OwnershipAndControl/Ownership/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/BE/LegalEntities/LEIEntities/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/BE/LegalEntities/LEIEntities/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/BE/LegalEntities/LegalPersons/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Utilities/AnnotationVocabulary/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FND/Accounting/AccountingEquity/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/Classifiers/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Relations/Relations/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/BE/LegalEntities/FormalBusinessOrganizations/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/BE/LegalEntities/FormalBusinessOrganizations/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FND/Utilities/AnnotationVocabulary/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Agreements/Contracts/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FND/Relations/Relations/"}
+     {:xsd/anyURI "https://www.omg.org/spec/Commons/AnnotationVocabulary/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Accounting/AccountingEquity/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/OwnershipAndControl/Control/"}
-     {:xsd/anyURI "https://www.omg.org/spec/Commons/AnnotationVocabulary/"}},
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FND/Agreements/Contracts/"}},
    :owl/versionIRI
    {:xsd/anyURI
-    "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/BE/OwnershipAndControl/OwnershipParties/"},
+    "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/BE/OwnershipAndControl/OwnershipParties/"},
    :rdf/type :owl/Ontology,
    :rdfs/label "Ownership Parties Ontology",
    :skos/changeNote
@@ -396,6 +398,7 @@
      "The https://spec.edmcouncil.org/fibo/ontology/BE/OwnershipAndControl/OwnershipParties.rdf version of this ontology was modified to use the Commons Ontology Library (Commons) rather than the OMG's Languages, Countries and Codes (LCC) and to eliminate redundancies in FIBO as appropriate."
      "The https://spec.edmcouncil.org/fibo/ontology/BE/OwnershipAndControl/OwnershipParties.rdf version of this ontology was revised to reflect the name change in FND from 'hasPrimaryParty' to 'hasActiveParty' to be more consistent with other role related properties."
      "The https://spec.edmcouncil.org/fibo/ontology/BE/OwnershipAndControl/OwnershipParties.rdf version of this ontology was modified per the issue resolutions identified in the FIBO BE 1.0 FTF report."
+     "The https://spec.edmcouncil.org/fibo/ontology/BE/OwnershipAndControl/OwnershipParties.rdf version of this ontology was modified to add a parent class of contract party to the definition of investory (SEC-113)."
      "The https://spec.edmcouncil.org/fibo/ontology/BE/OwnershipAndControl/OwnershipParties.rdf version of this ontology was modified per the FIBO 2.0 RFC to address missing labels and comments, and revise terminology related to shareholders' equity due to requirements for SEC/Equities."},
    :xsd/anyURI
    "https://spec.edmcouncil.org/fibo/ontology/BE/OwnershipAndControl/OwnershipParties/"})

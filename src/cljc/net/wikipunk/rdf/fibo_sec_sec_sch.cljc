@@ -3,7 +3,7 @@
    #{"Copyright (c) 2016-2024 EDM Council, Inc."
      "Copyright (c) 2018-2024 Object Management Group, Inc."},
    :dcat/downloadURL
-   "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/SEC/Securities/ParametricSchedules/",
+   "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/SEC/Securities/ParametricSchedules/",
    :dcterms/abstract
    "This ontology defines concepts related to parametric schedules, including how to represent individual schedules as well as related date periods, explicit dates, and other concepts needed for parametric schedule representation.",
    :dcterms/license {:xsd/anyURI "https://opensource.org/licenses/MIT"},
@@ -30,21 +30,21 @@
     "skos" "http://www.w3.org/2004/02/skos/core#",
     "xsd" "http://www.w3.org/2001/XMLSchema#"},
    :owl/imports
-   #{{:xsd/anyURI "https://www.omg.org/spec/Commons/ContextualDesignators/"}
+   #{{:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FND/DatesAndTimes/FinancialDates/"}
+     {:xsd/anyURI "https://www.omg.org/spec/Commons/ContextualDesignators/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Utilities/AnnotationVocabulary/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/DatesAndTimes/FinancialDates/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FND/DatesAndTimes/BusinessDates/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/Designators/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/DatesAndTimes/Occurrences/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FND/DatesAndTimes/Occurrences/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/DatesAndTimes/"}
-     {:xsd/anyURI "https://www.omg.org/spec/Commons/AnnotationVocabulary/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/DatesAndTimes/BusinessDates/"}},
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FND/Utilities/AnnotationVocabulary/"}
+     {:xsd/anyURI "https://www.omg.org/spec/Commons/AnnotationVocabulary/"}},
    :owl/versionIRI
    {:xsd/anyURI
-    "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/SEC/Securities/ParametricSchedules/"},
+    "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/SEC/Securities/ParametricSchedules/"},
    :rdf/type :owl/Ontology,
    :rdfa/prefix "fibo-sec-sec-sch",
    :rdfa/uri
@@ -53,6 +53,7 @@
    :skos/changeNote
    #{"The https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/ParametricSchedules.rdf version of this ontology was modified to address text formatting hygiene issues."
      "The https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/ParametricSchedules.rdf version of this ontology was modified to eliminate circular definitions."
+     "The https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/ParametricSchedules.rdf version of this ontology was modified to eliminate a hygiene issue related to parametric schedule."
      "The https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/ParametricSchedules.rdf version of this ontology was modified to move the property, 'is conferred on' to the Legal Capacity ontology and to use the Commons Ontology Library (Commons) rather than the OMG's Languages, Countries and Codes (LCC), eliminating redundancies in FIBO as appropriate."
      "The https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/ParametricSchedules.rdf version of the ontology was modified to use the Commons Ontology Library (Commons) Annotation Vocabulary rather than the OMG's Specification Metadata vocabulary."
      "The https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/ParametricSchedules.rdf version of this ontology was modified to move certain very general concepts related to calculation dates and events to FND and to integrate concepts related to scheduled interest rate related events that were previously embedded in DER to make them available for broader use."
@@ -171,6 +172,8 @@
 
 (def InternationalMoneyMarketCanadianDollarTradingDateRule
   {:cmns-av/abbreviation "IMM CAD trading date rule",
+   :cmns-av/explanatoryNote
+   "If the determined day is a bourse or bank holiday in Toronto or Montreal, the last trading day shall be the previous bank business day, per the Canadian Derivatives Exchange BAX contract specification. The above description implies a Date Roll Rule which is presumably referenced by referring to this rule, so that when this rule is referenced, there would be no Date Roll Rule defined in the FpML message. Semantically, this is still a Date Roll Rule, specifically a \"Roll forward\" rule with no modification (the third Wednesday of a month will never roll forward to a day in the following month so no Modified rule is required).",
    :db/ident
    :fibo-sec-sec-sch/InternationalMoneyMarketCanadianDollarTradingDateRule,
    :rdf/type :owl/Class,
@@ -184,9 +187,7 @@
                        :owl/onProperty :fibo-fnd-dt-bd/hasBusinessDayConvention,
                        :rdf/type       :owl/Restriction}},
    :skos/definition
-   "a trading date rule defined as the last trading day / expiration day of the Canadian Derivatives Exchange (Bourse do Montreal Inc.), three month Bankers' Acceptance Futures (Ticker symbol BAX), the second London banking day prior to the third Wednesday of the contract month",
-   :skos/editorialNote
-   "(continued within FpML definition): If the determined day is a bourse or bank holiday in Toronto or Montreal, the last trading day shall be the previous bank business day. Per Canadian Derivatives Exchange BAX contract specification. The above description implies a Date Roll Rule which is presumably referenced by referring to this rule, so that when this rule is referenced, there would be no Date Roll Rule defined in the FpML message. Semantically, this is still a Date Roll Rule, specifically a \"Roll forward\" rule with no modification (the third Wednesday of a month will never roll forward to a day in the following month so no Modified rule is required)."})
+   "trading date rule defined as the last trading day / expiration day of the Canadian Derivatives Exchange (Bourse do Montreal Inc.), three month Bankers' Acceptance Futures (Ticker symbol BAX), the second London banking day prior to the third Wednesday of the contract month"})
 
 (def InternationalMoneyMarketNewZealandDollarTradingDateRule
   {:cmns-av/abbreviation "IMM NZD trading date rule",
@@ -232,9 +233,7 @@
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    {:xsd/anyURI
-    "https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/ParametricSchedules/"},
-   :skos/editorialNote
-   "This is a schedule for one of the events that occur in a periodic schedule of interest accruals, interest payments, and (for floating rate swapstreams), changes to the interest rate. These may be specified individually but more commonly the Calculation event is the one scheduled according to this kind of parametric schedule, with the other dates specified as an offset to these. Here we have allowed for each of the related dates to be independently parametrically scheduled. The notional amount step schedule is a separate kind of schedule, with similar terms but without a period length. For calculation schedules (and possibly payments, resets), there is a different end date to the end /start of the period, since events may be specified as being on specific dates - this is where the Roll Convention comes in. This has the same basic concepts as the generic schedule shown as the parent to this. However, where the upper model has Date with various applicable sub types (known i.e. calendar, specified or determined). For example, an ISDA FpML schedule has a Specified Date (via a convention), and then has a date roll rule which is specified for the whole schedule and applies to each of the dates returned by the parametric specification of the schedule. It has: A schedule beginning and end; A set of regular repeating periods: the scheduled event takes place once per period; Optionally one or two stubs (one start and one end); these may be longer than the repeating period, or shorter. The precise parameters used are: Start of the overall Schedule period: Effective Date End of the overall Schedule period: Termination Date Start of first regular period: not specified (assume Effective Date?) Length of each regular period: Frequency (actually a duration) There are generally three ways in which the regular periods of a parametric schedule may be expressed: first plus last first plus period length last plus period length event date plus period length. In FpML, Roll events (the date that something rolls over from the value used in one period to the value used in the next) is defined in a Roll Convention, which may be a day of the month, a day of the week, or some published set of dates, typically the ISDA quarterly dates for these events. This is therefore the date within the regular period (before adjustments) when the event occurs. This is in addition so a date for the start or end of such a period. In general this applies to the Calculation Schedule (i.e. the event is the calculation event) with other dates specified relative to this, however in principle the other related events (payment and reset or refix) are specified relative to this. It is not immediately clear what specification of a date replaces the Roll event convention element when this happens."})
+    "https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/ParametricSchedules/"}})
 
 (def PeriodicScheduledEventDate
   {:db/ident :fibo-sec-sec-sch/PeriodicScheduledEventDate,
@@ -290,7 +289,9 @@
    "convention for determining settlement dates by reference to some jurisdiction or as set by a given exchange or similar venue"})
 
 (def TradingDateRule
-  {:db/ident :fibo-sec-sec-sch/TradingDateRule,
+  {:cmns-av/explanatoryNote
+   "Corresponds to several ISDA FpML enumeration entries for determining Calculation Date, but refers to other kinds of trading date defined in those calendars. These include Canadian, Australian and New Zealand dates. Note also that some of these have roll rules included within them for when the date determined by the specification returns a non working day, while others explicitly return a business day and require no date roll rule. At least one is silent on this matter.",
+   :db/ident :fibo-sec-sec-sch/TradingDateRule,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    {:xsd/anyURI
@@ -298,9 +299,7 @@
    :rdfs/label "trading date rule",
    :rdfs/subClassOf :fibo-fnd-dt-bd/BusinessRecurrenceIntervalConvention,
    :skos/definition
-   "convention for determining trading dates defined with reference to some trading date calendar published by some trading facility or exchange",
-   :skos/editorialNote
-   "Corresponds to several ISDA FpML enumeration entries for determining Calculation Date, but refers to other kinds of trading date defined in those calendars. These include Canadian, Australian and New Zealand dates. Note also that some of these have roll rules included within them for when the date determined by the specification returns a non working day, while others explicitly return a business day and require no date roll rule. At least one is silent on this matter."})
+   "convention for determining trading dates defined with reference to some trading date calendar published by some trading facility or exchange"})
 
 (def USTreasuryBillAuctionDateRule
   {:cmns-av/adaptedFrom
@@ -320,7 +319,9 @@
    :skos/definition "rule for setting auction dates for US Treasury bills"})
 
 (def USTreasuryBillDate
-  {:db/ident :fibo-sec-sec-sch/USTreasuryBillDate,
+  {:cmns-av/explanatoryNote
+   "Per FpML notes/definition, this is every Monday except on New York holidays when it will be on a Tuesday.",
+   :db/ident :fibo-sec-sec-sch/USTreasuryBillDate,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    {:xsd/anyURI
@@ -331,9 +332,7 @@
       :owl/onProperty :fibo-fnd-dt-bd/hasBusinessDayAdjustment,
       :owl/qualifiedCardinality 1,
       :rdf/type       :owl/Restriction} :fibo-fnd-dt-fd/CalculatedDate},
-   :skos/definition "auction date for US 13 week and 26 week Treasury bills",
-   :skos/editorialNote
-   "Per FpML notes/definition, this is every Monday except on New York holidays when it will be on a Tuesday."})
+   :skos/definition "auction date for US 13 week and 26 week Treasury bills"})
 
 (def urn:uuid:e6dd5cb1-cdca-5066-bbd4-1849b93151f5
   {:cmns-av/copyright
@@ -344,26 +343,27 @@
    :dcterms/license {:xsd/anyURI "https://opensource.org/licenses/MIT"},
    :fibo-fnd-utl-av/hasMaturityLevel :fibo-fnd-utl-av/Release,
    :owl/imports
-   #{{:xsd/anyURI "https://www.omg.org/spec/Commons/ContextualDesignators/"}
+   #{{:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FND/DatesAndTimes/FinancialDates/"}
+     {:xsd/anyURI "https://www.omg.org/spec/Commons/ContextualDesignators/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Utilities/AnnotationVocabulary/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/DatesAndTimes/FinancialDates/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FND/DatesAndTimes/BusinessDates/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/Designators/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/DatesAndTimes/Occurrences/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FND/DatesAndTimes/Occurrences/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/DatesAndTimes/"}
-     {:xsd/anyURI "https://www.omg.org/spec/Commons/AnnotationVocabulary/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/DatesAndTimes/BusinessDates/"}},
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FND/Utilities/AnnotationVocabulary/"}
+     {:xsd/anyURI "https://www.omg.org/spec/Commons/AnnotationVocabulary/"}},
    :owl/versionIRI
    {:xsd/anyURI
-    "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/SEC/Securities/ParametricSchedules/"},
+    "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/SEC/Securities/ParametricSchedules/"},
    :rdf/type :owl/Ontology,
    :rdfs/label "Parametric Schedules Ontology",
    :skos/changeNote
    #{"The https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/ParametricSchedules.rdf version of this ontology was modified to address text formatting hygiene issues."
      "The https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/ParametricSchedules.rdf version of this ontology was modified to eliminate circular definitions."
+     "The https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/ParametricSchedules.rdf version of this ontology was modified to eliminate a hygiene issue related to parametric schedule."
      "The https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/ParametricSchedules.rdf version of this ontology was modified to move the property, 'is conferred on' to the Legal Capacity ontology and to use the Commons Ontology Library (Commons) rather than the OMG's Languages, Countries and Codes (LCC), eliminating redundancies in FIBO as appropriate."
      "The https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/ParametricSchedules.rdf version of the ontology was modified to use the Commons Ontology Library (Commons) Annotation Vocabulary rather than the OMG's Specification Metadata vocabulary."
      "The https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/ParametricSchedules.rdf version of this ontology was modified to move certain very general concepts related to calculation dates and events to FND and to integrate concepts related to scheduled interest rate related events that were previously embedded in DER to make them available for broader use."

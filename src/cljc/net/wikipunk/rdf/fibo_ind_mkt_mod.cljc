@@ -2,7 +2,7 @@
   {:cmns-av/copyright #{"Copyright (c) 2018-2023 Object Management Group, Inc."
                         "Copyright (c) 2018-2023 EDM Council, Inc."},
    :dcat/downloadURL
-   "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/IND/MarketIndices/MetadataINDMarketIndices/MarketIndicesModule",
+   "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/IND/MarketIndices/MetadataINDMarketIndices/MarketIndicesModule",
    :dcterms/abstract
    "The market indices module includes ontologies defining a variety of reference indices (benchmarks) such as credit and equity indicies. Examples include the Dow Jones Industrial Average (DJIA), Standard and Poors (S&P) 500, exchange-specific indices, and the like.",
    :dcterms/issued #inst "2018-08-27T18:00:00.000-00:00",
@@ -21,11 +21,11 @@
     "xsd" "http://www.w3.org/2001/XMLSchema#"},
    :owl/imports
    #{{:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Utilities/AnnotationVocabulary/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FND/Utilities/AnnotationVocabulary/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/AnnotationVocabulary/"}},
    :owl/versionIRI
    {:xsd/anyURI
-    "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/IND/MarketIndices/MetadataINDMarketIndices/"},
+    "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/IND/MarketIndices/MetadataINDMarketIndices/"},
    :rdf/type :owl/Ontology,
    :rdfa/prefix "fibo-ind-mkt-mod",
    :rdfa/uri
@@ -79,11 +79,11 @@
    :dcterms/modified #inst "2023-02-06T18:00:00.000-00:00",
    :owl/imports
    #{{:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Utilities/AnnotationVocabulary/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FND/Utilities/AnnotationVocabulary/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/AnnotationVocabulary/"}},
    :owl/versionIRI
    {:xsd/anyURI
-    "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/IND/MarketIndices/MetadataINDMarketIndices/"},
+    "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/IND/MarketIndices/MetadataINDMarketIndices/"},
    :rdf/type :owl/Ontology,
    :rdfs/label
    "Metadata about the EDMC-FIBO Indices and Indicators (IND) Market Indices Module",

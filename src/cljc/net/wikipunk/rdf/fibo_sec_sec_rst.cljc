@@ -3,7 +3,7 @@
    #{"Copyright (c) 2016-2024 EDM Council, Inc."
      "Copyright (c) 2018-2024 Object Management Group, Inc."},
    :dcat/downloadURL
-   "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/SEC/Securities/SecuritiesRestrictions/",
+   "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/SEC/Securities/SecuritiesRestrictions/",
    :dcterms/abstract
    "This ontology defines the concepts related to restrictions on finanicial instruments, securities and listings.",
    :dcterms/license {:xsd/anyURI "https://opensource.org/licenses/MIT"},
@@ -11,18 +11,15 @@
    :namespaces
    {"cmns-av" "https://www.omg.org/spec/Commons/AnnotationVocabulary/",
     "cmns-cxtdsg" "https://www.omg.org/spec/Commons/ContextualDesignators/",
+    "cmns-doc" "https://www.omg.org/spec/Commons/Documents/",
     "cmns-dsg" "https://www.omg.org/spec/Commons/Designators/",
     "cmns-dt" "https://www.omg.org/spec/Commons/DatesAndTimes/",
     "cmns-rlcmp" "https://www.omg.org/spec/Commons/RolesAndCompositions/",
     "dcterms" "http://purl.org/dc/terms/",
-    "fibo-be-ge-usj"
-    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/NorthAmericanJurisdiction/USGovernmentEntitiesAndJurisdictions/",
     "fibo-be-le-lp"
     "https://spec.edmcouncil.org/fibo/ontology/BE/LegalEntities/LegalPersons/",
     "fibo-be-oac-opty"
     "https://spec.edmcouncil.org/fibo/ontology/BE/OwnershipAndControl/OwnershipParties/",
-    "fibo-fbc-fct-ra"
-    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/RegistrationAuthorities/",
     "fibo-fbc-fi-fi"
     "https://spec.edmcouncil.org/fibo/ontology/FBC/FinancialInstruments/FinancialInstruments/",
     "fibo-fnd-agr-ctr"
@@ -39,55 +36,39 @@
     "https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/SecuritiesListings/",
     "fibo-sec-sec-rst"
     "https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/SecuritiesRestrictions/",
-    "lcc-cr" "https://www.omg.org/spec/LCC/Countries/CountryRepresentation/",
     "owl" "http://www.w3.org/2002/07/owl#",
     "rdf" "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
     "rdfs" "http://www.w3.org/2000/01/rdf-schema#",
     "skos" "http://www.w3.org/2004/02/skos/core#",
     "xsd" "http://www.w3.org/2001/XMLSchema#"},
    :owl/imports
-   #{{:xsd/anyURI "https://www.omg.org/spec/Commons/RolesAndCompositions/"}
+   #{{:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/BE/LegalEntities/LegalPersons/"}
+     {:xsd/anyURI "https://www.omg.org/spec/Commons/RolesAndCompositions/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Law/LegalCapacity/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/BE/OwnershipAndControl/OwnershipParties/"}
-     {:xsd/anyURI
-      "https://www.omg.org/spec/LCC/Countries/CountryRepresentation/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/BE/OwnershipAndControl/OwnershipParties/"}
+     {:xsd/anyURI "https://www.omg.org/spec/Commons/Documents/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/ContextualDesignators/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/SEC/Securities/SecuritiesListings/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FBC/FunctionalEntities/RegistrationAuthorities/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Law/Jurisdiction/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/BE/LegalEntities/LegalPersons/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Utilities/AnnotationVocabulary/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Law/LegalCore/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/SEC/Securities/SecuritiesListings/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/Designators/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FBC/FunctionalEntities/FinancialServicesEntities/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/AgentsAndPeople/People/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Relations/Relations/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FND/Law/Jurisdiction/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/DatesAndTimes/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Agreements/Contracts/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FND/Utilities/AnnotationVocabulary/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FBC/FinancialInstruments/FinancialInstruments/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FND/Law/LegalCapacity/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/BE/GovernmentEntities/NorthAmericanJurisdiction/USGovernmentEntitiesAndJurisdictions/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FND/Relations/Relations/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/AnnotationVocabulary/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Organizations/FormalOrganizations/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FBC/FinancialInstruments/FinancialInstruments/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FBC/FunctionalEntities/RegulatoryAgencies/"}},
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FND/Agreements/Contracts/"}},
    :owl/versionIRI
    {:xsd/anyURI
-    "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/SEC/Securities/SecuritiesRestrictions/"},
+    "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/SEC/Securities/SecuritiesRestrictions/"},
    :rdf/type :owl/Ontology,
    :rdfa/prefix "fibo-sec-sec-rst",
    :rdfa/uri
@@ -103,22 +84,18 @@
      "The https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/SecuritiesRestrictions.rdf version of the ontology was modified to eliminate deprecations that are more than 6 months old."
      "The https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/SecuritiesRestrictions.rdf version of the ontology was modified to eliminate duplication of concepts in LCC."
      "The https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/SecuritiesRestrictions.rdf version of this ontology was modified to move the property, 'is conferred on' to the Legal Capacity ontology and to use the Commons Ontology Library (Commons) rather than the OMG's Languages, Countries and Codes (LCC), eliminating redundancies in FIBO as appropriate."
+     "The https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/SecuritiesRestrictions.rdf version of the ontology was modified to add a definition for institutional investor and move jurisdiction-specific definitions to new ontologies for those jurisdictions (SEC-113)."
      "The https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/SecuritiesRestrictions.rdf version of the ontology was modified to reflect the change in representation of a listing."},
    :xsd/anyURI
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/SecuritiesRestrictions/"})
 
 (def BlueSkyLaw
-  {:cmns-av/explanatoryNote
-   "This allows investors to base their judgments on trustworthy data.",
-   :db/ident :fibo-sec-sec-rst/BlueSkyLaw,
+  {:db/ident :fibo-sec-sec-rst/BlueSkyLaw,
+   :owl/deprecated true,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    {:xsd/anyURI
-    "https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/SecuritiesRestrictions/"},
-   :rdfs/label "Blue-Sky law",
-   :rdfs/subClassOf :fibo-sec-sec-rst/SecuritiesRegulation,
-   :skos/definition
-   "securities regulation passed by various states, designed to protect investors against securities fraud by requiring sellers of new issues to register their offerings and provide financial details"})
+    "https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/SecuritiesRestrictions/"}})
 
 (def ContractualRestriction
   {:db/ident :fibo-sec-sec-rst/ContractualRestriction,
@@ -149,6 +126,23 @@
                        :rdf/type :owl/Restriction}},
    :skos/definition
    "investor that is a person, rather than an organization, who may or may not be considered a qualified investor from a legal perspective"})
+
+(def InstitutionalInvestor
+  {:cmns-av/explanatoryNote
+   "Institutional investors typically buy, sell, and manage stocks, bonds, and other investment securities on behalf of its clients, customers, members, or shareholders. These include endowment funds, commercial banks, mutual funds, hedge funds, pension funds, and insurance companies. Institutional investors are able to invest in riskier securities and ventures than average investors because they are more sophisticated with respect to their investment methodologies.",
+   :db/ident :fibo-sec-sec-rst/InstitutionalInvestor,
+   :owl/disjointWith :fibo-sec-sec-rst/IndividualInvestor,
+   :rdf/type :owl/Class,
+   :rdfs/isDefinedBy
+   {:xsd/anyURI
+    "https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/SecuritiesRestrictions/"},
+   :rdfs/label "institutional investor",
+   :rdfs/subClassOf #{:fibo-be-oac-opty/Investor
+                      {:owl/allValuesFrom :fibo-be-le-lp/LegalEntity,
+                       :owl/onProperty    :cmns-rlcmp/isPlayedBy,
+                       :rdf/type          :owl/Restriction}},
+   :skos/definition
+   "investor that pools money to purchase securities, real property, and other investment assets or originates loans"})
 
 (def InvestorsDomicileRestriction
   {:db/ident :fibo-sec-sec-rst/InvestorsDomicileRestriction,
@@ -188,45 +182,20 @@
    "legal holding restriction that defines the concept of a qualified investor for a given purpose and specifies that only such qualified investors may hold the security"})
 
 (def RegulationS
-  {:cmns-av/explanatoryNote
-   "Regulation S covers rules governing offers and sales made outside the United States without registration under the Securities Act of 1933. Created in 1990, this regulation was intended to encourage foreign investors to purchase American stocks in order to increase the liquidity of American markets.",
-   :db/ident :fibo-sec-sec-rst/RegulationS,
+  {:db/ident :fibo-sec-sec-rst/RegulationS,
+   :owl/deprecated true,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    {:xsd/anyURI
-    "https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/SecuritiesRestrictions/"},
-   :rdfs/label "Regulation S",
-   :rdfs/seeAlso
-   #{{:xsd/anyURI "https://www.sec.gov/divisions/corpfin/ecfrlinks.shtml"}
-     {:xsd/anyURI "https://www.law.cornell.edu/cfr/text/17/230.902"}},
-   :rdfs/subClassOf #{{:owl/hasValue   :fibo-be-ge-usj/UnitedStatesJurisdiction,
-                       :owl/onProperty :cmns-cxtdsg/isApplicableIn,
-                       :rdf/type       :owl/Restriction}
-                      :fibo-sec-sec-rst/QualifiedInvestorRestriction
-                      :fibo-sec-sec-rst/SecuritiesRegulation
-                      :fibo-sec-sec-rst/InvestorsDomicileRestriction},
-   :skos/definition
-   "securities regulation defining an exemption through which corporations can issue unregistered securities to qualified foreign investors and foreign institutions"})
+    "https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/SecuritiesRestrictions/"}})
 
 (def Restriction144A
   {:db/ident :fibo-sec-sec-rst/Restriction144A,
+   :owl/deprecated true,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    {:xsd/anyURI
-    "https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/SecuritiesRestrictions/"},
-   :rdfs/label "Restriction 144-A",
-   :rdfs/seeAlso
-   #{{:xsd/anyURI "https://www.sec.gov/divisions/corpfin/ecfrlinks.shtml"}
-     {:xsd/anyURI "https://www.law.cornell.edu/cfr/text/17/230.144"}},
-   :rdfs/subClassOf #{{:owl/hasValue   :fibo-be-ge-usj/UnitedStatesJurisdiction,
-                       :owl/onProperty :cmns-cxtdsg/isApplicableIn,
-                       :rdf/type       :owl/Restriction}
-                      :fibo-sec-sec-rst/LegalHoldingRestriction
-                      {:owl/allValuesFrom :cmns-dt/DatePeriod,
-                       :owl/onProperty    :fibo-sec-sec-rst/hasHoldingPeriod,
-                       :rdf/type          :owl/Restriction}},
-   :skos/definition
-   "Securities & Exchange Commission rule that establishes specific criteria for determining whether a person is not engaged in a distribution and creates a safe harbor from the Section 2(a)(11) definition of 'underwriter'; section A modifies holding period requirements on privately placed securities to permit qualified institutional buyers to trade these positions among themselves"})
+    "https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/SecuritiesRestrictions/"}})
 
 (def SecuritiesRegulation
   {:db/ident :fibo-sec-sec-rst/SecuritiesRegulation,
@@ -299,23 +268,17 @@
     "https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/SecuritiesRestrictions/"},
    :rdfs/label "has restriction",
    :rdfs/range :fibo-sec-sec-rst/SecuritiesRestriction,
-   :rdfs/subPropertyOf :fibo-fbc-fct-ra/specifies,
+   :rdfs/subPropertyOf :cmns-doc/specifies,
    :skos/definition
    "identifies a restriction applicable to a given financial instrument or listing"})
 
 (def isNotClearedIn
   {:db/ident :fibo-sec-sec-rst/isNotClearedIn,
+   :owl/deprecated true,
    :rdf/type :owl/ObjectProperty,
-   :rdfs/domain :fibo-sec-sec-rst/BlueSkyLaw,
    :rdfs/isDefinedBy
    {:xsd/anyURI
-    "https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/SecuritiesRestrictions/"},
-   :rdfs/label "is not cleared in",
-   :rdfs/range :lcc-cr/GeographicRegion,
-   :skos/definition
-   "identifies a country subdivision, such as a US state or territory, where an issue is NOT cleared under Blue Sky Restrictions",
-   :skos/editorialNote
-   "This requires review -- shouldn't this be a ternary relation between the regulation, the security and the location?"})
+    "https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/SecuritiesRestrictions/"}})
 
 (def urn:uuid:1749a594-20df-56a0-90d6-73d858d96525
   {:cmns-av/copyright
@@ -326,48 +289,33 @@
    :dcterms/license {:xsd/anyURI "https://opensource.org/licenses/MIT"},
    :fibo-fnd-utl-av/hasMaturityLevel :fibo-fnd-utl-av/Release,
    :owl/imports
-   #{{:xsd/anyURI "https://www.omg.org/spec/Commons/RolesAndCompositions/"}
+   #{{:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/BE/LegalEntities/LegalPersons/"}
+     {:xsd/anyURI "https://www.omg.org/spec/Commons/RolesAndCompositions/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Law/LegalCapacity/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/BE/OwnershipAndControl/OwnershipParties/"}
-     {:xsd/anyURI
-      "https://www.omg.org/spec/LCC/Countries/CountryRepresentation/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/BE/OwnershipAndControl/OwnershipParties/"}
+     {:xsd/anyURI "https://www.omg.org/spec/Commons/Documents/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/ContextualDesignators/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/SEC/Securities/SecuritiesListings/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FBC/FunctionalEntities/RegistrationAuthorities/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Law/Jurisdiction/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/BE/LegalEntities/LegalPersons/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Utilities/AnnotationVocabulary/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Law/LegalCore/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/SEC/Securities/SecuritiesListings/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/Designators/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FBC/FunctionalEntities/FinancialServicesEntities/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/AgentsAndPeople/People/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Relations/Relations/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FND/Law/Jurisdiction/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/DatesAndTimes/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Agreements/Contracts/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FND/Utilities/AnnotationVocabulary/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FBC/FinancialInstruments/FinancialInstruments/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FND/Law/LegalCapacity/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/BE/GovernmentEntities/NorthAmericanJurisdiction/USGovernmentEntitiesAndJurisdictions/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FND/Relations/Relations/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/AnnotationVocabulary/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FND/Organizations/FormalOrganizations/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FBC/FinancialInstruments/FinancialInstruments/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/FBC/FunctionalEntities/RegulatoryAgencies/"}},
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FND/Agreements/Contracts/"}},
    :owl/versionIRI
    {:xsd/anyURI
-    "https://spec.edmcouncil.org/fibo/ontology/master/2024Q1/SEC/Securities/SecuritiesRestrictions/"},
+    "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/SEC/Securities/SecuritiesRestrictions/"},
    :rdf/type :owl/Ontology,
    :rdfs/label "Securities Restrictions Ontology",
    :skos/changeNote
@@ -380,6 +328,7 @@
      "The https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/SecuritiesRestrictions.rdf version of the ontology was modified to eliminate deprecations that are more than 6 months old."
      "The https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/SecuritiesRestrictions.rdf version of the ontology was modified to eliminate duplication of concepts in LCC."
      "The https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/SecuritiesRestrictions.rdf version of this ontology was modified to move the property, 'is conferred on' to the Legal Capacity ontology and to use the Commons Ontology Library (Commons) rather than the OMG's Languages, Countries and Codes (LCC), eliminating redundancies in FIBO as appropriate."
+     "The https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/SecuritiesRestrictions.rdf version of the ontology was modified to add a definition for institutional investor and move jurisdiction-specific definitions to new ontologies for those jurisdictions (SEC-113)."
      "The https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/SecuritiesRestrictions.rdf version of the ontology was modified to reflect the change in representation of a listing."},
    :xsd/anyURI
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/SecuritiesRestrictions/"})
