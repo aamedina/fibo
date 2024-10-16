@@ -3,7 +3,7 @@
    #{"Copyright (c) 2015-2023 EDM Council, Inc."
      "Copyright (c) 2015-2023 Object Management Group, Inc."},
    :dcat/downloadURL
-   "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/BE/MetadataBE/BEDomain",
+   "https://spec.edmcouncil.org/fibo/ontology/master/2024Q3/BE/MetadataBE/BEDomain",
    :dcterms/abstract
    "This ontology provides metadata about the FIBO Business Entities (BE) Domain, which covers defines business concepts that are used for data governance, interoperability, and in regulatory reporting about business entities.\n\nThe business scope of the BE ontologies covers a range of business and legal entities that are considered by financial industry firms, regulators and other industry participants to be of relevance in the financial services domain, including:\n - Legal entities generally\n - Corporate structure, ownership and control, including primary executive roles for businesses,\n - Functional entities such as governments and government entities, non-governmental organizations, international organizations, not-for-profit organization, etc.\n - Concepts specific to corporations, partnerships, private limited companies, sole proprietorships, and trusts.",
    :dcterms/issued #inst "2018-08-27T18:00:00.000-00:00",
@@ -40,29 +40,29 @@
     "xsd" "http://www.w3.org/2001/XMLSchema#"},
    :owl/imports
    #{{:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/BE/GovernmentEntities/MetadataBEGovernmentEntities/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q3/BE/LegalEntities/MetadataBELegalEntities/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/BE/Partnerships/MetadataBEPartnerships/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q3/BE/Corporations/MetadataBECorporations/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/BE/LegalEntities/MetadataBELegalEntities/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q3/BE/Trusts/MetadataBETrusts/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/BE/Corporations/MetadataBECorporations/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q3/BE/OwnershipAndControl/MetadataBEOwnershipAndControl/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/BE/OwnershipAndControl/MetadataBEOwnershipAndControl/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q3/BE/FunctionalEntities/MetadataBEFunctionalEntities/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/BE/PrivateLimitedCompanies/MetadataBEPrivateLimitedCompanies/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q3/FND/Utilities/AnnotationVocabulary/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FND/Utilities/AnnotationVocabulary/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q3/BE/GovernmentEntities/MetadataBEGovernmentEntities/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/BE/FunctionalEntities/MetadataBEFunctionalEntities/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q3/BE/Partnerships/MetadataBEPartnerships/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/BE/SoleProprietorships/MetadataBESoleProprietorships/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q3/BE/PrivateLimitedCompanies/MetadataBEPrivateLimitedCompanies/"}
+     {:xsd/anyURI "https://www.omg.org/spec/Commons/AnnotationVocabulary/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/BE/Trusts/MetadataBETrusts/"}
-     {:xsd/anyURI "https://www.omg.org/spec/Commons/AnnotationVocabulary/"}},
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q3/BE/SoleProprietorships/MetadataBESoleProprietorships/"}},
    :owl/versionIRI
    {:xsd/anyURI
-    "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/BE/MetadataBE/"},
+    "https://spec.edmcouncil.org/fibo/ontology/master/2024Q3/BE/MetadataBE/"},
    :rdf/type :owl/Ontology,
    :rdfa/prefix "fibo-be-mod",
    :rdfa/uri "https://spec.edmcouncil.org/fibo/ontology/BE/MetadataBE/",
@@ -119,29 +119,29 @@
    :dcterms/modified #inst "2023-03-31T18:00:00.000-00:00",
    :owl/imports
    #{{:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/BE/GovernmentEntities/MetadataBEGovernmentEntities/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q3/BE/LegalEntities/MetadataBELegalEntities/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/BE/Partnerships/MetadataBEPartnerships/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q3/BE/Corporations/MetadataBECorporations/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/BE/LegalEntities/MetadataBELegalEntities/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q3/BE/Trusts/MetadataBETrusts/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/BE/Corporations/MetadataBECorporations/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q3/BE/OwnershipAndControl/MetadataBEOwnershipAndControl/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/BE/OwnershipAndControl/MetadataBEOwnershipAndControl/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q3/BE/FunctionalEntities/MetadataBEFunctionalEntities/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/BE/PrivateLimitedCompanies/MetadataBEPrivateLimitedCompanies/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q3/FND/Utilities/AnnotationVocabulary/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FND/Utilities/AnnotationVocabulary/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q3/BE/GovernmentEntities/MetadataBEGovernmentEntities/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/BE/FunctionalEntities/MetadataBEFunctionalEntities/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q3/BE/Partnerships/MetadataBEPartnerships/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/BE/SoleProprietorships/MetadataBESoleProprietorships/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q3/BE/PrivateLimitedCompanies/MetadataBEPrivateLimitedCompanies/"}
+     {:xsd/anyURI "https://www.omg.org/spec/Commons/AnnotationVocabulary/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/BE/Trusts/MetadataBETrusts/"}
-     {:xsd/anyURI "https://www.omg.org/spec/Commons/AnnotationVocabulary/"}},
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q3/BE/SoleProprietorships/MetadataBESoleProprietorships/"}},
    :owl/versionIRI
    {:xsd/anyURI
-    "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/BE/MetadataBE/"},
+    "https://spec.edmcouncil.org/fibo/ontology/master/2024Q3/BE/MetadataBE/"},
    :rdf/type :owl/Ontology,
    :rdfs/label "Metadata about the EDMC-FIBO Business Entities (BE) Domain",
    :skos/changeNote

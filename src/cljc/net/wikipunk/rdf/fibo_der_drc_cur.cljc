@@ -2,7 +2,7 @@
   {:cmns-av/copyright #{"Copyright (c) 2015-2024 Object Management Group, Inc."
                         "Copyright (c) 2015-2024 EDM Council, Inc."},
    :dcat/downloadURL
-   "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/DER/DerivativesContracts/CurrencyContracts/",
+   "https://spec.edmcouncil.org/fibo/ontology/master/2024Q3/DER/DerivativesContracts/CurrencyContracts/",
    :dcterms/abstract
    "This ontology defines concepts common to currency spot contracts and foreign exchange derivatives (forwards, options and swaps).",
    :dcterms/license {:xsd/anyURI "https://opensource.org/licenses/MIT"},
@@ -13,6 +13,8 @@
     "cmns-qtu" "https://www.omg.org/spec/Commons/QuantitiesAndUnits/",
     "cmns-rlcmp" "https://www.omg.org/spec/Commons/RolesAndCompositions/",
     "dcterms" "http://purl.org/dc/terms/",
+    "fibo-be-fct-pub"
+    "https://spec.edmcouncil.org/fibo/ontology/BE/FunctionalEntities/Publishers/",
     "fibo-der-drc-cur"
     "https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/CurrencyContracts/",
     "fibo-der-drc-ff"
@@ -21,8 +23,12 @@
     "https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/Options/",
     "fibo-der-drc-swp"
     "https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/Swaps/",
+    "fibo-fbc-fct-mkt"
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/Markets/",
     "fibo-fbc-fi-fi"
     "https://spec.edmcouncil.org/fibo/ontology/FBC/FinancialInstruments/FinancialInstruments/",
+    "fibo-fbc-pas-fpas"
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/ProductsAndServices/FinancialProductsAndServices/",
     "fibo-fnd-acc-cur"
     "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/CurrencyAmount/",
     "fibo-fnd-utl-av"
@@ -37,27 +43,33 @@
    :owl/imports
    #{{:xsd/anyURI "https://www.omg.org/spec/Commons/RolesAndCompositions/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/DER/DerivativesContracts/Options/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/DER/DerivativesContracts/DerivativesBasics/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/DER/DerivativesContracts/Swaps/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q3/DER/DerivativesContracts/Swaps/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/QuantitiesAndUnits/"}
+     {:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q3/DER/DerivativesContracts/FuturesAndForwards/"}
+     {:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q3/FBC/ProductsAndServices/FinancialProductsAndServices/"}
+     {:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q3/BE/FunctionalEntities/Publishers/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/Collections/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/IND/ForeignExchange/ForeignExchange/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q3/DER/DerivativesContracts/Options/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/DER/DerivativesContracts/FuturesAndForwards/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q3/FBC/FinancialInstruments/FinancialInstruments/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FND/Utilities/AnnotationVocabulary/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q3/FND/Accounting/CurrencyAmount/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FND/Accounting/CurrencyAmount/"}
-     {:xsd/anyURI "https://www.omg.org/spec/Commons/AnnotationVocabulary/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q3/IND/ForeignExchange/ForeignExchange/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FBC/FinancialInstruments/FinancialInstruments/"}},
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q3/FND/Utilities/AnnotationVocabulary/"}
+     {:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q3/DER/DerivativesContracts/DerivativesBasics/"}
+     {:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q3/FBC/FunctionalEntities/Markets/"}
+     {:xsd/anyURI "https://www.omg.org/spec/Commons/AnnotationVocabulary/"}},
    :owl/versionIRI
    {:xsd/anyURI
-    "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/DER/DerivativesContracts/CurrencyContracts/"},
+    "https://spec.edmcouncil.org/fibo/ontology/master/2024Q3/DER/DerivativesContracts/CurrencyContracts/"},
    :rdf/type :owl/Ontology,
    :rdfa/prefix "fibo-der-drc-cur",
    :rdfa/uri
@@ -69,7 +81,8 @@
      "The https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/CurrencyContracts.rdf version of this ontology was modified to replace content that is now available in the OMG Commons Ontology Library (Commons) v1.1 (FND-380)."
      "The https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/CurrencyContracts.rdf version of this ontology was modified to simplify the currency derivative class hierarchy (DER-126)."
      "The https://spec.edmcouncil.org/fibo/ontology/DerivativesContracts/CurrencyContracts/ version of this ontology was modified to reflect the addition of the concept of a rates swap and the corresponding rate-based leg to the Swaps ontology, as well as the concept of a spot forward currency swap, to facilitate mapping to the CFI standard."
-     "The https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/CurrencyContracts.rdf version of this ontology was modified to use the Commons Ontology Library (Commons) Annotation Vocabulary rather than the OMG's Specification Metadata vocabulary, to use the Commons Ontology Library (Commons) rather than the OMG's Languages, Countries and Codes (LCC) and to eliminate redundancies in FIBO as appropriate, and to move the definition of an underlier and the related property, has underlier, to financial instruments so that these concepts are also available for use in relation to pool-backed securities."},
+     "The https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/CurrencyContracts.rdf version of this ontology was modified to use the Commons Ontology Library (Commons) Annotation Vocabulary rather than the OMG's Specification Metadata vocabulary, to use the Commons Ontology Library (Commons) rather than the OMG's Languages, Countries and Codes (LCC) and to eliminate redundancies in FIBO as appropriate, and to move the definition of an underlier and the related property, has underlier, to financial instruments so that these concepts are also available for use in relation to pool-backed securities."
+     "The https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/CurrencyContracts.rdf version of this ontology was modified to move properties related to buying and selling currency to a higher level in the ontology, to be available on all currency instruments (DER-143)."},
    :xsd/anyURI
    "https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/CurrencyContracts/"})
 
@@ -88,20 +101,14 @@
    :rdfs/label {:rdf/language "en",
                 :rdf/value    "currency derivative"},
    :rdfs/subClassOf
-   #{{:owl/minQualifiedCardinality 0,
-      :owl/onClass    :fibo-fnd-acc-cur/Currency,
-      :owl/onProperty :fibo-der-drc-cur/hasSellingCurrency,
-      :rdf/type       :owl/Restriction} :fibo-fbc-fi-fi/CurrencyInstrument
-     {:owl/onProperty     :fibo-fbc-fi-fi/hasUnderlier,
-      :owl/someValuesFrom {:owl/onProperty :cmns-rlcmp/isPlayedBy,
-                           :owl/someValuesFrom
-                           :fibo-ind-fx-fx/QuotedExchangeRate,
-                           :rdf/type :owl/Restriction},
-      :rdf/type           :owl/Restriction} :fibo-fbc-fi-fi/DerivativeInstrument
-     {:owl/minQualifiedCardinality 0,
-      :owl/onClass    :fibo-fnd-acc-cur/Currency,
-      :owl/onProperty :fibo-der-drc-cur/hasBuyingCurrency,
-      :rdf/type       :owl/Restriction}},
+   #{{:owl/onProperty     :fibo-ind-fx-fx/hasExchangeRateQuotationSource,
+      :owl/someValuesFrom {:owl/unionOf
+                           [:fibo-be-fct-pub/Publisher
+                            :fibo-fbc-pas-fpas/FinancialServiceProvider
+                            :fibo-fbc-fct-mkt/Exchange],
+                           :rdf/type :owl/Class},
+      :rdf/type           :owl/Restriction} :fibo-fbc-fi-fi/CurrencyInstrument
+     :fibo-fbc-fi-fi/DerivativeInstrument},
    :skos/definition
    {:rdf/language "en",
     :rdf/value
@@ -205,7 +212,7 @@
                 :rdf/value    "currency spot contract"},
    :rdfs/subClassOf #{:fibo-fbc-fi-fi/SpotContract
                       {:owl/onProperty :fibo-der-drc-cur/hasSpotExchangeRate,
-                       :owl/someValuesFrom :fibo-fnd-acc-cur/ExchangeRate,
+                       :owl/someValuesFrom :fibo-ind-fx-fx/QuotedExchangeRate,
                        :rdf/type :owl/Restriction}
                       :fibo-fbc-fi-fi/CurrencyInstrument},
    :skos/definition {:rdf/language "en",
@@ -278,24 +285,13 @@
     "currency option whose underlying asset is based on the volatility of a foreign exchange rate"}})
 
 (def hasBuyingCurrency
-  {:cmns-av/explanatoryNote
-   {:rdf/language "en",
-    :rdf/value
-    "Note that the buying and selling currencies could be the same under certain circumstances."},
-   :db/ident :fibo-der-drc-cur/hasBuyingCurrency,
+  {:db/ident :fibo-der-drc-cur/hasBuyingCurrency,
+   :owl/deprecated true,
+   :owl/equivalentProperty :fibo-fbc-fi-fi/hasBuyingCurrency,
    :rdf/type :owl/ObjectProperty,
-   :rdfs/domain :fibo-der-drc-cur/CurrencyDerivative,
    :rdfs/isDefinedBy
    {:xsd/anyURI
-    "https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/CurrencyContracts/"},
-   :rdfs/label {:rdf/language "en",
-                :rdf/value    "has buying currency"},
-   :rdfs/range :fibo-fnd-acc-cur/Currency,
-   :rdfs/subPropertyOf :fibo-fnd-acc-cur/hasDealtCurrency,
-   :skos/definition
-   {:rdf/language "en",
-    :rdf/value
-    "indicates the currency purchased with respect to a foreign exchange derivative"}})
+    "https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/CurrencyContracts/"}})
 
 (def hasForwardExchangeRate
   {:db/ident :fibo-der-drc-cur/hasForwardExchangeRate,
@@ -314,40 +310,28 @@
     "rate of exchange between two currencies as specified in a forward contract"}})
 
 (def hasSellingCurrency
-  {:cmns-av/explanatoryNote
-   {:rdf/language "en",
-    :rdf/value
-    "Note that the buying and selling currencies could be the same under certain circumstances."},
-   :db/ident :fibo-der-drc-cur/hasSellingCurrency,
+  {:db/ident :fibo-der-drc-cur/hasSellingCurrency,
+   :owl/deprecated true,
+   :owl/equivalentProperty :fibo-fbc-fi-fi/hasSellingCurrency,
    :rdf/type :owl/ObjectProperty,
-   :rdfs/domain :fibo-der-drc-cur/CurrencyDerivative,
    :rdfs/isDefinedBy
    {:xsd/anyURI
-    "https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/CurrencyContracts/"},
-   :rdfs/label {:rdf/language "en",
-                :rdf/value    "has selling currency"},
-   :rdfs/range :fibo-fnd-acc-cur/Currency,
-   :rdfs/subPropertyOf :fibo-fnd-acc-cur/hasBaseCurrency,
-   :skos/definition
-   {:rdf/language "en",
-    :rdf/value
-    "indicates the currency sold with respect to a foreign exchange derivative"}})
+    "https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/CurrencyContracts/"}})
 
 (def hasSpotExchangeRate
   {:db/ident :fibo-der-drc-cur/hasSpotExchangeRate,
    :rdf/type :owl/ObjectProperty,
-   :rdfs/domain :fibo-der-drc-cur/CurrencySpotContract,
    :rdfs/isDefinedBy
    {:xsd/anyURI
     "https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/CurrencyContracts/"},
    :rdfs/label {:rdf/language "en",
                 :rdf/value    "has spot exchange rate"},
-   :rdfs/range :fibo-fnd-acc-cur/ExchangeRate,
-   :rdfs/subPropertyOf :cmns-qtu/hasQuantityValue,
+   :rdfs/range :fibo-ind-fx-fx/QuotedExchangeRate,
+   :rdfs/subPropertyOf :fibo-ind-fx-fx/hasQuotedExchangeRate,
    :skos/definition
    {:rdf/language "en",
     :rdf/value
-    "rate of exchange between two currencies as specified in a spot contract"}})
+    "rate of exchange between two currencies as specified as of some date and time as quoted by a specific source, typically for a spot contract"}})
 
 (def urn:uuid:4aff83f8-e4aa-507b-b4f9-8710ac256e0d
   {:cmns-av/copyright #{"Copyright (c) 2015-2024 Object Management Group, Inc."
@@ -359,27 +343,33 @@
    :owl/imports
    #{{:xsd/anyURI "https://www.omg.org/spec/Commons/RolesAndCompositions/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/DER/DerivativesContracts/Options/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/DER/DerivativesContracts/DerivativesBasics/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/DER/DerivativesContracts/Swaps/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q3/DER/DerivativesContracts/Swaps/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/QuantitiesAndUnits/"}
+     {:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q3/DER/DerivativesContracts/FuturesAndForwards/"}
+     {:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q3/FBC/ProductsAndServices/FinancialProductsAndServices/"}
+     {:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q3/BE/FunctionalEntities/Publishers/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/Collections/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/IND/ForeignExchange/ForeignExchange/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q3/DER/DerivativesContracts/Options/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/DER/DerivativesContracts/FuturesAndForwards/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q3/FBC/FinancialInstruments/FinancialInstruments/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FND/Utilities/AnnotationVocabulary/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q3/FND/Accounting/CurrencyAmount/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FND/Accounting/CurrencyAmount/"}
-     {:xsd/anyURI "https://www.omg.org/spec/Commons/AnnotationVocabulary/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q3/IND/ForeignExchange/ForeignExchange/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FBC/FinancialInstruments/FinancialInstruments/"}},
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q3/FND/Utilities/AnnotationVocabulary/"}
+     {:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q3/DER/DerivativesContracts/DerivativesBasics/"}
+     {:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q3/FBC/FunctionalEntities/Markets/"}
+     {:xsd/anyURI "https://www.omg.org/spec/Commons/AnnotationVocabulary/"}},
    :owl/versionIRI
    {:xsd/anyURI
-    "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/DER/DerivativesContracts/CurrencyContracts/"},
+    "https://spec.edmcouncil.org/fibo/ontology/master/2024Q3/DER/DerivativesContracts/CurrencyContracts/"},
    :rdf/type :owl/Ontology,
    :rdfs/label {:rdf/language "en",
                 :rdf/value    "Currency Contracts Ontology"},
@@ -388,6 +378,7 @@
      "The https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/CurrencyContracts.rdf version of this ontology was modified to replace content that is now available in the OMG Commons Ontology Library (Commons) v1.1 (FND-380)."
      "The https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/CurrencyContracts.rdf version of this ontology was modified to simplify the currency derivative class hierarchy (DER-126)."
      "The https://spec.edmcouncil.org/fibo/ontology/DerivativesContracts/CurrencyContracts/ version of this ontology was modified to reflect the addition of the concept of a rates swap and the corresponding rate-based leg to the Swaps ontology, as well as the concept of a spot forward currency swap, to facilitate mapping to the CFI standard."
-     "The https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/CurrencyContracts.rdf version of this ontology was modified to use the Commons Ontology Library (Commons) Annotation Vocabulary rather than the OMG's Specification Metadata vocabulary, to use the Commons Ontology Library (Commons) rather than the OMG's Languages, Countries and Codes (LCC) and to eliminate redundancies in FIBO as appropriate, and to move the definition of an underlier and the related property, has underlier, to financial instruments so that these concepts are also available for use in relation to pool-backed securities."},
+     "The https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/CurrencyContracts.rdf version of this ontology was modified to use the Commons Ontology Library (Commons) Annotation Vocabulary rather than the OMG's Specification Metadata vocabulary, to use the Commons Ontology Library (Commons) rather than the OMG's Languages, Countries and Codes (LCC) and to eliminate redundancies in FIBO as appropriate, and to move the definition of an underlier and the related property, has underlier, to financial instruments so that these concepts are also available for use in relation to pool-backed securities."
+     "The https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/CurrencyContracts.rdf version of this ontology was modified to move properties related to buying and selling currency to a higher level in the ontology, to be available on all currency instruments (DER-143)."},
    :xsd/anyURI
    "https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/CurrencyContracts/"})

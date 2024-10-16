@@ -1,8 +1,9 @@
 (ns net.wikipunk.rdf.fibo-ind-fx-fx
-  {:cmns-av/copyright #{"Copyright (c) 2014-2023 Object Management Group, Inc."
-                        "Copyright (c) 2014-2023 EDM Council, Inc."},
+  {:cmns-av/copyright
+   #{"Copyright (c) 2014-2024 EDM Council, Inc."
+     "Copyright (c) 2014-2024 Object Management Group, Inc."},
    :dcat/downloadURL
-   "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/IND/ForeignExchange/ForeignExchange/",
+   "https://spec.edmcouncil.org/fibo/ontology/master/2024Q3/IND/ForeignExchange/ForeignExchange/",
    :dcterms/abstract
    "This ontology provides the parameters for foreign exchange rates, covering spot and forward rates, as well as foreign exchange spot rate volatilities.",
    :dcterms/license {:xsd/anyURI "https://opensource.org/licenses/MIT"},
@@ -10,11 +11,16 @@
    :namespaces
    {"cmns-av" "https://www.omg.org/spec/Commons/AnnotationVocabulary/",
     "cmns-col" "https://www.omg.org/spec/Commons/Collections/",
+    "cmns-doc" "https://www.omg.org/spec/Commons/Documents/",
     "cmns-dt" "https://www.omg.org/spec/Commons/DatesAndTimes/",
     "cmns-qtu" "https://www.omg.org/spec/Commons/QuantitiesAndUnits/",
     "dcterms" "http://purl.org/dc/terms/",
+    "fibo-be-fct-pub"
+    "https://spec.edmcouncil.org/fibo/ontology/BE/FunctionalEntities/Publishers/",
     "fibo-fbc-fct-fse"
     "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/FinancialServicesEntities/",
+    "fibo-fbc-fct-mkt"
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/Markets/",
     "fibo-fbc-pas-fpas"
     "https://spec.edmcouncil.org/fibo/ontology/FBC/ProductsAndServices/FinancialProductsAndServices/",
     "fibo-fnd-acc-cur"
@@ -33,27 +39,32 @@
     "skos" "http://www.w3.org/2004/02/skos/core#",
     "xsd" "http://www.w3.org/2001/XMLSchema#"},
    :owl/imports
-   #{{:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FND/DatesAndTimes/FinancialDates/"}
+   #{{:xsd/anyURI "https://www.omg.org/spec/Commons/Documents/"}
+     {:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q3/FBC/FunctionalEntities/FinancialServicesEntities/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/QuantitiesAndUnits/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/IND/Indicators/Indicators/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q3/FBC/ProductsAndServices/FinancialProductsAndServices/"}
+     {:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q3/BE/FunctionalEntities/Publishers/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/Collections/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FBC/FunctionalEntities/FinancialServicesEntities/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q3/FND/DatesAndTimes/FinancialDates/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FBC/ProductsAndServices/FinancialProductsAndServices/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q3/FND/Accounting/CurrencyAmount/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/DatesAndTimes/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FND/Utilities/AnnotationVocabulary/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q3/FND/Relations/Relations/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FND/Accounting/CurrencyAmount/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q3/FND/Utilities/AnnotationVocabulary/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FND/Relations/Relations/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q3/IND/Indicators/Indicators/"}
+     {:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q3/FBC/FunctionalEntities/Markets/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/AnnotationVocabulary/"}},
    :owl/versionIRI
    {:xsd/anyURI
-    "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/IND/ForeignExchange/ForeignExchange/"},
+    "https://spec.edmcouncil.org/fibo/ontology/master/2024Q3/IND/ForeignExchange/ForeignExchange/"},
    :rdf/type :owl/Ontology,
    :rdfa/prefix "fibo-ind-fx-fx",
    :rdfa/uri
@@ -62,6 +73,7 @@
    :skos/changeNote
    #{"The https://spec.edmcouncil.org/fibo/ontology/IND/ForeignExchange/ForeignExchange.rdf version of this ontology was modified to replace content that is now available in the OMG Commons Ontology Library (Commons) v1.1 (FND-380)."
      "The https://spec.edmcouncil.org/fibo/ontology/IND/ForeignExchange/ForeignExchange.rdf version of this ontology was modified to eliminate deprecated elements."
+     "The https://spec.edmcouncil.org/fibo/ontology/IND/ForeignExchange/ForeignExchange.rdf version of this ontology was modified to add the source for a quoted exchange rate (DER-143)."
      "The https://spec.edmcouncil.org/fibo/ontology/IND/ForeignExchange/ForeignExchange.rdf version of this ontology was modified per the FIBO 2.0 RFC."
      "The https://spec.edmcouncil.org/fibo/ontology/IND/ForeignExchange/ForeignExchange.rdf version of this ontology was modified to eliminate unnecessary references, some of which had incorrect datatypes, rename FxSpotVolatility to CurrencySpotVolatility and improve its definition and related volatility definitions more generally."
      "The https://spec.edmcouncil.org/fibo/ontology/IND/ForeignExchange/ForeignExchange.rdf version of this ontology was modified to use the Commons Ontology Library (Commons) rather than the OMG's Languages, Countries and Codes (LCC), eliminating redundancies in FIBO as appropriate."
@@ -237,14 +249,37 @@
    {:xsd/anyURI
     "https://spec.edmcouncil.org/fibo/ontology/IND/ForeignExchange/ForeignExchange/"},
    :rdfs/label "quoted exchange rate",
-   :rdfs/subClassOf #{:fibo-ind-ind-ind/MarketRate
-                      {:owl/onClass    :fibo-fnd-acc-cur/Currency,
-                       :owl/onProperty :fibo-ind-fx-fx/hasQuoteCurrency,
-                       :owl/qualifiedCardinality 1,
-                       :rdf/type       :owl/Restriction}
-                      :fibo-fnd-acc-cur/ExchangeRate},
+   :rdfs/subClassOf
+   #{{:owl/onProperty     :fibo-ind-fx-fx/hasExchangeRateQuotationSource,
+      :owl/someValuesFrom {:owl/unionOf
+                           [:fibo-be-fct-pub/Publisher
+                            :fibo-fbc-pas-fpas/FinancialServiceProvider
+                            :fibo-fbc-fct-mkt/Exchange],
+                           :rdf/type :owl/Class},
+      :rdf/type           :owl/Restriction} :fibo-ind-ind-ind/MarketRate
+     {:owl/onClass    :fibo-fnd-acc-cur/Currency,
+      :owl/onProperty :fibo-ind-fx-fx/hasQuoteCurrency,
+      :owl/qualifiedCardinality 1,
+      :rdf/type       :owl/Restriction} :fibo-fnd-acc-cur/ExchangeRate},
    :skos/definition
    "exchange rate quoted at a specific point in time, for a given block amount of currency as quoted against another (base) currency"})
+
+(def hasExchangeRateQuotationSource
+  {:db/ident :fibo-ind-fx-fx/hasExchangeRateQuotationSource,
+   :rdf/type :owl/ObjectProperty,
+   :rdfs/isDefinedBy
+   {:xsd/anyURI
+    "https://spec.edmcouncil.org/fibo/ontology/IND/ForeignExchange/ForeignExchange/"},
+   :rdfs/label {:rdf/language "en",
+                :rdf/value    "has exchange rate quotation source"},
+   :rdfs/range {:owl/unionOf [:fibo-be-fct-pub/Publisher
+                              :fibo-fbc-pas-fpas/FinancialServiceProvider
+                              :fibo-fbc-fct-mkt/Exchange],
+                :rdf/type    :owl/Class},
+   :rdfs/subPropertyOf :cmns-doc/refersTo,
+   :skos/definition {:rdf/language "en",
+                     :rdf/value
+                     "indicates the origin of a quoted exchange rate"}})
 
 (def hasQuotationBlockAmountBasis
   {:db/ident :fibo-ind-fx-fx/hasQuotationBlockAmountBasis,
@@ -283,6 +318,21 @@
    :skos/definition
    "indicates the quote currency in an exchange rate; R units of this currency represent one unit of the base currency"})
 
+(def hasQuotedExchangeRate
+  {:db/ident :fibo-ind-fx-fx/hasQuotedExchangeRate,
+   :rdf/type :owl/ObjectProperty,
+   :rdfs/isDefinedBy
+   {:xsd/anyURI
+    "https://spec.edmcouncil.org/fibo/ontology/IND/ForeignExchange/ForeignExchange/"},
+   :rdfs/label {:rdf/language "en",
+                :rdf/value    "has quoted exchange rate"},
+   :rdfs/range :fibo-ind-fx-fx/QuotedExchangeRate,
+   :rdfs/subPropertyOf :cmns-qtu/hasQuantityValue,
+   :skos/definition
+   {:rdf/language "en",
+    :rdf/value
+    "rate of exchange between two currencies as specified as of some date and time as quoted by a specific source"}})
+
 (def isPremiumOn
   {:db/ident :fibo-ind-fx-fx/isPremiumOn,
    :rdf/type :owl/ObjectProperty,
@@ -296,39 +346,46 @@
    "an exchange rate expressed as a premium on the spot rate for the currency pair"})
 
 (def urn:uuid:5e759fda-5865-51e5-ae76-5c2ec0319c8b
-  {:cmns-av/copyright #{"Copyright (c) 2014-2023 Object Management Group, Inc."
-                        "Copyright (c) 2014-2023 EDM Council, Inc."},
+  {:cmns-av/copyright
+   #{"Copyright (c) 2014-2024 EDM Council, Inc."
+     "Copyright (c) 2014-2024 Object Management Group, Inc."},
    :dcterms/abstract
    "This ontology provides the parameters for foreign exchange rates, covering spot and forward rates, as well as foreign exchange spot rate volatilities.",
    :dcterms/license {:xsd/anyURI "https://opensource.org/licenses/MIT"},
    :fibo-fnd-utl-av/hasMaturityLevel :fibo-fnd-utl-av/Release,
    :owl/imports
-   #{{:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FND/DatesAndTimes/FinancialDates/"}
+   #{{:xsd/anyURI "https://www.omg.org/spec/Commons/Documents/"}
+     {:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q3/FBC/FunctionalEntities/FinancialServicesEntities/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/QuantitiesAndUnits/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/IND/Indicators/Indicators/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q3/FBC/ProductsAndServices/FinancialProductsAndServices/"}
+     {:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q3/BE/FunctionalEntities/Publishers/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/Collections/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FBC/FunctionalEntities/FinancialServicesEntities/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q3/FND/DatesAndTimes/FinancialDates/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FBC/ProductsAndServices/FinancialProductsAndServices/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q3/FND/Accounting/CurrencyAmount/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/DatesAndTimes/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FND/Utilities/AnnotationVocabulary/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q3/FND/Relations/Relations/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FND/Accounting/CurrencyAmount/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q3/FND/Utilities/AnnotationVocabulary/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FND/Relations/Relations/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q3/IND/Indicators/Indicators/"}
+     {:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q3/FBC/FunctionalEntities/Markets/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/AnnotationVocabulary/"}},
    :owl/versionIRI
    {:xsd/anyURI
-    "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/IND/ForeignExchange/ForeignExchange/"},
+    "https://spec.edmcouncil.org/fibo/ontology/master/2024Q3/IND/ForeignExchange/ForeignExchange/"},
    :rdf/type :owl/Ontology,
    :rdfs/label "Foreign Exchange Ontology",
    :skos/changeNote
    #{"The https://spec.edmcouncil.org/fibo/ontology/IND/ForeignExchange/ForeignExchange.rdf version of this ontology was modified to replace content that is now available in the OMG Commons Ontology Library (Commons) v1.1 (FND-380)."
      "The https://spec.edmcouncil.org/fibo/ontology/IND/ForeignExchange/ForeignExchange.rdf version of this ontology was modified to eliminate deprecated elements."
+     "The https://spec.edmcouncil.org/fibo/ontology/IND/ForeignExchange/ForeignExchange.rdf version of this ontology was modified to add the source for a quoted exchange rate (DER-143)."
      "The https://spec.edmcouncil.org/fibo/ontology/IND/ForeignExchange/ForeignExchange.rdf version of this ontology was modified per the FIBO 2.0 RFC."
      "The https://spec.edmcouncil.org/fibo/ontology/IND/ForeignExchange/ForeignExchange.rdf version of this ontology was modified to eliminate unnecessary references, some of which had incorrect datatypes, rename FxSpotVolatility to CurrencySpotVolatility and improve its definition and related volatility definitions more generally."
      "The https://spec.edmcouncil.org/fibo/ontology/IND/ForeignExchange/ForeignExchange.rdf version of this ontology was modified to use the Commons Ontology Library (Commons) rather than the OMG's Languages, Countries and Codes (LCC), eliminating redundancies in FIBO as appropriate."

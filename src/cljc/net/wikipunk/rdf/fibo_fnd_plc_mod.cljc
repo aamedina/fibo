@@ -2,7 +2,7 @@
   {:cmns-av/copyright #{"Copyright (c) 2017-2023 Object Management Group, Inc."
                         "Copyright (c) 2017-2023 EDM Council, Inc."},
    :dcat/downloadURL
-   "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FND/Places/MetadataFNDPlaces/PlacesModule",
+   "https://spec.edmcouncil.org/fibo/ontology/master/2024Q3/FND/Places/MetadataFNDPlaces/PlacesModule",
    :dcterms/abstract
    "This is the metadata ontology used to describe the Foundations Places Module.",
    :dcterms/issued #inst "2022-06-14T18:00:00.000-00:00",
@@ -21,11 +21,11 @@
     "xsd" "http://www.w3.org/2001/XMLSchema#"},
    :owl/imports
    #{{:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FND/Utilities/AnnotationVocabulary/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q3/FND/Utilities/AnnotationVocabulary/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/AnnotationVocabulary/"}},
    :owl/versionIRI
    {:xsd/anyURI
-    "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FND/Places/MetadataFNDPlaces/"},
+    "https://spec.edmcouncil.org/fibo/ontology/master/2024Q3/FND/Places/MetadataFNDPlaces/"},
    :rdf/type :owl/Ontology,
    :rdfa/prefix "fibo-fnd-plc-mod",
    :rdfa/uri
@@ -74,11 +74,11 @@
    :dcterms/modified #inst "2023-01-20T18:00:00.000-00:00",
    :owl/imports
    #{{:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FND/Utilities/AnnotationVocabulary/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q3/FND/Utilities/AnnotationVocabulary/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/AnnotationVocabulary/"}},
    :owl/versionIRI
    {:xsd/anyURI
-    "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FND/Places/MetadataFNDPlaces/"},
+    "https://spec.edmcouncil.org/fibo/ontology/master/2024Q3/FND/Places/MetadataFNDPlaces/"},
    :rdf/type :owl/Ontology,
    :rdfs/label "Metadata for the EDMC-FIBO Foundations (FND) Places Module",
    :xsd/anyURI

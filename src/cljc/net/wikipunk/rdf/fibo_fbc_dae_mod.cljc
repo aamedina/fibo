@@ -2,7 +2,7 @@
   {:cmns-av/copyright #{"Copyright (c) 2017-2023 Object Management Group, Inc."
                         "Copyright (c) 2017-2023 EDM Council, Inc."},
    :dcat/downloadURL
-   "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FBC/DebtAndEquities/MetadataFBCDebtAndEquities/DebtAndEquitiesModule",
+   "https://spec.edmcouncil.org/fibo/ontology/master/2024Q3/FBC/DebtAndEquities/MetadataFBCDebtAndEquities/DebtAndEquitiesModule",
    :dcterms/abstract
    "The debt and equities module includes ontologies describing concepts that are common to debt and equity instruments, as well as across debt instruments, such as loans, bonds, asset-backed securities, and so forth.",
    :dcterms/issued #inst "2017-08-13T18:00:00.000-00:00",
@@ -21,11 +21,11 @@
     "xsd" "http://www.w3.org/2001/XMLSchema#"},
    :owl/imports
    #{{:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FND/Utilities/AnnotationVocabulary/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q3/FND/Utilities/AnnotationVocabulary/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/AnnotationVocabulary/"}},
    :owl/versionIRI
    {:xsd/anyURI
-    "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FBC/DebtAndEquities/MetadataFBCDebtAndEquities/"},
+    "https://spec.edmcouncil.org/fibo/ontology/master/2024Q3/FBC/DebtAndEquities/MetadataFBCDebtAndEquities/"},
    :rdf/type :owl/Ontology,
    :rdfa/prefix "fibo-fbc-dae-mod",
    :rdfa/uri
@@ -70,11 +70,11 @@
    :dcterms/modified #inst "2023-01-30T18:00:00.000-00:00",
    :owl/imports
    #{{:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FND/Utilities/AnnotationVocabulary/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q3/FND/Utilities/AnnotationVocabulary/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/AnnotationVocabulary/"}},
    :owl/versionIRI
    {:xsd/anyURI
-    "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FBC/DebtAndEquities/MetadataFBCDebtAndEquities/"},
+    "https://spec.edmcouncil.org/fibo/ontology/master/2024Q3/FBC/DebtAndEquities/MetadataFBCDebtAndEquities/"},
    :rdf/type :owl/Ontology,
    :rdfs/label
    "Metadata about the EDMC-FIBO Financial Business and Commerce(FBC) Debt and Equities Module",

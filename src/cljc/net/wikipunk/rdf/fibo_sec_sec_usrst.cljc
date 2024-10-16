@@ -2,7 +2,7 @@
   {:cmns-av/copyright #{"Copyright (c) 2024 EDM Council, Inc."
                         "Copyright (c) 2024 Object Management Group, Inc."},
    :dcat/downloadURL
-   "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/SEC/Securities/NorthAmericanSecurities/USSecuritiesRestrictions/",
+   "https://spec.edmcouncil.org/fibo/ontology/master/2024Q3/SEC/Securities/NorthAmericanSecurities/USSecuritiesRestrictions/",
    :dcterms/abstract
    "This ontology defines the concepts related to restrictions issued by the US Securities Exchange Commission and other US regulatory agencies on finanicial instruments, securities and listings.",
    :dcterms/license {:xsd/anyURI "https://opensource.org/licenses/MIT"},
@@ -34,32 +34,34 @@
     "skos" "http://www.w3.org/2004/02/skos/core#",
     "xsd" "http://www.w3.org/2001/XMLSchema#"},
    :owl/imports
-   #{{:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FBC/ProductsAndServices/ClientsAndAccounts/"}
-     {:xsd/anyURI "https://www.omg.org/spec/Commons/Documents/"}
+   #{{:xsd/anyURI "https://www.omg.org/spec/Commons/Documents/"}
      {:xsd/anyURI
       "https://www.omg.org/spec/LCC/Countries/CountryRepresentation/"}
+     {:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q3/SEC/Securities/SecuritiesRestrictions/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/ContextualDesignators/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/SEC/Securities/SecuritiesListings/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q3/SEC/Securities/SecuritiesListings/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/BE/GovernmentEntities/NorthAmericanJurisdiction/USGovernmentEntitiesAndJurisdictions/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q3/FBC/FinancialInstruments/FinancialInstruments/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/DatesAndTimes/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FND/Utilities/AnnotationVocabulary/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q3/FND/Utilities/AnnotationVocabulary/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/SEC/Securities/SecuritiesRestrictions/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q3/BE/GovernmentEntities/NorthAmericanJurisdiction/USGovernmentEntitiesAndJurisdictions/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/AnnotationVocabulary/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FBC/FinancialInstruments/FinancialInstruments/"}},
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q3/FBC/ProductsAndServices/ClientsAndAccounts/"}},
    :owl/versionIRI
    {:xsd/anyURI
-    "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/SEC/Securities/NorthAmericanSecurities/USSecuritiesRestrictions/"},
+    "https://spec.edmcouncil.org/fibo/ontology/master/2024Q3/SEC/Securities/NorthAmericanSecurities/USSecuritiesRestrictions/"},
    :rdf/type :owl/Ontology,
    :rdfa/prefix "fibo-sec-sec-usrst",
    :rdfa/uri
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/NorthAmericanSecurities/USSecuritiesRestrictions/",
    :rdfs/label "US Securities Restrictions Ontology",
+   :skos/changeNote
+   "The https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/NorthAmericanSecurities/USSecuritiesRestrictions/.rdf version of this ontology was revised to eliminate typos in a few annotations.",
    :xsd/anyURI
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/NorthAmericanSecurities/USSecuritiesRestrictions/"})
 
@@ -176,7 +178,7 @@
   {:cmns-av/adaptedFrom
    {:xsd/anyURI "https://www.sec.gov/divisions/marketreg/rule201faq.htm"},
    :cmns-av/explanatoryNote
-   #{"The Securities and Exchange Commission (SEC) short sale alternative uptick rule (Rule 201) requires the establishment of a short sale-related circuit breaker in the event a security's price decreases by ten percent or more from the previous day's closing price. Once activated, the short sale restriction will remain in effect for the remainder of the day as well as the following day. Values are A - 'Flag in Effect/Activated', C - 'Flag Continued' and N - 'Flag Not in Effect'.  If not given the default is 'N - Flag Not in Effect'. When a stock is triggered, traders can only execute short sales of the stock above the National Best Bid (NBB) price."
+   #{"The Securities and Exchange Commission (SEC) short sale alternative uptick rule (Rule 201) requires the establishment of a short sale-related circuit breaker in the event a security's price decreases by ten percent or more from the previous day's closing price. Once activated, the short sale restriction will remain in effect for the remainder of the day as well as the following day. Values are A - 'Flag in Effect/Activated', C - 'Flag Continued' and N - 'Flag Not in Effect'. If not given the default is 'N - Flag Not in Effect'. When a stock is triggered, traders can only execute short sales of the stock above the National Best Bid (NBB) price."
      "On February 26, 2010, the Commission adopted Rule 201 of Regulation SHO. Rule 201 restricts the price at which short sales may be effected when a stock has experienced significant downward price pressure. Rule 201 became effective on May 10, 2010. (Securities Exchange Act Release No. 61595 (Feb. 26, 2010), 75 FR 11232 (Mar. 10, 2010) ('Rule 201 Adopting Release')). Compliance with the new rule is required as of February 28, 2011. (Securities Exchange Act Release No. 63247 (Nov. 4, 2010), 75 FR 68702 (Nov. 9, 2010))."},
    :cmns-av/synonym "alternative uptick rule",
    :cmns-cxtdsg/isApplicableIn :fibo-be-ge-usj/UnitedStatesJurisdiction,
@@ -203,7 +205,7 @@
     "https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/NorthAmericanSecurities/USSecuritiesRestrictions/"},
    :rdfs/label "TEFRA C rule",
    :skos/definition
-   "securities regulation that is a U.S. Treasury Regulation §1.163-5(c)(2)(i)(C), or any successor regulation, established under the Tax Equity and Fiscal Responsibility Act of 1982 (TEFRA), that relates to the classification of debt obligations as either 'bearer' or 'registered' for U.S. tax purposes and ensures that an issue of bearer debt satisfied 'reasonable arrangement' requirements"})
+   "securities regulation that is a U.S. Treasury Regulation section 1.163-5(c)(2)(i)(C), or any successor regulation, established under the Tax Equity and Fiscal Responsibility Act of 1982 (TEFRA), that relates to the classification of debt obligations as either 'bearer' or 'registered' for U.S. tax purposes and ensures that an issue of bearer debt satisfied 'reasonable arrangement' requirements"})
 
 (def TEFRADRule
   {:cmns-av/adaptedFrom
@@ -219,12 +221,12 @@
     "https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/NorthAmericanSecurities/USSecuritiesRestrictions/"},
    :rdfs/label "TEFRA D rule",
    :skos/definition
-   "securities regulation that is a U.S. Treasury Regulation §1.163-5(c)(2)(i)(D), or any successor regulation, established under the Tax Equity and Fiscal Responsibility Act of 1982 (TEFRA), that  relates to the classification of debt obligations as either 'bearer' or 'registered' for U.S. tax purposes,  applies to most straightforward issues of bearer debt in the Euromarkets, and ensures that an issue of bearer debt satisfied 'reasonable arrangement' requirements"})
+   "securities regulation that is a U.S. Treasury Regulation section 1.163-5(c)(2)(i)(D), or any successor regulation, established under the Tax Equity and Fiscal Responsibility Act of 1982 (TEFRA), that relates to the classification of debt obligations as either 'bearer' or 'registered' for U.S. tax purposes, applies to most straightforward issues of bearer debt in the Euromarkets, and ensures that an issue of bearer debt satisfied 'reasonable arrangement' requirements"})
 
 (def isEmployeeRetirementIncomeSecurityActConformant
   {:cmns-av/adaptedFrom
    {:rdf/value
-    "U.S. Code Title 29, Chapter 18, Subchapter I, § 1002 provides definitions related to employee benefit plans. Specifically, this section outlines the terms used in ERISA, including definitions for various types of plans such as employee welfare benefit plans, employee pension benefit plans, and others. See https://www.law.cornell.edu/uscode/text/29/1002."},
+    "U.S. Code Title 29, Chapter 18, Subchapter I, Section 1002 provides definitions related to employee benefit plans. Specifically, this section outlines the terms used in ERISA, including definitions for various types of plans such as employee welfare benefit plans, employee pension benefit plans, and others. See https://www.law.cornell.edu/uscode/text/29/1002."},
    :cmns-av/explanatoryNote
    "The Employee Retirement Income Security Act (ERISA) is a federal law that establishes standards for certain employer-sponsored retirement and health plans. It has undergone several changes since its initial enactment in 1974. ERISA aims to protect individuals participating in these plans by prohibiting fiduciaries from misusing funds and setting standards for participation, benefit accrual, vesting, and funding of retirement plans",
    :db/ident
@@ -285,28 +287,30 @@
    :dcterms/license {:xsd/anyURI "https://opensource.org/licenses/MIT"},
    :fibo-fnd-utl-av/hasMaturityLevel :fibo-fnd-utl-av/Release,
    :owl/imports
-   #{{:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FBC/ProductsAndServices/ClientsAndAccounts/"}
-     {:xsd/anyURI "https://www.omg.org/spec/Commons/Documents/"}
+   #{{:xsd/anyURI "https://www.omg.org/spec/Commons/Documents/"}
      {:xsd/anyURI
       "https://www.omg.org/spec/LCC/Countries/CountryRepresentation/"}
+     {:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q3/SEC/Securities/SecuritiesRestrictions/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/ContextualDesignators/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/SEC/Securities/SecuritiesListings/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q3/SEC/Securities/SecuritiesListings/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/BE/GovernmentEntities/NorthAmericanJurisdiction/USGovernmentEntitiesAndJurisdictions/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q3/FBC/FinancialInstruments/FinancialInstruments/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/DatesAndTimes/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FND/Utilities/AnnotationVocabulary/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q3/FND/Utilities/AnnotationVocabulary/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/SEC/Securities/SecuritiesRestrictions/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q3/BE/GovernmentEntities/NorthAmericanJurisdiction/USGovernmentEntitiesAndJurisdictions/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/AnnotationVocabulary/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FBC/FinancialInstruments/FinancialInstruments/"}},
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q3/FBC/ProductsAndServices/ClientsAndAccounts/"}},
    :owl/versionIRI
    {:xsd/anyURI
-    "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/SEC/Securities/NorthAmericanSecurities/USSecuritiesRestrictions/"},
+    "https://spec.edmcouncil.org/fibo/ontology/master/2024Q3/SEC/Securities/NorthAmericanSecurities/USSecuritiesRestrictions/"},
    :rdf/type :owl/Ontology,
    :rdfs/label "US Securities Restrictions Ontology",
+   :skos/changeNote
+   "The https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/NorthAmericanSecurities/USSecuritiesRestrictions/.rdf version of this ontology was revised to eliminate typos in a few annotations.",
    :xsd/anyURI
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/NorthAmericanSecurities/USSecuritiesRestrictions/"})

@@ -2,7 +2,7 @@
   {:cmns-av/copyright #{"Copyright (c) 2013-2023 Object Management Group, Inc."
                         "Copyright (c) 2013-2023 EDM Council, Inc."},
    :dcat/downloadURL
-   "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/MetadataFIBO/FIBOSpecification",
+   "https://spec.edmcouncil.org/fibo/ontology/master/2024Q3/MetadataFIBO/FIBOSpecification",
    :dcterms/abstract
    "This is the metadata ontology used to describe the FIBO Specification.",
    :dcterms/issued #inst "2018-03-31T18:00:00.000-00:00",
@@ -31,31 +31,31 @@
     "xsd" "http://www.w3.org/2001/XMLSchema#"},
    :owl/imports
    #{{:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/IND/MetadataIND/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q3/BE/MetadataBE/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/SEC/MetadataSEC/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q3/DER/MetadataDER/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/DER/MetadataDER/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q3/BP/MetadataBP/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FBC/MetadataFBC/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q3/SEC/MetadataSEC/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FND/MetadataFND/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q3/FBC/MetadataFBC/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/MD/MetadataMD/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q3/IND/MetadataIND/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/LOAN/MetadataLOAN/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q3/LOAN/MetadataLOAN/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/CAE/MetadataCAE/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q3/FND/Utilities/AnnotationVocabulary/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FND/Utilities/AnnotationVocabulary/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/BE/MetadataBE/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q3/CAE/MetadataCAE/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/AnnotationVocabulary/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/BP/MetadataBP/"}},
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q3/FND/MetadataFND/"}
+     {:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q3/MD/MetadataMD/"}},
    :owl/versionIRI
    {:xsd/anyURI
-    "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/MetadataFIBO/"},
+    "https://spec.edmcouncil.org/fibo/ontology/master/2024Q3/MetadataFIBO/"},
    :rdf/type :owl/Ontology,
    :rdfa/prefix "fibo-spec",
    :rdfa/uri "https://spec.edmcouncil.org/fibo/ontology/MetadataFIBO/",
@@ -93,31 +93,31 @@
    :dcterms/modified #inst "2023-02-13T18:00:00.000-00:00",
    :owl/imports
    #{{:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/IND/MetadataIND/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q3/BE/MetadataBE/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/SEC/MetadataSEC/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q3/DER/MetadataDER/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/DER/MetadataDER/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q3/BP/MetadataBP/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FBC/MetadataFBC/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q3/SEC/MetadataSEC/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FND/MetadataFND/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q3/FBC/MetadataFBC/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/MD/MetadataMD/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q3/IND/MetadataIND/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/LOAN/MetadataLOAN/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q3/LOAN/MetadataLOAN/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/CAE/MetadataCAE/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q3/FND/Utilities/AnnotationVocabulary/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FND/Utilities/AnnotationVocabulary/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/BE/MetadataBE/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q3/CAE/MetadataCAE/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/AnnotationVocabulary/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/BP/MetadataBP/"}},
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q3/FND/MetadataFND/"}
+     {:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q3/MD/MetadataMD/"}},
    :owl/versionIRI
    {:xsd/anyURI
-    "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/MetadataFIBO/"},
+    "https://spec.edmcouncil.org/fibo/ontology/master/2024Q3/MetadataFIBO/"},
    :rdf/type :owl/Ontology,
    :rdfs/label "Metadata for the EDMC-FIBO Specification",
    :xsd/anyURI "https://spec.edmcouncil.org/fibo/ontology/MetadataFIBO/"})

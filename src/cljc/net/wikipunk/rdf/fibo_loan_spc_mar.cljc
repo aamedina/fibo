@@ -1,7 +1,7 @@
 (ns net.wikipunk.rdf.fibo-loan-spc-mar
   {:cmns-av/copyright "Copyright (c) 2015-2023 EDM Council, Inc.",
    :dcat/downloadURL
-   "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/LOAN/LoansSpecific/MarineFinance/",
+   "https://spec.edmcouncil.org/fibo/ontology/master/2024Q3/LOAN/LoansSpecific/MarineFinance/",
    :dcterms/abstract
    "This ontology defines concepts specific to marine finance, which involves financing vessel acquisitions for the spot market, time charters or bareboat charters, as well as the construction of work boats, and to finance the acquisition of vessels for scrapping.",
    :dcterms/license {:xsd/anyURI "https://opensource.org/licenses/MIT"},
@@ -24,13 +24,13 @@
    :owl/imports
    #{{:xsd/anyURI "https://www.omg.org/spec/Commons/QuantitiesAndUnits/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/LOAN/LoansGeneral/Loans/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q3/LOAN/LoansGeneral/Loans/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FND/Utilities/AnnotationVocabulary/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q3/FND/Utilities/AnnotationVocabulary/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/AnnotationVocabulary/"}},
    :owl/versionIRI
    {:xsd/anyURI
-    "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/LOAN/LoansSpecific/MarineFinance/"},
+    "https://spec.edmcouncil.org/fibo/ontology/master/2024Q3/LOAN/LoansSpecific/MarineFinance/"},
    :rdf/type :owl/Ontology,
    :rdfa/prefix "fibo-loan-spc-mar",
    :rdfa/uri
@@ -121,13 +121,13 @@
    :owl/imports
    #{{:xsd/anyURI "https://www.omg.org/spec/Commons/QuantitiesAndUnits/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/LOAN/LoansGeneral/Loans/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q3/LOAN/LoansGeneral/Loans/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FND/Utilities/AnnotationVocabulary/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q3/FND/Utilities/AnnotationVocabulary/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/AnnotationVocabulary/"}},
    :owl/versionIRI
    {:xsd/anyURI
-    "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/LOAN/LoansSpecific/MarineFinance/"},
+    "https://spec.edmcouncil.org/fibo/ontology/master/2024Q3/LOAN/LoansSpecific/MarineFinance/"},
    :rdf/type :owl/Ontology,
    :rdfs/label {:rdf/language "en",
                 :rdf/value    "Marine Finance Ontology"},

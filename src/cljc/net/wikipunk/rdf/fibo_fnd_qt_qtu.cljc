@@ -3,7 +3,7 @@
    #{"Copyright (c) 2015-2023 EDM Council, Inc."
      "Copyright (c) 2015-2023 Object Management Group, Inc."},
    :dcat/downloadURL
-   "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FND/Quantities/QuantitiesAndUnits/",
+   "https://spec.edmcouncil.org/fibo/ontology/master/2024Q3/FND/Quantities/QuantitiesAndUnits/",
    :dcterms/abstract
    "This ontology provides an initial set of concepts supporting the representation of quantities, units, systems of quantities, and systems of units. It is compatible with and can be mapped directly to the OMG Date Time Vocabulary (DTV) Quantities Ontology, but has been integrated into FND to provide local coverage of quantities and measurements and eliminate the SBVR mark-up.",
    :dcterms/license {:xsd/anyURI "https://opensource.org/licenses/MIT"},
@@ -32,11 +32,11 @@
      {:xsd/anyURI "https://www.omg.org/spec/Commons/Classifiers/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/Designators/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FND/Utilities/AnnotationVocabulary/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q3/FND/Utilities/AnnotationVocabulary/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/AnnotationVocabulary/"}},
    :owl/versionIRI
    {:xsd/anyURI
-    "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FND/Quantities/QuantitiesAndUnits/"},
+    "https://spec.edmcouncil.org/fibo/ontology/master/2024Q3/FND/Quantities/QuantitiesAndUnits/"},
    :rdf/type :owl/Ontology,
    :rdfa/prefix "fibo-fnd-qt-qtu",
    :rdfa/uri
@@ -269,11 +269,11 @@
      {:xsd/anyURI "https://www.omg.org/spec/Commons/Classifiers/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/Designators/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FND/Utilities/AnnotationVocabulary/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q3/FND/Utilities/AnnotationVocabulary/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/AnnotationVocabulary/"}},
    :owl/versionIRI
    {:xsd/anyURI
-    "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FND/Quantities/QuantitiesAndUnits/"},
+    "https://spec.edmcouncil.org/fibo/ontology/master/2024Q3/FND/Quantities/QuantitiesAndUnits/"},
    :rdf/type :owl/Ontology,
    :rdfs/label "Quantities and Units Ontology",
    :skos/changeNote

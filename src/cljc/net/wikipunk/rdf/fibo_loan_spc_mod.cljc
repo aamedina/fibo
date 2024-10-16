@@ -2,7 +2,7 @@
   {:cmns-av/copyright #{"Copyright (c) 2018-2023 Object Management Group, Inc."
                         "Copyright (c) 2018-2023 EDM Council, Inc."},
    :dcat/downloadURL
-   "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/LOAN/LoansSpecific/MetadataLOANLoansSpecific/LoansSpecificModule",
+   "https://spec.edmcouncil.org/fibo/ontology/master/2024Q3/LOAN/LoansSpecific/MetadataLOANLoansSpecific/LoansSpecificModule",
    :dcterms/abstract
    "This module contains ontologies of concepts descriptive of a range of loans, excluding real estate, including commercial and consumer, loans differentiated by purpose, and their differentiating characteristics.",
    :dcterms/issued #inst "2018-03-31T18:00:00.000-00:00",
@@ -21,11 +21,11 @@
     "xsd" "http://www.w3.org/2001/XMLSchema#"},
    :owl/imports
    #{{:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FND/Utilities/AnnotationVocabulary/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q3/FND/Utilities/AnnotationVocabulary/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/AnnotationVocabulary/"}},
    :owl/versionIRI
    {:xsd/anyURI
-    "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/LOAN/LoansSpecific/MetadataLOANLoansSpecific/"},
+    "https://spec.edmcouncil.org/fibo/ontology/master/2024Q3/LOAN/LoansSpecific/MetadataLOANLoansSpecific/"},
    :rdf/type :owl/Ontology,
    :rdfa/prefix "fibo-loan-spc-mod",
    :rdfa/uri
@@ -80,11 +80,11 @@
    :dcterms/modified #inst "2023-06-27T18:00:00.000-00:00",
    :owl/imports
    #{{:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FND/Utilities/AnnotationVocabulary/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q3/FND/Utilities/AnnotationVocabulary/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/AnnotationVocabulary/"}},
    :owl/versionIRI
    {:xsd/anyURI
-    "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/LOAN/LoansSpecific/MetadataLOANLoansSpecific/"},
+    "https://spec.edmcouncil.org/fibo/ontology/master/2024Q3/LOAN/LoansSpecific/MetadataLOANLoansSpecific/"},
    :rdf/type :owl/Ontology,
    :rdfs/label
    "Metadata for the EDMC-FIBO Loans (LOAN) Loans - Specific Module",

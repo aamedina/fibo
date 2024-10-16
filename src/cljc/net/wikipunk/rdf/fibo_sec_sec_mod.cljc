@@ -3,12 +3,12 @@
    #{"Copyright (c) 2018-2024 EDM Council, Inc."
      "Copyright (c) 2018-2024 Object Management Group, Inc."},
    :dcat/downloadURL
-   "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/SEC/Securities/MetadataSECSecurities/SecuritiesModule",
+   "https://spec.edmcouncil.org/fibo/ontology/master/2024Q3/SEC/Securities/MetadataSECSecurities/SecuritiesModule",
    :dcterms/abstract
    "The SEC Securities Module covers basic information that are common to many securities, including classification schemes, parametric schedules, and common identification, issuance, listing, and restriction-specific concepts. This ontology provides metadata about the Securities module and its contents.",
    :dcterms/issued #inst "2018-03-31T18:00:00.000-00:00",
    :dcterms/license {:xsd/anyURI "https://opensource.org/licenses/MIT"},
-   :dcterms/modified #inst "2024-06-07T18:00:00.000-00:00",
+   :dcterms/modified #inst "2024-07-12T18:00:00.000-00:00",
    :namespaces
    {"cmns-av" "https://www.omg.org/spec/Commons/AnnotationVocabulary/",
     "dcterms" "http://purl.org/dc/terms/",
@@ -22,11 +22,11 @@
     "xsd" "http://www.w3.org/2001/XMLSchema#"},
    :owl/imports
    #{{:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FND/Utilities/AnnotationVocabulary/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q3/FND/Utilities/AnnotationVocabulary/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/AnnotationVocabulary/"}},
    :owl/versionIRI
    {:xsd/anyURI
-    "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/SEC/Securities/MetadataSECSecurities/"},
+    "https://spec.edmcouncil.org/fibo/ontology/master/2024Q3/SEC/Securities/MetadataSECSecurities/"},
    :rdf/type :owl/Ontology,
    :rdfa/prefix "fibo-sec-sec-mod",
    :rdfa/uri
@@ -73,7 +73,9 @@
      {:xsd/anyURI
       "https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/SecuritiesRestrictions/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/SecuritiesIdentificationIndividuals/"}},
+      "https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/SecuritiesIdentificationIndividuals/"}
+     {:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/EuropeanSecurities/EUSecuritiesRestrictions/"}},
    :dcterms/license {:xsd/anyURI "https://opensource.org/licenses/MIT"},
    :dcterms/title
    #{"Financial Industry Business Ontology (FIBO) Securities and Equities (SEC) Securities Module"
@@ -93,14 +95,14 @@
    "The SEC Securities Module covers basic information that are common to many securities, including classification schemes, parametric schedules, and common identification, issuance, listing, and restriction-specific concepts. This ontology provides metadata about the Securities module and its contents.",
    :dcterms/issued #inst "2018-03-31T18:00:00.000-00:00",
    :dcterms/license {:xsd/anyURI "https://opensource.org/licenses/MIT"},
-   :dcterms/modified #inst "2024-06-07T18:00:00.000-00:00",
+   :dcterms/modified #inst "2024-07-12T18:00:00.000-00:00",
    :owl/imports
    #{{:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FND/Utilities/AnnotationVocabulary/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q3/FND/Utilities/AnnotationVocabulary/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/AnnotationVocabulary/"}},
    :owl/versionIRI
    {:xsd/anyURI
-    "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/SEC/Securities/MetadataSECSecurities/"},
+    "https://spec.edmcouncil.org/fibo/ontology/master/2024Q3/SEC/Securities/MetadataSECSecurities/"},
    :rdf/type :owl/Ontology,
    :rdfs/label
    "Metadata about the EDMC-FIBO Securities (SEC), Securities Module",

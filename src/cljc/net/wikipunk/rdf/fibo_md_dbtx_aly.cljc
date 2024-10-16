@@ -1,7 +1,7 @@
 (ns net.wikipunk.rdf.fibo-md-dbtx-aly
-  {:cmns-av/copyright "Copyright (c) 2013-2023 EDM Council, Inc.",
+  {:cmns-av/copyright "Copyright (c) 2013-2024 EDM Council, Inc.",
    :dcat/downloadURL
-   "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/MD/DebtTemporal/DebtAnalytics/",
+   "https://spec.edmcouncil.org/fibo/ontology/master/2024Q3/MD/DebtTemporal/DebtAnalytics/",
    :dcterms/abstract
    "This ontology covers an extensive range of analytical measures for debt instruments and pools of debt instruments. These cover the well-known concepts of convexity, duration and life, as well as weighted average loan ages and maturities, prepayments speeds etc. for debt pools. Most of the widely referenced variants of these are included, for example modified duration. Some yield related concepts (e.g. for equivalent yield) are also included. Debt pricing and yields are intimately related, and this ontology sets out the basic concepts of debt price, including different ways in which debt and bod prices are described and calculated, as well as a range of different kinds of yield (simple yield, Wall Street Yield, Japanese Yield and so on). The pricing terms are supported by a range of trading and exchange related concepts that are used to differentiate different kinds of debt price, for example last, high and low exchange prices.",
    :dcterms/license {:xsd/anyURI "https://opensource.org/licenses/MIT"},
@@ -52,43 +52,43 @@
     "xsd" "http://www.w3.org/2001/XMLSchema#"},
    :owl/imports
    #{{:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FND/Utilities/Analytics/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/SEC/Securities/Pools/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FND/DatesAndTimes/FinancialDates/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q3/SEC/Securities/Pools/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/Documents/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FND/ProductsAndServices/ProductsAndServices/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q3/FND/ProductsAndServices/ProductsAndServices/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/ContextualDesignators/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/QuantitiesAndUnits/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/SEC/Debt/MortgageBackedSecurities/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q3/SEC/Debt/DebtInstruments/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/IND/Indicators/Indicators/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q3/SEC/Debt/Bonds/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/Collections/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FBC/DebtAndEquities/Debt/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q3/FBC/FinancialInstruments/InstrumentPricing/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/Classifiers/"}
+     {:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q3/FND/DatesAndTimes/FinancialDates/"}
+     {:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q3/IND/InterestRates/InterestRates/"}
+     {:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q3/FND/Accounting/CurrencyAmount/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/DatesAndTimes/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FBC/FinancialInstruments/InstrumentPricing/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q3/FND/Utilities/Analytics/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FND/Utilities/AnnotationVocabulary/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q3/SEC/Debt/PoolBackedSecurities/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FND/Accounting/CurrencyAmount/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q3/FND/Utilities/AnnotationVocabulary/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/SEC/Debt/Bonds/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q3/IND/Indicators/Indicators/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/SEC/Debt/DebtInstruments/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q3/SEC/Debt/MortgageBackedSecurities/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/AnnotationVocabulary/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/IND/InterestRates/InterestRates/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/SEC/Debt/PoolBackedSecurities/"}},
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q3/FBC/DebtAndEquities/Debt/"}},
    :owl/versionIRI
    {:xsd/anyURI
-    "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/MD/DebtTemporal/DebtAnalytics/"},
+    "https://spec.edmcouncil.org/fibo/ontology/master/2024Q3/MD/DebtTemporal/DebtAnalytics/"},
    :rdf/type :owl/Ontology,
    :rdfa/prefix "fibo-md-dbtx-aly",
    :rdfa/uri
@@ -97,20 +97,6 @@
                 :rdf/value    "Debt Analytics Ontology"},
    :xsd/anyURI
    "https://spec.edmcouncil.org/fibo/ontology/MD/DebtTemporal/DebtAnalytics/"})
-
-(def AccruedInterestAmount
-  {:db/ident :fibo-md-dbtx-aly/AccruedInterestAmount,
-   :rdf/type :owl/Class,
-   :rdfs/isDefinedBy
-   {:xsd/anyURI
-    "https://spec.edmcouncil.org/fibo/ontology/MD/DebtTemporal/DebtAnalytics/"},
-   :rdfs/label {:rdf/language "en",
-                :rdf/value    "accrued interest amount"},
-   :rdfs/subClassOf :fibo-fbc-dae-dbt/Interest,
-   :skos/definition
-   {:rdf/language "en",
-    :rdf/value
-    "The interest accrued on the bond or debt instrument at the time that the price is quoted. If this is a dirty price, this is the amount of accrued interest that is included in the price. This is therefore passed on to the purchaser of the bond or debt instrument."}})
 
 (def BondEquivalentYield
   {:cmns-av/explanatoryNote
@@ -133,55 +119,6 @@
    {:rdf/language "en",
     :rdf/value
     "Yield determined on an equivalent basis to the yield of another bond. This is used to be able to realistically compare prices between debt instruments across different markets."}})
-
-(def CashStructuredFinanceInstrumentPrice
-  {:cmns-av/explanatoryNote
-   {:rdf/language "en",
-    :rdf/value
-    "This might be a Price, a Spread or a Yield, i.e. \"here's the price., the current Yield is this, and here's the Spread\"."},
-   :db/ident :fibo-md-dbtx-aly/CashStructuredFinanceInstrumentPrice,
-   :rdf/type :owl/Class,
-   :rdfs/isDefinedBy
-   {:xsd/anyURI
-    "https://spec.edmcouncil.org/fibo/ontology/MD/DebtTemporal/DebtAnalytics/"},
-   :rdfs/label {:rdf/language "en",
-                :rdf/value    "cash structured finance instrument price"},
-   :rdfs/subClassOf :fibo-fbc-fi-ip/SecurityPrice,
-   :skos/definition
-   {:rdf/language "en",
-    :rdf/value
-    "When the price is above a certain level (70), you get a quote in reference to an index e.g. LIBOR+50bp i.e. the yield. When you get below a certain price you get a quote such as 65c to a dollar. Percentage? not seen. Would be a whole number, interpreted as c/$"}})
-
-(def CleanPrice
-  {:db/ident :fibo-md-dbtx-aly/CleanPrice,
-   :owl/disjointWith :fibo-md-dbtx-aly/DirtyPrice,
-   :rdf/type :owl/Class,
-   :rdfs/isDefinedBy
-   {:xsd/anyURI
-    "https://spec.edmcouncil.org/fibo/ontology/MD/DebtTemporal/DebtAnalytics/"},
-   :rdfs/label {:rdf/language "en",
-                :rdf/value    "clean price"},
-   :rdfs/subClassOf :fibo-fbc-fi-ip/SecurityPrice,
-   :skos/definition
-   {:rdf/language "en",
-    :rdf/value
-    "A bond or debt instrument price that does not include accrued interest."}})
-
-(def CollectionOfDebtPools
-  {:db/ident :fibo-md-dbtx-aly/CollectionOfDebtPools,
-   :rdf/type :owl/Class,
-   :rdfs/isDefinedBy
-   {:xsd/anyURI
-    "https://spec.edmcouncil.org/fibo/ontology/MD/DebtTemporal/DebtAnalytics/"},
-   :rdfs/label {:rdf/language "en",
-                :rdf/value    "collection of debt pools"},
-   :rdfs/subClassOf #{{:owl/onProperty     :cmns-col/hasConstituent,
-                       :owl/someValuesFrom :fibo-sec-sec-pls/DebtPool,
-                       :rdf/type           :owl/Restriction}
-                      :fibo-sec-sec-pls/Pool},
-   :skos/definition
-   {:rdf/language "en",
-    :rdf/value "pool consisting of one or more pools of debt instrument(s)"}})
 
 (def CreditSpread
   {:cmns-av/explanatoryNote
@@ -218,7 +155,7 @@
                 :rdf/value    "current yield calculation method"},
    :rdfs/subClassOf #{:fibo-md-dbtx-aly/YieldCalculationMethod
                       {:owl/onProperty     :cmns-qtu/hasArgument,
-                       :owl/someValuesFrom :fibo-md-dbtx-aly/CleanPrice,
+                       :owl/someValuesFrom :fibo-fbc-fi-ip/CleanPrice,
                        :rdf/type           :owl/Restriction}},
    :skos/definition
    {:rdf/language "en",
@@ -417,38 +354,6 @@
     :rdf/value
     "Yield to the worst case of when the instrument might be called."}})
 
-(def DerivedPrice
-  {:cmns-av/explanatoryNote
-   {:rdf/language "en",
-    :rdf/value
-    "There are evaluated prices in which an independent source evaluates a price they have derived, and there are prices which are derived within a firm, from supplied, published end of day price spreads or other market data."},
-   :db/ident :fibo-md-dbtx-aly/DerivedPrice,
-   :rdf/type :owl/Class,
-   :rdfs/isDefinedBy
-   {:xsd/anyURI
-    "https://spec.edmcouncil.org/fibo/ontology/MD/DebtTemporal/DebtAnalytics/"},
-   :rdfs/label {:rdf/language "en",
-                :rdf/value    "derived price"},
-   :rdfs/subClassOf :fibo-fbc-fi-ip/SecurityPrice,
-   :skos/definition
-   {:rdf/language "en",
-    :rdf/value
-    "price that stems from another source or calculation rather than being quoted or based on actual trading data"}})
-
-(def DirtyPrice
-  {:db/ident :fibo-md-dbtx-aly/DirtyPrice,
-   :owl/disjointWith :fibo-ind-ind-ind/QuotedPrice,
-   :rdf/type :owl/Class,
-   :rdfs/isDefinedBy
-   {:xsd/anyURI
-    "https://spec.edmcouncil.org/fibo/ontology/MD/DebtTemporal/DebtAnalytics/"},
-   :rdfs/label {:rdf/language "en",
-                :rdf/value    "dirty price"},
-   :rdfs/subClassOf
-   #{{:owl/onProperty     :cmns-col/comprises,
-      :owl/someValuesFrom :fibo-md-dbtx-aly/AccruedInterestAmount,
-      :rdf/type           :owl/Restriction} :fibo-fbc-fi-ip/SecurityPrice}})
-
 (def DiscountedInstrumentYield
   {:cmns-av/usageNote {:rdf/language "en",
                        :rdf/value    "Applies to Debt only."},
@@ -625,24 +530,6 @@
    {:rdf/language "en",
     :rdf/value
     "The spread determined internally within the organisation from information available at their own trading desks. Further Notes Internal prices within a bank would be determined by surveying their own traders. So e.g. corporate desk trades these 30 bonds, get the daily spreads on those at the end of the day and calculate the price. The traders determine the pricing during the based on market movements. (this is all for OTC traded bonds, not exchange traded bonds)."}})
-
-(def InterpolatedPrice
-  {:cmns-av/explanatoryNote
-   {:rdf/language "en",
-    :rdf/value
-    "Uses an algorithm to interpolate a price from two observed prices. Examples include price derived by interpolation between prices e.g. between Bid and Offer (among others). also includes Yield Curves and implied forward curves. That is, interpolation may either be linear (straight line interpolation between two values) or may be expressed as a non linear curve such as a yield curve or an implied forward curve."},
-   :db/ident :fibo-md-dbtx-aly/InterpolatedPrice,
-   :rdf/type :owl/Class,
-   :rdfs/isDefinedBy
-   {:xsd/anyURI
-    "https://spec.edmcouncil.org/fibo/ontology/MD/DebtTemporal/DebtAnalytics/"},
-   :rdfs/label {:rdf/language "en",
-                :rdf/value    "interpolated price"},
-   :rdfs/subClassOf :fibo-md-dbtx-aly/DerivedPrice,
-   :skos/definition
-   {:rdf/language "en",
-    :rdf/value
-    "A price determined by interpolation between available price figures, using some algorithm or curve."}})
 
 (def JapaneseCompoundYieldCalculationMethod
   {:db/ident :fibo-md-dbtx-aly/JapaneseCompoundYieldCalculationMethod,
@@ -1046,7 +933,7 @@
                 :rdf/value    "simple yield calculation method"},
    :rdfs/subClassOf #{:fibo-md-dbtx-aly/YieldCalculationMethod
                       {:owl/onProperty     :cmns-qtu/hasArgument,
-                       :owl/someValuesFrom :fibo-md-dbtx-aly/DirtyPrice,
+                       :owl/someValuesFrom :fibo-fbc-fi-ip/DirtyPrice,
                        :rdf/type           :owl/Restriction}},
    :skos/definition
    {:rdf/language "en",
@@ -1219,21 +1106,6 @@
    :rdfs/label {:rdf/language "en",
                 :rdf/value    "calculation following"},
    :rdfs/range :fibo-md-dbtx-aly/YieldCalculationMethod})
-
-(def daysAccrued
-  {:db/ident :fibo-md-dbtx-aly/daysAccrued,
-   :rdf/type :owl/DatatypeProperty,
-   :rdfs/domain :fibo-md-dbtx-aly/DirtyPrice,
-   :rdfs/isDefinedBy
-   {:xsd/anyURI
-    "https://spec.edmcouncil.org/fibo/ontology/MD/DebtTemporal/DebtAnalytics/"},
-   :rdfs/label {:rdf/language "en",
-                :rdf/value    "days accrued"},
-   :rdfs/range :xsd/integer,
-   :skos/definition
-   {:rdf/language "en",
-    :rdf/value
-    "The number of days that interest has accrued, as reflected in the price."}})
 
 (def decimalPlaces
   {:db/ident :fibo-md-dbtx-aly/decimalPlaces,
@@ -1491,50 +1363,50 @@
     :rdf/value    "The rounding convention used in the calculation method."}})
 
 (def urn:uuid:1e11e9d0-40fd-56b8-8ad9-c8687169e9e1
-  {:cmns-av/copyright "Copyright (c) 2013-2023 EDM Council, Inc.",
+  {:cmns-av/copyright "Copyright (c) 2013-2024 EDM Council, Inc.",
    :dcterms/abstract
    "This ontology covers an extensive range of analytical measures for debt instruments and pools of debt instruments. These cover the well-known concepts of convexity, duration and life, as well as weighted average loan ages and maturities, prepayments speeds etc. for debt pools. Most of the widely referenced variants of these are included, for example modified duration. Some yield related concepts (e.g. for equivalent yield) are also included. Debt pricing and yields are intimately related, and this ontology sets out the basic concepts of debt price, including different ways in which debt and bod prices are described and calculated, as well as a range of different kinds of yield (simple yield, Wall Street Yield, Japanese Yield and so on). The pricing terms are supported by a range of trading and exchange related concepts that are used to differentiate different kinds of debt price, for example last, high and low exchange prices.",
    :dcterms/license {:xsd/anyURI "https://opensource.org/licenses/MIT"},
    :fibo-fnd-utl-av/hasMaturityLevel :fibo-fnd-utl-av/Provisional,
    :owl/imports
    #{{:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FND/Utilities/Analytics/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/SEC/Securities/Pools/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FND/DatesAndTimes/FinancialDates/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q3/SEC/Securities/Pools/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/Documents/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FND/ProductsAndServices/ProductsAndServices/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q3/FND/ProductsAndServices/ProductsAndServices/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/ContextualDesignators/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/QuantitiesAndUnits/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/SEC/Debt/MortgageBackedSecurities/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q3/SEC/Debt/DebtInstruments/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/IND/Indicators/Indicators/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q3/SEC/Debt/Bonds/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/Collections/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FBC/DebtAndEquities/Debt/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q3/FBC/FinancialInstruments/InstrumentPricing/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/Classifiers/"}
+     {:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q3/FND/DatesAndTimes/FinancialDates/"}
+     {:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q3/IND/InterestRates/InterestRates/"}
+     {:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q3/FND/Accounting/CurrencyAmount/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/DatesAndTimes/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FBC/FinancialInstruments/InstrumentPricing/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q3/FND/Utilities/Analytics/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FND/Utilities/AnnotationVocabulary/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q3/SEC/Debt/PoolBackedSecurities/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/FND/Accounting/CurrencyAmount/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q3/FND/Utilities/AnnotationVocabulary/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/SEC/Debt/Bonds/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q3/IND/Indicators/Indicators/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/SEC/Debt/DebtInstruments/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q3/SEC/Debt/MortgageBackedSecurities/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/AnnotationVocabulary/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/IND/InterestRates/InterestRates/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/SEC/Debt/PoolBackedSecurities/"}},
+      "https://spec.edmcouncil.org/fibo/ontology/master/2024Q3/FBC/DebtAndEquities/Debt/"}},
    :owl/versionIRI
    {:xsd/anyURI
-    "https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/MD/DebtTemporal/DebtAnalytics/"},
+    "https://spec.edmcouncil.org/fibo/ontology/master/2024Q3/MD/DebtTemporal/DebtAnalytics/"},
    :rdf/type :owl/Ontology,
    :rdfs/label {:rdf/language "en",
                 :rdf/value    "Debt Analytics Ontology"},
